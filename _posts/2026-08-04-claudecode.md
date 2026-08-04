@@ -1,218 +1,172 @@
 ---
-title: "Mastering Claude Code: A Complete Guide to .md Configs, Skills, and Agents"
-date: 2026-08-04
-categories: [AI Tools, Developer Tools, Software Architecture]
-tags: [claude-code, prompt-engineering, developer-experience, markdown, agentic-ai]
+title: "The Ultimate Guide to AI-Assisted Coding on Linux Mint: Claude Code, OpenCode, VS Code, and VSCodium"
+date: "2026-08-04"
+categories: ["Linux", "Artificial Intelligence", "Development Tools"]
+tags: ["linux-mint", "claude-code", "opencode", "vscode", "vscodium", "terminal", "ai-coding"]
 ---
 
-As AI-assisted software development moves from simple code completion to autonomous agentic workflows, organizing context becomes the single most critical factor for success. Anthropic’s **Claude Code** CLI leverages dedicated Markdown (`.md`) files to maintain project memory, define domain-specific skills, and orchestrate specialized subagents.
-
-Without these context files, an AI agent operates blindly, drifting from project conventions, misinterpreting architectures, or rewriting existing codebase patterns. This guide provides a detailed breakdown of every required and optional `.md` file in the Claude Code ecosystem, along with production-ready templates for your project.
+Agentic AI tools are transforming how developers write, refactor, and debug software directly from their terminals and IDEs. If you are running **Linux Mint** and looking to build a clean, powerful, privacy-respecting AI development environment, this comprehensive guide walks through everything you need to know—from setting up Anthropic’s **Claude Code** and the open-source **OpenCode** CLI to choosing and configuring your code editor.
 
 ---
 
-## 1. Core Memory Files
+## 1. What is Claude Code?
 
-Core memory files sit directly in your project root or `.claude/` directory. They act as the agent's baseline instruction set, technical manual, and scratchpad across CLI sessions.
+**Claude Code** is Anthropic's agentic AI coding tool designed specifically for terminal-first workflows. Unlike standard chat interfaces where you copy and paste snippets back and forth, Claude Code operates directly within your local workspace environment.
 
-### `.claudecode.md`
-This is the primary global rulebook for Claude Code within your repository. It dictates coding style, constraints, testing requirements, and architectural boundaries.
+### Key Features & Capabilities
+* **Full Repository Awareness:** Automatically reads project structure, local configurations, and codebase dependencies to maintain context.
+* **Direct Execution & Editing:** Modifies multi-file codebases, runs test suites, and executes shell commands locally to verify its work.
+* **Autonomous Error Correction:** Detects failed test runs or compiler errors, analyzes the diagnostic output, and applies fixes independently.
+* **Custom Project Context (`CLAUDE.md`):** Uses a root repository file to remember system architecture, style preferences, and testing routines.
+* **Tooling Integration:** Works seamlessly with Model Context Protocol (MCP), GitHub Actions, and custom hooks/skills.
 
-#### Template
-```markdown
-# Project Standards & Conventions
+---
 
-## Tech Stack & Language Guidelines
-- **Primary Language:** TypeScript (strict mode enabled)
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS with Radix UI components
+## 2. Installing Claude Code on Linux Mint
 
-## Code Style & Formatting
-- Prefer functional components and immutability.
-- Use explicit type annotations; avoid using `any` under any circumstance.
-- Run `pnpm lint` before submitting any code changes.
+Setting up Claude Code on Linux Mint (or any Debian/Ubuntu-based distribution) can be completed using either a standalone binary or `npm`.
 
-## Testing Standards
-- All new API routes require corresponding integration tests under `__tests__/api/`.
-- Run tests via `pnpm test`. Do not commit code with failing tests.
+### Method A: Standalone Native Installer (Recommended)
+This approach installs a self-contained binary into `~/.local/bin` without requiring a Node.js runtime.
 
-## Architecture Guidelines
-- Place business logic in `lib/services/`, not directly in UI components or route handlers.
-- Database access must strictly use Prisma ORM through `lib/db.ts`.
+```bash
+# Download and install the standalone binary
+curl -fsSL [https://claude.ai/install.sh](https://claude.ai/install.sh) | bash
+
+# Ensure ~/.local/bin is present in your PATH
+echo $PATH
+
+# If missing, add it to your ~/.bashrc file
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# Verify installation
+claude --version
 
 ```
 
-* **What to write:** Define non-negotiable standards. Be explicit about preferred libraries, prohibited practices, folder structures, and testing expectations.
+### Method B: Global Installation via `npm`
 
----
+If you prefer Node.js management, ensure Node 22+ is installed via **Node Version Manager (nvm)** to avoid using `sudo npm`.
 
-### `.claudedoc.md`
+```bash
+# Install nvm and Node.js 22
+curl -o- [https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh](https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh) | bash
+source ~/.bashrc
+nvm install 22
+nvm use 22
 
-While `.claudecode.md` handles coding *rules*, `.claudedoc.md` handles system *understanding*. It describes how the high-level architecture operates and how data flows through the application.
-
-#### Template
-
-```markdown
-# Technical System Documentation
-
-## System Overview
-This repository contains the backend and web client for our automated customer support pipeline.
-
-## Architecture & Data Flow
-1. **Inbound Webhook:** User queries hit `/api/v1/webhooks/incoming`.
-2. **Ingestion & Queue:** Messages are validated and pushed to Redis BullMQ.
-3. **Processing Worker:** The background worker (`services/worker.ts`) fetches pending jobs and queries the LLM processing service.
-4. **Storage:** Final responses and session logs are stored in PostgreSQL.
-
-## Critical Dependencies & Services
-- **Database:** PostgreSQL (Hosted on Supabase)
-- **Queue System:** Redis
-- **Authentication:** NextAuth.js with JWT session strategy
+# Install Claude Code globally
+npm install -g @anthropic-ai/claude-code
 
 ```
 
-* **What to write:** Explain the "why" and "how" behind your system design. Include database relationships, third-party service connections, and asynchronous processing paths.
+### Essential Mint Dependencies
 
----
+To optimize terminal file searches and Git tracking, install system helpers:
 
-### `.claudenotes.md`
-
-This file acts as a persistent working memory across sessions. It helps the agent remember active tasks, unblocked issues, and architectural decisions made in previous interactions.
-
-#### Template
-
-```markdown
-# Session Memory & Active Notes
-
-## Active Tasks
-- [ ] Refactor `/api/v1/checkout` route to support dynamic multi-currency payments.
-- [ ] Fix memory leak in background worker job consumer.
-
-## Known Bugs & Issues
-- **Issue:** Redis connection drops during high-concurrency spikes.
-  - **Workaround:** Max retries set to 5 in `lib/redis.ts`.
-
-## Recent Changes
-- Updated Next.js to version 15.1.
-- Migrated user authentication to strict server actions.
-
-```
-
-* **What to write:** Update this file regularly or ask Claude Code to update it at the end of a session. Record technical debt, unresolved bugs, and pending todo items.
-
----
-
-## 2. Agent Skills (`SKILL.md`)
-
-Skills are modular, repeatable workflows that teach Claude Code how to execute specialized operations like performing database migrations, writing end-to-end tests, or auditing security.
-
-* **File Location:** `.claude/skills/[skill-name]/SKILL.md`
-
-### Template
-
-```markdown
----
-name: database-migration
-description: Guidelines and verification steps for running and creating Prisma database migrations safely.
----
-
-# Skill: Database Migration Workflow
-
-## Pre-requisites
-- Ensure local PostgreSQL instance is running via Docker (`docker-compose up -d`).
-
-## Step-by-Step Instructions
-1. Modify schema in `prisma/schema.prisma`.
-2. Generate migration script using `pnpm prisma migrate dev --create-only --name <descriptive_name>`.
-3. Inspect generated SQL inside `prisma/migrations/` for destructive operations (`DROP COLUMN`, `TRUNCATE`).
-4. Apply migration using `pnpm prisma migrate dev`.
-5. Run `pnpm prisma generate` to refresh client types.
-
-## Constraints
-- **NEVER** run `prisma migrate reset` in non-development environments.
-- Always check that field additions are either optional or provide a default value.
-
-```
-
-* **What to write:** Use the YAML frontmatter (`name` and `description`) carefully—Claude Code reads the `description` to automatically pick and execute the skill when relevant.
-
----
-
-## 3. Custom Subagents (`[agent-name].md`)
-
-Subagents are isolated Claude instances constrained to specific tool sets, roles, and boundaries. You can assign them narrow responsibilities such as code review, security auditing, or documentation generation.
-
-* **File Location:** `.claude/agents/[agent-name].md`
-
-### Template
-
-```markdown
----
-name: security-auditor
-description: Delegate to this agent to scan new code changes or pull requests for security vulnerabilities, exposed secrets, or OWASP top 10 risks.
-tools: ["read_file", "search_files", "list_dir"]
-model: sonnet
-permissionMode: acceptEdits
----
-
-# Role: Security Auditor
-
-You are a senior Application Security Engineer. Your job is to analyze code changes for potential vulnerabilities before deployment.
-
-## Audit Checklist
-- Check for unvalidated inputs in API endpoints (SQL Injection, XSS).
-- Search for hardcoded credentials, API keys, or JWT secrets.
-- Validate that authentication wrappers are applied to sensitive routes.
-- Ensure sensitive data is not being written to application logs.
-
-## Output Requirements
-Provide a structured security report identifying:
-1. Risk severity (Critical, High, Medium, Low)
-2. Affected file and line number
-3. Remediation code snippet
-
-```
-
-* **What to write:** Restrict tool usage in the frontmatter (e.g., limit read/write permissions where appropriate). Explicitly define the subagent's role, checklist, and required output format.
-
----
-
-## 4. Universal Brief (`AGENTS.md`)
-
-If your project utilizes multiple AI execution environments (such as Claude Code, Cursor, or Windsurf), use a top-level `AGENTS.md` file in your root folder as a single source of truth across all tools.
-
-* **File Location:** `AGENTS.md`
-
-### Template
-
-```markdown
-# Universal Agent Directives
-
-## Workspace Conventions
-- Workspace package manager is strictly `pnpm`. Do not run `npm` or `yarn`.
-- Commit messages must follow Conventional Commits (e.g., `feat:`, `fix:`, `docs:`).
-
-## Core Rules
-1. Never commit API keys or `.env` files to git.
-2. Keep methods small and modular—aim for under 30 lines per function.
-3. Write clean, self-documenting code over excessive inline comments.
+```bash
+sudo apt update && sudo apt install -y git ripgrep
 
 ```
 
 ---
 
-## Summary of File Paths
+## 3. Editor Setup: VS Code vs. VSCodium
 
-| File | Purpose | Scope |
+Choosing the right code editor depends on your stance on open-source software and telemetry tracking.
+
+### VS Code vs. VSCodium Comparison
+
+| Feature | Visual Studio Code (VS Code) | VSCodium |
 | --- | --- | --- |
-| `.claudecode.md` | Global project rules, style guidelines, and tech stack | Project-wide |
-| `.claudedoc.md` | Architectural documentation and data flows | Project-wide |
-| `.claudenotes.md` | Active task tracking, bugs, and session memory | Session-to-Session |
-| `.claude/skills/[name]/SKILL.md` | Specialized, step-by-step procedure guides | Modular Workflow |
-| `.claude/agents/[name].md` | Custom subagent roles and tool permissions | Delegated Tasks |
-| `AGENTS.md` | Cross-tool AI instructions (Claude Code, Cursor, etc.) | Universal |
+| **License** | Proprietary Microsoft License | 100% Open Source (MIT) |
+| **Telemetry** | Enabled by default | Fully stripped out |
+| **Extension Market** | Official Microsoft Marketplace | Open VSX Registry |
+| **Claude Code Setup** | Direct 1-click install | Extension VSIX download or Terminal CLI |
 
-Configuring these Markdown files ensures consistent, predictable, and production-grade output from Claude Code across your entire team.
+### Installing VS Code on Linux Mint
+
+```bash
+wget -qO- [https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc) | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] [https://packages.microsoft.com/repos/code](https://packages.microsoft.com/repos/code) stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+
+sudo apt update && sudo apt install -y code
+
+```
+
+### Installing VSCodium on Linux Mint
+
+```bash
+wget -qO - [https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg) | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] [https://download.vscodium.com/debs](https://download.vscodium.com/debs) vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
+
+sudo apt update && sudo apt install -y codium
+
+```
+
+### Integrating Claude Code with Your Editor
+
+1. **Integrated Terminal Method (Universal):** Launch `code .` or `codium .` in your terminal, open the built-in terminal (`Ctrl + ~`), and run:
+```bash
+claude
+
+```
+
+
+2. **VS Code GUI Extension:** Press `Ctrl + Shift + X`, search for **Claude Code** by Anthropic, and click **Install**.
+3. **VSCodium Manual VSIX Install:** Download the `.vsix` file from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code), open VSCodium, navigate to Extensions (`Ctrl + Shift + X`), click the `...` menu at the top right, and select **Install from VSIX...**.
+
+---
+
+## 4. Installing and Using OpenCode
+
+**OpenCode** is a popular open-source, terminal-based AI coding assistant that supports multiple model providers (Anthropic, OpenAI, local Ollama models, and custom endpoints).
+
+### Installation Options
+
+#### Option 1: Official Shell Script (Recommended)
+
+```bash
+curl -fsSL [https://opencode.ai/install](https://opencode.ai/install) | bash
+source ~/.bashrc
+opencode --version
+
+```
+
+#### Option 2: Package Managers (`npm` or `bun`)
+
+```bash
+# Via npm
+npm install -g opencode-ai
+
+# Via bun
+bun install -g opencode-ai
+
+```
+
+#### Option 3: Desktop App (.deb package)
+
+Download the `.deb` release file from the official repository and install via APT:
+
+```bash
+sudo apt update && sudo apt install -y ./opencode*.deb
+
+```
+
+### Getting Started with OpenCode
+
+1. Open your project directory: `cd /path/to/project`
+2. Start the agent: `opencode`
+3. Configure your API key or model host inside the interface using `/connect`.
+
+---
+
+## Summary Workflow
+
+With these tools installed, you have a modern, privacy-focused Linux terminal environment capable of handling complex software engineering tasks autonomously. You can run `claude` or `opencode` directly in your workspace terminal, or run them within the integrated terminal of VS Code or VSCodium for real-time visual inspection of file modifications.
 
 ```
 
