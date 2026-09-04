@@ -6,7 +6,16 @@
 [![Theme](https://img.shields.io/badge/Theme-PaperMod-blueviolet?style=flat)](https://github.com/adityatelange/hugo-PaperMod)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A lightweight, serverless engineering and governance notebook deployed to GitHub Pages. The pipeline compiles Markdown posts into optimized static assets via GoHugo and a automated GitHub Actions CI/CD runner.
+A lightweight, serverless engineering and governance notebook deployed to GitHub Pages via Hugo and an automated GitHub Actions CI/CD runner.
+
+---
+
+### Project Documentation
+
+| Document | Description | Direct Link |
+| :--- | :--- | :--- |
+| **Windows Runbook** | Local setup for Windows 11/10, VSCodium, Winget dependencies, and authoring loop | [WINDOWS_SETUP.md](WINDOWS_SETUP.md) |
+| **Troubleshooting Matrix** | Resolution steps for duplicate keys, YAML list syntax, date parsing, and schema crashes | [TROUBLESHOOTING.md](TROUBLESHOOTING.md) |
 
 ---
 
@@ -38,7 +47,7 @@ A lightweight, serverless engineering and governance notebook deployed to GitHub
 | **Theme Base** | PaperMod (Git Submodule) | Zero custom layout hacking |
 | **Taxonomies** | Categories & Tags | Native Hugo array parsing |
 | **Search Engine** | Fuse.js (Client-side) | Static index JSON output |
-| **Front Matter Sanity** | Custom Python AST parser (`sanitize.py`) | Zero unhandled YAML breaks |
+| **Front Matter Sanity** | Custom Python AST parser (`sanitize.py`) | Automated CI/CD pre-build hook |
 | **Asset Pipeline** | Standalone static image pass-through | `/static/assets/img/` |
 
 ---
@@ -65,6 +74,8 @@ phuchungbhutia.github.io/
 │   └── PaperMod/               # Upstream theme Git submodule
 ├── hugo.yaml                   # Core site configuration
 ├── sanitize.py                 # Build-time front-matter validation hook
+├── TROUBLESHOOTING.md          # Diagnostic runbook for YAML & CI/CD errors
+├── WINDOWS_SETUP.md            # Windows & VSCodium local environment guide
 ├── .gitignore                  # Git tracking exclusion list
 └── README.md
 
@@ -78,7 +89,7 @@ phuchungbhutia.github.io/
 # Clone with submodule dependencies
 git clone --recurse-submodules [https://github.com/phuchungbhutia/phuchungbhutia.github.io.git](https://github.com/phuchungbhutia/phuchungbhutia.github.io.git)
 
-# Run sanitization pass
+# Run sanitization pass locally (matches CI runner)
 python sanitize.py content/posts
 
 # Start local livereload server
