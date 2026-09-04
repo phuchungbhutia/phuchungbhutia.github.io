@@ -1,4 +1,4 @@
-﻿name: Deploy Hugo site to Pages
+﻿name: Deploy Hugo to Pages
 
 on:
   push:
@@ -16,10 +16,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +26,6 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      # 1. Environment setup
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -42,17 +37,14 @@ jobs:
           hugo-version: "latest"
           extended: true
 
-      # 2. Automated front matter & Liquid sanitization
-      - name: Sanitize Markdown front matter
+      - name: Sanitize Markdown Front Matter
         run: |
           python sanitize.py content/posts
 
-      # 3. Compile static output
       - name: Build with Hugo
         run: hugo --minify
 
-      # 4. Upload site artifact
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
