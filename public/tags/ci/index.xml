@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ci on Technical Journal</title>
+    <link>//localhost:1313/tags/ci/</link>
+    <description>Recent content in Ci on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 09:30:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title>
+      <link>//localhost:1313/posts/2026-08-05-github5/</link>
+      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-github5/</guid>
+      <description>&lt;h1 id=&#34;github-actions-complete-cicd-guide-from-beginner-to-production&#34;&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
+&lt;p&gt;Writing code is only one part of software development.&lt;/p&gt;
+&lt;p&gt;Modern software teams automate everything:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building applications&lt;/li&gt;
+&lt;li&gt;Running tests&lt;/li&gt;
+&lt;li&gt;Checking code quality&lt;/li&gt;
+&lt;li&gt;Creating Docker images&lt;/li&gt;
+&lt;li&gt;Publishing releases&lt;/li&gt;
+&lt;li&gt;Deploying applications&lt;/li&gt;
+&lt;li&gt;Sending notifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitHub Actions makes all of this possible without leaving GitHub.&lt;/p&gt;
+&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

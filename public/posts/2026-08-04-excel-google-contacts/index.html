@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV | Technical Journal</title>
+<meta name="keywords" content="Python, Pandas, Google Contacts, Excel, Data Cleaning">
+<meta name="description" content="Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.
+When preparing contact directories for seamless mobile sync via Google Contacts, standard raw exports won&rsquo;t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.
+
+The Problem: Raw Spreadsheets vs. Google Contacts Schema
+Standard office documents like ADs(P).xlsx or PAAs.xlsx usually organize information visually for humans rather than programmatically for software. They often feature:">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-04-excel-google-contacts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-excel-google-contacts/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-excel-google-contacts/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV">
+  <meta property="og:description" content="Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.
+When preparing contact directories for seamless mobile sync via Google Contacts, standard raw exports won’t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.
+The Problem: Raw Spreadsheets vs. Google Contacts Schema Standard office documents like ADs(P).xlsx or PAAs.xlsx usually organize information visually for humans rather than programmatically for software. They often feature:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Pandas">
+    <meta property="article:tag" content="Google Contacts">
+    <meta property="article:tag" content="Excel">
+    <meta property="article:tag" content="Data Cleaning">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV">
+  <meta name="twitter:description" content="Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.
+When preparing contact directories for seamless mobile sync via Google Contacts, standard raw exports won’t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.
+The Problem: Raw Spreadsheets vs. Google Contacts Schema Standard office documents like ADs(P).xlsx or PAAs.xlsx usually organize information visually for humans rather than programmatically for software. They often feature:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV",
+      "item": "//localhost:1313/posts/2026-08-04-excel-google-contacts/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV",
+  "name": "Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV",
+  "description": "Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.\nWhen preparing contact directories for seamless mobile sync via Google Contacts, standard raw exports won\u0026rsquo;t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.\nThe Problem: Raw Spreadsheets vs. Google Contacts Schema Standard office documents like ADs(P).xlsx or PAAs.xlsx usually organize information visually for humans rather than programmatically for software. They often feature:\n",
+  "keywords": [
+    "Python", "Pandas", "Google Contacts", "Excel", "Data Cleaning"
+  ],
+  "articleBody": "Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.\nWhen preparing contact directories for seamless mobile sync via Google Contacts, standard raw exports won’t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.\nThe Problem: Raw Spreadsheets vs. Google Contacts Schema Standard office documents like ADs(P).xlsx or PAAs.xlsx usually organize information visually for humans rather than programmatically for software. They often feature:\nHeterogeneous layouts spread across multiple sheets. Non-standardized column names (e.g., Contact No, Contact no, Name of ADs, Name of Sachiva). Missing values (such as entries without contact numbers or complete missing datasets). Numbers that risk being formatted into scientific notation when opened in standard spreadsheet software (e.g., 9.733338e+09). To successfully import these records into Google Contacts without manual entry, you need to extract the raw records, filter out incomplete entries, normalize column schemas, and map them into Google’s recognized format.\nUnderstanding the Google Contacts CSV Structure Google Contacts reads standard CSV files but expects specific column headers to map data seamlessly into contact fields. While you can include a wide variety of attributes, the core framework relies on these key headers:\nHeader Name Description Example Output Name Display name of the contact Mohan Kumar Rai Given Name First name / Given name Mohan Family Name Last name / Surname Kumar Rai Phone 1 - Type Label for the primary phone number Mobile Phone 1 - Value Clean, numerical contact string 9733337954 Organization 1 - Name Associated department, GPU, or company Kongri Labdang Organization 1 - Title Official position or job title Assistant Director Group Membership Assigns contacts to default or custom groups * myContacts Notes Contextual attributes (Districts, BACs, references) District: Gyalshing, BAC: Chongrong The Solution: Python \u0026 Pandas Conversion Workflow Using Python and pandas, we can automate the parsing, cleaning, and formatting process. Here is how the end-to-end transformation script works:\nStep 1: Loading and Cleaning Data Across Sheets import pandas as pd # Load dataset sheets ads1 = pd.read_csv('ADs(P) .xlsx - Sheet1.csv', skiprows=1) ads2 = pd.read_csv('ADs(P) .xlsx - Sheet2.csv') # Clean Sheet 1 (Assistant Directors) ads1_clean = ads1[['Name of ADs', 'Contact No', 'Unnamed: 5', 'BAC', 'District']].copy() ads1_clean.columns = ['Name', 'Phone', 'GPU', 'BAC', 'District'] ads1_clean['Title'] = 'Assistant Director' ads1_clean = ads1_clean.dropna(subset=['Name', 'Phone']) # Clean Sheet 2 (Sachivas) ads2_clean = ads2[['Name of Sachiva', 'Contact no', 'Name of GPU', 'BAC', 'District']].copy() ads2_clean.columns = ['Name', 'Phone', 'GPU', 'BAC', 'District'] ads2_clean['Title'] = 'Sachiva' ads2_clean = ads2_clean.dropna(subset=['Name', 'Phone']) # Combine sheets into a single workspace contacts = pd.concat([ads1_clean, ads2_clean], ignore_index=True) Step 2: Name Parsing \u0026 Phone Number Normalization To ensure phone numbers do not degrade into scientific notation or floating-point numbers (.0), we apply direct string conversion functions before mapping.\n# Helper to split names cleanly into Given Name and Family Name def split_name(name): parts = str(name).strip().split() given = parts[0] if len(parts) \u003e 0 else \"\" family = \" \".join(parts[1:]) if len(parts) \u003e 1 else \"\" return given, family # Helper to format phone values properly def format_phone(val): try: s = str(val) if s.endswith('.0'): s = s[:-2] return str(int(float(val))) except: return str(val).strip() names_split = contacts['Name'].apply(split_name) Step 3: Mapping to Google Contacts Schema google_contacts = pd.DataFrame() # Standard Field Mappings google_contacts['Name'] = contacts['Name'] google_contacts['Given Name'] = [x[0] for x in names_split] google_contacts['Family Name'] = [x[1] for x in names_split] google_contacts['Group Membership'] = '* myContacts' google_contacts['Phone 1 - Type'] = 'Mobile' google_contacts['Phone 1 - Value'] = contacts['Phone'].apply(format_phone) google_contacts['Organization 1 - Name'] = contacts['GPU'] google_contacts['Organization 1 - Title'] = contacts['Title'] # Packing metadata into the Notes column google_contacts['Notes'] = \"District: \" + contacts['District'].fillna('') + \", BAC: \" + contacts['BAC'].fillna('') # Remove duplicates \u0026 export google_contacts = google_contacts.drop_duplicates() google_contacts.to_csv('google_contacts.csv', index=False) How to Import the Output File into Google Contacts Once the script generates google_contacts.csv, importing it to your account takes just a few clicks:\nNavigate to Google Contacts. On the left sidebar menu, click Import. Click Select file and choose the newly generated google_contacts.csv. Click Import. Google Contacts will automatically parse the headers and populate all fields, labels, and notes instantly across your synced mobile devices. ",
+  "wordCount" : "694",
+  "inLanguage": "en",
+  "datePublished": "2026-08-04T00:00:00Z",
+  "dateModified": "2026-08-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-04-excel-google-contacts/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#the-problem-raw-spreadsheets-vs-google-contacts-schema" aria-label="The Problem: Raw Spreadsheets vs. Google Contacts Schema">The Problem: Raw Spreadsheets vs. Google Contacts Schema</a></li>
+            <li>
+                <a href="#understanding-the-google-contacts-csv-structure" aria-label="Understanding the Google Contacts CSV Structure">Understanding the Google Contacts CSV Structure</a></li>
+            <li>
+                <a href="#the-solution-python--pandas-conversion-workflow" aria-label="The Solution: Python &amp; Pandas Conversion Workflow">The Solution: Python &amp; Pandas Conversion Workflow</a><ul>
+                    
+            <li>
+                <a href="#step-1-loading-and-cleaning-data-across-sheets" aria-label="Step 1: Loading and Cleaning Data Across Sheets">Step 1: Loading and Cleaning Data Across Sheets</a></li>
+            <li>
+                <a href="#step-2-name-parsing--phone-number-normalization" aria-label="Step 2: Name Parsing &amp; Phone Number Normalization">Step 2: Name Parsing &amp; Phone Number Normalization</a></li>
+            <li>
+                <a href="#step-3-mapping-to-google-contacts-schema" aria-label="Step 3: Mapping to Google Contacts Schema">Step 3: Mapping to Google Contacts Schema</a></li></ul>
+            </li>
+            <li>
+                <a href="#how-to-import-the-output-file-into-google-contacts" aria-label="How to Import the Output File into Google Contacts">How to Import the Output File into Google Contacts</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.</p>
+<p>When preparing contact directories for seamless mobile sync via <strong>Google Contacts</strong>, standard raw exports won&rsquo;t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.</p>
+<hr>
+<h3 id="the-problem-raw-spreadsheets-vs-google-contacts-schema">The Problem: Raw Spreadsheets vs. Google Contacts Schema<a hidden class="anchor" aria-hidden="true" href="#the-problem-raw-spreadsheets-vs-google-contacts-schema">#</a></h3>
+<p>Standard office documents like <code>ADs(P).xlsx</code> or <code>PAAs.xlsx</code> usually organize information visually for humans rather than programmatically for software. They often feature:</p>
+<ul>
+<li>Heterogeneous layouts spread across multiple sheets.</li>
+<li>Non-standardized column names (e.g., <code>Contact No</code>, <code>Contact no</code>, <code>Name of ADs</code>, <code>Name of Sachiva</code>).</li>
+<li>Missing values (such as entries without contact numbers or complete missing datasets).</li>
+<li>Numbers that risk being formatted into scientific notation when opened in standard spreadsheet software (e.g., <code>9.733338e+09</code>).</li>
+</ul>
+<p>To successfully import these records into Google Contacts without manual entry, you need to extract the raw records, filter out incomplete entries, normalize column schemas, and map them into Google&rsquo;s recognized format.</p>
+<hr>
+<h3 id="understanding-the-google-contacts-csv-structure">Understanding the Google Contacts CSV Structure<a hidden class="anchor" aria-hidden="true" href="#understanding-the-google-contacts-csv-structure">#</a></h3>
+<p>Google Contacts reads standard CSV files but expects specific column headers to map data seamlessly into contact fields. While you can include a wide variety of attributes, the core framework relies on these key headers:</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Header Name</th>
+					<th style="text-align: left">Description</th>
+					<th style="text-align: left">Example Output</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Name</strong></td>
+					<td style="text-align: left">Display name of the contact</td>
+					<td style="text-align: left"><code>Mohan Kumar Rai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Given Name</strong></td>
+					<td style="text-align: left">First name / Given name</td>
+					<td style="text-align: left"><code>Mohan</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Family Name</strong></td>
+					<td style="text-align: left">Last name / Surname</td>
+					<td style="text-align: left"><code>Kumar Rai</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Phone 1 - Type</strong></td>
+					<td style="text-align: left">Label for the primary phone number</td>
+					<td style="text-align: left"><code>Mobile</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Phone 1 - Value</strong></td>
+					<td style="text-align: left">Clean, numerical contact string</td>
+					<td style="text-align: left"><code>9733337954</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Organization 1 - Name</strong></td>
+					<td style="text-align: left">Associated department, GPU, or company</td>
+					<td style="text-align: left"><code>Kongri Labdang</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Organization 1 - Title</strong></td>
+					<td style="text-align: left">Official position or job title</td>
+					<td style="text-align: left"><code>Assistant Director</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Group Membership</strong></td>
+					<td style="text-align: left">Assigns contacts to default or custom groups</td>
+					<td style="text-align: left"><code>* myContacts</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Notes</strong></td>
+					<td style="text-align: left">Contextual attributes (Districts, BACs, references)</td>
+					<td style="text-align: left"><code>District: Gyalshing, BAC: Chongrong</code></td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h3 id="the-solution-python--pandas-conversion-workflow">The Solution: Python &amp; Pandas Conversion Workflow<a hidden class="anchor" aria-hidden="true" href="#the-solution-python--pandas-conversion-workflow">#</a></h3>
+<p>Using Python and <code>pandas</code>, we can automate the parsing, cleaning, and formatting process. Here is how the end-to-end transformation script works:</p>
+<h4 id="step-1-loading-and-cleaning-data-across-sheets">Step 1: Loading and Cleaning Data Across Sheets<a hidden class="anchor" aria-hidden="true" href="#step-1-loading-and-cleaning-data-across-sheets">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load dataset sheets</span>
+</span></span><span style="display:flex;"><span>ads1 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;ADs(P) .xlsx - Sheet1.csv&#39;</span>, skiprows<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>ads2 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;ADs(P) .xlsx - Sheet2.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean Sheet 1 (Assistant Directors)</span>
+</span></span><span style="display:flex;"><span>ads1_clean <span style="color:#f92672">=</span> ads1[[<span style="color:#e6db74">&#39;Name of ADs&#39;</span>, <span style="color:#e6db74">&#39;Contact No&#39;</span>, <span style="color:#e6db74">&#39;Unnamed: 5&#39;</span>, <span style="color:#e6db74">&#39;BAC&#39;</span>, <span style="color:#e6db74">&#39;District&#39;</span>]]<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>ads1_clean<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Name&#39;</span>, <span style="color:#e6db74">&#39;Phone&#39;</span>, <span style="color:#e6db74">&#39;GPU&#39;</span>, <span style="color:#e6db74">&#39;BAC&#39;</span>, <span style="color:#e6db74">&#39;District&#39;</span>]
+</span></span><span style="display:flex;"><span>ads1_clean[<span style="color:#e6db74">&#39;Title&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Assistant Director&#39;</span>
+</span></span><span style="display:flex;"><span>ads1_clean <span style="color:#f92672">=</span> ads1_clean<span style="color:#f92672">.</span>dropna(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Name&#39;</span>, <span style="color:#e6db74">&#39;Phone&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clean Sheet 2 (Sachivas)</span>
+</span></span><span style="display:flex;"><span>ads2_clean <span style="color:#f92672">=</span> ads2[[<span style="color:#e6db74">&#39;Name of Sachiva&#39;</span>, <span style="color:#e6db74">&#39;Contact no&#39;</span>, <span style="color:#e6db74">&#39;Name of GPU&#39;</span>, <span style="color:#e6db74">&#39;BAC&#39;</span>, <span style="color:#e6db74">&#39;District&#39;</span>]]<span style="color:#f92672">.</span>copy()
+</span></span><span style="display:flex;"><span>ads2_clean<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Name&#39;</span>, <span style="color:#e6db74">&#39;Phone&#39;</span>, <span style="color:#e6db74">&#39;GPU&#39;</span>, <span style="color:#e6db74">&#39;BAC&#39;</span>, <span style="color:#e6db74">&#39;District&#39;</span>]
+</span></span><span style="display:flex;"><span>ads2_clean[<span style="color:#e6db74">&#39;Title&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Sachiva&#39;</span>
+</span></span><span style="display:flex;"><span>ads2_clean <span style="color:#f92672">=</span> ads2_clean<span style="color:#f92672">.</span>dropna(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Name&#39;</span>, <span style="color:#e6db74">&#39;Phone&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Combine sheets into a single workspace</span>
+</span></span><span style="display:flex;"><span>contacts <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([ads1_clean, ads2_clean], ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><h4 id="step-2-name-parsing--phone-number-normalization">Step 2: Name Parsing &amp; Phone Number Normalization<a hidden class="anchor" aria-hidden="true" href="#step-2-name-parsing--phone-number-normalization">#</a></h4>
+<p>To ensure phone numbers do not degrade into scientific notation or floating-point numbers (<code>.0</code>), we apply direct string conversion functions before mapping.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Helper to split names cleanly into Given Name and Family Name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">split_name</span>(name):
+</span></span><span style="display:flex;"><span>    parts <span style="color:#f92672">=</span> str(name)<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>    given <span style="color:#f92672">=</span> parts[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">if</span> len(parts) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    family <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(parts[<span style="color:#ae81ff">1</span>:]) <span style="color:#66d9ef">if</span> len(parts) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> given, family
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Helper to format phone values properly</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">format_phone</span>(val):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> str(val)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> s<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.0&#39;</span>):
+</span></span><span style="display:flex;"><span>            s <span style="color:#f92672">=</span> s[:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> str(int(float(val)))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> str(val)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>names_split <span style="color:#f92672">=</span> contacts[<span style="color:#e6db74">&#39;Name&#39;</span>]<span style="color:#f92672">.</span>apply(split_name)
+</span></span></code></pre></div><h4 id="step-3-mapping-to-google-contacts-schema">Step 3: Mapping to Google Contacts Schema<a hidden class="anchor" aria-hidden="true" href="#step-3-mapping-to-google-contacts-schema">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>google_contacts <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Standard Field Mappings</span>
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Name&#39;</span>] <span style="color:#f92672">=</span> contacts[<span style="color:#e6db74">&#39;Name&#39;</span>]
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Given Name&#39;</span>] <span style="color:#f92672">=</span> [x[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> names_split]
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Family Name&#39;</span>] <span style="color:#f92672">=</span> [x[<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> names_split]
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Group Membership&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;* myContacts&#39;</span>
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Phone 1 - Type&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Mobile&#39;</span>
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Phone 1 - Value&#39;</span>] <span style="color:#f92672">=</span> contacts[<span style="color:#e6db74">&#39;Phone&#39;</span>]<span style="color:#f92672">.</span>apply(format_phone)
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Organization 1 - Name&#39;</span>] <span style="color:#f92672">=</span> contacts[<span style="color:#e6db74">&#39;GPU&#39;</span>]
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Organization 1 - Title&#39;</span>] <span style="color:#f92672">=</span> contacts[<span style="color:#e6db74">&#39;Title&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Packing metadata into the Notes column</span>
+</span></span><span style="display:flex;"><span>google_contacts[<span style="color:#e6db74">&#39;Notes&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;District: &#34;</span> <span style="color:#f92672">+</span> contacts[<span style="color:#e6db74">&#39;District&#39;</span>]<span style="color:#f92672">.</span>fillna(<span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, BAC: &#34;</span> <span style="color:#f92672">+</span> contacts[<span style="color:#e6db74">&#39;BAC&#39;</span>]<span style="color:#f92672">.</span>fillna(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove duplicates &amp; export</span>
+</span></span><span style="display:flex;"><span>google_contacts <span style="color:#f92672">=</span> google_contacts<span style="color:#f92672">.</span>drop_duplicates()
+</span></span><span style="display:flex;"><span>google_contacts<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;google_contacts.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><hr>
+<h3 id="how-to-import-the-output-file-into-google-contacts">How to Import the Output File into Google Contacts<a hidden class="anchor" aria-hidden="true" href="#how-to-import-the-output-file-into-google-contacts">#</a></h3>
+<p>Once the script generates <code>google_contacts.csv</code>, importing it to your account takes just a few clicks:</p>
+<ol>
+<li>Navigate to <a href="https://contacts.google.com">Google Contacts</a>.</li>
+<li>On the left sidebar menu, click <strong>Import</strong>.</li>
+<li>Click <strong>Select file</strong> and choose the newly generated <code>google_contacts.csv</code>.</li>
+<li>Click <strong>Import</strong>. Google Contacts will automatically parse the headers and populate all fields, labels, and notes instantly across your synced mobile devices.</li>
+</ol>
+<pre tabindex="0"><code></code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/python/">Python</a></li>
+      <li><a href="//localhost:1313/tags/pandas/">Pandas</a></li>
+      <li><a href="//localhost:1313/tags/google-contacts/">Google Contacts</a></li>
+      <li><a href="//localhost:1313/tags/excel/">Excel</a></li>
+      <li><a href="//localhost:1313/tags/data-cleaning/">Data Cleaning</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-04-openrouter/">
+    <span class="title">« Prev</span>
+    <span>Accessing Hundreds of AI Models with One API Key: An OpenRouter Guide</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-04-tplink54/">
+    <span class="title">Next »</span>
+    <span>Bridging the Gap: Extending a Static IP Office Network with a TP-Link C54</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

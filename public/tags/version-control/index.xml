@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Version-Control on Technical Journal</title>
+    <link>//localhost:1313/tags/version-control/</link>
+    <description>Recent content in Version-Control on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 08:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/version-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development</title>
+      <link>//localhost:1313/posts/2026-08-05-git2/</link>
+      <pubDate>Wed, 05 Aug 2026 08:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-git2/</guid>
+      <description>&lt;h1 id=&#34;git--github-complete-beginner-to-advanced-guide-for-modern-development&#34;&gt;Git &amp;amp; GitHub: Complete Beginner to Advanced Guide for Modern Development&lt;/h1&gt;
+&lt;p&gt;Git is the most widely used version control system in the world. Whether you&amp;rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.&lt;/p&gt;
+&lt;p&gt;Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.&lt;/p&gt;
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Git from scratch and build habits used by professional software teams.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

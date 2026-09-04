@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ntpdate on Technical Journal</title>
+    <link>//localhost:1313/tags/ntpdate/</link>
+    <description>Recent content in Ntpdate on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/ntpdate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting Linux Mint Wi-Fi Drops: From Hardware Drivers to Automated NTP Time Sync</title>
+      <link>//localhost:1313/posts/2026-08-04-mint-wifi/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-mint-wifi/</guid>
+      <description>&lt;h1 id=&#34;troubleshooting-linux-mint-wi-fi-drops-from-hardware-drivers-to-automated-ntp-time-sync&#34;&gt;Troubleshooting Linux Mint Wi-Fi Drops: From Hardware Drivers to Automated NTP Time Sync&lt;/h1&gt;
+&lt;p&gt;Experiencing random Wi-Fi disconnections on Linux Mint—where the network suddenly drops and all available Wi-Fi access points disappear from the menu—is a surprisingly common frustration.&lt;/p&gt;
+&lt;p&gt;While this issue is often caused by aggressive driver power management or missing proprietary modules, another common underlying culprit is &lt;strong&gt;system clock drift&lt;/strong&gt;. When your local system clock drifts out of alignment with remote authentication servers, security handshakes silently fail, dropping your wireless connection.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

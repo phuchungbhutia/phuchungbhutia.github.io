@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Encryption on Technical Journal</title>
+    <link>//localhost:1313/tags/encryption/</link>
+    <description>Recent content in Encryption on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/encryption/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Essential Linux Mint Guides: Unlocking Encrypted Drives &amp; Enabling Edge Copilot</title>
+      <link>//localhost:1313/posts/2026-08-04-ssd-mint/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-ssd-mint/</guid>
+      <description>&lt;p&gt;Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&amp;rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;guide-1-how-to-open-an-encrypted-ssd-in-linux-mint&#34;&gt;Guide 1: How to Open an Encrypted SSD in Linux Mint&lt;/h2&gt;
+&lt;p&gt;Linux Mint relies on &lt;strong&gt;LUKS (Linux Unified Key Setup)&lt;/strong&gt; as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

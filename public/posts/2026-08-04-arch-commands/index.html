@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide | Technical Journal</title>
+<meta name="keywords" content="Manjaro, Arch Linux, Pacman, NTFS, Troubleshooting, XFCE, Chkdsk">
+<meta name="description" content="Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.
+Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.
+
+1. Pacman Essentials on Arch Linux
+pacman is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-04-arch-commands/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-arch-commands/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-arch-commands/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide">
+  <meta property="og:description" content="Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.
+Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.
+1. Pacman Essentials on Arch Linux pacman is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:tag" content="Manjaro">
+    <meta property="article:tag" content="Arch Linux">
+    <meta property="article:tag" content="Pacman">
+    <meta property="article:tag" content="Ntfs">
+    <meta property="article:tag" content="Troubleshooting">
+    <meta property="article:tag" content="XFCE">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide">
+  <meta name="twitter:description" content="Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.
+Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.
+1. Pacman Essentials on Arch Linux pacman is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide",
+      "item": "//localhost:1313/posts/2026-08-04-arch-commands/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide",
+  "name": "Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide",
+  "description": "Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.\nHere is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.\n1. Pacman Essentials on Arch Linux pacman is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.\n",
+  "keywords": [
+    "Manjaro", "Arch Linux", "Pacman", "NTFS", "Troubleshooting", "XFCE", "Chkdsk"
+  ],
+  "articleBody": "Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.\nHere is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.\n1. Pacman Essentials on Arch Linux pacman is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.\nSystem Updates: Sync repository databases and upgrade all installed packages: sudo pacman -Syu\nInstalling \u0026 Removing Packages:\nInstall a specific package: sudo pacman -S package_name\nRemove a package: sudo pacman -R package_name\nRemove a package and its unused dependencies: sudo pacman -Rs package_name\nRemove a package, its configuration files, and unused dependencies: sudo pacman -Rns package_name\nSearching \u0026 Maintenance:\nSearch remote repositories: pacman -Ss keyword\nSearch locally installed packages: pacman -Qs keyword\nClean cached package files to free disk space: sudo pacman -Sc\n2. Resolving CachyOS Offline \u0026 Online Installation Issues CachyOS relies heavily on an active internet connection to pull optimized, up-to-date packages during installation.\nWorking Around Internet Dropping Toggle Interfaces: Re-enable Wi-Fi using the tray icon or plug in an Ethernet cable. USB Tethering: Connect your smartphone via USB, open your phone’s settings, and enable USB Tethering. Linux detects this as a standard wired connection automatically. Terminal Utility: Use the built-in text interface: sudo nmtui Offline Mode: If no connection is possible, select CachyOS (Offline) from the boot menu to install the base desktop environment from the USB drive. 3. Manjaro Administration: Pamac, Printers, and XFCE Tweaks Manjaro builds on Arch but adds dedicated tools like pamac and mhwd.\nPackage \u0026 Hardware Management Update System: pamac upgrade Install/Remove: pamac install package_name / pamac remove package_name AUR Updates: pamac upgrade -a Kernel Management: Check installed kernels with mhwd-kernel -li or install a new one via sudo mhwd-kernel -i linux61. HP LaserJet P1108 Printer Setup HP printers like the P1108 require a proprietary plugin along with the HPLIP suite:\nInstall dependencies: pamac install hplip base-devel Configure printer and download firmware: sudo hp-setup -i Enable print queue service: sudo systemctl enable --now cups.service Add user to printing group: sudo gpasswd -a $USER lp XFCE Desktop Performance \u0026 NetSpeed Tweaks Fix Tearing/Lag: Go to Settings \u003e Window Manager Tweaks \u003e Compositor and uncheck Enable display compositing. Modern Taskbar: Install xfce4-docklike-plugin or switch to the Whisker Menu. Network Speed Panel Monitor: Install the plugin: pamac install xfce4-netload-plugin Right-click panel \u003e Panel \u003e Add New Items \u003e Network Monitor. In properties, set your active interface name (found via ip link, e.g., enp3s0 or wlan0). 4. Hardware Failures: Dead CMOS Battery, System Clock, and Power Cuts Older PCs face unique issues when power cuts strike, especially if the motherboards have dead CMOS batteries (CR2032).\nThe Root Cause A dead CMOS battery resets the BIOS hardware clock (RTC) on power loss. When Linux boots with a date set to 1970 or 2000, SSL connections fail, package managers crash, and file systems lock up due to invalid timestamps.\nFixing System Time \u0026 Syncing Set the timezone (e.g., IST): sudo timedatectl set-timezone Asia/Kolkata Force manual date setting: sudo timedatectl set-time \"2026-08-04 18:15:00\" Enable Network Time Protocol (NTP): sudo systemctl restart systemd-timesyncd sudo timedatectl set-ntp true Write correct time to BIOS hardware clock: sudo hwclock --systohc For custom NTP servers (like NIC networks in India): Edit /etc/systemd/timesyncd.conf and set NTP=samay1.nic.in samay2.nic.in in.pool.ntp.org.\n5. Repairing Corrupted NTFS Partitions in Linux When power cuts occur while Windows or Linux is accessing an NTFS drive, the partition gets marked as “dirty” or corrupts its superblock, throwing errors like Failed to mount \"285 GB Volume\".\nStep-by-Step NTFS Recovery Clear Dirty Bit via Linux: Install ntfs-3g and run ntfsfix: sudo pacman -S ntfs-3g sudo ntfsfix -d /dev/sda4 Force Mount (Read-Only Recovery): If file systems remain locked, bypass hibernation checks to save your data: sudo mkdir -p /mnt/recovery sudo mount -t ntfs-3g -o ro,remove_hiberfile /dev/sda4 /mnt/recovery Check Hard Drive Health: If ntfsfix fails, check if the physical disk has bad sectors using smartmontools: sudo pacman -S smartmontools sudo smartctl -H /dev/sda sudo smartctl -A /dev/sda (Pay close attention to Reallocated_Sector_Ct and Current_Pending_Sector values). 6. Running chkdsk Using a Windows 11 ISO and Ventoy When Linux tools cannot rebuild damaged NTFS metadata, Windows’ native chkdsk utility is required.\nRepair Process Boot into your Ventoy USB formatted in MBR mode (for older BIOS compatibility). Select the Windows 11 ISO. On the setup screen, press Shift + F10 to open the Command Prompt. Identify your partition drive letter: diskpart list volume exit Run the repair command (replace X: with your drive letter): chkdsk X: /f /r Reboot back into Linux, reset your system clock, and mount your repaired partition. Final Recommendation For older desktop hardware prone to power cuts:\nReplace the CR2032 CMOS battery. Use a UPS to prevent sudden power loss. Format non-Windows storage drives to Ext4, which utilizes modern journaling to survive sudden power outages far better than legacy NTFS partitions. ",
+  "wordCount" : "846",
+  "inLanguage": "en",
+  "datePublished": "2026-08-04T00:00:00Z",
+  "dateModified": "2026-08-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-04-arch-commands/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#1-pacman-essentials-on-arch-linux" aria-label="1. Pacman Essentials on Arch Linux">1. Pacman Essentials on Arch Linux</a></li>
+            <li>
+                <a href="#2-resolving-cachyos-offline--online-installation-issues" aria-label="2. Resolving CachyOS Offline &amp; Online Installation Issues">2. Resolving CachyOS Offline &amp; Online Installation Issues</a><ul>
+                    
+            <li>
+                <a href="#working-around-internet-dropping" aria-label="Working Around Internet Dropping">Working Around Internet Dropping</a></li></ul>
+            </li>
+            <li>
+                <a href="#3-manjaro-administration-pamac-printers-and-xfce-tweaks" aria-label="3. Manjaro Administration: Pamac, Printers, and XFCE Tweaks">3. Manjaro Administration: Pamac, Printers, and XFCE Tweaks</a><ul>
+                    
+            <li>
+                <a href="#package--hardware-management" aria-label="Package &amp; Hardware Management">Package &amp; Hardware Management</a></li>
+            <li>
+                <a href="#hp-laserjet-p1108-printer-setup" aria-label="HP LaserJet P1108 Printer Setup">HP LaserJet P1108 Printer Setup</a></li>
+            <li>
+                <a href="#xfce-desktop-performance--netspeed-tweaks" aria-label="XFCE Desktop Performance &amp; NetSpeed Tweaks">XFCE Desktop Performance &amp; NetSpeed Tweaks</a></li></ul>
+            </li>
+            <li>
+                <a href="#4-hardware-failures-dead-cmos-battery-system-clock-and-power-cuts" aria-label="4. Hardware Failures: Dead CMOS Battery, System Clock, and Power Cuts">4. Hardware Failures: Dead CMOS Battery, System Clock, and Power Cuts</a><ul>
+                    
+            <li>
+                <a href="#the-root-cause" aria-label="The Root Cause">The Root Cause</a></li>
+            <li>
+                <a href="#fixing-system-time--syncing" aria-label="Fixing System Time &amp; Syncing">Fixing System Time &amp; Syncing</a></li></ul>
+            </li>
+            <li>
+                <a href="#5-repairing-corrupted-ntfs-partitions-in-linux" aria-label="5. Repairing Corrupted NTFS Partitions in Linux">5. Repairing Corrupted NTFS Partitions in Linux</a><ul>
+                    
+            <li>
+                <a href="#step-by-step-ntfs-recovery" aria-label="Step-by-Step NTFS Recovery">Step-by-Step NTFS Recovery</a></li></ul>
+            </li>
+            <li>
+                <a href="#6-running-chkdsk-using-a-windows-11-iso-and-ventoy" aria-label="6. Running chkdsk Using a Windows 11 ISO and Ventoy">6. Running chkdsk Using a Windows 11 ISO and Ventoy</a><ul>
+                    
+            <li>
+                <a href="#repair-process" aria-label="Repair Process">Repair Process</a></li>
+            <li>
+                <a href="#final-recommendation" aria-label="Final Recommendation">Final Recommendation</a>
+            </li>
+        </ul>
+        </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.</p>
+<p>Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.</p>
+<hr>
+<h2 id="1-pacman-essentials-on-arch-linux">1. Pacman Essentials on Arch Linux<a hidden class="anchor" aria-hidden="true" href="#1-pacman-essentials-on-arch-linux">#</a></h2>
+<p><code>pacman</code> is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.</p>
+<ul>
+<li>
+<p><strong>System Updates:</strong>
+Sync repository databases and upgrade all installed packages:
+<code>sudo pacman -Syu</code></p>
+</li>
+<li>
+<p><strong>Installing &amp; Removing Packages:</strong></p>
+</li>
+<li>
+<p>Install a specific package: <code>sudo pacman -S package_name</code></p>
+</li>
+<li>
+<p>Remove a package: <code>sudo pacman -R package_name</code></p>
+</li>
+<li>
+<p>Remove a package and its unused dependencies: <code>sudo pacman -Rs package_name</code></p>
+</li>
+<li>
+<p>Remove a package, its configuration files, and unused dependencies: <code>sudo pacman -Rns package_name</code></p>
+</li>
+<li>
+<p><strong>Searching &amp; Maintenance:</strong></p>
+</li>
+<li>
+<p>Search remote repositories: <code>pacman -Ss keyword</code></p>
+</li>
+<li>
+<p>Search locally installed packages: <code>pacman -Qs keyword</code></p>
+</li>
+<li>
+<p>Clean cached package files to free disk space: <code>sudo pacman -Sc</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="2-resolving-cachyos-offline--online-installation-issues">2. Resolving CachyOS Offline &amp; Online Installation Issues<a hidden class="anchor" aria-hidden="true" href="#2-resolving-cachyos-offline--online-installation-issues">#</a></h2>
+<p>CachyOS relies heavily on an active internet connection to pull optimized, up-to-date packages during installation.</p>
+<h3 id="working-around-internet-dropping">Working Around Internet Dropping<a hidden class="anchor" aria-hidden="true" href="#working-around-internet-dropping">#</a></h3>
+<ul>
+<li><strong>Toggle Interfaces:</strong> Re-enable Wi-Fi using the tray icon or plug in an Ethernet cable.</li>
+<li><strong>USB Tethering:</strong> Connect your smartphone via USB, open your phone&rsquo;s settings, and enable <strong>USB Tethering</strong>. Linux detects this as a standard wired connection automatically.</li>
+<li><strong>Terminal Utility:</strong> Use the built-in text interface:
+<code>sudo nmtui</code></li>
+<li><strong>Offline Mode:</strong> If no connection is possible, select <strong>CachyOS (Offline)</strong> from the boot menu to install the base desktop environment from the USB drive.</li>
+</ul>
+<hr>
+<h2 id="3-manjaro-administration-pamac-printers-and-xfce-tweaks">3. Manjaro Administration: Pamac, Printers, and XFCE Tweaks<a hidden class="anchor" aria-hidden="true" href="#3-manjaro-administration-pamac-printers-and-xfce-tweaks">#</a></h2>
+<p>Manjaro builds on Arch but adds dedicated tools like <code>pamac</code> and <code>mhwd</code>.</p>
+<h3 id="package--hardware-management">Package &amp; Hardware Management<a hidden class="anchor" aria-hidden="true" href="#package--hardware-management">#</a></h3>
+<ul>
+<li><strong>Update System:</strong> <code>pamac upgrade</code></li>
+<li><strong>Install/Remove:</strong> <code>pamac install package_name</code> / <code>pamac remove package_name</code></li>
+<li><strong>AUR Updates:</strong> <code>pamac upgrade -a</code></li>
+<li><strong>Kernel Management:</strong> Check installed kernels with <code>mhwd-kernel -li</code> or install a new one via <code>sudo mhwd-kernel -i linux61</code>.</li>
+</ul>
+<h3 id="hp-laserjet-p1108-printer-setup">HP LaserJet P1108 Printer Setup<a hidden class="anchor" aria-hidden="true" href="#hp-laserjet-p1108-printer-setup">#</a></h3>
+<p>HP printers like the P1108 require a proprietary plugin along with the HPLIP suite:</p>
+<ol>
+<li>Install dependencies: <code>pamac install hplip base-devel</code></li>
+<li>Configure printer and download firmware: <code>sudo hp-setup -i</code></li>
+<li>Enable print queue service: <code>sudo systemctl enable --now cups.service</code></li>
+<li>Add user to printing group: <code>sudo gpasswd -a $USER lp</code></li>
+</ol>
+<h3 id="xfce-desktop-performance--netspeed-tweaks">XFCE Desktop Performance &amp; NetSpeed Tweaks<a hidden class="anchor" aria-hidden="true" href="#xfce-desktop-performance--netspeed-tweaks">#</a></h3>
+<ul>
+<li><strong>Fix Tearing/Lag:</strong> Go to <strong>Settings &gt; Window Manager Tweaks &gt; Compositor</strong> and uncheck <strong>Enable display compositing</strong>.</li>
+<li><strong>Modern Taskbar:</strong> Install <code>xfce4-docklike-plugin</code> or switch to the <strong>Whisker Menu</strong>.</li>
+<li><strong>Network Speed Panel Monitor:</strong></li>
+</ul>
+<ol>
+<li>Install the plugin: <code>pamac install xfce4-netload-plugin</code></li>
+<li>Right-click panel &gt; <strong>Panel &gt; Add New Items &gt; Network Monitor</strong>.</li>
+<li>In properties, set your active interface name (found via <code>ip link</code>, e.g., <code>enp3s0</code> or <code>wlan0</code>).</li>
+</ol>
+<hr>
+<h2 id="4-hardware-failures-dead-cmos-battery-system-clock-and-power-cuts">4. Hardware Failures: Dead CMOS Battery, System Clock, and Power Cuts<a hidden class="anchor" aria-hidden="true" href="#4-hardware-failures-dead-cmos-battery-system-clock-and-power-cuts">#</a></h2>
+<p>Older PCs face unique issues when power cuts strike, especially if the motherboards have dead CMOS batteries (CR2032).</p>
+<h3 id="the-root-cause">The Root Cause<a hidden class="anchor" aria-hidden="true" href="#the-root-cause">#</a></h3>
+<p>A dead CMOS battery resets the BIOS hardware clock (RTC) on power loss. When Linux boots with a date set to 1970 or 2000, <strong>SSL connections fail</strong>, package managers crash, and file systems lock up due to invalid timestamps.</p>
+<h3 id="fixing-system-time--syncing">Fixing System Time &amp; Syncing<a hidden class="anchor" aria-hidden="true" href="#fixing-system-time--syncing">#</a></h3>
+<ol>
+<li>Set the timezone (e.g., IST):
+<code>sudo timedatectl set-timezone Asia/Kolkata</code></li>
+<li>Force manual date setting:
+<code>sudo timedatectl set-time &quot;2026-08-04 18:15:00&quot;</code></li>
+<li>Enable Network Time Protocol (NTP):
+<code>sudo systemctl restart systemd-timesyncd</code>
+<code>sudo timedatectl set-ntp true</code></li>
+<li>Write correct time to BIOS hardware clock:
+<code>sudo hwclock --systohc</code></li>
+</ol>
+<p>For custom NTP servers (like NIC networks in India):
+Edit <code>/etc/systemd/timesyncd.conf</code> and set <code>NTP=samay1.nic.in samay2.nic.in in.pool.ntp.org</code>.</p>
+<hr>
+<h2 id="5-repairing-corrupted-ntfs-partitions-in-linux">5. Repairing Corrupted NTFS Partitions in Linux<a hidden class="anchor" aria-hidden="true" href="#5-repairing-corrupted-ntfs-partitions-in-linux">#</a></h2>
+<p>When power cuts occur while Windows or Linux is accessing an NTFS drive, the partition gets marked as &ldquo;dirty&rdquo; or corrupts its superblock, throwing errors like <code>Failed to mount &quot;285 GB Volume&quot;</code>.</p>
+<h3 id="step-by-step-ntfs-recovery">Step-by-Step NTFS Recovery<a hidden class="anchor" aria-hidden="true" href="#step-by-step-ntfs-recovery">#</a></h3>
+<ol>
+<li><strong>Clear Dirty Bit via Linux:</strong>
+Install <code>ntfs-3g</code> and run <code>ntfsfix</code>:
+<code>sudo pacman -S ntfs-3g</code>
+<code>sudo ntfsfix -d /dev/sda4</code></li>
+<li><strong>Force Mount (Read-Only Recovery):</strong>
+If file systems remain locked, bypass hibernation checks to save your data:
+<code>sudo mkdir -p /mnt/recovery</code>
+<code>sudo mount -t ntfs-3g -o ro,remove_hiberfile /dev/sda4 /mnt/recovery</code></li>
+<li><strong>Check Hard Drive Health:</strong>
+If <code>ntfsfix</code> fails, check if the physical disk has bad sectors using <code>smartmontools</code>:
+<code>sudo pacman -S smartmontools</code>
+<code>sudo smartctl -H /dev/sda</code>
+<code>sudo smartctl -A /dev/sda</code>
+<em>(Pay close attention to <strong>Reallocated_Sector_Ct</strong> and <strong>Current_Pending_Sector</strong> values).</em></li>
+</ol>
+<hr>
+<h2 id="6-running-chkdsk-using-a-windows-11-iso-and-ventoy">6. Running <code>chkdsk</code> Using a Windows 11 ISO and Ventoy<a hidden class="anchor" aria-hidden="true" href="#6-running-chkdsk-using-a-windows-11-iso-and-ventoy">#</a></h2>
+<p>When Linux tools cannot rebuild damaged NTFS metadata, Windows&rsquo; native <code>chkdsk</code> utility is required.</p>
+<h3 id="repair-process">Repair Process<a hidden class="anchor" aria-hidden="true" href="#repair-process">#</a></h3>
+<ol>
+<li>Boot into your <strong>Ventoy USB</strong> formatted in <strong>MBR mode</strong> (for older BIOS compatibility).</li>
+<li>Select the <strong>Windows 11 ISO</strong>.</li>
+<li>On the setup screen, press <strong>Shift + F10</strong> to open the Command Prompt.</li>
+<li>Identify your partition drive letter:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>diskpart
+</span></span><span style="display:flex;"><span>list volume
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">exit</span>
+</span></span></code></pre></div><ol start="5">
+<li>Run the repair command (replace <code>X:</code> with your drive letter):
+<code>chkdsk X: /f /r</code></li>
+<li>Reboot back into Linux, reset your system clock, and mount your repaired partition.</li>
+</ol>
+<hr>
+<h3 id="final-recommendation">Final Recommendation<a hidden class="anchor" aria-hidden="true" href="#final-recommendation">#</a></h3>
+<p>For older desktop hardware prone to power cuts:</p>
+<ul>
+<li>Replace the <strong>CR2032 CMOS battery</strong>.</li>
+<li>Use a <strong>UPS</strong> to prevent sudden power loss.</li>
+<li>Format non-Windows storage drives to <strong>Ext4</strong>, which utilizes modern journaling to survive sudden power outages far better than legacy NTFS partitions.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/manjaro/">Manjaro</a></li>
+      <li><a href="//localhost:1313/tags/arch-linux/">Arch Linux</a></li>
+      <li><a href="//localhost:1313/tags/pacman/">Pacman</a></li>
+      <li><a href="//localhost:1313/tags/ntfs/">Ntfs</a></li>
+      <li><a href="//localhost:1313/tags/troubleshooting/">Troubleshooting</a></li>
+      <li><a href="//localhost:1313/tags/xfce/">XFCE</a></li>
+      <li><a href="//localhost:1313/tags/chkdsk/">Chkdsk</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-04-custom-xfce/">
+    <span class="title">« Prev</span>
+    <span>Transforming Linux Mint XFCE into a High-Speed Windows Clone for Older PCs (4GB RAM Optimization Guide)</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-04-efi/">
+    <span class="title">Next »</span>
+    <span>Troubleshooting Linux Boot Failures and Optimizing Linux Mint Performance</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

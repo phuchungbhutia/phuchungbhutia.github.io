@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DevOps on Technical Journal</title>
+    <link>//localhost:1313/categories/devops/</link>
+    <description>Recent content in DevOps on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an Automated, Serverless MLBB Meta Hub on GitHub Pages</title>
+      <link>//localhost:1313/posts/2026-09-04-mlbb/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-mlbb/</guid>
+      <description>&lt;p&gt;Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven&amp;rsquo;t been touched in three patches, finding exact item-by-item interaction logic is a chore.&lt;/p&gt;
+&lt;p&gt;I set out to build an alternative: a clean, deterministic, zero-bloat game database for &lt;em&gt;Mobile Legends: Bang Bang&lt;/em&gt; (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title>
+      <link>//localhost:1313/posts/2026-08-05-github5/</link>
+      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-github5/</guid>
+      <description>&lt;h1 id=&#34;github-actions-complete-cicd-guide-from-beginner-to-production&#34;&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
+&lt;p&gt;Writing code is only one part of software development.&lt;/p&gt;
+&lt;p&gt;Modern software teams automate everything:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building applications&lt;/li&gt;
+&lt;li&gt;Running tests&lt;/li&gt;
+&lt;li&gt;Checking code quality&lt;/li&gt;
+&lt;li&gt;Creating Docker images&lt;/li&gt;
+&lt;li&gt;Publishing releases&lt;/li&gt;
+&lt;li&gt;Deploying applications&lt;/li&gt;
+&lt;li&gt;Sending notifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitHub Actions makes all of this possible without leaving GitHub.&lt;/p&gt;
+&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker: Complete Beginner to Production Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-docker4/</link>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-docker4/</guid>
+      <description>&lt;h1 id=&#34;docker-complete-beginner-to-production-guide&#34;&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
+&lt;p&gt;Docker changed software development by making applications portable and predictable. Instead of saying, &amp;ldquo;It works on my machine,&amp;rdquo; developers can package an application with everything it needs—code, libraries, runtime, and dependencies—into a &lt;strong&gt;container&lt;/strong&gt; that runs consistently anywhere.&lt;/p&gt;
+&lt;p&gt;Docker has become a standard tool for developers, DevOps engineers, cloud engineers, and platform teams.&lt;/p&gt;
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title>
+      <link>//localhost:1313/posts/2026-08-05-python3/</link>
+      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-python3/</guid>
+      <description>&lt;h1 id=&#34;python-for-devops-and-automation-complete-beginner-to-advanced-guide&#34;&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
+&lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
+&lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
+&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development</title>
+      <link>//localhost:1313/posts/2026-08-05-git2/</link>
+      <pubDate>Wed, 05 Aug 2026 08:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-git2/</guid>
+      <description>&lt;h1 id=&#34;git--github-complete-beginner-to-advanced-guide-for-modern-development&#34;&gt;Git &amp;amp; GitHub: Complete Beginner to Advanced Guide for Modern Development&lt;/h1&gt;
+&lt;p&gt;Git is the most widely used version control system in the world. Whether you&amp;rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.&lt;/p&gt;
+&lt;p&gt;Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.&lt;/p&gt;
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Git from scratch and build habits used by professional software teams.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux: The Foundation of Modern DevOps</title>
+      <link>//localhost:1313/posts/2026-08-05-1/</link>
+      <pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-1/</guid>
+      <description>&lt;h1 id=&#34;linux-the-foundation-of-modern-devops&#34;&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
+&lt;p&gt;Linux powers nearly everything on the Internet.&lt;/p&gt;
+&lt;p&gt;Whether you browse a website, stream a movie, deploy an application, or use cloud services, chances are Linux is running somewhere in the background.&lt;/p&gt;
+&lt;p&gt;If you want to become a DevOps Engineer, Cloud Engineer, Site Reliability Engineer (SRE), Platform Engineer, or Backend Developer, Linux is the first skill you should master.&lt;/p&gt;
+&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title>
+      <link>//localhost:1313/posts/2026-08-05-ocr2md/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ocr2md/</guid>
+      <description>&lt;h1 id=&#34;building-ocr2md-a-complete-ocr-to-markdown-platform&#34;&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
+&lt;p&gt;Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.&lt;/p&gt;
+&lt;p&gt;Extracting this information into a structured format is surprisingly difficult.&lt;/p&gt;
+&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GitHub, Vercel, and Netlify: The Ultimate Guide to Modern Web Deployment Workflows</title>
+      <link>//localhost:1313/posts/2026-08-04-web-deployment/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-web-deployment/</guid>
+      <description>&lt;p&gt;Understanding the roles of version control platforms and modern deployment services is fundamental to shipping web applications effectively. While GitHub serves as the primary code repository and source of truth, platforms like Vercel and Netlify act as deployment engines, transforming raw source code into globally distributed production applications.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-high-level-role-comparison&#34;&gt;1. High-Level Role Comparison&lt;/h2&gt;
+&lt;p&gt;Choosing the right hosting platform depends on your stack, scaling requirements, backend dependencies, and developer workflow preference.&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Feature&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;GitHub (Pages)&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Vercel&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Netlify&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Primary Use&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Code hosting, version control, and basic static sites.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Full-stack web applications and Next.js optimization.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Jamstack architectures, static sites, and form-heavy apps.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Ease of Use&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Simple, requiring manual or basic CI workflow setup.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Zero-config deployment with framework auto-detection.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;High developer ergonomics with built-in features.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Backend / Edge&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;No native server-side capabilities.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Deep support for Edge/Serverless functions.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Excellent Serverless support + built-in APIs.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Form &amp;amp; Auth&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;None out of the box.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Integrates via external tools or serverless logic.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Native handling for forms, identity, and split testing.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Target Audience&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Open-source libraries, portfolios, basic HTML/CSS.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Next.js, React, SvelteKit, high-performance apps.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Gatsby, Hugo, Eleventy, Nuxt, multi-purpose frontend.&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-core-platform-profiles&#34;&gt;2. Core Platform Profiles&lt;/h2&gt;
+&lt;h3 id=&#34;github--github-pages&#34;&gt;GitHub &amp;amp; GitHub Pages&lt;/h3&gt;
+&lt;p&gt;GitHub is the industry standard for git-based version control, repository management, and team collaboration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title>
+      <link>//localhost:1313/posts/2026-08-04-dns-rsync/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-dns-rsync/</guid>
+      <description>&lt;h1 id=&#34;mastering-linux-administration-secure-dns-setup--automated-rsync-backups&#34;&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
+&lt;p&gt;Managing a Linux workstation effectively requires two critical capabilities: safeguarding network traffic and preserving essential local data. In this guide, we explore how to reconfigure DNS routing on Linux Mint using &lt;code&gt;systemd-resolved&lt;/code&gt;, wrap those queries in encrypted &lt;strong&gt;DNS over TLS (DoT)&lt;/strong&gt;, and structure a bulletproof Bash automated backup workflow with &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;part-1-configuring-permanent-static-dns-on-linux-mint&#34;&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
+&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title>
+      <link>//localhost:1313/posts/2026-08-04-adb/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-adb/</guid>
+      <description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
+&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-python-windows/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-python-windows/</guid>
+      <description>&lt;p&gt;Setting up Python tools on Windows using the Microsoft Store distribution can sometimes feel like navigating a minefield of system path warnings, ghost directories, permission locks, and version conflicts.&lt;/p&gt;
+&lt;p&gt;This guide compiles a step-by-step resolution process for real-world terminal errors encounterable when managing CLI tools like &lt;code&gt;weasyprint&lt;/code&gt; and &lt;code&gt;marker&lt;/code&gt;, fixing corrupted package installs, and updating dependencies without getting stuck.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-fixing-executable-warnings-adding-user-packages-to-the-windows-path&#34;&gt;1. Fixing Executable Warnings: Adding User Packages to the Windows PATH&lt;/h2&gt;
+&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;When installing CLI packages via &lt;code&gt;pip&lt;/code&gt; on Windows, you might encounter a warning indicating that the installed binary resides in a location not registered in your system &lt;code&gt;PATH&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Decluttering on Technical Journal</title>
+    <link>//localhost:1313/categories/decluttering/</link>
+    <description>Recent content in Decluttering on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/decluttering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The 80/20 Closet Reset: How to Master KonMari and Build a Wardrobe That Actually Sparks Joy</title>
+      <link>//localhost:1313/posts/2026-08-04-konmari/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-konmari/</guid>
+      <description>&lt;p&gt;Have you ever opened a closet packed to capacity with clothes, stared at the wall of fabric for ten minutes, and declared with total sincerity, &lt;em&gt;&amp;ldquo;I have absolutely nothing to wear&amp;rdquo;&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;You are far from alone. Most of us live in a state of quiet fashion overwhelm. We cram our racks with impulse buys, past-version-of-me clothes, uncomfortable formalwear, and &amp;ldquo;someday&amp;rdquo; workout gear—yet week after week, we default to the same hand-full of reliable tops and comfortable pants.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

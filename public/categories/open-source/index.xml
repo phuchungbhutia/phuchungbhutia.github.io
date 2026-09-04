@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Open Source on Technical Journal</title>
+    <link>//localhost:1313/categories/open-source/</link>
+    <description>Recent content in Open Source on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title>
+      <link>//localhost:1313/posts/2026-08-05-ocr2md/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ocr2md/</guid>
+      <description>&lt;h1 id=&#34;building-ocr2md-a-complete-ocr-to-markdown-platform&#34;&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
+&lt;p&gt;Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.&lt;/p&gt;
+&lt;p&gt;Extracting this information into a structured format is surprisingly difficult.&lt;/p&gt;
+&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building an Autonomous Mobile &amp; Desktop Document Processing AI Agent with OpenClaw</title>
+      <link>//localhost:1313/posts/2026-08-04-termux-openclaw/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-termux-openclaw/</guid>
+      <description>&lt;p&gt;Setting up a self-hosted AI agent that does more than just chat opens up incredible automation possibilities. By combining an open-source agentic framework with lightweight system utilities, you can turn a low-power phone or a modest desktop into a 24/7 personal document processing hub.&lt;/p&gt;
+&lt;p&gt;This guide walks through configuring &lt;strong&gt;OpenClaw&lt;/strong&gt; (formerly known as Clawdbot) across Android Termux and Linux Mint, setting up messaging channel integrations, running local LLMs, and defining custom Markdown skills to automatically clean, compress, and OCR scanned office documents.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</title>
+      <link>//localhost:1313/posts/2026-08-04-hplip/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-hplip/</guid>
+      <description>&lt;p&gt;Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.&lt;/p&gt;
+&lt;p&gt;This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-managing-hp-hardware-via-hplip-and-cups&#34;&gt;1. Managing HP Hardware via HPLIP and CUPS&lt;/h2&gt;
+&lt;p&gt;Linux Mint uses the &lt;strong&gt;Common Unix Printing System (CUPS)&lt;/strong&gt; to handle print queues and job spools, alongside &lt;strong&gt;HPLIP (HP Linux Imaging and Printing)&lt;/strong&gt; for HP device communication, driver support, and status monitoring.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</title>
+      <link>//localhost:1313/posts/2026-08-04-linux-mint/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-linux-mint/</guid>
+      <description>&lt;p&gt;Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.&lt;/p&gt;
+&lt;p&gt;This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-managing-hp-hardware-via-hplip-and-cups&#34;&gt;1. Managing HP Hardware via HPLIP and CUPS&lt;/h2&gt;
+&lt;p&gt;Linux Mint uses the &lt;strong&gt;Common Unix Printing System (CUPS)&lt;/strong&gt; to handle print queues and job spools, alongside &lt;strong&gt;HPLIP (HP Linux Imaging and Printing)&lt;/strong&gt; for HP device communication, driver support, and status monitoring.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering PDF to Markdown on Linux Mint: A Step-by-Step Guide with Marker &amp; MarkItDown</title>
+      <link>//localhost:1313/posts/2026-08-04-marker-pdf/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-marker-pdf/</guid>
+      <description>&lt;h1 id=&#34;mastering-pdf-to-markdown-on-linux-mint-a-step-by-step-guide-with-marker--markitdown&#34;&gt;Mastering PDF to Markdown on Linux Mint: A Step-by-Step Guide with Marker &amp;amp; MarkItDown&lt;/h1&gt;
+&lt;p&gt;Converting document formats—specifically turning static, layout-heavy PDFs into clean, versatile Markdown files—is a cornerstone workflow for developers, researchers, technical writers, and knowledge management enthusiasts. Whether you are building a Retrieval-Augmented Generation (RAG) pipeline for LLMs, migrating documentation, or organizing your personal knowledge base in tools like Obsidian or Logseq, high-quality document conversion is vital.&lt;/p&gt;
+&lt;p&gt;In this comprehensive guide, we will walk through setting up two of the most powerful open-source PDF-to-Markdown tools—&lt;strong&gt;Marker&lt;/strong&gt; and &lt;strong&gt;Microsoft’s MarkItDown&lt;/strong&gt;—on &lt;strong&gt;Linux Mint&lt;/strong&gt; (and other Ubuntu/Debian-based Linux distributions). We will cover fundamental Linux package management, navigating Python’s modern PEP 668 safety constraints, system-level dependencies like FFmpeg, and when to choose each tool based on your specific document processing needs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Guide to Obtainium: Managing Android App Repositories, JSON Imports, and Open-Source Ecosystems</title>
+      <link>//localhost:1313/posts/2026-08-04-obtainium/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-obtainium/</guid>
+      <description>&lt;p&gt;Getting software directly from the developer source used to be a hassle on Android. Sideloading APKs meant manually checking GitHub releases, downloading binaries, and installing updates one by one. Obtainium completely changed that equation. It bypasses third-party app stores, letting you track and download releases straight from GitHub, GitLab, Codeberg, and custom sources.&lt;/p&gt;
+&lt;p&gt;If you are trying to clean up your device, ditch Google Play dependencies, or maintain open-source software like ReVanced, mastering Obtainium&amp;rsquo;s import and configuration setup is the fastest way to get your app library running seamlessly.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

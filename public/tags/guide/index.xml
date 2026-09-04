@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Guide on Technical Journal</title>
+    <link>//localhost:1313/tags/guide/</link>
+    <description>Recent content in Guide on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 02:57:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Energy Flow Meditation: A Simple Visualization Guide</title>
+      <link>//localhost:1313/posts/2026-08-05-energy-meditation/</link>
+      <pubDate>Wed, 05 Aug 2026 02:57:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-energy-meditation/</guid>
+      <description>&lt;h1 id=&#34;understanding-energy-flow-meditation-a-simple-visualization-guide&#34;&gt;Understanding Energy Flow Meditation: A Simple Visualization Guide&lt;/h1&gt;
+&lt;p&gt;Meditation becomes much easier when the mind has something simple to focus on. One of the oldest techniques found in many meditation traditions is visualizing the movement of light or energy through the body.&lt;/p&gt;
+&lt;p&gt;This guide explains a simple energy flow meditation that anyone can practice, regardless of experience. You do not need to follow any particular religion or spiritual tradition. Think of the visualization simply as a mental exercise to improve concentration, relaxation, and body awareness.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-chatting/</link>
+      <pubDate>Wed, 05 Aug 2026 07:56:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-chatting/</guid>
+      <description>&lt;h1 id=&#34;ai-on-whatsapp-and-telegram-complete-guide-to-chatting-with-chatgpt-perplexity-meta-ai-and-more&#34;&gt;AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More&lt;/h1&gt;
+&lt;p&gt;Artificial Intelligence is no longer limited to websites and mobile apps. Many AI assistants can now be accessed directly from popular messaging platforms like &lt;strong&gt;WhatsApp&lt;/strong&gt; and &lt;strong&gt;Telegram&lt;/strong&gt;, allowing users to ask questions, generate content, translate languages, summarize documents, write code, and even create images without installing dedicated applications.&lt;/p&gt;
+&lt;p&gt;This guide provides an overview of the AI assistants currently available on WhatsApp and Telegram, how to access them, what features they offer, and what limitations to expect.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

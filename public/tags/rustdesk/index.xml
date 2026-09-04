@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rustdesk on Technical Journal</title>
+    <link>//localhost:1313/tags/rustdesk/</link>
+    <description>Recent content in Rustdesk on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/rustdesk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title>
+      <link>//localhost:1313/posts/2026-04-08-manjaro/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-04-08-manjaro/</guid>
+      <description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
+&lt;p&gt;This comprehensive guide consolidates troubleshooting steps and optimization workflows into an end-to-end administration manual for modern Linux environments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-mastering-ntfs-partition-mounts-in-archmanjaro&#34;&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
+&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android</title>
+      <link>//localhost:1313/posts/2026-08-04-remote-desktop/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-remote-desktop/</guid>
+      <description>&lt;h1 id=&#34;the-ultimate-guide-how-to-set-up-free-remote-desktop-for-windows-11-and-android&#34;&gt;The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android&lt;/h1&gt;
+&lt;p&gt;Whether you need to grab a forgotten file, run heavy desktop software from your couch, or help a family member troubleshoot their PC, having remote access to your Windows 11 machine from your Android phone is an absolute game-changer.&lt;/p&gt;
+&lt;p&gt;Gone are the days when you had to pay hefty subscription fees for basic remote access. Today, there are several powerful, completely free tools that bridge the gap between your mobile device and your PC.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

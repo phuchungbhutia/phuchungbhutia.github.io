@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Marker on Technical Journal</title>
+    <link>//localhost:1313/tags/marker/</link>
+    <description>Recent content in Marker on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/marker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools</title>
+      <link>//localhost:1313/posts/2026-08-04-pdf-conversion/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-pdf-conversion/</guid>
+      <description>&lt;p&gt;PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.&lt;/p&gt;
+&lt;p&gt;The two primary formats for converting PDFs are &lt;strong&gt;Markdown&lt;/strong&gt; and &lt;strong&gt;HTML&lt;/strong&gt;. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

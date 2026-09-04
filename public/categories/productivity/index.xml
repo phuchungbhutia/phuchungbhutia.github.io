@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Productivity on Technical Journal</title>
+    <link>//localhost:1313/categories/productivity/</link>
+    <description>Recent content in Productivity on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV</title>
+      <link>//localhost:1313/posts/2026-08-04-excel-google-contacts/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-excel-google-contacts/</guid>
+      <description>&lt;p&gt;Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.&lt;/p&gt;
+&lt;p&gt;When preparing contact directories for seamless mobile sync via &lt;strong&gt;Google Contacts&lt;/strong&gt;, standard raw exports won&amp;rsquo;t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;the-problem-raw-spreadsheets-vs-google-contacts-schema&#34;&gt;The Problem: Raw Spreadsheets vs. Google Contacts Schema&lt;/h3&gt;
+&lt;p&gt;Standard office documents like &lt;code&gt;ADs(P).xlsx&lt;/code&gt; or &lt;code&gt;PAAs.xlsx&lt;/code&gt; usually organize information visually for humans rather than programmatically for software. They often feature:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync</title>
+      <link>//localhost:1313/posts/2026-08-04-bookmark-sync/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-bookmark-sync/</guid>
+      <description>&lt;p&gt;Keeping bookmarks synchronized across multiple browsers, operating systems, and mobile devices remains one of the most frustrating pain points of modern web browsing. If you use Chrome at work, Firefox at home, and Safari or Android browser on the go, relying on a single browser&amp;rsquo;s native sync engine simply falls short.&lt;/p&gt;
+&lt;p&gt;While historical tools like Xmarks defined the early bookmark management landscape, today’s ecosystem offers robust, privacy-focused, and highly configurable alternatives. In this guide, we analyze four major bookmark synchronization extensions—&lt;strong&gt;Floccus&lt;/strong&gt;, &lt;strong&gt;BookmarkHub&lt;/strong&gt;, &lt;strong&gt;MarkSyncr&lt;/strong&gt;, and &lt;strong&gt;EverSync&lt;/strong&gt;—to help you determine which tool fits your daily workflow best.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync</title>
+      <link>//localhost:1313/posts/2026-08-04-books/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-books/</guid>
+      <description>&lt;p&gt;Keeping bookmarks synchronized across multiple browsers, operating systems, and mobile devices remains one of the most frustrating pain points of modern web browsing. If you use Chrome at work, Firefox at home, and Safari or Android browser on the go, relying on a single browser&amp;rsquo;s native sync engine simply falls short.&lt;/p&gt;
+&lt;p&gt;While historical tools like Xmarks defined the early bookmark management landscape, today’s ecosystem offers robust, privacy-focused, and highly configurable alternatives. In this guide, we analyze four major bookmark synchronization extensions—&lt;strong&gt;Floccus&lt;/strong&gt;, &lt;strong&gt;BookmarkHub&lt;/strong&gt;, &lt;strong&gt;MarkSyncr&lt;/strong&gt;, and &lt;strong&gt;EverSync&lt;/strong&gt;—to help you determine which tool fits your daily workflow best.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Fix Firefox Saving PDFs Instead of Printing in Google Sheets</title>
+      <link>//localhost:1313/posts/2026-08-04-pdf-gsheets/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-pdf-gsheets/</guid>
+      <description>&lt;p&gt;If you frequently use Google Sheets inside Mozilla Firefox, you may have run into a frustrating issue: when you hit the &amp;ldquo;Print&amp;rdquo; button, Firefox downloads or prompts you to save a PDF file instead of sending the document straight to your physical printer.&lt;/p&gt;
+&lt;p&gt;While this feels like a glitch, it is actually expected behavior based on how Google Sheets interacts with different browsers. Fortunately, there are several straightforward ways to fix this workflow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</title>
+      <link>//localhost:1313/posts/2026-08-04-gdocs/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-gdocs/</guid>
+      <description>&lt;h1 id=&#34;mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script&#34;&gt;Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script&lt;/h1&gt;
+&lt;p&gt;When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Notion vs. Obsidian for Audit Reports: A Complete Hands-On Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-notion-obsidian/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-notion-obsidian/</guid>
+      <description>&lt;p&gt;Choosing the right tool to record audit findings, attach evidence photos, and export clean, client-ready reports can make or break your inspection workflow. While both Notion and Obsidian excel as modern note-taking platforms, their core architectural differences lead to distinctly different report-building experiences.&lt;/p&gt;
+&lt;p&gt;Here is an in-depth breakdown comparing Notion and Obsidian for audit reporting, followed by step-by-step guides for executing audit workflows on both platforms.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-notion-vs-obsidian-head-to-head-comparison&#34;&gt;1. Notion vs. Obsidian: Head-to-Head Comparison&lt;/h2&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Feature&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Notion&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Obsidian&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Photo Layout &amp;amp; Drag-and-Drop&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Native multi-column drag-and-drop, inline captions, and quick visual resizing&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Attachment-based (&lt;code&gt;![[image.jpg]]&lt;/code&gt;). Resizing requires syntax like &lt;code&gt;|300&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Data Structuring&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Relational databases with custom properties (Status, Severity, Date, Location)&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;YAML/Properties header block, queryable via community plugins (e.g., Dataview)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Templates&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;One-click page and database templates with pre-configured headers&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Built-in Templates plugin or Templater community plugin&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;PDF Exporting&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Clean native engine with options for margin control and page sizing (A4, Letter)&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Native PDF export; highly customizable via CSS snippets&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Data Ownership &amp;amp; Storage&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Cloud-based (requires internet for full feature set)&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Local-first Markdown files (works 100% offline)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mobile Syncing&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Seamless cloud sync via official apps across iOS, Android, and Desktop&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Local folder sync or Obsidian Sync / third-party git/cloud sync&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-step-by-step-guide-writing-audit-reports-in-notion&#34;&gt;2. Step-by-Step Guide: Writing Audit Reports in Notion&lt;/h2&gt;
+&lt;p&gt;Notion&amp;rsquo;s block-based architecture and relational databases make it ideal for teams needing structured tracking and visual visual evidence layouts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Definitive Guide to Signing PDFs on Every Device</title>
+      <link>//localhost:1313/posts/2026-08-04-sign-pdf/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-sign-pdf/</guid>
+      <description>&lt;p&gt;Handling physical paperwork is rapidly becoming a relic of the past. Whether you are finalizing a business contract, approving an invoice, or filling out administrative forms, knowing how to add a clean, secure signature to a PDF directly from your device saves time and eliminates unnecessary printing.&lt;/p&gt;
+&lt;p&gt;Here is a comprehensive breakdown of how to sign a PDF document using your preferred operating system or browser without needing expensive enterprise software.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android</title>
+      <link>//localhost:1313/posts/2026-08-04-remote-desktop/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-remote-desktop/</guid>
+      <description>&lt;h1 id=&#34;the-ultimate-guide-how-to-set-up-free-remote-desktop-for-windows-11-and-android&#34;&gt;The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android&lt;/h1&gt;
+&lt;p&gt;Whether you need to grab a forgotten file, run heavy desktop software from your couch, or help a family member troubleshoot their PC, having remote access to your Windows 11 machine from your Android phone is an absolute game-changer.&lt;/p&gt;
+&lt;p&gt;Gone are the days when you had to pay hefty subscription fees for basic remote access. Today, there are several powerful, completely free tools that bridge the gap between your mobile device and your PC.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

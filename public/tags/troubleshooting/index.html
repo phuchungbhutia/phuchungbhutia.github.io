@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Troubleshooting | Technical Journal</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/tags/troubleshooting/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/tags/troubleshooting/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="//localhost:1313/tags/troubleshooting/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/tags/troubleshooting/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Troubleshooting">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Troubleshooting">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/tags/">Tags</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+  <h1>
+    Troubleshooting
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Setting up a documentation portal or department blog using the Jekyll Chirpy theme on GitHub Pages looks effortless on paper. You fork the starter repo, point GitHub Actions to your branch, and watch the site spin up.
+In reality, running a production-grade Chirpy setup with custom CI/CD pipelines quickly runs into a minefield of build-time failures: Ruby Liquid crashes over integer tags, htmlproofer throwing hundreds of false-positive 404s on dynamic taxonomy routes, missing local layout overrides, broken anchor fragment checks, and invisible non-breaking spaces that crash YAML parsers.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-09-04 13:30:00 +0530 IST'>September 4, 2026</span>&nbsp;·&nbsp;<span>9 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook" href="//localhost:1313/posts/2026-09-04-chirpy-github-page/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.
+While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync" href="//localhost:1313/posts/2026-08-04-manjaro-time-sync/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Complete Guide: How to Clean Up Windows Using Command Prompt (CMD)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Over time, any Windows installation accumulates unnecessary junk files, temporary data, corrupted cache, and outdated system updates that can slow down your PC’s performance. While Windows offers various graphical user interface (GUI) tools like Settings and Disk Cleanup, using the Command Prompt (CMD) allows you to perform deep, thorough maintenance quickly and efficiently.
+This detailed guide breaks down the essential CMD tools and commands to reclaim storage space, fix system integrity, and speed up your machine.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Complete Guide: How to Clean Up Windows Using Command Prompt (CMD)" href="//localhost:1313/posts/2026-08-04-cmd/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">How to Fix Firefox Saving PDFs Instead of Printing in Google Sheets
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you frequently use Google Sheets inside Mozilla Firefox, you may have run into a frustrating issue: when you hit the “Print” button, Firefox downloads or prompts you to save a PDF file instead of sending the document straight to your physical printer.
+While this feels like a glitch, it is actually expected behavior based on how Google Sheets interacts with different browsers. Fortunately, there are several straightforward ways to fix this workflow.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to How to Fix Firefox Saving PDFs Instead of Printing in Google Sheets" href="//localhost:1313/posts/2026-08-04-pdf-gsheets/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.
+Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.
+1. Pacman Essentials on Arch Linux pacman is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide" href="//localhost:1313/posts/2026-08-04-arch-commands/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Setting up Python tools on Windows using the Microsoft Store distribution can sometimes feel like navigating a minefield of system path warnings, ghost directories, permission locks, and version conflicts.
+This guide compiles a step-by-step resolution process for real-world terminal errors encounterable when managing CLI tools like weasyprint and marker, fixing corrupted package installs, and updating dependencies without getting stuck.
+1. Fixing Executable Warnings: Adding User Packages to the Windows PATH The Problem When installing CLI packages via pip on Windows, you might encounter a warning indicating that the installed binary resides in a location not registered in your system PATH:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide" href="//localhost:1313/posts/2026-08-04-python-windows/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

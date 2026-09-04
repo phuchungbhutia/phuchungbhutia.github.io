@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm | Technical Journal</title>
+<meta name="keywords" content="Manjaro, Arch Linux, Pandoc, Tesseract, PEP 668, PyCharm, Streamlit, PDF Conversion">
+<meta name="description" content="Converting scanned PDFs into structured formats like Markdown (.md) and Rich Text Format (.rtf) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.
+However, implementing this on an Arch-based Linux distribution like Manjaro presents unique challenges due to Python&rsquo;s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.
+This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, marker-pdf, pandoc, and PyCharm on Manjaro Linux.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-04-pdf2md/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-pdf2md/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-pdf2md/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm">
+  <meta property="og:description" content="Converting scanned PDFs into structured formats like Markdown (.md) and Rich Text Format (.rtf) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.
+However, implementing this on an Arch-based Linux distribution like Manjaro presents unique challenges due to Python’s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.
+This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, marker-pdf, pandoc, and PyCharm on Manjaro Linux.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:tag" content="Manjaro">
+    <meta property="article:tag" content="Arch Linux">
+    <meta property="article:tag" content="Pandoc">
+    <meta property="article:tag" content="Tesseract">
+    <meta property="article:tag" content="PEP 668">
+    <meta property="article:tag" content="PyCharm">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm">
+  <meta name="twitter:description" content="Converting scanned PDFs into structured formats like Markdown (.md) and Rich Text Format (.rtf) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.
+However, implementing this on an Arch-based Linux distribution like Manjaro presents unique challenges due to Python’s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.
+This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, marker-pdf, pandoc, and PyCharm on Manjaro Linux.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm",
+      "item": "//localhost:1313/posts/2026-08-04-pdf2md/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm",
+  "name": "Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm",
+  "description": "Converting scanned PDFs into structured formats like Markdown (.md) and Rich Text Format (.rtf) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.\nHowever, implementing this on an Arch-based Linux distribution like Manjaro presents unique challenges due to Python\u0026rsquo;s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.\nThis blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, marker-pdf, pandoc, and PyCharm on Manjaro Linux.\n",
+  "keywords": [
+    "Manjaro", "Arch Linux", "Pandoc", "Tesseract", "PEP 668", "PyCharm", "Streamlit", "PDF Conversion"
+  ],
+  "articleBody": "Converting scanned PDFs into structured formats like Markdown (.md) and Rich Text Format (.rtf) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.\nHowever, implementing this on an Arch-based Linux distribution like Manjaro presents unique challenges due to Python’s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.\nThis blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, marker-pdf, pandoc, and PyCharm on Manjaro Linux.\n1. System-Level Dependencies \u0026 Setup Before invoking Python, your system needs binary engines for Optical Character Recognition (OCR) and markup document conversion:\nTesseract OCR: Performs text extraction from image layers inside scanned PDFs. Pandoc: Handles document compilation, translating standard GitHub-Flavored Markdown tables directly into native Word Processor RTF tables. Installing Dependencies via Pacman In Manjaro Linux, install both packages and Python’s package manager (pip) using pacman:\nsudo pacman -Syu sudo pacman -S pandoc tesseract python-pip Adding OCR Language Packs By default, Tesseract installs basic English support. To support other languages, install additional language packs from the official repositories:\nsudo pacman -S tesseract-data-spa tesseract-data-deu tesseract-data-fra 2. Navigating Manjaro’s PEP 668 Protection (externally-managed-environment) When attempting to run standard global package commands like pip install marker-pdf pypandoc, modern Arch and Manjaro releases block the action with an error:\nerror: externally-managed-environment × This environment is externally managed Why This Happens Introduced via PEP 668, Linux distributions lock global Python site-packages to prevent pip from overwriting system files managed by pacman.\nWhile passing --break-system-packages allows global installations, the standard solution for development is using isolated Virtual Environments (venv).\nResolving Mount and Shell Path Issues When working on external drives (e.g., /mnt/351095A642490756/), custom Zsh shell paths may prevent source venv/bin/activate from correctly routing the python or pip commands. In such cases, explicitly calling the environment’s binaries ensures reliable execution:\n# Create local virtual environment python -m venv venv # Execute pip explicitly from the environment folder ./venv/bin/pip install pypandoc marker-pdf # Run your application explicitly ./venv/bin/python convert.py 3. Resolving Python 3.14 Compatibility (ModuleNotFoundError: No module named 'cgi') Modern Manjaro updates ship with standard Python versions where legacy libraries like cgi have been removed. If a library dependency like aiohttp relies on cgi, running your script will throw:\nModuleNotFoundError: No module named 'cgi' Resolution Options Install Compatibility Shims: Install the community fallback package in your virtual environment: pip install legacy-cgi Target Python 3.12/3.13 Base Interpreters: Install a legacy interpreter via sudo pacman -S python312 and select /usr/bin/python3.12 as your project base in PyCharm. 4. Complete Python Conversion Script (convert.py) Below is the complete, multi-file conversion script supporting updated marker-pdf interfaces and pypandoc:\nimport os import pypandoc from pathlib import Path from marker.convert import MarkerConverter from marker.logger import configure_logging from marker.models import load_all_models # Configure logging output for OCR status configure_logging() def process_folder(input_folder, output_folder): input_path = Path(input_folder) output_path = Path(output_folder) output_path.mkdir(parents=True, exist_ok=True) # 1. Initialize converter and load layout/OCR deep learning models print(\"Loading OCR and Layout models...\") model_lst = load_all_models() converter = MarkerConverter(model_lst=model_lst) # 2. Collect input PDFs pdf_files = list(input_path.glob(\"*.pdf\")) if not pdf_files: print(f\"No PDF files found in '{input_folder}'\") return print(f\"Found {len(pdf_files)} PDF(s) to process.\\n\") for pdf_file in pdf_files: print(f\"--- Processing: {pdf_file.name} ---\") base_name = pdf_file.stem try: # 3. Extract text, drop margins/footers, and parse table structures rendered = converter.import_pdf(str(pdf_file)) full_text = rendered.markdown # 4. Write pure Markdown file md_filename = output_path / f\"{base_name}.md\" with open(md_filename, \"w\", encoding=\"utf-8\") as f: f.write(full_text) print(f\"Saved Markdown: {md_filename}\") # 5. Convert Markdown structure directly into native Word/RTF cells rtf_filename = output_path / f\"{base_name}.rtf\" pypandoc.convert_file( str(md_filename), 'rtf', format='md', outputfile=str(rtf_filename) ) print(f\"Saved RTF: {rtf_filename}\") except Exception as e: print(f\"❌ Error processing {pdf_file.name}: {str(e)}\") if __name__ == \"__main__\": INPUT_DIR = \"/mnt/351095A642490756/lfa/Home/convert/input_pdfs\" OUTPUT_DIR = \"/mnt/351095A642490756/lfa/Home/convert/converted_docs\" Path(INPUT_DIR).mkdir(exist_ok=True, parents=True) process_folder(INPUT_DIR, OUTPUT_DIR) print(\"\\nProcessing complete!\") 5. Setting Up PyCharm \u0026 Graphical User Interfaces For users seeking an IDE that handles environment management without command-line intervention, PyCharm Community Edition automatically isolates sandboxes and handles external mounts.\nInstalling PyCharm on Manjaro Install PyCharm from the Arch User Repository (AUR) using pamac:\npamac build pycharm-community-edition Adding Web Interfaces (marker_gui and streamlit) To provide a web UI for the conversion script, install streamlit directly into the active PyCharm virtual environment terminal:\n# Inside PyCharm built-in terminal OR via explicit path execution: /home/lfa/PyCharmMiscProject/.venv/bin/pip install streamlit streamlit-ace marker_gui legacy-cgi Launch the interface directly:\n/home/lfa/PyCharmMiscProject/.venv/bin/streamlit run /home/lfa/PyCharmMiscProject/.venv/bin/marker_gui 6. Project Documentation (README.md) # Scanned PDF to Markdown \u0026 RTF Converter An automated document processing pipeline optimized for Arch/Manjaro Linux to convert scanned PDFs into clean Markdown (`.md`) and rich text (`.rtf`). ### Features * **Table Extraction:** Converts tables into GitHub-Flavored Markdown grid structures, compiled natively into word-processor tables via Pandoc. * **Header/Footer Stripping:** Strips page numbers, running titles, and margin noise across page boundaries. * **Heading Preservation:** Retains document outline formatting using appropriate `#` hierarchy. ### Setup \u0026 Usage 1. **Install System Binaries:** ```bash sudo pacman -S pandoc tesseract python-pip Setup Local Python Environment: python -m venv venv ./venv/bin/pip install pypandoc marker-pdf legacy-cgi Run Processing Batch: Place input PDFs inside ./input_pdfs/ and run: ./venv/bin/python convert.py ---\r## Summary of Core Solutions\r| Problem / Error | Underlying Cause | Optimal Solution |\r| :--- | :--- | :--- |\r| `target not found: pycharm-community` | Package resides in AUR, not core Arch repos | Run `pamac build pycharm-community-edition` |\r| `error: externally-managed-environment` | Linux PEP 668 protecting system site-packages | Install within a `venv` or use `./venv/bin/pip` |\r| `ModuleNotFoundError: No module named 'cgi'` | Deprecated standard module removed in recent Python | Run `pip install legacy-cgi` |\r| `ModuleNotFoundError: No module named 'pypandoc'` | Shell executed system Python instead of environment | Invoke directly via `./venv/bin/python script.py` | ",
+  "wordCount" : "939",
+  "inLanguage": "en",
+  "datePublished": "2026-08-04T00:00:00Z",
+  "dateModified": "2026-08-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-04-pdf2md/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#1-system-level-dependencies--setup" aria-label="1. System-Level Dependencies &amp; Setup">1. System-Level Dependencies &amp; Setup</a><ul>
+                    
+            <li>
+                <a href="#installing-dependencies-via-pacman" aria-label="Installing Dependencies via Pacman">Installing Dependencies via Pacman</a></li>
+            <li>
+                <a href="#adding-ocr-language-packs" aria-label="Adding OCR Language Packs">Adding OCR Language Packs</a></li></ul>
+            </li>
+            <li>
+                <a href="#2-navigating-manjaros-pep-668-protection-externally-managed-environment" aria-label="2. Navigating Manjaro’s PEP 668 Protection (externally-managed-environment)">2. Navigating Manjaro’s PEP 668 Protection (externally-managed-environment)</a><ul>
+                    
+            <li>
+                <a href="#why-this-happens" aria-label="Why This Happens">Why This Happens</a></li>
+            <li>
+                <a href="#resolving-mount-and-shell-path-issues" aria-label="Resolving Mount and Shell Path Issues">Resolving Mount and Shell Path Issues</a></li></ul>
+            </li>
+            <li>
+                <a href="#3-resolving-python-314-compatibility-modulenotfounderror-no-module-named-cgi" aria-label="3. Resolving Python 3.14 Compatibility (ModuleNotFoundError: No module named &#39;cgi&#39;)">3. Resolving Python 3.14 Compatibility (ModuleNotFoundError: No module named 'cgi')</a><ul>
+                    
+            <li>
+                <a href="#resolution-options" aria-label="Resolution Options">Resolution Options</a></li></ul>
+            </li>
+            <li>
+                <a href="#4-complete-python-conversion-script-convertpy" aria-label="4. Complete Python Conversion Script (convert.py)">4. Complete Python Conversion Script (convert.py)</a></li>
+            <li>
+                <a href="#5-setting-up-pycharm--graphical-user-interfaces" aria-label="5. Setting Up PyCharm &amp; Graphical User Interfaces">5. Setting Up PyCharm &amp; Graphical User Interfaces</a><ul>
+                    
+            <li>
+                <a href="#installing-pycharm-on-manjaro" aria-label="Installing PyCharm on Manjaro">Installing PyCharm on Manjaro</a></li>
+            <li>
+                <a href="#adding-web-interfaces-marker_gui-and-streamlit" aria-label="Adding Web Interfaces (marker_gui and streamlit)">Adding Web Interfaces (marker_gui and streamlit)</a></li></ul>
+            </li>
+            <li>
+                <a href="#6-project-documentation-readmemd" aria-label="6. Project Documentation (README.md)">6. Project Documentation (README.md)</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>Converting scanned PDFs into structured formats like Markdown (<code>.md</code>) and Rich Text Format (<code>.rtf</code>) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.</p>
+<p>However, implementing this on an Arch-based Linux distribution like <strong>Manjaro</strong> presents unique challenges due to Python&rsquo;s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.</p>
+<p>This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, <code>marker-pdf</code>, <code>pandoc</code>, and PyCharm on Manjaro Linux.</p>
+<hr>
+<h2 id="1-system-level-dependencies--setup">1. System-Level Dependencies &amp; Setup<a hidden class="anchor" aria-hidden="true" href="#1-system-level-dependencies--setup">#</a></h2>
+<p>Before invoking Python, your system needs binary engines for Optical Character Recognition (OCR) and markup document conversion:</p>
+<ul>
+<li><strong>Tesseract OCR:</strong> Performs text extraction from image layers inside scanned PDFs.</li>
+<li><strong>Pandoc:</strong> Handles document compilation, translating standard GitHub-Flavored Markdown tables directly into native Word Processor RTF tables.</li>
+</ul>
+<h3 id="installing-dependencies-via-pacman">Installing Dependencies via Pacman<a hidden class="anchor" aria-hidden="true" href="#installing-dependencies-via-pacman">#</a></h3>
+<p>In Manjaro Linux, install both packages and Python&rsquo;s package manager (<code>pip</code>) using <code>pacman</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Syu
+</span></span><span style="display:flex;"><span>sudo pacman -S pandoc tesseract python-pip
+</span></span></code></pre></div><h3 id="adding-ocr-language-packs">Adding OCR Language Packs<a hidden class="anchor" aria-hidden="true" href="#adding-ocr-language-packs">#</a></h3>
+<p>By default, Tesseract installs basic English support. To support other languages, install additional language packs from the official repositories:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S tesseract-data-spa tesseract-data-deu tesseract-data-fra
+</span></span></code></pre></div><hr>
+<h2 id="2-navigating-manjaros-pep-668-protection-externally-managed-environment">2. Navigating Manjaro’s PEP 668 Protection (<code>externally-managed-environment</code>)<a hidden class="anchor" aria-hidden="true" href="#2-navigating-manjaros-pep-668-protection-externally-managed-environment">#</a></h2>
+<p>When attempting to run standard global package commands like <code>pip install marker-pdf pypandoc</code>, modern Arch and Manjaro releases block the action with an error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>error: externally-managed-environment
+</span></span><span style="display:flex;"><span>× This environment is externally managed
+</span></span></code></pre></div><h3 id="why-this-happens">Why This Happens<a hidden class="anchor" aria-hidden="true" href="#why-this-happens">#</a></h3>
+<p>Introduced via PEP 668, Linux distributions lock global Python site-packages to prevent <code>pip</code> from overwriting system files managed by <code>pacman</code>.</p>
+<p>While passing <code>--break-system-packages</code> allows global installations, the standard solution for development is using isolated <strong>Virtual Environments (<code>venv</code>)</strong>.</p>
+<h3 id="resolving-mount-and-shell-path-issues">Resolving Mount and Shell Path Issues<a hidden class="anchor" aria-hidden="true" href="#resolving-mount-and-shell-path-issues">#</a></h3>
+<p>When working on external drives (e.g., <code>/mnt/351095A642490756/</code>), custom Zsh shell paths may prevent <code>source venv/bin/activate</code> from correctly routing the <code>python</code> or <code>pip</code> commands. In such cases, explicitly calling the environment&rsquo;s binaries ensures reliable execution:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create local virtual environment</span>
+</span></span><span style="display:flex;"><span>python -m venv venv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Execute pip explicitly from the environment folder</span>
+</span></span><span style="display:flex;"><span>./venv/bin/pip install pypandoc marker-pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run your application explicitly</span>
+</span></span><span style="display:flex;"><span>./venv/bin/python convert.py
+</span></span></code></pre></div><hr>
+<h2 id="3-resolving-python-314-compatibility-modulenotfounderror-no-module-named-cgi">3. Resolving Python 3.14 Compatibility (<code>ModuleNotFoundError: No module named 'cgi'</code>)<a hidden class="anchor" aria-hidden="true" href="#3-resolving-python-314-compatibility-modulenotfounderror-no-module-named-cgi">#</a></h2>
+<p>Modern Manjaro updates ship with standard Python versions where legacy libraries like <code>cgi</code> have been removed. If a library dependency like <code>aiohttp</code> relies on <code>cgi</code>, running your script will throw:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ModuleNotFoundError: No module named &#39;cgi&#39;
+</span></span></code></pre></div><h3 id="resolution-options">Resolution Options<a hidden class="anchor" aria-hidden="true" href="#resolution-options">#</a></h3>
+<ol>
+<li><strong>Install Compatibility Shims:</strong> Install the community fallback package in your virtual environment:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install legacy-cgi
+</span></span></code></pre></div><ol start="2">
+<li><strong>Target Python 3.12/3.13 Base Interpreters:</strong> Install a legacy interpreter via <code>sudo pacman -S python312</code> and select <code>/usr/bin/python3.12</code> as your project base in PyCharm.</li>
+</ol>
+<hr>
+<h2 id="4-complete-python-conversion-script-convertpy">4. Complete Python Conversion Script (<code>convert.py</code>)<a hidden class="anchor" aria-hidden="true" href="#4-complete-python-conversion-script-convertpy">#</a></h2>
+<p>Below is the complete, multi-file conversion script supporting updated <code>marker-pdf</code> interfaces and <code>pypandoc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pypandoc
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> marker.convert <span style="color:#f92672">import</span> MarkerConverter
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> marker.logger <span style="color:#f92672">import</span> configure_logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> marker.models <span style="color:#f92672">import</span> load_all_models
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure logging output for OCR status</span>
+</span></span><span style="display:flex;"><span>configure_logging()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_folder</span>(input_folder, output_folder):
+</span></span><span style="display:flex;"><span>    input_path <span style="color:#f92672">=</span> Path(input_folder)
+</span></span><span style="display:flex;"><span>    output_path <span style="color:#f92672">=</span> Path(output_folder)
+</span></span><span style="display:flex;"><span>    output_path<span style="color:#f92672">.</span>mkdir(parents<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, exist_ok<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 1. Initialize converter and load layout/OCR deep learning models</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Loading OCR and Layout models...&#34;</span>)
+</span></span><span style="display:flex;"><span>    model_lst <span style="color:#f92672">=</span> load_all_models()
+</span></span><span style="display:flex;"><span>    converter <span style="color:#f92672">=</span> MarkerConverter(model_lst<span style="color:#f92672">=</span>model_lst)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 2. Collect input PDFs</span>
+</span></span><span style="display:flex;"><span>    pdf_files <span style="color:#f92672">=</span> list(input_path<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;*.pdf&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> pdf_files:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;No PDF files found in &#39;</span><span style="color:#e6db74">{</span>input_folder<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Found </span><span style="color:#e6db74">{</span>len(pdf_files)<span style="color:#e6db74">}</span><span style="color:#e6db74"> PDF(s) to process.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> pdf_file <span style="color:#f92672">in</span> pdf_files:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;--- Processing: </span><span style="color:#e6db74">{</span>pdf_file<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> ---&#34;</span>)
+</span></span><span style="display:flex;"><span>        base_name <span style="color:#f92672">=</span> pdf_file<span style="color:#f92672">.</span>stem
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 3. Extract text, drop margins/footers, and parse table structures</span>
+</span></span><span style="display:flex;"><span>            rendered <span style="color:#f92672">=</span> converter<span style="color:#f92672">.</span>import_pdf(str(pdf_file))
+</span></span><span style="display:flex;"><span>            full_text <span style="color:#f92672">=</span> rendered<span style="color:#f92672">.</span>markdown
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 4. Write pure Markdown file</span>
+</span></span><span style="display:flex;"><span>            md_filename <span style="color:#f92672">=</span> output_path <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>base_name<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> open(md_filename, <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>                f<span style="color:#f92672">.</span>write(full_text)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Saved Markdown: </span><span style="color:#e6db74">{</span>md_filename<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 5. Convert Markdown structure directly into native Word/RTF cells</span>
+</span></span><span style="display:flex;"><span>            rtf_filename <span style="color:#f92672">=</span> output_path <span style="color:#f92672">/</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>base_name<span style="color:#e6db74">}</span><span style="color:#e6db74">.rtf&#34;</span>
+</span></span><span style="display:flex;"><span>            pypandoc<span style="color:#f92672">.</span>convert_file(
+</span></span><span style="display:flex;"><span>                str(md_filename), 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;rtf&#39;</span>, 
+</span></span><span style="display:flex;"><span>                format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;md&#39;</span>, 
+</span></span><span style="display:flex;"><span>                outputfile<span style="color:#f92672">=</span>str(rtf_filename)
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Saved RTF: </span><span style="color:#e6db74">{</span>rtf_filename<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;❌ Error processing </span><span style="color:#e6db74">{</span>pdf_file<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    INPUT_DIR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/351095A642490756/lfa/Home/convert/input_pdfs&#34;</span>
+</span></span><span style="display:flex;"><span>    OUTPUT_DIR <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/mnt/351095A642490756/lfa/Home/convert/converted_docs&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    Path(INPUT_DIR)<span style="color:#f92672">.</span>mkdir(exist_ok<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, parents<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    process_folder(INPUT_DIR, OUTPUT_DIR)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Processing complete!&#34;</span>)
+</span></span></code></pre></div><hr>
+<h2 id="5-setting-up-pycharm--graphical-user-interfaces">5. Setting Up PyCharm &amp; Graphical User Interfaces<a hidden class="anchor" aria-hidden="true" href="#5-setting-up-pycharm--graphical-user-interfaces">#</a></h2>
+<p>For users seeking an IDE that handles environment management without command-line intervention, <strong>PyCharm Community Edition</strong> automatically isolates sandboxes and handles external mounts.</p>
+<h3 id="installing-pycharm-on-manjaro">Installing PyCharm on Manjaro<a hidden class="anchor" aria-hidden="true" href="#installing-pycharm-on-manjaro">#</a></h3>
+<p>Install PyCharm from the Arch User Repository (AUR) using <code>pamac</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pamac build pycharm-community-edition
+</span></span></code></pre></div><h3 id="adding-web-interfaces-marker_gui-and-streamlit">Adding Web Interfaces (<code>marker_gui</code> and <code>streamlit</code>)<a hidden class="anchor" aria-hidden="true" href="#adding-web-interfaces-marker_gui-and-streamlit">#</a></h3>
+<p>To provide a web UI for the conversion script, install <code>streamlit</code> directly into the active PyCharm virtual environment terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Inside PyCharm built-in terminal OR via explicit path execution:</span>
+</span></span><span style="display:flex;"><span>/home/lfa/PyCharmMiscProject/.venv/bin/pip install streamlit streamlit-ace marker_gui legacy-cgi
+</span></span></code></pre></div><p>Launch the interface directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/home/lfa/PyCharmMiscProject/.venv/bin/streamlit run /home/lfa/PyCharmMiscProject/.venv/bin/marker_gui
+</span></span></code></pre></div><hr>
+<h2 id="6-project-documentation-readmemd">6. Project Documentation (<code>README.md</code>)<a hidden class="anchor" aria-hidden="true" href="#6-project-documentation-readmemd">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Scanned PDF to Markdown &amp; RTF Converter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>An automated document processing pipeline optimized for Arch/Manjaro Linux to convert scanned PDFs into clean Markdown (<span style="color:#e6db74">`.md`</span>) and rich text (<span style="color:#e6db74">`.rtf`</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Features
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> **Table Extraction:** Converts tables into GitHub-Flavored Markdown grid structures, compiled natively into word-processor tables via Pandoc.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> **Header/Footer Stripping:** Strips page numbers, running titles, and margin noise across page boundaries.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> **Heading Preservation:** Retains document outline formatting using appropriate <span style="color:#e6db74">`#`</span> hierarchy.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Setup &amp; Usage
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> <span style="font-weight:bold">**Install System Binaries:**</span>
+</span></span><span style="display:flex;"><span>   ```bash
+</span></span><span style="display:flex;"><span>   sudo pacman -S pandoc tesseract python-pip
+</span></span></code></pre></div><ol start="2">
+<li><strong>Setup Local Python Environment:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -m venv venv
+</span></span><span style="display:flex;"><span>./venv/bin/pip install pypandoc marker-pdf legacy-cgi
+</span></span></code></pre></div><ol start="3">
+<li><strong>Run Processing Batch:</strong>
+Place input PDFs inside <code>./input_pdfs/</code> and run:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./venv/bin/python convert.py
+</span></span></code></pre></div><pre tabindex="0"><code>
+---
+
+## Summary of Core Solutions
+
+| Problem / Error | Underlying Cause | Optimal Solution |
+| :--- | :--- | :--- |
+| `target not found: pycharm-community` | Package resides in AUR, not core Arch repos | Run `pamac build pycharm-community-edition` |
+| `error: externally-managed-environment` | Linux PEP 668 protecting system site-packages | Install within a `venv` or use `./venv/bin/pip` |
+| `ModuleNotFoundError: No module named &#39;cgi&#39;` | Deprecated standard module removed in recent Python | Run `pip install legacy-cgi` |
+| `ModuleNotFoundError: No module named &#39;pypandoc&#39;` | Shell executed system Python instead of environment | Invoke directly via `./venv/bin/python script.py` |
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/manjaro/">Manjaro</a></li>
+      <li><a href="//localhost:1313/tags/arch-linux/">Arch Linux</a></li>
+      <li><a href="//localhost:1313/tags/pandoc/">Pandoc</a></li>
+      <li><a href="//localhost:1313/tags/tesseract/">Tesseract</a></li>
+      <li><a href="//localhost:1313/tags/pep-668/">PEP 668</a></li>
+      <li><a href="//localhost:1313/tags/pycharm/">PyCharm</a></li>
+      <li><a href="//localhost:1313/tags/streamlit/">Streamlit</a></li>
+      <li><a href="//localhost:1313/tags/pdf-conversion/">PDF Conversion</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-04-bookmarklet-scraper/">
+    <span class="title">« Prev</span>
+    <span>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-04-windows-cleanup/">
+    <span class="title">Next »</span>
+    <span>Building an Automated Master Performance Optimizer and Repair Script for Windows 11</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

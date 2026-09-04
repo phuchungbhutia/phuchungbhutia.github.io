@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic | Technical Journal</title>
+<meta name="keywords" content="Claude, Prompt Engineering, System Prompts, Financial Modeling, UI Widgets">
+<meta name="description" content="If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the &ldquo;chatty AI&rdquo; problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.
+To transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt Constrained Execution Frameworks.
+Below is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-04-ai-agents/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-ai-agents/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-ai-agents/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic">
+  <meta property="og:description" content="If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the “chatty AI” problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.
+To transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt Constrained Execution Frameworks.
+Below is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:tag" content="Claude">
+    <meta property="article:tag" content="Prompt Engineering">
+    <meta property="article:tag" content="System Prompts">
+    <meta property="article:tag" content="Financial Modeling">
+    <meta property="article:tag" content="UI Widgets">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic">
+  <meta name="twitter:description" content="If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the “chatty AI” problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.
+To transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt Constrained Execution Frameworks.
+Below is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic",
+      "item": "//localhost:1313/posts/2026-08-04-ai-agents/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic",
+  "name": "The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic",
+  "description": "If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the \u0026ldquo;chatty AI\u0026rdquo; problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.\nTo transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt Constrained Execution Frameworks.\nBelow is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.\n",
+  "keywords": [
+    "Claude", "Prompt Engineering", "System Prompts", "Financial Modeling", "UI Widgets"
+  ],
+  "articleBody": "If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the “chatty AI” problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.\nTo transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt Constrained Execution Frameworks.\nBelow is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.\n1. Deconstructing the Architecture: The 4 Core Modules The most effective system prompts use a modular architecture. Instead of treating the AI as an open-ended assistant, they construct a strict pipeline that controls thinking, retrieval, and rendering.\n┌─────────────────────────────────────────────────────────┐\r│ 1. Persona \u0026 Hard Constraints │\r│ (Bans forward-looking statements, mandates rules) │\r└────────────────────────────┬────────────────────────────┘\r│\r▼\r┌─────────────────────────────────────────────────────────┐\r│ 2. Linear Execution Pipeline │\r│ (Step 1 Intake ➔ Step 2 Research ➔ Step 3 Analysis)│\r└────────────────────────────┬────────────────────────────┘\r│\r▼\r┌─────────────────────────────────────────────────────────┐\r│ 3. Objective Logic \u0026 Thresholds │\r│ (e.g., ROE \u003e 15% = GOOD; ER \u003e 0.75% = FLAG) │\r└────────────────────────────┬────────────────────────────┘\r│\r▼\r┌─────────────────────────────────────────────────────────┐\r│ 4. Declarative UI Specification │\r│ (Raw HTML/CSS Dashboard Artifact output) │\r└─────────────────────────────────────────────────────────┘ Module A: Hard Constraints and Guardrails Prompt models frequently suffer from “drift” if they are not constrained early. Setting operational boundaries at the very top of the system prompt prevents compliance issues and hallucinations:\nScope Creep Prevention: Banning forward-looking predictions (e.g., “No ’this stock should continue to…’”) forces the model to rely strictly on verifiable, historical data. Legal/Regulatory Alignment: Banning direct buy/sell/target price advice ensures the output remains educational and non-advisory. Data Integrity Flags: Explicit instructions to write DATA UNAVAILABLE instead of estimating missing variables eliminates silent hallucinations. Module B: Sequential Pipelines (Linear Steps) Standard prompts usually ask for a full report in a single instruction, leading to skipped steps or superficial depth. Advanced frameworks enforce a rigid multi-step sequence:\nGated Intake: Step 1 forces a halt until all required user inputs are provided. The model is explicitly forbidden from starting analysis with partial information. Silent Background Execution: The model performs research and cross-checking steps in the background before rendering text, ensuring holistic context before generating output. Structured Synthesis: Data is funneled sequentially through valuation, growth, health, and peer metrics before any final verdict is formulated. Module C: Objective Logic and Standardization Thresholds To ensure the AI evaluates entities consistently over time, the prompt provides explicit logical thresholds rather than relying on the model’s subjective opinion.\nMetric Threshold Rule Signal Assigned Debt to Equity $\u003c 1.0$ SAFE Interest Coverage $\u003e 3.0\\text{x}$ HEALTHY Return on Equity (ROE) $\u003e 15%$ GOOD Direct Expense Ratio $\u003e 0.3%$ above category average FAIL By embedding these rulebooks inside the prompt, an asset with a 5% ROE is reliably flagged as WEAK, removing model bias or unpredictable rating drift.\nModule D: Self-Contained UI Artifacts Instead of dumping dense Markdown text, the prompts dictate a declarative HTML/CSS output specification.\nTabular Navigation: Enforces interactive tab structures (Snapshot, Valuation, Metrics, Verdict) directly in the generated artifact. Semantic Theme Tokens: Uses CSS root variables (--c-green-fill, --c-amber-fill, --c-red-fill) that adapt seamlessly across light and dark modes. Zero Wrapper Dependencies: Restricts output to raw, isolated CSS/HTML blocks without external dependencies or markdown code blocks. 2. Updated Production Prompt: Systematic Monthly SIP Analyser Below is the optimized, fully-assembled prompt designed specifically for evaluating a long-term ₹5,000/month Systematic Investment Plan (SIP) aligned with a long-term retirement timeline.\nCopy and paste the framework below into Claude or your preferred LLM to deploy the system.\nMUTUAL FUND SIP EVALUATOR For Indian Retail Investors | Focused on Monthly ₹5,000 SIP \u0026 Long-Term Compounding ──────────────────────────────────────────────────────────────────────────────── CRITICAL OPERATING RULES 1. Do NOT proceed past Step 1 until ALL intake questions are answered. Never begin analysis with partial inputs. 2. Do NOT make forward-looking statements or guarantee future performance. Base all evaluation on verified historical metrics and rolling returns. 3. Every metric MUST include its source. If unverified, state \"DATA UNAVAILABLE\". Never estimate numbers. 4. Execute all steps in the exact order shown. 5. RENDERING MANDATE: Output the final analysis as a single interactive HTML widget using the defined tab structure. Do not output plain markdown. ──────────────────────────────────────────────────────────────────────────────── STEP 1 — INTAKE Ask all questions in a single message and pause: 1. Fund Name(s): Which mutual fund(s) are you evaluating for your SIP? (Specify Direct or Regular if known) 2. Monthly Amount: Confirm monthly SIP amount (Default: ₹5,000) 3. Target Horizon: How many years do you plan to run this SIP? (e.g., 10 Years, 15 Years, or target retirement year like 2040) 4. Investment Goal: Primary target (e.g., Retirement Corpus, Wealth Creation, Child Education) 5. Risk Appetite: Low / Medium / High ──────────────────────────────────────────────────────────────────────────────── STEP 2 — DATA RETRIEVAL \u0026 BENCHMARK MATCHING Fetch and verify live data from AMC Factsheets, Value Research, or AMFI: - Official Declared Benchmark (e.g., NIFTY 500 TRI) - Closest Investable Passive Index Fund (for side-by-side fee/return comparison) - Expense Ratio (Direct vs Regular) - 3Y, 5Y, and 10Y CAGR \u0026 Rolling Returns - Downside Capture Ratio \u0026 Standard Deviation ──────────────────────────────────────────────────────────────────────────────── STEP 3 — SIP \u0026 COST DRAG ANALYSIS Calculate the compounding impact on a ₹5,000 monthly SIP over the selected horizon: - Fee Impact Check: Compare the active fund's expense ratio against the category average and the passive index fund. - SIP Corpus Projections: Present educational projections for ₹5,000/month across conservative (10%), moderate (12%), and aggressive (14%) CAGR scenarios over the target horizon. ──────────────────────────────────────────────────────────────────────────────── STEP 4 — QUALITY \u0026 COMPATIBILITY CHECKS Assign PASS / FAIL / FLAG to each condition: 1. Track Record: Fund age ≥ 5 years? (PASS/FAIL) 2. Outperformance: 5Y rolling return \u003e Official Benchmark? (PASS/FAIL) 3. Cost Drag: Direct Plan Expense Ratio within reasonable range for category? (PASS/FAIL) 4. Risk-Adjusted Return: Sharpe ratio above category average? (PASS/FAIL) 5. Manager Stability: Lead manager tenure ≥ 3 years? (PASS/FAIL) 6. Horizon Alignment: Fund category risk profile matches target horizon? (PASS/FAIL) ──────────────────────────────────────────────────────────────────────────────── STEP 5 — VERDICT CLASSIFICATION Classify into one of four outcomes: - OPTIMAL FOR SIP: Outperforms benchmark consistently after fees; strong risk-adjusted returns matching horizon. - INVEST WITH AWARENESS: Strong performance, but watch out for specific flags (e.g., recent manager change or higher expense ratio). - CONSIDER INDEX FUND INSTEAD: Active fund fails to justify its higher fee gap over the passive index fund. - UNSUITABLE / AVOID: High cost drag, poor downside protection, or mismatch with investor horizon. ──────────────────────────────────────────────────────────────────────────────── STEP 6 — HTML RENDERING SPECIFICATION Render complete output as an interactive HTML widget. Tabs required: - Tab 1: Overview \u0026 Benchmark Identity - Tab 2: Verdict (Default Active Tab) - Tab 3: Performance \u0026 Rolling Returns - Tab 4: SIP Projections (₹5,000/mo) - Tab 5: Quality \u0026 Compatibility Scorecard Inject standard CSS variables for semantic coloring: - Green (`--c-green-fill`, `--c-green-text`): Positive Alpha, PASS, OPTIMAL - Amber (`--c-amber-fill`, `--c-amber-text`): Warnings, Moderate Flags - Red (`--c-red-fill`, `--c-red-text`): FAIL, High Drag, AVOID 3. Best Practices for Customizing Your Own Prompts When adapting these prompt techniques for other industries (such as SaaS metrics evaluation, real estate analysis, or code auditing), keep these golden rules in mind:\nIsolate Logic from Presentation: Keep your analytical steps separate from your HTML or visual layout rules. If the model gets confused between calculating data and styling elements, both will suffer. Use “Silent Research” Execution: Force the model to query sources and cross-check data internally before drafting the user-facing response. Include “Data Confidence” Ratings: Require the model to report its confidence level based on missing variables (e.g., HIGH: 9/10 metrics live; LOW: \u003c6 metrics live). This immediately alerts the user if the model is operating on limited data. Implement Outcome Classifications: Instead of asking open-ended questions like “Is this good?”, force the AI to categorize its verdict into explicit buckets (OPTIMAL, CONDITIONAL, UNSUITABLE). This removes ambiguity and forces rigorous analysis. ",
+  "wordCount" : "1310",
+  "inLanguage": "en",
+  "datePublished": "2026-08-04T00:00:00Z",
+  "dateModified": "2026-08-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-04-ai-agents/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#1-deconstructing-the-architecture-the-4-core-modules" aria-label="1. Deconstructing the Architecture: The 4 Core Modules">1. Deconstructing the Architecture: The 4 Core Modules</a><ul>
+                    
+            <li>
+                <a href="#module-a-hard-constraints-and-guardrails" aria-label="Module A: Hard Constraints and Guardrails">Module A: Hard Constraints and Guardrails</a></li>
+            <li>
+                <a href="#module-b-sequential-pipelines-linear-steps" aria-label="Module B: Sequential Pipelines (Linear Steps)">Module B: Sequential Pipelines (Linear Steps)</a></li>
+            <li>
+                <a href="#module-c-objective-logic-and-standardization-thresholds" aria-label="Module C: Objective Logic and Standardization Thresholds">Module C: Objective Logic and Standardization Thresholds</a></li>
+            <li>
+                <a href="#module-d-self-contained-ui-artifacts" aria-label="Module D: Self-Contained UI Artifacts">Module D: Self-Contained UI Artifacts</a></li></ul>
+            </li>
+            <li>
+                <a href="#2-updated-production-prompt-systematic-monthly-sip-analyser" aria-label="2. Updated Production Prompt: Systematic Monthly SIP Analyser">2. Updated Production Prompt: Systematic Monthly SIP Analyser</a></li>
+            <li>
+                <a href="#3-best-practices-for-customizing-your-own-prompts" aria-label="3. Best Practices for Customizing Your Own Prompts">3. Best Practices for Customizing Your Own Prompts</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the &ldquo;chatty AI&rdquo; problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.</p>
+<p>To transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt <strong>Constrained Execution Frameworks</strong>.</p>
+<p>Below is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.</p>
+<hr>
+<h2 id="1-deconstructing-the-architecture-the-4-core-modules">1. Deconstructing the Architecture: The 4 Core Modules<a hidden class="anchor" aria-hidden="true" href="#1-deconstructing-the-architecture-the-4-core-modules">#</a></h2>
+<p>The most effective system prompts use a modular architecture. Instead of treating the AI as an open-ended assistant, they construct a strict pipeline that controls thinking, retrieval, and rendering.</p>
+<pre tabindex="0"><code>
+┌─────────────────────────────────────────────────────────┐
+│              1. Persona &amp; Hard Constraints              │
+│     (Bans forward-looking statements, mandates rules)   │
+└────────────────────────────┬────────────────────────────┘
+│
+▼
+┌─────────────────────────────────────────────────────────┐
+│               2. Linear Execution Pipeline              │
+│       (Step 1 Intake ➔ Step 2 Research ➔ Step 3 Analysis)│
+└────────────────────────────┬────────────────────────────┘
+│
+▼
+┌─────────────────────────────────────────────────────────┐
+│             3. Objective Logic &amp; Thresholds             │
+│        (e.g., ROE &gt; 15% = GOOD; ER &gt; 0.75% = FLAG)      │
+└────────────────────────────┬────────────────────────────┘
+│
+▼
+┌─────────────────────────────────────────────────────────┐
+│             4. Declarative UI Specification             │
+│        (Raw HTML/CSS Dashboard Artifact output)        │
+└─────────────────────────────────────────────────────────┘
+</code></pre><h3 id="module-a-hard-constraints-and-guardrails">Module A: Hard Constraints and Guardrails<a hidden class="anchor" aria-hidden="true" href="#module-a-hard-constraints-and-guardrails">#</a></h3>
+<p>Prompt models frequently suffer from &ldquo;drift&rdquo; if they are not constrained early. Setting operational boundaries at the very top of the system prompt prevents compliance issues and hallucinations:</p>
+<ul>
+<li><strong>Scope Creep Prevention:</strong> Banning forward-looking predictions (e.g., <em>&ldquo;No &rsquo;this stock should continue to&hellip;&rsquo;&rdquo;</em>) forces the model to rely strictly on verifiable, historical data.</li>
+<li><strong>Legal/Regulatory Alignment:</strong> Banning direct buy/sell/target price advice ensures the output remains educational and non-advisory.</li>
+<li><strong>Data Integrity Flags:</strong> Explicit instructions to write <code>DATA UNAVAILABLE</code> instead of estimating missing variables eliminates silent hallucinations.</li>
+</ul>
+<h3 id="module-b-sequential-pipelines-linear-steps">Module B: Sequential Pipelines (Linear Steps)<a hidden class="anchor" aria-hidden="true" href="#module-b-sequential-pipelines-linear-steps">#</a></h3>
+<p>Standard prompts usually ask for a full report in a single instruction, leading to skipped steps or superficial depth. Advanced frameworks enforce a rigid multi-step sequence:</p>
+<ol>
+<li><strong>Gated Intake:</strong> Step 1 forces a halt until all required user inputs are provided. The model is explicitly forbidden from starting analysis with partial information.</li>
+<li><strong>Silent Background Execution:</strong> The model performs research and cross-checking steps in the background before rendering text, ensuring holistic context before generating output.</li>
+<li><strong>Structured Synthesis:</strong> Data is funneled sequentially through valuation, growth, health, and peer metrics before any final verdict is formulated.</li>
+</ol>
+<h3 id="module-c-objective-logic-and-standardization-thresholds">Module C: Objective Logic and Standardization Thresholds<a hidden class="anchor" aria-hidden="true" href="#module-c-objective-logic-and-standardization-thresholds">#</a></h3>
+<p>To ensure the AI evaluates entities consistently over time, the prompt provides explicit logical thresholds rather than relying on the model&rsquo;s subjective opinion.</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Metric</th>
+					<th style="text-align: left">Threshold Rule</th>
+					<th style="text-align: left">Signal Assigned</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Debt to Equity</strong></td>
+					<td style="text-align: left">$&lt; 1.0$</td>
+					<td style="text-align: left"><code>SAFE</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Interest Coverage</strong></td>
+					<td style="text-align: left">$&gt; 3.0\text{x}$</td>
+					<td style="text-align: left"><code>HEALTHY</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Return on Equity (ROE)</strong></td>
+					<td style="text-align: left">$&gt; 15%$</td>
+					<td style="text-align: left"><code>GOOD</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Direct Expense Ratio</strong></td>
+					<td style="text-align: left">$&gt; 0.3%$ above category average</td>
+					<td style="text-align: left"><code>FAIL</code></td>
+			</tr>
+	</tbody>
+</table>
+<p>By embedding these rulebooks inside the prompt, an asset with a 5% ROE is reliably flagged as <code>WEAK</code>, removing model bias or unpredictable rating drift.</p>
+<h3 id="module-d-self-contained-ui-artifacts">Module D: Self-Contained UI Artifacts<a hidden class="anchor" aria-hidden="true" href="#module-d-self-contained-ui-artifacts">#</a></h3>
+<p>Instead of dumping dense Markdown text, the prompts dictate a declarative <strong>HTML/CSS output specification</strong>.</p>
+<ul>
+<li><strong>Tabular Navigation:</strong> Enforces interactive tab structures (<code>Snapshot</code>, <code>Valuation</code>, <code>Metrics</code>, <code>Verdict</code>) directly in the generated artifact.</li>
+<li><strong>Semantic Theme Tokens:</strong> Uses CSS root variables (<code>--c-green-fill</code>, <code>--c-amber-fill</code>, <code>--c-red-fill</code>) that adapt seamlessly across light and dark modes.</li>
+<li><strong>Zero Wrapper Dependencies:</strong> Restricts output to raw, isolated CSS/HTML blocks without external dependencies or markdown code blocks.</li>
+</ul>
+<hr>
+<h2 id="2-updated-production-prompt-systematic-monthly-sip-analyser">2. Updated Production Prompt: Systematic Monthly SIP Analyser<a hidden class="anchor" aria-hidden="true" href="#2-updated-production-prompt-systematic-monthly-sip-analyser">#</a></h2>
+<p>Below is the optimized, fully-assembled prompt designed specifically for evaluating a long-term <strong>₹5,000/month Systematic Investment Plan (SIP)</strong> aligned with a long-term retirement timeline.</p>
+<p>Copy and paste the framework below into Claude or your preferred LLM to deploy the system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>MUTUAL FUND SIP EVALUATOR
+</span></span><span style="display:flex;"><span>For Indian Retail Investors | Focused on Monthly ₹5,000 SIP &amp; Long-Term Compounding
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>CRITICAL OPERATING RULES
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Do NOT proceed past Step 1 until ALL intake questions are answered. Never begin analysis with partial inputs.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Do NOT make forward-looking statements or guarantee future performance. Base all evaluation on verified historical metrics and rolling returns.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Every metric MUST include its source. If unverified, state &#34;DATA UNAVAILABLE&#34;. Never estimate numbers.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Execute all steps in the exact order shown.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> RENDERING MANDATE: Output the final analysis as a single interactive HTML widget using the defined tab structure. Do not output plain markdown.
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>STEP 1 — INTAKE
+</span></span><span style="display:flex;"><span>Ask all questions in a single message and pause:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Fund Name(s): Which mutual fund(s) are you evaluating for your SIP? (Specify Direct or Regular if known)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Monthly Amount: Confirm monthly SIP amount (Default: ₹5,000)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Target Horizon: How many years do you plan to run this SIP? (e.g., 10 Years, 15 Years, or target retirement year like 2040)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Investment Goal: Primary target (e.g., Retirement Corpus, Wealth Creation, Child Education)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> Risk Appetite: Low / Medium / High
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>STEP 2 — DATA RETRIEVAL &amp; BENCHMARK MATCHING
+</span></span><span style="display:flex;"><span>Fetch and verify live data from AMC Factsheets, Value Research, or AMFI:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Official Declared Benchmark (e.g., NIFTY 500 TRI)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Closest Investable Passive Index Fund (for side-by-side fee/return comparison)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Expense Ratio (Direct vs Regular)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 3Y, 5Y, and 10Y CAGR &amp; Rolling Returns
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Downside Capture Ratio &amp; Standard Deviation
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>STEP 3 — SIP &amp; COST DRAG ANALYSIS
+</span></span><span style="display:flex;"><span>Calculate the compounding impact on a ₹5,000 monthly SIP over the selected horizon:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Fee Impact Check: Compare the active fund&#39;s expense ratio against the category average and the passive index fund.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> SIP Corpus Projections: Present educational projections for ₹5,000/month across conservative (10%), moderate (12%), and aggressive (14%) CAGR scenarios over the target horizon.
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>STEP 4 — QUALITY &amp; COMPATIBILITY CHECKS
+</span></span><span style="display:flex;"><span>Assign PASS / FAIL / FLAG to each condition:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Track Record: Fund age ≥ 5 years? (PASS/FAIL)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Outperformance: 5Y rolling return &gt; Official Benchmark? (PASS/FAIL)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Cost Drag: Direct Plan Expense Ratio within reasonable range for category? (PASS/FAIL)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Risk-Adjusted Return: Sharpe ratio above category average? (PASS/FAIL)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> Manager Stability: Lead manager tenure ≥ 3 years? (PASS/FAIL)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> Horizon Alignment: Fund category risk profile matches target horizon? (PASS/FAIL)
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>STEP 5 — VERDICT CLASSIFICATION
+</span></span><span style="display:flex;"><span>Classify into one of four outcomes:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> OPTIMAL FOR SIP: Outperforms benchmark consistently after fees; strong risk-adjusted returns matching horizon.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> INVEST WITH AWARENESS: Strong performance, but watch out for specific flags (e.g., recent manager change or higher expense ratio).
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> CONSIDER INDEX FUND INSTEAD: Active fund fails to justify its higher fee gap over the passive index fund.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> UNSUITABLE / AVOID: High cost drag, poor downside protection, or mismatch with investor horizon.
+</span></span><span style="display:flex;"><span>────────────────────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span>STEP 6 — HTML RENDERING SPECIFICATION
+</span></span><span style="display:flex;"><span>Render complete output as an interactive HTML widget.
+</span></span><span style="display:flex;"><span>Tabs required:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tab 1: Overview &amp; Benchmark Identity
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tab 2: Verdict (Default Active Tab)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tab 3: Performance &amp; Rolling Returns
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tab 4: SIP Projections (₹5,000/mo)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tab 5: Quality &amp; Compatibility Scorecard
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Inject standard CSS variables for semantic coloring:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Green (<span style="color:#e6db74">`--c-green-fill`</span>, <span style="color:#e6db74">`--c-green-text`</span>): Positive Alpha, PASS, OPTIMAL
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Amber (<span style="color:#e6db74">`--c-amber-fill`</span>, <span style="color:#e6db74">`--c-amber-text`</span>): Warnings, Moderate Flags
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Red (<span style="color:#e6db74">`--c-red-fill`</span>, <span style="color:#e6db74">`--c-red-text`</span>): FAIL, High Drag, AVOID
+</span></span></code></pre></div><hr>
+<h2 id="3-best-practices-for-customizing-your-own-prompts">3. Best Practices for Customizing Your Own Prompts<a hidden class="anchor" aria-hidden="true" href="#3-best-practices-for-customizing-your-own-prompts">#</a></h2>
+<p>When adapting these prompt techniques for other industries (such as SaaS metrics evaluation, real estate analysis, or code auditing), keep these golden rules in mind:</p>
+<ol>
+<li><strong>Isolate Logic from Presentation:</strong> Keep your analytical steps separate from your HTML or visual layout rules. If the model gets confused between calculating data and styling elements, both will suffer.</li>
+<li><strong>Use &ldquo;Silent Research&rdquo; Execution:</strong> Force the model to query sources and cross-check data internally before drafting the user-facing response.</li>
+<li><strong>Include &ldquo;Data Confidence&rdquo; Ratings:</strong> Require the model to report its confidence level based on missing variables (e.g., <em>HIGH: 9/10 metrics live; LOW: &lt;6 metrics live</em>). This immediately alerts the user if the model is operating on limited data.</li>
+<li><strong>Implement Outcome Classifications:</strong> Instead of asking open-ended questions like <em>&ldquo;Is this good?&rdquo;</em>, force the AI to categorize its verdict into explicit buckets (<code>OPTIMAL</code>, <code>CONDITIONAL</code>, <code>UNSUITABLE</code>). This removes ambiguity and forces rigorous analysis.</li>
+</ol>
+<pre tabindex="0"><code></code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/claude/">Claude</a></li>
+      <li><a href="//localhost:1313/tags/prompt-engineering/">Prompt Engineering</a></li>
+      <li><a href="//localhost:1313/tags/system-prompts/">System Prompts</a></li>
+      <li><a href="//localhost:1313/tags/financial-modeling/">Financial Modeling</a></li>
+      <li><a href="//localhost:1313/tags/ui-widgets/">UI Widgets</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-04-sign-pdf/">
+    <span class="title">« Prev</span>
+    <span>The Definitive Guide to Signing PDFs on Every Device</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-04-daily-tech/">
+    <span class="title">Next »</span>
+    <span>The Ultimate Daily Tech Coach: Mastering Linux, Python, AI, and Pentesting from Day One</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Runway on Technical Journal</title>
+    <link>//localhost:1313/tags/runway/</link>
+    <description>Recent content in Runway on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 07:54:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/runway/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering JSON Prompting for AI Video Generation</title>
+      <link>//localhost:1313/posts/2026-08-05-json-prompt1/</link>
+      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-json-prompt1/</guid>
+      <description>&lt;h1 id=&#34;mastering-json-prompting-for-ai-video-generation&#34;&gt;Mastering JSON Prompting for AI Video Generation&lt;/h1&gt;
+&lt;p&gt;Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through &lt;strong&gt;structured JSON prompts&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

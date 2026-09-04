@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>React on Technical Journal</title>
+    <link>//localhost:1313/tags/react/</link>
+    <description>Recent content in React on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub, Vercel, and Netlify: The Ultimate Guide to Modern Web Deployment Workflows</title>
+      <link>//localhost:1313/posts/2026-08-04-web-deployment/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-web-deployment/</guid>
+      <description>&lt;p&gt;Understanding the roles of version control platforms and modern deployment services is fundamental to shipping web applications effectively. While GitHub serves as the primary code repository and source of truth, platforms like Vercel and Netlify act as deployment engines, transforming raw source code into globally distributed production applications.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-high-level-role-comparison&#34;&gt;1. High-Level Role Comparison&lt;/h2&gt;
+&lt;p&gt;Choosing the right hosting platform depends on your stack, scaling requirements, backend dependencies, and developer workflow preference.&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Feature&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;GitHub (Pages)&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Vercel&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Netlify&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Primary Use&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Code hosting, version control, and basic static sites.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Full-stack web applications and Next.js optimization.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Jamstack architectures, static sites, and form-heavy apps.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Ease of Use&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Simple, requiring manual or basic CI workflow setup.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Zero-config deployment with framework auto-detection.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;High developer ergonomics with built-in features.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Backend / Edge&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;No native server-side capabilities.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Deep support for Edge/Serverless functions.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Excellent Serverless support + built-in APIs.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Form &amp;amp; Auth&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;None out of the box.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Integrates via external tools or serverless logic.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Native handling for forms, identity, and split testing.&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Target Audience&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Open-source libraries, portfolios, basic HTML/CSS.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Next.js, React, SvelteKit, high-performance apps.&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Gatsby, Hugo, Eleventy, Nuxt, multi-purpose frontend.&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-core-platform-profiles&#34;&gt;2. Core Platform Profiles&lt;/h2&gt;
+&lt;h3 id=&#34;github--github-pages&#34;&gt;GitHub &amp;amp; GitHub Pages&lt;/h3&gt;
+&lt;p&gt;GitHub is the industry standard for git-based version control, repository management, and team collaboration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The 90-Day Blueprint to Becoming a Full-Stack Developer: From Zero to AI-Powered Apps</title>
+      <link>//localhost:1313/posts/2026-08-04-90days-fullstack/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-90days-fullstack/</guid>
+      <description>&lt;p&gt;Ninety days sounds tight. If you ask ten senior engineers how long it takes to become job-ready, most will say a year or two. They aren&amp;rsquo;t lying, but they are assuming traditional computer science degree timelines or casual self-study. If you cut out the noise, focus on production-grade tools, and ship real projects every single week, three months is plenty of time to build a formidable foundation.&lt;/p&gt;
+&lt;p&gt;This blueprint breaks down the exact 90-day trajectory. We start with raw web fundamentals, move into modern frontend architectures, build scalable backends, automate infrastructure with DevOps, and wrap up by wiring AI intelligence directly into full-stack applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

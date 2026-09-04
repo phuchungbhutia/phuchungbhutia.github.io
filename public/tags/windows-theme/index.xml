@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows-Theme on Technical Journal</title>
+    <link>//localhost:1313/tags/windows-theme/</link>
+    <description>Recent content in Windows-Theme on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/windows-theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transforming Linux Mint XFCE into a High-Speed Windows Clone for Older PCs (4GB RAM Optimization Guide)</title>
+      <link>//localhost:1313/posts/2026-08-04-custom-xfce/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-custom-xfce/</guid>
+      <description>&lt;h1 id=&#34;transforming-linux-mint-xfce-into-a-high-speed-windows-clone-optimized-for-4gb-ram&#34;&gt;Transforming Linux Mint XFCE into a High-Speed Windows Clone (Optimized for 4GB RAM)&lt;/h1&gt;
+&lt;p&gt;If you are running Linux Mint on an older desktop or laptop equipped with only 4GB of RAM, you do not have to choose between visual familiarity and rapid performance.&lt;/p&gt;
+&lt;p&gt;While &lt;strong&gt;Linux Mint XFCE&lt;/strong&gt; is already one of the most efficient, lightweight Linux distributions available today, its stock configuration isn&amp;rsquo;t fully tuned out-of-the-box for low-spec hardware or Windows migration. In this comprehensive, step-by-step guide, we compile everything needed to transform your XFCE desktop into an authentic Windows lookalike, integrate a lightweight taskbar net-speed monitor, replace the boot splash graphic, master essential terminal controls, and implement deep kernel-level optimizations to keep your system running blazingly fast.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

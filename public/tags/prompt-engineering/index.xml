@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Prompt Engineering on Technical Journal</title>
+    <link>//localhost:1313/tags/prompt-engineering/</link>
+    <description>Recent content in Prompt Engineering on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 08:10:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/prompt-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Reusable JSON Prompt Generator Template</title>
+      <link>//localhost:1313/posts/2026-08-05-json-prompt2/</link>
+      <pubDate>Wed, 05 Aug 2026 08:10:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-json-prompt2/</guid>
+      <description>&lt;h1 id=&#34;building-a-reusable-json-prompt-generator-template&#34;&gt;Building a Reusable JSON Prompt Generator Template&lt;/h1&gt;
+&lt;p&gt;Writing JSON manually works for a few scenes.&lt;/p&gt;
+&lt;p&gt;Writing hundreds of prompts quickly becomes repetitive.&lt;/p&gt;
+&lt;p&gt;The solution is a reusable template.&lt;/p&gt;
+&lt;p&gt;This article explains how to design a flexible JSON prompt generator that can be adapted to almost any AI video generation platform.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;why-templates-matter&#34;&gt;Why Templates Matter&lt;/h1&gt;
+&lt;p&gt;A reusable template offers several advantages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consistency&lt;/li&gt;
+&lt;li&gt;Speed&lt;/li&gt;
+&lt;li&gt;Fewer mistakes&lt;/li&gt;
+&lt;li&gt;Easier collaboration&lt;/li&gt;
+&lt;li&gt;Simple automation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Instead of starting from scratch every time, you only fill in the required fields.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building an Ultra-Realistic AI Photo Restoration Prompt</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-photo-prompt/</link>
+      <pubDate>Wed, 05 Aug 2026 07:55:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-photo-prompt/</guid>
+      <description>&lt;h1 id=&#34;building-an-ultra-realistic-ai-photo-restoration-prompt&#34;&gt;Building an Ultra-Realistic AI Photo Restoration Prompt&lt;/h1&gt;
+&lt;p&gt;Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.&lt;/p&gt;
+&lt;p&gt;The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.&lt;/p&gt;
+&lt;h2 id=&#34;design-goals&#34;&gt;Design Goals&lt;/h2&gt;
+&lt;p&gt;The restoration prompt focuses on five principles:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering JSON Prompting for AI Video Generation</title>
+      <link>//localhost:1313/posts/2026-08-05-json-prompt1/</link>
+      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-json-prompt1/</guid>
+      <description>&lt;h1 id=&#34;mastering-json-prompting-for-ai-video-generation&#34;&gt;Mastering JSON Prompting for AI Video Generation&lt;/h1&gt;
+&lt;p&gt;Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through &lt;strong&gt;structured JSON prompts&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Prompt Engineering Blueprint: How to Build Production-Grade AI Agents with Constrained Logic</title>
+      <link>//localhost:1313/posts/2026-08-04-ai-agents/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-ai-agents/</guid>
+      <description>&lt;p&gt;If you have ever asked a Large Language Model (LLM) to perform complex analysis, you have likely run into the &amp;ldquo;chatty AI&amp;rdquo; problem. When left unconstrained, AI models default to generic intros, vague advice, inconsistent formatting, and hallucinated calculations.&lt;/p&gt;
+&lt;p&gt;To transform an LLM from a standard chatbot into a production-grade analytical tool, you must move away from conversational prompts and adopt &lt;strong&gt;Constrained Execution Frameworks&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Below is a detailed breakdown of how advanced prompt architectures—like the Mutual Fund Evaluator and Stock Fundamental Analyser—work, why they perform so well, and how you can adapt them for your own domain.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Daily Tech Coach: Mastering Linux, Python, AI, and Pentesting from Day One</title>
+      <link>//localhost:1313/posts/2026-08-04-daily-tech/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-daily-tech/</guid>
+      <description>&lt;p&gt;Building a consistent routine to learn complex technical skills can feel like a daunting task. Between sorting through endless documentation, figuring out what tools to use, and finding practical hands-on exercises, it is easy to get stuck in tutorial hell.&lt;/p&gt;
+&lt;p&gt;To solve this, we can turn an LLM into an automated, highly disciplined daily instructor. By combining Linux terminal fundamentals, Python scripting, legal penetration testing, and modern 2026 AI workflows, you can create a self-sustaining curriculum that levels up your skills every single day.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Davinci-Resolve on Technical Journal</title>
+    <link>//localhost:1313/tags/davinci-resolve/</link>
+    <description>Recent content in Davinci-Resolve on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 07:55:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/davinci-resolve/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Complete Beginner&#39;s Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve</title>
+      <link>//localhost:1313/posts/2026-08-05-vneditor/</link>
+      <pubDate>Wed, 05 Aug 2026 07:55:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-vneditor/</guid>
+      <description>&lt;h1 id=&#34;the-complete-beginners-guide-to-creating-cinematic-travel-videos&#34;&gt;The Complete Beginner&amp;rsquo;s Guide to Creating Cinematic Travel Videos&lt;/h1&gt;
+&lt;p&gt;A beautiful travel film is more than a collection of photos and videos. It tells a story, creates emotion, and lets viewers experience the journey with you.&lt;/p&gt;
+&lt;p&gt;This guide combines planning, storytelling, editing, music selection, transitions, color grading, and export settings into one workflow suitable for beginners using &lt;strong&gt;VN Editor&lt;/strong&gt; or &lt;strong&gt;DaVinci Resolve&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;who-is-this-guide-for&#34;&gt;Who Is This Guide For?&lt;/h1&gt;
+&lt;p&gt;This workflow is ideal for:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

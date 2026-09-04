@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Airtel on Technical Journal</title>
+    <link>//localhost:1313/tags/airtel/</link>
+    <description>Recent content in Airtel on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/airtel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Ultimate Indian Traveler’s Guide to eSIMs, Dual SIM Setups, and International Travel</title>
+      <link>//localhost:1313/posts/2026-08-04-esim-india/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-esim-india/</guid>
+      <description>&lt;p&gt;Navigating foreign connectivity while keeping your primary home numbers active can feel like a complex puzzle. Between Jio, Airtel, local international SIMs, physical SIM slots, and digital eSIM profiles, it is easy to get confused about what stays on, what gets turned off, and what actually needs to be physically swapped.&lt;/p&gt;
+&lt;p&gt;This complete guide breaks down everything you need to know about switching your Indian mobile lines (Jio and Airtel) to eSIM, configuring dual SIM settings for overseas travel, and managing a 3-SIM scenario on a single smartphone.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

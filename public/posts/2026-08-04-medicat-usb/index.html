@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB | Technical Journal</title>
+<meta name="keywords" content="MediCat USB, Ventoy, Windows Repair, Linux Utilities, Bootable USB">
+<meta name="description" content="The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB
+Whether you are an IT professional, a system administrator, or the designated &ldquo;tech guy&rdquo; for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.
+MediCat USB is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader Ventoy, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-04-medicat-usb/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-medicat-usb/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-medicat-usb/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB">
+  <meta property="og:description" content="The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB Whether you are an IT professional, a system administrator, or the designated “tech guy” for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.
+MediCat USB is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader Ventoy, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:tag" content="MediCat USB">
+    <meta property="article:tag" content="Ventoy">
+    <meta property="article:tag" content="Windows Repair">
+    <meta property="article:tag" content="Linux Utilities">
+    <meta property="article:tag" content="Bootable USB">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB">
+  <meta name="twitter:description" content="The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB Whether you are an IT professional, a system administrator, or the designated “tech guy” for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.
+MediCat USB is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader Ventoy, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB",
+      "item": "//localhost:1313/posts/2026-08-04-medicat-usb/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB",
+  "name": "The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB",
+  "description": "The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB Whether you are an IT professional, a system administrator, or the designated \u0026ldquo;tech guy\u0026rdquo; for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.\nMediCat USB is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader Ventoy, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.\n",
+  "keywords": [
+    "MediCat USB", "Ventoy", "Windows Repair", "Linux Utilities", "Bootable USB"
+  ],
+  "articleBody": "The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB Whether you are an IT professional, a system administrator, or the designated “tech guy” for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.\nMediCat USB is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader Ventoy, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.\nIn this comprehensive guide, we synthesize everything you need to know about setting up MediCat USB, customizing it for smaller drives, navigating its toolset, and using advanced utilities like Jayro’s Lockpick and Kon-Boot.\n1. Understanding the Hardware Requirements Before downloading files, it’s essential to understand MediCat’s storage demands:\nFull MediCat Suite: Requires at least a 32 GB USB drive (64 GB recommended). The uncompressed payload sits between 21 GB and 25 GB. Lightweight Custom Setup: If you only have a 16 GB USB drive, you cannot fit the full MediCat package. However, you can use Ventoy to create a custom rescue toolkit by manually picking the most critical ISOs. 2. Setting Up the USB Drive: Step-by-Step Because MediCat uses Ventoy as its underlying core, you don’t need to reformat your drive every time you add or update a tool. You simply drag and drop ISO images onto the partition.\nSetup on Windows Download Tools: Download Ventoy2Disk from ventoy.net and the official MediCat installer script from medicatusb.com. Disable Antivirus: Temporarily disable Windows Security or third-party real-time protection. Password recovery scripts and bootkit utilities inside MediCat naturally trigger security false positives. Format with Ventoy: Insert your USB drive, open Ventoy2Disk.exe, and select your target drive. Choose GPT partition style (recommended for modern UEFI systems) or MBR (for legacy BIOS support), then click Install. Run Installer: Execute Medicat_Installer.bat as Administrator. Follow the terminal prompts to select your USB drive letter. The installer will automatically download, extract, and arrange the entire MediCat menu structure onto your drive. Setup on Linux Prepare Ventoy: Extract ventoy-x.x.xx-linux.tar.gz. Open a terminal and run lsblk to identify your USB drive (e.g., /dev/sdb). Install Ventoy to Drive: sudo ./Ventoy2Disk.sh -i /dev/sdX (Replace /dev/sdX with your exact USB disk identifier). 3. Run MediCat Script: Run MediCat_Installer.sh in the terminal, confirm your target mount path, and let the payload extract directly to the USB drive.\n3. Assembling a Custom Toolkit for a 16 GB Drive If you are using a 16 GB drive, skip the full MediCat installer script. Instead, format the drive using Ventoy and copy these essential ISOs directly onto the root directory:\nUtility / ISO Primary Purpose File Size Mini Windows 10/11 PE Complete live desktop environment with diagnostic utilities ~3.5 GB – 4.5 GB SystemRescue Linux terminal environment for partition and bootloader repair ~1.2 GB Kaspersky Rescue Disk Bootable offline malware and rootkit scanner ~670 MB GParted Live / Clonezilla Standalone partition management and disk cloning ~400 MB – 500 MB Jayro’s Lockpick / Passware Windows login, PIN, and account password bypass ~200 MB – 500 MB MemTest86 Deep hardware memory (RAM) stress testing ~10 MB Pro Tip: Keep 2–3 GB of free space on your drive for portable Windows utilities (like CPU-Z, CrystalDiskInfo, or Malwarebytes Portable) that you can launch inside Mini Windows PE.\n4. Deep Dive: What’s Included in Full MediCat USB? When booting the full MediCat USB suite, Ventoy organizes its tools into clean, navigable submenus:\nLive Operating Systems (~4.5 GB): Contains Mini Windows 10/11 PE, Active@ Data Studio, and SystemRescue. These allow you to boot into a fully functioning desktop environment even if the computer’s primary hard drive is completely dead or corrupted. Backup \u0026 Disk Cloning (~3.8 GB): Features enterprise-grade imaging utilities including Acronis Cyber Protect Home, Macrium Reflect Free, AOMEI Backupper, Rescuezilla, and Clonezilla. Partition Management \u0026 Disk Repair (~2.5 GB): Includes AOMEI Partition Assistant, EaseUS Partition Master, DiskGenius, and low-level wiping tools like ShredOS and HDAT2. Password Recovery \u0026 Access Controls (~1.2 GB): Packed with engines like Jayro’s Lockpick, Windows Login Unlocker, PCUnlocker, and NTPWEdit. Malware \u0026 Threat Removal (~4.0 GB): Features bootable engines for Malwarebytes, Kaspersky, Emsisoft, along with specialized ransomware decryption utilities. Diagnostics \u0026 Hardware (~2.0 GB): Includes PassMark MemTest86, Snappy Driver Installer (SDI), CrystalDiskInfo, FurMark, and HWMonitor. 5. Practical Walkthrough 1: Resetting a Forgotten Windows Password When a user is permanently locked out of their Windows account, Jayro’s Lockpick inside MediCat offers a quick, automated way to clear or reset local account credentials.\nBoot into MediCat USB: Enter system BIOS/UEFI during boot. Insert the MediCat USB drive into the target computer. Turn on the system and tap the boot menu key (F12, F11, or Esc) to select your USB drive from the boot menu.\nLaunch Jayro’s Lockpick or Mini Windows PE: In the Ventoy boot menu, go to Password Recovery and select Jayro’s Lockpick. Alternatively, boot into Mini Windows 10/11 PE, open the desktop Portable Apps launcher, and select Programs → Password Recovery → Jayro's Lockpick.\nSelect Your Target Windows Installation: Launch Windows Login Unlocker from the Jayro’s Lockpick menu. The utility automatically scans connected hard drives and mounts the local Windows SAM hive directory (C:\\Windows\\System32\\config\\SAM).\nSelect the Account and Clear Password: Select the locked local user account from the list. Click Change Password or Reset Password, leave the input field completely blank, and click OK.\nApply Changes and Reboot: Click Apply Changes, close the application, remove the USB drive, and reboot the system. You can now log into Windows by pressing Enter without typing a password.\n6. Practical Walkthrough 2: Bypassing Windows Login Without Changing the Password Resetting a password alters the SAM database, which can disrupt local encryption keys or alert the device owner. If you need to access a system temporarily for maintenance or file recovery without modifying the existing password, Kon-Boot is the ideal solution.\nHow Kon-Boot Works Kon-Boot acts as an in-memory bootkit. When launched via MediCat, it loads into the computer’s volatile RAM and patches the Local Security Authority Subsystem Service (LSASS) in memory during boot. It tricks Windows into accepting any password (or an empty one) without altering a single byte on the physical hard drive.\nDisable Secure Boot in BIOS: Required because Kon-Boot uses unsigned memory hooks. Power on the target PC and enter the BIOS settings (F2, Del, or F12). Navigate to the Security or Boot tab and set Secure Boot to Disabled. Save and exit.\nBoot Kon-Boot from MediCat USB: Press your system’s boot menu key during restart, boot into MediCat, navigate to Password Recovery, and select Kon-Boot (konboot.iso). Select Boot in Normal Mode.\nAllow Kon-Boot to Patch RAM: Do not interrupt the boot sequence. Watch the Kon-Boot splash screen execute. It will automatically patch system memory and chain-load the internal Windows installation.\nLog in with Any Password: When the standard Windows login screen appears, select the user account, leave the password field completely blank (or type a single character), and press Enter.\nRestart to Restore Security: Perform your diagnostic or backup tasks. When finished, shut down or restart the computer normally and remove the USB drive. On the next boot, Windows will enforce the original, unmodified password once again.\nSummary Checklist for Technicians Drive Choice: Use a high-speed 32 GB or 64 GB USB 3.0/3.2 flash drive for full MediCat, or a 16 GB drive for custom ISO selection. Preparation: Always disable antivirus software on your host machine during drive creation to prevent file quarantine. BIOS Configurations: Disable Secure Boot when using in-memory tools like Kon-Boot or older diagnostic environments. BitLocker Caution: Ensure you have the 48-digit recovery key handy if attempting password bypasses on encrypted systems. ",
+  "wordCount" : "1294",
+  "inLanguage": "en",
+  "datePublished": "2026-08-04T00:00:00Z",
+  "dateModified": "2026-08-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-04-medicat-usb/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#the-complete-swiss-army-knife-guide-setting-up-and-mastering-medicat-usb" aria-label="The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB">The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB</a><ul>
+                    
+            <li>
+                <a href="#1-understanding-the-hardware-requirements" aria-label="1. Understanding the Hardware Requirements">1. Understanding the Hardware Requirements</a></li>
+            <li>
+                <a href="#2-setting-up-the-usb-drive-step-by-step" aria-label="2. Setting Up the USB Drive: Step-by-Step">2. Setting Up the USB Drive: Step-by-Step</a><ul>
+                    
+            <li>
+                <a href="#setup-on-windows" aria-label="Setup on Windows">Setup on Windows</a></li>
+            <li>
+                <a href="#setup-on-linux" aria-label="Setup on Linux">Setup on Linux</a></li></ul>
+            </li>
+            <li>
+                <a href="#3-assembling-a-custom-toolkit-for-a-16-gb-drive" aria-label="3. Assembling a Custom Toolkit for a 16 GB Drive">3. Assembling a Custom Toolkit for a 16 GB Drive</a></li>
+            <li>
+                <a href="#4-deep-dive-whats-included-in-full-medicat-usb" aria-label="4. Deep Dive: What&rsquo;s Included in Full MediCat USB?">4. Deep Dive: What&rsquo;s Included in Full MediCat USB?</a></li>
+            <li>
+                <a href="#5-practical-walkthrough-1-resetting-a-forgotten-windows-password" aria-label="5. Practical Walkthrough 1: Resetting a Forgotten Windows Password">5. Practical Walkthrough 1: Resetting a Forgotten Windows Password</a></li>
+            <li>
+                <a href="#6-practical-walkthrough-2-bypassing-windows-login-without-changing-the-password" aria-label="6. Practical Walkthrough 2: Bypassing Windows Login Without Changing the Password">6. Practical Walkthrough 2: Bypassing Windows Login Without Changing the Password</a><ul>
+                    
+            <li>
+                <a href="#how-kon-boot-works" aria-label="How Kon-Boot Works">How Kon-Boot Works</a></li></ul>
+            </li>
+            <li>
+                <a href="#summary-checklist-for-technicians" aria-label="Summary Checklist for Technicians">Summary Checklist for Technicians</a>
+            </li>
+        </ul>
+        </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><h1 id="the-complete-swiss-army-knife-guide-setting-up-and-mastering-medicat-usb">The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB<a hidden class="anchor" aria-hidden="true" href="#the-complete-swiss-army-knife-guide-setting-up-and-mastering-medicat-usb">#</a></h1>
+<p>Whether you are an IT professional, a system administrator, or the designated &ldquo;tech guy&rdquo; for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.</p>
+<p><strong>MediCat USB</strong> is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader <strong>Ventoy</strong>, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.</p>
+<p>In this comprehensive guide, we synthesize everything you need to know about setting up MediCat USB, customizing it for smaller drives, navigating its toolset, and using advanced utilities like <strong>Jayro&rsquo;s Lockpick</strong> and <strong>Kon-Boot</strong>.</p>
+<hr>
+<h2 id="1-understanding-the-hardware-requirements">1. Understanding the Hardware Requirements<a hidden class="anchor" aria-hidden="true" href="#1-understanding-the-hardware-requirements">#</a></h2>
+<p>Before downloading files, it&rsquo;s essential to understand MediCat&rsquo;s storage demands:</p>
+<ul>
+<li><strong>Full MediCat Suite:</strong> Requires at least a <strong>32 GB USB drive</strong> (64 GB recommended). The uncompressed payload sits between <strong>21 GB and 25 GB</strong>.</li>
+<li><strong>Lightweight Custom Setup:</strong> If you only have a <strong>16 GB USB drive</strong>, you cannot fit the full MediCat package. However, you can use <strong>Ventoy</strong> to create a custom rescue toolkit by manually picking the most critical ISOs.</li>
+</ul>
+<hr>
+<h2 id="2-setting-up-the-usb-drive-step-by-step">2. Setting Up the USB Drive: Step-by-Step<a hidden class="anchor" aria-hidden="true" href="#2-setting-up-the-usb-drive-step-by-step">#</a></h2>
+<p>Because MediCat uses <strong>Ventoy</strong> as its underlying core, you don&rsquo;t need to reformat your drive every time you add or update a tool. You simply drag and drop ISO images onto the partition.</p>
+<h3 id="setup-on-windows">Setup on Windows<a hidden class="anchor" aria-hidden="true" href="#setup-on-windows">#</a></h3>
+<ol>
+<li><strong>Download Tools:</strong> Download <code>Ventoy2Disk</code> from <a href="https://www.ventoy.net">ventoy.net</a> and the official MediCat installer script from <a href="https://medicatusb.com/">medicatusb.com</a>.</li>
+<li><strong>Disable Antivirus:</strong> Temporarily disable Windows Security or third-party real-time protection. Password recovery scripts and bootkit utilities inside MediCat naturally trigger security false positives.</li>
+<li><strong>Format with Ventoy:</strong> Insert your USB drive, open <code>Ventoy2Disk.exe</code>, and select your target drive. Choose <strong>GPT</strong> partition style (recommended for modern UEFI systems) or <strong>MBR</strong> (for legacy BIOS support), then click <strong>Install</strong>.</li>
+<li><strong>Run Installer:</strong> Execute <code>Medicat_Installer.bat</code> as Administrator. Follow the terminal prompts to select your USB drive letter. The installer will automatically download, extract, and arrange the entire MediCat menu structure onto your drive.</li>
+</ol>
+<h3 id="setup-on-linux">Setup on Linux<a hidden class="anchor" aria-hidden="true" href="#setup-on-linux">#</a></h3>
+<ol>
+<li><strong>Prepare Ventoy:</strong> Extract <code>ventoy-x.x.xx-linux.tar.gz</code>. Open a terminal and run <code>lsblk</code> to identify your USB drive (e.g., <code>/dev/sdb</code>).</li>
+<li><strong>Install Ventoy to Drive:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ./Ventoy2Disk.sh -i /dev/sdX
+</span></span></code></pre></div><p><em>(Replace <code>/dev/sdX</code> with your exact USB disk identifier).</em>
+3. <strong>Run MediCat Script:</strong> Run <code>MediCat_Installer.sh</code> in the terminal, confirm your target mount path, and let the payload extract directly to the USB drive.</p>
+<hr>
+<h2 id="3-assembling-a-custom-toolkit-for-a-16-gb-drive">3. Assembling a Custom Toolkit for a 16 GB Drive<a hidden class="anchor" aria-hidden="true" href="#3-assembling-a-custom-toolkit-for-a-16-gb-drive">#</a></h2>
+<p>If you are using a 16 GB drive, skip the full MediCat installer script. Instead, format the drive using Ventoy and copy these essential ISOs directly onto the root directory:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Utility / ISO</th>
+					<th>Primary Purpose</th>
+					<th>File Size</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Mini Windows 10/11 PE</strong></td>
+					<td>Complete live desktop environment with diagnostic utilities</td>
+					<td>~3.5 GB – 4.5 GB</td>
+			</tr>
+			<tr>
+					<td><strong>SystemRescue</strong></td>
+					<td>Linux terminal environment for partition and bootloader repair</td>
+					<td>~1.2 GB</td>
+			</tr>
+			<tr>
+					<td><strong>Kaspersky Rescue Disk</strong></td>
+					<td>Bootable offline malware and rootkit scanner</td>
+					<td>~670 MB</td>
+			</tr>
+			<tr>
+					<td><strong>GParted Live / Clonezilla</strong></td>
+					<td>Standalone partition management and disk cloning</td>
+					<td>~400 MB – 500 MB</td>
+			</tr>
+			<tr>
+					<td><strong>Jayro&rsquo;s Lockpick / Passware</strong></td>
+					<td>Windows login, PIN, and account password bypass</td>
+					<td>~200 MB – 500 MB</td>
+			</tr>
+			<tr>
+					<td><strong>MemTest86</strong></td>
+					<td>Deep hardware memory (RAM) stress testing</td>
+					<td>~10 MB</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p><strong>Pro Tip:</strong> Keep 2–3 GB of free space on your drive for portable Windows utilities (like CPU-Z, CrystalDiskInfo, or Malwarebytes Portable) that you can launch inside Mini Windows PE.</p>
+</blockquote>
+<hr>
+<h2 id="4-deep-dive-whats-included-in-full-medicat-usb">4. Deep Dive: What&rsquo;s Included in Full MediCat USB?<a hidden class="anchor" aria-hidden="true" href="#4-deep-dive-whats-included-in-full-medicat-usb">#</a></h2>
+<p>When booting the full MediCat USB suite, Ventoy organizes its tools into clean, navigable submenus:</p>
+<ul>
+<li><strong>Live Operating Systems (~4.5 GB):</strong> Contains <em>Mini Windows 10/11 PE</em>, <em>Active@ Data Studio</em>, and <em>SystemRescue</em>. These allow you to boot into a fully functioning desktop environment even if the computer&rsquo;s primary hard drive is completely dead or corrupted.</li>
+<li><strong>Backup &amp; Disk Cloning (~3.8 GB):</strong> Features enterprise-grade imaging utilities including <em>Acronis Cyber Protect Home</em>, <em>Macrium Reflect Free</em>, <em>AOMEI Backupper</em>, <em>Rescuezilla</em>, and <em>Clonezilla</em>.</li>
+<li><strong>Partition Management &amp; Disk Repair (~2.5 GB):</strong> Includes <em>AOMEI Partition Assistant</em>, <em>EaseUS Partition Master</em>, <em>DiskGenius</em>, and low-level wiping tools like <em>ShredOS</em> and <em>HDAT2</em>.</li>
+<li><strong>Password Recovery &amp; Access Controls (~1.2 GB):</strong> Packed with engines like <em>Jayro&rsquo;s Lockpick</em>, <em>Windows Login Unlocker</em>, <em>PCUnlocker</em>, and <em>NTPWEdit</em>.</li>
+<li><strong>Malware &amp; Threat Removal (~4.0 GB):</strong> Features bootable engines for <em>Malwarebytes</em>, <em>Kaspersky</em>, <em>Emsisoft</em>, along with specialized ransomware decryption utilities.</li>
+<li><strong>Diagnostics &amp; Hardware (~2.0 GB):</strong> Includes <em>PassMark MemTest86</em>, <em>Snappy Driver Installer (SDI)</em>, <em>CrystalDiskInfo</em>, <em>FurMark</em>, and <em>HWMonitor</em>.</li>
+</ul>
+<hr>
+<h2 id="5-practical-walkthrough-1-resetting-a-forgotten-windows-password">5. Practical Walkthrough 1: Resetting a Forgotten Windows Password<a hidden class="anchor" aria-hidden="true" href="#5-practical-walkthrough-1-resetting-a-forgotten-windows-password">#</a></h2>
+<p>When a user is permanently locked out of their Windows account, <strong>Jayro&rsquo;s Lockpick</strong> inside MediCat offers a quick, automated way to clear or reset local account credentials.</p>
+<ol>
+<li>
+<p><strong>Boot into MediCat USB:</strong> Enter system BIOS/UEFI during boot.
+Insert the MediCat USB drive into the target computer. Turn on the system and tap the boot menu key (<strong>F12</strong>, <strong>F11</strong>, or <strong>Esc</strong>) to select your USB drive from the boot menu.</p>
+</li>
+<li>
+<p><strong>Launch Jayro&rsquo;s Lockpick or Mini Windows PE:</strong>
+In the Ventoy boot menu, go to <strong>Password Recovery</strong> and select <strong>Jayro&rsquo;s Lockpick</strong>. Alternatively, boot into <strong>Mini Windows 10/11 PE</strong>, open the desktop <strong>Portable Apps</strong> launcher, and select <code>Programs</code> → <code>Password Recovery</code> → <code>Jayro's Lockpick</code>.</p>
+</li>
+<li>
+<p><strong>Select Your Target Windows Installation:</strong>
+Launch <strong>Windows Login Unlocker</strong> from the Jayro&rsquo;s Lockpick menu. The utility automatically scans connected hard drives and mounts the local Windows SAM hive directory (<code>C:\Windows\System32\config\SAM</code>).</p>
+</li>
+<li>
+<p><strong>Select the Account and Clear Password:</strong>
+Select the locked local user account from the list. Click <strong>Change Password</strong> or <strong>Reset Password</strong>, leave the input field completely blank, and click <strong>OK</strong>.</p>
+</li>
+<li>
+<p><strong>Apply Changes and Reboot:</strong>
+Click <strong>Apply Changes</strong>, close the application, remove the USB drive, and reboot the system. You can now log into Windows by pressing <strong>Enter</strong> without typing a password.</p>
+</li>
+</ol>
+<hr>
+<h2 id="6-practical-walkthrough-2-bypassing-windows-login-without-changing-the-password">6. Practical Walkthrough 2: Bypassing Windows Login Without Changing the Password<a hidden class="anchor" aria-hidden="true" href="#6-practical-walkthrough-2-bypassing-windows-login-without-changing-the-password">#</a></h2>
+<p>Resetting a password alters the SAM database, which can disrupt local encryption keys or alert the device owner. If you need to access a system temporarily for maintenance or file recovery without modifying the existing password, <strong>Kon-Boot</strong> is the ideal solution.</p>
+<h3 id="how-kon-boot-works">How Kon-Boot Works<a hidden class="anchor" aria-hidden="true" href="#how-kon-boot-works">#</a></h3>
+<p>Kon-Boot acts as an <strong>in-memory bootkit</strong>. When launched via MediCat, it loads into the computer&rsquo;s volatile RAM and patches the <strong>Local Security Authority Subsystem Service (LSASS)</strong> in memory during boot. It tricks Windows into accepting <em>any</em> password (or an empty one) without altering a single byte on the physical hard drive.</p>
+<ol>
+<li>
+<p><strong>Disable Secure Boot in BIOS:</strong> Required because Kon-Boot uses unsigned memory hooks.
+Power on the target PC and enter the BIOS settings (<strong>F2</strong>, <strong>Del</strong>, or <strong>F12</strong>). Navigate to the <strong>Security</strong> or <strong>Boot</strong> tab and set <strong>Secure Boot</strong> to <strong>Disabled</strong>. Save and exit.</p>
+</li>
+<li>
+<p><strong>Boot Kon-Boot from MediCat USB:</strong>
+Press your system&rsquo;s boot menu key during restart, boot into MediCat, navigate to <strong>Password Recovery</strong>, and select <strong>Kon-Boot</strong> (<code>konboot.iso</code>). Select <strong>Boot in Normal Mode</strong>.</p>
+</li>
+<li>
+<p><strong>Allow Kon-Boot to Patch RAM:</strong> Do not interrupt the boot sequence.
+Watch the Kon-Boot splash screen execute. It will automatically patch system memory and chain-load the internal Windows installation.</p>
+</li>
+<li>
+<p><strong>Log in with Any Password:</strong>
+When the standard Windows login screen appears, select the user account, leave the password field completely <strong>blank</strong> (or type a single character), and press <strong>Enter</strong>.</p>
+</li>
+<li>
+<p><strong>Restart to Restore Security:</strong>
+Perform your diagnostic or backup tasks. When finished, shut down or restart the computer normally and remove the USB drive. On the next boot, Windows will enforce the original, unmodified password once again.</p>
+</li>
+</ol>
+<hr>
+<h2 id="summary-checklist-for-technicians">Summary Checklist for Technicians<a hidden class="anchor" aria-hidden="true" href="#summary-checklist-for-technicians">#</a></h2>
+<ol>
+<li><strong>Drive Choice:</strong> Use a high-speed 32 GB or 64 GB USB 3.0/3.2 flash drive for full MediCat, or a 16 GB drive for custom ISO selection.</li>
+<li><strong>Preparation:</strong> Always disable antivirus software on your host machine during drive creation to prevent file quarantine.</li>
+<li><strong>BIOS Configurations:</strong> Disable <strong>Secure Boot</strong> when using in-memory tools like Kon-Boot or older diagnostic environments.</li>
+<li><strong>BitLocker Caution:</strong> Ensure you have the 48-digit recovery key handy if attempting password bypasses on encrypted systems.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/medicat-usb/">MediCat USB</a></li>
+      <li><a href="//localhost:1313/tags/ventoy/">Ventoy</a></li>
+      <li><a href="//localhost:1313/tags/windows-repair/">Windows Repair</a></li>
+      <li><a href="//localhost:1313/tags/linux-utilities/">Linux Utilities</a></li>
+      <li><a href="//localhost:1313/tags/bootable-usb/">Bootable USB</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-04-youtube/">
+    <span class="title">« Prev</span>
+    <span>The Ultimate Playbook for Building a High-CPM YouTube Automation Engine in B2B SaaS</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-04-ai-side-hustle/">
+    <span class="title">Next »</span>
+    <span>The Ultimate Zero-Cost AI Side-Hustle Playbook (India Edition)</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

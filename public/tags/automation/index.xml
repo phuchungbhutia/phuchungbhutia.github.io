@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Automation on Technical Journal</title>
+    <link>//localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an Automated, Serverless MLBB Meta Hub on GitHub Pages</title>
+      <link>//localhost:1313/posts/2026-09-04-mlbb/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-mlbb/</guid>
+      <description>&lt;p&gt;Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven&amp;rsquo;t been touched in three patches, finding exact item-by-item interaction logic is a chore.&lt;/p&gt;
+&lt;p&gt;I set out to build an alternative: a clean, deterministic, zero-bloat game database for &lt;em&gt;Mobile Legends: Bang Bang&lt;/em&gt; (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Modern Linux System Administration: Automated Maintenance and Hardware Optimization</title>
+      <link>//localhost:1313/posts/2026-09-04-force-time/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-force-time/</guid>
+      <description>A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance.</description>
+    </item>
+    <item>
+      <title>The AI Millionaire Playbook: Building a Digital Empire with AI, Automation, and Systems</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-playbook11/</link>
+      <pubDate>Wed, 05 Aug 2026 11:45:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-playbook11/</guid>
+      <description>&lt;h1 id=&#34;the-ai-millionaire-playbook&#34;&gt;The AI Millionaire Playbook&lt;/h1&gt;
+&lt;h2 id=&#34;part-11--building-a-digital-empire-with-ai-automation-and-systems&#34;&gt;Part 11 — Building a Digital Empire with AI, Automation, and Systems&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;Businesses become valuable when they stop depending on the founder&amp;rsquo;s time and start depending on systems.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Welcome to &lt;strong&gt;Part 11&lt;/strong&gt; of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/p&gt;
+&lt;p&gt;The previous ten articles focused on earning your first income, finding clients, creating products, and building systems. This chapter explores what comes next: creating a business that can grow for years through repeatable processes, valuable assets, and thoughtful use of AI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI Business Mastery Handbook: The Complete Operating System for Building an AI-Powered Business</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-business10/</link>
+      <pubDate>Wed, 05 Aug 2026 11:15:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-business10/</guid>
+      <description>&lt;h1 id=&#34;ai-business-mastery-handbook&#34;&gt;AI Business Mastery Handbook&lt;/h1&gt;
+&lt;h2 id=&#34;part-10--the-complete-operating-system-for-building-an-ai-powered-business&#34;&gt;Part 10 — The Complete Operating System for Building an AI-Powered Business&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The final volume of the Zero to $100/Day AI Business series&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;AI won&amp;rsquo;t replace entrepreneurs. Entrepreneurs who effectively use AI will often outperform those who don&amp;rsquo;t.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Welcome to the final installment of this series.&lt;/p&gt;
+&lt;p&gt;Over the previous nine articles, you&amp;rsquo;ve learned how to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Launch an AI-powered service business&lt;/li&gt;
+&lt;li&gt;Find paying clients&lt;/li&gt;
+&lt;li&gt;Build systems&lt;/li&gt;
+&lt;li&gt;Scale operations&lt;/li&gt;
+&lt;li&gt;Create digital assets&lt;/li&gt;
+&lt;li&gt;Diversify income&lt;/li&gt;
+&lt;li&gt;Think like a business owner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This handbook brings those ideas together into a practical reference that you can return to as your business evolves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate AI Solopreneur Blueprint: From Zero to a $1 Million AI Business</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-solo9/</link>
+      <pubDate>Wed, 05 Aug 2026 10:45:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-solo9/</guid>
+      <description>&lt;h1 id=&#34;the-ultimate-ai-solopreneur-blueprint&#34;&gt;The Ultimate AI Solopreneur Blueprint&lt;/h1&gt;
+&lt;h2 id=&#34;part-9--from-zero-to-a-1-million-ai-business&#34;&gt;Part 9 — From Zero to a $1 Million AI Business&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This is Part 9 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction&lt;/li&gt;
+&lt;li&gt;Thinking Like a CEO&lt;/li&gt;
+&lt;li&gt;The AI Business Ladder&lt;/li&gt;
+&lt;li&gt;Seven Stages of Growth&lt;/li&gt;
+&lt;li&gt;Revenue Streams&lt;/li&gt;
+&lt;li&gt;Building a Personal Brand&lt;/li&gt;
+&lt;li&gt;Building an AI Product&lt;/li&gt;
+&lt;li&gt;Creating a Micro SaaS&lt;/li&gt;
+&lt;li&gt;Hiring an AI Team&lt;/li&gt;
+&lt;li&gt;Systems Thinking&lt;/li&gt;
+&lt;li&gt;KPIs&lt;/li&gt;
+&lt;li&gt;Financial Roadmap&lt;/li&gt;
+&lt;li&gt;10-Year Vision&lt;/li&gt;
+&lt;li&gt;Final Checklist&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;By now you&amp;rsquo;ve learned how to:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI Automation Empire: Building Multiple Income Streams That Work Together</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-automation8/</link>
+      <pubDate>Wed, 05 Aug 2026 10:15:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-automation8/</guid>
+      <description>&lt;h1 id=&#34;ai-automation-empire-building-multiple-income-streams-that-work-together&#34;&gt;AI Automation Empire: Building Multiple Income Streams That Work Together&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Part 8 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Stop trading time for money.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The ultimate goal isn&amp;rsquo;t to complete more client work. It&amp;rsquo;s to build a collection of assets and systems that generate income from multiple sources.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This chapter explores how to move beyond freelancing and create a diversified AI-powered business.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Why One Income Stream Is Risky&lt;/li&gt;
+&lt;li&gt;The AI Business Pyramid&lt;/li&gt;
+&lt;li&gt;The Seven Layers of an AI Business&lt;/li&gt;
+&lt;li&gt;Building Your Asset Stack&lt;/li&gt;
+&lt;li&gt;AI Automation Workflow&lt;/li&gt;
+&lt;li&gt;No-Code Business Systems&lt;/li&gt;
+&lt;li&gt;Creating Digital Products&lt;/li&gt;
+&lt;li&gt;Subscription Income&lt;/li&gt;
+&lt;li&gt;Affiliate Income&lt;/li&gt;
+&lt;li&gt;Licensing Your Work&lt;/li&gt;
+&lt;li&gt;Building a Personal Brand&lt;/li&gt;
+&lt;li&gt;The AI Tech Stack&lt;/li&gt;
+&lt;li&gt;Risk Management&lt;/li&gt;
+&lt;li&gt;A 5-Year Roadmap&lt;/li&gt;
+&lt;li&gt;Final Thoughts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;the-problem-with-one-income-stream&#34;&gt;The Problem With One Income Stream&lt;/h1&gt;
+&lt;p&gt;Imagine your income looks like this:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>From $100/Day to $10,000/Month: Building an AI Agency That Runs Without You</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-automation6/</link>
+      <pubDate>Wed, 05 Aug 2026 09:20:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-automation6/</guid>
+      <description>&lt;h1 id=&#34;from-100day-to-10000month-building-an-ai-agency-that-runs-without-you&#34;&gt;From $100/Day to $10,000/Month: Building an AI Agency That Runs Without You&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Part 6 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Your goal is no longer to become a better freelancer.&lt;/p&gt;
+&lt;p&gt;Your goal is to become the owner of a business that earns money through systems, processes, automation, and a team.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Why Freelancers Hit an Income Ceiling&lt;/li&gt;
+&lt;li&gt;The AI Agency Model&lt;/li&gt;
+&lt;li&gt;Choosing Your Niche&lt;/li&gt;
+&lt;li&gt;Designing Productized Services&lt;/li&gt;
+&lt;li&gt;Building SOPs&lt;/li&gt;
+&lt;li&gt;Hiring Without Employees&lt;/li&gt;
+&lt;li&gt;Managing Quality&lt;/li&gt;
+&lt;li&gt;Automating the Business&lt;/li&gt;
+&lt;li&gt;Financial Planning&lt;/li&gt;
+&lt;li&gt;Marketing Without Ads&lt;/li&gt;
+&lt;li&gt;Scaling to $10,000/Month&lt;/li&gt;
+&lt;li&gt;Common Mistakes&lt;/li&gt;
+&lt;li&gt;12-Month Roadmap&lt;/li&gt;
+&lt;li&gt;Final Thoughts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;the-freelancing-ceiling&#34;&gt;The Freelancing Ceiling&lt;/h1&gt;
+&lt;p&gt;Every freelancer eventually reaches the same problem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scaling Your AI Service Business to Consistent $100&#43; Days: Systems, Upsells, and Automation</title>
+      <link>//localhost:1313/posts/2026-08-05-ai-service5/</link>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ai-service5/</guid>
+      <description>&lt;h1 id=&#34;scaling-your-ai-service-business-to-consistent-100-days&#34;&gt;Scaling Your AI Service Business to Consistent $100+ Days&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Part 5 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Getting your first client proves your idea works.&lt;/p&gt;
+&lt;p&gt;Building systems turns occasional income into a predictable business.&lt;/p&gt;
+&lt;p&gt;This final article focuses on increasing revenue without working significantly more hours.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;The Difference Between Freelancing and a Business&lt;/li&gt;
+&lt;li&gt;Understanding Revenue Growth&lt;/li&gt;
+&lt;li&gt;Increasing Average Order Value&lt;/li&gt;
+&lt;li&gt;Building Service Packages&lt;/li&gt;
+&lt;li&gt;Creating Standard Operating Procedures (SOPs)&lt;/li&gt;
+&lt;li&gt;AI Workflow Automation&lt;/li&gt;
+&lt;li&gt;Managing Multiple Clients&lt;/li&gt;
+&lt;li&gt;Raising Your Prices&lt;/li&gt;
+&lt;li&gt;Building Monthly Recurring Revenue&lt;/li&gt;
+&lt;li&gt;Expanding Your Services&lt;/li&gt;
+&lt;li&gt;Tracking Business Metrics&lt;/li&gt;
+&lt;li&gt;Common Scaling Mistakes&lt;/li&gt;
+&lt;li&gt;90-Day Growth Plan&lt;/li&gt;
+&lt;li&gt;Final Thoughts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;from-freelancer-to-business-owner&#34;&gt;From Freelancer to Business Owner&lt;/h1&gt;
+&lt;p&gt;Many freelancers reach a point where every additional dollar requires additional hours.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title>
+      <link>//localhost:1313/posts/2026-08-05-github5/</link>
+      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-github5/</guid>
+      <description>&lt;h1 id=&#34;github-actions-complete-cicd-guide-from-beginner-to-production&#34;&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
+&lt;p&gt;Writing code is only one part of software development.&lt;/p&gt;
+&lt;p&gt;Modern software teams automate everything:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building applications&lt;/li&gt;
+&lt;li&gt;Running tests&lt;/li&gt;
+&lt;li&gt;Checking code quality&lt;/li&gt;
+&lt;li&gt;Creating Docker images&lt;/li&gt;
+&lt;li&gt;Publishing releases&lt;/li&gt;
+&lt;li&gt;Deploying applications&lt;/li&gt;
+&lt;li&gt;Sending notifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitHub Actions makes all of this possible without leaving GitHub.&lt;/p&gt;
+&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title>
+      <link>//localhost:1313/posts/2026-08-05-python3/</link>
+      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-python3/</guid>
+      <description>&lt;h1 id=&#34;python-for-devops-and-automation-complete-beginner-to-advanced-guide&#34;&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
+&lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
+&lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
+&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title>
+      <link>//localhost:1313/posts/2026-08-05-ocr2md/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ocr2md/</guid>
+      <description>&lt;h1 id=&#34;building-ocr2md-a-complete-ocr-to-markdown-platform&#34;&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
+&lt;p&gt;Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.&lt;/p&gt;
+&lt;p&gt;Extracting this information into a structured format is surprisingly difficult.&lt;/p&gt;
+&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
+      <link>//localhost:1313/posts/2026-08-04-linux-mint2/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-linux-mint2/</guid>
+      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
+      <link>//localhost:1313/posts/2026-08-04-rsync-to-from/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-rsync-to-from/</guid>
+      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
+      <link>//localhost:1313/posts/2026-08-04-rsync/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-rsync/</guid>
+      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</title>
+      <link>//localhost:1313/posts/2026-08-04-gdocs/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-gdocs/</guid>
+      <description>&lt;h1 id=&#34;mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script&#34;&gt;Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script&lt;/h1&gt;
+&lt;p&gt;When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Daily Tech Coach: Mastering Linux, Python, AI, and Pentesting from Day One</title>
+      <link>//localhost:1313/posts/2026-08-04-daily-tech/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-daily-tech/</guid>
+      <description>&lt;p&gt;Building a consistent routine to learn complex technical skills can feel like a daunting task. Between sorting through endless documentation, figuring out what tools to use, and finding practical hands-on exercises, it is easy to get stuck in tutorial hell.&lt;/p&gt;
+&lt;p&gt;To solve this, we can turn an LLM into an automated, highly disciplined daily instructor. By combining Linux terminal fundamentals, Python scripting, legal penetration testing, and modern 2026 AI workflows, you can create a self-sustaining curriculum that levels up your skills every single day.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

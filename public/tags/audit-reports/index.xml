@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Audit Reports on Technical Journal</title>
+    <link>//localhost:1313/tags/audit-reports/</link>
+    <description>Recent content in Audit Reports on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/audit-reports/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notion vs. Obsidian for Audit Reports: A Complete Hands-On Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-notion-obsidian/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-notion-obsidian/</guid>
+      <description>&lt;p&gt;Choosing the right tool to record audit findings, attach evidence photos, and export clean, client-ready reports can make or break your inspection workflow. While both Notion and Obsidian excel as modern note-taking platforms, their core architectural differences lead to distinctly different report-building experiences.&lt;/p&gt;
+&lt;p&gt;Here is an in-depth breakdown comparing Notion and Obsidian for audit reporting, followed by step-by-step guides for executing audit workflows on both platforms.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-notion-vs-obsidian-head-to-head-comparison&#34;&gt;1. Notion vs. Obsidian: Head-to-Head Comparison&lt;/h2&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Feature&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Notion&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Obsidian&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Photo Layout &amp;amp; Drag-and-Drop&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Native multi-column drag-and-drop, inline captions, and quick visual resizing&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Attachment-based (&lt;code&gt;![[image.jpg]]&lt;/code&gt;). Resizing requires syntax like &lt;code&gt;|300&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Data Structuring&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Relational databases with custom properties (Status, Severity, Date, Location)&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;YAML/Properties header block, queryable via community plugins (e.g., Dataview)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Templates&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;One-click page and database templates with pre-configured headers&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Built-in Templates plugin or Templater community plugin&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;PDF Exporting&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Clean native engine with options for margin control and page sizing (A4, Letter)&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Native PDF export; highly customizable via CSS snippets&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Data Ownership &amp;amp; Storage&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Cloud-based (requires internet for full feature set)&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Local-first Markdown files (works 100% offline)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Mobile Syncing&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Seamless cloud sync via official apps across iOS, Android, and Desktop&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Local folder sync or Obsidian Sync / third-party git/cloud sync&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-step-by-step-guide-writing-audit-reports-in-notion&#34;&gt;2. Step-by-Step Guide: Writing Audit Reports in Notion&lt;/h2&gt;
+&lt;p&gt;Notion&amp;rsquo;s block-based architecture and relational databases make it ideal for teams needing structured tracking and visual visual evidence layouts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

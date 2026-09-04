@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GovTech on Technical Journal</title>
+    <link>//localhost:1313/tags/govtech/</link>
+    <description>Recent content in GovTech on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/govtech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports</title>
+      <link>//localhost:1313/posts/2026-08-04-egs-scraping/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-egs-scraping/</guid>
+      <description>&lt;h1 id=&#34;building-the-egramswaraj-audit-toolkit-from-scraping-messy-public-financial-data-to-standardized-audit-reports&#34;&gt;Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports&lt;/h1&gt;
+&lt;p&gt;Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India&amp;rsquo;s &lt;strong&gt;eGramSwaraj&lt;/strong&gt;. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.&lt;/p&gt;
+&lt;p&gt;In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

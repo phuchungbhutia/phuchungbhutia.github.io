@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TP-Link on Technical Journal</title>
+    <link>//localhost:1313/tags/tp-link/</link>
+    <description>Recent content in TP-Link on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/tp-link/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extending a Static IP Office Network with a TP-Link C54 Extender</title>
+      <link>//localhost:1313/posts/2026-09-04-wifi-extender/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-wifi-extender/</guid>
+      <description>A step-by-step guide to configuring a new router and range extender on a static IP network.</description>
+    </item>
+    <item>
+      <title>Bridging the Gap: Extending a Static IP Office Network with a TP-Link C54</title>
+      <link>//localhost:1313/posts/2026-08-04-tplink54/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-tplink54/</guid>
+      <description>&lt;p&gt;Setting up network hardware usually feels like a plug-and-play affair. You unbox a router, plug in the WAN cable, and let DHCP handle the rest. It just works. But things get complicated when you are dealing with a static IP office environment. Honestly, bridging a fixed local area connection to a new Wi-Fi ecosystem requires a bit of manual maneuvering.&lt;/p&gt;
+&lt;p&gt;So, let&amp;rsquo;s walk through replacing an aging router and extending its reach using a TP-Link C54, keeping all the original credentials intact.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+﻿baseURL: "https://phuchungbhutia.github.io/"
+title: "Technical Journal"
+theme: "PaperMod"
+languageCode: "en"
+defaultContentLanguage: "en"
+
+pagination:
+  pagerSize: 10
+
+taxonomies:
+  category: categories
+  tag: tags
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - name: Search
+      url: search/
+      weight: 10
+    - name: Categories
+      url: categories/
+      weight: 20
+    - name: Tags
+      url: tags/
+      weight: 30
+    - name: Archives
+      url: archives/
+      weight: 40
+
+params:
+  env: production
+  author: "Phuchung Bhutia"
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+
+  profileMode:
+    enabled: true
+    title: "Phuchung Bhutia"
+    subtitle: "Public Finance | Audit & Governance | Web Development"
+    buttons:
+      - name: Posts
+        url: posts/
+      - name: Categories
+        url: categories/
+      - name: Tags
+        url: tags/
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 100
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]

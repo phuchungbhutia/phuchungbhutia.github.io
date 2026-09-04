@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Technical Journal</title>
+    <link>//localhost:1313/categories/</link>
+    <description>Recent content in Categories on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 13:30:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Pages</title>
+      <link>//localhost:1313/categories/github-pages/</link>
+      <pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/github-pages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>//localhost:1313/categories/web-development/</link>
+      <pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android Development</title>
+      <link>//localhost:1313/categories/android-development/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/android-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>//localhost:1313/categories/architecture/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>//localhost:1313/categories/automation/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Botanical Guide</title>
+      <link>//localhost:1313/categories/botanical-guide/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/botanical-guide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Content Strategy</title>
+      <link>//localhost:1313/categories/content-strategy/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/content-strategy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Custom ROMs</title>
+      <link>//localhost:1313/categories/custom-roms/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/custom-roms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Processing</title>
+      <link>//localhost:1313/categories/data-processing/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/data-processing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Decision Making</title>
+      <link>//localhost:1313/categories/decision-making/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/decision-making/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>//localhost:1313/categories/devops/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>//localhost:1313/categories/hardware/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>//localhost:1313/categories/javascript/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>//localhost:1313/categories/linux/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux Administration</title>
+      <link>//localhost:1313/categories/linux-administration/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/linux-administration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>//localhost:1313/categories/networking/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Outdoor Safety</title>
+      <link>//localhost:1313/categories/outdoor-safety/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/outdoor-safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal Growth</title>
+      <link>//localhost:1313/categories/personal-growth/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/personal-growth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Residential Design</title>
+      <link>//localhost:1313/categories/residential-design/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/residential-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Design</title>
+      <link>//localhost:1313/categories/software-design/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/software-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Administration</title>
+      <link>//localhost:1313/categories/system-administration/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/system-administration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Maintenance</title>
+      <link>//localhost:1313/categories/system-maintenance/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/system-maintenance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualization</title>
+      <link>//localhost:1313/categories/virtualization/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/virtualization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Scraping</title>
+      <link>//localhost:1313/categories/web-scraping/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/web-scraping/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ai</title>
+      <link>//localhost:1313/categories/ai/</link>
+      <pubDate>Wed, 05 Aug 2026 11:45:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Entrepreneurship</title>
+      <link>//localhost:1313/categories/entrepreneurship/</link>
+      <pubDate>Wed, 05 Aug 2026 11:45:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/entrepreneurship/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Business</title>
+      <link>//localhost:1313/categories/business/</link>
+      <pubDate>Wed, 05 Aug 2026 11:15:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/business/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitHub</title>
+      <link>//localhost:1313/categories/github/</link>
+      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>//localhost:1313/categories/docker/</link>
+      <pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>//localhost:1313/categories/python/</link>
+      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android</title>
+      <link>//localhost:1313/categories/android/</link>
+      <pubDate>Wed, 05 Aug 2026 08:27:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/android/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Buddhism</title>
+      <link>//localhost:1313/categories/buddhism/</link>
+      <pubDate>Wed, 05 Aug 2026 02:57:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/buddhism/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Meditation</title>
+      <link>//localhost:1313/categories/meditation/</link>
+      <pubDate>Wed, 05 Aug 2026 02:57:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/meditation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Strategy</title>
+      <link>//localhost:1313/categories/strategy/</link>
+      <pubDate>Wed, 05 Aug 2026 08:27:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/strategy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorials</title>
+      <link>//localhost:1313/categories/tutorials/</link>
+      <pubDate>Wed, 05 Aug 2026 08:27:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/tutorials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>//localhost:1313/categories/git/</link>
+      <pubDate>Wed, 05 Aug 2026 08:00:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Messaging</title>
+      <link>//localhost:1313/categories/messaging/</link>
+      <pubDate>Wed, 05 Aug 2026 07:56:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/messaging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photography</title>
+      <link>//localhost:1313/categories/photography/</link>
+      <pubDate>Wed, 05 Aug 2026 07:55:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/photography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video-Editing</title>
+      <link>//localhost:1313/categories/video-editing/</link>
+      <pubDate>Wed, 05 Aug 2026 07:55:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/video-editing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cooking</title>
+      <link>//localhost:1313/categories/cooking/</link>
+      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/cooking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prompting</title>
+      <link>//localhost:1313/categories/prompting/</link>
+      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/prompting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recipes</title>
+      <link>//localhost:1313/categories/recipes/</link>
+      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/recipes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fitness</title>
+      <link>//localhost:1313/categories/fitness/</link>
+      <pubDate>Wed, 05 Aug 2026 07:44:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/fitness/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Health</title>
+      <link>//localhost:1313/categories/health/</link>
+      <pubDate>Wed, 05 Aug 2026 07:44:00 +0530</pubDate>
+      <guid>//localhost:1313/categories/health/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>//localhost:1313/categories/development/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OCR</title>
+      <link>//localhost:1313/categories/ocr/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/ocr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Open Source</title>
+      <link>//localhost:1313/categories/open-source/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/open-source/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI &amp; Automation</title>
+      <link>//localhost:1313/categories/ai--automation/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/ai--automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI &amp; Technology</title>
+      <link>//localhost:1313/categories/ai--technology/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/ai--technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Engineering</title>
+      <link>//localhost:1313/categories/ai-engineering/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/ai-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>APIs</title>
+      <link>//localhost:1313/categories/apis/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/apis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>//localhost:1313/categories/artificial-intelligence/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/artificial-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Audit Automation</title>
+      <link>//localhost:1313/categories/audit-automation/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/audit-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Backup &amp; Storage</title>
+      <link>//localhost:1313/categories/backup--storage/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/backup--storage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banking</title>
+      <link>//localhost:1313/categories/banking/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/banking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Batch Scripting</title>
+      <link>//localhost:1313/categories/batch-scripting/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/batch-scripting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blogging</title>
+      <link>//localhost:1313/categories/blogging/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/blogging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Browser Extensions</title>
+      <link>//localhost:1313/categories/browser-extensions/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/browser-extensions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Business &amp; Finance</title>
+      <link>//localhost:1313/categories/business--finance/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/business--finance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Business Automation</title>
+      <link>//localhost:1313/categories/business-automation/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/business-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybersecurity</title>
+      <link>//localhost:1313/categories/cybersecurity/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Engineering</title>
+      <link>//localhost:1313/categories/data-engineering/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/data-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Extraction</title>
+      <link>//localhost:1313/categories/data-extraction/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/data-extraction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Management</title>
+      <link>//localhost:1313/categories/data-management/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/data-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Decluttering</title>
+      <link>//localhost:1313/categories/decluttering/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/decluttering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>//localhost:1313/categories/deployment/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/deployment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desktop Environments</title>
+      <link>//localhost:1313/categories/desktop-environments/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/desktop-environments/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development Tools</title>
+      <link>//localhost:1313/categories/development-tools/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/development-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Digital Marketing</title>
+      <link>//localhost:1313/categories/digital-marketing/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/digital-marketing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Document Management</title>
+      <link>//localhost:1313/categories/document-management/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/document-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Document Processing</title>
+      <link>//localhost:1313/categories/document-processing/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/document-processing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FinTech</title>
+      <link>//localhost:1313/categories/fintech/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/fintech/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Google Workspace</title>
+      <link>//localhost:1313/categories/google-workspace/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/google-workspace/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Guides</title>
+      <link>//localhost:1313/categories/guides/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/guides/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware Maintenance</title>
+      <link>//localhost:1313/categories/hardware-maintenance/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/hardware-maintenance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Health &amp; Wellness</title>
+      <link>//localhost:1313/categories/health--wellness/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/health--wellness/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Organization</title>
+      <link>//localhost:1313/categories/home-organization/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/home-organization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Investing Strategy</title>
+      <link>//localhost:1313/categories/investing-strategy/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/investing-strategy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IT Setup</title>
+      <link>//localhost:1313/categories/it-setup/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/it-setup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jekyll</title>
+      <link>//localhost:1313/categories/jekyll/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/jekyll/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux Mint</title>
+      <link>//localhost:1313/categories/linux-mint/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/linux-mint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM Optimization</title>
+      <link>//localhost:1313/categories/llm-optimization/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/llm-optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Media Tools</title>
+      <link>//localhost:1313/categories/media-tools/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/media-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mindfulness</title>
+      <link>//localhost:1313/categories/mindfulness/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/mindfulness/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Minimalism</title>
+      <link>//localhost:1313/categories/minimalism/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/minimalism/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mobile Development</title>
+      <link>//localhost:1313/categories/mobile-development/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/mobile-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mutual Funds</title>
+      <link>//localhost:1313/categories/mutual-funds/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/mutual-funds/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Operating Systems</title>
+      <link>//localhost:1313/categories/operating-systems/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/operating-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Outdoor Recreation</title>
+      <link>//localhost:1313/categories/outdoor-recreation/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/outdoor-recreation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance</title>
+      <link>//localhost:1313/categories/performance/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/performance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance Tuning</title>
+      <link>//localhost:1313/categories/performance-tuning/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/performance-tuning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal Finance</title>
+      <link>//localhost:1313/categories/personal-finance/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/personal-finance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privacy</title>
+      <link>//localhost:1313/categories/privacy/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/privacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>//localhost:1313/categories/productivity/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>//localhost:1313/categories/programming/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prompt Design</title>
+      <link>//localhost:1313/categories/prompt-design/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/prompt-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prompt Engineering</title>
+      <link>//localhost:1313/categories/prompt-engineering/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/prompt-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>//localhost:1313/categories/security/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Development</title>
+      <link>//localhost:1313/categories/software-development/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/software-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Engineering</title>
+      <link>//localhost:1313/categories/software-engineering/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/software-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spiritual Practice</title>
+      <link>//localhost:1313/categories/spiritual-practice/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/spiritual-practice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SysAdmin</title>
+      <link>//localhost:1313/categories/sysadmin/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/sysadmin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Optimization</title>
+      <link>//localhost:1313/categories/system-optimization/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/system-optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech</title>
+      <link>//localhost:1313/categories/tech/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/tech/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech Support</title>
+      <link>//localhost:1313/categories/tech-support/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/tech-support/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech Tools</title>
+      <link>//localhost:1313/categories/tech-tools/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/tech-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech Tutorials</title>
+      <link>//localhost:1313/categories/tech-tutorials/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/tech-tutorials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>//localhost:1313/categories/technology/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Travel Tips</title>
+      <link>//localhost:1313/categories/travel-tips/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/travel-tips/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>//localhost:1313/categories/troubleshooting/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/troubleshooting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Browsers</title>
+      <link>//localhost:1313/categories/web-browsers/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/web-browsers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>//localhost:1313/categories/windows/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows 11</title>
+      <link>//localhost:1313/categories/windows-11/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/windows-11/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workflow Automation</title>
+      <link>//localhost:1313/categories/workflow-automation/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/workflow-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>YouTube Growth</title>
+      <link>//localhost:1313/categories/youtube-growth/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/youtube-growth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Audit &amp; Compliance</title>
+      <link>//localhost:1313/categories/audit--compliance/</link>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/audit--compliance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware &amp; Storage</title>
+      <link>//localhost:1313/categories/hardware--storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/hardware--storage/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

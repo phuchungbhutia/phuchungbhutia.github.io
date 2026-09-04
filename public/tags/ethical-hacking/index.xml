@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ethical Hacking on Technical Journal</title>
+    <link>//localhost:1313/tags/ethical-hacking/</link>
+    <description>Recent content in Ethical Hacking on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/ethical-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Ultimate Daily Tech Coach: Mastering Linux, Python, AI, and Pentesting from Day One</title>
+      <link>//localhost:1313/posts/2026-08-04-daily-tech/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-daily-tech/</guid>
+      <description>&lt;p&gt;Building a consistent routine to learn complex technical skills can feel like a daunting task. Between sorting through endless documentation, figuring out what tools to use, and finding practical hands-on exercises, it is easy to get stuck in tutorial hell.&lt;/p&gt;
+&lt;p&gt;To solve this, we can turn an LLM into an automated, highly disciplined daily instructor. By combining Linux terminal fundamentals, Python scripting, legal penetration testing, and modern 2026 AI workflows, you can create a self-sustaining curriculum that levels up your skills every single day.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

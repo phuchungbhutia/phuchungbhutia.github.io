@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows on Technical Journal</title>
+    <link>//localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seamless Windows on Linux: WinApps vs WinBoat vs Winpodx</title>
+      <link>//localhost:1313/posts/2026-09-04-windows-linux/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-windows-linux/</guid>
+      <description>A comprehensive technical comparison of WinApps, WinBoat, and Winpodx for seamlessly integrating Windows software into Linux desktops.</description>
+    </item>
+    <item>
+      <title>Complete Guide: How to Clean Up Windows Using Command Prompt (CMD)</title>
+      <link>//localhost:1313/posts/2026-08-04-cmd/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-cmd/</guid>
+      <description>&lt;p&gt;Over time, any Windows installation accumulates unnecessary junk files, temporary data, corrupted cache, and outdated system updates that can slow down your PC&amp;rsquo;s performance. While Windows offers various graphical user interface (GUI) tools like Settings and Disk Cleanup, using the &lt;strong&gt;Command Prompt (CMD)&lt;/strong&gt; allows you to perform deep, thorough maintenance quickly and efficiently.&lt;/p&gt;
+&lt;p&gt;This detailed guide breaks down the essential CMD tools and commands to reclaim storage space, fix system integrity, and speed up your machine.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Definitive Guide to Signing PDFs on Every Device</title>
+      <link>//localhost:1313/posts/2026-08-04-sign-pdf/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-sign-pdf/</guid>
+      <description>&lt;p&gt;Handling physical paperwork is rapidly becoming a relic of the past. Whether you are finalizing a business contract, approving an invoice, or filling out administrative forms, knowing how to add a clean, secure signature to a PDF directly from your device saves time and eliminates unnecessary printing.&lt;/p&gt;
+&lt;p&gt;Here is a comprehensive breakdown of how to sign a PDF document using your preferred operating system or browser without needing expensive enterprise software.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Guide to Installing yt-dlp and Downloading Playlists as MP3s</title>
+      <link>//localhost:1313/posts/2026-08-04-yt-dlp/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-yt-dlp/</guid>
+      <description>&lt;p&gt;Command-line utilities often outperform bloated desktop applications when it comes to speed, flexibility, and reliability. For downloading online video and audio, &lt;strong&gt;yt-dlp&lt;/strong&gt; stands out as the community gold standard—a actively maintained fork of the classic &lt;code&gt;youtube-dl&lt;/code&gt; project.&lt;/p&gt;
+&lt;p&gt;Whether you are archiving full concert playlists, podcasts, or music collections, setting up &lt;code&gt;yt-dlp&lt;/code&gt; alongside &lt;code&gt;ffmpeg&lt;/code&gt; ensures seamless extraction into high-quality MP3s across Windows, Linux Mint, and Arch-based distributions like Manjaro.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-installation-guide-across-operating-systems&#34;&gt;1. Installation Guide Across Operating Systems&lt;/h2&gt;
+&lt;p&gt;Because streaming platforms continually update their backends, installing &lt;code&gt;yt-dlp&lt;/code&gt; from a source that allows easy updates is critical.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-python-windows/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-python-windows/</guid>
+      <description>&lt;p&gt;Setting up Python tools on Windows using the Microsoft Store distribution can sometimes feel like navigating a minefield of system path warnings, ghost directories, permission locks, and version conflicts.&lt;/p&gt;
+&lt;p&gt;This guide compiles a step-by-step resolution process for real-world terminal errors encounterable when managing CLI tools like &lt;code&gt;weasyprint&lt;/code&gt; and &lt;code&gt;marker&lt;/code&gt;, fixing corrupted package installs, and updating dependencies without getting stuck.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-fixing-executable-warnings-adding-user-packages-to-the-windows-path&#34;&gt;1. Fixing Executable Warnings: Adding User Packages to the Windows PATH&lt;/h2&gt;
+&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;When installing CLI packages via &lt;code&gt;pip&lt;/code&gt; on Windows, you might encounter a warning indicating that the installed binary resides in a location not registered in your system &lt;code&gt;PATH&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

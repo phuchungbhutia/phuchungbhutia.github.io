@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows 11 on Technical Journal</title>
+    <link>//localhost:1313/tags/windows-11/</link>
+    <description>Recent content in Windows 11 on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/windows-11/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building an Automated Master Performance Optimizer and Repair Script for Windows 11</title>
+      <link>//localhost:1313/posts/2026-08-04-windows-cleanup/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-windows-cleanup/</guid>
+      <description>&lt;p&gt;Maintaining peak performance on Windows 11 often feels like an uphill battle against background bloat, temporary cache buildup, and silent file corruption. While standard built-in GUIs require clicking through endless settings menus, leveraging native Command Prompt (CMD) tools provides a direct, highly repeatable way to clean, repair, and tune the operating system.&lt;/p&gt;
+&lt;p&gt;In this deep dive, we walk through the step-by-step evolution of building an &lt;strong&gt;all-in-one, non-blocking, automated Windows startup maintenance script&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android</title>
+      <link>//localhost:1313/posts/2026-08-04-remote-desktop/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-remote-desktop/</guid>
+      <description>&lt;h1 id=&#34;the-ultimate-guide-how-to-set-up-free-remote-desktop-for-windows-11-and-android&#34;&gt;The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android&lt;/h1&gt;
+&lt;p&gt;Whether you need to grab a forgotten file, run heavy desktop software from your couch, or help a family member troubleshoot their PC, having remote access to your Windows 11 machine from your Android phone is an absolute game-changer.&lt;/p&gt;
+&lt;p&gt;Gone are the days when you had to pay hefty subscription fees for basic remote access. Today, there are several powerful, completely free tools that bridge the gap between your mobile device and your PC.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

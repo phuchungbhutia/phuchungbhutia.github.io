@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jekyll on Technical Journal</title>
+    <link>//localhost:1313/categories/jekyll/</link>
+    <description>Recent content in Jekyll on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-github-blog/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-github-blog/</guid>
+      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-github-pages/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-github-pages/</guid>
+      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

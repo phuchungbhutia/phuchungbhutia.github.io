@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports | Technical Journal</title>
+<meta name="keywords" content="eGramSwaraj, Web Scraping, Pandas, Regex, Bookmarklet, GovTech, Audit">
+<meta name="description" content="Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports
+Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India&rsquo;s eGramSwaraj. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.
+In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-04-egs-scraping/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-egs-scraping/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-egs-scraping/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports">
+  <meta property="og:description" content="Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India’s eGramSwaraj. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.
+In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
+    <meta property="article:tag" content="EGramSwaraj">
+    <meta property="article:tag" content="Web Scraping">
+    <meta property="article:tag" content="Pandas">
+    <meta property="article:tag" content="Regex">
+    <meta property="article:tag" content="Bookmarklet">
+    <meta property="article:tag" content="GovTech">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports">
+  <meta name="twitter:description" content="Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India’s eGramSwaraj. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.
+In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports",
+      "item": "//localhost:1313/posts/2026-08-04-egs-scraping/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports",
+  "name": "Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports",
+  "description": "Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India\u0026rsquo;s eGramSwaraj. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.\nIn this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.\n",
+  "keywords": [
+    "eGramSwaraj", "Web Scraping", "Pandas", "Regex", "Bookmarklet", "GovTech", "Audit"
+  ],
+  "articleBody": "Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India’s eGramSwaraj. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.\nIn this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.\nThe Core Data Dilemma When web-scraping eGramSwaraj voucher details, a single financial voucher does not export cleanly as a single row. Instead, the portal renders nested tables and vertical field-value pairs.\nWhy Standard Scraping Breaks Down Vertical “Staircasing”: A standard table reader sees headers like Scheme Name and values like XV Finance Commission spread across multiple rows or misaligned columns. Dual-Schema Structure: Money coming in (Receipt Vouchers) contains completely different fields (e.g., Grant Head, Instrument Type, Bank Account) compared to money going out (Payment Vouchers, which contain Expenditure Head, Activity Code, Payee Name, PFMS Details). Multi-Payee Payments: A single payment voucher (e.g., XVFC/2025-26/P/1) may execute payments to four different individuals or contractors (e.g., Assistant Engineer, DPO, local suppliers). Flattening this incorrectly results in lost payee names or inaccurate transaction totals. Phase 1: Browser-Based Data Extraction (Bookmarklets) To scrape data without installing heavy automation frameworks like Selenium or Playwright, we leverage JavaScript Bookmarklets. These execute directly within the authenticated browser context.\n1. Profile Scraper Bookmarklet (profile_scraper.js) Captures Gram Panchayat administrative details cleanly in a two-column key-value format without falling into recursive row-sliding duplicates:\njavascript:(function(){ console.log(\"🚀 Extracting Profile...\"); let csvContent = \"Attribute,Details\\n\"; const rows = document.querySelectorAll('#profileReportForm tr'); rows.forEach(row =\u003e { const header = row.querySelector('th'); const data = row.querySelector('td'); if(header \u0026\u0026 data \u0026\u0026 !row.id.includes('heading')){ let attr = header.innerText.trim().replace(/[:\\n\\t]/g,' ').replace(/\\s+/g,' '); let detail = data.innerText.trim().replace(/\"/g,'\"\"').replace(/\\s+/g,' '); if(attr \u0026\u0026 detail) csvContent += `\"${attr}\",\"${detail}\"\\n`; } }); const blob = new Blob([csvContent], {type: \"text/csv;charset=utf-8;\"}); const link = document.createElement(\"a\"); link.href = URL.createObjectURL(blob); link.download = \"panchayat_profile.csv\"; link.click(); })(); 2. Deep Accounts Scraper (deep_accounts.js) Run from the Monthly Wise Voucher Summary page, this script recursively fetches voucher sub-links in the background with a 150ms delay to respect server rate limits (preventing HTTP 403 Forbidden session timeouts):\njavascript:(function(){(async function(){ console.log(\"🚀 Starting Deep Extraction...\"); let csv = \"Month,Type,VoucherID,Data\\n\"; const urlParams = new URLSearchParams(window.location.search); let gpuNo = urlParams.get('localBodyCode') || \"Unknown\"; let links = Array.from(document.querySelectorAll('a[href*=\"voucherWiseReport.do\"]')).map(a=\u003e({m:a.innerText.trim(),u:a.href})); for(let m of links){ console.log(`Scraping: ${m.m}`); let p = await fetch(m.u,{credentials:\"include\"}).then(r=\u003er.text()); let d = (new DOMParser()).parseFromString(p,\"text/html\"); let vL = Array.from(d.querySelectorAll('a[href*=\"VoucherDetail.do\"]')).map(a=\u003e({i:a.innerText.trim(),u:a.href,t:a.href.includes(\"payment\")?\"Payment\":\"Receipt\"})); for(let v of vL){ let vp = await fetch(v.u,{credentials:\"include\"}).then(r=\u003er.text()); let vd = (new DOMParser()).parseFromString(vp,\"text/html\"); let rows = Array.from(vd.querySelectorAll('table tr')).map(tr=\u003eArray.from(tr.querySelectorAll('td,th')).map(td=\u003e`\"${td.innerText.trim().replace(/\"/g,'\"\"')}\"`).join(',')); rows.forEach(r=\u003e{ if(r.length\u003e20) csv+=`\"${m.m}\",\"${v.t}\",\"${v.i}\",${r}\\n` }); await new Promise(s=\u003esetTimeout(s,150)); } } let b = new Blob([csv],{type:\"text/csv;charset=utf-8;\"}); let l = document.createElement(\"a\"); l.href = URL.createObjectURL(b); l.download = `accounts-${gpuNo}-2025-2026.csv`; l.click(); })()})(); Phase 2: Python Data Cleaning \u0026 Grouping Logic Once the raw CSV (accounts--.csv) is downloaded, we process it using Python and Pandas.\nStandardizing the 18 Audit Headers To ensure full audit compliance, every row must standardize to an 18-column horizontal master structure:\nCore Headers: Month, Type, VoucherID, Date, Scheme, Particulars Receipt Headers: Receipt Head, Received In, Bank Account No, Instrument Type, Instrument No, Receipt Amount Payment Headers: Account Head, Activity Code, Mode of Payment, Payee Name, Payee Bank Details, Payment Amount Complete Cleaning Script (audit_master.py) import csv import re import pandas as pd import glob def clean_txt(val): if not val: return \"\" val = re.sub(r'[\\t\\n\\r]', ' ', str(val)) return re.sub(r'\\s+', ' ', val).strip() def get_amt(val): val = str(val).replace(',', '') match = re.search(r'(\\d+\\.\\d+|\\d+)', val) return float(match.group(1)) if match else 0.0 def process_audit_files(): files = glob.glob(\"accounts-*.csv\") for f_name in files: # Pass 1: Group multi-line raw rows by unique VoucherID v_groups = {} with open(f_name, 'r', encoding='utf-8') as f: reader = csv.reader(f) try: next(reader) except StopIteration: continue for row in reader: if not row or len(row) \u003c 4 or \"Report generated\" in \"\".join(row): continue vid = row[2].strip() if vid not in v_groups: v_groups[vid] = {'Month': row[0], 'Type': row[1], 'rows': []} v_groups[vid]['rows'].append([clean_txt(c) for c in row[3:]]) final_rows = [] # Pass 2: Extract metadata and map schema for vid, group in v_groups.items(): v_type, month = group['Type'], group['Month'] full_txt = \" \".join([\" \".join(r) for r in group['rows']]) # Common Metadata date = \"\" d_match = re.search(r'(\\d{1,2}/\\d{1,2}/\\d{4})', full_txt) if d_match: date = d_match.group(1) scheme = \"\" if 'Scheme/Own Resources' in full_txt: scheme = full_txt.split('Resources :')[-1].split('Voucher')[0].strip() elif 'Scheme Name' in full_txt: scheme = full_txt.split('Scheme Name')[-1].split('Voucher')[0].strip() particulars = \"\" if 'Particulars :' in full_txt: particulars = full_txt.split('Particulars :')[-1].split('Activity')[0].split('Attached')[0].strip() if v_type == 'Payment': act_code = \"\" act_m = re.search(r'Activity Code\\s*(\\d+)', full_txt) if not act_m: act_m = re.search(r'\\b(\\d{8,10})\\b', full_txt) if act_m: act_code = act_m.group(1) acc_head = \"\" for r in group['rows']: r_txt = \" \".join(r) if 'Expenditure Heads' in r_txt: acc_head = r_txt.replace('Expenditure Heads', '').replace(':', '').strip() # Extract individual payees for multi-payee vouchers payees = [] for r in group['rows']: r_txt = \" \".join(r) if any(x in r_txt for x in [\"PFMS\", \"To Whom Paid\", \"Account No.\"]): nm, bnk, amt = \"Check Details\", \"\", 0.0 for c in reversed(r): val = get_amt(c) if val \u003e 0: amt = val break if \"Account No.:\" in r_txt: bnk = r_txt.split(\"Account No.:\")[-1].strip() if \"PFMS\" in r: idx = r.index(\"PFMS\") if idx + 2 \u003c len(r): nm = r[idx+2] elif \"To Whom Paid\" in r: idx = r.index(\"To Whom Paid\") if idx + 1 \u003c len(r): nm = r[idx+1] if nm != \"Check Details\" or amt \u003e 0: payees.append({'nm': nm, 'bnk': bnk, 'amt': amt, 'mode': 'PFMS' if \"PFMS\" in r_txt else 'Advice'}) if payees: for p in payees: final_rows.append({ 'Month': month, 'Type': v_type, 'VoucherID': vid, 'Date': date, 'Scheme': scheme, 'Particulars': particulars, 'Receipt Head': '', 'Received In': '', 'Bank Account No': '', 'Instrument Type': '', 'Instrument No': '', 'Receipt Amount': '', 'Account Head': acc_head, 'Activity Code': act_code, 'Mode of Payment': p['mode'], 'Payee Name': p['nm'], 'Payee Bank Details': p['bnk'], 'Payment Amount': p['amt'] }) else: p_amt = get_amt(full_txt.split('Amount')[-1]) if 'Amount' in full_txt else 0.0 final_rows.append({ 'Month': month, 'Type': v_type, 'VoucherID': vid, 'Date': date, 'Scheme': scheme, 'Particulars': particulars, 'Receipt Head': '', 'Received In': '', 'Bank Account No': '', 'Instrument Type': '', 'Instrument No': '', 'Receipt Amount': '', 'Account Head': acc_head, 'Activity Code': act_code, 'Mode of Payment': '', 'Payee Name': '', 'Payee Bank Details': '', 'Payment Amount': p_amt }) else: # Receipt Vouchers r_head, r_in, bank_no, instr_type, instr_no, r_amt = \"\", \"\", \"\", \"\", \"\", 0.0 for r in group['rows']: r_txt = \" \".join(r) if any(x in r_txt for x in ['Expenditure Heads', 'Receipt Heads']): r_head = r_txt.replace('Expenditure Heads', '').replace('Receipt Heads', '').replace(':', '').strip() if 'Received In' in r_txt: r_in = r_txt.split(':')[-1].strip() if 'Label.BankAcNo' in r_txt: bank_no = r_txt.split(':')[-1].strip() if 'Voucher Type' in r_txt: instr_type = r_txt.split(':')[-1].strip() if 'Cheque No' in r_txt: instr_no = r_txt.split('No :')[-1].split('Date')[0].strip() for c in r: val = get_amt(c) if val \u003e r_amt: r_amt = val final_rows.append({ 'Month': month, 'Type': v_type, 'VoucherID': vid, 'Date': date, 'Scheme': scheme, 'Particulars': particulars, 'Receipt Head': r_head, 'Received In': r_in, 'Bank Account No': bank_no, 'Instrument Type': instr_type, 'Instrument No': instr_no, 'Receipt Amount': r_amt, 'Account Head': '', 'Activity Code': '', 'Mode of Payment': '', 'Payee Name': 'N/A', 'Payee Bank Details': '', 'Payment Amount': '' }) output_name = f\"clean-{f_name}\" pd.DataFrame(final_rows).drop_duplicates().to_csv(output_name, index=False) print(f\"✅ Created horizontal audit report: {output_name}\") if __name__ == \"__main__\": process_audit_files() Output Transformation By running the script over messy raw files, we achieve clean horizontal normalization:\nInput (Fragmented Web Data): April, 2025, Payment, XVFC/2025-26/P/1, Expenditure Heads 2210 - Health, Amount, 95697 April, 2025, Payment, XVFC/2025-26/P/1, Mode Of Payment, PFMS, To Whom Paid, BANWARILALL OMKARMULL, 95697 Output (clean-accounts-300083-2025-2026.csv): Month Type VoucherID Date Scheme Particulars Account Head Activity Code Mode of Payment Payee Name Payment Amount April, 2025 Payment XVFC/2025-26/P/1 08/04/2025 XV Finance Commission (Untied) Repair Work 2210 - Health and Family Welfare 70735454 PFMS BANWARILALL OMKARMULL 95697.0 Open-Source GitHub Repository Architecture To package this tool for auditor workflows, publish the repository using the following folder structure:\negram-audit-toolkit/ ├── assets/ # Banners, diagrams, and sample outputs ├── scrapers/ # Browser JavaScript scrapers \u0026 bookmarklets │ ├── profile_scraper.js │ └── deep_accounts.js ├── cleaning/ # Python transformation tools │ └── audit_master.py ├── .gitignore # Ignore raw csv files \u0026 __pycache__ ├── LICENSE # MIT License └── README.md # Comprehensive project documentation .gitignore Setup # Ignore raw scraped accounts data accounts-*.csv deep_audit_raw.csv # Ignore output CSVs during dev clean-accounts-*.csv standardized_accounts.csv # Python cache __pycache__/ *.pyc .DS_Store Conclusion \u0026 Key Learnings Two-Pass In-Memory Aggregation: Never parse fragmented public data row-by-row. Group rows into a dictionary by primary entity key (VoucherID) first, then extract text fields using Regex anchors. Handle Optional Multi-Row Records: Payment vouchers often contain arrays of sub-transactions (multiple payees). Design the parser to append N rows per voucher when payees exist, or default to a single summary row when no payee list is found. Graceful Browser Throttling: Client-side scrapers operating on government portals must include explicit pauses (setTimeout(..., 150)) between sub-page fetches to prevent session lockouts. This tool reduces audit data preparation time from days of manual data entry down to seconds of automated processing!\n",
+  "wordCount" : "1502",
+  "inLanguage": "en",
+  "datePublished": "2026-08-04T00:00:00Z",
+  "dateModified": "2026-08-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-04-egs-scraping/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#building-the-egramswaraj-audit-toolkit-from-scraping-messy-public-financial-data-to-standardized-audit-reports" aria-label="Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports">Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports</a><ul>
+                    
+            <li>
+                <a href="#the-core-data-dilemma" aria-label="The Core Data Dilemma">The Core Data Dilemma</a><ul>
+                    
+            <li>
+                <a href="#why-standard-scraping-breaks-down" aria-label="Why Standard Scraping Breaks Down">Why Standard Scraping Breaks Down</a></li></ul>
+            </li>
+            <li>
+                <a href="#phase-1-browser-based-data-extraction-bookmarklets" aria-label="Phase 1: Browser-Based Data Extraction (Bookmarklets)">Phase 1: Browser-Based Data Extraction (Bookmarklets)</a><ul>
+                    
+            <li>
+                <a href="#1-profile-scraper-bookmarklet-profile_scraperjs" aria-label="1. Profile Scraper Bookmarklet (profile_scraper.js)">1. Profile Scraper Bookmarklet (profile_scraper.js)</a></li>
+            <li>
+                <a href="#2-deep-accounts-scraper-deep_accountsjs" aria-label="2. Deep Accounts Scraper (deep_accounts.js)">2. Deep Accounts Scraper (deep_accounts.js)</a></li></ul>
+            </li>
+            <li>
+                <a href="#phase-2-python-data-cleaning--grouping-logic" aria-label="Phase 2: Python Data Cleaning &amp; Grouping Logic">Phase 2: Python Data Cleaning &amp; Grouping Logic</a><ul>
+                    
+            <li>
+                <a href="#standardizing-the-18-audit-headers" aria-label="Standardizing the 18 Audit Headers">Standardizing the 18 Audit Headers</a></li>
+            <li>
+                <a href="#complete-cleaning-script-audit_masterpy" aria-label="Complete Cleaning Script (audit_master.py)">Complete Cleaning Script (audit_master.py)</a></li></ul>
+            </li>
+            <li>
+                <a href="#output-transformation" aria-label="Output Transformation">Output Transformation</a><ul>
+                    
+            <li>
+                <a href="#input-fragmented-web-data" aria-label="Input (Fragmented Web Data):">Input (Fragmented Web Data):</a></li>
+            <li>
+                <a href="#output-clean-accounts-300083-2025-2026csv" aria-label="Output (clean-accounts-300083-2025-2026.csv):">Output (clean-accounts-300083-2025-2026.csv):</a></li></ul>
+            </li>
+            <li>
+                <a href="#open-source-github-repository-architecture" aria-label="Open-Source GitHub Repository Architecture">Open-Source GitHub Repository Architecture</a><ul>
+                    
+            <li>
+                <a href="#gitignore-setup" aria-label=".gitignore Setup">.gitignore Setup</a></li></ul>
+            </li>
+            <li>
+                <a href="#conclusion--key-learnings" aria-label="Conclusion &amp; Key Learnings">Conclusion &amp; Key Learnings</a>
+            </li>
+        </ul>
+        </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><h1 id="building-the-egramswaraj-audit-toolkit-from-scraping-messy-public-financial-data-to-standardized-audit-reports">Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports<a hidden class="anchor" aria-hidden="true" href="#building-the-egramswaraj-audit-toolkit-from-scraping-messy-public-financial-data-to-standardized-audit-reports">#</a></h1>
+<p>Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India&rsquo;s <strong>eGramSwaraj</strong>. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.</p>
+<p>In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.</p>
+<hr>
+<h2 id="the-core-data-dilemma">The Core Data Dilemma<a hidden class="anchor" aria-hidden="true" href="#the-core-data-dilemma">#</a></h2>
+<p>When web-scraping eGramSwaraj voucher details, a single financial voucher does not export cleanly as a single row. Instead, the portal renders nested tables and vertical field-value pairs.</p>
+<h3 id="why-standard-scraping-breaks-down">Why Standard Scraping Breaks Down<a hidden class="anchor" aria-hidden="true" href="#why-standard-scraping-breaks-down">#</a></h3>
+<ol>
+<li><strong>Vertical &ldquo;Staircasing&rdquo;:</strong> A standard table reader sees headers like <code>Scheme Name</code> and values like <code>XV Finance Commission</code> spread across multiple rows or misaligned columns.</li>
+<li><strong>Dual-Schema Structure:</strong> Money coming in (<strong>Receipt Vouchers</strong>) contains completely different fields (e.g., <em>Grant Head, Instrument Type, Bank Account</em>) compared to money going out (<strong>Payment Vouchers</strong>, which contain <em>Expenditure Head, Activity Code, Payee Name, PFMS Details</em>).</li>
+<li><strong>Multi-Payee Payments:</strong> A single payment voucher (e.g., <code>XVFC/2025-26/P/1</code>) may execute payments to four different individuals or contractors (e.g., <em>Assistant Engineer, DPO, local suppliers</em>). Flattening this incorrectly results in lost payee names or inaccurate transaction totals.</li>
+</ol>
+<hr>
+<h2 id="phase-1-browser-based-data-extraction-bookmarklets">Phase 1: Browser-Based Data Extraction (Bookmarklets)<a hidden class="anchor" aria-hidden="true" href="#phase-1-browser-based-data-extraction-bookmarklets">#</a></h2>
+<p>To scrape data without installing heavy automation frameworks like Selenium or Playwright, we leverage <strong>JavaScript Bookmarklets</strong>. These execute directly within the authenticated browser context.</p>
+<h3 id="1-profile-scraper-bookmarklet-profile_scraperjs">1. Profile Scraper Bookmarklet (<code>profile_scraper.js</code>)<a hidden class="anchor" aria-hidden="true" href="#1-profile-scraper-bookmarklet-profile_scraperjs">#</a></h3>
+<p>Captures Gram Panchayat administrative details cleanly in a two-column key-value format without falling into recursive row-sliding duplicates:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;🚀 Extracting Profile...&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">csvContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Attribute,Details\n&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rows</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;#profileReportForm tr&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">row</span> =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;th&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">header</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;heading&#39;</span>)){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">attr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[:\n\t]/g</span>,<span style="color:#e6db74">&#39; &#39;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s+/g</span>,<span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">detail</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&#34;/g</span>,<span style="color:#e6db74">&#39;&#34;&#34;&#39;</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s+/g</span>,<span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">attr</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">detail</span>) <span style="color:#a6e22e">csvContent</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">attr</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">detail</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;\n`</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blob</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">csvContent</span>], {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text/csv;charset=utf-8;&#34;</span>});
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">blob</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;panchayat_profile.csv&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">click</span>();
+</span></span><span style="display:flex;"><span>})();
+</span></span></code></pre></div><h3 id="2-deep-accounts-scraper-deep_accountsjs">2. Deep Accounts Scraper (<code>deep_accounts.js</code>)<a hidden class="anchor" aria-hidden="true" href="#2-deep-accounts-scraper-deep_accountsjs">#</a></h3>
+<p>Run from the <strong>Monthly Wise Voucher Summary</strong> page, this script recursively fetches voucher sub-links in the background with a 150ms delay to respect server rate limits (preventing HTTP <code>403 Forbidden</code> session timeouts):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span>(<span style="color:#66d9ef">function</span>(){(<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;🚀 Starting Deep Extraction...&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">csv</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Month,Type,VoucherID,Data\n&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">urlParams</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gpuNo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;localBodyCode&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;Unknown&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">links</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;a[href*=&#34;voucherWiseReport.do&#34;]&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span>=&gt;({<span style="color:#a6e22e">m</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>(),<span style="color:#a6e22e">u</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>}));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">links</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Scraping: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">m</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">u</span>,{<span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;include&#34;</span>}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span>=&gt;<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMParser</span>()).<span style="color:#a6e22e">parseFromString</span>(<span style="color:#a6e22e">p</span>,<span style="color:#e6db74">&#34;text/html&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vL</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;a[href*=&#34;VoucherDetail.do&#34;]&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span>=&gt;({<span style="color:#a6e22e">i</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>(),<span style="color:#a6e22e">u</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>,<span style="color:#a6e22e">t</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;payment&#34;</span>)<span style="color:#f92672">?</span><span style="color:#e6db74">&#34;Payment&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;Receipt&#34;</span>}));
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">v</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">vL</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">u</span>,{<span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;include&#34;</span>}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span>=&gt;<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>());
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vd</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMParser</span>()).<span style="color:#a6e22e">parseFromString</span>(<span style="color:#a6e22e">vp</span>,<span style="color:#e6db74">&#34;text/html&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rows</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">vd</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;table tr&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">tr</span>=&gt;Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;td,th&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">td</span>=&gt;<span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">td</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&#34;/g</span>,<span style="color:#e6db74">&#39;&#34;&#34;&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>));
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">r</span>=&gt;{ <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>) <span style="color:#a6e22e">csv</span><span style="color:#f92672">+=</span><span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">m</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">t</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">r</span><span style="color:#e6db74">}</span><span style="color:#e6db74">\n`</span> });
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">s</span>=&gt;<span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">s</span>,<span style="color:#ae81ff">150</span>));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">csv</span>],{<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;text/csv;charset=utf-8;&#34;</span>});
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">l</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">b</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`accounts-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">gpuNo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-2025-2026.csv`</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">click</span>();
+</span></span><span style="display:flex;"><span>})()})();
+</span></span></code></pre></div><hr>
+<h2 id="phase-2-python-data-cleaning--grouping-logic">Phase 2: Python Data Cleaning &amp; Grouping Logic<a hidden class="anchor" aria-hidden="true" href="#phase-2-python-data-cleaning--grouping-logic">#</a></h2>
+<p>Once the raw CSV (<code>accounts-&lt;GPU&gt;-&lt;FY&gt;.csv</code>) is downloaded, we process it using Python and Pandas.</p>
+<h3 id="standardizing-the-18-audit-headers">Standardizing the 18 Audit Headers<a hidden class="anchor" aria-hidden="true" href="#standardizing-the-18-audit-headers">#</a></h3>
+<p>To ensure full audit compliance, every row must standardize to an 18-column horizontal master structure:</p>
+<ol>
+<li><strong>Core Headers:</strong> <code>Month</code>, <code>Type</code>, <code>VoucherID</code>, <code>Date</code>, <code>Scheme</code>, <code>Particulars</code></li>
+<li><strong>Receipt Headers:</strong> <code>Receipt Head</code>, <code>Received In</code>, <code>Bank Account No</code>, <code>Instrument Type</code>, <code>Instrument No</code>, <code>Receipt Amount</code></li>
+<li><strong>Payment Headers:</strong> <code>Account Head</code>, <code>Activity Code</code>, <code>Mode of Payment</code>, <code>Payee Name</code>, <code>Payee Bank Details</code>, <code>Payment Amount</code></li>
+</ol>
+<h3 id="complete-cleaning-script-audit_masterpy">Complete Cleaning Script (<code>audit_master.py</code>)<a hidden class="anchor" aria-hidden="true" href="#complete-cleaning-script-audit_masterpy">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> csv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> glob
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clean_txt</span>(val):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> val:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    val <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;[\t\n\r]&#39;</span>, <span style="color:#e6db74">&#39; &#39;</span>, str(val))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\s+&#39;</span>, <span style="color:#e6db74">&#39; &#39;</span>, val)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_amt</span>(val):
+</span></span><span style="display:flex;"><span>    val <span style="color:#f92672">=</span> str(val)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;,&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(\d+\.\d+|\d+)&#39;</span>, val)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> float(<span style="color:#66d9ef">match</span><span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)) <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">match</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_audit_files</span>():
+</span></span><span style="display:flex;"><span>    files <span style="color:#f92672">=</span> glob<span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;accounts-*.csv&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> f_name <span style="color:#f92672">in</span> files:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Pass 1: Group multi-line raw rows by unique VoucherID</span>
+</span></span><span style="display:flex;"><span>        v_groups <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(f_name, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            reader <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>reader(f)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                next(reader)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">StopIteration</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> reader:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> row <span style="color:#f92672">or</span> len(row) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;Report generated&#34;</span> <span style="color:#f92672">in</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(row):
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>                vid <span style="color:#f92672">=</span> row[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> vid <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> v_groups:
+</span></span><span style="display:flex;"><span>                    v_groups[vid] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Month&#39;</span>: row[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">&#39;Type&#39;</span>: row[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#39;rows&#39;</span>: []}
+</span></span><span style="display:flex;"><span>                v_groups[vid][<span style="color:#e6db74">&#39;rows&#39;</span>]<span style="color:#f92672">.</span>append([clean_txt(c) <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> row[<span style="color:#ae81ff">3</span>:]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        final_rows <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Pass 2: Extract metadata and map schema</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> vid, group <span style="color:#f92672">in</span> v_groups<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>            v_type, month <span style="color:#f92672">=</span> group[<span style="color:#e6db74">&#39;Type&#39;</span>], group[<span style="color:#e6db74">&#39;Month&#39;</span>]
+</span></span><span style="display:flex;"><span>            full_txt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join([<span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(r) <span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> group[<span style="color:#e6db74">&#39;rows&#39;</span>]])
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Common Metadata</span>
+</span></span><span style="display:flex;"><span>            date <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            d_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(\d{1,2}/\d{1,2}/\d</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">)&#39;</span>, full_txt)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> d_match:
+</span></span><span style="display:flex;"><span>                date <span style="color:#f92672">=</span> d_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>            scheme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Scheme/Own Resources&#39;</span> <span style="color:#f92672">in</span> full_txt:
+</span></span><span style="display:flex;"><span>                scheme <span style="color:#f92672">=</span> full_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Resources :&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Voucher&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#39;Scheme Name&#39;</span> <span style="color:#f92672">in</span> full_txt:
+</span></span><span style="display:flex;"><span>                scheme <span style="color:#f92672">=</span> full_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Scheme Name&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Voucher&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            particulars <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Particulars :&#39;</span> <span style="color:#f92672">in</span> full_txt:
+</span></span><span style="display:flex;"><span>                particulars <span style="color:#f92672">=</span> full_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Particulars :&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Activity&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Attached&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> v_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Payment&#39;</span>:
+</span></span><span style="display:flex;"><span>                act_code <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                act_m <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;Activity Code\s*(\d+)&#39;</span>, full_txt)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> act_m:
+</span></span><span style="display:flex;"><span>                    act_m <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\b(\d{8,10})\b&#39;</span>, full_txt)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> act_m:
+</span></span><span style="display:flex;"><span>                    act_code <span style="color:#f92672">=</span> act_m<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                acc_head <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> group[<span style="color:#e6db74">&#39;rows&#39;</span>]:
+</span></span><span style="display:flex;"><span>                    r_txt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(r)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Expenditure Heads&#39;</span> <span style="color:#f92672">in</span> r_txt:
+</span></span><span style="display:flex;"><span>                        acc_head <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;Expenditure Heads&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;:&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Extract individual payees for multi-payee vouchers</span>
+</span></span><span style="display:flex;"><span>                payees <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> group[<span style="color:#e6db74">&#39;rows&#39;</span>]:
+</span></span><span style="display:flex;"><span>                    r_txt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(r)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> any(x <span style="color:#f92672">in</span> r_txt <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;PFMS&#34;</span>, <span style="color:#e6db74">&#34;To Whom Paid&#34;</span>, <span style="color:#e6db74">&#34;Account No.&#34;</span>]):
+</span></span><span style="display:flex;"><span>                        nm, bnk, amt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Check Details&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> reversed(r):
+</span></span><span style="display:flex;"><span>                            val <span style="color:#f92672">=</span> get_amt(c)
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">if</span> val <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                                amt <span style="color:#f92672">=</span> val
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Account No.:&#34;</span> <span style="color:#f92672">in</span> r_txt:
+</span></span><span style="display:flex;"><span>                            bnk <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;Account No.:&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;PFMS&#34;</span> <span style="color:#f92672">in</span> r:
+</span></span><span style="display:flex;"><span>                            idx <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;PFMS&#34;</span>)
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">if</span> idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;</span> len(r): nm <span style="color:#f92672">=</span> r[idx<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#34;To Whom Paid&#34;</span> <span style="color:#f92672">in</span> r:
+</span></span><span style="display:flex;"><span>                            idx <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#34;To Whom Paid&#34;</span>)
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">if</span> idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> len(r): nm <span style="color:#f92672">=</span> r[idx<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>                        
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> nm <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;Check Details&#34;</span> <span style="color:#f92672">or</span> amt <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                            payees<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#39;nm&#39;</span>: nm, <span style="color:#e6db74">&#39;bnk&#39;</span>: bnk, <span style="color:#e6db74">&#39;amt&#39;</span>: amt, <span style="color:#e6db74">&#39;mode&#39;</span>: <span style="color:#e6db74">&#39;PFMS&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;PFMS&#34;</span> <span style="color:#f92672">in</span> r_txt <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;Advice&#39;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> payees:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> payees:
+</span></span><span style="display:flex;"><span>                        final_rows<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#39;Month&#39;</span>: month, <span style="color:#e6db74">&#39;Type&#39;</span>: v_type, <span style="color:#e6db74">&#39;VoucherID&#39;</span>: vid, <span style="color:#e6db74">&#39;Date&#39;</span>: date, <span style="color:#e6db74">&#39;Scheme&#39;</span>: scheme, <span style="color:#e6db74">&#39;Particulars&#39;</span>: particulars,
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#39;Receipt Head&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Received In&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Bank Account No&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Instrument Type&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Instrument No&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Receipt Amount&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#e6db74">&#39;Account Head&#39;</span>: acc_head, <span style="color:#e6db74">&#39;Activity Code&#39;</span>: act_code, <span style="color:#e6db74">&#39;Mode of Payment&#39;</span>: p[<span style="color:#e6db74">&#39;mode&#39;</span>], <span style="color:#e6db74">&#39;Payee Name&#39;</span>: p[<span style="color:#e6db74">&#39;nm&#39;</span>], <span style="color:#e6db74">&#39;Payee Bank Details&#39;</span>: p[<span style="color:#e6db74">&#39;bnk&#39;</span>], <span style="color:#e6db74">&#39;Payment Amount&#39;</span>: p[<span style="color:#e6db74">&#39;amt&#39;</span>]
+</span></span><span style="display:flex;"><span>                        })
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                    p_amt <span style="color:#f92672">=</span> get_amt(full_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Amount&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Amount&#39;</span> <span style="color:#f92672">in</span> full_txt <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>                    final_rows<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#39;Month&#39;</span>: month, <span style="color:#e6db74">&#39;Type&#39;</span>: v_type, <span style="color:#e6db74">&#39;VoucherID&#39;</span>: vid, <span style="color:#e6db74">&#39;Date&#39;</span>: date, <span style="color:#e6db74">&#39;Scheme&#39;</span>: scheme, <span style="color:#e6db74">&#39;Particulars&#39;</span>: particulars,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#39;Receipt Head&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Received In&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Bank Account No&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Instrument Type&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Instrument No&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Receipt Amount&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#39;Account Head&#39;</span>: acc_head, <span style="color:#e6db74">&#39;Activity Code&#39;</span>: act_code, <span style="color:#e6db74">&#39;Mode of Payment&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Payee Name&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Payee Bank Details&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Payment Amount&#39;</span>: p_amt
+</span></span><span style="display:flex;"><span>                    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:  <span style="color:#75715e"># Receipt Vouchers</span>
+</span></span><span style="display:flex;"><span>                r_head, r_in, bank_no, instr_type, instr_no, r_amt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> group[<span style="color:#e6db74">&#39;rows&#39;</span>]:
+</span></span><span style="display:flex;"><span>                    r_txt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(r)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> any(x <span style="color:#f92672">in</span> r_txt <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;Expenditure Heads&#39;</span>, <span style="color:#e6db74">&#39;Receipt Heads&#39;</span>]):
+</span></span><span style="display:flex;"><span>                        r_head <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;Expenditure Heads&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;Receipt Heads&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;:&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Received In&#39;</span> <span style="color:#f92672">in</span> r_txt: r_in <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Label.BankAcNo&#39;</span> <span style="color:#f92672">in</span> r_txt: bank_no <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Voucher Type&#39;</span> <span style="color:#f92672">in</span> r_txt: instr_type <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;Cheque No&#39;</span> <span style="color:#f92672">in</span> r_txt: instr_no <span style="color:#f92672">=</span> r_txt<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;No :&#39;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;Date&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> r:
+</span></span><span style="display:flex;"><span>                        val <span style="color:#f92672">=</span> get_amt(c)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> val <span style="color:#f92672">&gt;</span> r_amt: r_amt <span style="color:#f92672">=</span> val
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                final_rows<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#39;Month&#39;</span>: month, <span style="color:#e6db74">&#39;Type&#39;</span>: v_type, <span style="color:#e6db74">&#39;VoucherID&#39;</span>: vid, <span style="color:#e6db74">&#39;Date&#39;</span>: date, <span style="color:#e6db74">&#39;Scheme&#39;</span>: scheme, <span style="color:#e6db74">&#39;Particulars&#39;</span>: particulars,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#39;Receipt Head&#39;</span>: r_head, <span style="color:#e6db74">&#39;Received In&#39;</span>: r_in, <span style="color:#e6db74">&#39;Bank Account No&#39;</span>: bank_no, <span style="color:#e6db74">&#39;Instrument Type&#39;</span>: instr_type, <span style="color:#e6db74">&#39;Instrument No&#39;</span>: instr_no, <span style="color:#e6db74">&#39;Receipt Amount&#39;</span>: r_amt,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#39;Account Head&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Activity Code&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Mode of Payment&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Payee Name&#39;</span>: <span style="color:#e6db74">&#39;N/A&#39;</span>, <span style="color:#e6db74">&#39;Payee Bank Details&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;Payment Amount&#39;</span>: <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>                })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        output_name <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;clean-</span><span style="color:#e6db74">{</span>f_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>DataFrame(final_rows)<span style="color:#f92672">.</span>drop_duplicates()<span style="color:#f92672">.</span>to_csv(output_name, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;✅ Created horizontal audit report: </span><span style="color:#e6db74">{</span>output_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    process_audit_files()
+</span></span></code></pre></div><hr>
+<h2 id="output-transformation">Output Transformation<a hidden class="anchor" aria-hidden="true" href="#output-transformation">#</a></h2>
+<p>By running the script over messy raw files, we achieve clean horizontal normalization:</p>
+<h3 id="input-fragmented-web-data">Input (Fragmented Web Data):<a hidden class="anchor" aria-hidden="true" href="#input-fragmented-web-data">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-csv" data-lang="csv"><span style="display:flex;"><span><span style="color:#e6db74">April</span>,<span style="color:#e6db74"> 2025</span>,<span style="color:#e6db74"> Payment</span>,<span style="color:#e6db74"> XVFC/2025-26/P/1</span>,<span style="color:#e6db74"> Expenditure Heads 2210 - Health</span>,<span style="color:#e6db74"> Amount</span>,<span style="color:#e6db74"> 95697</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">April</span>,<span style="color:#e6db74"> 2025</span>,<span style="color:#e6db74"> Payment</span>,<span style="color:#e6db74"> XVFC/2025-26/P/1</span>,<span style="color:#e6db74"> Mode Of Payment</span>,<span style="color:#e6db74"> PFMS</span>,<span style="color:#e6db74"> To Whom Paid</span>,<span style="color:#e6db74"> BANWARILALL OMKARMULL</span>,<span style="color:#e6db74"> 95697</span>
+</span></span></code></pre></div><h3 id="output-clean-accounts-300083-2025-2026csv">Output (<code>clean-accounts-300083-2025-2026.csv</code>):<a hidden class="anchor" aria-hidden="true" href="#output-clean-accounts-300083-2025-2026csv">#</a></h3>
+<table>
+	<thead>
+			<tr>
+					<th>Month</th>
+					<th>Type</th>
+					<th>VoucherID</th>
+					<th>Date</th>
+					<th>Scheme</th>
+					<th>Particulars</th>
+					<th>Account Head</th>
+					<th>Activity Code</th>
+					<th>Mode of Payment</th>
+					<th>Payee Name</th>
+					<th>Payment Amount</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>April, 2025</td>
+					<td>Payment</td>
+					<td>XVFC/2025-26/P/1</td>
+					<td>08/04/2025</td>
+					<td>XV Finance Commission (Untied)</td>
+					<td>Repair Work</td>
+					<td>2210 - Health and Family Welfare</td>
+					<td>70735454</td>
+					<td>PFMS</td>
+					<td>BANWARILALL OMKARMULL</td>
+					<td>95697.0</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h2 id="open-source-github-repository-architecture">Open-Source GitHub Repository Architecture<a hidden class="anchor" aria-hidden="true" href="#open-source-github-repository-architecture">#</a></h2>
+<p>To package this tool for auditor workflows, publish the repository using the following folder structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>egram-audit-toolkit/
+</span></span><span style="display:flex;"><span>├── assets/                # Banners, diagrams, and sample outputs
+</span></span><span style="display:flex;"><span>├── scrapers/              # Browser JavaScript scrapers &amp; bookmarklets
+</span></span><span style="display:flex;"><span>│   ├── profile_scraper.js
+</span></span><span style="display:flex;"><span>│   └── deep_accounts.js
+</span></span><span style="display:flex;"><span>├── cleaning/              # Python transformation tools
+</span></span><span style="display:flex;"><span>│   └── audit_master.py
+</span></span><span style="display:flex;"><span>├── .gitignore             # Ignore raw csv files &amp; __pycache__
+</span></span><span style="display:flex;"><span>├── LICENSE                # MIT License
+</span></span><span style="display:flex;"><span>└── README.md              # Comprehensive project documentation
+</span></span></code></pre></div><h3 id="gitignore-setup"><code>.gitignore</code> Setup<a hidden class="anchor" aria-hidden="true" href="#gitignore-setup">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Ignore raw scraped accounts data
+</span></span><span style="display:flex;"><span>accounts-*.csv
+</span></span><span style="display:flex;"><span>deep_audit_raw.csv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Ignore output CSVs during dev
+</span></span><span style="display:flex;"><span>clean-accounts-*.csv
+</span></span><span style="display:flex;"><span>standardized_accounts.csv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Python cache
+</span></span><span style="display:flex;"><span>__pycache__/
+</span></span><span style="display:flex;"><span>*.pyc
+</span></span><span style="display:flex;"><span>.DS_Store
+</span></span></code></pre></div><hr>
+<h2 id="conclusion--key-learnings">Conclusion &amp; Key Learnings<a hidden class="anchor" aria-hidden="true" href="#conclusion--key-learnings">#</a></h2>
+<ol>
+<li><strong>Two-Pass In-Memory Aggregation:</strong> Never parse fragmented public data row-by-row. Group rows into a dictionary by primary entity key (<code>VoucherID</code>) first, then extract text fields using Regex anchors.</li>
+<li><strong>Handle Optional Multi-Row Records:</strong> Payment vouchers often contain arrays of sub-transactions (multiple payees). Design the parser to append N rows per voucher when payees exist, or default to a single summary row when no payee list is found.</li>
+<li><strong>Graceful Browser Throttling:</strong> Client-side scrapers operating on government portals must include explicit pauses (<code>setTimeout(..., 150)</code>) between sub-page fetches to prevent session lockouts.</li>
+</ol>
+<p>This tool reduces audit data preparation time from days of manual data entry down to seconds of automated processing!</p>
+<pre tabindex="0"><code></code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/egramswaraj/">EGramSwaraj</a></li>
+      <li><a href="//localhost:1313/tags/web-scraping/">Web Scraping</a></li>
+      <li><a href="//localhost:1313/tags/pandas/">Pandas</a></li>
+      <li><a href="//localhost:1313/tags/regex/">Regex</a></li>
+      <li><a href="//localhost:1313/tags/bookmarklet/">Bookmarklet</a></li>
+      <li><a href="//localhost:1313/tags/govtech/">GovTech</a></li>
+      <li><a href="//localhost:1313/tags/audit/">Audit</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-04-termux-openclaw/">
+    <span class="title">« Prev</span>
+    <span>Building an Autonomous Mobile &amp; Desktop Document Processing AI Agent with OpenClaw</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-04-linux-cmos/">
+    <span class="title">Next »</span>
+    <span>Bypassing CMOS Clock Failure on Linux with Automated Network Time Sync</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

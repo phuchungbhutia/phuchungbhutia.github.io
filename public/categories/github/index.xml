@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GitHub on Technical Journal</title>
+    <link>//localhost:1313/categories/github/</link>
+    <description>Recent content in GitHub on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Aug 2026 09:30:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title>
+      <link>//localhost:1313/posts/2026-08-05-github5/</link>
+      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-github5/</guid>
+      <description>&lt;h1 id=&#34;github-actions-complete-cicd-guide-from-beginner-to-production&#34;&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
+&lt;p&gt;Writing code is only one part of software development.&lt;/p&gt;
+&lt;p&gt;Modern software teams automate everything:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building applications&lt;/li&gt;
+&lt;li&gt;Running tests&lt;/li&gt;
+&lt;li&gt;Checking code quality&lt;/li&gt;
+&lt;li&gt;Creating Docker images&lt;/li&gt;
+&lt;li&gt;Publishing releases&lt;/li&gt;
+&lt;li&gt;Deploying applications&lt;/li&gt;
+&lt;li&gt;Sending notifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GitHub Actions makes all of this possible without leaving GitHub.&lt;/p&gt;
+&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title>
+      <link>//localhost:1313/posts/2026-08-05-ocr2md/</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-05-ocr2md/</guid>
+      <description>&lt;h1 id=&#34;building-ocr2md-a-complete-ocr-to-markdown-platform&#34;&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
+&lt;p&gt;Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.&lt;/p&gt;
+&lt;p&gt;Extracting this information into a structured format is surprisingly difficult.&lt;/p&gt;
+&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-github-blog/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-github-blog/</guid>
+      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-github-pages/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-github-pages/</guid>
+      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

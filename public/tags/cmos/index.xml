@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cmos on Technical Journal</title>
+    <link>//localhost:1313/tags/cmos/</link>
+    <description>Recent content in Cmos on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/cmos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title>
+      <link>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</guid>
+      <description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
+&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Mastering JSON Prompting for AI Video Generation | Technical Journal</title>
+<meta name="keywords" content="json, ai-video, runway, veo, pika, prompt-engineering, tutorial">
+<meta name="description" content="Mastering JSON Prompting for AI Video Generation
+Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through structured JSON prompts.
+Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-05-json-prompt1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-05-json-prompt1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-05-json-prompt1/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Mastering JSON Prompting for AI Video Generation">
+  <meta property="og:description" content="Mastering JSON Prompting for AI Video Generation Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through structured JSON prompts.
+Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-05T07:54:00+05:30">
+    <meta property="article:modified_time" content="2026-08-05T07:54:00+05:30">
+    <meta property="article:tag" content="Json">
+    <meta property="article:tag" content="Ai-Video">
+    <meta property="article:tag" content="Runway">
+    <meta property="article:tag" content="Veo">
+    <meta property="article:tag" content="Pika">
+    <meta property="article:tag" content="Prompt Engineering">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mastering JSON Prompting for AI Video Generation">
+  <meta name="twitter:description" content="Mastering JSON Prompting for AI Video Generation Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through structured JSON prompts.
+Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Mastering JSON Prompting for AI Video Generation",
+      "item": "//localhost:1313/posts/2026-08-05-json-prompt1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mastering JSON Prompting for AI Video Generation",
+  "name": "Mastering JSON Prompting for AI Video Generation",
+  "description": "Mastering JSON Prompting for AI Video Generation Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through structured JSON prompts.\nInstead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.\n",
+  "keywords": [
+    "json", "ai-video", "runway", "veo", "pika", "prompt-engineering", "tutorial"
+  ],
+  "articleBody": "Mastering JSON Prompting for AI Video Generation Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through structured JSON prompts.\nInstead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.\nThis guide explains why JSON prompting matters, how to build your own prompts, and how to create reusable templates for future projects.\nWhy Use JSON Prompts? Think of JSON as a blueprint rather than a paragraph.\nA traditional prompt might look like this:\nCreate a cinematic sunrise over a mountain where a hiker slowly walks toward the peak while orchestral music plays.\nAlthough this works, making changes later becomes difficult.\nWith JSON, every part has its own location.\nScene description Camera Lighting Environment Motion Sound Text Ending This separation makes prompts:\nEasier to edit Easier to debug Easier to automate Easier to reuse Imagine LEGO bricks instead of wet clay.\nBenefits of Structured Prompting JSON prompts provide several advantages.\nConsistency The same structure can be reused across dozens of scenes.\nFaster Editing Want different lighting?\nOnly edit the lighting section.\nWant another camera angle?\nOnly change the camera object.\nEasy Automation Because JSON is machine-readable, scripts can generate hundreds of prompts automatically.\nExample applications include:\nProduct videos Travel films Educational animations Marketing campaigns Social media reels Core JSON Schema A good starting schema includes:\n{ \"description\": \"\", \"style\": {}, \"camera\": {}, \"lighting\": {}, \"environment\": {}, \"elements\": {}, \"motion\": {}, \"subject\": {}, \"text\": {}, \"sound\": {}, \"keywords\": [], \"ending\": {} } Every key controls one aspect of the render.\nBest Practices One instruction per field Good\n\"lighting\": { \"mood\":\"golden hour\" } Avoid combining multiple unrelated ideas.\nBad\n\"lighting\":\"golden hour with dramatic shadows and camera zooms\" Camera instructions belong in the camera section.\nUse Human Readable Names Prefer\n\"wide_establishing\" instead of\n\"we123\" Keep Related Data Together Camera properties stay inside the camera object.\n\"camera\": { \"movement\":\"steady_tracking\", \"angle\":\"low\", \"framing\":\"wide\" } Building Your First Scene Start with the minimum amount of information.\n{ \"description\":\"Mountain sunrise\", \"style\":{ \"genre\":\"Documentary\", \"tone\":\"Awe\" } } Render it.\nThen add the camera.\nRender again.\nAdd lighting.\nRender again.\nOnly change one thing at a time.\nThis makes debugging much easier.\nCamera Fundamentals Camera movement influences emotion.\nExamples include:\nStatic Tracking Dolly Crane Orbit Handheld Drone Example:\n\"camera\":{ \"movement\":\"steady_tracking\", \"angle\":\"low\", \"framing\":\"wide_establishing\", \"transition\":\"cut\" } Lighting Fundamentals Lighting affects mood more than almost any other parameter.\nPopular choices include:\nGolden Hour Soft Overcast Dramatic Backlight Blue Hour Studio Lighting Example:\n\"lighting\":{ \"mood\":\"golden_hour\", \"source\":\"sunlight\", \"interaction\":\"long_shadows\" } Environment Describe the world around the subject.\nExample:\n\"environment\":{ \"location\":\"Alpine Ridge\", \"weather\":\"Clear\", \"foreground\":\"Wild Grass\", \"background\":\"Snow Peaks\" } Adding Text Keep titles short.\nGood examples:\nDay One Journey Begins Into the Wild Example:\n\"text\":{ \"presence\":true, \"content\":\"Day One\", \"position\":\"lower_third\" } Sound Design Video is only half the experience.\nAmbient sounds create realism.\nExample:\n\"sound\":{ \"ambience\":\"Wind and Birds\", \"music_style\":\"Gentle Orchestral\" } Keywords Keywords reinforce the intended style.\nExample:\n\"keywords\":[ \"cinematic\", \"epic\", \"natural textures\", \"high detail\" ] Negative Prompts Negative prompts tell the model what to avoid.\nExample:\n\"negatives\":[ \"blurry faces\", \"shaky camera\", \"cartoon style\" ] Validation Before rendering:\nValidate JSON Remove trailing commas Check quotation marks Ensure brackets match Remove empty objects if unnecessary Render short clips first.\nThree to five seconds is enough to test changes.\nScaling Up Once one scene looks good, duplicate it.\nOnly change:\nLocation Time Camera Subject Weather Soon you’ll have an entire video.\nFinal Thoughts JSON prompting transforms prompt writing into a structured workflow.\nRather than rewriting everything for every scene, you edit only the sections that matter.\nThe result is cleaner prompts, faster iteration, easier collaboration, and significantly more consistent AI-generated videos.\n",
+  "wordCount" : "636",
+  "inLanguage": "en",
+  "datePublished": "2026-08-05T07:54:00+05:30",
+  "dateModified": "2026-08-05T07:54:00+05:30",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-05-json-prompt1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Mastering JSON Prompting for AI Video Generation
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-05 07:54:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#mastering-json-prompting-for-ai-video-generation" aria-label="Mastering JSON Prompting for AI Video Generation">Mastering JSON Prompting for AI Video Generation</a></li>
+            <li>
+                <a href="#why-use-json-prompts" aria-label="Why Use JSON Prompts?">Why Use JSON Prompts?</a></li>
+            <li>
+                <a href="#benefits-of-structured-prompting" aria-label="Benefits of Structured Prompting">Benefits of Structured Prompting</a><ul>
+                    
+            <li>
+                <a href="#consistency" aria-label="Consistency">Consistency</a></li>
+            <li>
+                <a href="#faster-editing" aria-label="Faster Editing">Faster Editing</a></li>
+            <li>
+                <a href="#easy-automation" aria-label="Easy Automation">Easy Automation</a></li></ul>
+            </li>
+            <li>
+                <a href="#core-json-schema" aria-label="Core JSON Schema">Core JSON Schema</a></li>
+            <li>
+                <a href="#best-practices" aria-label="Best Practices">Best Practices</a><ul>
+                    
+            <li>
+                <a href="#one-instruction-per-field" aria-label="One instruction per field">One instruction per field</a></li>
+            <li>
+                <a href="#use-human-readable-names" aria-label="Use Human Readable Names">Use Human Readable Names</a></li>
+            <li>
+                <a href="#keep-related-data-together" aria-label="Keep Related Data Together">Keep Related Data Together</a></li></ul>
+            </li>
+            <li>
+                <a href="#building-your-first-scene" aria-label="Building Your First Scene">Building Your First Scene</a></li>
+            <li>
+                <a href="#camera-fundamentals" aria-label="Camera Fundamentals">Camera Fundamentals</a></li>
+            <li>
+                <a href="#lighting-fundamentals" aria-label="Lighting Fundamentals">Lighting Fundamentals</a></li>
+            <li>
+                <a href="#environment" aria-label="Environment">Environment</a></li>
+            <li>
+                <a href="#adding-text" aria-label="Adding Text">Adding Text</a></li>
+            <li>
+                <a href="#sound-design" aria-label="Sound Design">Sound Design</a></li>
+            <li>
+                <a href="#keywords" aria-label="Keywords">Keywords</a></li>
+            <li>
+                <a href="#negative-prompts" aria-label="Negative Prompts">Negative Prompts</a></li>
+            <li>
+                <a href="#validation" aria-label="Validation">Validation</a></li>
+            <li>
+                <a href="#scaling-up" aria-label="Scaling Up">Scaling Up</a></li>
+            <li>
+                <a href="#final-thoughts" aria-label="Final Thoughts">Final Thoughts</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><h1 id="mastering-json-prompting-for-ai-video-generation">Mastering JSON Prompting for AI Video Generation<a hidden class="anchor" aria-hidden="true" href="#mastering-json-prompting-for-ai-video-generation">#</a></h1>
+<p>Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through <strong>structured JSON prompts</strong>.</p>
+<p>Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.</p>
+<p>This guide explains why JSON prompting matters, how to build your own prompts, and how to create reusable templates for future projects.</p>
+<hr>
+<h1 id="why-use-json-prompts">Why Use JSON Prompts?<a hidden class="anchor" aria-hidden="true" href="#why-use-json-prompts">#</a></h1>
+<p>Think of JSON as a blueprint rather than a paragraph.</p>
+<p>A traditional prompt might look like this:</p>
+<blockquote>
+<p>Create a cinematic sunrise over a mountain where a hiker slowly walks toward the peak while orchestral music plays.</p>
+</blockquote>
+<p>Although this works, making changes later becomes difficult.</p>
+<p>With JSON, every part has its own location.</p>
+<ul>
+<li>Scene description</li>
+<li>Camera</li>
+<li>Lighting</li>
+<li>Environment</li>
+<li>Motion</li>
+<li>Sound</li>
+<li>Text</li>
+<li>Ending</li>
+</ul>
+<p>This separation makes prompts:</p>
+<ul>
+<li>Easier to edit</li>
+<li>Easier to debug</li>
+<li>Easier to automate</li>
+<li>Easier to reuse</li>
+</ul>
+<p>Imagine LEGO bricks instead of wet clay.</p>
+<hr>
+<h1 id="benefits-of-structured-prompting">Benefits of Structured Prompting<a hidden class="anchor" aria-hidden="true" href="#benefits-of-structured-prompting">#</a></h1>
+<p>JSON prompts provide several advantages.</p>
+<h2 id="consistency">Consistency<a hidden class="anchor" aria-hidden="true" href="#consistency">#</a></h2>
+<p>The same structure can be reused across dozens of scenes.</p>
+<h2 id="faster-editing">Faster Editing<a hidden class="anchor" aria-hidden="true" href="#faster-editing">#</a></h2>
+<p>Want different lighting?</p>
+<p>Only edit the lighting section.</p>
+<p>Want another camera angle?</p>
+<p>Only change the camera object.</p>
+<h2 id="easy-automation">Easy Automation<a hidden class="anchor" aria-hidden="true" href="#easy-automation">#</a></h2>
+<p>Because JSON is machine-readable, scripts can generate hundreds of prompts automatically.</p>
+<p>Example applications include:</p>
+<ul>
+<li>Product videos</li>
+<li>Travel films</li>
+<li>Educational animations</li>
+<li>Marketing campaigns</li>
+<li>Social media reels</li>
+</ul>
+<hr>
+<h1 id="core-json-schema">Core JSON Schema<a hidden class="anchor" aria-hidden="true" href="#core-json-schema">#</a></h1>
+<p>A good starting schema includes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;style&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;camera&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;lighting&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;environment&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;elements&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;motion&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;subject&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;text&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;sound&#34;</span>: {},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;keywords&#34;</span>: [],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ending&#34;</span>: {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Every key controls one aspect of the render.</p>
+<hr>
+<h1 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h1>
+<h2 id="one-instruction-per-field">One instruction per field<a hidden class="anchor" aria-hidden="true" href="#one-instruction-per-field">#</a></h2>
+<p>Good</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;lighting&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;mood&#34;</span>:<span style="color:#e6db74">&#34;golden hour&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Avoid combining multiple unrelated ideas.</p>
+<p>Bad</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;lighting&#34;</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#e6db74">&#34;golden hour with dramatic shadows and camera zooms&#34;</span>
+</span></span></code></pre></div><p>Camera instructions belong in the camera section.</p>
+<hr>
+<h2 id="use-human-readable-names">Use Human Readable Names<a hidden class="anchor" aria-hidden="true" href="#use-human-readable-names">#</a></h2>
+<p>Prefer</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;wide_establishing&#34;</span>
+</span></span></code></pre></div><p>instead of</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;we123&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="keep-related-data-together">Keep Related Data Together<a hidden class="anchor" aria-hidden="true" href="#keep-related-data-together">#</a></h2>
+<p>Camera properties stay inside the camera object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;camera&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;movement&#34;</span>:<span style="color:#e6db74">&#34;steady_tracking&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;angle&#34;</span>:<span style="color:#e6db74">&#34;low&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;framing&#34;</span>:<span style="color:#e6db74">&#34;wide&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="building-your-first-scene">Building Your First Scene<a hidden class="anchor" aria-hidden="true" href="#building-your-first-scene">#</a></h1>
+<p>Start with the minimum amount of information.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;description&#34;</span>:<span style="color:#e6db74">&#34;Mountain sunrise&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;style&#34;</span>:{
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;genre&#34;</span>:<span style="color:#e6db74">&#34;Documentary&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;tone&#34;</span>:<span style="color:#e6db74">&#34;Awe&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Render it.</p>
+<p>Then add the camera.</p>
+<p>Render again.</p>
+<p>Add lighting.</p>
+<p>Render again.</p>
+<p>Only change one thing at a time.</p>
+<p>This makes debugging much easier.</p>
+<hr>
+<h1 id="camera-fundamentals">Camera Fundamentals<a hidden class="anchor" aria-hidden="true" href="#camera-fundamentals">#</a></h1>
+<p>Camera movement influences emotion.</p>
+<p>Examples include:</p>
+<ul>
+<li>Static</li>
+<li>Tracking</li>
+<li>Dolly</li>
+<li>Crane</li>
+<li>Orbit</li>
+<li>Handheld</li>
+<li>Drone</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;camera&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;movement&#34;</span>:<span style="color:#e6db74">&#34;steady_tracking&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;angle&#34;</span>:<span style="color:#e6db74">&#34;low&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;framing&#34;</span>:<span style="color:#e6db74">&#34;wide_establishing&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;transition&#34;</span>:<span style="color:#e6db74">&#34;cut&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="lighting-fundamentals">Lighting Fundamentals<a hidden class="anchor" aria-hidden="true" href="#lighting-fundamentals">#</a></h1>
+<p>Lighting affects mood more than almost any other parameter.</p>
+<p>Popular choices include:</p>
+<ul>
+<li>Golden Hour</li>
+<li>Soft Overcast</li>
+<li>Dramatic Backlight</li>
+<li>Blue Hour</li>
+<li>Studio Lighting</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;lighting&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;mood&#34;</span>:<span style="color:#e6db74">&#34;golden_hour&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;source&#34;</span>:<span style="color:#e6db74">&#34;sunlight&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;interaction&#34;</span>:<span style="color:#e6db74">&#34;long_shadows&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="environment">Environment<a hidden class="anchor" aria-hidden="true" href="#environment">#</a></h1>
+<p>Describe the world around the subject.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;environment&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>:<span style="color:#e6db74">&#34;Alpine Ridge&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;weather&#34;</span>:<span style="color:#e6db74">&#34;Clear&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;foreground&#34;</span>:<span style="color:#e6db74">&#34;Wild Grass&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;background&#34;</span>:<span style="color:#e6db74">&#34;Snow Peaks&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="adding-text">Adding Text<a hidden class="anchor" aria-hidden="true" href="#adding-text">#</a></h1>
+<p>Keep titles short.</p>
+<p>Good examples:</p>
+<ul>
+<li>Day One</li>
+<li>Journey Begins</li>
+<li>Into the Wild</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;presence&#34;</span>:<span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;content&#34;</span>:<span style="color:#e6db74">&#34;Day One&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;position&#34;</span>:<span style="color:#e6db74">&#34;lower_third&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="sound-design">Sound Design<a hidden class="anchor" aria-hidden="true" href="#sound-design">#</a></h1>
+<p>Video is only half the experience.</p>
+<p>Ambient sounds create realism.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;sound&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ambience&#34;</span>:<span style="color:#e6db74">&#34;Wind and Birds&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;music_style&#34;</span>:<span style="color:#e6db74">&#34;Gentle Orchestral&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h1 id="keywords">Keywords<a hidden class="anchor" aria-hidden="true" href="#keywords">#</a></h1>
+<p>Keywords reinforce the intended style.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;keywords&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>[
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;cinematic&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;epic&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;natural textures&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;high detail&#34;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h1 id="negative-prompts">Negative Prompts<a hidden class="anchor" aria-hidden="true" href="#negative-prompts">#</a></h1>
+<p>Negative prompts tell the model what to avoid.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;negatives&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>[
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;blurry faces&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;shaky camera&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;cartoon style&#34;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h1 id="validation">Validation<a hidden class="anchor" aria-hidden="true" href="#validation">#</a></h1>
+<p>Before rendering:</p>
+<ul>
+<li>Validate JSON</li>
+<li>Remove trailing commas</li>
+<li>Check quotation marks</li>
+<li>Ensure brackets match</li>
+<li>Remove empty objects if unnecessary</li>
+</ul>
+<p>Render short clips first.</p>
+<p>Three to five seconds is enough to test changes.</p>
+<hr>
+<h1 id="scaling-up">Scaling Up<a hidden class="anchor" aria-hidden="true" href="#scaling-up">#</a></h1>
+<p>Once one scene looks good, duplicate it.</p>
+<p>Only change:</p>
+<ul>
+<li>Location</li>
+<li>Time</li>
+<li>Camera</li>
+<li>Subject</li>
+<li>Weather</li>
+</ul>
+<p>Soon you&rsquo;ll have an entire video.</p>
+<hr>
+<h1 id="final-thoughts">Final Thoughts<a hidden class="anchor" aria-hidden="true" href="#final-thoughts">#</a></h1>
+<p>JSON prompting transforms prompt writing into a structured workflow.</p>
+<p>Rather than rewriting everything for every scene, you edit only the sections that matter.</p>
+<p>The result is cleaner prompts, faster iteration, easier collaboration, and significantly more consistent AI-generated videos.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/json/">Json</a></li>
+      <li><a href="//localhost:1313/tags/ai-video/">Ai-Video</a></li>
+      <li><a href="//localhost:1313/tags/runway/">Runway</a></li>
+      <li><a href="//localhost:1313/tags/veo/">Veo</a></li>
+      <li><a href="//localhost:1313/tags/pika/">Pika</a></li>
+      <li><a href="//localhost:1313/tags/prompt-engineering/">Prompt Engineering</a></li>
+      <li><a href="//localhost:1313/tags/tutorial/">Tutorial</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-05-onepot-recipe/">
+    <span class="title">« Prev</span>
+    <span>Easy One-Pot Cooking: From Cupcakes to Pulao, Biryani &amp; Palak Recipes</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-05-1/">
+    <span class="title">Next »</span>
+    <span>Linux: The Foundation of Modern DevOps</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

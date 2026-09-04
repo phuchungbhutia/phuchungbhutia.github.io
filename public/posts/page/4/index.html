@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Posts | Technical Journal</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - Technical Journal">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="//localhost:1313/posts/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Posts">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+  <h1>
+    Posts
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Debloat Your Android Without Root Using Shizuku and Canta
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Debloat Your Android Without Root Using Shizuku and Canta Modern Android phones often come with pre-installed applications that many users never use. These apps, commonly called bloatware, can consume storage, run background services, display unwanted notifications, and reduce battery life.
+Fortunately, you no longer need to root your phone or connect it to a computer every time you want to remove unnecessary apps. Thanks to Shizuku and Canta, you can safely uninstall or disable many system applications directly from your phone.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 08:27:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Debloat Your Android Without Root Using Shizuku and Canta" href="//localhost:1313/posts/2026-08-05-debloat-android/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">From a Million-Dollar Goal to a Consultant-Grade Strategy: Building the Right Questions First
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>From a Million-Dollar Goal to a Consultant-Grade Strategy Everyone wants the answer to one question:
+How do I make $1 million as fast as possible?
+The problem is that the question itself is incomplete.
+A top-tier consultant doesn’t immediately prescribe a business model or investment strategy. Instead, they first determine whether the problem has been framed correctly.
+This article explains why asking better questions is the fastest path toward finding a realistic million-dollar strategy.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 08:27:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to From a Million-Dollar Goal to a Consultant-Grade Strategy: Building the Right Questions First" href="//localhost:1313/posts/2026-08-05-1m-goal/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation Among the many visual teachings in Tibetan Buddhism, few are as memorable as the Elephant Path of Shamatha Meditation. At first glance, it appears to be a simple drawing of a monk chasing an elephant. In reality, it is a complete roadmap for developing concentration, mindfulness, and mental stability.
+This traditional illustration has been used for centuries to teach practitioners how the mind gradually transforms from restless and uncontrolled into peaceful, clear, and fully obedient.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 02:57:00 +0000 +0000'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation" href="//localhost:1313/posts/2026-08-05-samatha-meditation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Understanding Energy Flow Meditation: A Simple Visualization Guide
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Understanding Energy Flow Meditation: A Simple Visualization Guide Meditation becomes much easier when the mind has something simple to focus on. One of the oldest techniques found in many meditation traditions is visualizing the movement of light or energy through the body.
+This guide explains a simple energy flow meditation that anyone can practice, regardless of experience. You do not need to follow any particular religion or spiritual tradition. Think of the visualization simply as a mental exercise to improve concentration, relaxation, and body awareness.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 02:57:00 +0000 +0000'>August 5, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Understanding Energy Flow Meditation: A Simple Visualization Guide" href="//localhost:1313/posts/2026-08-05-energy-meditation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prompt Engineering for Authentic Historical Photo Restoration
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Prompt Engineering for Authentic Historical Photo Restoration Prompt engineering plays an important role in AI-assisted restoration.
+Small wording changes can dramatically affect the final image.
+Weak Prompt Restore this old photograph. This leaves many important decisions to the model.
+Strong Prompt A better prompt specifies:
+Damage detection Identity preservation Background reconstruction Texture fidelity Period accuracy Composition preservation This produces far more reliable results.
+Key Instructions Always include guidance such as:
+Do not alter facial identity. Do not change pose. Preserve original framing. Preserve clothing. Preserve medals and decorations. Avoid AI-art styling. Avoid over-sharpening. Maintain original textures. Avoid Common Mistakes Poor restorations often suffer from:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 08:15:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Prompt Engineering for Authentic Historical Photo Restoration" href="//localhost:1313/posts/2026-08-05-photo-restore/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Building a Reusable JSON Prompt Generator Template
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Building a Reusable JSON Prompt Generator Template Writing JSON manually works for a few scenes.
+Writing hundreds of prompts quickly becomes repetitive.
+The solution is a reusable template.
+This article explains how to design a flexible JSON prompt generator that can be adapted to almost any AI video generation platform.
+Why Templates Matter A reusable template offers several advantages:
+Consistency Speed Fewer mistakes Easier collaboration Simple automation Instead of starting from scratch every time, you only fill in the required fields.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 08:10:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Building a Reusable JSON Prompt Generator Template" href="//localhost:1313/posts/2026-08-05-json-prompt2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development Git is the most widely used version control system in the world. Whether you’re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.
+Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.
+In this guide, you’ll learn Git from scratch and build habits used by professional software teams.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 08:00:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Git & GitHub: Complete Beginner to Advanced Guide for Modern Development" href="//localhost:1313/posts/2026-08-05-git2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More Artificial Intelligence is no longer limited to websites and mobile apps. Many AI assistants can now be accessed directly from popular messaging platforms like WhatsApp and Telegram, allowing users to ask questions, generate content, translate languages, summarize documents, write code, and even create images without installing dedicated applications.
+This guide provides an overview of the AI assistants currently available on WhatsApp and Telegram, how to access them, what features they offer, and what limitations to expect.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 07:56:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More" href="//localhost:1313/posts/2026-08-05-ai-chatting/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Building an Ultra-Realistic AI Photo Restoration Prompt
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Building an Ultra-Realistic AI Photo Restoration Prompt Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.
+The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.
+Design Goals The restoration prompt focuses on five principles:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 07:55:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to Building an Ultra-Realistic AI Photo Restoration Prompt" href="//localhost:1313/posts/2026-08-05-ai-photo-prompt/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">The Complete Beginner&#39;s Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The Complete Beginner’s Guide to Creating Cinematic Travel Videos A beautiful travel film is more than a collection of photos and videos. It tells a story, creates emotion, and lets viewers experience the journey with you.
+This guide combines planning, storytelling, editing, music selection, transitions, color grading, and export settings into one workflow suitable for beginners using VN Editor or DaVinci Resolve.
+Who Is This Guide For? This workflow is ideal for:
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-08-05 07:55:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></footer>
+  <a class="entry-link" aria-label="post link to The Complete Beginner&#39;s Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve" href="//localhost:1313/posts/2026-08-05-vneditor/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="//localhost:1313/posts/page/3/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="//localhost:1313/posts/page/5/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

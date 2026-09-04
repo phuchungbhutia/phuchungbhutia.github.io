@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web Scraping on Technical Journal</title>
+    <link>//localhost:1313/categories/web-scraping/</link>
+    <description>Recent content in Web Scraping on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/web-scraping/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title>
+      <link>//localhost:1313/posts/2026-09-04-webscraping/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-webscraping/</guid>
+      <description>A comprehensive guide on engineering a high-speed, parallel JavaScript bookmarklet scraper to extract financial records from eGramSwaraj and Sikkim LFA portals accurately.</description>
+    </item>
+    <item>
+      <title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title>
+      <link>//localhost:1313/posts/2026-08-04-bookmarklet-scraper/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-bookmarklet-scraper/</guid>
+      <description>&lt;h1 id=&#34;deep-dive-engineering-scraping-government-accounting-portals-at-scale&#34;&gt;Deep-Dive Engineering: Scraping Government Accounting Portals at Scale&lt;/h1&gt;
+&lt;p&gt;Extracting local governance financial data from Indian public portals—such as &lt;strong&gt;eGramSwaraj&lt;/strong&gt; and the &lt;strong&gt;Sikkim Local Fund Audit (LFA)&lt;/strong&gt;—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (&lt;code&gt;FileRedirect.jsp&lt;/code&gt;), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.&lt;/p&gt;
+&lt;p&gt;When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

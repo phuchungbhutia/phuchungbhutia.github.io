@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Troubleshooting on Technical Journal</title>
+    <link>//localhost:1313/tags/troubleshooting/</link>
+    <description>Recent content in Troubleshooting on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 13:30:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook</title>
+      <link>//localhost:1313/posts/2026-09-04-chirpy-github-page/</link>
+      <pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-chirpy-github-page/</guid>
+      <description>&lt;p&gt;Setting up a documentation portal or department blog using the &lt;strong&gt;Jekyll Chirpy&lt;/strong&gt; theme on GitHub Pages looks effortless on paper. You fork the starter repo, point GitHub Actions to your branch, and watch the site spin up.&lt;/p&gt;
+&lt;p&gt;In reality, running a production-grade Chirpy setup with custom CI/CD pipelines quickly runs into a minefield of build-time failures: Ruby Liquid crashes over integer tags, &lt;code&gt;htmlproofer&lt;/code&gt; throwing hundreds of false-positive 404s on dynamic taxonomy routes, missing local layout overrides, broken anchor fragment checks, and invisible non-breaking spaces that crash YAML parsers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title>
+      <link>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</guid>
+      <description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
+&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Complete Guide: How to Clean Up Windows Using Command Prompt (CMD)</title>
+      <link>//localhost:1313/posts/2026-08-04-cmd/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-cmd/</guid>
+      <description>&lt;p&gt;Over time, any Windows installation accumulates unnecessary junk files, temporary data, corrupted cache, and outdated system updates that can slow down your PC&amp;rsquo;s performance. While Windows offers various graphical user interface (GUI) tools like Settings and Disk Cleanup, using the &lt;strong&gt;Command Prompt (CMD)&lt;/strong&gt; allows you to perform deep, thorough maintenance quickly and efficiently.&lt;/p&gt;
+&lt;p&gt;This detailed guide breaks down the essential CMD tools and commands to reclaim storage space, fix system integrity, and speed up your machine.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Fix Firefox Saving PDFs Instead of Printing in Google Sheets</title>
+      <link>//localhost:1313/posts/2026-08-04-pdf-gsheets/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-pdf-gsheets/</guid>
+      <description>&lt;p&gt;If you frequently use Google Sheets inside Mozilla Firefox, you may have run into a frustrating issue: when you hit the &amp;ldquo;Print&amp;rdquo; button, Firefox downloads or prompts you to save a PDF file instead of sending the document straight to your physical printer.&lt;/p&gt;
+&lt;p&gt;While this feels like a glitch, it is actually expected behavior based on how Google Sheets interacts with different browsers. Fortunately, there are several straightforward ways to fix this workflow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-arch-commands/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-arch-commands/</guid>
+      <description>&lt;p&gt;Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.&lt;/p&gt;
+&lt;p&gt;Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-pacman-essentials-on-arch-linux&#34;&gt;1. Pacman Essentials on Arch Linux&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;pacman&lt;/code&gt; is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-python-windows/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-python-windows/</guid>
+      <description>&lt;p&gt;Setting up Python tools on Windows using the Microsoft Store distribution can sometimes feel like navigating a minefield of system path warnings, ghost directories, permission locks, and version conflicts.&lt;/p&gt;
+&lt;p&gt;This guide compiles a step-by-step resolution process for real-world terminal errors encounterable when managing CLI tools like &lt;code&gt;weasyprint&lt;/code&gt; and &lt;code&gt;marker&lt;/code&gt;, fixing corrupted package installs, and updating dependencies without getting stuck.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-fixing-executable-warnings-adding-user-packages-to-the-windows-path&#34;&gt;1. Fixing Executable Warnings: Adding User Packages to the Windows PATH&lt;/h2&gt;
+&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;When installing CLI packages via &lt;code&gt;pip&lt;/code&gt; on Windows, you might encounter a warning indicating that the installed binary resides in a location not registered in your system &lt;code&gt;PATH&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

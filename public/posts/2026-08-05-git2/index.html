@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development | Technical Journal</title>
+<meta name="keywords" content="git, github, version-control, github-actions, collaboration, tutorial, devops">
+<meta name="description" content="Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development
+Git is the most widely used version control system in the world. Whether you&rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.
+Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.
+In this guide, you&rsquo;ll learn Git from scratch and build habits used by professional software teams.">
+<meta name="author" content="Phuchung Bhutia">
+<link rel="canonical" href="//localhost:1313/posts/2026-08-05-git2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-05-git2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="//localhost:1313/posts/2026-08-05-git2/">
+  <meta property="og:site_name" content="Technical Journal">
+  <meta property="og:title" content="Git & GitHub: Complete Beginner to Advanced Guide for Modern Development">
+  <meta property="og:description" content="Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development Git is the most widely used version control system in the world. Whether you’re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.
+Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.
+In this guide, you’ll learn Git from scratch and build habits used by professional software teams.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-05T08:00:00+05:30">
+    <meta property="article:modified_time" content="2026-08-05T08:00:00+05:30">
+    <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="Version-Control">
+    <meta property="article:tag" content="Github-Actions">
+    <meta property="article:tag" content="Collaboration">
+    <meta property="article:tag" content="Tutorial">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Git & GitHub: Complete Beginner to Advanced Guide for Modern Development">
+  <meta name="twitter:description" content="Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development Git is the most widely used version control system in the world. Whether you’re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.
+Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.
+In this guide, you’ll learn Git from scratch and build habits used by professional software teams.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "//localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Git \u0026 GitHub: Complete Beginner to Advanced Guide for Modern Development",
+      "item": "//localhost:1313/posts/2026-08-05-git2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git \u0026 GitHub: Complete Beginner to Advanced Guide for Modern Development",
+  "name": "Git \u0026 GitHub: Complete Beginner to Advanced Guide for Modern Development",
+  "description": "Git \u0026amp; GitHub: Complete Beginner to Advanced Guide for Modern Development Git is the most widely used version control system in the world. Whether you\u0026rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.\nGit keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.\nIn this guide, you\u0026rsquo;ll learn Git from scratch and build habits used by professional software teams.\n",
+  "keywords": [
+    "git", "github", "version-control", "github-actions", "collaboration", "tutorial", "devops"
+  ],
+  "articleBody": "Git \u0026 GitHub: Complete Beginner to Advanced Guide for Modern Development Git is the most widely used version control system in the world. Whether you’re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.\nGit keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.\nIn this guide, you’ll learn Git from scratch and build habits used by professional software teams.\nTable of Contents What is Version Control? What is Git? What is GitHub? Git vs GitHub Installing Git Configuring Git Creating Your First Repository The Git Workflow Understanding Commits Branches Merging Merge Conflicts GitHub Repositories Pull Requests Issues Git Ignore Git Tags Releases GitHub Pages GitHub Actions Git Best Practices Real-World Workflow Portfolio Projects Interview Questions Next Steps What is Version Control? Version control is a system that records changes made to files over time.\nBenefits:\nRecover previous versions Track who changed what Collaborate safely Experiment without losing work Maintain project history Without version control:\nproject-final.zip\rproject-final2.zip\rproject-final-final.zip\rproject-final-really-final.zip With Git:\nCommit History\rInitial Project\r↓\rAdded Login\r↓\rFixed Bug\r↓\rReleased Version 1.0 What is Git? Git is a distributed version control system created by Linus Torvalds in 2005.\nFeatures:\nFast Lightweight Offline support Distributed Reliable Open Source Git stores snapshots instead of simply saving differences.\nWhat is GitHub? GitHub is a cloud platform built around Git.\nGitHub provides:\nRemote repositories Collaboration Pull Requests Issues GitHub Actions GitHub Pages Wikis Releases Discussions Security scanning Git vs GitHub Git GitHub Version control software Cloud hosting platform Works locally Works online Tracks changes Stores repositories Command line Web interface Open source Free \u0026 Paid plans Installing Git Ubuntu\nsudo apt install git Windows\nDownload Git for Windows and install with default options.\nVerify installation\ngit --version Configure Git Tell Git who you are.\ngit config --global user.name \"Your Name\" git config --global user.email \"you@example.com\" Check configuration\ngit config --list Your First Repository Create a folder.\nmkdir hello-git Enter it.\ncd hello-git Initialize Git.\ngit init Git creates a hidden folder.\n.git This contains all repository history.\nFirst Commit Create a file.\necho \"# Hello Git\" \u003e README.md Check status.\ngit status Stage the file.\ngit add README.md Commit.\ngit commit -m \"Initial commit\" Congratulations!\nYou have created your first Git history.\nGit Workflow Working Directory\r↓\rgit add\r↓\rStaging Area\r↓\rgit commit\r↓\rLocal Repository\r↓\rgit push\r↓\rGitHub Repository Checking Changes git status View differences\ngit diff History\ngit log Compact history\ngit log --oneline Graph\ngit log --graph --all Branches A branch lets you work independently.\nCreate\ngit branch feature-login Switch\ngit checkout feature-login Modern command\ngit switch feature-login Create and switch\ngit switch -c feature-login List branches\ngit branch Merge Branches Return to main\ngit switch main Merge\ngit merge feature-login Delete merged branch\ngit branch -d feature-login Merge Conflicts Sometimes two people edit the same lines.\nGit marks conflicts like this:\n\u003c\u003c\u003c\u003c\u003c\u003c\u003c HEAD Current Version ======= Incoming Version \u003e\u003e\u003e\u003e\u003e\u003e\u003e feature-login Resolve manually.\nThen:\ngit add . git commit Remote Repository Connect GitHub.\ngit remote add origin https://github.com/user/project.git View remotes\ngit remote -v Push\ngit push -u origin main Future pushes\ngit push Clone Existing Repository git clone https://github.com/user/project.git This downloads the entire history.\nPull Latest Changes git pull Fetch only\ngit fetch Difference\nFetch Pull Downloads changes Downloads + merges Undo Mistakes Restore file\ngit restore file.txt Undo staging\ngit restore --staged file.txt Revert commit\ngit revert COMMIT_ID Git Ignore Create\n.gitignore Example\nnode_modules/ *.log .env __pycache__/ *.pyc dist/ Never commit:\nPasswords API Keys Secrets Build folders Tags Create version\ngit tag v1.0 Annotated tag\ngit tag -a v1.0 -m \"First release\" Push\ngit push origin v1.0 GitHub Releases Tags become releases.\nExample\nv1.0\r↓\rRelease Notes\r↓\rDownload ZIP\r↓\rDownload Source Ideal for software distribution.\nPull Requests Professional workflow\nMain\r↓\rCreate Branch\r↓\rCode\r↓\rPush\r↓\rPull Request\r↓\rReview\r↓\rMerge Benefits\nCode review Testing Discussion Safe merging GitHub Issues Track:\nBugs Features Improvements Documentation Example\nIssue #12\rBug\rLogin button crashes application GitHub Pages Host static websites directly from GitHub.\nPerfect for:\nPortfolio Documentation Blog Resume Product pages Typical structure\ndocs/\rindex.html\rassets/\rcss/\rjs/ Or use Jekyll with Markdown posts.\nGitHub Actions Automate workflows.\nExample\nPush Code\r↓\rRun Tests\r↓\rBuild Docker Image\r↓\rDeploy Website Simple workflow\nname: Build on: push jobs: test: runs-on: ubuntu-latest steps: - uses: actions/checkout@v4 - name: Say Hello run: echo \"Hello GitHub Actions\" Git Best Practices Commit often.\nWrite meaningful commit messages.\nExamples\nGood\nFix login validation Bad\nUpdate Good\nAdd Docker support Bad\nChanges Repository Structure project/\rREADME.md\rLICENSE\r.gitignore\rdocs/\rsrc/\rtests/\r.github/\rworkflows/ README Essentials Every repository should include:\nProject name Description Features Screenshots Installation Usage Roadmap License Author Real Development Workflow Developer\r↓\rCreate Branch\r↓\rWrite Code\r↓\rCommit\r↓\rPush\r↓\rGitHub\r↓\rPull Request\r↓\rCode Review\r↓\rGitHub Actions\r↓\rMerge\r↓\rDeploy Portfolio Projects Beginner Notes App Calculator Portfolio Website Intermediate Weather Dashboard Expense Tracker Password Manager Advanced Markdown Blog Engine Dockerized Python API Kubernetes Deployment Static Site Generator GitHub Pages Documentation Site Common Git Commands git init git clone git status git add git commit git push git pull git fetch git branch git switch git merge git rebase git stash git tag git remote git log git diff git restore Interview Questions What is Git? Difference between Git and GitHub? What is a commit? What is HEAD? Explain branching. Merge vs Rebase? Git Fetch vs Git Pull? What is a Pull Request? What is Git Stash? What is GitHub Actions? Practice Roadmap Week 1\nInstall Git Learn 20 commands Create 5 repositories Week 2\nBranching Merge Pull Requests Week 3\nGitHub Pages Releases Tags Week 4\nGitHub Actions CI/CD Collaboration Mini Projects 1. Personal Portfolio Host with GitHub Pages.\n2. Markdown Blog Write posts using Jekyll.\n3. Notes Application Track every version using Git.\n4. Docker Project Push source code to GitHub.\nAutomate builds.\n5. Documentation Website Publish documentation using Markdown.\nKey Takeaways By mastering Git and GitHub, you’ll gain the ability to:\nTrack every code change Collaborate with teams Build professional portfolios Automate development workflows Publish documentation Contribute to open source Deploy applications with confidence Git is more than a tool—it’s the backbone of modern software development.\nNext Article The next guide in this series is:\nPython for DevOps and Automation\nYou’ll learn Python from the basics through scripting, automation, REST APIs, virtual environments, testing, and real-world DevOps projects like log analyzers, backup tools, cloud automation scripts, and deployment utilities.\n",
+  "wordCount" : "1107",
+  "inLanguage": "en",
+  "datePublished": "2026-08-05T08:00:00+05:30",
+  "dateModified": "2026-08-05T08:00:00+05:30",
+  "author":{
+    "@type": "Person",
+    "name": "Phuchung Bhutia"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "//localhost:1313/posts/2026-08-05-git2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Technical Journal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/">Posts</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-08-05 08:00:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Table of Contents</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#git--github-complete-beginner-to-advanced-guide-for-modern-development" aria-label="Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development">Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development</a></li>
+            <li>
+                <a href="#table-of-contents" aria-label="Table of Contents">Table of Contents</a></li>
+            <li>
+                <a href="#what-is-version-control" aria-label="What is Version Control?">What is Version Control?</a></li>
+            <li>
+                <a href="#what-is-git" aria-label="What is Git?">What is Git?</a></li>
+            <li>
+                <a href="#what-is-github" aria-label="What is GitHub?">What is GitHub?</a></li>
+            <li>
+                <a href="#git-vs-github" aria-label="Git vs GitHub">Git vs GitHub</a></li>
+            <li>
+                <a href="#installing-git" aria-label="Installing Git">Installing Git</a></li>
+            <li>
+                <a href="#configure-git" aria-label="Configure Git">Configure Git</a></li>
+            <li>
+                <a href="#your-first-repository" aria-label="Your First Repository">Your First Repository</a></li>
+            <li>
+                <a href="#first-commit" aria-label="First Commit">First Commit</a></li>
+            <li>
+                <a href="#git-workflow" aria-label="Git Workflow">Git Workflow</a></li>
+            <li>
+                <a href="#checking-changes" aria-label="Checking Changes">Checking Changes</a></li>
+            <li>
+                <a href="#branches" aria-label="Branches">Branches</a></li>
+            <li>
+                <a href="#merge-branches" aria-label="Merge Branches">Merge Branches</a></li>
+            <li>
+                <a href="#merge-conflicts" aria-label="Merge Conflicts">Merge Conflicts</a></li>
+            <li>
+                <a href="#remote-repository" aria-label="Remote Repository">Remote Repository</a></li>
+            <li>
+                <a href="#clone-existing-repository" aria-label="Clone Existing Repository">Clone Existing Repository</a></li>
+            <li>
+                <a href="#pull-latest-changes" aria-label="Pull Latest Changes">Pull Latest Changes</a></li>
+            <li>
+                <a href="#undo-mistakes" aria-label="Undo Mistakes">Undo Mistakes</a></li>
+            <li>
+                <a href="#git-ignore" aria-label="Git Ignore">Git Ignore</a></li>
+            <li>
+                <a href="#tags" aria-label="Tags">Tags</a></li>
+            <li>
+                <a href="#github-releases" aria-label="GitHub Releases">GitHub Releases</a></li>
+            <li>
+                <a href="#pull-requests" aria-label="Pull Requests">Pull Requests</a></li>
+            <li>
+                <a href="#github-issues" aria-label="GitHub Issues">GitHub Issues</a></li>
+            <li>
+                <a href="#github-pages" aria-label="GitHub Pages">GitHub Pages</a></li>
+            <li>
+                <a href="#github-actions" aria-label="GitHub Actions">GitHub Actions</a></li>
+            <li>
+                <a href="#git-best-practices" aria-label="Git Best Practices">Git Best Practices</a></li>
+            <li>
+                <a href="#repository-structure" aria-label="Repository Structure">Repository Structure</a></li>
+            <li>
+                <a href="#readme-essentials" aria-label="README Essentials">README Essentials</a></li>
+            <li>
+                <a href="#real-development-workflow" aria-label="Real Development Workflow">Real Development Workflow</a></li>
+            <li>
+                <a href="#portfolio-projects" aria-label="Portfolio Projects">Portfolio Projects</a><ul>
+                    
+            <li>
+                <a href="#beginner" aria-label="Beginner">Beginner</a></li>
+            <li>
+                <a href="#intermediate" aria-label="Intermediate">Intermediate</a></li>
+            <li>
+                <a href="#advanced" aria-label="Advanced">Advanced</a></li></ul>
+            </li>
+            <li>
+                <a href="#common-git-commands" aria-label="Common Git Commands">Common Git Commands</a></li>
+            <li>
+                <a href="#interview-questions" aria-label="Interview Questions">Interview Questions</a><ul>
+                    <ul>
+                    
+            <li>
+                <a href="#what-is-git-1" aria-label="What is Git?">What is Git?</a></li>
+            <li>
+                <a href="#difference-between-git-and-github" aria-label="Difference between Git and GitHub?">Difference between Git and GitHub?</a></li>
+            <li>
+                <a href="#what-is-a-commit" aria-label="What is a commit?">What is a commit?</a></li>
+            <li>
+                <a href="#what-is-head" aria-label="What is HEAD?">What is HEAD?</a></li>
+            <li>
+                <a href="#explain-branching" aria-label="Explain branching.">Explain branching.</a></li>
+            <li>
+                <a href="#merge-vs-rebase" aria-label="Merge vs Rebase?">Merge vs Rebase?</a></li>
+            <li>
+                <a href="#git-fetch-vs-git-pull" aria-label="Git Fetch vs Git Pull?">Git Fetch vs Git Pull?</a></li>
+            <li>
+                <a href="#what-is-a-pull-request" aria-label="What is a Pull Request?">What is a Pull Request?</a></li>
+            <li>
+                <a href="#what-is-git-stash" aria-label="What is Git Stash?">What is Git Stash?</a></li>
+            <li>
+                <a href="#what-is-github-actions" aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li></ul>
+                </ul>
+            </li>
+            <li>
+                <a href="#practice-roadmap" aria-label="Practice Roadmap">Practice Roadmap</a></li>
+            <li>
+                <a href="#mini-projects" aria-label="Mini Projects">Mini Projects</a><ul>
+                    
+            <li>
+                <a href="#1-personal-portfolio" aria-label="1. Personal Portfolio">1. Personal Portfolio</a></li>
+            <li>
+                <a href="#2-markdown-blog" aria-label="2. Markdown Blog">2. Markdown Blog</a></li>
+            <li>
+                <a href="#3-notes-application" aria-label="3. Notes Application">3. Notes Application</a></li>
+            <li>
+                <a href="#4-docker-project" aria-label="4. Docker Project">4. Docker Project</a></li>
+            <li>
+                <a href="#5-documentation-website" aria-label="5. Documentation Website">5. Documentation Website</a></li></ul>
+            </li>
+            <li>
+                <a href="#key-takeaways" aria-label="Key Takeaways">Key Takeaways</a></li>
+            <li>
+                <a href="#next-article" aria-label="Next Article">Next Article</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><h1 id="git--github-complete-beginner-to-advanced-guide-for-modern-development">Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development<a hidden class="anchor" aria-hidden="true" href="#git--github-complete-beginner-to-advanced-guide-for-modern-development">#</a></h1>
+<p>Git is the most widely used version control system in the world. Whether you&rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.</p>
+<p>Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.</p>
+<p>In this guide, you&rsquo;ll learn Git from scratch and build habits used by professional software teams.</p>
+<hr>
+<h1 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h1>
+<ol>
+<li>What is Version Control?</li>
+<li>What is Git?</li>
+<li>What is GitHub?</li>
+<li>Git vs GitHub</li>
+<li>Installing Git</li>
+<li>Configuring Git</li>
+<li>Creating Your First Repository</li>
+<li>The Git Workflow</li>
+<li>Understanding Commits</li>
+<li>Branches</li>
+<li>Merging</li>
+<li>Merge Conflicts</li>
+<li>GitHub Repositories</li>
+<li>Pull Requests</li>
+<li>Issues</li>
+<li>Git Ignore</li>
+<li>Git Tags</li>
+<li>Releases</li>
+<li>GitHub Pages</li>
+<li>GitHub Actions</li>
+<li>Git Best Practices</li>
+<li>Real-World Workflow</li>
+<li>Portfolio Projects</li>
+<li>Interview Questions</li>
+<li>Next Steps</li>
+</ol>
+<hr>
+<h1 id="what-is-version-control">What is Version Control?<a hidden class="anchor" aria-hidden="true" href="#what-is-version-control">#</a></h1>
+<p>Version control is a system that records changes made to files over time.</p>
+<p>Benefits:</p>
+<ul>
+<li>Recover previous versions</li>
+<li>Track who changed what</li>
+<li>Collaborate safely</li>
+<li>Experiment without losing work</li>
+<li>Maintain project history</li>
+</ul>
+<p>Without version control:</p>
+<pre tabindex="0"><code>project-final.zip
+project-final2.zip
+project-final-final.zip
+project-final-really-final.zip
+</code></pre><p>With Git:</p>
+<pre tabindex="0"><code>Commit History
+
+Initial Project
+↓
+
+Added Login
+
+↓
+
+Fixed Bug
+
+↓
+
+Released Version 1.0
+</code></pre><hr>
+<h1 id="what-is-git">What is Git?<a hidden class="anchor" aria-hidden="true" href="#what-is-git">#</a></h1>
+<p>Git is a distributed version control system created by Linus Torvalds in 2005.</p>
+<p>Features:</p>
+<ul>
+<li>Fast</li>
+<li>Lightweight</li>
+<li>Offline support</li>
+<li>Distributed</li>
+<li>Reliable</li>
+<li>Open Source</li>
+</ul>
+<p>Git stores snapshots instead of simply saving differences.</p>
+<hr>
+<h1 id="what-is-github">What is GitHub?<a hidden class="anchor" aria-hidden="true" href="#what-is-github">#</a></h1>
+<p>GitHub is a cloud platform built around Git.</p>
+<p>GitHub provides:</p>
+<ul>
+<li>Remote repositories</li>
+<li>Collaboration</li>
+<li>Pull Requests</li>
+<li>Issues</li>
+<li>GitHub Actions</li>
+<li>GitHub Pages</li>
+<li>Wikis</li>
+<li>Releases</li>
+<li>Discussions</li>
+<li>Security scanning</li>
+</ul>
+<hr>
+<h1 id="git-vs-github">Git vs GitHub<a hidden class="anchor" aria-hidden="true" href="#git-vs-github">#</a></h1>
+<table>
+	<thead>
+			<tr>
+					<th>Git</th>
+					<th>GitHub</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Version control software</td>
+					<td>Cloud hosting platform</td>
+			</tr>
+			<tr>
+					<td>Works locally</td>
+					<td>Works online</td>
+			</tr>
+			<tr>
+					<td>Tracks changes</td>
+					<td>Stores repositories</td>
+			</tr>
+			<tr>
+					<td>Command line</td>
+					<td>Web interface</td>
+			</tr>
+			<tr>
+					<td>Open source</td>
+					<td>Free &amp; Paid plans</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="installing-git">Installing Git<a hidden class="anchor" aria-hidden="true" href="#installing-git">#</a></h1>
+<p>Ubuntu</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install git
+</span></span></code></pre></div><p>Windows</p>
+<p>Download Git for Windows and install with default options.</p>
+<p>Verify installation</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git --version
+</span></span></code></pre></div><hr>
+<h1 id="configure-git">Configure Git<a hidden class="anchor" aria-hidden="true" href="#configure-git">#</a></h1>
+<p>Tell Git who you are.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Your Name&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;you@example.com&#34;</span>
+</span></span></code></pre></div><p>Check configuration</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --list
+</span></span></code></pre></div><hr>
+<h1 id="your-first-repository">Your First Repository<a hidden class="anchor" aria-hidden="true" href="#your-first-repository">#</a></h1>
+<p>Create a folder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir hello-git
+</span></span></code></pre></div><p>Enter it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd hello-git
+</span></span></code></pre></div><p>Initialize Git.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p>Git creates a hidden folder.</p>
+<pre tabindex="0"><code>.git
+</code></pre><p>This contains all repository history.</p>
+<hr>
+<h1 id="first-commit">First Commit<a hidden class="anchor" aria-hidden="true" href="#first-commit">#</a></h1>
+<p>Create a file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Hello Git&#34;</span> &gt; README.md
+</span></span></code></pre></div><p>Check status.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
+</span></span></code></pre></div><p>Stage the file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add README.md
+</span></span></code></pre></div><p>Commit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial commit&#34;</span>
+</span></span></code></pre></div><p>Congratulations!</p>
+<p>You have created your first Git history.</p>
+<hr>
+<h1 id="git-workflow">Git Workflow<a hidden class="anchor" aria-hidden="true" href="#git-workflow">#</a></h1>
+<pre tabindex="0"><code>Working Directory
+
+↓
+
+git add
+
+↓
+
+Staging Area
+
+↓
+
+git commit
+
+↓
+
+Local Repository
+
+↓
+
+git push
+
+↓
+
+GitHub Repository
+</code></pre><hr>
+<h1 id="checking-changes">Checking Changes<a hidden class="anchor" aria-hidden="true" href="#checking-changes">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
+</span></span></code></pre></div><p>View differences</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git diff
+</span></span></code></pre></div><p>History</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log
+</span></span></code></pre></div><p>Compact history</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --oneline
+</span></span></code></pre></div><p>Graph</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --graph --all
+</span></span></code></pre></div><hr>
+<h1 id="branches">Branches<a hidden class="anchor" aria-hidden="true" href="#branches">#</a></h1>
+<p>A branch lets you work independently.</p>
+<p>Create</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch feature-login
+</span></span></code></pre></div><p>Switch</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout feature-login
+</span></span></code></pre></div><p>Modern command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git switch feature-login
+</span></span></code></pre></div><p>Create and switch</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git switch -c feature-login
+</span></span></code></pre></div><p>List branches</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch
+</span></span></code></pre></div><hr>
+<h1 id="merge-branches">Merge Branches<a hidden class="anchor" aria-hidden="true" href="#merge-branches">#</a></h1>
+<p>Return to main</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git switch main
+</span></span></code></pre></div><p>Merge</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge feature-login
+</span></span></code></pre></div><p>Delete merged branch</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -d feature-login
+</span></span></code></pre></div><hr>
+<h1 id="merge-conflicts">Merge Conflicts<a hidden class="anchor" aria-hidden="true" href="#merge-conflicts">#</a></h1>
+<p>Sometimes two people edit the same lines.</p>
+<p>Git marks conflicts like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current Version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>=======
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Incoming Version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-login
+</span></span></code></pre></div><p>Resolve manually.</p>
+<p>Then:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit
+</span></span></code></pre></div><hr>
+<h1 id="remote-repository">Remote Repository<a hidden class="anchor" aria-hidden="true" href="#remote-repository">#</a></h1>
+<p>Connect GitHub.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin https://github.com/user/project.git
+</span></span></code></pre></div><p>View remotes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote -v
+</span></span></code></pre></div><p>Push</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><p>Future pushes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push
+</span></span></code></pre></div><hr>
+<h1 id="clone-existing-repository">Clone Existing Repository<a hidden class="anchor" aria-hidden="true" href="#clone-existing-repository">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/user/project.git
+</span></span></code></pre></div><p>This downloads the entire history.</p>
+<hr>
+<h1 id="pull-latest-changes">Pull Latest Changes<a hidden class="anchor" aria-hidden="true" href="#pull-latest-changes">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull
+</span></span></code></pre></div><p>Fetch only</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git fetch
+</span></span></code></pre></div><p>Difference</p>
+<table>
+	<thead>
+			<tr>
+					<th>Fetch</th>
+					<th>Pull</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Downloads changes</td>
+					<td>Downloads + merges</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h1 id="undo-mistakes">Undo Mistakes<a hidden class="anchor" aria-hidden="true" href="#undo-mistakes">#</a></h1>
+<p>Restore file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git restore file.txt
+</span></span></code></pre></div><p>Undo staging</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git restore --staged file.txt
+</span></span></code></pre></div><p>Revert commit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git revert COMMIT_ID
+</span></span></code></pre></div><hr>
+<h1 id="git-ignore">Git Ignore<a hidden class="anchor" aria-hidden="true" href="#git-ignore">#</a></h1>
+<p>Create</p>
+<pre tabindex="0"><code>.gitignore
+</code></pre><p>Example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>node_modules/
+</span></span><span style="display:flex;"><span>*.log
+</span></span><span style="display:flex;"><span>.env
+</span></span><span style="display:flex;"><span>__pycache__/
+</span></span><span style="display:flex;"><span>*.pyc
+</span></span><span style="display:flex;"><span>dist/
+</span></span></code></pre></div><p>Never commit:</p>
+<ul>
+<li>Passwords</li>
+<li>API Keys</li>
+<li>Secrets</li>
+<li>Build folders</li>
+</ul>
+<hr>
+<h1 id="tags">Tags<a hidden class="anchor" aria-hidden="true" href="#tags">#</a></h1>
+<p>Create version</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag v1.0
+</span></span></code></pre></div><p>Annotated tag</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git tag -a v1.0 -m <span style="color:#e6db74">&#34;First release&#34;</span>
+</span></span></code></pre></div><p>Push</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin v1.0
+</span></span></code></pre></div><hr>
+<h1 id="github-releases">GitHub Releases<a hidden class="anchor" aria-hidden="true" href="#github-releases">#</a></h1>
+<p>Tags become releases.</p>
+<p>Example</p>
+<pre tabindex="0"><code>v1.0
+
+↓
+
+Release Notes
+
+↓
+
+Download ZIP
+
+↓
+
+Download Source
+</code></pre><p>Ideal for software distribution.</p>
+<hr>
+<h1 id="pull-requests">Pull Requests<a hidden class="anchor" aria-hidden="true" href="#pull-requests">#</a></h1>
+<p>Professional workflow</p>
+<pre tabindex="0"><code>Main
+
+↓
+
+Create Branch
+
+↓
+
+Code
+
+↓
+
+Push
+
+↓
+
+Pull Request
+
+↓
+
+Review
+
+↓
+
+Merge
+</code></pre><p>Benefits</p>
+<ul>
+<li>Code review</li>
+<li>Testing</li>
+<li>Discussion</li>
+<li>Safe merging</li>
+</ul>
+<hr>
+<h1 id="github-issues">GitHub Issues<a hidden class="anchor" aria-hidden="true" href="#github-issues">#</a></h1>
+<p>Track:</p>
+<ul>
+<li>Bugs</li>
+<li>Features</li>
+<li>Improvements</li>
+<li>Documentation</li>
+</ul>
+<p>Example</p>
+<pre tabindex="0"><code>Issue #12
+
+Bug
+
+Login button crashes application
+</code></pre><hr>
+<h1 id="github-pages">GitHub Pages<a hidden class="anchor" aria-hidden="true" href="#github-pages">#</a></h1>
+<p>Host static websites directly from GitHub.</p>
+<p>Perfect for:</p>
+<ul>
+<li>Portfolio</li>
+<li>Documentation</li>
+<li>Blog</li>
+<li>Resume</li>
+<li>Product pages</li>
+</ul>
+<p>Typical structure</p>
+<pre tabindex="0"><code>docs/
+
+index.html
+
+assets/
+
+css/
+
+js/
+</code></pre><p>Or use Jekyll with Markdown posts.</p>
+<hr>
+<h1 id="github-actions">GitHub Actions<a hidden class="anchor" aria-hidden="true" href="#github-actions">#</a></h1>
+<p>Automate workflows.</p>
+<p>Example</p>
+<pre tabindex="0"><code>Push Code
+
+↓
+
+Run Tests
+
+↓
+
+Build Docker Image
+
+↓
+
+Deploy Website
+</code></pre><p>Simple workflow</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>: <span style="color:#ae81ff">push</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">test</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Say Hello</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;Hello GitHub Actions&#34;</span>
+</span></span></code></pre></div><hr>
+<h1 id="git-best-practices">Git Best Practices<a hidden class="anchor" aria-hidden="true" href="#git-best-practices">#</a></h1>
+<p>Commit often.</p>
+<p>Write meaningful commit messages.</p>
+<p>Examples</p>
+<p>Good</p>
+<pre tabindex="0"><code>Fix login validation
+</code></pre><p>Bad</p>
+<pre tabindex="0"><code>Update
+</code></pre><p>Good</p>
+<pre tabindex="0"><code>Add Docker support
+</code></pre><p>Bad</p>
+<pre tabindex="0"><code>Changes
+</code></pre><hr>
+<h1 id="repository-structure">Repository Structure<a hidden class="anchor" aria-hidden="true" href="#repository-structure">#</a></h1>
+<pre tabindex="0"><code>project/
+
+README.md
+
+LICENSE
+
+.gitignore
+
+docs/
+
+src/
+
+tests/
+
+.github/
+
+workflows/
+</code></pre><hr>
+<h1 id="readme-essentials">README Essentials<a hidden class="anchor" aria-hidden="true" href="#readme-essentials">#</a></h1>
+<p>Every repository should include:</p>
+<ul>
+<li>Project name</li>
+<li>Description</li>
+<li>Features</li>
+<li>Screenshots</li>
+<li>Installation</li>
+<li>Usage</li>
+<li>Roadmap</li>
+<li>License</li>
+<li>Author</li>
+</ul>
+<hr>
+<h1 id="real-development-workflow">Real Development Workflow<a hidden class="anchor" aria-hidden="true" href="#real-development-workflow">#</a></h1>
+<pre tabindex="0"><code>Developer
+
+↓
+
+Create Branch
+
+↓
+
+Write Code
+
+↓
+
+Commit
+
+↓
+
+Push
+
+↓
+
+GitHub
+
+↓
+
+Pull Request
+
+↓
+
+Code Review
+
+↓
+
+GitHub Actions
+
+↓
+
+Merge
+
+↓
+
+Deploy
+</code></pre><hr>
+<h1 id="portfolio-projects">Portfolio Projects<a hidden class="anchor" aria-hidden="true" href="#portfolio-projects">#</a></h1>
+<h2 id="beginner">Beginner<a hidden class="anchor" aria-hidden="true" href="#beginner">#</a></h2>
+<ul>
+<li>Notes App</li>
+<li>Calculator</li>
+<li>Portfolio Website</li>
+</ul>
+<hr>
+<h2 id="intermediate">Intermediate<a hidden class="anchor" aria-hidden="true" href="#intermediate">#</a></h2>
+<ul>
+<li>Weather Dashboard</li>
+<li>Expense Tracker</li>
+<li>Password Manager</li>
+</ul>
+<hr>
+<h2 id="advanced">Advanced<a hidden class="anchor" aria-hidden="true" href="#advanced">#</a></h2>
+<ul>
+<li>Markdown Blog Engine</li>
+<li>Dockerized Python API</li>
+<li>Kubernetes Deployment</li>
+<li>Static Site Generator</li>
+<li>GitHub Pages Documentation Site</li>
+</ul>
+<hr>
+<h1 id="common-git-commands">Common Git Commands<a hidden class="anchor" aria-hidden="true" href="#common-git-commands">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git clone
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>git add
+</span></span><span style="display:flex;"><span>git commit
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>git pull
+</span></span><span style="display:flex;"><span>git fetch
+</span></span><span style="display:flex;"><span>git branch
+</span></span><span style="display:flex;"><span>git switch
+</span></span><span style="display:flex;"><span>git merge
+</span></span><span style="display:flex;"><span>git rebase
+</span></span><span style="display:flex;"><span>git stash
+</span></span><span style="display:flex;"><span>git tag
+</span></span><span style="display:flex;"><span>git remote
+</span></span><span style="display:flex;"><span>git log
+</span></span><span style="display:flex;"><span>git diff
+</span></span><span style="display:flex;"><span>git restore
+</span></span></code></pre></div><hr>
+<h1 id="interview-questions">Interview Questions<a hidden class="anchor" aria-hidden="true" href="#interview-questions">#</a></h1>
+<h3 id="what-is-git-1">What is Git?<a hidden class="anchor" aria-hidden="true" href="#what-is-git-1">#</a></h3>
+<h3 id="difference-between-git-and-github">Difference between Git and GitHub?<a hidden class="anchor" aria-hidden="true" href="#difference-between-git-and-github">#</a></h3>
+<h3 id="what-is-a-commit">What is a commit?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-commit">#</a></h3>
+<h3 id="what-is-head">What is HEAD?<a hidden class="anchor" aria-hidden="true" href="#what-is-head">#</a></h3>
+<h3 id="explain-branching">Explain branching.<a hidden class="anchor" aria-hidden="true" href="#explain-branching">#</a></h3>
+<h3 id="merge-vs-rebase">Merge vs Rebase?<a hidden class="anchor" aria-hidden="true" href="#merge-vs-rebase">#</a></h3>
+<h3 id="git-fetch-vs-git-pull">Git Fetch vs Git Pull?<a hidden class="anchor" aria-hidden="true" href="#git-fetch-vs-git-pull">#</a></h3>
+<h3 id="what-is-a-pull-request">What is a Pull Request?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-pull-request">#</a></h3>
+<h3 id="what-is-git-stash">What is Git Stash?<a hidden class="anchor" aria-hidden="true" href="#what-is-git-stash">#</a></h3>
+<h3 id="what-is-github-actions">What is GitHub Actions?<a hidden class="anchor" aria-hidden="true" href="#what-is-github-actions">#</a></h3>
+<hr>
+<h1 id="practice-roadmap">Practice Roadmap<a hidden class="anchor" aria-hidden="true" href="#practice-roadmap">#</a></h1>
+<p>Week 1</p>
+<ul>
+<li>Install Git</li>
+<li>Learn 20 commands</li>
+<li>Create 5 repositories</li>
+</ul>
+<p>Week 2</p>
+<ul>
+<li>Branching</li>
+<li>Merge</li>
+<li>Pull Requests</li>
+</ul>
+<p>Week 3</p>
+<ul>
+<li>GitHub Pages</li>
+<li>Releases</li>
+<li>Tags</li>
+</ul>
+<p>Week 4</p>
+<ul>
+<li>GitHub Actions</li>
+<li>CI/CD</li>
+<li>Collaboration</li>
+</ul>
+<hr>
+<h1 id="mini-projects">Mini Projects<a hidden class="anchor" aria-hidden="true" href="#mini-projects">#</a></h1>
+<h2 id="1-personal-portfolio">1. Personal Portfolio<a hidden class="anchor" aria-hidden="true" href="#1-personal-portfolio">#</a></h2>
+<p>Host with GitHub Pages.</p>
+<hr>
+<h2 id="2-markdown-blog">2. Markdown Blog<a hidden class="anchor" aria-hidden="true" href="#2-markdown-blog">#</a></h2>
+<p>Write posts using Jekyll.</p>
+<hr>
+<h2 id="3-notes-application">3. Notes Application<a hidden class="anchor" aria-hidden="true" href="#3-notes-application">#</a></h2>
+<p>Track every version using Git.</p>
+<hr>
+<h2 id="4-docker-project">4. Docker Project<a hidden class="anchor" aria-hidden="true" href="#4-docker-project">#</a></h2>
+<p>Push source code to GitHub.</p>
+<p>Automate builds.</p>
+<hr>
+<h2 id="5-documentation-website">5. Documentation Website<a hidden class="anchor" aria-hidden="true" href="#5-documentation-website">#</a></h2>
+<p>Publish documentation using Markdown.</p>
+<hr>
+<h1 id="key-takeaways">Key Takeaways<a hidden class="anchor" aria-hidden="true" href="#key-takeaways">#</a></h1>
+<p>By mastering Git and GitHub, you&rsquo;ll gain the ability to:</p>
+<ul>
+<li>Track every code change</li>
+<li>Collaborate with teams</li>
+<li>Build professional portfolios</li>
+<li>Automate development workflows</li>
+<li>Publish documentation</li>
+<li>Contribute to open source</li>
+<li>Deploy applications with confidence</li>
+</ul>
+<p>Git is more than a tool—it&rsquo;s the backbone of modern software development.</p>
+<hr>
+<h1 id="next-article">Next Article<a hidden class="anchor" aria-hidden="true" href="#next-article">#</a></h1>
+<p>The next guide in this series is:</p>
+<p><strong>Python for DevOps and Automation</strong></p>
+<p>You&rsquo;ll learn Python from the basics through scripting, automation, REST APIs, virtual environments, testing, and real-world DevOps projects like log analyzers, backup tools, cloud automation scripts, and deployment utilities.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="//localhost:1313/tags/git/">Git</a></li>
+      <li><a href="//localhost:1313/tags/github/">Github</a></li>
+      <li><a href="//localhost:1313/tags/version-control/">Version-Control</a></li>
+      <li><a href="//localhost:1313/tags/github-actions/">Github-Actions</a></li>
+      <li><a href="//localhost:1313/tags/collaboration/">Collaboration</a></li>
+      <li><a href="//localhost:1313/tags/tutorial/">Tutorial</a></li>
+      <li><a href="//localhost:1313/tags/devops/">Devops</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="//localhost:1313/posts/2026-08-05-json-prompt2/">
+    <span class="title">« Prev</span>
+    <span>Building a Reusable JSON Prompt Generator Template</span>
+  </a>
+  <a class="next" href="//localhost:1313/posts/2026-08-05-ai-chatting/">
+    <span class="title">Next »</span>
+    <span>AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

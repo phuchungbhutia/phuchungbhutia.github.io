@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hardware on Technical Journal</title>
+    <link>//localhost:1313/categories/hardware/</link>
+    <description>Recent content in Hardware on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extending a Static IP Office Network with a TP-Link C54 Extender</title>
+      <link>//localhost:1313/posts/2026-09-04-wifi-extender/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-wifi-extender/</guid>
+      <description>A step-by-step guide to configuring a new router and range extender on a static IP network.</description>
+    </item>
+    <item>
+      <title>Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide</title>
+      <link>//localhost:1313/posts/2026-08-04-arch-commands/</link>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2026-08-04-arch-commands/</guid>
+      <description>&lt;p&gt;Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.&lt;/p&gt;
+&lt;p&gt;Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-pacman-essentials-on-arch-linux&#34;&gt;1. Pacman Essentials on Arch Linux&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;pacman&lt;/code&gt; is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

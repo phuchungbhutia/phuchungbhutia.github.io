@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mushroom-Safety on Technical Journal</title>
+    <link>//localhost:1313/tags/mushroom-safety/</link>
+    <description>Recent content in Mushroom-Safety on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/mushroom-safety/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deadly Flora and Wild Fungi: A Trekker&#39;s Field Guide to Himalayan Hazards</title>
+      <link>//localhost:1313/posts/2026-09-04-toxic-plants/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-toxic-plants/</guid>
+      <description>An essential field identification guide to the most toxic plants and lethal wild mushrooms encountered on high-altitude Himalayan trails.</description>
+    </item>
+  </channel>
+</rss>

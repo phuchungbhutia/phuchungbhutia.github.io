@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>2026 on Technical Journal</title>
+    <link>//localhost:1313/tags/2026/</link>
+    <description>Recent content in 2026 on Technical Journal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/2026/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Custom ROM Installation on Miatoll Using Fastboot and ADB Sideload</title>
+      <link>//localhost:1313/posts/2026-09-04-adb/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-adb/</guid>
+      <description>A complete walkthrough and automation guide for flashing custom recovery and sideloading Evolution X on Xiaomi miatoll devices.</description>
+    </item>
+    <item>
+      <title>Automating Financial Report Generation Using Python and Markdown</title>
+      <link>//localhost:1313/posts/2026-09-04-python-report/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-python-report/</guid>
+      <description>Build a reproducible pipeline to transform raw financial datasets into polished Markdown and PDF audit reports using Python.</description>
+    </item>
+    <item>
+      <title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title>
+      <link>//localhost:1313/posts/2026-09-04-webscraping/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-webscraping/</guid>
+      <description>A comprehensive guide on engineering a high-speed, parallel JavaScript bookmarklet scraper to extract financial records from eGramSwaraj and Sikkim LFA portals accurately.</description>
+    </item>
+    <item>
+      <title>Deadly Flora and Wild Fungi: A Trekker&#39;s Field Guide to Himalayan Hazards</title>
+      <link>//localhost:1313/posts/2026-09-04-toxic-plants/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-toxic-plants/</guid>
+      <description>An essential field identification guide to the most toxic plants and lethal wild mushrooms encountered on high-altitude Himalayan trails.</description>
+    </item>
+    <item>
+      <title>Extending a Static IP Office Network with a TP-Link C54 Extender</title>
+      <link>//localhost:1313/posts/2026-09-04-wifi-extender/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-wifi-extender/</guid>
+      <description>A step-by-step guide to configuring a new router and range extender on a static IP network.</description>
+    </item>
+    <item>
+      <title>How to See Through the Noise: A Practical Playbook for Clear Thinking</title>
+      <link>//localhost:1313/posts/2026-09-04-think/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-think/</guid>
+      <description>A field-tested framework for dismantling cognitive blind spots, reading unspoken agendas, and isolating high-leverage solutions in everyday conflicts.</description>
+    </item>
+    <item>
+      <title>Mastering Markdown for Technical Blogging: Standards, Workflows, and Clean Publishing</title>
+      <link>//localhost:1313/posts/2026-09-04-md-blog/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-md-blog/</guid>
+      <description>A comprehensive guide to structuring, formatting, and maintaining high-performance technical blog posts using standardized Markdown.</description>
+    </item>
+    <item>
+      <title>Modern Linux System Administration: Automated Maintenance and Hardware Optimization</title>
+      <link>//localhost:1313/posts/2026-09-04-force-time/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-force-time/</guid>
+      <description>A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance.</description>
+    </item>
+    <item>
+      <title>Seamless Windows on Linux: WinApps vs WinBoat vs Winpodx</title>
+      <link>//localhost:1313/posts/2026-09-04-windows-linux/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-windows-linux/</guid>
+      <description>A comprehensive technical comparison of WinApps, WinBoat, and Winpodx for seamlessly integrating Windows software into Linux desktops.</description>
+    </item>
+    <item>
+      <title>The Complete Guide to Managing Swap Space and Swappiness in Linux Mint</title>
+      <link>//localhost:1313/posts/2026-09-04-swap/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-swap/</guid>
+      <description>Learn how to check, create, permanently activate swap space, and optimize swappiness settings in Linux Mint.</description>
+    </item>
+    <item>
+      <title>The Geometry of Rest: Designing a Modern Home on the Traditional Tatami Grid</title>
+      <link>//localhost:1313/posts/2026-09-04-tatami/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-tatami/</guid>
+      <description>A comprehensive breakdown of planning a 2,240-square-foot home using Japan&amp;#39;s classic 180 by 90 centimeter modular tatami formula.</description>
+    </item>
+    <item>
+      <title>The Silent Geometry of Living Spaces: Bringing Ancient Spatial Planning into the Modern Browser</title>
+      <link>//localhost:1313/posts/2026-09-04-tibetan-astro/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-tibetan-astro/</guid>
+      <description>How translating ancient architectural principles into code creates smarter, healthier, and more balanced homes.</description>
+    </item>
+    <item>
+      <title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title>
+      <link>//localhost:1313/posts/2026-09-04-linux-time-ntp/</link>
+      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
+      <guid>//localhost:1313/posts/2026-09-04-linux-time-ntp/</guid>
+      <description>A complete step-by-step diagnostic guide to resolving broken Linux time synchronization caused by Systemd alias conflicts, ISP port drops, DNS failures, and minimal system environments.</description>
+    </item>
+  </channel>
+</rss>
