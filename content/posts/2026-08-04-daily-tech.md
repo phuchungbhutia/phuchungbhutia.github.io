@@ -1,8 +1,8 @@
 ---
 title: "The Ultimate Daily Tech Coach: Mastering Linux, Python, AI, and Pentesting from Day One"
 date: "2026-08-04T10:00:00+05:30"
-categories: [Artificial Intelligence, Linux, Cybersecurity, Software Development]
-tags: [Python, Pentesting, Ethical Hacking, Shell Scripting, Prompt Engineering, Automation, Open Source]
+categories: ["Artificial Intelligence", "Linux", "Cybersecurity", "Software Development"]
+tags: ["Python", "Pentesting", "Ethical Hacking", "Shell Scripting", "Prompt Engineering", "Automation", "Open Source"]
 ---
 
 Building a consistent routine to learn complex technical skills can feel like a daunting task. Between sorting through endless documentation, figuring out what tools to use, and finding practical hands-on exercises, it is easy to get stuck in tutorial hell. 

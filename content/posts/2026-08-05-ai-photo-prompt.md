@@ -1,8 +1,8 @@
 ---
 title: "Building an Ultra-Realistic AI Photo Restoration Prompt"
 date: "2026-08-05T07:55:00+05:30"
-categories: [ai, photography]
-tags: [photo-restoration, image-enhancement, prompt-engineering, archival, ai]
+categories: ["ai", "photography"]
+tags: ["photo-restoration", "image-enhancement", "prompt-engineering", "archival", "ai"]
 ---
 
 # Building an Ultra-Realistic AI Photo Restoration Prompt

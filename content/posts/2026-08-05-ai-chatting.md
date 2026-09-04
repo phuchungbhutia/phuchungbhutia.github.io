@@ -1,8 +1,8 @@
 ---
 title: "AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More"
 date: "2026-08-05T07:56:00+05:30"
-categories: [ai, messaging]
-tags: [chatgpt, whatsapp, telegram, perplexity, meta-ai, copilot, gemini, claude, ai-tools, guide]
+categories: ["ai", "messaging"]
+tags: ["chatgpt", "whatsapp", "telegram", "perplexity", "meta-ai", "copilot", "gemini", "claude", "ai-tools", "guide"]
 ---
 
 # AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More

@@ -1,8 +1,8 @@
 ---
 title: "AI Automation Empire: Building Multiple Income Streams That Work Together"
 date: "2026-08-05T10:15:00+05:30"
-categories: [ai, business]
-tags: [ai, automation, passive-income, entrepreneurship, systems, no-code, chatgpt, github-pages]
+categories: ["ai", "business"]
+tags: ["ai", "automation", "passive-income", "entrepreneurship", "systems", "no-code", "chatgpt", "github-pages"]
 ---
 
 # AI Automation Empire: Building Multiple Income Streams That Work Together

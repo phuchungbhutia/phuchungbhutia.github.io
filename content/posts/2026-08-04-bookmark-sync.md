@@ -1,8 +1,8 @@
 ---
 title: "Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync"
 date: "2026-08-04T10:00:00+05:30"
-categories: [Browser Extensions, Productivity, Tech Tools]
-tags: [bookmark-sync, floccus, bookmarkhub, marksyncr, eversync, open-source, privacy]
+categories: ["Browser Extensions", "Productivity", "Tech Tools"]
+tags: ["bookmark-sync", "floccus", "bookmarkhub", "marksyncr", "eversync", "open-source", "privacy"]
 ---
 
 Keeping bookmarks synchronized across multiple browsers, operating systems, and mobile devices remains one of the most frustrating pain points of modern web browsing. If you use Chrome at work, Firefox at home, and Safari or Android browser on the go, relying on a single browser's native sync engine simply falls short.

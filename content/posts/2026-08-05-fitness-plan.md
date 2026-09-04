@@ -1,8 +1,8 @@
 ---
 title: "A Practical Home Fitness Plan for a 44-Year-Old Beginner: Diet, Exercise, Breathing, and Sustainable Weight Loss"
 date: "2026-08-05T07:44:00+05:30"
-categories: [health, fitness]
-tags: [weight-loss, home-workout, beginner, diet-plan, breathing, knee-pain, back-pain, exercise]
+categories: ["health", "fitness"]
+tags: ["weight-loss", "home-workout", "beginner", "diet-plan", "breathing", "knee-pain", "back-pain", "exercise"]
 ---
 
 # A Practical Home Fitness Plan for a 44-Year-Old Beginner

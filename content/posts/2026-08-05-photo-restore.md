@@ -1,8 +1,8 @@
 ---
 title: "Prompt Engineering for Authentic Historical Photo Restoration"
 date: "2026-08-05T08:15:00+05:30"
-categories: [ai]
-tags: [prompts, image-restoration, preservation, workflow]
+categories: ["ai"]
+tags: ["prompts", "image-restoration", "preservation", "workflow"]
 ---
 
 # Prompt Engineering for Authentic Historical Photo Restoration

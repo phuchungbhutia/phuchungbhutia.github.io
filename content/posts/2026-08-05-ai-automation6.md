@@ -1,8 +1,8 @@
 ---
 title: "From $100/Day to $10,000/Month: Building an AI Agency That Runs Without You"
 date: "2026-08-05T09:20:00+05:30"
-categories: [ai, business]
-tags: [ai, agency, automation, entrepreneurship, systems, chatgpt, github-pages, freelancing]
+categories: ["ai", "business"]
+tags: ["ai", "agency", "automation", "entrepreneurship", "systems", "chatgpt", "github-pages", "freelancing"]
 ---
 
 # From $100/Day to $10,000/Month: Building an AI Agency That Runs Without You

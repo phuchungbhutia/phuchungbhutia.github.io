@@ -1,8 +1,8 @@
 ---
 title: "The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation"
 date: "2026-08-05T02:57:00+05:30"
-categories: [meditation, buddhism]
-tags: [shamatha, tibetan-buddhism, mindfulness, meditation, elephant-path, concentration, visualization]
+categories: ["meditation", "buddhism"]
+tags: ["shamatha", "tibetan-buddhism", "mindfulness", "meditation", "elephant-path", "concentration", "visualization"]
 ---
 
 # The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation

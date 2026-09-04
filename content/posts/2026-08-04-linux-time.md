@@ -1,8 +1,8 @@
 ---
 title: "Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons"
 date: "2026-02-16T10:00:00+05:30"
-categories: [Linux, Networking, System Administration]
-tags: [ntp, systemd, linux, devops, networking, chrony, bash]
+categories: ["Linux", "Networking", "System Administration"]
+tags: ["ntp", "systemd", "linux", "devops", "networking", "chrony", "bash"]
 ---
 
 Accurate system time is critical for modern Linux operating systems[cite: 1]. When your system clock drifts out of sync, security protocols fail: SSL/TLS certificates become invalid, SSH connections reject handshakes, and package managers refuse to update[cite: 1]. 

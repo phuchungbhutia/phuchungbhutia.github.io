@@ -1,8 +1,8 @@
 ---
 title: "Mastering JSON Prompting for AI Video Generation"
 date: "2026-08-05T07:54:00+05:30"
-categories: [ai, prompting]
-tags: [json, ai-video, runway, veo, pika, prompt-engineering, tutorial]
+categories: ["ai", "prompting"]
+tags: ["json", "ai-video", "runway", "veo", "pika", "prompt-engineering", "tutorial"]
 ---
 
 # Mastering JSON Prompting for AI Video Generation
