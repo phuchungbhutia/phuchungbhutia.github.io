@@ -1,6 +1,6 @@
 ---
 title: "Finding Paying Clients Without Followers or Ads: The Complete Outreach Playbook"
-date: 2026-08-05 08:40:00 +0000
+date: "2026-08-05T08:40:00+05:30"
 categories: [ai, business]
 tags: [freelancing, client-acquisition, chatgpt, cold-outreach, linkedin, reddit, facebook, github-pages]
 ---

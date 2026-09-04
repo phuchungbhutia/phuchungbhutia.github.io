@@ -1,24 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Pip on Technical Journal</title>
-    <link>//localhost:1313/tags/pip/</link>
-    <description>Recent content in Pip on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/pip/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-python-windows/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-python-windows/</guid>
-      <description>&lt;p&gt;Setting up Python tools on Windows using the Microsoft Store distribution can sometimes feel like navigating a minefield of system path warnings, ghost directories, permission locks, and version conflicts.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Pip on Technical Journal</title><link>/tags/pip/</link><description>Recent content in Pip on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/pip/index.xml" rel="self" type="application/rss+xml"/><item><title>Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide</title><link>/posts/2026-08-04-python-windows/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-python-windows/</guid><description>&lt;p&gt;Setting up Python tools on Windows using the Microsoft Store distribution can sometimes feel like navigating a minefield of system path warnings, ghost directories, permission locks, and version conflicts.&lt;/p&gt;
 &lt;p&gt;This guide compiles a step-by-step resolution process for real-world terminal errors encounterable when managing CLI tools like &lt;code&gt;weasyprint&lt;/code&gt; and &lt;code&gt;marker&lt;/code&gt;, fixing corrupted package installs, and updating dependencies without getting stuck.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-fixing-executable-warnings-adding-user-packages-to-the-windows-path&#34;&gt;1. Fixing Executable Warnings: Adding User Packages to the Windows PATH&lt;/h2&gt;
-&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
-&lt;p&gt;When installing CLI packages via &lt;code&gt;pip&lt;/code&gt; on Windows, you might encounter a warning indicating that the installed binary resides in a location not registered in your system &lt;code&gt;PATH&lt;/code&gt;:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-fixing-executable-warnings-adding-user-packages-to-the-windows-path"&gt;1. Fixing Executable Warnings: Adding User Packages to the Windows PATH&lt;/h2&gt;
+&lt;h3 id="the-problem"&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;When installing CLI packages via &lt;code&gt;pip&lt;/code&gt; on Windows, you might encounter a warning indicating that the installed binary resides in a location not registered in your system &lt;code&gt;PATH&lt;/code&gt;:&lt;/p&gt;</description></item></channel></rss>

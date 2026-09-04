@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Technology", "Tutorials", "Productivity"]
 tags: ["Remote Desktop", "Windows 11", "Android", "Freeware", "Tech Guide", "Remote Work", "Chrome Remote Desktop", "RustDesk"]
 ---

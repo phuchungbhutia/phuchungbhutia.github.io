@@ -1,6 +1,6 @@
 ---
 title: "Optimizing Legacy Hardware for Windows 11: A Complete Guide for the Intel Pentium G620"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Operating Systems", "Windows 11", "System Optimization", "Hardware Maintenance"]
 tags: ["Windows 11 25H2", "Pentium G620", "Batch Scripting", "System Tweaks", "PC Optimization", "Legacy Hardware"]
 ---

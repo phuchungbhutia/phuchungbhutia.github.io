@@ -1,6 +1,6 @@
 ---
 title: "Bypassing CMOS Clock Failure on Linux with Automated Network Time Sync"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "System Administration"]
 tags: ["systemd", "NTP", "Hardware Troubleshooting", "Bash", "Linux Mint"]
 ---
@@ -97,7 +97,7 @@ This configuration ensures your OS clock synchronizes cleanly before desktop env
 ---
 
 ## title: "Maximizing Performance on 4GB RAM: Linux Mint & Manjaro XFCE Optimization Guide"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "Performance Tuning"]
 tags: ["XFCE", "RAM Management", "Linux Mint", "Manjaro", "zram", "sysctl"]
 
@@ -186,7 +186,7 @@ sudo sysctl --system
 ---
 
 ## title: "Extracting Financial Vouchers from eGramSwaraj to CSV Using Browser JavaScript"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Data Extraction", "Automation"]
 tags: ["JavaScript", "CSV", "eGramSwaraj", "Audit Automation", "Web Scraping"]
 
@@ -267,7 +267,7 @@ Navigate to the target voucher summary page on the eGramSwaraj portal, open your
 ---
 
 ## title: "Joplin vs. Obsidian for Local Government Audit Management and Reporting"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Productivity", "Audit Management"]
 tags: ["Joplin", "Obsidian", "Markdown", "Documentation", "Workflow"]
 

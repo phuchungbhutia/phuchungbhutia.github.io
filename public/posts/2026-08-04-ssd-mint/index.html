@@ -1,96 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Essential Linux Mint Guides: Unlocking Encrypted Drives &amp; Enabling Edge Copilot | Technical Journal</title>
-<meta name="keywords" content="Linux Mint, LUKS, Encryption, Microsoft Edge, Bash Scripting, Terminal">
-<meta name="description" content="Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot | Technical Journal</title><meta name=keywords content="Linux Mint,LUKS,Encryption,Microsoft Edge,Bash Scripting,Terminal"><meta name=description content="Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.
 
 Guide 1: How to Open an Encrypted SSD in Linux Mint
-Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-ssd-mint/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-ssd-mint/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-ssd-mint/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot">
-  <meta property="og:description" content="Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren’t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.
-Guide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:tag" content="Linux Mint">
-    <meta property="article:tag" content="LUKS">
-    <meta property="article:tag" content="Encryption">
-    <meta property="article:tag" content="Microsoft Edge">
-    <meta property="article:tag" content="Bash-Scripting">
-    <meta property="article:tag" content="Terminal">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot">
-  <meta name="twitter:description" content="Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren’t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.
-Guide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.">
-
-
-<script type="application/ld+json">
+Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-ssd-mint/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-ssd-mint/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-ssd-mint/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot"><meta property="og:description" content="Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren’t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.
+Guide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="Linux-Mint"><meta property="article:tag" content="LUKS"><meta property="article:tag" content="Encryption"><meta property="article:tag" content="Microsoft Edge"><meta property="article:tag" content="Bash-Scripting"><meta property="article:tag" content="Terminal"><meta name=twitter:card content="summary"><meta name=twitter:title content="Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot"><meta name=twitter:description content="Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren’t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.
+Guide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -99,18 +12,17 @@ Guide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (L
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Essential Linux Mint Guides: Unlocking Encrypted Drives \u0026 Enabling Edge Copilot",
-      "item": "//localhost:1313/posts/2026-08-04-ssd-mint/"
+      "item": "/posts/2026-08-04-ssd-mint/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -123,388 +35,78 @@ Guide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (L
   "articleBody": "Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren’t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.\nGuide 1: How to Open an Encrypted SSD in Linux Mint Linux Mint relies on LUKS (Linux Unified Key Setup) as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.\nMethod 1: Using the GUI File Manager (Nemo) Connect your external or secondary encrypted SSD to your computer. Open Nemo (the default file manager in Linux Mint). Look at the left sidebar under the Devices section. Locate your encrypted drive (it often displays a padlock icon). Click on the drive name. A system prompt will appear asking for your encryption passphrase. Enter it and click Unlock. Linux Mint automatically mounts the decrypted volume, making it accessible like any standard folder. Method 2: Opening via the Terminal When managing servers or troubleshooting unmountable drives, the terminal gives you full control over the cryptsetup tool.\nStep 1: Identify the Partition List all attached block devices to locate the encrypted partition identifier (e.g., /dev/sdb1 or /dev/nvme0n1p2):\nlsblk Step 2: Open the Encrypted LUKS Container Decrypted volumes are mapped into /dev/mapper/. Run the following command to decrypt the target partition:\nsudo cryptsetup luksOpen /dev/sdXY my_encrypted_drive (Replace /dev/sdXY with your actual partition name, such as /dev/sdb1.)\nStep 3: Create a Mount Point \u0026 Mount the Volume Once decrypted, create a directory and mount the mapped drive:\nsudo mkdir -p /mnt/my_ssd sudo mount /dev/mapper/my_encrypted_drive /mnt/my_ssd Managing Permissions \u0026 Safe Unmounting Fixing Ownership Issues If you can read the files on your mounted SSD but cannot write or modify them, update the directory permissions to match your current Linux Mint user:\nsudo chown -R $USER:$USER /mnt/my_ssd Safely Dismounting and Closing the Volume Never unplug an encrypted drive while it is mapped. Follow these steps to cleanly close the container:\n# 1. Unmount the directory sudo umount /mnt/my_ssd # 2. Lock the LUKS container sudo cryptsetup luksClose my_encrypted_drive Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint By default, Microsoft Edge on Linux omits or hides the integrated Copilot sidebar. You can bypass this limitation by generating a specific hubapps.json configuration file and passing a feature flag at launch.\nOptimized Bash Script The following bash script checks for both stable and development Edge installation paths, builds the necessary Default/HubApps directory structure, and injects the Copilot app configuration.\n#!/bin/bash # Refined Edge Copilot Enabler for Linux Mint # Detect Edge config directory if [ -d \"$HOME/.config/microsoft-edge\" ]; then EDGE_PATH=\"$HOME/.config/microsoft-edge\" elif [ -d \"$HOME/.config/microsoft-edge-dev\" ]; then EDGE_PATH=\"$HOME/.config/microsoft-edge-dev\" else echo \"❌ Error: Microsoft Edge configuration directory not found.\" exit 1 fi HUB_DIR=\"$EDGE_PATH/Default/HubApps\" mkdir -p \"$HUB_DIR\" # Write the Copilot app manifest cat \u003c \"$HUB_DIR/hubapps.json\" { \"isSidebarEnabled\": true, \"sidebarApps\": [ { \"id\": \"copilot\", \"name\": \"Copilot\", \"url\": \"[https://copilot.microsoft.com](https://copilot.microsoft.com)\" } ] } EOF echo \"✅ Copilot config successfully written to $HUB_DIR/hubapps.json\" echo \"🚀 Launch Edge using: microsoft-edge --enable-features=msHubApps\" Making the Change Permanent in Linux Mint To avoid running Edge from the terminal every time you want the Copilot sidebar:\nRight-click the Linux Mint Menu icon in your panel and select Configure. Navigate to the Menu tab and click Open the menu editor. Go to the Internet category and select Microsoft Edge. Click Properties. Update the Command field to append the required flag at the end: /usr/bin/microsoft-edge-stable %U --enable-features=msHubApps Save your changes and close the editor. Opening Edge from your main application panel will now always include the sidebar feature. ",
   "wordCount" : "619",
   "inLanguage": "en",
-  "datePublished": "2026-08-04T00:00:00Z",
-  "dateModified": "2026-08-04T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-ssd-mint/"
+    "@id": "/posts/2026-08-04-ssd-mint/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Essential Linux Mint Guides: Unlocking Encrypted Drives &amp; Enabling Edge Copilot
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#guide-1-how-to-open-an-encrypted-ssd-in-linux-mint" aria-label="Guide 1: How to Open an Encrypted SSD in Linux Mint">Guide 1: How to Open an Encrypted SSD in Linux Mint</a><ul>
-                    
-            <li>
-                <a href="#method-1-using-the-gui-file-manager-nemo" aria-label="Method 1: Using the GUI File Manager (Nemo)">Method 1: Using the GUI File Manager (Nemo)</a></li>
-            <li>
-                <a href="#method-2-opening-via-the-terminal" aria-label="Method 2: Opening via the Terminal">Method 2: Opening via the Terminal</a><ul>
-                    
-            <li>
-                <a href="#step-1-identify-the-partition" aria-label="Step 1: Identify the Partition">Step 1: Identify the Partition</a></li>
-            <li>
-                <a href="#step-2-open-the-encrypted-luks-container" aria-label="Step 2: Open the Encrypted LUKS Container">Step 2: Open the Encrypted LUKS Container</a></li>
-            <li>
-                <a href="#step-3-create-a-mount-point--mount-the-volume" aria-label="Step 3: Create a Mount Point &amp; Mount the Volume">Step 3: Create a Mount Point &amp; Mount the Volume</a></li></ul>
-            </li>
-            <li>
-                <a href="#managing-permissions--safe-unmounting" aria-label="Managing Permissions &amp; Safe Unmounting">Managing Permissions &amp; Safe Unmounting</a><ul>
-                    
-            <li>
-                <a href="#fixing-ownership-issues" aria-label="Fixing Ownership Issues">Fixing Ownership Issues</a></li>
-            <li>
-                <a href="#safely-dismounting-and-closing-the-volume" aria-label="Safely Dismounting and Closing the Volume">Safely Dismounting and Closing the Volume</a></li></ul>
-            </li></ul>
-            </li>
-            <li>
-                <a href="#guide-2-enabling-microsoft-edge-copilot-sidebar-on-linux-mint" aria-label="Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint">Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint</a><ul>
-                    
-            <li>
-                <a href="#optimized-bash-script" aria-label="Optimized Bash Script">Optimized Bash Script</a></li>
-            <li>
-                <a href="#making-the-change-permanent-in-linux-mint" aria-label="Making the Change Permanent in Linux Mint">Making the Change Permanent in Linux Mint</a>
-            </li>
-        </ul>
-        </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><p>Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.</p>
-<hr>
-<h2 id="guide-1-how-to-open-an-encrypted-ssd-in-linux-mint">Guide 1: How to Open an Encrypted SSD in Linux Mint<a hidden class="anchor" aria-hidden="true" href="#guide-1-how-to-open-an-encrypted-ssd-in-linux-mint">#</a></h2>
-<p>Linux Mint relies on <strong>LUKS (Linux Unified Key Setup)</strong> as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.</p>
-<h3 id="method-1-using-the-gui-file-manager-nemo">Method 1: Using the GUI File Manager (Nemo)<a hidden class="anchor" aria-hidden="true" href="#method-1-using-the-gui-file-manager-nemo">#</a></h3>
-<ol>
-<li>Connect your external or secondary encrypted SSD to your computer.</li>
-<li>Open <strong>Nemo</strong> (the default file manager in Linux Mint).</li>
-<li>Look at the left sidebar under the <strong>Devices</strong> section. Locate your encrypted drive (it often displays a padlock icon).</li>
-<li>Click on the drive name.</li>
-<li>A system prompt will appear asking for your encryption passphrase. Enter it and click <strong>Unlock</strong>.</li>
-<li>Linux Mint automatically mounts the decrypted volume, making it accessible like any standard folder.</li>
-</ol>
-<h3 id="method-2-opening-via-the-terminal">Method 2: Opening via the Terminal<a hidden class="anchor" aria-hidden="true" href="#method-2-opening-via-the-terminal">#</a></h3>
-<p>When managing servers or troubleshooting unmountable drives, the terminal gives you full control over the <code>cryptsetup</code> tool.</p>
-<h4 id="step-1-identify-the-partition">Step 1: Identify the Partition<a hidden class="anchor" aria-hidden="true" href="#step-1-identify-the-partition">#</a></h4>
-<p>List all attached block devices to locate the encrypted partition identifier (e.g., <code>/dev/sdb1</code> or <code>/dev/nvme0n1p2</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk
-</span></span></code></pre></div><h4 id="step-2-open-the-encrypted-luks-container">Step 2: Open the Encrypted LUKS Container<a hidden class="anchor" aria-hidden="true" href="#step-2-open-the-encrypted-luks-container">#</a></h4>
-<p>Decrypted volumes are mapped into <code>/dev/mapper/</code>. Run the following command to decrypt the target partition:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cryptsetup luksOpen /dev/sdXY my_encrypted_drive
-</span></span></code></pre></div><p><em>(Replace <code>/dev/sdXY</code> with your actual partition name, such as <code>/dev/sdb1</code>.)</em></p>
-<h4 id="step-3-create-a-mount-point--mount-the-volume">Step 3: Create a Mount Point &amp; Mount the Volume<a hidden class="anchor" aria-hidden="true" href="#step-3-create-a-mount-point--mount-the-volume">#</a></h4>
-<p>Once decrypted, create a directory and mount the mapped drive:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /mnt/my_ssd
-</span></span><span style="display:flex;"><span>sudo mount /dev/mapper/my_encrypted_drive /mnt/my_ssd
-</span></span></code></pre></div><hr>
-<h3 id="managing-permissions--safe-unmounting">Managing Permissions &amp; Safe Unmounting<a hidden class="anchor" aria-hidden="true" href="#managing-permissions--safe-unmounting">#</a></h3>
-<h4 id="fixing-ownership-issues">Fixing Ownership Issues<a hidden class="anchor" aria-hidden="true" href="#fixing-ownership-issues">#</a></h4>
-<p>If you can read the files on your mounted SSD but cannot write or modify them, update the directory permissions to match your current Linux Mint user:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chown -R $USER:$USER /mnt/my_ssd
-</span></span></code></pre></div><h4 id="safely-dismounting-and-closing-the-volume">Safely Dismounting and Closing the Volume<a hidden class="anchor" aria-hidden="true" href="#safely-dismounting-and-closing-the-volume">#</a></h4>
-<p>Never unplug an encrypted drive while it is mapped. Follow these steps to cleanly close the container:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Unmount the directory</span>
-</span></span><span style="display:flex;"><span>sudo umount /mnt/my_ssd
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Lock the LUKS container</span>
-</span></span><span style="display:flex;"><span>sudo cryptsetup luksClose my_encrypted_drive
-</span></span></code></pre></div><hr>
-<h2 id="guide-2-enabling-microsoft-edge-copilot-sidebar-on-linux-mint">Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint<a hidden class="anchor" aria-hidden="true" href="#guide-2-enabling-microsoft-edge-copilot-sidebar-on-linux-mint">#</a></h2>
-<p>By default, Microsoft Edge on Linux omits or hides the integrated Copilot sidebar. You can bypass this limitation by generating a specific <code>hubapps.json</code> configuration file and passing a feature flag at launch.</p>
-<h3 id="optimized-bash-script">Optimized Bash Script<a hidden class="anchor" aria-hidden="true" href="#optimized-bash-script">#</a></h3>
-<p>The following bash script checks for both stable and development Edge installation paths, builds the necessary <code>Default/HubApps</code> directory structure, and injects the Copilot app configuration.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Refined Edge Copilot Enabler for Linux Mint</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Detect Edge config directory</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -d <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/microsoft-edge&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    EDGE_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/microsoft-edge&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> -d <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/microsoft-edge-dev&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    EDGE_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.config/microsoft-edge-dev&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;❌ Error: Microsoft Edge configuration directory not found.&#34;</span>
-</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>HUB_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$EDGE_PATH<span style="color:#e6db74">/Default/HubApps&#34;</span>
-</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#e6db74">&#34;</span>$HUB_DIR<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Write the Copilot app manifest</span>
-</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF&gt; &#34;$HUB_DIR/hubapps.json&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;isSidebarEnabled&#34;: true,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;sidebarApps&#34;: [
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;id&#34;: &#34;copilot&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;name&#34;: &#34;Copilot&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;url&#34;: &#34;[https://copilot.microsoft.com](https://copilot.microsoft.com)&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;✅ Copilot config successfully written to </span>$HUB_DIR<span style="color:#e6db74">/hubapps.json&#34;</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;🚀 Launch Edge using: microsoft-edge --enable-features=msHubApps&#34;</span>
-</span></span></code></pre></div><h3 id="making-the-change-permanent-in-linux-mint">Making the Change Permanent in Linux Mint<a hidden class="anchor" aria-hidden="true" href="#making-the-change-permanent-in-linux-mint">#</a></h3>
-<p>To avoid running Edge from the terminal every time you want the Copilot sidebar:</p>
-<ol>
-<li>Right-click the <strong>Linux Mint Menu</strong> icon in your panel and select <strong>Configure</strong>.</li>
-<li>Navigate to the <strong>Menu</strong> tab and click <strong>Open the menu editor</strong>.</li>
-<li>Go to the <strong>Internet</strong> category and select <strong>Microsoft Edge</strong>.</li>
-<li>Click <strong>Properties</strong>.</li>
-<li>Update the <strong>Command</strong> field to append the required flag at the end:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/usr/bin/microsoft-edge-stable %U --enable-features=msHubApps
-</span></span></code></pre></div><ol start="6">
-<li>Save your changes and close the editor. Opening Edge from your main application panel will now always include the sidebar feature.</li>
-</ol>
-<pre tabindex="0"><code></code></pre>
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/linux-mint/">Linux Mint</a></li>
-      <li><a href="//localhost:1313/tags/luks/">LUKS</a></li>
-      <li><a href="//localhost:1313/tags/encryption/">Encryption</a></li>
-      <li><a href="//localhost:1313/tags/microsoft-edge/">Microsoft Edge</a></li>
-      <li><a href="//localhost:1313/tags/bash-scripting/">Bash-Scripting</a></li>
-      <li><a href="//localhost:1313/tags/terminal/">Terminal</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-books/">
-    <span class="title">« Prev</span>
-    <span>Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-web-deployment/">
-    <span class="title">Next »</span>
-    <span>GitHub, Vercel, and Netlify: The Ultimate Guide to Modern Web Deployment Workflows</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#guide-1-how-to-open-an-encrypted-ssd-in-linux-mint aria-label="Guide 1: How to Open an Encrypted SSD in Linux Mint">Guide 1: How to Open an Encrypted SSD in Linux Mint</a><ul><li><a href=#method-1-using-the-gui-file-manager-nemo aria-label="Method 1: Using the GUI File Manager (Nemo)">Method 1: Using the GUI File Manager (Nemo)</a></li><li><a href=#method-2-opening-via-the-terminal aria-label="Method 2: Opening via the Terminal">Method 2: Opening via the Terminal</a><ul><li><a href=#step-1-identify-the-partition aria-label="Step 1: Identify the Partition">Step 1: Identify the Partition</a></li><li><a href=#step-2-open-the-encrypted-luks-container aria-label="Step 2: Open the Encrypted LUKS Container">Step 2: Open the Encrypted LUKS Container</a></li><li><a href=#step-3-create-a-mount-point--mount-the-volume aria-label="Step 3: Create a Mount Point & Mount the Volume">Step 3: Create a Mount Point & Mount the Volume</a></li></ul></li><li><a href=#managing-permissions--safe-unmounting aria-label="Managing Permissions & Safe Unmounting">Managing Permissions & Safe Unmounting</a><ul><li><a href=#fixing-ownership-issues aria-label="Fixing Ownership Issues">Fixing Ownership Issues</a></li><li><a href=#safely-dismounting-and-closing-the-volume aria-label="Safely Dismounting and Closing the Volume">Safely Dismounting and Closing the Volume</a></li></ul></li></ul></li><li><a href=#guide-2-enabling-microsoft-edge-copilot-sidebar-on-linux-mint aria-label="Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint">Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint</a><ul><li><a href=#optimized-bash-script aria-label="Optimized Bash Script">Optimized Bash Script</a></li><li><a href=#making-the-change-permanent-in-linux-mint aria-label="Making the Change Permanent in Linux Mint">Making the Change Permanent in Linux Mint</a></li></ul></li></ul></div></details><div class="post-content md-content"><p>Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.</p><hr><h2 id=guide-1-how-to-open-an-encrypted-ssd-in-linux-mint>Guide 1: How to Open an Encrypted SSD in Linux Mint<a hidden class=anchor aria-hidden=true href=#guide-1-how-to-open-an-encrypted-ssd-in-linux-mint>#</a></h2><p>Linux Mint relies on <strong>LUKS (Linux Unified Key Setup)</strong> as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.</p><h3 id=method-1-using-the-gui-file-manager-nemo>Method 1: Using the GUI File Manager (Nemo)<a hidden class=anchor aria-hidden=true href=#method-1-using-the-gui-file-manager-nemo>#</a></h3><ol><li>Connect your external or secondary encrypted SSD to your computer.</li><li>Open <strong>Nemo</strong> (the default file manager in Linux Mint).</li><li>Look at the left sidebar under the <strong>Devices</strong> section. Locate your encrypted drive (it often displays a padlock icon).</li><li>Click on the drive name.</li><li>A system prompt will appear asking for your encryption passphrase. Enter it and click <strong>Unlock</strong>.</li><li>Linux Mint automatically mounts the decrypted volume, making it accessible like any standard folder.</li></ol><h3 id=method-2-opening-via-the-terminal>Method 2: Opening via the Terminal<a hidden class=anchor aria-hidden=true href=#method-2-opening-via-the-terminal>#</a></h3><p>When managing servers or troubleshooting unmountable drives, the terminal gives you full control over the <code>cryptsetup</code> tool.</p><h4 id=step-1-identify-the-partition>Step 1: Identify the Partition<a hidden class=anchor aria-hidden=true href=#step-1-identify-the-partition>#</a></h4><p>List all attached block devices to locate the encrypted partition identifier (e.g., <code>/dev/sdb1</code> or <code>/dev/nvme0n1p2</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>lsblk
+</span></span></code></pre></div><h4 id=step-2-open-the-encrypted-luks-container>Step 2: Open the Encrypted LUKS Container<a hidden class=anchor aria-hidden=true href=#step-2-open-the-encrypted-luks-container>#</a></h4><p>Decrypted volumes are mapped into <code>/dev/mapper/</code>. Run the following command to decrypt the target partition:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo cryptsetup luksOpen /dev/sdXY my_encrypted_drive
+</span></span></code></pre></div><p><em>(Replace <code>/dev/sdXY</code> with your actual partition name, such as <code>/dev/sdb1</code>.)</em></p><h4 id=step-3-create-a-mount-point--mount-the-volume>Step 3: Create a Mount Point & Mount the Volume<a hidden class=anchor aria-hidden=true href=#step-3-create-a-mount-point--mount-the-volume>#</a></h4><p>Once decrypted, create a directory and mount the mapped drive:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo mkdir -p /mnt/my_ssd
+</span></span><span style=display:flex><span>sudo mount /dev/mapper/my_encrypted_drive /mnt/my_ssd
+</span></span></code></pre></div><hr><h3 id=managing-permissions--safe-unmounting>Managing Permissions & Safe Unmounting<a hidden class=anchor aria-hidden=true href=#managing-permissions--safe-unmounting>#</a></h3><h4 id=fixing-ownership-issues>Fixing Ownership Issues<a hidden class=anchor aria-hidden=true href=#fixing-ownership-issues>#</a></h4><p>If you can read the files on your mounted SSD but cannot write or modify them, update the directory permissions to match your current Linux Mint user:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo chown -R $USER:$USER /mnt/my_ssd
+</span></span></code></pre></div><h4 id=safely-dismounting-and-closing-the-volume>Safely Dismounting and Closing the Volume<a hidden class=anchor aria-hidden=true href=#safely-dismounting-and-closing-the-volume>#</a></h4><p>Never unplug an encrypted drive while it is mapped. Follow these steps to cleanly close the container:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 1. Unmount the directory</span>
+</span></span><span style=display:flex><span>sudo umount /mnt/my_ssd
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 2. Lock the LUKS container</span>
+</span></span><span style=display:flex><span>sudo cryptsetup luksClose my_encrypted_drive
+</span></span></code></pre></div><hr><h2 id=guide-2-enabling-microsoft-edge-copilot-sidebar-on-linux-mint>Guide 2: Enabling Microsoft Edge Copilot Sidebar on Linux Mint<a hidden class=anchor aria-hidden=true href=#guide-2-enabling-microsoft-edge-copilot-sidebar-on-linux-mint>#</a></h2><p>By default, Microsoft Edge on Linux omits or hides the integrated Copilot sidebar. You can bypass this limitation by generating a specific <code>hubapps.json</code> configuration file and passing a feature flag at launch.</p><h3 id=optimized-bash-script>Optimized Bash Script<a hidden class=anchor aria-hidden=true href=#optimized-bash-script>#</a></h3><p>The following bash script checks for both stable and development Edge installation paths, builds the necessary <code>Default/HubApps</code> directory structure, and injects the Copilot app configuration.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Refined Edge Copilot Enabler for Linux Mint</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Detect Edge config directory</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> -d <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.config/microsoft-edge&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    EDGE_PATH<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.config/microsoft-edge&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>elif</span> <span style=color:#f92672>[</span> -d <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.config/microsoft-edge-dev&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    EDGE_PATH<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.config/microsoft-edge-dev&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>    echo <span style=color:#e6db74>&#34;❌ Error: Microsoft Edge configuration directory not found.&#34;</span>
+</span></span><span style=display:flex><span>    exit <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>HUB_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$EDGE_PATH<span style=color:#e6db74>/Default/HubApps&#34;</span>
+</span></span><span style=display:flex><span>mkdir -p <span style=color:#e6db74>&#34;</span>$HUB_DIR<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Write the Copilot app manifest</span>
+</span></span><span style=display:flex><span>cat <span style=color:#e6db74>&lt;&lt;EOF&gt; &#34;$HUB_DIR/hubapps.json&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>{
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  &#34;isSidebarEnabled&#34;: true,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  &#34;sidebarApps&#34;: [
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      &#34;id&#34;: &#34;copilot&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      &#34;name&#34;: &#34;Copilot&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      &#34;url&#34;: &#34;[https://copilot.microsoft.com](https://copilot.microsoft.com)&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>EOF</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;✅ Copilot config successfully written to </span>$HUB_DIR<span style=color:#e6db74>/hubapps.json&#34;</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;🚀 Launch Edge using: microsoft-edge --enable-features=msHubApps&#34;</span>
+</span></span></code></pre></div><h3 id=making-the-change-permanent-in-linux-mint>Making the Change Permanent in Linux Mint<a hidden class=anchor aria-hidden=true href=#making-the-change-permanent-in-linux-mint>#</a></h3><p>To avoid running Edge from the terminal every time you want the Copilot sidebar:</p><ol><li>Right-click the <strong>Linux Mint Menu</strong> icon in your panel and select <strong>Configure</strong>.</li><li>Navigate to the <strong>Menu</strong> tab and click <strong>Open the menu editor</strong>.</li><li>Go to the <strong>Internet</strong> category and select <strong>Microsoft Edge</strong>.</li><li>Click <strong>Properties</strong>.</li><li>Update the <strong>Command</strong> field to append the required flag at the end:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>/usr/bin/microsoft-edge-stable %U --enable-features=msHubApps
+</span></span></code></pre></div><ol start=6><li>Save your changes and close the editor. Opening Edge from your main application panel will now always include the sidebar feature.</li></ol><pre tabindex=0><code></code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/linux-mint/>Linux-Mint</a></li><li><a href=/tags/luks/>LUKS</a></li><li><a href=/tags/encryption/>Encryption</a></li><li><a href=/tags/microsoft-edge/>Microsoft Edge</a></li><li><a href=/tags/bash-scripting/>Bash-Scripting</a></li><li><a href=/tags/terminal/>Terminal</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-mx-linux-1/><span class=title>« Prev</span>
+<span>Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows</span>
+</a><a class=next href=/posts/2026-08-04-web-deployment/><span class=title>Next »</span>
+<span>GitHub, Vercel, and Netlify: The Ultimate Guide to Modern Web Deployment Workflows</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

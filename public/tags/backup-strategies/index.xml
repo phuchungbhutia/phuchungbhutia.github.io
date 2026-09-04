@@ -1,23 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Backup Strategies on Technical Journal</title>
-    <link>//localhost:1313/tags/backup-strategies/</link>
-    <description>Recent content in Backup Strategies on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/backup-strategies/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-dns-rsync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-dns-rsync/</guid>
-      <description>&lt;h1 id=&#34;mastering-linux-administration-secure-dns-setup--automated-rsync-backups&#34;&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Backup Strategies on Technical Journal</title><link>/tags/backup-strategies/</link><description>Recent content in Backup Strategies on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/backup-strategies/index.xml" rel="self" type="application/rss+xml"/><item><title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title><link>/posts/2026-08-04-dns-rsync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-dns-rsync/</guid><description>&lt;h1 id="mastering-linux-administration-secure-dns-setup--automated-rsync-backups"&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
 &lt;p&gt;Managing a Linux workstation effectively requires two critical capabilities: safeguarding network traffic and preserving essential local data. In this guide, we explore how to reconfigure DNS routing on Linux Mint using &lt;code&gt;systemd-resolved&lt;/code&gt;, wrap those queries in encrypted &lt;strong&gt;DNS over TLS (DoT)&lt;/strong&gt;, and structure a bulletproof Bash automated backup workflow with &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;part-1-configuring-permanent-static-dns-on-linux-mint&#34;&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
-&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="part-1-configuring-permanent-static-dns-on-linux-mint"&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
+&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description></item></channel></rss>

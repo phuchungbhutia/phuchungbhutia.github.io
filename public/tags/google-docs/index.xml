@@ -1,51 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Google Docs on Technical Journal</title>
-    <link>//localhost:1313/tags/google-docs/</link>
-    <description>Recent content in Google Docs on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 08:25:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/google-docs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building Your AI Service Business with Free Tools: The Complete Setup Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-ai-service3/</link>
-      <pubDate>Wed, 05 Aug 2026 08:25:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ai-service3/</guid>
-      <description>&lt;h1 id=&#34;building-your-ai-service-business-with-free-tools&#34;&gt;Building Your AI Service Business with Free Tools&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Google Docs on Technical Journal</title><link>/tags/google-docs/</link><description>Recent content in Google Docs on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 08:25:00 +0530</lastBuildDate><atom:link href="/tags/google-docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Building Your AI Service Business with Free Tools: The Complete Setup Guide</title><link>/posts/2026-08-05-ai-service3/</link><pubDate>Wed, 05 Aug 2026 08:25:00 +0530</pubDate><guid>/posts/2026-08-05-ai-service3/</guid><description>&lt;h1 id="building-your-ai-service-business-with-free-tools"&gt;Building Your AI Service Business with Free Tools&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Part 3 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You don&amp;rsquo;t need an expensive laptop, premium AI subscriptions, or paid software to start an AI service business.&lt;/p&gt;
 &lt;p&gt;A smartphone, internet connection, and a handful of free tools are enough to deliver professional-quality work.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;h1 id="table-of-contents"&gt;Table of Contents&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#your-digital-workspace&#34;&gt;Your Digital Workspace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#essential-free-tools&#34;&gt;Essential Free Tools&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#organizing-your-business&#34;&gt;Organizing Your Business&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#creating-reusable-templates&#34;&gt;Creating Reusable Templates&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#writing-better-ai-prompts&#34;&gt;Writing Better AI Prompts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#building-a-delivery-workflow&#34;&gt;Building a Delivery Workflow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#quality-control-checklist&#34;&gt;Quality Control Checklist&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#managing-clients&#34;&gt;Managing Clients&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#file-organization&#34;&gt;File Organization&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#automation-ideas&#34;&gt;Automation Ideas&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#daily-operating-routine&#34;&gt;Daily Operating Routine&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#next-steps&#34;&gt;Next Steps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#your-digital-workspace"&gt;Your Digital Workspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#essential-free-tools"&gt;Essential Free Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#organizing-your-business"&gt;Organizing Your Business&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#creating-reusable-templates"&gt;Creating Reusable Templates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#writing-better-ai-prompts"&gt;Writing Better AI Prompts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#building-a-delivery-workflow"&gt;Building a Delivery Workflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#quality-control-checklist"&gt;Quality Control Checklist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#managing-clients"&gt;Managing Clients&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#file-organization"&gt;File Organization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#automation-ideas"&gt;Automation Ideas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#daily-operating-routine"&gt;Daily Operating Routine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#next-steps"&gt;Next Steps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;your-digital-workspace&#34;&gt;Your Digital Workspace&lt;/h1&gt;
-&lt;p&gt;Think of your AI business like a small digital office.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</title>
-      <link>//localhost:1313/posts/2026-08-04-gdocs/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-gdocs/</guid>
-      <description>&lt;h1 id=&#34;mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script&#34;&gt;Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script&lt;/h1&gt;
-&lt;p&gt;When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h1 id="your-digital-workspace"&gt;Your Digital Workspace&lt;/h1&gt;
+&lt;p&gt;Think of your AI business like a small digital office.&lt;/p&gt;</description></item><item><title>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</title><link>/posts/2026-08-04-gdocs/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-gdocs/</guid><description>&lt;h1 id="mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script"&gt;Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script&lt;/h1&gt;
+&lt;p&gt;When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.&lt;/p&gt;</description></item></channel></rss>

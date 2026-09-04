@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Opera on Technical Journal</title>
-    <link>//localhost:1313/tags/opera/</link>
-    <description>Recent content in Opera on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/opera/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Configuring Browser Proxies and Bypassing Local DNS Restrictions for Sikkim Government Portals</title>
-      <link>//localhost:1313/posts/2026-08-04-dns/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-dns/</guid>
-      <description>&lt;p&gt;Navigating government portals often requires specific network configurations, particularly when local domain names rely on internal National Informatics Centre (NIC) DNS infrastructure. If you are accessing services like the Sikkim DDO Pranali portal (&lt;code&gt;ddo.pranali.sikkim.nic.in&lt;/code&gt;) through a proxy setup, misconfigured DNS settings can lead to domain resolution failures or local DNS leaks.&lt;/p&gt;
-&lt;p&gt;This detailed guide breaks down how to configure system-wide and browser-specific proxies in Firefox and Opera, and how to set up &lt;strong&gt;FoxyProxy Standard&lt;/strong&gt; to safely route NIC DNS traffic.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Opera on Technical Journal</title><link>/tags/opera/</link><description>Recent content in Opera on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/opera/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring Browser Proxies and Bypassing Local DNS Restrictions for Sikkim Government Portals</title><link>/posts/2026-08-04-dns/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-dns/</guid><description>&lt;p&gt;Navigating government portals often requires specific network configurations, particularly when local domain names rely on internal National Informatics Centre (NIC) DNS infrastructure. If you are accessing services like the Sikkim DDO Pranali portal (&lt;code&gt;ddo.pranali.sikkim.nic.in&lt;/code&gt;) through a proxy setup, misconfigured DNS settings can lead to domain resolution failures or local DNS leaks.&lt;/p&gt;
+&lt;p&gt;This detailed guide breaks down how to configure system-wide and browser-specific proxies in Firefox and Opera, and how to set up &lt;strong&gt;FoxyProxy Standard&lt;/strong&gt; to safely route NIC DNS traffic.&lt;/p&gt;</description></item></channel></rss>

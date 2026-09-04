@@ -1,6 +1,6 @@
 ---
 title: "Mastering PDF to Markdown on Linux Mint: A Step-by-Step Guide with Marker & MarkItDown"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "Python", "Document Processing", "Open Source"]
 tags: ["linux-mint", "marker-pdf", "markitdown", "python", "pdf-conversion", "pipx", "ocr", "markdown"]
 ---

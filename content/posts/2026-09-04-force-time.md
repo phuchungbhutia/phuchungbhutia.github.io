@@ -1,6 +1,6 @@
 ---
 title: "Modern Linux System Administration: Automated Maintenance and Hardware Optimization"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Linux Administration", "System Maintenance"]
 tags: ["Linux", "Systemd", "RAM Optimization", "Automation", "2026"]
 description: "A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance."

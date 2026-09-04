@@ -1,94 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Building an Automated, Serverless MLBB Meta Hub on GitHub Pages | Technical Journal</title>
-<meta name="keywords" content="VitePress, GitHub Actions, Mobile Legends, Vue, Static Site Generator, Automation, Game Analytics">
-<meta name="description" content="Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven&rsquo;t been touched in three patches, finding exact item-by-item interaction logic is a chore.
-I set out to build an alternative: a clean, deterministic, zero-bloat game database for Mobile Legends: Bang Bang (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-09-04-mlbb/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-09-04-mlbb/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-09-04-mlbb/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Building an Automated, Serverless MLBB Meta Hub on GitHub Pages">
-  <meta property="og:description" content="Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven’t been touched in three patches, finding exact item-by-item interaction logic is a chore.
-I set out to build an alternative: a clean, deterministic, zero-bloat game database for Mobile Legends: Bang Bang (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-09-04T10:00:00+05:30">
-    <meta property="article:modified_time" content="2026-09-04T10:00:00+05:30">
-    <meta property="article:tag" content="VitePress">
-    <meta property="article:tag" content="Github-Actions">
-    <meta property="article:tag" content="Mobile Legends">
-    <meta property="article:tag" content="Vue">
-    <meta property="article:tag" content="Static Site Generator">
-    <meta property="article:tag" content="Automation">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Building an Automated, Serverless MLBB Meta Hub on GitHub Pages">
-  <meta name="twitter:description" content="Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven’t been touched in three patches, finding exact item-by-item interaction logic is a chore.
-I set out to build an alternative: a clean, deterministic, zero-bloat game database for Mobile Legends: Bang Bang (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.">
-
-
-<script type="application/ld+json">
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Building an Automated, Serverless MLBB Meta Hub on GitHub Pages | Technical Journal</title><meta name=keywords content="VitePress,GitHub Actions,Mobile Legends,Vue,Static Site Generator,Automation,Game Analytics"><meta name=description content="Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven&rsquo;t been touched in three patches, finding exact item-by-item interaction logic is a chore.
+I set out to build an alternative: a clean, deterministic, zero-bloat game database for Mobile Legends: Bang Bang (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-09-04-mlbb/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-09-04-mlbb/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-09-04-mlbb/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Building an Automated, Serverless MLBB Meta Hub on GitHub Pages"><meta property="og:description" content="Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven’t been touched in three patches, finding exact item-by-item interaction logic is a chore.
+I set out to build an alternative: a clean, deterministic, zero-bloat game database for Mobile Legends: Bang Bang (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-09-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-09-04T10:00:00+05:30"><meta property="article:tag" content="VitePress"><meta property="article:tag" content="Github-Actions"><meta property="article:tag" content="Mobile Legends"><meta property="article:tag" content="Vue"><meta property="article:tag" content="Static Site Generator"><meta property="article:tag" content="Automation"><meta name=twitter:card content="summary"><meta name=twitter:title content="Building an Automated, Serverless MLBB Meta Hub on GitHub Pages"><meta name=twitter:description content="Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven’t been touched in three patches, finding exact item-by-item interaction logic is a chore.
+I set out to build an alternative: a clean, deterministic, zero-bloat game database for Mobile Legends: Bang Bang (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -97,18 +10,17 @@ I set out to build an alternative: a clean, deterministic, zero-bloat game datab
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Building an Automated, Serverless MLBB Meta Hub on GitHub Pages",
-      "item": "//localhost:1313/posts/2026-09-04-mlbb/"
+      "item": "/posts/2026-09-04-mlbb/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -129,432 +41,96 @@ I set out to build an alternative: a clean, deterministic, zero-bloat game datab
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-09-04-mlbb/"
+    "@id": "/posts/2026-09-04-mlbb/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Building an Automated, Serverless MLBB Meta Hub on GitHub Pages
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-09-04 10:00:00 +0530 IST'>September 4, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#the-architectural-blueprint" aria-label="The Architectural Blueprint">The Architectural Blueprint</a></li>
-            <li>
-                <a href="#phase-1-structuring-the-data" aria-label="Phase 1: Structuring the Data">Phase 1: Structuring the Data</a></li>
-            <li>
-                <a href="#phase-2-building-the-reactive-explorer" aria-label="Phase 2: Building the Reactive Explorer">Phase 2: Building the Reactive Explorer</a></li>
-            <li>
-                <a href="#phase-3-the-in-browser-contribution-engine" aria-label="Phase 3: The In-Browser Contribution Engine">Phase 3: The In-Browser Contribution Engine</a></li>
-            <li>
-                <a href="#battle-tested-troubleshooting-solving-real-world-breakages" aria-label="Battle-Tested Troubleshooting: Solving Real-World Breakages">Battle-Tested Troubleshooting: Solving Real-World Breakages</a><ul>
-                    
-            <li>
-                <a href="#1-the-persistent-github-pages-404-legacy-branch-lock" aria-label="1. The Persistent GitHub Pages 404 (Legacy Branch Lock)">1. The Persistent GitHub Pages 404 (Legacy Branch Lock)</a></li>
-            <li>
-                <a href="#2-raw-yaml-frontmatter-rendering" aria-label="2. Raw YAML Frontmatter Rendering">2. Raw YAML Frontmatter Rendering</a></li>
-            <li>
-                <a href="#3-vue-sfc-parser-errors-in-markdown" aria-label="3. Vue SFC Parser Errors in Markdown">3. Vue SFC Parser Errors in Markdown</a></li>
-            <li>
-                <a href="#4-missing-build-items-in-summary-tables" aria-label="4. Missing Build Items in Summary Tables">4. Missing Build Items in Summary Tables</a></li></ul>
-            </li>
-            <li>
-                <a href="#verification-and-continuous-deployment" aria-label="Verification and Continuous Deployment">Verification and Continuous Deployment</a></li>
-            <li>
-                <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><p>Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven&rsquo;t been touched in three patches, finding exact item-by-item interaction logic is a chore.</p>
-<p>I set out to build an alternative: a clean, deterministic, zero-bloat game database for <em>Mobile Legends: Bang Bang</em> (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.</p>
-<p>Here is the complete walkthrough of how the architecture works, how the pipeline bridges raw Markdown to real-time search, the real-world deployment bugs encountered, and how we solved them.</p>
-<hr>
-<h3 id="the-architectural-blueprint">The Architectural Blueprint<a hidden class="anchor" aria-hidden="true" href="#the-architectural-blueprint">#</a></h3>
-<p>Instead of a traditional SQL database or headless CMS, the project uses <strong>Markdown as the single source of truth</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Markdown Master Files (MLBB_Hero_Database.md, MLBB_Game_Data.md)
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>▼
-</span></span><span style="display:flex;"><span>scripts/parse-markdown.mjs
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>▼
-</span></span><span style="display:flex;"><span>Structured JSON Datasets (data/*.json)
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>▼
-</span></span><span style="display:flex;"><span>VitePress Build-Time Data Loaders
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>▼
-</span></span><span style="display:flex;"><span>Vue Component Layer (Instant Search &amp; Meta Filtering)
-</span></span><span style="display:flex;"><span>│
-</span></span><span style="display:flex;"><span>▼
-</span></span><span style="display:flex;"><span>GitHub Actions Deployment CDN
-</span></span></code></pre></div><p>This design gives us three distinct advantages:</p>
-<ol>
-<li><strong>Full Transparency:</strong> Any player can inspect changes via Git commits or verify mechanical adjustments using standard pull requests.</li>
-<li><strong>Deterministic Schemas:</strong> Automation scripts extract data into machine-readable JSON for external RAG pipelines, bots, and tools.</li>
-<li><strong>Zero Hosting Overhead:</strong> The site compiles to static HTML, JavaScript, and CSS served globally on GitHub&rsquo;s CDN.</li>
-</ol>
-<hr>
-<h3 id="phase-1-structuring-the-data">Phase 1: Structuring the Data<a hidden class="anchor" aria-hidden="true" href="#phase-1-structuring-the-data">#</a></h3>
-<p>The system relies on two human-readable data books:</p>
-<ul>
-<li><code>MLBB_Hero_Database.md</code>: Houses the master index of over 100+ heroes, categorizing roles, lanes, combat archetypes, stat scaling curves, tiers, win/ban rates, and deep profile kits.</li>
-<li><code>MLBB_Game_Data.md</code>: Houses complete equipment indexes, passive trigger conditions, emblem talent matrices, battle spells, and live patch tracking notes.</li>
-</ul>
-<p>To keep data maintainable at scale, a custom generator script (<code>scripts/populate-all-heroes.mjs</code>) builds out the roster systematically, while a zero-dependency parser (<code>scripts/parse-markdown.mjs</code>) reads the Markdown tables and hero kit blocks using regular expressions. The parser maps equipment lists, spells, and emblem paths directly to each hero before outputting clean JSON files into <code>data/heroes.json</code>, <code>data/equipment.json</code>, and <code>data/spells.json</code>.</p>
-<hr>
-<h3 id="phase-2-building-the-reactive-explorer">Phase 2: Building the Reactive Explorer<a hidden class="anchor" aria-hidden="true" href="#phase-2-building-the-reactive-explorer">#</a></h3>
-<p>Static tables can be long and cumbersome to navigate on mobile devices. To make the database usable during ranked drafts, we created the <strong>Interactive Meta Explorer</strong>.</p>
-<p>Instead of fetching JSON across the network at runtime, VitePress utilizes build-time data loaders (<code>docs/heroes.data.mjs</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;node:fs&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;node:path&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;../data/heroes.json&#39;</span>],
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">load</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filePath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">cwd</span>(), <span style="color:#e6db74">&#39;data/heroes.json&#39;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">existsSync</span>(<span style="color:#a6e22e">filePath</span>)) <span style="color:#66d9ef">return</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#a6e22e">filePath</span>, <span style="color:#e6db74">&#39;utf-8&#39;</span>))
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The data loader injects the parsed dataset directly into a Vue component (<code>HeroExplorer.vue</code>) during site generation. The component provides:</p>
-<ul>
-<li>Instant client-side text filtering across hero names, lanes, and combat archetypes.</li>
-<li>Live item search (e.g., querying &ldquo;War Axe&rdquo; or &ldquo;Flicker&rdquo; highlights every hero utilizing that specific gear).</li>
-<li>Dropdown role filtering for swift draft comparisons.</li>
-<li>Compact visual badges for tiers, battle spells, and emblem loadouts.</li>
-</ul>
-<hr>
-<h3 id="phase-3-the-in-browser-contribution-engine">Phase 3: The In-Browser Contribution Engine<a hidden class="anchor" aria-hidden="true" href="#phase-3-the-in-browser-contribution-engine">#</a></h3>
-<p>Static documentation sites usually require pulling a Git branch locally, editing files in an IDE, and running build scripts to push an update. To allow quick updates from any browser, we implemented an in-browser database editor (<code>docs/update-database.md</code>).</p>
-<p>Using a client-side component (<code>DatabaseEditor.vue</code>) backed by the GitHub REST API:</p>
-<ol>
-<li>An authorized maintainer enters a GitHub Personal Access Token along with updated hero stats or gear changes.</li>
-<li>The component retrieves the latest <code>MLBB_Hero_Database.md</code> from the repository via API.</li>
-<li>It parses the Markdown string, injects the new hero into the master table, appends the detailed kit build profile, and commits the updated file directly to the <code>main</code> branch.</li>
-<li>The API commit triggers the automated CI/CD pipeline, rebuilding the production bundle and publishing the changes live within 60 seconds.</li>
-</ol>
-<hr>
-<h3 id="battle-tested-troubleshooting-solving-real-world-breakages">Battle-Tested Troubleshooting: Solving Real-World Breakages<a hidden class="anchor" aria-hidden="true" href="#battle-tested-troubleshooting-solving-real-world-breakages">#</a></h3>
-<p>Developing this project locally on Windows with VSCodium and deploying to GitHub Pages exposed several edge cases. We documented every failure and fix inside <code>TROUBLESHOOTING.md</code>.</p>
-<h4 id="1-the-persistent-github-pages-404-legacy-branch-lock">1. The Persistent GitHub Pages 404 (Legacy Branch Lock)<a hidden class="anchor" aria-hidden="true" href="#1-the-persistent-github-pages-404-legacy-branch-lock">#</a></h4>
-<ul>
-<li><strong>Symptom:</strong> GitHub Actions passed with green checkmarks, but visiting the live URL returned a GitHub 404 page.</li>
-<li><strong>Root Cause:</strong> Inspecting the repository via the GitHub CLI (<code>gh api repos/.../pages</code>) revealed that GitHub Pages was still bound to the legacy configuration reading from the root of <code>master</code>. Because our repository was working on <code>main</code> and deploying static artifacts via Actions, Pages ignored the compiled build.</li>
-<li><strong>Fix:</strong> We deleted the stale <code>master</code> branch, updated the repository&rsquo;s default branch to <code>main</code>, and re-pointed the Pages build engine to use the workflow deployment target:</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>gh api -X PUT repos/phuchungbhutia/mlbb-database/pages <span style="color:#f92672">-f</span> build_type=workflow
-</span></span></code></pre></div><h4 id="2-raw-yaml-frontmatter-rendering">2. Raw YAML Frontmatter Rendering<a hidden class="anchor" aria-hidden="true" href="#2-raw-yaml-frontmatter-rendering">#</a></h4>
-<ul>
-<li><strong>Symptom:</strong> The home page rendered literal text strings (<code>layout: home hero: ...</code>) on screen instead of the formatted VitePress banner.</li>
-<li><strong>Root Cause:</strong> VitePress strictly requires the opening triple hyphens (<code>---</code>) to reside on line 1, column 1. An empty leading line caused the Markdown compiler to interpret the metadata as standard body text.</li>
-<li><strong>Fix:</strong> Normalized <code>docs/index.md</code> ensuring strict UTF-8 formatting and immediate delimiter positioning.</li>
-</ul>
-<h4 id="3-vue-sfc-parser-errors-in-markdown">3. Vue SFC Parser Errors in Markdown<a hidden class="anchor" aria-hidden="true" href="#3-vue-sfc-parser-errors-in-markdown">#</a></h4>
-<ul>
-<li><strong>Symptom:</strong> VitePress failed to compile with <code>[plugin:vite:vue] Element is missing end tag</code>.</li>
-<li><strong>Root Cause:</strong> Embedding extensive Vue template directives, emojis, and inline HTML tables directly inside a <code>.md</code> file confused the Markdown-it AST parser.</li>
-<li><strong>Fix:</strong> Decoupled the logic completely by writing the table as a clean Vue Single File Component (<code>HeroExplorer.vue</code>) and mounting the custom component cleanly inside <code>docs/explorer.md</code>.</li>
-</ul>
-<h4 id="4-missing-build-items-in-summary-tables">4. Missing Build Items in Summary Tables<a hidden class="anchor" aria-hidden="true" href="#4-missing-build-items-in-summary-tables">#</a></h4>
-<ul>
-<li><strong>Symptom:</strong> The explorer displayed hero rows, but all item columns fell back to <code>&quot;Standard Build&quot;</code>.</li>
-<li><strong>Root Cause:</strong> The parser script was originally reading only the top-level index table, which lacked gear columns.</li>
-<li><strong>Fix:</strong> Enhanced <code>scripts/parse-markdown.mjs</code> to traverse both the index table and individual profile headers (<code>### X. HeroName</code>), extracting items, battle spells, and emblem strings into unified JSON objects.</li>
-</ul>
-<hr>
-<h3 id="verification-and-continuous-deployment">Verification and Continuous Deployment<a hidden class="anchor" aria-hidden="true" href="#verification-and-continuous-deployment">#</a></h3>
-<p>The repository is guarded by an automated GitHub Actions pipeline (<code>deploy-pages.yml</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy VitePress to GitHub Pages</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">main]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">contents</span>: <span style="color:#ae81ff">read</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pages</span>: <span style="color:#ae81ff">write</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">id-token</span>: <span style="color:#ae81ff">write</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">concurrency</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">group</span>: <span style="color:#ae81ff">pages</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cancel-in-progress</span>: <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-node@v4</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">node-version</span>: <span style="color:#ae81ff">20</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">cache</span>: <span style="color:#ae81ff">npm</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm ci</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm run parse</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm test</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">npm run docs:build</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-pages-artifact@v3</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">docs/.vitepress/dist</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">github-pages</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">${{ steps.deployment.outputs.page_url }}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">build</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">id</span>: <span style="color:#ae81ff">deployment</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/deploy-pages@v4</span>
-</span></span></code></pre></div><p>On every commit, dependencies are cleanly resolved via <code>npm ci</code>, tables are verified against schema tests, VitePress compiles static assets, and the site deploys seamlessly to the edge CDN.</p>
-<hr>
-<h3 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h3>
-<p>By treating game analytics like clean code—pairing human-readable Markdown with deterministic parsing and static site tooling—we achieved a fast, searchable, and community-maintainable meta hub.</p>
-<ul>
-<li><strong>Live Deployment:</strong> <a href="https://phuchungbhutia.github.io/mlbb-database/">https://phuchungbhutia.github.io/mlbb-database/</a></li>
-<li><strong>Source Code:</strong> <a href="https://github.com/phuchungbhutia/mlbb-database">https://github.com/phuchungbhutia/mlbb-database</a></li>
-</ul>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/vitepress/">VitePress</a></li>
-      <li><a href="//localhost:1313/tags/github-actions/">Github-Actions</a></li>
-      <li><a href="//localhost:1313/tags/mobile-legends/">Mobile Legends</a></li>
-      <li><a href="//localhost:1313/tags/vue/">Vue</a></li>
-      <li><a href="//localhost:1313/tags/static-site-generator/">Static Site Generator</a></li>
-      <li><a href="//localhost:1313/tags/automation/">Automation</a></li>
-      <li><a href="//localhost:1313/tags/game-analytics/">Game Analytics</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-09-04-webscraping/">
-    <span class="title">« Prev</span>
-    <span>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-09-04-toxic-plants/">
-    <span class="title">Next »</span>
-    <span>Deadly Flora and Wild Fungi: A Trekker&#39;s Field Guide to Himalayan Hazards</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Building an Automated, Serverless MLBB Meta Hub on GitHub Pages</h1><div class=post-meta><span title='2026-09-04 10:00:00 +0530 IST'>September 4, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#the-architectural-blueprint aria-label="The Architectural Blueprint">The Architectural Blueprint</a></li><li><a href=#phase-1-structuring-the-data aria-label="Phase 1: Structuring the Data">Phase 1: Structuring the Data</a></li><li><a href=#phase-2-building-the-reactive-explorer aria-label="Phase 2: Building the Reactive Explorer">Phase 2: Building the Reactive Explorer</a></li><li><a href=#phase-3-the-in-browser-contribution-engine aria-label="Phase 3: The In-Browser Contribution Engine">Phase 3: The In-Browser Contribution Engine</a></li><li><a href=#battle-tested-troubleshooting-solving-real-world-breakages aria-label="Battle-Tested Troubleshooting: Solving Real-World Breakages">Battle-Tested Troubleshooting: Solving Real-World Breakages</a><ul><li><a href=#1-the-persistent-github-pages-404-legacy-branch-lock aria-label="1. The Persistent GitHub Pages 404 (Legacy Branch Lock)">1. The Persistent GitHub Pages 404 (Legacy Branch Lock)</a></li><li><a href=#2-raw-yaml-frontmatter-rendering aria-label="2. Raw YAML Frontmatter Rendering">2. Raw YAML Frontmatter Rendering</a></li><li><a href=#3-vue-sfc-parser-errors-in-markdown aria-label="3. Vue SFC Parser Errors in Markdown">3. Vue SFC Parser Errors in Markdown</a></li><li><a href=#4-missing-build-items-in-summary-tables aria-label="4. Missing Build Items in Summary Tables">4. Missing Build Items in Summary Tables</a></li></ul></li><li><a href=#verification-and-continuous-deployment aria-label="Verification and Continuous Deployment">Verification and Continuous Deployment</a></li><li><a href=#conclusion aria-label=Conclusion>Conclusion</a></li></ul></div></details><div class="post-content md-content"><p>Gaming wikis are notoriously frustrating to use. Between intrusive banner ads, bloated tracking scripts, and outdated community builds that haven&rsquo;t been touched in three patches, finding exact item-by-item interaction logic is a chore.</p><p>I set out to build an alternative: a clean, deterministic, zero-bloat game database for <em>Mobile Legends: Bang Bang</em> (MLBB) running on Original Server Patch 2.1.95a. The entire system is open-source, version-controlled, and hosted for free on GitHub Pages without maintaining an expensive backend database.</p><p>Here is the complete walkthrough of how the architecture works, how the pipeline bridges raw Markdown to real-time search, the real-world deployment bugs encountered, and how we solved them.</p><hr><h3 id=the-architectural-blueprint>The Architectural Blueprint<a hidden class=anchor aria-hidden=true href=#the-architectural-blueprint>#</a></h3><p>Instead of a traditional SQL database or headless CMS, the project uses <strong>Markdown as the single source of truth</strong>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>Markdown Master Files (MLBB_Hero_Database.md, MLBB_Game_Data.md)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>scripts/parse-markdown.mjs
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Structured JSON Datasets (data/*.json)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>VitePress Build-Time Data Loaders
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>Vue Component Layer (Instant Search &amp; Meta Filtering)
+</span></span><span style=display:flex><span>│
+</span></span><span style=display:flex><span>▼
+</span></span><span style=display:flex><span>GitHub Actions Deployment CDN
+</span></span></code></pre></div><p>This design gives us three distinct advantages:</p><ol><li><strong>Full Transparency:</strong> Any player can inspect changes via Git commits or verify mechanical adjustments using standard pull requests.</li><li><strong>Deterministic Schemas:</strong> Automation scripts extract data into machine-readable JSON for external RAG pipelines, bots, and tools.</li><li><strong>Zero Hosting Overhead:</strong> The site compiles to static HTML, JavaScript, and CSS served globally on GitHub&rsquo;s CDN.</li></ol><hr><h3 id=phase-1-structuring-the-data>Phase 1: Structuring the Data<a hidden class=anchor aria-hidden=true href=#phase-1-structuring-the-data>#</a></h3><p>The system relies on two human-readable data books:</p><ul><li><code>MLBB_Hero_Database.md</code>: Houses the master index of over 100+ heroes, categorizing roles, lanes, combat archetypes, stat scaling curves, tiers, win/ban rates, and deep profile kits.</li><li><code>MLBB_Game_Data.md</code>: Houses complete equipment indexes, passive trigger conditions, emblem talent matrices, battle spells, and live patch tracking notes.</li></ul><p>To keep data maintainable at scale, a custom generator script (<code>scripts/populate-all-heroes.mjs</code>) builds out the roster systematically, while a zero-dependency parser (<code>scripts/parse-markdown.mjs</code>) reads the Markdown tables and hero kit blocks using regular expressions. The parser maps equipment lists, spells, and emblem paths directly to each hero before outputting clean JSON files into <code>data/heroes.json</code>, <code>data/equipment.json</code>, and <code>data/spells.json</code>.</p><hr><h3 id=phase-2-building-the-reactive-explorer>Phase 2: Building the Reactive Explorer<a hidden class=anchor aria-hidden=true href=#phase-2-building-the-reactive-explorer>#</a></h3><p>Static tables can be long and cumbersome to navigate on mobile devices. To make the database usable during ranked drafts, we created the <strong>Interactive Meta Explorer</strong>.</p><p>Instead of fetching JSON across the network at runtime, VitePress utilizes build-time data loaders (<code>docs/heroes.data.mjs</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>fs</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;node:fs&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>path</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;node:path&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>watch</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#39;../data/heroes.json&#39;</span>],
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>load</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>filePath</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>path</span>.<span style=color:#a6e22e>resolve</span>(<span style=color:#a6e22e>process</span>.<span style=color:#a6e22e>cwd</span>(), <span style=color:#e6db74>&#39;data/heroes.json&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>fs</span>.<span style=color:#a6e22e>existsSync</span>(<span style=color:#a6e22e>filePath</span>)) <span style=color:#66d9ef>return</span> []
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>parse</span>(<span style=color:#a6e22e>fs</span>.<span style=color:#a6e22e>readFileSync</span>(<span style=color:#a6e22e>filePath</span>, <span style=color:#e6db74>&#39;utf-8&#39;</span>))
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The data loader injects the parsed dataset directly into a Vue component (<code>HeroExplorer.vue</code>) during site generation. The component provides:</p><ul><li>Instant client-side text filtering across hero names, lanes, and combat archetypes.</li><li>Live item search (e.g., querying &ldquo;War Axe&rdquo; or &ldquo;Flicker&rdquo; highlights every hero utilizing that specific gear).</li><li>Dropdown role filtering for swift draft comparisons.</li><li>Compact visual badges for tiers, battle spells, and emblem loadouts.</li></ul><hr><h3 id=phase-3-the-in-browser-contribution-engine>Phase 3: The In-Browser Contribution Engine<a hidden class=anchor aria-hidden=true href=#phase-3-the-in-browser-contribution-engine>#</a></h3><p>Static documentation sites usually require pulling a Git branch locally, editing files in an IDE, and running build scripts to push an update. To allow quick updates from any browser, we implemented an in-browser database editor (<code>docs/update-database.md</code>).</p><p>Using a client-side component (<code>DatabaseEditor.vue</code>) backed by the GitHub REST API:</p><ol><li>An authorized maintainer enters a GitHub Personal Access Token along with updated hero stats or gear changes.</li><li>The component retrieves the latest <code>MLBB_Hero_Database.md</code> from the repository via API.</li><li>It parses the Markdown string, injects the new hero into the master table, appends the detailed kit build profile, and commits the updated file directly to the <code>main</code> branch.</li><li>The API commit triggers the automated CI/CD pipeline, rebuilding the production bundle and publishing the changes live within 60 seconds.</li></ol><hr><h3 id=battle-tested-troubleshooting-solving-real-world-breakages>Battle-Tested Troubleshooting: Solving Real-World Breakages<a hidden class=anchor aria-hidden=true href=#battle-tested-troubleshooting-solving-real-world-breakages>#</a></h3><p>Developing this project locally on Windows with VSCodium and deploying to GitHub Pages exposed several edge cases. We documented every failure and fix inside <code>TROUBLESHOOTING.md</code>.</p><h4 id=1-the-persistent-github-pages-404-legacy-branch-lock>1. The Persistent GitHub Pages 404 (Legacy Branch Lock)<a hidden class=anchor aria-hidden=true href=#1-the-persistent-github-pages-404-legacy-branch-lock>#</a></h4><ul><li><strong>Symptom:</strong> GitHub Actions passed with green checkmarks, but visiting the live URL returned a GitHub 404 page.</li><li><strong>Root Cause:</strong> Inspecting the repository via the GitHub CLI (<code>gh api repos/.../pages</code>) revealed that GitHub Pages was still bound to the legacy configuration reading from the root of <code>master</code>. Because our repository was working on <code>main</code> and deploying static artifacts via Actions, Pages ignored the compiled build.</li><li><strong>Fix:</strong> We deleted the stale <code>master</code> branch, updated the repository&rsquo;s default branch to <code>main</code>, and re-pointed the Pages build engine to use the workflow deployment target:</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-powershell data-lang=powershell><span style=display:flex><span>gh api -X PUT repos/phuchungbhutia/mlbb-database/pages <span style=color:#f92672>-f</span> build_type=workflow
+</span></span></code></pre></div><h4 id=2-raw-yaml-frontmatter-rendering>2. Raw YAML Frontmatter Rendering<a hidden class=anchor aria-hidden=true href=#2-raw-yaml-frontmatter-rendering>#</a></h4><ul><li><strong>Symptom:</strong> The home page rendered literal text strings (<code>layout: home hero: ...</code>) on screen instead of the formatted VitePress banner.</li><li><strong>Root Cause:</strong> VitePress strictly requires the opening triple hyphens (<code>---</code>) to reside on line 1, column 1. An empty leading line caused the Markdown compiler to interpret the metadata as standard body text.</li><li><strong>Fix:</strong> Normalized <code>docs/index.md</code> ensuring strict UTF-8 formatting and immediate delimiter positioning.</li></ul><h4 id=3-vue-sfc-parser-errors-in-markdown>3. Vue SFC Parser Errors in Markdown<a hidden class=anchor aria-hidden=true href=#3-vue-sfc-parser-errors-in-markdown>#</a></h4><ul><li><strong>Symptom:</strong> VitePress failed to compile with <code>[plugin:vite:vue] Element is missing end tag</code>.</li><li><strong>Root Cause:</strong> Embedding extensive Vue template directives, emojis, and inline HTML tables directly inside a <code>.md</code> file confused the Markdown-it AST parser.</li><li><strong>Fix:</strong> Decoupled the logic completely by writing the table as a clean Vue Single File Component (<code>HeroExplorer.vue</code>) and mounting the custom component cleanly inside <code>docs/explorer.md</code>.</li></ul><h4 id=4-missing-build-items-in-summary-tables>4. Missing Build Items in Summary Tables<a hidden class=anchor aria-hidden=true href=#4-missing-build-items-in-summary-tables>#</a></h4><ul><li><strong>Symptom:</strong> The explorer displayed hero rows, but all item columns fell back to <code>"Standard Build"</code>.</li><li><strong>Root Cause:</strong> The parser script was originally reading only the top-level index table, which lacked gear columns.</li><li><strong>Fix:</strong> Enhanced <code>scripts/parse-markdown.mjs</code> to traverse both the index table and individual profile headers (<code>### X. HeroName</code>), extracting items, battle spells, and emblem strings into unified JSON objects.</li></ul><hr><h3 id=verification-and-continuous-deployment>Verification and Continuous Deployment<a hidden class=anchor aria-hidden=true href=#verification-and-continuous-deployment>#</a></h3><p>The repository is guarded by an automated GitHub Actions pipeline (<code>deploy-pages.yml</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy VitePress to GitHub Pages</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>branches</span>: [<span style=color:#ae81ff>main]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>permissions</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>contents</span>: <span style=color:#ae81ff>read</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>pages</span>: <span style=color:#ae81ff>write</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>id-token</span>: <span style=color:#ae81ff>write</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>concurrency</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>group</span>: <span style=color:#ae81ff>pages</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>cancel-in-progress</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v4</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-node@v4</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>node-version</span>: <span style=color:#ae81ff>20</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>cache</span>: <span style=color:#ae81ff>npm</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>npm ci</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>npm run parse</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>npm test</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>npm run docs:build</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/upload-pages-artifact@v3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>path</span>: <span style=color:#ae81ff>docs/.vitepress/dist</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>deploy</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>environment</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>github-pages</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>url</span>: <span style=color:#ae81ff>${{ steps.deployment.outputs.page_url }}</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>needs</span>: <span style=color:#ae81ff>build</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>id</span>: <span style=color:#ae81ff>deployment</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/deploy-pages@v4</span>
+</span></span></code></pre></div><p>On every commit, dependencies are cleanly resolved via <code>npm ci</code>, tables are verified against schema tests, VitePress compiles static assets, and the site deploys seamlessly to the edge CDN.</p><hr><h3 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h3><p>By treating game analytics like clean code—pairing human-readable Markdown with deterministic parsing and static site tooling—we achieved a fast, searchable, and community-maintainable meta hub.</p><ul><li><strong>Live Deployment:</strong> <a href=https://phuchungbhutia.github.io/mlbb-database/>https://phuchungbhutia.github.io/mlbb-database/</a></li><li><strong>Source Code:</strong> <a href=https://github.com/phuchungbhutia/mlbb-database>https://github.com/phuchungbhutia/mlbb-database</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/vitepress/>VitePress</a></li><li><a href=/tags/github-actions/>Github-Actions</a></li><li><a href=/tags/mobile-legends/>Mobile Legends</a></li><li><a href=/tags/vue/>Vue</a></li><li><a href=/tags/static-site-generator/>Static Site Generator</a></li><li><a href=/tags/automation/>Automation</a></li><li><a href=/tags/game-analytics/>Game Analytics</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-09-04-webscraping/><span class=title>« Prev</span>
+<span>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</span>
+</a><a class=next href=/posts/2026-09-04-toxic-plants/><span class=title>Next »</span>
+<span>Deadly Flora and Wild Fungi: A Trekker's Field Guide to Himalayan Hazards</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

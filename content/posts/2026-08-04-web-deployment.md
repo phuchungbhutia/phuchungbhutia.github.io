@@ -1,6 +1,6 @@
 ---
 title: "GitHub, Vercel, and Netlify: The Ultimate Guide to Modern Web Deployment Workflows"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Web Development", "DevOps", "Deployment"]
 tags: ["github", "vercel", "netlify", "ci-cd", "react", "jamstack", "hosting"]
 ---

@@ -1,43 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Jekyll on Technical Journal</title>
-    <link>//localhost:1313/tags/jekyll/</link>
-    <description>Recent content in Jekyll on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 13:30:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook</title>
-      <link>//localhost:1313/posts/2026-09-04-chirpy-github-page/</link>
-      <pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-chirpy-github-page/</guid>
-      <description>&lt;p&gt;Setting up a documentation portal or department blog using the &lt;strong&gt;Jekyll Chirpy&lt;/strong&gt; theme on GitHub Pages looks effortless on paper. You fork the starter repo, point GitHub Actions to your branch, and watch the site spin up.&lt;/p&gt;
-&lt;p&gt;In reality, running a production-grade Chirpy setup with custom CI/CD pipelines quickly runs into a minefield of build-time failures: Ruby Liquid crashes over integer tags, &lt;code&gt;htmlproofer&lt;/code&gt; throwing hundreds of false-positive 404s on dynamic taxonomy routes, missing local layout overrides, broken anchor fragment checks, and invisible non-breaking spaces that crash YAML parsers.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Markdown for Technical Blogging: Standards, Workflows, and Clean Publishing</title>
-      <link>//localhost:1313/posts/2026-09-04-md-blog/</link>
-      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-md-blog/</guid>
-      <description>A comprehensive guide to structuring, formatting, and maintaining high-performance technical blog posts using standardized Markdown.</description>
-    </item>
-    <item>
-      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-github-blog/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-github-blog/</guid>
-      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
-&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-github-pages/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-github-pages/</guid>
-      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
-&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Jekyll on Technical Journal</title><link>/tags/jekyll/</link><description>Recent content in Jekyll on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 04 Sep 2026 13:30:00 +0530</lastBuildDate><atom:link href="/tags/jekyll/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook</title><link>/posts/2026-09-04-chirpy-github-page/</link><pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate><guid>/posts/2026-09-04-chirpy-github-page/</guid><description>&lt;p&gt;Setting up a documentation portal or department blog using the &lt;strong&gt;Jekyll Chirpy&lt;/strong&gt; theme on GitHub Pages looks effortless on paper. You fork the starter repo, point GitHub Actions to your branch, and watch the site spin up.&lt;/p&gt;
+&lt;p&gt;In reality, running a production-grade Chirpy setup with custom CI/CD pipelines quickly runs into a minefield of build-time failures: Ruby Liquid crashes over integer tags, &lt;code&gt;htmlproofer&lt;/code&gt; throwing hundreds of false-positive 404s on dynamic taxonomy routes, missing local layout overrides, broken anchor fragment checks, and invisible non-breaking spaces that crash YAML parsers.&lt;/p&gt;</description></item><item><title>Mastering Markdown for Technical Blogging: Standards, Workflows, and Clean Publishing</title><link>/posts/2026-09-04-md-blog/</link><pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate><guid>/posts/2026-09-04-md-blog/</guid><description>A comprehensive guide to structuring, formatting, and maintaining high-performance technical blog posts using standardized Markdown.</description></item><item><title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title><link>/posts/2026-08-04-github-blog/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-github-blog/</guid><description>&lt;h1 id="how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide"&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description></item><item><title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title><link>/posts/2026-08-04-github-pages/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-github-pages/</guid><description>&lt;h1 id="how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide"&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description></item></channel></rss>

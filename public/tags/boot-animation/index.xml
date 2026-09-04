@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Boot Animation on Technical Journal</title>
-    <link>//localhost:1313/tags/boot-animation/</link>
-    <description>Recent content in Boot Animation on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/boot-animation/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to Customizing the Linux Mint Boot Experience: Plymouth Themes, Custom Logos, and Silent Boot</title>
-      <link>//localhost:1313/posts/2026-08-04-mint-boot/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-mint-boot/</guid>
-      <description>&lt;h1 id=&#34;the-ultimate-guide-to-customizing-the-linux-mint-boot-experience&#34;&gt;The Ultimate Guide to Customizing the Linux Mint Boot Experience&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Boot Animation on Technical Journal</title><link>/tags/boot-animation/</link><description>Recent content in Boot Animation on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/boot-animation/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to Customizing the Linux Mint Boot Experience: Plymouth Themes, Custom Logos, and Silent Boot</title><link>/posts/2026-08-04-mint-boot/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-mint-boot/</guid><description>&lt;h1 id="the-ultimate-guide-to-customizing-the-linux-mint-boot-experience"&gt;The Ultimate Guide to Customizing the Linux Mint Boot Experience&lt;/h1&gt;
 &lt;p&gt;There is something deeply satisfying about tailoring an operating system to feel uniquely yours. While tweaking desktop wallpapers, icon packs, panel layouts, and GTK themes is standard practice for Linux Mint users, the boot screen is often left completely untouched.&lt;/p&gt;
-&lt;p&gt;When you turn on your PC, you are greeted by the standard Linux Mint logo pulsating against a dark background. This boot splash screen—managed by an underlying framework called &lt;strong&gt;Plymouth&lt;/strong&gt;—is fully customizable. Whether you want to swap the standard Mint logo for your own personal logo or wallpaper, install an animated high-tech theme, fix stretched low-resolution boot graphics, or disable graphics entirely to view real-time system logs during startup, this guide covers every step in detail.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;When you turn on your PC, you are greeted by the standard Linux Mint logo pulsating against a dark background. This boot splash screen—managed by an underlying framework called &lt;strong&gt;Plymouth&lt;/strong&gt;—is fully customizable. Whether you want to swap the standard Mint logo for your own personal logo or wallpaper, install an animated high-tech theme, fix stretched low-resolution boot graphics, or disable graphics entirely to view real-time system logs during startup, this guide covers every step in detail.&lt;/p&gt;</description></item></channel></rss>

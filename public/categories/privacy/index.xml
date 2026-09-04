@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Privacy on Technical Journal</title>
-    <link>//localhost:1313/categories/privacy/</link>
-    <description>Recent content in Privacy on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/privacy/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to Obtainium: Managing Android App Repositories, JSON Imports, and Open-Source Ecosystems</title>
-      <link>//localhost:1313/posts/2026-08-04-obtainium/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-obtainium/</guid>
-      <description>&lt;p&gt;Getting software directly from the developer source used to be a hassle on Android. Sideloading APKs meant manually checking GitHub releases, downloading binaries, and installing updates one by one. Obtainium completely changed that equation. It bypasses third-party app stores, letting you track and download releases straight from GitHub, GitLab, Codeberg, and custom sources.&lt;/p&gt;
-&lt;p&gt;If you are trying to clean up your device, ditch Google Play dependencies, or maintain open-source software like ReVanced, mastering Obtainium&amp;rsquo;s import and configuration setup is the fastest way to get your app library running seamlessly.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Privacy on Technical Journal</title><link>/categories/privacy/</link><description>Recent content in Privacy on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/categories/privacy/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to Obtainium: Managing Android App Repositories, JSON Imports, and Open-Source Ecosystems</title><link>/posts/2026-08-04-obtainium/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-obtainium/</guid><description>&lt;p&gt;Getting software directly from the developer source used to be a hassle on Android. Sideloading APKs meant manually checking GitHub releases, downloading binaries, and installing updates one by one. Obtainium completely changed that equation. It bypasses third-party app stores, letting you track and download releases straight from GitHub, GitLab, Codeberg, and custom sources.&lt;/p&gt;
+&lt;p&gt;If you are trying to clean up your device, ditch Google Play dependencies, or maintain open-source software like ReVanced, mastering Obtainium&amp;rsquo;s import and configuration setup is the fastest way to get your app library running seamlessly.&lt;/p&gt;</description></item></channel></rss>

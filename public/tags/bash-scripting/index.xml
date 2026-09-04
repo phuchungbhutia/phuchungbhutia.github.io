@@ -1,65 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Bash-Scripting on Technical Journal</title>
-    <link>//localhost:1313/tags/bash-scripting/</link>
-    <description>Recent content in Bash-Scripting on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/bash-scripting/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title>
-      <link>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</guid>
-      <description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
-&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Essential Linux Mint Guides: Unlocking Encrypted Drives &amp; Enabling Edge Copilot</title>
-      <link>//localhost:1313/posts/2026-08-04-ssd-mint/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-ssd-mint/</guid>
-      <description>&lt;p&gt;Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&amp;rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Bash-Scripting on Technical Journal</title><link>/tags/bash-scripting/</link><description>Recent content in Bash-Scripting on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/bash-scripting/index.xml" rel="self" type="application/rss+xml"/><item><title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title><link>/posts/2026-08-04-manjaro-time-sync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-manjaro-time-sync/</guid><description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
+&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description></item><item><title>Essential Linux Mint Guides: Unlocking Encrypted Drives &amp; Enabling Edge Copilot</title><link>/posts/2026-08-04-ssd-mint/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-ssd-mint/</guid><description>&lt;p&gt;Navigating Linux Mint often comes with two common scenarios: managing secure, encrypted storage and customizing software features that aren&amp;rsquo;t enabled out of the box. Below is a comprehensive guide covering how to seamlessly access LUKS-encrypted SSDs and how to forcibly enable the Microsoft Edge Copilot sidebar using a simple custom script.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;guide-1-how-to-open-an-encrypted-ssd-in-linux-mint&#34;&gt;Guide 1: How to Open an Encrypted SSD in Linux Mint&lt;/h2&gt;
-&lt;p&gt;Linux Mint relies on &lt;strong&gt;LUKS (Linux Unified Key Setup)&lt;/strong&gt; as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-mint2/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-mint2/</guid>
-      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
-&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-rsync-to-from/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-rsync-to-from/</guid>
-      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
-&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-rsync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-rsync/</guid>
-      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
-&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-dns-rsync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-dns-rsync/</guid>
-      <description>&lt;h1 id=&#34;mastering-linux-administration-secure-dns-setup--automated-rsync-backups&#34;&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
+&lt;h2 id="guide-1-how-to-open-an-encrypted-ssd-in-linux-mint"&gt;Guide 1: How to Open an Encrypted SSD in Linux Mint&lt;/h2&gt;
+&lt;p&gt;Linux Mint relies on &lt;strong&gt;LUKS (Linux Unified Key Setup)&lt;/strong&gt; as its standard disk encryption specification. Accessing your encrypted SSD can be handled via the graphical user interface (GUI) for ease of use or through the terminal for manual control and troubleshooting.&lt;/p&gt;</description></item><item><title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title><link>/posts/2026-08-04-linux-mint2/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-mint2/</guid><description>&lt;h1 id="mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups"&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description></item><item><title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title><link>/posts/2026-08-04-rsync-to-from/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-rsync-to-from/</guid><description>&lt;h1 id="mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups"&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description></item><item><title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title><link>/posts/2026-08-04-rsync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-rsync/</guid><description>&lt;h1 id="mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups"&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description></item><item><title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title><link>/posts/2026-08-04-dns-rsync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-dns-rsync/</guid><description>&lt;h1 id="mastering-linux-administration-secure-dns-setup--automated-rsync-backups"&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
 &lt;p&gt;Managing a Linux workstation effectively requires two critical capabilities: safeguarding network traffic and preserving essential local data. In this guide, we explore how to reconfigure DNS routing on Linux Mint using &lt;code&gt;systemd-resolved&lt;/code&gt;, wrap those queries in encrypted &lt;strong&gt;DNS over TLS (DoT)&lt;/strong&gt;, and structure a bulletproof Bash automated backup workflow with &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;part-1-configuring-permanent-static-dns-on-linux-mint&#34;&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
-&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="part-1-configuring-permanent-static-dns-on-linux-mint"&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
+&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description></item></channel></rss>

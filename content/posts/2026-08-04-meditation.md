@@ -1,6 +1,6 @@
 ---
 title: "Mastering the Mind and Breath: From Prompt Engineering to Tibetan Energy Purification"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: [Mindfulness, Meditation, Prompt Engineering, Spiritual Practice]
 tags: [Nine Purification Breaths, Tibetan Buddhism, Khenpo Ngakchung, Breathwork, Visualization, Prompt Design]
 ---

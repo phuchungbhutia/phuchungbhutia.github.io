@@ -1,6 +1,6 @@
 ---
 title: "Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Data Engineering", "Audit Automation", "Python", "JavaScript"]
 tags: ["eGramSwaraj", "Web Scraping", "Pandas", "Regex", "Bookmarklet", "GovTech", "Audit"]
 ---

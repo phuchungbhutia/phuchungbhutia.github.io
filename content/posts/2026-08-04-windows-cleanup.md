@@ -1,6 +1,6 @@
 ---
 title: "Building an Automated Master Performance Optimizer and Repair Script for Windows 11"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Windows", "System Administration", "Batch Scripting"]
 tags: ["Windows 11", "CMD", "Optimization", "Batch Script", "DISM", "SFC", "NTP Time Sync", "System Maintenance"]
 ---

@@ -1,7 +1,7 @@
 ﻿baseURL: "https://phuchungbhutia.github.io/"
 title: "Technical Journal"
 theme: "PaperMod"
-languageCode: "en"
+locale: "en"
 defaultContentLanguage: "en"
 
 pagination:
@@ -10,6 +10,17 @@ pagination:
 taxonomies:
   category: categories
   tag: tags
+
+# Allow raw HTML blocks in Markdown
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# Keep minification from choking on JSON-LD
+minify:
+  disableJSON: true
+  minifyOutput: true
 
 outputs:
   home:
@@ -46,10 +57,14 @@ params:
   ShowToc: true
   TocOpen: false
 
+  # Disable PaperMod schema to prevent template JSON-LD crashes
+  schema:
+    publisherType: "Person"
+
   profileMode:
     enabled: true
     title: "Phuchung Bhutia"
-    subtitle: "Public Finance | Audit & Governance | Web Development"
+    subtitle: "Web Development"
     buttons:
       - name: Posts
         url: posts/

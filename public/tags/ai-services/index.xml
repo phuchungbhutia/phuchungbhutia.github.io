@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Ai-Services on Technical Journal</title>
-    <link>//localhost:1313/tags/ai-services/</link>
-    <description>Recent content in Ai-Services on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 08:10:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/ai-services/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Choosing an AI Service That Can Earn $100 Per Day: A Beginner&#39;s Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-ai-service2/</link>
-      <pubDate>Wed, 05 Aug 2026 08:10:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ai-service2/</guid>
-      <description>&lt;h1 id=&#34;choosing-an-ai-service-that-can-earn-100-per-day&#34;&gt;Choosing an AI Service That Can Earn $100 Per Day&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Ai-Services on Technical Journal</title><link>/tags/ai-services/</link><description>Recent content in Ai-Services on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 08:10:00 +0530</lastBuildDate><atom:link href="/tags/ai-services/index.xml" rel="self" type="application/rss+xml"/><item><title>Choosing an AI Service That Can Earn $100 Per Day: A Beginner's Guide</title><link>/posts/2026-08-05-ai-service2/</link><pubDate>Wed, 05 Aug 2026 08:10:00 +0530</pubDate><guid>/posts/2026-08-05-ai-service2/</guid><description>&lt;h1 id="choosing-an-ai-service-that-can-earn-100-per-day"&gt;Choosing an AI Service That Can Earn $100 Per Day&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Part 2 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Before you search for clients, you need to answer one question:&lt;/p&gt;
@@ -21,24 +6,21 @@
 &lt;p&gt;This article helps you choose an AI-powered service that is easy to start, requires no investment, and has real market demand.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;h1 id="table-of-contents"&gt;Table of Contents&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#why-most-beginners-fail&#34;&gt;Why Most Beginners Fail&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#the-three-rules-of-a-profitable-ai-service&#34;&gt;The Three Rules of a Profitable AI Service&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#what-makes-a-good-beginner-service&#34;&gt;What Makes a Good Beginner Service?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#15-ai-services-you-can-sell-today&#34;&gt;15 AI Services You Can Sell Today&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#service-comparison-table&#34;&gt;Service Comparison Table&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#pricing-guide&#34;&gt;Pricing Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#choosing-your-niche&#34;&gt;Choosing Your Niche&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#creating-a-simple-offer&#34;&gt;Creating a Simple Offer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#packaging-your-service&#34;&gt;Packaging Your Service&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#common-mistakes&#34;&gt;Common Mistakes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#30-day-growth-roadmap&#34;&gt;30-Day Growth Roadmap&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#key-takeaways&#34;&gt;Key Takeaways&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#why-most-beginners-fail"&gt;Why Most Beginners Fail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-three-rules-of-a-profitable-ai-service"&gt;The Three Rules of a Profitable AI Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#what-makes-a-good-beginner-service"&gt;What Makes a Good Beginner Service?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#15-ai-services-you-can-sell-today"&gt;15 AI Services You Can Sell Today&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#service-comparison-table"&gt;Service Comparison Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pricing-guide"&gt;Pricing Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#choosing-your-niche"&gt;Choosing Your Niche&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#creating-a-simple-offer"&gt;Creating a Simple Offer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#packaging-your-service"&gt;Packaging Your Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#common-mistakes"&gt;Common Mistakes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#30-day-growth-roadmap"&gt;30-Day Growth Roadmap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#key-takeaways"&gt;Key Takeaways&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;why-most-beginners-fail&#34;&gt;Why Most Beginners Fail&lt;/h1&gt;
-&lt;p&gt;Many newcomers make one of these mistakes:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h1 id="why-most-beginners-fail"&gt;Why Most Beginners Fail&lt;/h1&gt;
+&lt;p&gt;Many newcomers make one of these mistakes:&lt;/p&gt;</description></item></channel></rss>

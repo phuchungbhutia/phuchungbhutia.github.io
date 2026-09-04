@@ -1,6 +1,6 @@
 ---
 title: "Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "SysAdmin", "Backup & Storage"]
 tags: ["linux-mint", "rsync", "bash-scripting", "cron", "systemd", "data-backup", "automation"]
 ---

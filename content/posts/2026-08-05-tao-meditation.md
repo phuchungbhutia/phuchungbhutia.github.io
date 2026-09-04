@@ -1,6 +1,6 @@
 ---
 title: "A Beginner's Guide to Taoist Energy Meditation: Understanding the Three Tan Tiens"
-date: 2026-08-05 02:57:00 +0000
+date: "2026-08-05T02:57:00+05:30"
 categories: [meditation]
 tags: [taoism, meditation, qi, energy, visualization, mindfulness, beginners]
 ---

@@ -1,95 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals | Technical Journal</title>
-<meta name="keywords" content="eGramSwaraj, Sikkim LFA, Bookmarklet, Async JS, Regex, DOM Mining">
-<meta name="description" content="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals | Technical Journal</title><meta name=keywords content="eGramSwaraj,Sikkim LFA,Bookmarklet,Async JS,Regex,DOM Mining"><meta name=description content="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale
 Extracting local governance financial data from Indian public portals—such as eGramSwaraj and the Sikkim Local Fund Audit (LFA)—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (FileRedirect.jsp), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.
-When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-bookmarklet-scraper/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-bookmarklet-scraper/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-bookmarklet-scraper/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals">
-  <meta property="og:description" content="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale Extracting local governance financial data from Indian public portals—such as eGramSwaraj and the Sikkim Local Fund Audit (LFA)—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (FileRedirect.jsp), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.
-When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:tag" content="EGramSwaraj">
-    <meta property="article:tag" content="Sikkim LFA">
-    <meta property="article:tag" content="Bookmarklet">
-    <meta property="article:tag" content="Async JS">
-    <meta property="article:tag" content="Regex">
-    <meta property="article:tag" content="DOM Mining">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals">
-  <meta name="twitter:description" content="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale Extracting local governance financial data from Indian public portals—such as eGramSwaraj and the Sikkim Local Fund Audit (LFA)—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (FileRedirect.jsp), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.
-When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.">
-
-
-<script type="application/ld+json">
+When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-bookmarklet-scraper/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-bookmarklet-scraper/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-bookmarklet-scraper/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals"><meta property="og:description" content="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale Extracting local governance financial data from Indian public portals—such as eGramSwaraj and the Sikkim Local Fund Audit (LFA)—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (FileRedirect.jsp), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.
+When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="EGramSwaraj"><meta property="article:tag" content="Sikkim LFA"><meta property="article:tag" content="Bookmarklet"><meta property="article:tag" content="Async JS"><meta property="article:tag" content="Regex"><meta property="article:tag" content="DOM Mining"><meta name=twitter:card content="summary"><meta name=twitter:title content="Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals"><meta name=twitter:description content="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale Extracting local governance financial data from Indian public portals—such as eGramSwaraj and the Sikkim Local Fund Audit (LFA)—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (FileRedirect.jsp), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.
+When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -98,18 +11,17 @@ When scraping thousands of voucher reports across dynamic financial years, stand
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals",
-      "item": "//localhost:1313/posts/2026-08-04-bookmarklet-scraper/"
+      "item": "/posts/2026-08-04-bookmarklet-scraper/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -122,419 +34,91 @@ When scraping thousands of voucher reports across dynamic financial years, stand
   "articleBody": "Deep-Dive Engineering: Scraping Government Accounting Portals at Scale Extracting local governance financial data from Indian public portals—such as eGramSwaraj and the Sikkim Local Fund Audit (LFA)—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (FileRedirect.jsp), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.\nWhen scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.\nThis post covers the end-to-end engineering journey of building, troubleshooting, and optimizing a specialized, zero-dependency Parallel JavaScript Bookmarklet Scraper.\n1. Architectural Blueprint \u0026 Technical Challenges The target architecture requires extracting accounting records across three distinct navigational layers:\n[Yearly Summary Page (April–March)]\r│\r▼\r[Monthly Voucher Report Links]\r│\r▼\r[Individual Voucher Details] ──► Extract Table Rows ──► Compile CSV Key Technical Obstacles The Metadata Drift Issue: When pages open via helper controllers like FileRedirect.jsp?FD=ExpFY2022-2023/11\u0026name=254775.html, the standard HTML headers containing text like \"Financial Year : 2022-2023\" are missing from the DOM tree. Naive scrapers fail their standard DOM query selectors (.card-header, .table) and fall back to hardcoded defaults (e.g., 2025-2026). This causes data for 2022-2023 to save incorrectly as accounts-254775-2025-2026.csv. The Sequential Fetch Bottleneck: Executing await fetch() in a standard for...of loop creates an execution queue where each HTTP request must finish before the next begins. With 50–200 vouchers per month across 12 months, sequential processing takes up to 20 minutes per Gram Panchayat (GP). Bookmarklet Compression Collapses: Browsers collapse multi-line bookmarklet source code into a single continuous string. Single-line JavaScript comments (//) cause the remainder of the script to be treated as text, resulting in the runtime error: Uncaught SyntaxError: Unexpected end of input. 2. Iterative Technical Solutions Solution A: URL-First Metadata Extraction To guarantee the correct Financial Year (FY) and Gram Panchayat (GP) code regardless of DOM rendering delays, we shifted from DOM-only parsing to a URL-First Regular Expression strategy.\n/* 1. Extract Local Body / GP Code from Query Strings */ const urlParams = new URLSearchParams(window.location.search); let gpuNo = urlParams.get('localBodyCode') || urlParams.get('name') || \"Unknown\"; gpuNo = gpuNo.replace('.html', ''); /* 2. Extract Financial Year (yyyy-yyyy) via Pattern Matching */ let fy = \"\"; const urlMatch = window.location.href.match(/20\\d{2}-20\\d{2}/); if (urlMatch) { fy = urlMatch[0]; // Matches e.g. \"2022-2023\" directly from ExpFY2022-2023 } else { // Fallback: Scan full body text if absent from URL const pageMatch = document.body.innerText.match(/20\\d{2}-20\\d{2}/); fy = pageMatch ? pageMatch[0] : \"Unknown-FY\"; } const fileName = `accounts-${gpuNo}-${fy}.csv`; By prioritizing window.location.href, the script reads parameters like ExpFY2022-2023 straight from the address bar, guaranteeing 100% accurate file naming even on sparse helper pages.\nSolution B: Parallel Batching with Promise.all() To drastically increase performance without causing Denial-of-Service (DoS) triggers on target government web servers, we engineered a chunked parallel worker execution model.\n/* Parallel Batch Processing Engine */ async function scrapeVoucher(v) { try { let vp = await fetch(v.u, { credentials: \"include\" }).then(r =\u003e r.text()); let vd = (new DOMParser()).parseFromString(vp, \"text/html\"); let rows = Array.from(vd.querySelectorAll('table tr')).map(tr =\u003e Array.from(tr.querySelectorAll('td, th')) .map(td =\u003e `\"${td.innerText.trim().replace(/\"/g, '\"\"')}\"`) .join(',') ); rows.forEach(r =\u003e { if (r.length \u003e 20) { csv += `\"${m.m}\",\"${v.t}\",\"${v.i}\",${r}\\n`; } }); } catch (err) { console.error(`Error fetching voucher ${v.i}:`, err); } } /* Process in concurrent batches of 5 */ const BATCH_SIZE = 5; for (let i = 0; i \u003c vL.length; i += BATCH_SIZE) { let batch = vL.slice(i, i + BATCH_SIZE); await Promise.all(batch.map(v =\u003e scrapeVoucher(v))); await new Promise(s =\u003e setTimeout(s, 100)); // Throttling rest interval } This reduced full-year extraction times from ~18 minutes down to under 2 minutes per GP code.\nSolution C: Bookmarklet Minification \u0026 Syntax Sanitization To make the script executable across Google Chrome, Mozilla Firefox, and Microsoft Edge bookmark managers, all single-line comments were replaced, string quotes escaped, and whitespace stripped.\n3. Production Bookmarklet Code Copy the minified script below and paste it directly into your browser’s Bookmark URL/Location field:\njavascript:(function(){(async function(){console.log(\"🚀 Starting Parallel Deep Extraction for Sikkim LFA...\");const urlParams=new URLSearchParams(window.location.search);let gpuNo=urlParams.get('localBodyCode')||urlParams.get('name')||\"Unknown\";gpuNo=gpuNo.replace('.html','');let fy=\"\";const urlMatch=window.location.href.match(/20\\d{2}-20\\d{2}/);if(urlMatch){fy=urlMatch[0]}else{const pageMatch=document.body.innerText.match(/20\\d{2}-20\\d{2}/);if(pageMatch){fy=pageMatch[0]}else{fy=\"Unknown-FY\"}}const fileName=`accounts-${gpuNo}-${fy}.csv`;let links=Array.from(document.querySelectorAll('a[href*=\"voucherWiseReport.do\"]')).map(a=\u003e({m:a.innerText.trim(),u:a.href}));if(links.length===0){alert(\"Error: Stay on the Yearly Summary page showing April-March.\");return}let csv=\"Month,Type,VoucherID,Data\\n\";alert(`⚡ Turbo mode active!\\nGP Code: ${gpuNo}\\nFinancial Year: ${fy}\\nProcessing months in parallel...`);for(let m of links){console.log(`📅 Scraping Month: ${m.m}`);let p=await fetch(m.u,{credentials:\"include\"}).then(r=\u003er.text());let d=(new DOMParser()).parseFromString(p,\"text/html\");let vL=Array.from(d.querySelectorAll('a[href*=\"VoucherDetail.do\"]')).map(a=\u003e({i:a.innerText.trim(),u:a.href,t:a.href.toLowerCase().includes(\"payment\")?\"Payment\":\"Receipt\"}));console.log(`Found ${vL.length} vouchers in ${m.m}. Fetching...`);async function scrapeVoucher(v){try{let vp=await fetch(v.u,{credentials:\"include\"}).then(r=\u003er.text());let vd=(new DOMParser()).parseFromString(vp,\"text/html\");let rows=Array.from(vd.querySelectorAll('table tr')).map(tr=\u003eArray.from(tr.querySelectorAll('td,th')).map(td=\u003e`\"${td.innerText.trim().replace(/\"/g,'\"\"')}\"`).join(','));rows.forEach(r=\u003e{if(r.length\u003e20){csv+=`\"${m.m}\",\"${v.t}\",\"${v.i}\",${r}\\n`}})}catch(err){console.error(`Error fetching voucher ${v.i}:`,err)}}const BATCH_SIZE=5;for(let i=0;i\u003cvL.length;i+=BATCH_SIZE){let batch=vL.slice(i,i+BATCH_SIZE);await Promise.all(batch.map(v=\u003escrapeVoucher(v)));await new Promise(s=\u003esetTimeout(s,100))}}let b=new Blob([csv],{type:\"text/csv;charset=utf-8;\"});let l=document.createElement(\"a\");l.href=URL.createObjectURL(b);l.download=fileName;l.click();console.log(`✅ Success! File saved as: ${fileName}`)})()})(); 4. Execution Workflow Navigate: Open the eGramSwaraj or Sikkim LFA portal to the target Yearly Voucher Summary page (displaying monthly links from April to March). Trigger: Click the bookmarklet in your browser’s favorites bar. Verify Prompt: Confirm the popup modal reads the correct Gram Panchayat Code and Financial Year (e.g., GP Code: 254775, Financial Year: 2022-2023). Automated Export: The browser will perform asynchronous batch fetches in memory and generate a structured CSV download formatted as accounts-254775-2022-2023.csv. 5. Summary Matrix Metric / Feature Baseline Sequential Script Optimized Bookmarklet Average Execution Time ~18 - 25 Minutes ~1.5 - 2 Minutes Concurrency Model Single Threaded (1 request) Parallel Batches (5 requests) Metadata Accuracy Fails on JSP redirects (defaults to 2025-2026) URL-First Regex (reads true FY) Browser Compatibility Syntax errors on line collapse Minified single-line execution ",
   "wordCount" : "874",
   "inLanguage": "en",
-  "datePublished": "2026-08-04T00:00:00Z",
-  "dateModified": "2026-08-04T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-bookmarklet-scraper/"
+    "@id": "/posts/2026-08-04-bookmarklet-scraper/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#deep-dive-engineering-scraping-government-accounting-portals-at-scale" aria-label="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale">Deep-Dive Engineering: Scraping Government Accounting Portals at Scale</a><ul>
-                    
-            <li>
-                <a href="#1-architectural-blueprint--technical-challenges" aria-label="1. Architectural Blueprint &amp; Technical Challenges">1. Architectural Blueprint &amp; Technical Challenges</a><ul>
-                    
-            <li>
-                <a href="#key-technical-obstacles" aria-label="Key Technical Obstacles">Key Technical Obstacles</a></li></ul>
-            </li>
-            <li>
-                <a href="#2-iterative-technical-solutions" aria-label="2. Iterative Technical Solutions">2. Iterative Technical Solutions</a><ul>
-                    
-            <li>
-                <a href="#solution-a-url-first-metadata-extraction" aria-label="Solution A: URL-First Metadata Extraction">Solution A: URL-First Metadata Extraction</a></li>
-            <li>
-                <a href="#solution-b-parallel-batching-with-promiseall" aria-label="Solution B: Parallel Batching with Promise.all()">Solution B: Parallel Batching with Promise.all()</a></li>
-            <li>
-                <a href="#solution-c-bookmarklet-minification--syntax-sanitization" aria-label="Solution C: Bookmarklet Minification &amp; Syntax Sanitization">Solution C: Bookmarklet Minification &amp; Syntax Sanitization</a></li></ul>
-            </li>
-            <li>
-                <a href="#3-production-bookmarklet-code" aria-label="3. Production Bookmarklet Code">3. Production Bookmarklet Code</a></li>
-            <li>
-                <a href="#4-execution-workflow" aria-label="4. Execution Workflow">4. Execution Workflow</a></li>
-            <li>
-                <a href="#5-summary-matrix" aria-label="5. Summary Matrix">5. Summary Matrix</a>
-            </li>
-        </ul>
-        </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="deep-dive-engineering-scraping-government-accounting-portals-at-scale">Deep-Dive Engineering: Scraping Government Accounting Portals at Scale<a hidden class="anchor" aria-hidden="true" href="#deep-dive-engineering-scraping-government-accounting-portals-at-scale">#</a></h1>
-<p>Extracting local governance financial data from Indian public portals—such as <strong>eGramSwaraj</strong> and the <strong>Sikkim Local Fund Audit (LFA)</strong>—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (<code>FileRedirect.jsp</code>), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.</p>
-<p>When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.</p>
-<p>This post covers the end-to-end engineering journey of building, troubleshooting, and optimizing a specialized, zero-dependency <strong>Parallel JavaScript Bookmarklet Scraper</strong>.</p>
-<hr>
-<h2 id="1-architectural-blueprint--technical-challenges">1. Architectural Blueprint &amp; Technical Challenges<a hidden class="anchor" aria-hidden="true" href="#1-architectural-blueprint--technical-challenges">#</a></h2>
-<p>The target architecture requires extracting accounting records across three distinct navigational layers:</p>
-<pre tabindex="0"><code>[Yearly Summary Page (April–March)]
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#deep-dive-engineering-scraping-government-accounting-portals-at-scale aria-label="Deep-Dive Engineering: Scraping Government Accounting Portals at Scale">Deep-Dive Engineering: Scraping Government Accounting Portals at Scale</a><ul><li><a href=#1-architectural-blueprint--technical-challenges aria-label="1. Architectural Blueprint & Technical Challenges">1. Architectural Blueprint & Technical Challenges</a><ul><li><a href=#key-technical-obstacles aria-label="Key Technical Obstacles">Key Technical Obstacles</a></li></ul></li><li><a href=#2-iterative-technical-solutions aria-label="2. Iterative Technical Solutions">2. Iterative Technical Solutions</a><ul><li><a href=#solution-a-url-first-metadata-extraction aria-label="Solution A: URL-First Metadata Extraction">Solution A: URL-First Metadata Extraction</a></li><li><a href=#solution-b-parallel-batching-with-promiseall aria-label="Solution B: Parallel Batching with Promise.all()">Solution B: Parallel Batching with Promise.all()</a></li><li><a href=#solution-c-bookmarklet-minification--syntax-sanitization aria-label="Solution C: Bookmarklet Minification & Syntax Sanitization">Solution C: Bookmarklet Minification & Syntax Sanitization</a></li></ul></li><li><a href=#3-production-bookmarklet-code aria-label="3. Production Bookmarklet Code">3. Production Bookmarklet Code</a></li><li><a href=#4-execution-workflow aria-label="4. Execution Workflow">4. Execution Workflow</a></li><li><a href=#5-summary-matrix aria-label="5. Summary Matrix">5. Summary Matrix</a></li></ul></li></ul></div></details><div class="post-content md-content"><h1 id=deep-dive-engineering-scraping-government-accounting-portals-at-scale>Deep-Dive Engineering: Scraping Government Accounting Portals at Scale<a hidden class=anchor aria-hidden=true href=#deep-dive-engineering-scraping-government-accounting-portals-at-scale>#</a></h1><p>Extracting local governance financial data from Indian public portals—such as <strong>eGramSwaraj</strong> and the <strong>Sikkim Local Fund Audit (LFA)</strong>—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (<code>FileRedirect.jsp</code>), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.</p><p>When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.</p><p>This post covers the end-to-end engineering journey of building, troubleshooting, and optimizing a specialized, zero-dependency <strong>Parallel JavaScript Bookmarklet Scraper</strong>.</p><hr><h2 id=1-architectural-blueprint--technical-challenges>1. Architectural Blueprint & Technical Challenges<a hidden class=anchor aria-hidden=true href=#1-architectural-blueprint--technical-challenges>#</a></h2><p>The target architecture requires extracting accounting records across three distinct navigational layers:</p><pre tabindex=0><code>[Yearly Summary Page (April–March)]
           │
           ▼
  [Monthly Voucher Report Links]
           │
           ▼
   [Individual Voucher Details] ──► Extract Table Rows ──► Compile CSV
-</code></pre><h3 id="key-technical-obstacles">Key Technical Obstacles<a hidden class="anchor" aria-hidden="true" href="#key-technical-obstacles">#</a></h3>
-<ul>
-<li><strong>The Metadata Drift Issue:</strong> When pages open via helper controllers like <code>FileRedirect.jsp?FD=ExpFY2022-2023/11&amp;name=254775.html</code>, the standard HTML headers containing text like <code>&quot;Financial Year : 2022-2023&quot;</code> are missing from the DOM tree. Naive scrapers fail their standard DOM query selectors (<code>.card-header</code>, <code>.table</code>) and fall back to hardcoded defaults (e.g., <code>2025-2026</code>). This causes data for <code>2022-2023</code> to save incorrectly as <code>accounts-254775-2025-2026.csv</code>.</li>
-<li><strong>The Sequential Fetch Bottleneck:</strong> Executing <code>await fetch()</code> in a standard <code>for...of</code> loop creates an execution queue where each HTTP request must finish before the next begins. With 50–200 vouchers per month across 12 months, sequential processing takes up to 20 minutes per Gram Panchayat (GP).</li>
-<li><strong>Bookmarklet Compression Collapses:</strong> Browsers collapse multi-line bookmarklet source code into a single continuous string. Single-line JavaScript comments (<code>//</code>) cause the remainder of the script to be treated as text, resulting in the runtime error:
-<code>Uncaught SyntaxError: Unexpected end of input</code>.</li>
-</ul>
-<hr>
-<h2 id="2-iterative-technical-solutions">2. Iterative Technical Solutions<a hidden class="anchor" aria-hidden="true" href="#2-iterative-technical-solutions">#</a></h2>
-<h3 id="solution-a-url-first-metadata-extraction">Solution A: URL-First Metadata Extraction<a hidden class="anchor" aria-hidden="true" href="#solution-a-url-first-metadata-extraction">#</a></h3>
-<p>To guarantee the correct Financial Year (FY) and Gram Panchayat (GP) code regardless of DOM rendering delays, we shifted from DOM-only parsing to a <strong>URL-First Regular Expression strategy</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">/* 1. Extract Local Body / GP Code from Query Strings */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">urlParams</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gpuNo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;localBodyCode&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">urlParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;Unknown&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gpuNo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gpuNo</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;.html&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 2. Extract Financial Year (yyyy-yyyy) via Pattern Matching */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fy</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">urlMatch</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/20\d{2}-20\d{2}/</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">urlMatch</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">urlMatch</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#75715e">// Matches e.g. &#34;2022-2023&#34; directly from ExpFY2022-2023
-</span></span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Fallback: Scan full body text if absent from URL
-</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageMatch</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/20\d{2}-20\d{2}/</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pageMatch</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">pageMatch</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Unknown-FY&#34;</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`accounts-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">gpuNo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fy</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.csv`</span>;
-</span></span></code></pre></div><p>By prioritizing <code>window.location.href</code>, the script reads parameters like <code>ExpFY2022-2023</code> straight from the address bar, guaranteeing 100% accurate file naming even on sparse helper pages.</p>
-<hr>
-<h3 id="solution-b-parallel-batching-with-promiseall">Solution B: Parallel Batching with <code>Promise.all()</code><a hidden class="anchor" aria-hidden="true" href="#solution-b-parallel-batching-with-promiseall">#</a></h3>
-<p>To drastically increase performance without causing Denial-of-Service (DoS) triggers on target government web servers, we engineered a <strong>chunked parallel worker execution model</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">/* Parallel Batch Processing Engine */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrapeVoucher</span>(<span style="color:#a6e22e">v</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">u</span>, { <span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;include&#34;</span> }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span> =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>());
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vd</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMParser</span>()).<span style="color:#a6e22e">parseFromString</span>(<span style="color:#a6e22e">vp</span>, <span style="color:#e6db74">&#34;text/html&#34;</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rows</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">vd</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;table tr&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">tr</span> =&gt; 
-</span></span><span style="display:flex;"><span>            Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;td, th&#39;</span>))
-</span></span><span style="display:flex;"><span>                 .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">td</span> =&gt; <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">td</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&#34;/g</span>, <span style="color:#e6db74">&#39;&#34;&#34;&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>)
-</span></span><span style="display:flex;"><span>                 .<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>)
-</span></span><span style="display:flex;"><span>        );
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">r</span> =&gt; {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>) {
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">csv</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">m</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">t</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">r</span><span style="color:#e6db74">}</span><span style="color:#e6db74">\n`</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">`Error fetching voucher </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:`</span>, <span style="color:#a6e22e">err</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Process in concurrent batches of 5 */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BATCH_SIZE</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">vL</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">BATCH_SIZE</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">batch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vL</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">BATCH_SIZE</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> Promise.<span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">batch</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">v</span> =&gt; <span style="color:#a6e22e">scrapeVoucher</span>(<span style="color:#a6e22e">v</span>)));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">s</span> =&gt; <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">100</span>)); <span style="color:#75715e">// Throttling rest interval
-</span></span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This reduced full-year extraction times from <strong>~18 minutes down to under 2 minutes</strong> per GP code.</p>
-<hr>
-<h3 id="solution-c-bookmarklet-minification--syntax-sanitization">Solution C: Bookmarklet Minification &amp; Syntax Sanitization<a hidden class="anchor" aria-hidden="true" href="#solution-c-bookmarklet-minification--syntax-sanitization">#</a></h3>
-<p>To make the script executable across Google Chrome, Mozilla Firefox, and Microsoft Edge bookmark managers, all single-line comments were replaced, string quotes escaped, and whitespace stripped.</p>
-<hr>
-<h2 id="3-production-bookmarklet-code">3. Production Bookmarklet Code<a hidden class="anchor" aria-hidden="true" href="#3-production-bookmarklet-code">#</a></h2>
-<p>Copy the minified script below and paste it directly into your browser&rsquo;s Bookmark URL/Location field:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span>(<span style="color:#66d9ef">function</span>(){(<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span>(){<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;🚀 Starting Parallel Deep Extraction for Sikkim LFA...&#34;</span>);<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">urlParams</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>);<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gpuNo</span><span style="color:#f92672">=</span><span style="color:#a6e22e">urlParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;localBodyCode&#39;</span>)<span style="color:#f92672">||</span><span style="color:#a6e22e">urlParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>)<span style="color:#f92672">||</span><span style="color:#e6db74">&#34;Unknown&#34;</span>;<span style="color:#a6e22e">gpuNo</span><span style="color:#f92672">=</span><span style="color:#a6e22e">gpuNo</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;.html&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>);<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>;<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">urlMatch</span><span style="color:#f92672">=</span>window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/20\d{2}-20\d{2}/</span>);<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">urlMatch</span>){<span style="color:#a6e22e">fy</span><span style="color:#f92672">=</span><span style="color:#a6e22e">urlMatch</span>[<span style="color:#ae81ff">0</span>]}<span style="color:#66d9ef">else</span>{<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageMatch</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/20\d{2}-20\d{2}/</span>);<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">pageMatch</span>){<span style="color:#a6e22e">fy</span><span style="color:#f92672">=</span><span style="color:#a6e22e">pageMatch</span>[<span style="color:#ae81ff">0</span>]}<span style="color:#66d9ef">else</span>{<span style="color:#a6e22e">fy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Unknown-FY&#34;</span>}}<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileName</span><span style="color:#f92672">=</span><span style="color:#e6db74">`accounts-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">gpuNo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fy</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.csv`</span>;<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">links</span><span style="color:#f92672">=</span>Array.<span style="color:#a6e22e">from</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;a[href*=&#34;voucherWiseReport.do&#34;]&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span>=&gt;({<span style="color:#a6e22e">m</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>(),<span style="color:#a6e22e">u</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>}));<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">links</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">===</span><span style="color:#ae81ff">0</span>){<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Error: Stay on the Yearly Summary page showing April-March.&#34;</span>);<span style="color:#66d9ef">return</span>}<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">csv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Month,Type,VoucherID,Data\n&#34;</span>;<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">`⚡ Turbo mode active!\nGP Code: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">gpuNo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">\nFinancial Year: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fy</span><span style="color:#e6db74">}</span><span style="color:#e6db74">\nProcessing months in parallel...`</span>);<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">links</span>){<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`📅 Scraping Month: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">m</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span><span style="color:#f92672">=</span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">u</span>,{<span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;include&#34;</span>}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span>=&gt;<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>());<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMParser</span>()).<span style="color:#a6e22e">parseFromString</span>(<span style="color:#a6e22e">p</span>,<span style="color:#e6db74">&#34;text/html&#34;</span>);<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vL</span><span style="color:#f92672">=</span>Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;a[href*=&#34;VoucherDetail.do&#34;]&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">a</span>=&gt;({<span style="color:#a6e22e">i</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>(),<span style="color:#a6e22e">u</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>,<span style="color:#a6e22e">t</span><span style="color:#f92672">:</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span>.<span style="color:#a6e22e">toLowerCase</span>().<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#34;payment&#34;</span>)<span style="color:#f92672">?</span><span style="color:#e6db74">&#34;Payment&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;Receipt&#34;</span>}));<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Found </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">vL</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> vouchers in </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">m</span><span style="color:#e6db74">}</span><span style="color:#e6db74">. Fetching...`</span>);<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrapeVoucher</span>(<span style="color:#a6e22e">v</span>){<span style="color:#66d9ef">try</span>{<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vp</span><span style="color:#f92672">=</span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">u</span>,{<span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;include&#34;</span>}).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span>=&gt;<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>());<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vd</span><span style="color:#f92672">=</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DOMParser</span>()).<span style="color:#a6e22e">parseFromString</span>(<span style="color:#a6e22e">vp</span>,<span style="color:#e6db74">&#34;text/html&#34;</span>);<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span>Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">vd</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;table tr&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">tr</span>=&gt;Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;td,th&#39;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">td</span>=&gt;<span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">td</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&#34;/g</span>,<span style="color:#e6db74">&#39;&#34;&#34;&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>));<span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">r</span>=&gt;{<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">20</span>){<span style="color:#a6e22e">csv</span><span style="color:#f92672">+=</span><span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">m</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">t</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;,</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">r</span><span style="color:#e6db74">}</span><span style="color:#e6db74">\n`</span>}})}<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span>){<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">`Error fetching voucher </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:`</span>,<span style="color:#a6e22e">err</span>)}}<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BATCH_SIZE</span><span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>;<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">vL</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">+=</span><span style="color:#a6e22e">BATCH_SIZE</span>){<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">batch</span><span style="color:#f92672">=</span><span style="color:#a6e22e">vL</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#a6e22e">BATCH_SIZE</span>);<span style="color:#66d9ef">await</span> Promise.<span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">batch</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">v</span>=&gt;<span style="color:#a6e22e">scrapeVoucher</span>(<span style="color:#a6e22e">v</span>)));<span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">s</span>=&gt;<span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">s</span>,<span style="color:#ae81ff">100</span>))}}<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">csv</span>],{<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;text/csv;charset=utf-8;&#34;</span>});<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">l</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">b</span>);<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">download</span><span style="color:#f92672">=</span><span style="color:#a6e22e">fileName</span>;<span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">click</span>();<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`✅ Success! File saved as: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)})()})();
-</span></span></code></pre></div><hr>
-<h2 id="4-execution-workflow">4. Execution Workflow<a hidden class="anchor" aria-hidden="true" href="#4-execution-workflow">#</a></h2>
-<ol>
-<li><strong>Navigate:</strong> Open the eGramSwaraj or Sikkim LFA portal to the target <strong>Yearly Voucher Summary</strong> page (displaying monthly links from April to March).</li>
-<li><strong>Trigger:</strong> Click the bookmarklet in your browser&rsquo;s favorites bar.</li>
-<li><strong>Verify Prompt:</strong> Confirm the popup modal reads the correct Gram Panchayat Code and Financial Year (e.g., <code>GP Code: 254775</code>, <code>Financial Year: 2022-2023</code>).</li>
-<li><strong>Automated Export:</strong> The browser will perform asynchronous batch fetches in memory and generate a structured CSV download formatted as <code>accounts-254775-2022-2023.csv</code>.</li>
-</ol>
-<hr>
-<h2 id="5-summary-matrix">5. Summary Matrix<a hidden class="anchor" aria-hidden="true" href="#5-summary-matrix">#</a></h2>
-<table>
-	<thead>
-			<tr>
-					<th>Metric / Feature</th>
-					<th>Baseline Sequential Script</th>
-					<th>Optimized Bookmarklet</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><strong>Average Execution Time</strong></td>
-					<td>~18 - 25 Minutes</td>
-					<td><strong>~1.5 - 2 Minutes</strong></td>
-			</tr>
-			<tr>
-					<td><strong>Concurrency Model</strong></td>
-					<td>Single Threaded (<code>1 request</code>)</td>
-					<td><strong>Parallel Batches (<code>5 requests</code>)</strong></td>
-			</tr>
-			<tr>
-					<td><strong>Metadata Accuracy</strong></td>
-					<td>Fails on JSP redirects (defaults to <code>2025-2026</code>)</td>
-					<td><strong>URL-First Regex (reads true FY)</strong></td>
-			</tr>
-			<tr>
-					<td><strong>Browser Compatibility</strong></td>
-					<td>Syntax errors on line collapse</td>
-					<td><strong>Minified single-line execution</strong></td>
-			</tr>
-	</tbody>
-</table>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/egramswaraj/">EGramSwaraj</a></li>
-      <li><a href="//localhost:1313/tags/sikkim-lfa/">Sikkim LFA</a></li>
-      <li><a href="//localhost:1313/tags/bookmarklet/">Bookmarklet</a></li>
-      <li><a href="//localhost:1313/tags/async-js/">Async JS</a></li>
-      <li><a href="//localhost:1313/tags/regex/">Regex</a></li>
-      <li><a href="//localhost:1313/tags/dom-mining/">DOM Mining</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-sip-10k/">
-    <span class="title">« Prev</span>
-    <span>Building a High-Conviction ₹10,000 Monthly SIP Portfolio: A Quantitative 10-5-2-1 Guide for 2040 Retirement</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-pdf2md/">
-    <span class="title">Next »</span>
-    <span>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><h3 id=key-technical-obstacles>Key Technical Obstacles<a hidden class=anchor aria-hidden=true href=#key-technical-obstacles>#</a></h3><ul><li><strong>The Metadata Drift Issue:</strong> When pages open via helper controllers like <code>FileRedirect.jsp?FD=ExpFY2022-2023/11&amp;name=254775.html</code>, the standard HTML headers containing text like <code>"Financial Year : 2022-2023"</code> are missing from the DOM tree. Naive scrapers fail their standard DOM query selectors (<code>.card-header</code>, <code>.table</code>) and fall back to hardcoded defaults (e.g., <code>2025-2026</code>). This causes data for <code>2022-2023</code> to save incorrectly as <code>accounts-254775-2025-2026.csv</code>.</li><li><strong>The Sequential Fetch Bottleneck:</strong> Executing <code>await fetch()</code> in a standard <code>for...of</code> loop creates an execution queue where each HTTP request must finish before the next begins. With 50–200 vouchers per month across 12 months, sequential processing takes up to 20 minutes per Gram Panchayat (GP).</li><li><strong>Bookmarklet Compression Collapses:</strong> Browsers collapse multi-line bookmarklet source code into a single continuous string. Single-line JavaScript comments (<code>//</code>) cause the remainder of the script to be treated as text, resulting in the runtime error:
+<code>Uncaught SyntaxError: Unexpected end of input</code>.</li></ul><hr><h2 id=2-iterative-technical-solutions>2. Iterative Technical Solutions<a hidden class=anchor aria-hidden=true href=#2-iterative-technical-solutions>#</a></h2><h3 id=solution-a-url-first-metadata-extraction>Solution A: URL-First Metadata Extraction<a hidden class=anchor aria-hidden=true href=#solution-a-url-first-metadata-extraction>#</a></h3><p>To guarantee the correct Financial Year (FY) and Gram Panchayat (GP) code regardless of DOM rendering delays, we shifted from DOM-only parsing to a <strong>URL-First Regular Expression strategy</strong>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/* 1. Extract Local Body / GP Code from Query Strings */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>urlParams</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>URLSearchParams</span>(window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>search</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>gpuNo</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>urlParams</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;localBodyCode&#39;</span>) <span style=color:#f92672>||</span> <span style=color:#a6e22e>urlParams</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;name&#39;</span>) <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;Unknown&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>gpuNo</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>gpuNo</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>&#39;.html&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* 2. Extract Financial Year (yyyy-yyyy) via Pattern Matching */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fy</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>urlMatch</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>href</span>.<span style=color:#a6e22e>match</span>(<span style=color:#e6db74>/20\d{2}-20\d{2}/</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>urlMatch</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fy</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>urlMatch</span>[<span style=color:#ae81ff>0</span>]; <span style=color:#75715e>// Matches e.g. &#34;2022-2023&#34; directly from ExpFY2022-2023
+</span></span></span><span style=display:flex><span>} <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Fallback: Scan full body text if absent from URL
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pageMatch</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>match</span>(<span style=color:#e6db74>/20\d{2}-20\d{2}/</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fy</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>pageMatch</span> <span style=color:#f92672>?</span> <span style=color:#a6e22e>pageMatch</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Unknown-FY&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`accounts-</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>gpuNo</span><span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fy</span><span style=color:#e6db74>}</span><span style=color:#e6db74>.csv`</span>;
+</span></span></code></pre></div><p>By prioritizing <code>window.location.href</code>, the script reads parameters like <code>ExpFY2022-2023</code> straight from the address bar, guaranteeing 100% accurate file naming even on sparse helper pages.</p><hr><h3 id=solution-b-parallel-batching-with-promiseall>Solution B: Parallel Batching with <code>Promise.all()</code><a hidden class=anchor aria-hidden=true href=#solution-b-parallel-batching-with-promiseall>#</a></h3><p>To drastically increase performance without causing Denial-of-Service (DoS) triggers on target government web servers, we engineered a <strong>chunked parallel worker execution model</strong>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/* Parallel Batch Processing Engine */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>scrapeVoucher</span>(<span style=color:#a6e22e>v</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>vp</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>u</span>, { <span style=color:#a6e22e>credentials</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;include&#34;</span> }).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>r</span> =&gt; <span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>text</span>());
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>vd</span> <span style=color:#f92672>=</span> (<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>DOMParser</span>()).<span style=color:#a6e22e>parseFromString</span>(<span style=color:#a6e22e>vp</span>, <span style=color:#e6db74>&#34;text/html&#34;</span>);
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>rows</span> <span style=color:#f92672>=</span> Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>vd</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;table tr&#39;</span>)).<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>tr</span> =&gt; 
+</span></span><span style=display:flex><span>            Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>tr</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;td, th&#39;</span>))
+</span></span><span style=display:flex><span>                 .<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>td</span> =&gt; <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>td</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>trim</span>().<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/&#34;/g</span>, <span style=color:#e6db74>&#39;&#34;&#34;&#39;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>)
+</span></span><span style=display:flex><span>                 .<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#39;,&#39;</span>)
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>rows</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>r</span> =&gt; {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>20</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>csv</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>m</span>.<span style=color:#a6e22e>m</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>t</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>i</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;,</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>r</span><span style=color:#e6db74>}</span><span style=color:#e6db74>\n`</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>`Error fetching voucher </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>i</span><span style=color:#e6db74>}</span><span style=color:#e6db74>:`</span>, <span style=color:#a6e22e>err</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* Process in concurrent batches of 5 */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>BATCH_SIZE</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>vL</span>.<span style=color:#a6e22e>length</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>BATCH_SIZE</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>batch</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>vL</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>BATCH_SIZE</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>await</span> Promise.<span style=color:#a6e22e>all</span>(<span style=color:#a6e22e>batch</span>.<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>v</span> =&gt; <span style=color:#a6e22e>scrapeVoucher</span>(<span style=color:#a6e22e>v</span>)));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>new</span> Promise(<span style=color:#a6e22e>s</span> =&gt; <span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>s</span>, <span style=color:#ae81ff>100</span>)); <span style=color:#75715e>// Throttling rest interval
+</span></span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This reduced full-year extraction times from <strong>~18 minutes down to under 2 minutes</strong> per GP code.</p><hr><h3 id=solution-c-bookmarklet-minification--syntax-sanitization>Solution C: Bookmarklet Minification & Syntax Sanitization<a hidden class=anchor aria-hidden=true href=#solution-c-bookmarklet-minification--syntax-sanitization>#</a></h3><p>To make the script executable across Google Chrome, Mozilla Firefox, and Microsoft Edge bookmark managers, all single-line comments were replaced, string quotes escaped, and whitespace stripped.</p><hr><h2 id=3-production-bookmarklet-code>3. Production Bookmarklet Code<a hidden class=anchor aria-hidden=true href=#3-production-bookmarklet-code>#</a></h2><p>Copy the minified script below and paste it directly into your browser&rsquo;s Bookmark URL/Location field:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>javascript</span><span style=color:#f92672>:</span>(<span style=color:#66d9ef>function</span>(){(<span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span>(){<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;🚀 Starting Parallel Deep Extraction for Sikkim LFA...&#34;</span>);<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>urlParams</span><span style=color:#f92672>=</span><span style=color:#66d9ef>new</span> <span style=color:#a6e22e>URLSearchParams</span>(window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>search</span>);<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>gpuNo</span><span style=color:#f92672>=</span><span style=color:#a6e22e>urlParams</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;localBodyCode&#39;</span>)<span style=color:#f92672>||</span><span style=color:#a6e22e>urlParams</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;name&#39;</span>)<span style=color:#f92672>||</span><span style=color:#e6db74>&#34;Unknown&#34;</span>;<span style=color:#a6e22e>gpuNo</span><span style=color:#f92672>=</span><span style=color:#a6e22e>gpuNo</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>&#39;.html&#39;</span>,<span style=color:#e6db74>&#39;&#39;</span>);<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fy</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>;<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>urlMatch</span><span style=color:#f92672>=</span>window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>href</span>.<span style=color:#a6e22e>match</span>(<span style=color:#e6db74>/20\d{2}-20\d{2}/</span>);<span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>urlMatch</span>){<span style=color:#a6e22e>fy</span><span style=color:#f92672>=</span><span style=color:#a6e22e>urlMatch</span>[<span style=color:#ae81ff>0</span>]}<span style=color:#66d9ef>else</span>{<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pageMatch</span><span style=color:#f92672>=</span>document.<span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>match</span>(<span style=color:#e6db74>/20\d{2}-20\d{2}/</span>);<span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>pageMatch</span>){<span style=color:#a6e22e>fy</span><span style=color:#f92672>=</span><span style=color:#a6e22e>pageMatch</span>[<span style=color:#ae81ff>0</span>]}<span style=color:#66d9ef>else</span>{<span style=color:#a6e22e>fy</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Unknown-FY&#34;</span>}}<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fileName</span><span style=color:#f92672>=</span><span style=color:#e6db74>`accounts-</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>gpuNo</span><span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fy</span><span style=color:#e6db74>}</span><span style=color:#e6db74>.csv`</span>;<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>links</span><span style=color:#f92672>=</span>Array.<span style=color:#a6e22e>from</span>(document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;a[href*=&#34;voucherWiseReport.do&#34;]&#39;</span>)).<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>a</span>=&gt;({<span style=color:#a6e22e>m</span><span style=color:#f92672>:</span><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>trim</span>(),<span style=color:#a6e22e>u</span><span style=color:#f92672>:</span><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>href</span>}));<span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>links</span>.<span style=color:#a6e22e>length</span><span style=color:#f92672>===</span><span style=color:#ae81ff>0</span>){<span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;Error: Stay on the Yearly Summary page showing April-March.&#34;</span>);<span style=color:#66d9ef>return</span>}<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>csv</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Month,Type,VoucherID,Data\n&#34;</span>;<span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>`⚡ Turbo mode active!\nGP Code: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>gpuNo</span><span style=color:#e6db74>}</span><span style=color:#e6db74>\nFinancial Year: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fy</span><span style=color:#e6db74>}</span><span style=color:#e6db74>\nProcessing months in parallel...`</span>);<span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>m</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>links</span>){<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`📅 Scraping Month: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>m</span>.<span style=color:#a6e22e>m</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>);<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>p</span><span style=color:#f92672>=</span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>m</span>.<span style=color:#a6e22e>u</span>,{<span style=color:#a6e22e>credentials</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;include&#34;</span>}).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>r</span>=&gt;<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>text</span>());<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>d</span><span style=color:#f92672>=</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>DOMParser</span>()).<span style=color:#a6e22e>parseFromString</span>(<span style=color:#a6e22e>p</span>,<span style=color:#e6db74>&#34;text/html&#34;</span>);<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>vL</span><span style=color:#f92672>=</span>Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>d</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;a[href*=&#34;VoucherDetail.do&#34;]&#39;</span>)).<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>a</span>=&gt;({<span style=color:#a6e22e>i</span><span style=color:#f92672>:</span><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>trim</span>(),<span style=color:#a6e22e>u</span><span style=color:#f92672>:</span><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>href</span>,<span style=color:#a6e22e>t</span><span style=color:#f92672>:</span><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>href</span>.<span style=color:#a6e22e>toLowerCase</span>().<span style=color:#a6e22e>includes</span>(<span style=color:#e6db74>&#34;payment&#34;</span>)<span style=color:#f92672>?</span><span style=color:#e6db74>&#34;Payment&#34;</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;Receipt&#34;</span>}));<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`Found </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>vL</span>.<span style=color:#a6e22e>length</span><span style=color:#e6db74>}</span><span style=color:#e6db74> vouchers in </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>m</span>.<span style=color:#a6e22e>m</span><span style=color:#e6db74>}</span><span style=color:#e6db74>. Fetching...`</span>);<span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>scrapeVoucher</span>(<span style=color:#a6e22e>v</span>){<span style=color:#66d9ef>try</span>{<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>vp</span><span style=color:#f92672>=</span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>u</span>,{<span style=color:#a6e22e>credentials</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;include&#34;</span>}).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>r</span>=&gt;<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>text</span>());<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>vd</span><span style=color:#f92672>=</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>DOMParser</span>()).<span style=color:#a6e22e>parseFromString</span>(<span style=color:#a6e22e>vp</span>,<span style=color:#e6db74>&#34;text/html&#34;</span>);<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>rows</span><span style=color:#f92672>=</span>Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>vd</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;table tr&#39;</span>)).<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>tr</span>=&gt;Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>tr</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;td,th&#39;</span>)).<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>td</span>=&gt;<span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>td</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>trim</span>().<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/&#34;/g</span>,<span style=color:#e6db74>&#39;&#34;&#34;&#39;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>).<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#39;,&#39;</span>));<span style=color:#a6e22e>rows</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>r</span>=&gt;{<span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>length</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>20</span>){<span style=color:#a6e22e>csv</span><span style=color:#f92672>+=</span><span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>m</span>.<span style=color:#a6e22e>m</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>t</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>i</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;,</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>r</span><span style=color:#e6db74>}</span><span style=color:#e6db74>\n`</span>}})}<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>err</span>){<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>`Error fetching voucher </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>v</span>.<span style=color:#a6e22e>i</span><span style=color:#e6db74>}</span><span style=color:#e6db74>:`</span>,<span style=color:#a6e22e>err</span>)}}<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>BATCH_SIZE</span><span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>;<span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;<span style=color:#a6e22e>i</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>vL</span>.<span style=color:#a6e22e>length</span>;<span style=color:#a6e22e>i</span><span style=color:#f92672>+=</span><span style=color:#a6e22e>BATCH_SIZE</span>){<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>batch</span><span style=color:#f92672>=</span><span style=color:#a6e22e>vL</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#a6e22e>i</span>,<span style=color:#a6e22e>i</span><span style=color:#f92672>+</span><span style=color:#a6e22e>BATCH_SIZE</span>);<span style=color:#66d9ef>await</span> Promise.<span style=color:#a6e22e>all</span>(<span style=color:#a6e22e>batch</span>.<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>v</span>=&gt;<span style=color:#a6e22e>scrapeVoucher</span>(<span style=color:#a6e22e>v</span>)));<span style=color:#66d9ef>await</span> <span style=color:#66d9ef>new</span> Promise(<span style=color:#a6e22e>s</span>=&gt;<span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>s</span>,<span style=color:#ae81ff>100</span>))}}<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>b</span><span style=color:#f92672>=</span><span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Blob</span>([<span style=color:#a6e22e>csv</span>],{<span style=color:#a6e22e>type</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;text/csv;charset=utf-8;&#34;</span>});<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>l</span><span style=color:#f92672>=</span>document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;a&#34;</span>);<span style=color:#a6e22e>l</span>.<span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#a6e22e>URL</span>.<span style=color:#a6e22e>createObjectURL</span>(<span style=color:#a6e22e>b</span>);<span style=color:#a6e22e>l</span>.<span style=color:#a6e22e>download</span><span style=color:#f92672>=</span><span style=color:#a6e22e>fileName</span>;<span style=color:#a6e22e>l</span>.<span style=color:#a6e22e>click</span>();<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`✅ Success! File saved as: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>)})()})();
+</span></span></code></pre></div><hr><h2 id=4-execution-workflow>4. Execution Workflow<a hidden class=anchor aria-hidden=true href=#4-execution-workflow>#</a></h2><ol><li><strong>Navigate:</strong> Open the eGramSwaraj or Sikkim LFA portal to the target <strong>Yearly Voucher Summary</strong> page (displaying monthly links from April to March).</li><li><strong>Trigger:</strong> Click the bookmarklet in your browser&rsquo;s favorites bar.</li><li><strong>Verify Prompt:</strong> Confirm the popup modal reads the correct Gram Panchayat Code and Financial Year (e.g., <code>GP Code: 254775</code>, <code>Financial Year: 2022-2023</code>).</li><li><strong>Automated Export:</strong> The browser will perform asynchronous batch fetches in memory and generate a structured CSV download formatted as <code>accounts-254775-2022-2023.csv</code>.</li></ol><hr><h2 id=5-summary-matrix>5. Summary Matrix<a hidden class=anchor aria-hidden=true href=#5-summary-matrix>#</a></h2><table><thead><tr><th>Metric / Feature</th><th>Baseline Sequential Script</th><th>Optimized Bookmarklet</th></tr></thead><tbody><tr><td><strong>Average Execution Time</strong></td><td>~18 - 25 Minutes</td><td><strong>~1.5 - 2 Minutes</strong></td></tr><tr><td><strong>Concurrency Model</strong></td><td>Single Threaded (<code>1 request</code>)</td><td><strong>Parallel Batches (<code>5 requests</code>)</strong></td></tr><tr><td><strong>Metadata Accuracy</strong></td><td>Fails on JSP redirects (defaults to <code>2025-2026</code>)</td><td><strong>URL-First Regex (reads true FY)</strong></td></tr><tr><td><strong>Browser Compatibility</strong></td><td>Syntax errors on line collapse</td><td><strong>Minified single-line execution</strong></td></tr></tbody></table></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/egramswaraj/>EGramSwaraj</a></li><li><a href=/tags/sikkim-lfa/>Sikkim LFA</a></li><li><a href=/tags/bookmarklet/>Bookmarklet</a></li><li><a href=/tags/async-js/>Async JS</a></li><li><a href=/tags/regex/>Regex</a></li><li><a href=/tags/dom-mining/>DOM Mining</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-sip-10k/><span class=title>« Prev</span>
+<span>Building a High-Conviction ₹10,000 Monthly SIP Portfolio: A Quantitative 10-5-2-1 Guide for 2040 Retirement</span>
+</a><a class=next href=/posts/2026-08-04-pdf2md/><span class=title>Next »</span>
+<span>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

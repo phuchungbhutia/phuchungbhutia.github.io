@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: [Tech,Linux]
 tags: [MediCat USB, Ventoy, Windows Repair, Linux Utilities, Bootable USB]
 ---

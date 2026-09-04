@@ -1,6 +1,6 @@
 ---
 title: "Building a Reusable JSON Prompt Generator Template"
-date: 2026-08-05 08:10:00 +0530
+date: "2026-08-05T08:10:00+05:30"
 categories: [ai, automation]
 tags: [json, templates, prompt-engineering, ai-video, workflow]
 ---

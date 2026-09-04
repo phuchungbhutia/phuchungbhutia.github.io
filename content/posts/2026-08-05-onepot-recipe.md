@@ -1,6 +1,6 @@
 ---
 title: "Easy One-Pot Cooking: From Cupcakes to Pulao, Biryani & Palak Recipes"
-date: 2026-08-05 07:54:00 +0530
+date: "2026-08-05T07:54:00+05:30"
 categories: [recipes, cooking]
 tags: [pressure-cooker, one-pot, pulao, biryani, cupcakes, spinach, chicken, beef, vegetarian, meal-prep]
 ---

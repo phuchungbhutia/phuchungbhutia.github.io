@@ -1,6 +1,6 @@
 ---
 title: "Building an Autonomous Mobile & Desktop Document Processing AI Agent with OpenClaw"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["AI & Automation", "Open Source", "Linux"]
 tags: ["OpenClaw", "Termux", "Linux Mint", "Android", "Ollama", "Telegram Bot", "ImageMagick", "OCR"]
 ---

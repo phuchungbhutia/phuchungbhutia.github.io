@@ -1,94 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools | Technical Journal</title>
-<meta name="keywords" content="PDF Conversion, Markdown, HTML, Docling, Marker, MinerU, Nougat, LLM, RAG">
-<meta name="description" content="PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.
-The two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-pdf-conversion/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-pdf-conversion/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-pdf-conversion/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools">
-  <meta property="og:description" content="PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.
-The two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:tag" content="PDF Conversion">
-    <meta property="article:tag" content="Markdown">
-    <meta property="article:tag" content="HTML">
-    <meta property="article:tag" content="Docling">
-    <meta property="article:tag" content="Marker">
-    <meta property="article:tag" content="MinerU">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools">
-  <meta name="twitter:description" content="PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.
-The two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.">
-
-
-<script type="application/ld+json">
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools | Technical Journal</title><meta name=keywords content="PDF Conversion,Markdown,HTML,Docling,Marker,MinerU,Nougat,LLM,RAG"><meta name=description content="PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.
+The two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-pdf-conversion/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-pdf-conversion/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-pdf-conversion/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools"><meta property="og:description" content="PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.
+The two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="Pdf-Conversion"><meta property="article:tag" content="Markdown"><meta property="article:tag" content="HTML"><meta property="article:tag" content="Docling"><meta property="article:tag" content="Marker"><meta property="article:tag" content="MinerU"><meta name=twitter:card content="summary"><meta name=twitter:title content="Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools"><meta name=twitter:description content="PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.
+The two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -97,18 +10,17 @@ The two primary formats for converting PDFs are Markdown and HTML. Below is an o
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools",
-      "item": "//localhost:1313/posts/2026-08-04-pdf-conversion/"
+      "item": "/posts/2026-08-04-pdf-conversion/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -121,212 +33,38 @@ The two primary formats for converting PDFs are Markdown and HTML. Below is an o
   "articleBody": "PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.\nThe two primary formats for converting PDFs are Markdown and HTML. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.\nPart 1: PDF to Markdown vs. HTML Choosing between Markdown and HTML depends entirely on how the extracted content will be used.\nFeature Comparison Feature Markdown (MD) HTML Primary Use Case AI/LLM ingestion, RAG, knowledge bases Web publishing, high-fidelity visual rendering Token Efficiency High (minimal formatting clutter) Low (dense inline styles, tags, containers) Human Readability Clean, plain-text plain reading Cluttered raw code Structural Fidelity Basic (headers, lists, basic tables) Complex (pixel-perfect layouts, inline styles) Conversion Backwards Easy to convert MD to HTML later Hard to clean up HTML into pure text When to Choose Markdown LLM \u0026 RAG Pipelines: Markdown’s lack of verbose syntax saves context window space and reduces token costs. Knowledge Repositories: Tools like Obsidian, Notion, and GitHub natively ingest and index Markdown. Content Extraction: If you need raw, clean text structured by sections, Markdown is the best option. When to Choose HTML Preserving Pixel Layouts: If you need to render multi-column magazines, brochure layouts, or dynamic inline elements visually on the web without a PDF plugin. Accessibility (a11y): HTML allows deep ARIA roles and fine-grained visual DOM hierarchy control. Rule of Thumb: Convert to Markdown first. It is significantly easier to render Markdown into HTML later than it is to strip bloated HTML back down into plain text.\nPart 2: Head-to-Head: Docling vs. Marker Two popular open-source PDF parsing engines lead the space: Docling (by IBM Research) and Marker (by Vik Paruchuri).\n+--------------------------+\r| Input PDF Document |\r+------------+-------------+\r|\r+------------------+------------------+\r| |\rv v\r+-----------------+ +-----------------+\r| Docling | | Marker |\r| (IBM Research) | | (Vik Paruchuri) |\r+--------+--------+ +--------+--------+\r| |\r+-- Specialized TableFormer +-- Multi-column OCR focus\r+-- MIT License +-- High-Speed Processing\r+-- Best for Data Pipelines +-- Superior Math/LaTeX 1. Docling (IBM Research) GitHub Repository: github.com/DS4SD/docling License: MIT Core Advantage: Features TableFormer, a dedicated machine-learning model designed specifically to reconstruct complex, merged, multi-page, or borderless tables without breaking column alignments. Best Used For: Enterprise financial reports, legal contracts, multi-format parsing (PDF, DOCX, PPTX). 2. Marker GitHub Repository: github.com/vikparuchuri/marker License: Custom Open-Source (Check repo for commercial constraints) Core Advantage: Speed. Marker processes documents roughly 10x faster than standard OCR-heavy models while maintaining accuracy in detecting reading order across multi-column pages and LaTeX math equations. Best Used For: Bulk operations—digitizing thousands of academic papers, books, or scientific journals. Part 3: Alternative Open-Source Conversion Engines For specialized workloads outside standard text and basic table processing, consider these additional repositories:\n1. MinerU (by OpenDataLab) GitHub Repository: github.com/opendatalab/MinerU Focus: Deep visual page segmentation. Strengths: Excellent at parsing scanned documents containing embedded figures, multi-page graphs, and non-standard visual layouts. It extracts images, text, and structural data cleanly. 2. Nougat (by Meta AI) GitHub Repository: github.com/facebookresearch/nougat Focus: Academic paper translation into Markdown. Strengths: Treats the page visually through an image-to-text Transformer model. It excels at converting inline and block math formulas directly into raw LaTeX syntax. 3. pdf2htmlEX GitHub Repository: github.com/pdf2htmlEX/pdf2htmlEX Focus: Pure HTML output. Strengths: The gold standard for turning a PDF into a static HTML file that preserves typography, absolute coordinates, and visual layouts without converting pages into raw flat images. Decision Matrix ",
   "wordCount" : "593",
   "inLanguage": "en",
-  "datePublished": "2026-08-04T00:00:00Z",
-  "dateModified": "2026-08-04T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-pdf-conversion/"
+    "@id": "/posts/2026-08-04-pdf-conversion/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#part-1-pdf-to-markdown-vs-html" aria-label="Part 1: PDF to Markdown vs. HTML">Part 1: PDF to Markdown vs. HTML</a><ul>
-                    
-            <li>
-                <a href="#feature-comparison" aria-label="Feature Comparison">Feature Comparison</a></li>
-            <li>
-                <a href="#when-to-choose-markdown" aria-label="When to Choose Markdown">When to Choose Markdown</a></li>
-            <li>
-                <a href="#when-to-choose-html" aria-label="When to Choose HTML">When to Choose HTML</a></li></ul>
-            </li>
-            <li>
-                <a href="#part-2-head-to-head-docling-vs-marker" aria-label="Part 2: Head-to-Head: Docling vs. Marker">Part 2: Head-to-Head: Docling vs. Marker</a><ul>
-                    
-            <li>
-                <a href="#1-docling-ibm-research" aria-label="1. Docling (IBM Research)">1. Docling (IBM Research)</a></li>
-            <li>
-                <a href="#2-marker" aria-label="2. Marker">2. Marker</a></li></ul>
-            </li>
-            <li>
-                <a href="#part-3-alternative-open-source-conversion-engines" aria-label="Part 3: Alternative Open-Source Conversion Engines">Part 3: Alternative Open-Source Conversion Engines</a><ul>
-                    
-            <li>
-                <a href="#1-mineru-by-opendatalab" aria-label="1. MinerU (by OpenDataLab)">1. MinerU (by OpenDataLab)</a></li>
-            <li>
-                <a href="#2-nougat-by-meta-ai" aria-label="2. Nougat (by Meta AI)">2. Nougat (by Meta AI)</a></li>
-            <li>
-                <a href="#3-pdf2htmlex" aria-label="3. pdf2htmlEX">3. pdf2htmlEX</a></li></ul>
-            </li>
-            <li>
-                <a href="#decision-matrix" aria-label="Decision Matrix">Decision Matrix</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><p>PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.</p>
-<p>The two primary formats for converting PDFs are <strong>Markdown</strong> and <strong>HTML</strong>. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.</p>
-<hr>
-<h2 id="part-1-pdf-to-markdown-vs-html">Part 1: PDF to Markdown vs. HTML<a hidden class="anchor" aria-hidden="true" href="#part-1-pdf-to-markdown-vs-html">#</a></h2>
-<p>Choosing between Markdown and HTML depends entirely on how the extracted content will be used.</p>
-<h3 id="feature-comparison">Feature Comparison<a hidden class="anchor" aria-hidden="true" href="#feature-comparison">#</a></h3>
-<table>
-	<thead>
-			<tr>
-					<th style="text-align: left">Feature</th>
-					<th style="text-align: left"><strong>Markdown (MD)</strong></th>
-					<th style="text-align: left"><strong>HTML</strong></th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>Primary Use Case</strong></td>
-					<td style="text-align: left">AI/LLM ingestion, RAG, knowledge bases</td>
-					<td style="text-align: left">Web publishing, high-fidelity visual rendering</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Token Efficiency</strong></td>
-					<td style="text-align: left"><strong>High</strong> (minimal formatting clutter)</td>
-					<td style="text-align: left"><strong>Low</strong> (dense inline styles, tags, containers)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Human Readability</strong></td>
-					<td style="text-align: left">Clean, plain-text plain reading</td>
-					<td style="text-align: left">Cluttered raw code</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Structural Fidelity</strong></td>
-					<td style="text-align: left">Basic (headers, lists, basic tables)</td>
-					<td style="text-align: left">Complex (pixel-perfect layouts, inline styles)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Conversion Backwards</strong></td>
-					<td style="text-align: left">Easy to convert MD to HTML later</td>
-					<td style="text-align: left">Hard to clean up HTML into pure text</td>
-			</tr>
-	</tbody>
-</table>
-<h3 id="when-to-choose-markdown">When to Choose Markdown<a hidden class="anchor" aria-hidden="true" href="#when-to-choose-markdown">#</a></h3>
-<ul>
-<li><strong>LLM &amp; RAG Pipelines:</strong> Markdown’s lack of verbose syntax saves context window space and reduces token costs.</li>
-<li><strong>Knowledge Repositories:</strong> Tools like Obsidian, Notion, and GitHub natively ingest and index Markdown.</li>
-<li><strong>Content Extraction:</strong> If you need raw, clean text structured by sections, Markdown is the best option.</li>
-</ul>
-<h3 id="when-to-choose-html">When to Choose HTML<a hidden class="anchor" aria-hidden="true" href="#when-to-choose-html">#</a></h3>
-<ul>
-<li><strong>Preserving Pixel Layouts:</strong> If you need to render multi-column magazines, brochure layouts, or dynamic inline elements visually on the web without a PDF plugin.</li>
-<li><strong>Accessibility (a11y):</strong> HTML allows deep ARIA roles and fine-grained visual DOM hierarchy control.</li>
-</ul>
-<blockquote>
-<p><strong>Rule of Thumb:</strong> Convert to <strong>Markdown first</strong>. It is significantly easier to render Markdown into HTML later than it is to strip bloated HTML back down into plain text.</p>
-</blockquote>
-<hr>
-<h2 id="part-2-head-to-head-docling-vs-marker">Part 2: Head-to-Head: Docling vs. Marker<a hidden class="anchor" aria-hidden="true" href="#part-2-head-to-head-docling-vs-marker">#</a></h2>
-<p>Two popular open-source PDF parsing engines lead the space: <strong>Docling</strong> (by IBM Research) and <strong>Marker</strong> (by Vik Paruchuri).</p>
-<pre tabindex="0"><code></code></pre><pre><code>          +--------------------------+
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#part-1-pdf-to-markdown-vs-html aria-label="Part 1: PDF to Markdown vs. HTML">Part 1: PDF to Markdown vs. HTML</a><ul><li><a href=#feature-comparison aria-label="Feature Comparison">Feature Comparison</a></li><li><a href=#when-to-choose-markdown aria-label="When to Choose Markdown">When to Choose Markdown</a></li><li><a href=#when-to-choose-html aria-label="When to Choose HTML">When to Choose HTML</a></li></ul></li><li><a href=#part-2-head-to-head-docling-vs-marker aria-label="Part 2: Head-to-Head: Docling vs. Marker">Part 2: Head-to-Head: Docling vs. Marker</a><ul><li><a href=#1-docling-ibm-research aria-label="1. Docling (IBM Research)">1. Docling (IBM Research)</a></li><li><a href=#2-marker aria-label="2. Marker">2. Marker</a></li></ul></li><li><a href=#part-3-alternative-open-source-conversion-engines aria-label="Part 3: Alternative Open-Source Conversion Engines">Part 3: Alternative Open-Source Conversion Engines</a><ul><li><a href=#1-mineru-by-opendatalab aria-label="1. MinerU (by OpenDataLab)">1. MinerU (by OpenDataLab)</a></li><li><a href=#2-nougat-by-meta-ai aria-label="2. Nougat (by Meta AI)">2. Nougat (by Meta AI)</a></li><li><a href=#3-pdf2htmlex aria-label="3. pdf2htmlEX">3. pdf2htmlEX</a></li></ul></li><li><a href=#decision-matrix aria-label="Decision Matrix">Decision Matrix</a></li></ul></div></details><div class="post-content md-content"><p>PDFs are the digital equivalent of concrete: designed to display content consistently on every screen, but notoriously stubborn to edit or extract data from. As LLM pipelines and RAG systems become essential infrastructure, turning static PDFs into machine-readable text is a crucial step for developers.</p><p>The two primary formats for converting PDFs are <strong>Markdown</strong> and <strong>HTML</strong>. Below is an overview of which format to choose, a breakdown of top-performing open-source engines, and recommendations for implementation.</p><hr><h2 id=part-1-pdf-to-markdown-vs-html>Part 1: PDF to Markdown vs. HTML<a hidden class=anchor aria-hidden=true href=#part-1-pdf-to-markdown-vs-html>#</a></h2><p>Choosing between Markdown and HTML depends entirely on how the extracted content will be used.</p><h3 id=feature-comparison>Feature Comparison<a hidden class=anchor aria-hidden=true href=#feature-comparison>#</a></h3><table><thead><tr><th style=text-align:left>Feature</th><th style=text-align:left><strong>Markdown (MD)</strong></th><th style=text-align:left><strong>HTML</strong></th></tr></thead><tbody><tr><td style=text-align:left><strong>Primary Use Case</strong></td><td style=text-align:left>AI/LLM ingestion, RAG, knowledge bases</td><td style=text-align:left>Web publishing, high-fidelity visual rendering</td></tr><tr><td style=text-align:left><strong>Token Efficiency</strong></td><td style=text-align:left><strong>High</strong> (minimal formatting clutter)</td><td style=text-align:left><strong>Low</strong> (dense inline styles, tags, containers)</td></tr><tr><td style=text-align:left><strong>Human Readability</strong></td><td style=text-align:left>Clean, plain-text plain reading</td><td style=text-align:left>Cluttered raw code</td></tr><tr><td style=text-align:left><strong>Structural Fidelity</strong></td><td style=text-align:left>Basic (headers, lists, basic tables)</td><td style=text-align:left>Complex (pixel-perfect layouts, inline styles)</td></tr><tr><td style=text-align:left><strong>Conversion Backwards</strong></td><td style=text-align:left>Easy to convert MD to HTML later</td><td style=text-align:left>Hard to clean up HTML into pure text</td></tr></tbody></table><h3 id=when-to-choose-markdown>When to Choose Markdown<a hidden class=anchor aria-hidden=true href=#when-to-choose-markdown>#</a></h3><ul><li><strong>LLM & RAG Pipelines:</strong> Markdown’s lack of verbose syntax saves context window space and reduces token costs.</li><li><strong>Knowledge Repositories:</strong> Tools like Obsidian, Notion, and GitHub natively ingest and index Markdown.</li><li><strong>Content Extraction:</strong> If you need raw, clean text structured by sections, Markdown is the best option.</li></ul><h3 id=when-to-choose-html>When to Choose HTML<a hidden class=anchor aria-hidden=true href=#when-to-choose-html>#</a></h3><ul><li><strong>Preserving Pixel Layouts:</strong> If you need to render multi-column magazines, brochure layouts, or dynamic inline elements visually on the web without a PDF plugin.</li><li><strong>Accessibility (a11y):</strong> HTML allows deep ARIA roles and fine-grained visual DOM hierarchy control.</li></ul><blockquote><p><strong>Rule of Thumb:</strong> Convert to <strong>Markdown first</strong>. It is significantly easier to render Markdown into HTML later than it is to strip bloated HTML back down into plain text.</p></blockquote><hr><h2 id=part-2-head-to-head-docling-vs-marker>Part 2: Head-to-Head: Docling vs. Marker<a hidden class=anchor aria-hidden=true href=#part-2-head-to-head-docling-vs-marker>#</a></h2><p>Two popular open-source PDF parsing engines lead the space: <strong>Docling</strong> (by IBM Research) and <strong>Marker</strong> (by Vik Paruchuri).</p><pre tabindex=0><code></code></pre><pre><code>          +--------------------------+
           |    Input PDF Document    |
           +------------+-------------+
                        |
     +------------------+------------------+
     |                                     |
     v                                     v
-</code></pre>
-<pre tabindex="0"><code>
+</code></pre><pre tabindex=0><code>
 +-----------------+                   +-----------------+
 |     Docling     |                   |     Marker      |
 | (IBM Research)  |                   | (Vik Paruchuri) |
@@ -335,200 +73,11 @@ The two primary formats for converting PDFs are Markdown and HTML. Below is an o
 +-- Specialized TableFormer           +-- Multi-column OCR focus
 +-- MIT License                       +-- High-Speed Processing
 +-- Best for Data Pipelines               +-- Superior Math/LaTeX
-</code></pre><h3 id="1-docling-ibm-research">1. Docling (IBM Research)<a hidden class="anchor" aria-hidden="true" href="#1-docling-ibm-research">#</a></h3>
-<ul>
-<li><strong>GitHub Repository:</strong> <a href="https://github.com/DS4SD/docling">github.com/DS4SD/docling</a></li>
-<li><strong>License:</strong> MIT</li>
-<li><strong>Core Advantage:</strong> Features <strong>TableFormer</strong>, a dedicated machine-learning model designed specifically to reconstruct complex, merged, multi-page, or borderless tables without breaking column alignments.</li>
-<li><strong>Best Used For:</strong> Enterprise financial reports, legal contracts, multi-format parsing (PDF, DOCX, PPTX).</li>
-</ul>
-<h3 id="2-marker">2. Marker<a hidden class="anchor" aria-hidden="true" href="#2-marker">#</a></h3>
-<ul>
-<li><strong>GitHub Repository:</strong> <a href="https://github.com/vikparuchuri/marker">github.com/vikparuchuri/marker</a></li>
-<li><strong>License:</strong> Custom Open-Source (Check repo for commercial constraints)</li>
-<li><strong>Core Advantage:</strong> <strong>Speed</strong>. Marker processes documents roughly 10x faster than standard OCR-heavy models while maintaining accuracy in detecting reading order across multi-column pages and LaTeX math equations.</li>
-<li><strong>Best Used For:</strong> Bulk operations—digitizing thousands of academic papers, books, or scientific journals.</li>
-</ul>
-<hr>
-<h2 id="part-3-alternative-open-source-conversion-engines">Part 3: Alternative Open-Source Conversion Engines<a hidden class="anchor" aria-hidden="true" href="#part-3-alternative-open-source-conversion-engines">#</a></h2>
-<p>For specialized workloads outside standard text and basic table processing, consider these additional repositories:</p>
-<h3 id="1-mineru-by-opendatalab">1. MinerU (by OpenDataLab)<a hidden class="anchor" aria-hidden="true" href="#1-mineru-by-opendatalab">#</a></h3>
-<ul>
-<li><strong>GitHub Repository:</strong> <a href="https://github.com/opendatalab/MinerU">github.com/opendatalab/MinerU</a></li>
-<li><strong>Focus:</strong> Deep visual page segmentation.</li>
-<li><strong>Strengths:</strong> Excellent at parsing scanned documents containing embedded figures, multi-page graphs, and non-standard visual layouts. It extracts images, text, and structural data cleanly.</li>
-</ul>
-<h3 id="2-nougat-by-meta-ai">2. Nougat (by Meta AI)<a hidden class="anchor" aria-hidden="true" href="#2-nougat-by-meta-ai">#</a></h3>
-<ul>
-<li><strong>GitHub Repository:</strong> <a href="https://github.com/facebookresearch/nougat">github.com/facebookresearch/nougat</a></li>
-<li><strong>Focus:</strong> Academic paper translation into Markdown.</li>
-<li><strong>Strengths:</strong> Treats the page visually through an image-to-text Transformer model. It excels at converting inline and block math formulas directly into raw LaTeX syntax.</li>
-</ul>
-<h3 id="3-pdf2htmlex">3. pdf2htmlEX<a hidden class="anchor" aria-hidden="true" href="#3-pdf2htmlex">#</a></h3>
-<ul>
-<li><strong>GitHub Repository:</strong> <a href="https://github.com/pdf2htmlEX/pdf2htmlEX">github.com/pdf2htmlEX/pdf2htmlEX</a></li>
-<li><strong>Focus:</strong> Pure HTML output.</li>
-<li><strong>Strengths:</strong> The gold standard for turning a PDF into a static HTML file that preserves typography, absolute coordinates, and visual layouts without converting pages into raw flat images.</li>
-</ul>
-<hr>
-<h2 id="decision-matrix">Decision Matrix<a hidden class="anchor" aria-hidden="true" href="#decision-matrix">#</a></h2>
-<!-- raw HTML omitted -->
-<pre tabindex="0"><code></code></pre>
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/pdf-conversion/">PDF Conversion</a></li>
-      <li><a href="//localhost:1313/tags/markdown/">Markdown</a></li>
-      <li><a href="//localhost:1313/tags/html/">HTML</a></li>
-      <li><a href="//localhost:1313/tags/docling/">Docling</a></li>
-      <li><a href="//localhost:1313/tags/marker/">Marker</a></li>
-      <li><a href="//localhost:1313/tags/mineru/">MinerU</a></li>
-      <li><a href="//localhost:1313/tags/nougat/">Nougat</a></li>
-      <li><a href="//localhost:1313/tags/llm/">LLM</a></li>
-      <li><a href="//localhost:1313/tags/rag/">RAG</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-dns/">
-    <span class="title">« Prev</span>
-    <span>Configuring Browser Proxies and Bypassing Local DNS Restrictions for Sikkim Government Portals</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-bookmark-sync/">
-    <span class="title">Next »</span>
-    <span>Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><h3 id=1-docling-ibm-research>1. Docling (IBM Research)<a hidden class=anchor aria-hidden=true href=#1-docling-ibm-research>#</a></h3><ul><li><strong>GitHub Repository:</strong> <a href=https://github.com/DS4SD/docling>github.com/DS4SD/docling</a></li><li><strong>License:</strong> MIT</li><li><strong>Core Advantage:</strong> Features <strong>TableFormer</strong>, a dedicated machine-learning model designed specifically to reconstruct complex, merged, multi-page, or borderless tables without breaking column alignments.</li><li><strong>Best Used For:</strong> Enterprise financial reports, legal contracts, multi-format parsing (PDF, DOCX, PPTX).</li></ul><h3 id=2-marker>2. Marker<a hidden class=anchor aria-hidden=true href=#2-marker>#</a></h3><ul><li><strong>GitHub Repository:</strong> <a href=https://github.com/vikparuchuri/marker>github.com/vikparuchuri/marker</a></li><li><strong>License:</strong> Custom Open-Source (Check repo for commercial constraints)</li><li><strong>Core Advantage:</strong> <strong>Speed</strong>. Marker processes documents roughly 10x faster than standard OCR-heavy models while maintaining accuracy in detecting reading order across multi-column pages and LaTeX math equations.</li><li><strong>Best Used For:</strong> Bulk operations—digitizing thousands of academic papers, books, or scientific journals.</li></ul><hr><h2 id=part-3-alternative-open-source-conversion-engines>Part 3: Alternative Open-Source Conversion Engines<a hidden class=anchor aria-hidden=true href=#part-3-alternative-open-source-conversion-engines>#</a></h2><p>For specialized workloads outside standard text and basic table processing, consider these additional repositories:</p><h3 id=1-mineru-by-opendatalab>1. MinerU (by OpenDataLab)<a hidden class=anchor aria-hidden=true href=#1-mineru-by-opendatalab>#</a></h3><ul><li><strong>GitHub Repository:</strong> <a href=https://github.com/opendatalab/MinerU>github.com/opendatalab/MinerU</a></li><li><strong>Focus:</strong> Deep visual page segmentation.</li><li><strong>Strengths:</strong> Excellent at parsing scanned documents containing embedded figures, multi-page graphs, and non-standard visual layouts. It extracts images, text, and structural data cleanly.</li></ul><h3 id=2-nougat-by-meta-ai>2. Nougat (by Meta AI)<a hidden class=anchor aria-hidden=true href=#2-nougat-by-meta-ai>#</a></h3><ul><li><strong>GitHub Repository:</strong> <a href=https://github.com/facebookresearch/nougat>github.com/facebookresearch/nougat</a></li><li><strong>Focus:</strong> Academic paper translation into Markdown.</li><li><strong>Strengths:</strong> Treats the page visually through an image-to-text Transformer model. It excels at converting inline and block math formulas directly into raw LaTeX syntax.</li></ul><h3 id=3-pdf2htmlex>3. pdf2htmlEX<a hidden class=anchor aria-hidden=true href=#3-pdf2htmlex>#</a></h3><ul><li><strong>GitHub Repository:</strong> <a href=https://github.com/pdf2htmlEX/pdf2htmlEX>github.com/pdf2htmlEX/pdf2htmlEX</a></li><li><strong>Focus:</strong> Pure HTML output.</li><li><strong>Strengths:</strong> The gold standard for turning a PDF into a static HTML file that preserves typography, absolute coordinates, and visual layouts without converting pages into raw flat images.</li></ul><hr><h2 id=decision-matrix>Decision Matrix<a hidden class=anchor aria-hidden=true href=#decision-matrix>#</a></h2><elicitationsgroup message="Where would you like to go from here?"><elicitation label="View Python code snippets for Docling & Marker setups" query="Show me Python code examples to run both Docling and Marker locally."><elicitation label="Explore PDF table extraction benchmarks" query="Which PDF tool handles complex merged tables best with benchmarks?"><elicitation label="Learn how to build a RAG pipeline with parsed Markdown" query="How do I ingest converted PDF Markdown files into a RAG pipeline using LangChain or LlamaIndex?"></elicitationsgroup><pre tabindex=0><code></code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/pdf-conversion/>Pdf-Conversion</a></li><li><a href=/tags/markdown/>Markdown</a></li><li><a href=/tags/html/>HTML</a></li><li><a href=/tags/docling/>Docling</a></li><li><a href=/tags/marker/>Marker</a></li><li><a href=/tags/mineru/>MinerU</a></li><li><a href=/tags/nougat/>Nougat</a></li><li><a href=/tags/llm/>LLM</a></li><li><a href=/tags/rag/>RAG</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-dns/><span class=title>« Prev</span>
+<span>Configuring Browser Proxies and Bypassing Local DNS Restrictions for Sikkim Government Portals</span>
+</a><a class=next href=/posts/2026-08-04-bookmark-sync/><span class=title>Next »</span>
+<span>Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

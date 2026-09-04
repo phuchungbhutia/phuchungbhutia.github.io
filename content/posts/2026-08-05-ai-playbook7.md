@@ -1,6 +1,6 @@
 ---
 title: "The AI Solopreneur Playbook: 100 AI Business Ideas You Can Start With Zero Dollars"
-date: 2026-08-05 09:45:00 +0000
+date: "2026-08-05T09:45:00+05:30"
 categories: [ai, entrepreneurship]
 tags: [chatgpt, ai-business, side-hustle, freelancing, solopreneur, business-ideas, github-pages]
 ---

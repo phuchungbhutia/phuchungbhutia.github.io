@@ -1,6 +1,6 @@
 ---
 title: "The Silent Geometry of Living Spaces: Bringing Ancient Spatial Planning into the Modern Browser"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Architecture", "Software Design"]
 tags: ["spatial-computing", "generative-design", "vastu", "feng-shui", "2026"]
 description: "How translating ancient architectural principles into code creates smarter, healthier, and more balanced homes."

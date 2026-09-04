@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Aur on Technical Journal</title>
-    <link>//localhost:1313/tags/aur/</link>
-    <description>Recent content in Aur on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/aur/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-de/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-de/</guid>
-      <description>&lt;p&gt;Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Aur on Technical Journal</title><link>/tags/aur/</link><description>Recent content in Aur on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/aur/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift</title><link>/posts/2026-08-04-linux-de/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-de/</guid><description>&lt;p&gt;Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;1-understanding-desktop-resource-consumption-xfce-vs-the-competition&#34;&gt;1. Understanding Desktop Resource Consumption: XFCE vs. The Competition&lt;/h1&gt;
-&lt;p&gt;When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h1 id="1-understanding-desktop-resource-consumption-xfce-vs-the-competition"&gt;1. Understanding Desktop Resource Consumption: XFCE vs. The Competition&lt;/h1&gt;
+&lt;p&gt;When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.&lt;/p&gt;</description></item></channel></rss>

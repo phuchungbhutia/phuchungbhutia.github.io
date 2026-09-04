@@ -1,31 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>GRUB on Technical Journal</title>
-    <link>//localhost:1313/tags/grub/</link>
-    <description>Recent content in GRUB on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/grub/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to Customizing the Linux Mint Boot Experience: Plymouth Themes, Custom Logos, and Silent Boot</title>
-      <link>//localhost:1313/posts/2026-08-04-mint-boot/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-mint-boot/</guid>
-      <description>&lt;h1 id=&#34;the-ultimate-guide-to-customizing-the-linux-mint-boot-experience&#34;&gt;The Ultimate Guide to Customizing the Linux Mint Boot Experience&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>GRUB on Technical Journal</title><link>/tags/grub/</link><description>Recent content in GRUB on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/grub/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to Customizing the Linux Mint Boot Experience: Plymouth Themes, Custom Logos, and Silent Boot</title><link>/posts/2026-08-04-mint-boot/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-mint-boot/</guid><description>&lt;h1 id="the-ultimate-guide-to-customizing-the-linux-mint-boot-experience"&gt;The Ultimate Guide to Customizing the Linux Mint Boot Experience&lt;/h1&gt;
 &lt;p&gt;There is something deeply satisfying about tailoring an operating system to feel uniquely yours. While tweaking desktop wallpapers, icon packs, panel layouts, and GTK themes is standard practice for Linux Mint users, the boot screen is often left completely untouched.&lt;/p&gt;
-&lt;p&gt;When you turn on your PC, you are greeted by the standard Linux Mint logo pulsating against a dark background. This boot splash screen—managed by an underlying framework called &lt;strong&gt;Plymouth&lt;/strong&gt;—is fully customizable. Whether you want to swap the standard Mint logo for your own personal logo or wallpaper, install an animated high-tech theme, fix stretched low-resolution boot graphics, or disable graphics entirely to view real-time system logs during startup, this guide covers every step in detail.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Troubleshooting Linux Boot Failures and Optimizing Linux Mint Performance</title>
-      <link>//localhost:1313/posts/2026-08-04-efi/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-efi/</guid>
-      <description>&lt;p&gt;Dealing with boot errors can be daunting, but Linux gives you full control to inspect, repair, and optimize your system. In this comprehensive guide, we cover how to fix missing EFI bootloaders, format and rebuild GRUB from scratch using live environment tools, and squeeze maximum performance out of Linux Mint.&lt;/p&gt;
+&lt;p&gt;When you turn on your PC, you are greeted by the standard Linux Mint logo pulsating against a dark background. This boot splash screen—managed by an underlying framework called &lt;strong&gt;Plymouth&lt;/strong&gt;—is fully customizable. Whether you want to swap the standard Mint logo for your own personal logo or wallpaper, install an animated high-tech theme, fix stretched low-resolution boot graphics, or disable graphics entirely to view real-time system logs during startup, this guide covers every step in detail.&lt;/p&gt;</description></item><item><title>Troubleshooting Linux Boot Failures and Optimizing Linux Mint Performance</title><link>/posts/2026-08-04-efi/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-efi/</guid><description>&lt;p&gt;Dealing with boot errors can be daunting, but Linux gives you full control to inspect, repair, and optimize your system. In this comprehensive guide, we cover how to fix missing EFI bootloaders, format and rebuild GRUB from scratch using live environment tools, and squeeze maximum performance out of Linux Mint.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;part-1-resolving-the-failed-to-open-efiubuntu-not-found-error&#34;&gt;Part 1: Resolving the &amp;ldquo;failed to open /efi/ubuntu not found&amp;rdquo; Error&lt;/h2&gt;
-&lt;p&gt;When your system fails to boot and displays the error &lt;code&gt;failed to open /efi/ubuntu not found&lt;/code&gt;, it means the UEFI firmware or GRUB bootloader cannot locate the necessary EFI binaries to start the OS. This typically occurs after major Windows updates in dual-boot setups, disk partition changes, or corrupted EFI filesystems.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="part-1-resolving-the-failed-to-open-efiubuntu-not-found-error"&gt;Part 1: Resolving the &amp;ldquo;failed to open /efi/ubuntu not found&amp;rdquo; Error&lt;/h2&gt;
+&lt;p&gt;When your system fails to boot and displays the error &lt;code&gt;failed to open /efi/ubuntu not found&lt;/code&gt;, it means the UEFI firmware or GRUB bootloader cannot locate the necessary EFI binaries to start the OS. This typically occurs after major Windows updates in dual-boot setups, disk partition changes, or corrupted EFI filesystems.&lt;/p&gt;</description></item></channel></rss>

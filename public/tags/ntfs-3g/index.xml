@@ -1,23 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Ntfs-3g on Technical Journal</title>
-    <link>//localhost:1313/tags/ntfs-3g/</link>
-    <description>Recent content in Ntfs-3g on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/ntfs-3g/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title>
-      <link>//localhost:1313/posts/2026-04-08-manjaro/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-04-08-manjaro/</guid>
-      <description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Ntfs-3g on Technical Journal</title><link>/tags/ntfs-3g/</link><description>Recent content in Ntfs-3g on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/ntfs-3g/index.xml" rel="self" type="application/rss+xml"/><item><title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title><link>/posts/2026-04-08-manjaro/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-04-08-manjaro/</guid><description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
 &lt;p&gt;This comprehensive guide consolidates troubleshooting steps and optimization workflows into an end-to-end administration manual for modern Linux environments.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-mastering-ntfs-partition-mounts-in-archmanjaro&#34;&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
-&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-mastering-ntfs-partition-mounts-in-archmanjaro"&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
+&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>

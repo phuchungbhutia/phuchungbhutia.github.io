@@ -1,31 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Command-Line on Technical Journal</title>
-    <link>//localhost:1313/tags/command-line/</link>
-    <description>Recent content in Command-Line on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title>
-      <link>//localhost:1313/posts/2026-08-04-adb/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-adb/</guid>
-      <description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
-&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Ultimate Guide to Installing yt-dlp and Downloading Playlists as MP3s</title>
-      <link>//localhost:1313/posts/2026-08-04-yt-dlp/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-yt-dlp/</guid>
-      <description>&lt;p&gt;Command-line utilities often outperform bloated desktop applications when it comes to speed, flexibility, and reliability. For downloading online video and audio, &lt;strong&gt;yt-dlp&lt;/strong&gt; stands out as the community gold standard—a actively maintained fork of the classic &lt;code&gt;youtube-dl&lt;/code&gt; project.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Command-Line on Technical Journal</title><link>/tags/command-line/</link><description>Recent content in Command-Line on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/command-line/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title><link>/posts/2026-08-04-adb/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-adb/</guid><description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
+&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description></item><item><title>The Ultimate Guide to Installing yt-dlp and Downloading Playlists as MP3s</title><link>/posts/2026-08-04-yt-dlp/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-yt-dlp/</guid><description>&lt;p&gt;Command-line utilities often outperform bloated desktop applications when it comes to speed, flexibility, and reliability. For downloading online video and audio, &lt;strong&gt;yt-dlp&lt;/strong&gt; stands out as the community gold standard—a actively maintained fork of the classic &lt;code&gt;youtube-dl&lt;/code&gt; project.&lt;/p&gt;
 &lt;p&gt;Whether you are archiving full concert playlists, podcasts, or music collections, setting up &lt;code&gt;yt-dlp&lt;/code&gt; alongside &lt;code&gt;ffmpeg&lt;/code&gt; ensures seamless extraction into high-quality MP3s across Windows, Linux Mint, and Arch-based distributions like Manjaro.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-installation-guide-across-operating-systems&#34;&gt;1. Installation Guide Across Operating Systems&lt;/h2&gt;
-&lt;p&gt;Because streaming platforms continually update their backends, installing &lt;code&gt;yt-dlp&lt;/code&gt; from a source that allows easy updates is critical.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-installation-guide-across-operating-systems"&gt;1. Installation Guide Across Operating Systems&lt;/h2&gt;
+&lt;p&gt;Because streaming platforms continually update their backends, installing &lt;code&gt;yt-dlp&lt;/code&gt; from a source that allows easy updates is critical.&lt;/p&gt;</description></item></channel></rss>

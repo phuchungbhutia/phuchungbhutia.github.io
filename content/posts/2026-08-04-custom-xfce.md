@@ -1,6 +1,6 @@
 ---
 title: "Transforming Linux Mint XFCE into a High-Speed Windows Clone for Older PCs (4GB RAM Optimization Guide)"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "System Optimization", "Tutorials"]
 tags: ["linux-mint", "xfce", "customization", "windows-theme", "low-spec-pc", "performance-tweaks", "plymouth", "zswap"]
 ---

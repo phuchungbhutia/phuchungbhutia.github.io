@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Windows Repair on Technical Journal</title>
-    <link>//localhost:1313/tags/windows-repair/</link>
-    <description>Recent content in Windows Repair on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/windows-repair/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB</title>
-      <link>//localhost:1313/posts/2026-08-04-medicat-usb/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-medicat-usb/</guid>
-      <description>&lt;h1 id=&#34;the-complete-swiss-army-knife-guide-setting-up-and-mastering-medicat-usb&#34;&gt;The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Windows Repair on Technical Journal</title><link>/tags/windows-repair/</link><description>Recent content in Windows Repair on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/windows-repair/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Swiss Army Knife Guide: Setting Up and Mastering MediCat USB</title><link>/posts/2026-08-04-medicat-usb/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-medicat-usb/</guid><description>&lt;h1 id="the-complete-swiss-army-knife-guide-setting-up-and-mastering-medicat-usb"&gt;The Complete Swiss Army Knife Guide: Setting Up and Mastering MediCat USB&lt;/h1&gt;
 &lt;p&gt;Whether you are an IT professional, a system administrator, or the designated &amp;ldquo;tech guy&amp;rdquo; for family and friends, dealing with unbootable operating systems, malware infections, and locked user accounts is an inevitable headache. Carrying a ring of a dozen different bootable flash drives is a thing of the past.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;MediCat USB&lt;/strong&gt; is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader &lt;strong&gt;Ventoy&lt;/strong&gt;, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;MediCat USB&lt;/strong&gt; is the ultimate multi-boot diagnostic and repair suite. Built on top of the open-source bootloader &lt;strong&gt;Ventoy&lt;/strong&gt;, MediCat turns a single flash drive into a powerful, bootable Swiss Army knife packed with diagnostic environments, password bypass tools, disk partitioners, and malware cleaners.&lt;/p&gt;</description></item></channel></rss>

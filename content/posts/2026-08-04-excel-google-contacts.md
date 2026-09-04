@@ -1,6 +1,6 @@
 ---
 title: "Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Data Management", "Automation", "Productivity"]
 tags: ["Python", "Pandas", "Google Contacts", "Excel", "Data Cleaning"]
 ---

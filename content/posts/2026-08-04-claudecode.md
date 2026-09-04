@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide to AI-Assisted Coding on Linux Mint: Claude Code, OpenCode, VS Code, and VSCodium"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "Artificial Intelligence", "Development Tools"]
 tags: ["linux-mint", "claude-code", "opencode", "vscode", "vscodium", "terminal", "ai-coding"]
 ---

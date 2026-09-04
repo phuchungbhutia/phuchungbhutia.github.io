@@ -1,6 +1,6 @@
 ---
 title: "How to Fix Firefox Saving PDFs Instead of Printing in Google Sheets"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Tech Support", "Web Browsers", "Productivity"]
 tags: ["Firefox", "Google Sheets", "Printing", "Troubleshooting", "PDF"]
 ---

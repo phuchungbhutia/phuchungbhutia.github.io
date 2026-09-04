@@ -1,23 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Google Contacts on Technical Journal</title>
-    <link>//localhost:1313/tags/google-contacts/</link>
-    <description>Recent content in Google Contacts on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/google-contacts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV</title>
-      <link>//localhost:1313/posts/2026-08-04-excel-google-contacts/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-excel-google-contacts/</guid>
-      <description>&lt;p&gt;Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Google Contacts on Technical Journal</title><link>/tags/google-contacts/</link><description>Recent content in Google Contacts on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/google-contacts/index.xml" rel="self" type="application/rss+xml"/><item><title>Automating Contact Imports: How to Convert Complex Excel Spreadsheets to Google Contacts CSV</title><link>/posts/2026-08-04-excel-google-contacts/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-excel-google-contacts/</guid><description>&lt;p&gt;Managing organizational contact directories can often get messy—especially when administrative data is scattered across multiple Excel spreadsheets, missing vital fields, or formatted strictly for internal reporting rather than contact management systems.&lt;/p&gt;
 &lt;p&gt;When preparing contact directories for seamless mobile sync via &lt;strong&gt;Google Contacts&lt;/strong&gt;, standard raw exports won&amp;rsquo;t cut it. Google Contacts expects a precise, standardized CSV schema to map details like names, titles, phone numbers, and notes correctly.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;the-problem-raw-spreadsheets-vs-google-contacts-schema&#34;&gt;The Problem: Raw Spreadsheets vs. Google Contacts Schema&lt;/h3&gt;
-&lt;p&gt;Standard office documents like &lt;code&gt;ADs(P).xlsx&lt;/code&gt; or &lt;code&gt;PAAs.xlsx&lt;/code&gt; usually organize information visually for humans rather than programmatically for software. They often feature:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h3 id="the-problem-raw-spreadsheets-vs-google-contacts-schema"&gt;The Problem: Raw Spreadsheets vs. Google Contacts Schema&lt;/h3&gt;
+&lt;p&gt;Standard office documents like &lt;code&gt;ADs(P).xlsx&lt;/code&gt; or &lt;code&gt;PAAs.xlsx&lt;/code&gt; usually organize information visually for humans rather than programmatically for software. They often feature:&lt;/p&gt;</description></item></channel></rss>

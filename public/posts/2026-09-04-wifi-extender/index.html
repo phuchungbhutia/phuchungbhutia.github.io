@@ -1,88 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Extending a Static IP Office Network with a TP-Link C54 Extender | Technical Journal</title>
-<meta name="keywords" content="TP-Link, Static IP, 2026">
-<meta name="description" content="A step-by-step guide to configuring a new router and range extender on a static IP network.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-09-04-wifi-extender/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-09-04-wifi-extender/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-09-04-wifi-extender/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Extending a Static IP Office Network with a TP-Link C54 Extender">
-  <meta property="og:description" content="A step-by-step guide to configuring a new router and range extender on a static IP network.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-09-04T10:00:00+05:30">
-    <meta property="article:modified_time" content="2026-09-04T10:00:00+05:30">
-    <meta property="article:tag" content="TP-Link">
-    <meta property="article:tag" content="Static IP">
-    <meta property="article:tag" content="2026">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Extending a Static IP Office Network with a TP-Link C54 Extender">
-  <meta name="twitter:description" content="A step-by-step guide to configuring a new router and range extender on a static IP network.">
-
-
-<script type="application/ld+json">
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Extending a Static IP Office Network with a TP-Link C54 Extender | Technical Journal</title><meta name=keywords content="TP-Link,Static IP,2026"><meta name=description content="A step-by-step guide to configuring a new router and range extender on a static IP network."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-09-04-wifi-extender/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-09-04-wifi-extender/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-09-04-wifi-extender/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Extending a Static IP Office Network with a TP-Link C54 Extender"><meta property="og:description" content="A step-by-step guide to configuring a new router and range extender on a static IP network."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-09-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-09-04T10:00:00+05:30"><meta property="article:tag" content="TP-Link"><meta property="article:tag" content="Static IP"><meta property="article:tag" content="2026"><meta name=twitter:card content="summary"><meta name=twitter:title content="Extending a Static IP Office Network with a TP-Link C54 Extender"><meta name=twitter:description content="A step-by-step guide to configuring a new router and range extender on a static IP network."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -91,18 +7,17 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Extending a Static IP Office Network with a TP-Link C54 Extender",
-      "item": "//localhost:1313/posts/2026-09-04-wifi-extender/"
+      "item": "/posts/2026-09-04-wifi-extender/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -123,318 +38,30 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-09-04-wifi-extender/"
+    "@id": "/posts/2026-09-04-wifi-extender/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Extending a Static IP Office Network with a TP-Link C54 Extender
-    </h1>
-    <div class="post-description">
-      A step-by-step guide to configuring a new router and range extender on a static IP network.
-    </div>
-    <div class="post-meta">
-
-<span title='2026-09-04 10:00:00 +0530 IST'>September 4, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#configuring-the-primary-connection" aria-label="Configuring the Primary Connection">Configuring the Primary Connection</a></li>
-            <li>
-                <a href="#replicating-the-old-wi-fi-credentials" aria-label="Replicating the Old Wi-Fi Credentials">Replicating the Old Wi-Fi Credentials</a></li>
-            <li>
-                <a href="#deploying-the-range-extender" aria-label="Deploying the Range Extender">Deploying the Range Extender</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><p>Setting up network hardware usually feels like a straightforward plug-and-play process. You unbox a router, plug in the WAN cable, and let DHCP handle the rest. It just works. But things get complicated when you are dealing with a static IP office environment. Honestly, bridging a fixed local area connection to a new Wi-Fi ecosystem requires a bit of manual maneuvering. So, let&rsquo;s walk through replacing an aging router and extending its reach using a TP-Link C54, keeping all the original credentials intact.</p>
-<hr>
-<h2 id="configuring-the-primary-connection">Configuring the Primary Connection<a hidden class="anchor" aria-hidden="true" href="#configuring-the-primary-connection">#</a></h2>
-<p>The first hurdle is getting the primary router to talk to an internet gateway that doesn&rsquo;t hand out IP addresses automatically. If your network mandates specific parameters—say, a fixed WAN IP with a custom subnet—you have to hardcode these into the new hardware.</p>
-<p>You simply connect the main office LAN cable to the router&rsquo;s WAN port, log into the admin panel, and swap the connection type from standard automatic assignment to <strong>Static IP</strong>.</p>
-<table>
-	<thead>
-			<tr>
-					<th>Setting</th>
-					<th>Required Value</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><strong>WAN IP</strong></td>
-					<td><code>10.182.12.163</code></td>
-			</tr>
-			<tr>
-					<td><strong>Subnet Mask</strong></td>
-					<td><code>255.255.255.192</code></td>
-			</tr>
-			<tr>
-					<td><strong>Default Gateway</strong></td>
-					<td><code>10.182.12.129</code></td>
-			</tr>
-			<tr>
-					<td><strong>Primary DNS</strong></td>
-					<td><code>164.100.3.1</code></td>
-			</tr>
-			<tr>
-					<td><strong>Secondary DNS</strong></td>
-					<td><code>164.100.17.3</code></td>
-			</tr>
-	</tbody>
-</table>
-<p>Punch in your assigned gateway along with your primary and secondary DNS servers. To be fair, missing just one digit here leaves you offline. Accuracy matters.</p>
-<hr>
-<h2 id="replicating-the-old-wi-fi-credentials">Replicating the Old Wi-Fi Credentials<a hidden class="anchor" aria-hidden="true" href="#replicating-the-old-wi-fi-credentials">#</a></h2>
-<p>Once the primary router is live, you probably want to keep your existing devices connected without typing in a new password on a dozen different machines. You just change the new router&rsquo;s wireless settings to match the old ones.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>SSID: Revenue Sec( Finance)
-</span></span><span style="display:flex;"><span>Password: Revenuesec@123
-</span></span><span style="display:flex;"><span>Security: WPA2-PSK
-</span></span></code></pre></div><p>Naming the SSID exactly the same and reusing the original password ensures laptops and phones migrate over instantly.</p>
-<hr>
-<h2 id="deploying-the-range-extender">Deploying the Range Extender<a hidden class="anchor" aria-hidden="true" href="#deploying-the-range-extender">#</a></h2>
-<p>Now, covering a dead zone. This is where the TP-Link C54 comes in as a range extender. Instead of running a long ethernet cable across the floor, you can grab the C54 and plug it into a wall outlet near the primary router for the initial setup.</p>
-<ul>
-<li>Connect to the C54&rsquo;s default Wi-Fi network.</li>
-<li>Open your browser and navigate to <code>192.168.0.1</code>.</li>
-<li>Switch the operation mode to <strong>Range Extender</strong> mode and reboot.</li>
-</ul>
-<p>Once it wakes back up, a quick setup wizard prompts you to scan the area for existing networks. You just select the primary network, type in the password, and let the extender sync up.</p>
-<p>The final step is purely physical. Move the C54 halfway between the main router and the area suffering from weak signal. Plug it into the wall, wait for the lights to turn solid, and connect your devices. You are good to go.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/tp-link/">TP-Link</a></li>
-      <li><a href="//localhost:1313/tags/static-ip/">Static IP</a></li>
-      <li><a href="//localhost:1313/tags/2026/">2026</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-09-04-toxic-plants/">
-    <span class="title">« Prev</span>
-    <span>Deadly Flora and Wild Fungi: A Trekker&#39;s Field Guide to Himalayan Hazards</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-09-04-think/">
-    <span class="title">Next »</span>
-    <span>How to See Through the Noise: A Practical Playbook for Clear Thinking</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Extending a Static IP Office Network with a TP-Link C54 Extender</h1><div class=post-description>A step-by-step guide to configuring a new router and range extender on a static IP network.</div><div class=post-meta><span title='2026-09-04 10:00:00 +0530 IST'>September 4, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#configuring-the-primary-connection aria-label="Configuring the Primary Connection">Configuring the Primary Connection</a></li><li><a href=#replicating-the-old-wi-fi-credentials aria-label="Replicating the Old Wi-Fi Credentials">Replicating the Old Wi-Fi Credentials</a></li><li><a href=#deploying-the-range-extender aria-label="Deploying the Range Extender">Deploying the Range Extender</a></li></ul></div></details><div class="post-content md-content"><p>Setting up network hardware usually feels like a straightforward plug-and-play process. You unbox a router, plug in the WAN cable, and let DHCP handle the rest. It just works. But things get complicated when you are dealing with a static IP office environment. Honestly, bridging a fixed local area connection to a new Wi-Fi ecosystem requires a bit of manual maneuvering. So, let&rsquo;s walk through replacing an aging router and extending its reach using a TP-Link C54, keeping all the original credentials intact.</p><hr><h2 id=configuring-the-primary-connection>Configuring the Primary Connection<a hidden class=anchor aria-hidden=true href=#configuring-the-primary-connection>#</a></h2><p>The first hurdle is getting the primary router to talk to an internet gateway that doesn&rsquo;t hand out IP addresses automatically. If your network mandates specific parameters—say, a fixed WAN IP with a custom subnet—you have to hardcode these into the new hardware.</p><p>You simply connect the main office LAN cable to the router&rsquo;s WAN port, log into the admin panel, and swap the connection type from standard automatic assignment to <strong>Static IP</strong>.</p><table><thead><tr><th>Setting</th><th>Required Value</th></tr></thead><tbody><tr><td><strong>WAN IP</strong></td><td><code>10.182.12.163</code></td></tr><tr><td><strong>Subnet Mask</strong></td><td><code>255.255.255.192</code></td></tr><tr><td><strong>Default Gateway</strong></td><td><code>10.182.12.129</code></td></tr><tr><td><strong>Primary DNS</strong></td><td><code>164.100.3.1</code></td></tr><tr><td><strong>Secondary DNS</strong></td><td><code>164.100.17.3</code></td></tr></tbody></table><p>Punch in your assigned gateway along with your primary and secondary DNS servers. To be fair, missing just one digit here leaves you offline. Accuracy matters.</p><hr><h2 id=replicating-the-old-wi-fi-credentials>Replicating the Old Wi-Fi Credentials<a hidden class=anchor aria-hidden=true href=#replicating-the-old-wi-fi-credentials>#</a></h2><p>Once the primary router is live, you probably want to keep your existing devices connected without typing in a new password on a dozen different machines. You just change the new router&rsquo;s wireless settings to match the old ones.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>SSID: Revenue Sec( Finance)
+</span></span><span style=display:flex><span>Password: Revenuesec@123
+</span></span><span style=display:flex><span>Security: WPA2-PSK
+</span></span></code></pre></div><p>Naming the SSID exactly the same and reusing the original password ensures laptops and phones migrate over instantly.</p><hr><h2 id=deploying-the-range-extender>Deploying the Range Extender<a hidden class=anchor aria-hidden=true href=#deploying-the-range-extender>#</a></h2><p>Now, covering a dead zone. This is where the TP-Link C54 comes in as a range extender. Instead of running a long ethernet cable across the floor, you can grab the C54 and plug it into a wall outlet near the primary router for the initial setup.</p><ul><li>Connect to the C54&rsquo;s default Wi-Fi network.</li><li>Open your browser and navigate to <code>192.168.0.1</code>.</li><li>Switch the operation mode to <strong>Range Extender</strong> mode and reboot.</li></ul><p>Once it wakes back up, a quick setup wizard prompts you to scan the area for existing networks. You just select the primary network, type in the password, and let the extender sync up.</p><p>The final step is purely physical. Move the C54 halfway between the main router and the area suffering from weak signal. Plug it into the wall, wait for the lights to turn solid, and connect your devices. You are good to go.</p></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/tp-link/>TP-Link</a></li><li><a href=/tags/static-ip/>Static IP</a></li><li><a href=/tags/2026/>2026</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-09-04-toxic-plants/><span class=title>« Prev</span>
+<span>Deadly Flora and Wild Fungi: A Trekker's Field Guide to Himalayan Hazards</span>
+</a><a class=next href=/posts/2026-09-04-think/><span class=title>Next »</span>
+<span>How to See Through the Noise: A Practical Playbook for Clear Thinking</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

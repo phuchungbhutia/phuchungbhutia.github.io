@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons"
-date: 2026-02-16
+date: "2026-02-16T10:00:00+05:30"
 categories: [Linux, Networking, System Administration]
 tags: [ntp, systemd, linux, devops, networking, chrony, bash]
 ---

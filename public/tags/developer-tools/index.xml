@@ -1,28 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Developer Tools on Technical Journal</title>
-    <link>//localhost:1313/tags/developer-tools/</link>
-    <description>Recent content in Developer Tools on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/developer-tools/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Accessing Hundreds of AI Models with One API Key: An OpenRouter Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-openrouter/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-openrouter/</guid>
-      <description>&lt;p&gt;Building AI applications usually means juggling half a dozen different API keys, distinct client libraries, and conflicting rate limits. If you want to benchmark Claude against Gemini, or drop Llama 3 into a pipeline that already runs OpenAI models, managing credentials gets tedious fast.&lt;/p&gt;
-&lt;p&gt;That is where OpenRouter comes in. It acts as a single unified gateway to virtually every major Large Language Model on the market today. Here is a straightforward walkthrough on how to set up an account, obtain an API key, and make your first call in Python.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title>
-      <link>//localhost:1313/posts/2026-08-04-adb/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-adb/</guid>
-      <description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
-&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Developer Tools on Technical Journal</title><link>/tags/developer-tools/</link><description>Recent content in Developer Tools on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/developer-tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Accessing Hundreds of AI Models with One API Key: An OpenRouter Guide</title><link>/posts/2026-08-04-openrouter/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-openrouter/</guid><description>&lt;p&gt;Building AI applications usually means juggling half a dozen different API keys, distinct client libraries, and conflicting rate limits. If you want to benchmark Claude against Gemini, or drop Llama 3 into a pipeline that already runs OpenAI models, managing credentials gets tedious fast.&lt;/p&gt;
+&lt;p&gt;That is where OpenRouter comes in. It acts as a single unified gateway to virtually every major Large Language Model on the market today. Here is a straightforward walkthrough on how to set up an account, obtain an API key, and make your first call in Python.&lt;/p&gt;</description></item><item><title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title><link>/posts/2026-08-04-adb/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-adb/</guid><description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
+&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description></item></channel></rss>

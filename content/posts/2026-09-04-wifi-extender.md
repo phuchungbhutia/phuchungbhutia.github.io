@@ -1,6 +1,6 @@
 ---
 title: "Extending a Static IP Office Network with a TP-Link C54 Extender"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Networking", "Hardware"]
 tags: ["TP-Link", "Static IP", "2026"]
 description: "A step-by-step guide to configuring a new router and range extender on a static IP network."

@@ -1,25 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Templates on Technical Journal</title>
-    <link>//localhost:1313/tags/templates/</link>
-    <description>Recent content in Templates on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 08:10:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/templates/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building a Reusable JSON Prompt Generator Template</title>
-      <link>//localhost:1313/posts/2026-08-05-json-prompt2/</link>
-      <pubDate>Wed, 05 Aug 2026 08:10:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-json-prompt2/</guid>
-      <description>&lt;h1 id=&#34;building-a-reusable-json-prompt-generator-template&#34;&gt;Building a Reusable JSON Prompt Generator Template&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Templates on Technical Journal</title><link>/tags/templates/</link><description>Recent content in Templates on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 08:10:00 +0530</lastBuildDate><atom:link href="/tags/templates/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a Reusable JSON Prompt Generator Template</title><link>/posts/2026-08-05-json-prompt2/</link><pubDate>Wed, 05 Aug 2026 08:10:00 +0530</pubDate><guid>/posts/2026-08-05-json-prompt2/</guid><description>&lt;h1 id="building-a-reusable-json-prompt-generator-template"&gt;Building a Reusable JSON Prompt Generator Template&lt;/h1&gt;
 &lt;p&gt;Writing JSON manually works for a few scenes.&lt;/p&gt;
 &lt;p&gt;Writing hundreds of prompts quickly becomes repetitive.&lt;/p&gt;
 &lt;p&gt;The solution is a reusable template.&lt;/p&gt;
 &lt;p&gt;This article explains how to design a flexible JSON prompt generator that can be adapted to almost any AI video generation platform.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;why-templates-matter&#34;&gt;Why Templates Matter&lt;/h1&gt;
+&lt;h1 id="why-templates-matter"&gt;Why Templates Matter&lt;/h1&gt;
 &lt;p&gt;A reusable template offers several advantages:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Consistency&lt;/li&gt;
@@ -28,7 +13,4 @@
 &lt;li&gt;Easier collaboration&lt;/li&gt;
 &lt;li&gt;Simple automation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Instead of starting from scratch every time, you only fill in the required fields.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;Instead of starting from scratch every time, you only fill in the required fields.&lt;/p&gt;</description></item></channel></rss>

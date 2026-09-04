@@ -1,30 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Customization on Technical Journal</title>
-    <link>//localhost:1313/tags/customization/</link>
-    <description>Recent content in Customization on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/customization/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to Customizing the Linux Mint Boot Experience: Plymouth Themes, Custom Logos, and Silent Boot</title>
-      <link>//localhost:1313/posts/2026-08-04-mint-boot/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-mint-boot/</guid>
-      <description>&lt;h1 id=&#34;the-ultimate-guide-to-customizing-the-linux-mint-boot-experience&#34;&gt;The Ultimate Guide to Customizing the Linux Mint Boot Experience&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Customization on Technical Journal</title><link>/tags/customization/</link><description>Recent content in Customization on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/customization/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to Customizing the Linux Mint Boot Experience: Plymouth Themes, Custom Logos, and Silent Boot</title><link>/posts/2026-08-04-mint-boot/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-mint-boot/</guid><description>&lt;h1 id="the-ultimate-guide-to-customizing-the-linux-mint-boot-experience"&gt;The Ultimate Guide to Customizing the Linux Mint Boot Experience&lt;/h1&gt;
 &lt;p&gt;There is something deeply satisfying about tailoring an operating system to feel uniquely yours. While tweaking desktop wallpapers, icon packs, panel layouts, and GTK themes is standard practice for Linux Mint users, the boot screen is often left completely untouched.&lt;/p&gt;
-&lt;p&gt;When you turn on your PC, you are greeted by the standard Linux Mint logo pulsating against a dark background. This boot splash screen—managed by an underlying framework called &lt;strong&gt;Plymouth&lt;/strong&gt;—is fully customizable. Whether you want to swap the standard Mint logo for your own personal logo or wallpaper, install an animated high-tech theme, fix stretched low-resolution boot graphics, or disable graphics entirely to view real-time system logs during startup, this guide covers every step in detail.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Transforming Linux Mint XFCE into a High-Speed Windows Clone for Older PCs (4GB RAM Optimization Guide)</title>
-      <link>//localhost:1313/posts/2026-08-04-custom-xfce/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-custom-xfce/</guid>
-      <description>&lt;h1 id=&#34;transforming-linux-mint-xfce-into-a-high-speed-windows-clone-optimized-for-4gb-ram&#34;&gt;Transforming Linux Mint XFCE into a High-Speed Windows Clone (Optimized for 4GB RAM)&lt;/h1&gt;
+&lt;p&gt;When you turn on your PC, you are greeted by the standard Linux Mint logo pulsating against a dark background. This boot splash screen—managed by an underlying framework called &lt;strong&gt;Plymouth&lt;/strong&gt;—is fully customizable. Whether you want to swap the standard Mint logo for your own personal logo or wallpaper, install an animated high-tech theme, fix stretched low-resolution boot graphics, or disable graphics entirely to view real-time system logs during startup, this guide covers every step in detail.&lt;/p&gt;</description></item><item><title>Transforming Linux Mint XFCE into a High-Speed Windows Clone for Older PCs (4GB RAM Optimization Guide)</title><link>/posts/2026-08-04-custom-xfce/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-custom-xfce/</guid><description>&lt;h1 id="transforming-linux-mint-xfce-into-a-high-speed-windows-clone-optimized-for-4gb-ram"&gt;Transforming Linux Mint XFCE into a High-Speed Windows Clone (Optimized for 4GB RAM)&lt;/h1&gt;
 &lt;p&gt;If you are running Linux Mint on an older desktop or laptop equipped with only 4GB of RAM, you do not have to choose between visual familiarity and rapid performance.&lt;/p&gt;
-&lt;p&gt;While &lt;strong&gt;Linux Mint XFCE&lt;/strong&gt; is already one of the most efficient, lightweight Linux distributions available today, its stock configuration isn&amp;rsquo;t fully tuned out-of-the-box for low-spec hardware or Windows migration. In this comprehensive, step-by-step guide, we compile everything needed to transform your XFCE desktop into an authentic Windows lookalike, integrate a lightweight taskbar net-speed monitor, replace the boot splash graphic, master essential terminal controls, and implement deep kernel-level optimizations to keep your system running blazingly fast.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;While &lt;strong&gt;Linux Mint XFCE&lt;/strong&gt; is already one of the most efficient, lightweight Linux distributions available today, its stock configuration isn&amp;rsquo;t fully tuned out-of-the-box for low-spec hardware or Windows migration. In this comprehensive, step-by-step guide, we compile everything needed to transform your XFCE desktop into an authentic Windows lookalike, integrate a lightweight taskbar net-speed monitor, replace the boot splash graphic, master essential terminal controls, and implement deep kernel-level optimizations to keep your system running blazingly fast.&lt;/p&gt;</description></item></channel></rss>

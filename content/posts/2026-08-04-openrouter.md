@@ -1,6 +1,6 @@
 ---
 title: "Accessing Hundreds of AI Models with One API Key: An OpenRouter Guide"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Artificial Intelligence", "Software Engineering", "APIs"]
 tags: ["OpenRouter", "LLM", "Python", "Developer Tools", "AI Models"]
 ---

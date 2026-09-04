@@ -1,6 +1,6 @@
 ---
 title: "Understanding Energy Flow Meditation: A Simple Visualization Guide"
-date: 2026-08-05 02:57:00 +0000
+date: "2026-08-05T02:57:00+05:30"
 categories: [meditation]
 tags: [meditation, visualization, mindfulness, yoga, chakras, breathing, wellness, guide]
 ---

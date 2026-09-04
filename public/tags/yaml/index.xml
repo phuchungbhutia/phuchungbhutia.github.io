@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Yaml on Technical Journal</title>
-    <link>//localhost:1313/tags/yaml/</link>
-    <description>Recent content in Yaml on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 09:30:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title>
-      <link>//localhost:1313/posts/2026-08-05-github5/</link>
-      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-github5/</guid>
-      <description>&lt;h1 id=&#34;github-actions-complete-cicd-guide-from-beginner-to-production&#34;&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Yaml on Technical Journal</title><link>/tags/yaml/</link><description>Recent content in Yaml on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 09:30:00 +0530</lastBuildDate><atom:link href="/tags/yaml/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title><link>/posts/2026-08-05-github5/</link><pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate><guid>/posts/2026-08-05-github5/</guid><description>&lt;h1 id="github-actions-complete-cicd-guide-from-beginner-to-production"&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
 &lt;p&gt;Writing code is only one part of software development.&lt;/p&gt;
 &lt;p&gt;Modern software teams automate everything:&lt;/p&gt;
 &lt;ul&gt;
@@ -26,7 +11,4 @@
 &lt;li&gt;Sending notifications&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;GitHub Actions makes all of this possible without leaving GitHub.&lt;/p&gt;
-&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description></item></channel></rss>

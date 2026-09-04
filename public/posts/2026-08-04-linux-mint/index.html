@@ -1,99 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management | Technical Journal</title>
-<meta name="keywords" content="linux-mint, hplip, cups, apt, dpkg, libreoffice, fonts">
-<meta name="description" content="Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management | Technical Journal</title><meta name=keywords content="linux-mint,hplip,cups,apt,dpkg,libreoffice,fonts"><meta name=description content="Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.
 This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.
 
 1. Managing HP Hardware via HPLIP and CUPS
-Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-linux-mint/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-linux-mint/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-linux-mint/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management">
-  <meta property="og:description" content="Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.
+Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-linux-mint/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-linux-mint/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-linux-mint/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management"><meta property="og:description" content="Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.
 This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.
-1. Managing HP Hardware via HPLIP and CUPS Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:tag" content="Linux Mint">
-    <meta property="article:tag" content="Hplip">
-    <meta property="article:tag" content="Cups">
-    <meta property="article:tag" content="Apt">
-    <meta property="article:tag" content="Dpkg">
-    <meta property="article:tag" content="Libreoffice">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management">
-  <meta name="twitter:description" content="Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.
+1. Managing HP Hardware via HPLIP and CUPS Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="Linux-Mint"><meta property="article:tag" content="Hplip"><meta property="article:tag" content="Cups"><meta property="article:tag" content="Apt"><meta property="article:tag" content="Dpkg"><meta property="article:tag" content="Libreoffice"><meta name=twitter:card content="summary"><meta name=twitter:title content="Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management"><meta name=twitter:description content="Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.
 This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.
-1. Managing HP Hardware via HPLIP and CUPS Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring.">
-
-
-<script type="application/ld+json">
+1. Managing HP Hardware via HPLIP and CUPS Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -102,18 +15,17 @@ This comprehensive reference guide aggregates essential Linux Mint administratio
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management",
-      "item": "//localhost:1313/posts/2026-08-04-linux-mint/"
+      "item": "/posts/2026-08-04-linux-mint/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -126,447 +38,62 @@ This comprehensive reference guide aggregates essential Linux Mint administratio
   "articleBody": "Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.\nThis comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.\n1. Managing HP Hardware via HPLIP and CUPS Linux Mint uses the Common Unix Printing System (CUPS) to handle print queues and job spools, alongside HPLIP (HP Linux Imaging and Printing) for HP device communication, driver support, and status monitoring.\nInstalling the HPLIP Stack While Linux Mint ships with base printing tools, installing the full HPLIP suite ensures access to status utilities, scanner support, and device wizards.\nsudo apt update sudo apt install hplip hplip-gui To run the interactive hardware discovery wizard for USB, Network, or Wi-Fi printers:\nhp-setup Note: Models requiring proprietary binary drivers (such as many HP LaserJet printers) will prompt you to download and install the required plugin directly through the hp-setup wizard.\nPrint Service Management When print jobs hang or the queue fails to process documents, restarting the underlying daemon fixes the issue in most cases:\nRestart CUPS: sudo systemctl restart cups Stop CUPS: sudo systemctl stop cups Start CUPS: sudo systemctl start cups Check Service Status: sudo systemctl status cups To manage the graphical taskbar applet:\nhp-systray # Launches the desktop tray monitor hp-systray -x # Terminates the tray applet process Resolving “Device Communication Error” If your system loses communication with your printer, work through these diagnostic procedures sequentially:\nReinstall Proprietary Plugins: Force an update of the binary plugin stack. hp-plugin -i Execute Diagnostic Checks: Run the built-in diagnostic utility to identify missing packages or configuration errors: hp-check -t Verify User Permissions: Ensure your current Linux account belongs to the appropriate hardware control groups: sudo usermod -a -G lp,scanner $USER (Log out and log back in for changes to take effect). 4. Purge a Stuck Print Queue: Clear corrupted spool files directly from the spool directory:\nsudo systemctl stop cups sudo rm /var/spool/cups/* sudo systemctl start cups 2. Advanced Document Workflow: Booklet Printing Most Linux desktop applications lack a one-click “Booklet/Brochure” option in standard print dialogs. You can accomplish proper page ordering using any of the following methods.\nMethod A: Boomaga Virtual Printer (Recommended) Boomaga acts as an intermediate print preview utility that automatically reorders pages into proper signature formats prior to sending the job to physical hardware.\nsudo apt install boomaga Workflow: Open your document $\\rightarrow$ Print to Boomaga $\\rightarrow$ Select Booklet Mode $\\rightarrow$ Send to your physical HP printer. Method B: LibreOffice Native Layout Navigate to File \u003e Print. Select the Page Layout tab. Under the layout options, choose Brochure. In your printer’s duplex settings, set orientation to Two-Sided (Short-Edge Flip). Method C: Command-Line Processing (pdfbook2) To convert an existing PDF into a booklet format via the terminal:\nsudo apt install texlive-extra-utils pdfbook2 --paper=letter input_document.pdf This command outputs a file named input_document-book.pdf, pre-formatted for 2-up double-sided printing.\n3. Microsoft Font Integration and Compatibility Document rendering issues in LibreOffice or OnlyOffice often occur because proprietary Microsoft fonts are missing, causing text to wrap incorrectly across pages.\nInstalling Core Microsoft Fonts To install standard web fonts (Arial, Times New Roman, Courier New):\nsudo apt update \u0026\u0026 sudo apt install ttf-mscorefonts-installer Terminal Navigation Note: When the text-based EULA agreement appears during installation, press the Tab key to select , press Enter, select Yes, and press Enter again.\nInstalling Modern Proprietary Fonts (Calibri, Cambria, Segoe UI) For newer Microsoft font families, manually copy the .ttf files from a Windows installation or backup directory:\nCreate the user font directory: mkdir -p ~/.fonts Place your .ttf or .otf files inside ~/.fonts/. Refresh the local system font cache: sudo fc-cache -fv Metric Equivalents If you prefer to stick to fully open-source fonts, Linux Mint includes metrically compatible alternatives that maintain document spacing without layout distortion:\nMicrosoft Font Open-Source Equivalent Arial Liberation Sans / Arimo Times New Roman Liberation Serif / Tinos Courier New Liberation Mono / Cousine Calibri Carlito Cambria Caladea 4. Package Management and Troubleshooting Linux Mint uses Debian Package files (.deb) and the Advanced Package Tool (apt) for software management.\nResolving GPG Repository Signature Errors (NO_PUBKEY) When third-party software repositories update their security keys, sudo apt update may fail with an unverified key error (e.g., NO_PUBKEY FD533C07C264648F).\nTo resolve this issue, import the missing public key directly from an official keyserver:\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FD533C07C264648F sudo apt update Alternatively, fetch and dearmor the key directly into your trusted keyrings directory:\nwget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg sudo apt update Installing Standalone .deb Files Avoid using dpkg -i to install standalone package files directly. dpkg is a low-level tool that cannot resolve or fetch missing remote dependencies.\n# INCORRECT: Leaves missing dependencies unconfigured sudo dpkg -i package_name.deb The Preferred Installation Method: Use apt to install local .deb files so it automatically fetches any required dependency packages from online repositories:\nsudo apt install ./package_name.deb (The leading ./ is required to notify apt that you are referencing a local filesystem path).\nRecovering from Broken Dependency States If a package installation halts due to unmet dependency requirements, your system’s package database enters an unconfigured state. Fix the broken installations by running:\nsudo apt install -f The -f (--fix-broken) flag instructs apt to inspect unresolved dependencies, download the required missing libraries, and finish configuring all pending software installations.\n",
   "wordCount" : "915",
   "inLanguage": "en",
-  "datePublished": "2026-08-04T00:00:00Z",
-  "dateModified": "2026-08-04T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-linux-mint/"
+    "@id": "/posts/2026-08-04-linux-mint/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#1-managing-hp-hardware-via-hplip-and-cups" aria-label="1. Managing HP Hardware via HPLIP and CUPS">1. Managing HP Hardware via HPLIP and CUPS</a><ul>
-                    
-            <li>
-                <a href="#installing-the-hplip-stack" aria-label="Installing the HPLIP Stack">Installing the HPLIP Stack</a></li>
-            <li>
-                <a href="#print-service-management" aria-label="Print Service Management">Print Service Management</a></li>
-            <li>
-                <a href="#resolving-device-communication-error" aria-label="Resolving &ldquo;Device Communication Error&rdquo;">Resolving &ldquo;Device Communication Error&rdquo;</a></li></ul>
-            </li>
-            <li>
-                <a href="#2-advanced-document-workflow-booklet-printing" aria-label="2. Advanced Document Workflow: Booklet Printing">2. Advanced Document Workflow: Booklet Printing</a><ul>
-                    
-            <li>
-                <a href="#method-a-boomaga-virtual-printer-recommended" aria-label="Method A: Boomaga Virtual Printer (Recommended)">Method A: Boomaga Virtual Printer (Recommended)</a></li>
-            <li>
-                <a href="#method-b-libreoffice-native-layout" aria-label="Method B: LibreOffice Native Layout">Method B: LibreOffice Native Layout</a></li>
-            <li>
-                <a href="#method-c-command-line-processing-pdfbook2" aria-label="Method C: Command-Line Processing (pdfbook2)">Method C: Command-Line Processing (pdfbook2)</a></li></ul>
-            </li>
-            <li>
-                <a href="#3-microsoft-font-integration-and-compatibility" aria-label="3. Microsoft Font Integration and Compatibility">3. Microsoft Font Integration and Compatibility</a><ul>
-                    
-            <li>
-                <a href="#installing-core-microsoft-fonts" aria-label="Installing Core Microsoft Fonts">Installing Core Microsoft Fonts</a></li>
-            <li>
-                <a href="#installing-modern-proprietary-fonts-calibri-cambria-segoe-ui" aria-label="Installing Modern Proprietary Fonts (Calibri, Cambria, Segoe UI)">Installing Modern Proprietary Fonts (Calibri, Cambria, Segoe UI)</a></li>
-            <li>
-                <a href="#metric-equivalents" aria-label="Metric Equivalents">Metric Equivalents</a></li></ul>
-            </li>
-            <li>
-                <a href="#4-package-management-and-troubleshooting" aria-label="4. Package Management and Troubleshooting">4. Package Management and Troubleshooting</a><ul>
-                    
-            <li>
-                <a href="#resolving-gpg-repository-signature-errors-no_pubkey" aria-label="Resolving GPG Repository Signature Errors (NO_PUBKEY)">Resolving GPG Repository Signature Errors (NO_PUBKEY)</a></li>
-            <li>
-                <a href="#installing-standalone-deb-files" aria-label="Installing Standalone .deb Files">Installing Standalone .deb Files</a></li>
-            <li>
-                <a href="#recovering-from-broken-dependency-states" aria-label="Recovering from Broken Dependency States">Recovering from Broken Dependency States</a>
-            </li>
-        </ul>
-        </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><p>Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.</p>
-<p>This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.</p>
-<hr>
-<h2 id="1-managing-hp-hardware-via-hplip-and-cups">1. Managing HP Hardware via HPLIP and CUPS<a hidden class="anchor" aria-hidden="true" href="#1-managing-hp-hardware-via-hplip-and-cups">#</a></h2>
-<p>Linux Mint uses the <strong>Common Unix Printing System (CUPS)</strong> to handle print queues and job spools, alongside <strong>HPLIP (HP Linux Imaging and Printing)</strong> for HP device communication, driver support, and status monitoring.</p>
-<h3 id="installing-the-hplip-stack">Installing the HPLIP Stack<a hidden class="anchor" aria-hidden="true" href="#installing-the-hplip-stack">#</a></h3>
-<p>While Linux Mint ships with base printing tools, installing the full HPLIP suite ensures access to status utilities, scanner support, and device wizards.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt install hplip hplip-gui
-</span></span></code></pre></div><p>To run the interactive hardware discovery wizard for USB, Network, or Wi-Fi printers:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hp-setup
-</span></span></code></pre></div><p><em>Note: Models requiring proprietary binary drivers (such as many HP LaserJet printers) will prompt you to download and install the required plugin directly through the <code>hp-setup</code> wizard.</em></p>
-<h3 id="print-service-management">Print Service Management<a hidden class="anchor" aria-hidden="true" href="#print-service-management">#</a></h3>
-<p>When print jobs hang or the queue fails to process documents, restarting the underlying daemon fixes the issue in most cases:</p>
-<ul>
-<li><strong>Restart CUPS:</strong> <code>sudo systemctl restart cups</code></li>
-<li><strong>Stop CUPS:</strong> <code>sudo systemctl stop cups</code></li>
-<li><strong>Start CUPS:</strong> <code>sudo systemctl start cups</code></li>
-<li><strong>Check Service Status:</strong> <code>sudo systemctl status cups</code></li>
-</ul>
-<p>To manage the graphical taskbar applet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hp-systray     <span style="color:#75715e"># Launches the desktop tray monitor</span>
-</span></span><span style="display:flex;"><span>hp-systray -x  <span style="color:#75715e"># Terminates the tray applet process</span>
-</span></span></code></pre></div><h3 id="resolving-device-communication-error">Resolving &ldquo;Device Communication Error&rdquo;<a hidden class="anchor" aria-hidden="true" href="#resolving-device-communication-error">#</a></h3>
-<p>If your system loses communication with your printer, work through these diagnostic procedures sequentially:</p>
-<ol>
-<li><strong>Reinstall Proprietary Plugins:</strong> Force an update of the binary plugin stack.</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hp-plugin -i
-</span></span></code></pre></div><ol start="2">
-<li><strong>Execute Diagnostic Checks:</strong> Run the built-in diagnostic utility to identify missing packages or configuration errors:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hp-check -t
-</span></span></code></pre></div><ol start="3">
-<li><strong>Verify User Permissions:</strong> Ensure your current Linux account belongs to the appropriate hardware control groups:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -a -G lp,scanner $USER
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>5 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#1-managing-hp-hardware-via-hplip-and-cups aria-label="1. Managing HP Hardware via HPLIP and CUPS">1. Managing HP Hardware via HPLIP and CUPS</a><ul><li><a href=#installing-the-hplip-stack aria-label="Installing the HPLIP Stack">Installing the HPLIP Stack</a></li><li><a href=#print-service-management aria-label="Print Service Management">Print Service Management</a></li><li><a href=#resolving-device-communication-error aria-label="Resolving &ldquo;Device Communication Error&rdquo;">Resolving &ldquo;Device Communication Error&rdquo;</a></li></ul></li><li><a href=#2-advanced-document-workflow-booklet-printing aria-label="2. Advanced Document Workflow: Booklet Printing">2. Advanced Document Workflow: Booklet Printing</a><ul><li><a href=#method-a-boomaga-virtual-printer-recommended aria-label="Method A: Boomaga Virtual Printer (Recommended)">Method A: Boomaga Virtual Printer (Recommended)</a></li><li><a href=#method-b-libreoffice-native-layout aria-label="Method B: LibreOffice Native Layout">Method B: LibreOffice Native Layout</a></li><li><a href=#method-c-command-line-processing-pdfbook2 aria-label="Method C: Command-Line Processing (pdfbook2)">Method C: Command-Line Processing (pdfbook2)</a></li></ul></li><li><a href=#3-microsoft-font-integration-and-compatibility aria-label="3. Microsoft Font Integration and Compatibility">3. Microsoft Font Integration and Compatibility</a><ul><li><a href=#installing-core-microsoft-fonts aria-label="Installing Core Microsoft Fonts">Installing Core Microsoft Fonts</a></li><li><a href=#installing-modern-proprietary-fonts-calibri-cambria-segoe-ui aria-label="Installing Modern Proprietary Fonts (Calibri, Cambria, Segoe UI)">Installing Modern Proprietary Fonts (Calibri, Cambria, Segoe UI)</a></li><li><a href=#metric-equivalents aria-label="Metric Equivalents">Metric Equivalents</a></li></ul></li><li><a href=#4-package-management-and-troubleshooting aria-label="4. Package Management and Troubleshooting">4. Package Management and Troubleshooting</a><ul><li><a href=#resolving-gpg-repository-signature-errors-no_pubkey aria-label="Resolving GPG Repository Signature Errors (NO_PUBKEY)">Resolving GPG Repository Signature Errors (NO_PUBKEY)</a></li><li><a href=#installing-standalone-deb-files aria-label="Installing Standalone .deb Files">Installing Standalone .deb Files</a></li><li><a href=#recovering-from-broken-dependency-states aria-label="Recovering from Broken Dependency States">Recovering from Broken Dependency States</a></li></ul></li></ul></div></details><div class="post-content md-content"><p>Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.</p><p>This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.</p><hr><h2 id=1-managing-hp-hardware-via-hplip-and-cups>1. Managing HP Hardware via HPLIP and CUPS<a hidden class=anchor aria-hidden=true href=#1-managing-hp-hardware-via-hplip-and-cups>#</a></h2><p>Linux Mint uses the <strong>Common Unix Printing System (CUPS)</strong> to handle print queues and job spools, alongside <strong>HPLIP (HP Linux Imaging and Printing)</strong> for HP device communication, driver support, and status monitoring.</p><h3 id=installing-the-hplip-stack>Installing the HPLIP Stack<a hidden class=anchor aria-hidden=true href=#installing-the-hplip-stack>#</a></h3><p>While Linux Mint ships with base printing tools, installing the full HPLIP suite ensures access to status utilities, scanner support, and device wizards.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt update
+</span></span><span style=display:flex><span>sudo apt install hplip hplip-gui
+</span></span></code></pre></div><p>To run the interactive hardware discovery wizard for USB, Network, or Wi-Fi printers:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>hp-setup
+</span></span></code></pre></div><p><em>Note: Models requiring proprietary binary drivers (such as many HP LaserJet printers) will prompt you to download and install the required plugin directly through the <code>hp-setup</code> wizard.</em></p><h3 id=print-service-management>Print Service Management<a hidden class=anchor aria-hidden=true href=#print-service-management>#</a></h3><p>When print jobs hang or the queue fails to process documents, restarting the underlying daemon fixes the issue in most cases:</p><ul><li><strong>Restart CUPS:</strong> <code>sudo systemctl restart cups</code></li><li><strong>Stop CUPS:</strong> <code>sudo systemctl stop cups</code></li><li><strong>Start CUPS:</strong> <code>sudo systemctl start cups</code></li><li><strong>Check Service Status:</strong> <code>sudo systemctl status cups</code></li></ul><p>To manage the graphical taskbar applet:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>hp-systray     <span style=color:#75715e># Launches the desktop tray monitor</span>
+</span></span><span style=display:flex><span>hp-systray -x  <span style=color:#75715e># Terminates the tray applet process</span>
+</span></span></code></pre></div><h3 id=resolving-device-communication-error>Resolving &ldquo;Device Communication Error&rdquo;<a hidden class=anchor aria-hidden=true href=#resolving-device-communication-error>#</a></h3><p>If your system loses communication with your printer, work through these diagnostic procedures sequentially:</p><ol><li><strong>Reinstall Proprietary Plugins:</strong> Force an update of the binary plugin stack.</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>hp-plugin -i
+</span></span></code></pre></div><ol start=2><li><strong>Execute Diagnostic Checks:</strong> Run the built-in diagnostic utility to identify missing packages or configuration errors:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>hp-check -t
+</span></span></code></pre></div><ol start=3><li><strong>Verify User Permissions:</strong> Ensure your current Linux account belongs to the appropriate hardware control groups:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo usermod -a -G lp,scanner $USER
 </span></span></code></pre></div><p><em>(Log out and log back in for changes to take effect).</em>
-4. <strong>Purge a Stuck Print Queue:</strong> Clear corrupted spool files directly from the spool directory:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl stop cups
-</span></span><span style="display:flex;"><span>sudo rm /var/spool/cups/*
-</span></span><span style="display:flex;"><span>sudo systemctl start cups
-</span></span></code></pre></div><hr>
-<h2 id="2-advanced-document-workflow-booklet-printing">2. Advanced Document Workflow: Booklet Printing<a hidden class="anchor" aria-hidden="true" href="#2-advanced-document-workflow-booklet-printing">#</a></h2>
-<p>Most Linux desktop applications lack a one-click &ldquo;Booklet/Brochure&rdquo; option in standard print dialogs. You can accomplish proper page ordering using any of the following methods.</p>
-<h3 id="method-a-boomaga-virtual-printer-recommended">Method A: Boomaga Virtual Printer (Recommended)<a hidden class="anchor" aria-hidden="true" href="#method-a-boomaga-virtual-printer-recommended">#</a></h3>
-<p>Boomaga acts as an intermediate print preview utility that automatically reorders pages into proper signature formats prior to sending the job to physical hardware.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install boomaga
-</span></span></code></pre></div><ul>
-<li><strong>Workflow:</strong> Open your document $\rightarrow$ Print to <strong>Boomaga</strong> $\rightarrow$ Select <strong>Booklet Mode</strong> $\rightarrow$ Send to your physical HP printer.</li>
-</ul>
-<h3 id="method-b-libreoffice-native-layout">Method B: LibreOffice Native Layout<a hidden class="anchor" aria-hidden="true" href="#method-b-libreoffice-native-layout">#</a></h3>
-<ol>
-<li>Navigate to <strong>File &gt; Print</strong>.</li>
-<li>Select the <strong>Page Layout</strong> tab.</li>
-<li>Under the layout options, choose <strong>Brochure</strong>.</li>
-<li>In your printer&rsquo;s duplex settings, set orientation to <strong>Two-Sided (Short-Edge Flip)</strong>.</li>
-</ol>
-<h3 id="method-c-command-line-processing-pdfbook2">Method C: Command-Line Processing (<code>pdfbook2</code>)<a hidden class="anchor" aria-hidden="true" href="#method-c-command-line-processing-pdfbook2">#</a></h3>
-<p>To convert an existing PDF into a booklet format via the terminal:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install texlive-extra-utils
-</span></span><span style="display:flex;"><span>pdfbook2 --paper<span style="color:#f92672">=</span>letter input_document.pdf
-</span></span></code></pre></div><p>This command outputs a file named <code>input_document-book.pdf</code>, pre-formatted for 2-up double-sided printing.</p>
-<hr>
-<h2 id="3-microsoft-font-integration-and-compatibility">3. Microsoft Font Integration and Compatibility<a hidden class="anchor" aria-hidden="true" href="#3-microsoft-font-integration-and-compatibility">#</a></h2>
-<p>Document rendering issues in LibreOffice or OnlyOffice often occur because proprietary Microsoft fonts are missing, causing text to wrap incorrectly across pages.</p>
-<h3 id="installing-core-microsoft-fonts">Installing Core Microsoft Fonts<a hidden class="anchor" aria-hidden="true" href="#installing-core-microsoft-fonts">#</a></h3>
-<p>To install standard web fonts (Arial, Times New Roman, Courier New):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt install ttf-mscorefonts-installer
-</span></span></code></pre></div><blockquote>
-<p><strong>Terminal Navigation Note:</strong> When the text-based EULA agreement appears during installation, press the <strong>Tab</strong> key to select <strong><code>&lt;Ok&gt;</code></strong>, press <strong>Enter</strong>, select <strong><code>Yes</code></strong>, and press <strong>Enter</strong> again.</p>
-</blockquote>
-<h3 id="installing-modern-proprietary-fonts-calibri-cambria-segoe-ui">Installing Modern Proprietary Fonts (Calibri, Cambria, Segoe UI)<a hidden class="anchor" aria-hidden="true" href="#installing-modern-proprietary-fonts-calibri-cambria-segoe-ui">#</a></h3>
-<p>For newer Microsoft font families, manually copy the <code>.ttf</code> files from a Windows installation or backup directory:</p>
-<ol>
-<li>Create the user font directory:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/.fonts
-</span></span></code></pre></div><ol start="2">
-<li>Place your <code>.ttf</code> or <code>.otf</code> files inside <code>~/.fonts/</code>.</li>
-<li>Refresh the local system font cache:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fc-cache -fv
-</span></span></code></pre></div><h3 id="metric-equivalents">Metric Equivalents<a hidden class="anchor" aria-hidden="true" href="#metric-equivalents">#</a></h3>
-<p>If you prefer to stick to fully open-source fonts, Linux Mint includes metrically compatible alternatives that maintain document spacing without layout distortion:</p>
-<table>
-	<thead>
-			<tr>
-					<th>Microsoft Font</th>
-					<th>Open-Source Equivalent</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><strong>Arial</strong></td>
-					<td>Liberation Sans / Arimo</td>
-			</tr>
-			<tr>
-					<td><strong>Times New Roman</strong></td>
-					<td>Liberation Serif / Tinos</td>
-			</tr>
-			<tr>
-					<td><strong>Courier New</strong></td>
-					<td>Liberation Mono / Cousine</td>
-			</tr>
-			<tr>
-					<td><strong>Calibri</strong></td>
-					<td>Carlito</td>
-			</tr>
-			<tr>
-					<td><strong>Cambria</strong></td>
-					<td>Caladea</td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h2 id="4-package-management-and-troubleshooting">4. Package Management and Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#4-package-management-and-troubleshooting">#</a></h2>
-<p>Linux Mint uses Debian Package files (<code>.deb</code>) and the Advanced Package Tool (<code>apt</code>) for software management.</p>
-<h3 id="resolving-gpg-repository-signature-errors-no_pubkey">Resolving GPG Repository Signature Errors (<code>NO_PUBKEY</code>)<a hidden class="anchor" aria-hidden="true" href="#resolving-gpg-repository-signature-errors-no_pubkey">#</a></h3>
-<p>When third-party software repositories update their security keys, <code>sudo apt update</code> may fail with an unverified key error (e.g., <code>NO_PUBKEY FD533C07C264648F</code>).</p>
-<p>To resolve this issue, import the missing public key directly from an official keyserver:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FD533C07C264648F
-</span></span><span style="display:flex;"><span>sudo apt update
-</span></span></code></pre></div><p>Alternatively, fetch and dearmor the key directly into your trusted keyrings directory:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
-</span></span><span style="display:flex;"><span>sudo apt update
-</span></span></code></pre></div><h3 id="installing-standalone-deb-files">Installing Standalone <code>.deb</code> Files<a hidden class="anchor" aria-hidden="true" href="#installing-standalone-deb-files">#</a></h3>
-<p>Avoid using <code>dpkg -i</code> to install standalone package files directly. <code>dpkg</code> is a low-level tool that cannot resolve or fetch missing remote dependencies.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># INCORRECT: Leaves missing dependencies unconfigured</span>
-</span></span><span style="display:flex;"><span>sudo dpkg -i package_name.deb
+4. <strong>Purge a Stuck Print Queue:</strong> Clear corrupted spool files directly from the spool directory:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo systemctl stop cups
+</span></span><span style=display:flex><span>sudo rm /var/spool/cups/*
+</span></span><span style=display:flex><span>sudo systemctl start cups
+</span></span></code></pre></div><hr><h2 id=2-advanced-document-workflow-booklet-printing>2. Advanced Document Workflow: Booklet Printing<a hidden class=anchor aria-hidden=true href=#2-advanced-document-workflow-booklet-printing>#</a></h2><p>Most Linux desktop applications lack a one-click &ldquo;Booklet/Brochure&rdquo; option in standard print dialogs. You can accomplish proper page ordering using any of the following methods.</p><h3 id=method-a-boomaga-virtual-printer-recommended>Method A: Boomaga Virtual Printer (Recommended)<a hidden class=anchor aria-hidden=true href=#method-a-boomaga-virtual-printer-recommended>#</a></h3><p>Boomaga acts as an intermediate print preview utility that automatically reorders pages into proper signature formats prior to sending the job to physical hardware.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt install boomaga
+</span></span></code></pre></div><ul><li><strong>Workflow:</strong> Open your document $\rightarrow$ Print to <strong>Boomaga</strong> $\rightarrow$ Select <strong>Booklet Mode</strong> $\rightarrow$ Send to your physical HP printer.</li></ul><h3 id=method-b-libreoffice-native-layout>Method B: LibreOffice Native Layout<a hidden class=anchor aria-hidden=true href=#method-b-libreoffice-native-layout>#</a></h3><ol><li>Navigate to <strong>File > Print</strong>.</li><li>Select the <strong>Page Layout</strong> tab.</li><li>Under the layout options, choose <strong>Brochure</strong>.</li><li>In your printer&rsquo;s duplex settings, set orientation to <strong>Two-Sided (Short-Edge Flip)</strong>.</li></ol><h3 id=method-c-command-line-processing-pdfbook2>Method C: Command-Line Processing (<code>pdfbook2</code>)<a hidden class=anchor aria-hidden=true href=#method-c-command-line-processing-pdfbook2>#</a></h3><p>To convert an existing PDF into a booklet format via the terminal:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt install texlive-extra-utils
+</span></span><span style=display:flex><span>pdfbook2 --paper<span style=color:#f92672>=</span>letter input_document.pdf
+</span></span></code></pre></div><p>This command outputs a file named <code>input_document-book.pdf</code>, pre-formatted for 2-up double-sided printing.</p><hr><h2 id=3-microsoft-font-integration-and-compatibility>3. Microsoft Font Integration and Compatibility<a hidden class=anchor aria-hidden=true href=#3-microsoft-font-integration-and-compatibility>#</a></h2><p>Document rendering issues in LibreOffice or OnlyOffice often occur because proprietary Microsoft fonts are missing, causing text to wrap incorrectly across pages.</p><h3 id=installing-core-microsoft-fonts>Installing Core Microsoft Fonts<a hidden class=anchor aria-hidden=true href=#installing-core-microsoft-fonts>#</a></h3><p>To install standard web fonts (Arial, Times New Roman, Courier New):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt update <span style=color:#f92672>&amp;&amp;</span> sudo apt install ttf-mscorefonts-installer
+</span></span></code></pre></div><blockquote><p><strong>Terminal Navigation Note:</strong> When the text-based EULA agreement appears during installation, press the <strong>Tab</strong> key to select <strong><code>&lt;Ok></code></strong>, press <strong>Enter</strong>, select <strong><code>Yes</code></strong>, and press <strong>Enter</strong> again.</p></blockquote><h3 id=installing-modern-proprietary-fonts-calibri-cambria-segoe-ui>Installing Modern Proprietary Fonts (Calibri, Cambria, Segoe UI)<a hidden class=anchor aria-hidden=true href=#installing-modern-proprietary-fonts-calibri-cambria-segoe-ui>#</a></h3><p>For newer Microsoft font families, manually copy the <code>.ttf</code> files from a Windows installation or backup directory:</p><ol><li>Create the user font directory:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>mkdir -p ~/.fonts
+</span></span></code></pre></div><ol start=2><li>Place your <code>.ttf</code> or <code>.otf</code> files inside <code>~/.fonts/</code>.</li><li>Refresh the local system font cache:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo fc-cache -fv
+</span></span></code></pre></div><h3 id=metric-equivalents>Metric Equivalents<a hidden class=anchor aria-hidden=true href=#metric-equivalents>#</a></h3><p>If you prefer to stick to fully open-source fonts, Linux Mint includes metrically compatible alternatives that maintain document spacing without layout distortion:</p><table><thead><tr><th>Microsoft Font</th><th>Open-Source Equivalent</th></tr></thead><tbody><tr><td><strong>Arial</strong></td><td>Liberation Sans / Arimo</td></tr><tr><td><strong>Times New Roman</strong></td><td>Liberation Serif / Tinos</td></tr><tr><td><strong>Courier New</strong></td><td>Liberation Mono / Cousine</td></tr><tr><td><strong>Calibri</strong></td><td>Carlito</td></tr><tr><td><strong>Cambria</strong></td><td>Caladea</td></tr></tbody></table><hr><h2 id=4-package-management-and-troubleshooting>4. Package Management and Troubleshooting<a hidden class=anchor aria-hidden=true href=#4-package-management-and-troubleshooting>#</a></h2><p>Linux Mint uses Debian Package files (<code>.deb</code>) and the Advanced Package Tool (<code>apt</code>) for software management.</p><h3 id=resolving-gpg-repository-signature-errors-no_pubkey>Resolving GPG Repository Signature Errors (<code>NO_PUBKEY</code>)<a hidden class=anchor aria-hidden=true href=#resolving-gpg-repository-signature-errors-no_pubkey>#</a></h3><p>When third-party software repositories update their security keys, <code>sudo apt update</code> may fail with an unverified key error (e.g., <code>NO_PUBKEY FD533C07C264648F</code>).</p><p>To resolve this issue, import the missing public key directly from an official keyserver:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FD533C07C264648F
+</span></span><span style=display:flex><span>sudo apt update
+</span></span></code></pre></div><p>Alternatively, fetch and dearmor the key directly into your trusted keyrings directory:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+</span></span><span style=display:flex><span>sudo apt update
+</span></span></code></pre></div><h3 id=installing-standalone-deb-files>Installing Standalone <code>.deb</code> Files<a hidden class=anchor aria-hidden=true href=#installing-standalone-deb-files>#</a></h3><p>Avoid using <code>dpkg -i</code> to install standalone package files directly. <code>dpkg</code> is a low-level tool that cannot resolve or fetch missing remote dependencies.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># INCORRECT: Leaves missing dependencies unconfigured</span>
+</span></span><span style=display:flex><span>sudo dpkg -i package_name.deb
 </span></span></code></pre></div><p><strong>The Preferred Installation Method:</strong>
-Use <code>apt</code> to install local <code>.deb</code> files so it automatically fetches any required dependency packages from online repositories:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install ./package_name.deb
-</span></span></code></pre></div><p><em>(The leading <code>./</code> is required to notify <code>apt</code> that you are referencing a local filesystem path).</em></p>
-<h3 id="recovering-from-broken-dependency-states">Recovering from Broken Dependency States<a hidden class="anchor" aria-hidden="true" href="#recovering-from-broken-dependency-states">#</a></h3>
-<p>If a package installation halts due to unmet dependency requirements, your system&rsquo;s package database enters an unconfigured state. Fix the broken installations by running:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install -f
-</span></span></code></pre></div><p>The <code>-f</code> (<code>--fix-broken</code>) flag instructs <code>apt</code> to inspect unresolved dependencies, download the required missing libraries, and finish configuring all pending software installations.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/linux-mint/">Linux Mint</a></li>
-      <li><a href="//localhost:1313/tags/hplip/">Hplip</a></li>
-      <li><a href="//localhost:1313/tags/cups/">Cups</a></li>
-      <li><a href="//localhost:1313/tags/apt/">Apt</a></li>
-      <li><a href="//localhost:1313/tags/dpkg/">Dpkg</a></li>
-      <li><a href="//localhost:1313/tags/libreoffice/">Libreoffice</a></li>
-      <li><a href="//localhost:1313/tags/fonts/">Fonts</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-hplip/">
-    <span class="title">« Prev</span>
-    <span>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-linux-mint2/">
-    <span class="title">Next »</span>
-    <span>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+Use <code>apt</code> to install local <code>.deb</code> files so it automatically fetches any required dependency packages from online repositories:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt install ./package_name.deb
+</span></span></code></pre></div><p><em>(The leading <code>./</code> is required to notify <code>apt</code> that you are referencing a local filesystem path).</em></p><h3 id=recovering-from-broken-dependency-states>Recovering from Broken Dependency States<a hidden class=anchor aria-hidden=true href=#recovering-from-broken-dependency-states>#</a></h3><p>If a package installation halts due to unmet dependency requirements, your system&rsquo;s package database enters an unconfigured state. Fix the broken installations by running:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt install -f
+</span></span></code></pre></div><p>The <code>-f</code> (<code>--fix-broken</code>) flag instructs <code>apt</code> to inspect unresolved dependencies, download the required missing libraries, and finish configuring all pending software installations.</p></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/linux-mint/>Linux-Mint</a></li><li><a href=/tags/hplip/>Hplip</a></li><li><a href=/tags/cups/>Cups</a></li><li><a href=/tags/apt/>Apt</a></li><li><a href=/tags/dpkg/>Dpkg</a></li><li><a href=/tags/libreoffice/>Libreoffice</a></li><li><a href=/tags/fonts/>Fonts</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-hplip/><span class=title>« Prev</span>
+<span>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</span>
+</a><a class=next href=/posts/2026-08-04-linux-mint2/><span class=title>Next »</span>
+<span>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

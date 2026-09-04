@@ -1,39 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>JavaScript on Technical Journal</title>
-    <link>//localhost:1313/tags/javascript/</link>
-    <description>Recent content in JavaScript on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The 90-Day Blueprint to Becoming a Full-Stack Developer: From Zero to AI-Powered Apps</title>
-      <link>//localhost:1313/posts/2026-08-04-90days-fullstack/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-90days-fullstack/</guid>
-      <description>&lt;p&gt;Ninety days sounds tight. If you ask ten senior engineers how long it takes to become job-ready, most will say a year or two. They aren&amp;rsquo;t lying, but they are assuming traditional computer science degree timelines or casual self-study. If you cut out the noise, focus on production-grade tools, and ship real projects every single week, three months is plenty of time to build a formidable foundation.&lt;/p&gt;
-&lt;p&gt;This blueprint breaks down the exact 90-day trajectory. We start with raw web fundamentals, move into modern frontend architectures, build scalable backends, automate infrastructure with DevOps, and wrap up by wiring AI intelligence directly into full-stack applications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Understanding YouTube Bookmarklets: How They Work, Security Risks, and Modern Alternatives</title>
-      <link>//localhost:1313/posts/2026-08-04-yt-bookmarklet/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-yt-bookmarklet/</guid>
-      <description>&lt;h1 id=&#34;understanding-youtube-bookmarklets-how-they-work-security-risks-and-modern-alternatives&#34;&gt;Understanding YouTube Bookmarklets: How They Work, Security Risks, and Modern Alternatives&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>JavaScript on Technical Journal</title><link>/tags/javascript/</link><description>Recent content in JavaScript on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>The 90-Day Blueprint to Becoming a Full-Stack Developer: From Zero to AI-Powered Apps</title><link>/posts/2026-08-04-90days-fullstack/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-90days-fullstack/</guid><description>&lt;p&gt;Ninety days sounds tight. If you ask ten senior engineers how long it takes to become job-ready, most will say a year or two. They aren&amp;rsquo;t lying, but they are assuming traditional computer science degree timelines or casual self-study. If you cut out the noise, focus on production-grade tools, and ship real projects every single week, three months is plenty of time to build a formidable foundation.&lt;/p&gt;
+&lt;p&gt;This blueprint breaks down the exact 90-day trajectory. We start with raw web fundamentals, move into modern frontend architectures, build scalable backends, automate infrastructure with DevOps, and wrap up by wiring AI intelligence directly into full-stack applications.&lt;/p&gt;</description></item><item><title>Understanding YouTube Bookmarklets: How They Work, Security Risks, and Modern Alternatives</title><link>/posts/2026-08-04-yt-bookmarklet/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-yt-bookmarklet/</guid><description>&lt;h1 id="understanding-youtube-bookmarklets-how-they-work-security-risks-and-modern-alternatives"&gt;Understanding YouTube Bookmarklets: How They Work, Security Risks, and Modern Alternatives&lt;/h1&gt;
 &lt;p&gt;In the earlier days of the web—and still among power users today—&lt;strong&gt;bookmarklets&lt;/strong&gt; offered a clever, lightweight way to extend browser functionality without installing heavy extensions. By storing a small snippet of JavaScript inside a standard browser bookmark, users could perform one-click actions on any webpage they were viewing.&lt;/p&gt;
-&lt;p&gt;One classic example that circulated widely on forums and social media is a single-line script designed to seamlessly convert YouTube links for audio download:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</title>
-      <link>//localhost:1313/posts/2026-08-04-blogs/</link>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-blogs/</guid>
-      <description>&lt;h1 id=&#34;building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows&#34;&gt;Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;One classic example that circulated widely on forums and social media is a single-line script designed to seamlessly convert YouTube links for audio download:&lt;/p&gt;</description></item><item><title>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</title><link>/posts/2026-08-04-blogs/</link><pubDate>Wed, 18 Mar 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-blogs/</guid><description>&lt;h1 id="building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows"&gt;Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows&lt;/h1&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like &lt;strong&gt;eGramSwaraj&lt;/strong&gt; house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.&lt;/p&gt;
-&lt;p&gt;To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.&lt;/p&gt;</description></item></channel></rss>

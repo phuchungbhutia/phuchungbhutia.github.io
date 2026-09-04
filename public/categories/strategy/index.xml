@@ -1,26 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Strategy on Technical Journal</title>
-    <link>//localhost:1313/categories/strategy/</link>
-    <description>Recent content in Strategy on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 08:27:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/strategy/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>From a Million-Dollar Goal to a Consultant-Grade Strategy: Building the Right Questions First</title>
-      <link>//localhost:1313/posts/2026-08-05-1m-goal/</link>
-      <pubDate>Wed, 05 Aug 2026 08:27:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-1m-goal/</guid>
-      <description>&lt;h1 id=&#34;from-a-million-dollar-goal-to-a-consultant-grade-strategy&#34;&gt;From a Million-Dollar Goal to a Consultant-Grade Strategy&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Strategy on Technical Journal</title><link>/categories/strategy/</link><description>Recent content in Strategy on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 08:27:00 +0530</lastBuildDate><atom:link href="/categories/strategy/index.xml" rel="self" type="application/rss+xml"/><item><title>From a Million-Dollar Goal to a Consultant-Grade Strategy: Building the Right Questions First</title><link>/posts/2026-08-05-1m-goal/</link><pubDate>Wed, 05 Aug 2026 08:27:00 +0530</pubDate><guid>/posts/2026-08-05-1m-goal/</guid><description>&lt;h1 id="from-a-million-dollar-goal-to-a-consultant-grade-strategy"&gt;From a Million-Dollar Goal to a Consultant-Grade Strategy&lt;/h1&gt;
 &lt;p&gt;Everyone wants the answer to one question:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;How do I make $1 million as fast as possible?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The problem is that the question itself is incomplete.&lt;/p&gt;
 &lt;p&gt;A top-tier consultant doesn&amp;rsquo;t immediately prescribe a business model or investment strategy. Instead, they first determine whether the problem has been framed correctly.&lt;/p&gt;
-&lt;p&gt;This article explains why asking better questions is the fastest path toward finding a realistic million-dollar strategy.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;This article explains why asking better questions is the fastest path toward finding a realistic million-dollar strategy.&lt;/p&gt;</description></item></channel></rss>

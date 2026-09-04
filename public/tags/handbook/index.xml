@@ -1,20 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Handbook on Technical Journal</title>
-    <link>//localhost:1313/tags/handbook/</link>
-    <description>Recent content in Handbook on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 11:15:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/handbook/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI Business Mastery Handbook: The Complete Operating System for Building an AI-Powered Business</title>
-      <link>//localhost:1313/posts/2026-08-05-ai-business10/</link>
-      <pubDate>Wed, 05 Aug 2026 11:15:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ai-business10/</guid>
-      <description>&lt;h1 id=&#34;ai-business-mastery-handbook&#34;&gt;AI Business Mastery Handbook&lt;/h1&gt;
-&lt;h2 id=&#34;part-10--the-complete-operating-system-for-building-an-ai-powered-business&#34;&gt;Part 10 — The Complete Operating System for Building an AI-Powered Business&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Handbook on Technical Journal</title><link>/tags/handbook/</link><description>Recent content in Handbook on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 11:15:00 +0530</lastBuildDate><atom:link href="/tags/handbook/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Business Mastery Handbook: The Complete Operating System for Building an AI-Powered Business</title><link>/posts/2026-08-05-ai-business10/</link><pubDate>Wed, 05 Aug 2026 11:15:00 +0530</pubDate><guid>/posts/2026-08-05-ai-business10/</guid><description>&lt;h1 id="ai-business-mastery-handbook"&gt;AI Business Mastery Handbook&lt;/h1&gt;
+&lt;h2 id="part-10--the-complete-operating-system-for-building-an-ai-powered-business"&gt;Part 10 — The Complete Operating System for Building an AI-Powered Business&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;The final volume of the Zero to $100/Day AI Business series&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -33,7 +18,4 @@
 &lt;li&gt;Diversify income&lt;/li&gt;
 &lt;li&gt;Think like a business owner&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This handbook brings those ideas together into a practical reference that you can return to as your business evolves.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;This handbook brings those ideas together into a practical reference that you can return to as your business evolves.&lt;/p&gt;</description></item></channel></rss>

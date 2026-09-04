@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Troubleshooting on Technical Journal</title>
-    <link>//localhost:1313/categories/troubleshooting/</link>
-    <description>Recent content in Troubleshooting on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Troubleshooting Linux Boot Failures and Optimizing Linux Mint Performance</title>
-      <link>//localhost:1313/posts/2026-08-04-efi/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-efi/</guid>
-      <description>&lt;p&gt;Dealing with boot errors can be daunting, but Linux gives you full control to inspect, repair, and optimize your system. In this comprehensive guide, we cover how to fix missing EFI bootloaders, format and rebuild GRUB from scratch using live environment tools, and squeeze maximum performance out of Linux Mint.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Troubleshooting on Technical Journal</title><link>/categories/troubleshooting/</link><description>Recent content in Troubleshooting on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/categories/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Troubleshooting Linux Boot Failures and Optimizing Linux Mint Performance</title><link>/posts/2026-08-04-efi/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-efi/</guid><description>&lt;p&gt;Dealing with boot errors can be daunting, but Linux gives you full control to inspect, repair, and optimize your system. In this comprehensive guide, we cover how to fix missing EFI bootloaders, format and rebuild GRUB from scratch using live environment tools, and squeeze maximum performance out of Linux Mint.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;part-1-resolving-the-failed-to-open-efiubuntu-not-found-error&#34;&gt;Part 1: Resolving the &amp;ldquo;failed to open /efi/ubuntu not found&amp;rdquo; Error&lt;/h2&gt;
-&lt;p&gt;When your system fails to boot and displays the error &lt;code&gt;failed to open /efi/ubuntu not found&lt;/code&gt;, it means the UEFI firmware or GRUB bootloader cannot locate the necessary EFI binaries to start the OS. This typically occurs after major Windows updates in dual-boot setups, disk partition changes, or corrupted EFI filesystems.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="part-1-resolving-the-failed-to-open-efiubuntu-not-found-error"&gt;Part 1: Resolving the &amp;ldquo;failed to open /efi/ubuntu not found&amp;rdquo; Error&lt;/h2&gt;
+&lt;p&gt;When your system fails to boot and displays the error &lt;code&gt;failed to open /efi/ubuntu not found&lt;/code&gt;, it means the UEFI firmware or GRUB bootloader cannot locate the necessary EFI binaries to start the OS. This typically occurs after major Windows updates in dual-boot setups, disk partition changes, or corrupted EFI filesystems.&lt;/p&gt;</description></item></channel></rss>

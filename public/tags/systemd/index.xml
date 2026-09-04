@@ -1,109 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Systemd on Technical Journal</title>
-    <link>//localhost:1313/tags/systemd/</link>
-    <description>Recent content in Systemd on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Modern Linux System Administration: Automated Maintenance and Hardware Optimization</title>
-      <link>//localhost:1313/posts/2026-09-04-force-time/</link>
-      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-force-time/</guid>
-      <description>A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance.</description>
-    </item>
-    <item>
-      <title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title>
-      <link>//localhost:1313/posts/2026-09-04-linux-time-ntp/</link>
-      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-linux-time-ntp/</guid>
-      <description>A complete step-by-step diagnostic guide to resolving broken Linux time synchronization caused by Systemd alias conflicts, ISP port drops, DNS failures, and minimal system environments.</description>
-    </item>
-    <item>
-      <title>Bypassing CMOS Clock Failure on Linux with Automated Network Time Sync</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-cmos/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-cmos/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Systemd on Technical Journal</title><link>/tags/systemd/</link><description>Recent content in Systemd on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/systemd/index.xml" rel="self" type="application/rss+xml"/><item><title>Modern Linux System Administration: Automated Maintenance and Hardware Optimization</title><link>/posts/2026-09-04-force-time/</link><pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate><guid>/posts/2026-09-04-force-time/</guid><description>A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance.</description></item><item><title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title><link>/posts/2026-09-04-linux-time-ntp/</link><pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate><guid>/posts/2026-09-04-linux-time-ntp/</guid><description>A complete step-by-step diagnostic guide to resolving broken Linux time synchronization caused by Systemd alias conflicts, ISP port drops, DNS failures, and minimal system environments.</description></item><item><title>Bypassing CMOS Clock Failure on Linux with Automated Network Time Sync</title><link>/posts/2026-08-04-linux-cmos/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-cmos/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
 &lt;p&gt;A depleted or faulty CMOS battery causes system clocks to reset to an epoch date (e.g., January 1, 1970) upon every power cycle. On modern Linux distributions, an incorrect system time breaks SSL/TLS certificate validation, systemd timers, package manager operations, and secure web browsing.&lt;/p&gt;
-&lt;p&gt;While replacing the motherboard RTC battery is the ideal physical fix, system-level automation provides an immediate software workaround by forcing network time synchronization immediately after the network interface comes online.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title>
-      <link>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</guid>
-      <description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
-&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-mint2/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-mint2/</guid>
-      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
-&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-rsync-to-from/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-rsync-to-from/</guid>
-      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
-&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-rsync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-rsync/</guid>
-      <description>&lt;h1 id=&#34;mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups&#34;&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
-&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title>
-      <link>//localhost:1313/posts/2026-08-04-dns-rsync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-dns-rsync/</guid>
-      <description>&lt;h1 id=&#34;mastering-linux-administration-secure-dns-setup--automated-rsync-backups&#34;&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
+&lt;p&gt;While replacing the motherboard RTC battery is the ideal physical fix, system-level automation provides an immediate software workaround by forcing network time synchronization immediately after the network interface comes online.&lt;/p&gt;</description></item><item><title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title><link>/posts/2026-08-04-manjaro-time-sync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-manjaro-time-sync/</guid><description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
+&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description></item><item><title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title><link>/posts/2026-08-04-linux-mint2/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-mint2/</guid><description>&lt;h1 id="mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups"&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description></item><item><title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title><link>/posts/2026-08-04-rsync-to-from/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-rsync-to-from/</guid><description>&lt;h1 id="mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups"&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description></item><item><title>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</title><link>/posts/2026-08-04-rsync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-rsync/</guid><description>&lt;h1 id="mastering-folder-synchronization-in-linux-mint-a-complete-guide-to-rsync-automation-and-two-way-backups"&gt;Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups&lt;/h1&gt;
+&lt;p&gt;Whether you are performing routine maintenance, preparing a secondary backup, or transferring personal settings across installations, keeping your user profile data in sync is a fundamental Linux administration skill. In Linux Mint, user settings (like &lt;code&gt;.icons&lt;/code&gt; and &lt;code&gt;.themes&lt;/code&gt;) and standard data directories (&lt;code&gt;Downloads&lt;/code&gt;, &lt;code&gt;Documents&lt;/code&gt;, &lt;code&gt;Desktop&lt;/code&gt;, &lt;code&gt;Pictures&lt;/code&gt;, &lt;code&gt;Music&lt;/code&gt;, &lt;code&gt;Videos&lt;/code&gt;) store the core of your desktop experience and digital life.&lt;/p&gt;</description></item><item><title>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</title><link>/posts/2026-08-04-dns-rsync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-dns-rsync/</guid><description>&lt;h1 id="mastering-linux-administration-secure-dns-setup--automated-rsync-backups"&gt;Mastering Linux Administration: Secure DNS Setup &amp;amp; Automated Rsync Backups&lt;/h1&gt;
 &lt;p&gt;Managing a Linux workstation effectively requires two critical capabilities: safeguarding network traffic and preserving essential local data. In this guide, we explore how to reconfigure DNS routing on Linux Mint using &lt;code&gt;systemd-resolved&lt;/code&gt;, wrap those queries in encrypted &lt;strong&gt;DNS over TLS (DoT)&lt;/strong&gt;, and structure a bulletproof Bash automated backup workflow with &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;part-1-configuring-permanent-static-dns-on-linux-mint&#34;&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
-&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title>
-      <link>//localhost:1313/posts/2026-04-08-manjaro/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-04-08-manjaro/</guid>
-      <description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
+&lt;h2 id="part-1-configuring-permanent-static-dns-on-linux-mint"&gt;Part 1: Configuring Permanent Static DNS on Linux Mint&lt;/h2&gt;
+&lt;p&gt;By default, network configurations dynamically pull DNS server settings from your Internet Service Provider (ISP). Switching to robust providers like &lt;strong&gt;Google Public DNS&lt;/strong&gt; or &lt;strong&gt;Cloudflare DNS&lt;/strong&gt; improves resolution speed and prevents DNS-based ISP censorship.&lt;/p&gt;</description></item><item><title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title><link>/posts/2026-04-08-manjaro/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-04-08-manjaro/</guid><description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
 &lt;p&gt;This comprehensive guide consolidates troubleshooting steps and optimization workflows into an end-to-end administration manual for modern Linux environments.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-mastering-ntfs-partition-mounts-in-archmanjaro&#34;&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
-&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Troubleshooting Linux Mint Wi-Fi Drops: From Hardware Drivers to Automated NTP Time Sync</title>
-      <link>//localhost:1313/posts/2026-08-04-mint-wifi/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-mint-wifi/</guid>
-      <description>&lt;h1 id=&#34;troubleshooting-linux-mint-wi-fi-drops-from-hardware-drivers-to-automated-ntp-time-sync&#34;&gt;Troubleshooting Linux Mint Wi-Fi Drops: From Hardware Drivers to Automated NTP Time Sync&lt;/h1&gt;
+&lt;h2 id="1-mastering-ntfs-partition-mounts-in-archmanjaro"&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
+&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Troubleshooting Linux Mint Wi-Fi Drops: From Hardware Drivers to Automated NTP Time Sync</title><link>/posts/2026-08-04-mint-wifi/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-mint-wifi/</guid><description>&lt;h1 id="troubleshooting-linux-mint-wi-fi-drops-from-hardware-drivers-to-automated-ntp-time-sync"&gt;Troubleshooting Linux Mint Wi-Fi Drops: From Hardware Drivers to Automated NTP Time Sync&lt;/h1&gt;
 &lt;p&gt;Experiencing random Wi-Fi disconnections on Linux Mint—where the network suddenly drops and all available Wi-Fi access points disappear from the menu—is a surprisingly common frustration.&lt;/p&gt;
-&lt;p&gt;While this issue is often caused by aggressive driver power management or missing proprietary modules, another common underlying culprit is &lt;strong&gt;system clock drift&lt;/strong&gt;. When your local system clock drifts out of alignment with remote authentication servers, security handshakes silently fail, dropping your wireless connection.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-time/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-time/</guid>
-      <description>&lt;p&gt;Accurate system time is critical for modern Linux operating systems[cite: 1]. When your system clock drifts out of sync, security protocols fail: SSL/TLS certificates become invalid, SSH connections reject handshakes, and package managers refuse to update[cite: 1].&lt;/p&gt;
+&lt;p&gt;While this issue is often caused by aggressive driver power management or missing proprietary modules, another common underlying culprit is &lt;strong&gt;system clock drift&lt;/strong&gt;. When your local system clock drifts out of alignment with remote authentication servers, security handshakes silently fail, dropping your wireless connection.&lt;/p&gt;</description></item><item><title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title><link>/posts/2026-08-04-linux-time/</link><pubDate>Mon, 16 Feb 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-time/</guid><description>&lt;p&gt;Accurate system time is critical for modern Linux operating systems[cite: 1]. When your system clock drifts out of sync, security protocols fail: SSL/TLS certificates become invalid, SSH connections reject handshakes, and package managers refuse to update[cite: 1].&lt;/p&gt;
 &lt;p&gt;This guide breaks down a complex real-world troubleshooting session where standard Systemd time synchronization failed on a minimal Linux setup, and how to systematically diagnose and resolve the issue[cite: 1].&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-the-root-cause-systemd-aliases-and-missing-packages&#34;&gt;1. The Root Cause: Systemd Aliases and Missing Packages&lt;/h2&gt;
-&lt;p&gt;When attempting to run standard Systemd commands like &lt;code&gt;sudo systemctl enable ntp&lt;/code&gt;, you may encounter errors such as[cite: 1]:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-the-root-cause-systemd-aliases-and-missing-packages"&gt;1. The Root Cause: Systemd Aliases and Missing Packages&lt;/h2&gt;
+&lt;p&gt;When attempting to run standard Systemd commands like &lt;code&gt;sudo systemctl enable ntp&lt;/code&gt;, you may encounter errors such as[cite: 1]:&lt;/p&gt;</description></item></channel></rss>

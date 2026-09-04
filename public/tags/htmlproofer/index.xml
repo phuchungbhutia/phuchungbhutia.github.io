@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Htmlproofer on Technical Journal</title>
-    <link>//localhost:1313/tags/htmlproofer/</link>
-    <description>Recent content in Htmlproofer on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 13:30:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/htmlproofer/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook</title>
-      <link>//localhost:1313/posts/2026-09-04-chirpy-github-page/</link>
-      <pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-chirpy-github-page/</guid>
-      <description>&lt;p&gt;Setting up a documentation portal or department blog using the &lt;strong&gt;Jekyll Chirpy&lt;/strong&gt; theme on GitHub Pages looks effortless on paper. You fork the starter repo, point GitHub Actions to your branch, and watch the site spin up.&lt;/p&gt;
-&lt;p&gt;In reality, running a production-grade Chirpy setup with custom CI/CD pipelines quickly runs into a minefield of build-time failures: Ruby Liquid crashes over integer tags, &lt;code&gt;htmlproofer&lt;/code&gt; throwing hundreds of false-positive 404s on dynamic taxonomy routes, missing local layout overrides, broken anchor fragment checks, and invisible non-breaking spaces that crash YAML parsers.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Htmlproofer on Technical Journal</title><link>/tags/htmlproofer/</link><description>Recent content in Htmlproofer on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 04 Sep 2026 13:30:00 +0530</lastBuildDate><atom:link href="/tags/htmlproofer/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook</title><link>/posts/2026-09-04-chirpy-github-page/</link><pubDate>Fri, 04 Sep 2026 13:30:00 +0530</pubDate><guid>/posts/2026-09-04-chirpy-github-page/</guid><description>&lt;p&gt;Setting up a documentation portal or department blog using the &lt;strong&gt;Jekyll Chirpy&lt;/strong&gt; theme on GitHub Pages looks effortless on paper. You fork the starter repo, point GitHub Actions to your branch, and watch the site spin up.&lt;/p&gt;
+&lt;p&gt;In reality, running a production-grade Chirpy setup with custom CI/CD pipelines quickly runs into a minefield of build-time failures: Ruby Liquid crashes over integer tags, &lt;code&gt;htmlproofer&lt;/code&gt; throwing hundreds of false-positive 404s on dynamic taxonomy routes, missing local layout overrides, broken anchor fragment checks, and invisible non-breaking spaces that crash YAML parsers.&lt;/p&gt;</description></item></channel></rss>

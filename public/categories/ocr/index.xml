@@ -1,31 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>OCR on Technical Journal</title>
-    <link>//localhost:1313/categories/ocr/</link>
-    <description>Recent content in OCR on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/ocr/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title>
-      <link>//localhost:1313/posts/2026-08-05-ocr2md/</link>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ocr2md/</guid>
-      <description>&lt;h1 id=&#34;building-ocr2md-a-complete-ocr-to-markdown-platform&#34;&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>OCR on Technical Journal</title><link>/categories/ocr/</link><description>Recent content in OCR on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="/categories/ocr/index.xml" rel="self" type="application/rss+xml"/><item><title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title><link>/posts/2026-08-05-ocr2md/</link><pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate><guid>/posts/2026-08-05-ocr2md/</guid><description>&lt;h1 id="building-ocr2md-a-complete-ocr-to-markdown-platform"&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
 &lt;p&gt;Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.&lt;/p&gt;
 &lt;p&gt;Extracting this information into a structured format is surprisingly difficult.&lt;/p&gt;
-&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm</title>
-      <link>//localhost:1313/posts/2026-08-04-pdf2md/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-pdf2md/</guid>
-      <description>&lt;p&gt;Converting scanned PDFs into structured formats like Markdown (&lt;code&gt;.md&lt;/code&gt;) and Rich Text Format (&lt;code&gt;.rtf&lt;/code&gt;) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.&lt;/p&gt;
+&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description></item><item><title>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm</title><link>/posts/2026-08-04-pdf2md/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-pdf2md/</guid><description>&lt;p&gt;Converting scanned PDFs into structured formats like Markdown (&lt;code&gt;.md&lt;/code&gt;) and Rich Text Format (&lt;code&gt;.rtf&lt;/code&gt;) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.&lt;/p&gt;
 &lt;p&gt;However, implementing this on an Arch-based Linux distribution like &lt;strong&gt;Manjaro&lt;/strong&gt; presents unique challenges due to Python&amp;rsquo;s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.&lt;/p&gt;
-&lt;p&gt;This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, &lt;code&gt;marker-pdf&lt;/code&gt;, &lt;code&gt;pandoc&lt;/code&gt;, and PyCharm on Manjaro Linux.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, &lt;code&gt;marker-pdf&lt;/code&gt;, &lt;code&gt;pandoc&lt;/code&gt;, and PyCharm on Manjaro Linux.&lt;/p&gt;</description></item></channel></rss>

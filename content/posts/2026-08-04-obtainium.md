@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide to Obtainium: Managing Android App Repositories, JSON Imports, and Open-Source Ecosystems"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Android", "Open Source", "Privacy"]
 tags: ["Obtainium", "FOSS", "ReVanced", "JSON", "OPML", "Android Apps"]
 ---

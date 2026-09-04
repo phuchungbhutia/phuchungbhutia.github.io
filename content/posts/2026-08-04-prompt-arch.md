@@ -1,6 +1,6 @@
 ---
 title: "Mastering Prompt Architecture: Building 7 Advanced Prompt Engineering Frameworks"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Prompt Engineering", "Artificial Intelligence", "LLM Optimization"]
 tags: ["Chain-of-Thought", "Tree-of-Thoughts", "Self-Critique", "Least-to-Most", "5 Ps Framework", "Step-Back Prompting", "Chain-of-Verification"]
 ---

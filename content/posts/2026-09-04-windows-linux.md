@@ -1,6 +1,6 @@
 ---
 title: "Seamless Windows on Linux: WinApps vs WinBoat vs Winpodx"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Linux", "Virtualization"]
 tags: ["linux", "windows", "kvm", "remoteapp", "containers", "2026"]
 description: "A comprehensive technical comparison of WinApps, WinBoat, and Winpodx for seamlessly integrating Windows software into Linux desktops."

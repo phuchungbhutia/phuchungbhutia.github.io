@@ -1,96 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows | Technical Journal</title>
-<meta name="keywords" content="JavaScript, eGramSwaraj, Web Scraping, Data Extraction, Audit, Financial Oversight">
-<meta name="description" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows | Technical Journal</title><meta name=keywords content="JavaScript,eGramSwaraj,Web Scraping,Data Extraction,Audit,Financial Oversight"><meta name=description content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows
 Introduction
 Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.
-To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-blogs/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-blogs/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-blogs/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows">
-  <meta property="og:description" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows Introduction Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.
-To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-03-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-18T00:00:00+00:00">
-    <meta property="article:tag" content="JavaScript">
-    <meta property="article:tag" content="EGramSwaraj">
-    <meta property="article:tag" content="Web Scraping">
-    <meta property="article:tag" content="Data Extraction">
-    <meta property="article:tag" content="Audit">
-    <meta property="article:tag" content="Financial Oversight">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows">
-  <meta name="twitter:description" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows Introduction Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.
-To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.">
-
-
-<script type="application/ld+json">
+To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-blogs/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-blogs/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-blogs/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows"><meta property="og:description" content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows Introduction Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.
+To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-03-18T10:00:00+05:30"><meta property="article:modified_time" content="2026-03-18T10:00:00+05:30"><meta property="article:tag" content="JavaScript"><meta property="article:tag" content="EGramSwaraj"><meta property="article:tag" content="Web Scraping"><meta property="article:tag" content="Data Extraction"><meta property="article:tag" content="Audit"><meta property="article:tag" content="Financial Oversight"><meta name=twitter:card content="summary"><meta name=twitter:title content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows"><meta name=twitter:description content="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows Introduction Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.
+To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -99,18 +12,17 @@ To solve this, we developed a lightweight, client-side JavaScript extraction scr
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows",
-      "item": "//localhost:1313/posts/2026-08-04-blogs/"
+      "item": "/posts/2026-08-04-blogs/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -120,493 +32,164 @@ To solve this, we developed a lightweight, client-side JavaScript extraction scr
   "keywords": [
     "JavaScript", "eGramSwaraj", "Web Scraping", "Data Extraction", "Audit", "Financial Oversight"
   ],
-  "articleBody": "Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows Introduction Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.\nTo solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.\nThe Audit Challenge: Portal Data Silos During local fund audit preparation, auditors must examine high volumes of transaction data to verify:\nScheme-wise allocation and fund utilization splits. Timely disbursement to vendor/beneficiary accounts. Voucher authenticity and complete documentation backing. Manually copying portal tables into Excel sheets takes hours and risks introducing transcription errors. By running a customized extraction script directly inside the browser’s developer console, auditors can instantly turn portal data tables into structured datasets.\nTechnical Solution: Client-Side Voucher \u0026 Plan Extractor The script iterates through table structures on the eGramSwaraj portal, normalizes field headers, and extracts row records into a clean array. Below is a simplified representation of the extraction logic:\n(function extracteGramSwarajData() { console.log(\"Starting eGramSwaraj Audit Data Extraction...\"); const table = document.querySelector(\"table.table-bordered\") || document.querySelector(\"table\"); if (!table) { console.error(\"No valid data table found on the current page.\"); return; } const rows = Array.from(table.querySelectorAll(\"tbody tr\")); const extractedData = []; rows.forEach((row, index) =\u003e { const cells = Array.from(row.querySelectorAll(\"td\")).map(c =\u003e c.innerText.trim()); if (cells.length \u003e 0) { extractedData.push({ slNo: cells[0] || index + 1, voucherNo: cells[1] || \"\", voucherDate: cells[2] || \"\", schemeHead: cells[3] || \"\", amount: cells[4] ? parseFloat(cells[4].replace(/,/g, '')) : 0, particulars: cells[5] || \"\" }); } }); // Convert extracted JSON to CSV const headers = [\"Sl No\", \"Voucher No\", \"Voucher Date\", \"Scheme Head\", \"Amount (INR)\", \"Particulars\"]; const csvRows = [headers.join(\",\")]; extractedData.forEach(row =\u003e { const values = [ `\"${row.slNo}\"`, `\"${row.voucherNo}\"`, `\"${row.voucherDate}\"`, `\"${row.schemeHead.replace(/\"/g, '\"\"')}\"`, row.amount, `\"${row.particulars.replace(/\"/g, '\"\"')}\"` ]; csvRows.push(values.join(\",\")); }); const csvContent = \"data:text/csv;charset=utf-8,\" + csvRows.join(\"\\n\"); const encodedUri = encodeURI(csvContent); const link = document.createElement(\"a\"); link.setAttribute(\"href\", encodedUri); link.setAttribute(\"download\", `eGramSwaraj_Audit_Export_${new Date().toISOString().slice(0,10)}.csv`); document.body.appendChild(link); link.click(); document.body.removeChild(link); console.log(`Successfully exported ${extractedData.length} records.`); })(); Key Benefits for Audit Verification Precision \u0026 Speed: Reduces data extraction time from hours to seconds. Zero Third-Party Security Risks: Operates entirely in-browser without sending sensitive government audit data to external servers or APIs. Seamless Integration: CSV exports feed directly into data analysis tools like Python (Pandas) or Microsoft Excel for audit sampling, trend analysis, and anomaly detection. Conclusion Automating repetitive administrative and auditing tasks doesn’t always require massive enterprise software updates. Simple, tailored browser scripts empower audit officers to focus on high-value tasks—such as evaluating compliance, investigating financial irregularities, and delivering robust audit reports—rather than manual data entry.\ntitle: “Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services” date: 2026-05-12 categories: [“Linux Administration”, “System Maintenance”] tags: [“Linux”, “Systemd”, “Network”, “NTP”, “Scripting”, “Troubleshooting”] Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services The Problem: Faulty CMOS Batteries and Network Failures When a desktop or laptop suffers from a faulty or dead CMOS battery, the motherboard resets its Real-Time Clock (RTC) to an epoch state (e.g., Jan 1, 1970) whenever powered off.\nOn Linux distributions (such as Linux Mint or Manjaro), this severe time skew breaks:\nSSL/TLS Certificate Verification: HTTPS web browsing fails due to “invalid certificate date” errors. Wi-Fi / WPA Supplicant Re-authentication: Wireless network connections frequently drop or fail to handshake. Package Manager Operations: apt, pacman, or system update tools reject repository signatures as expired or future-dated. Standard NTP clients (systemd-timesyncd, chrony) often fail to sync automatically on boot because the initial network handshake fails due to the invalid system timestamp itself!\nThe Solution: A Dedicated Boot-Time Network Sync Service To resolve this circular dependency, we constructed a dedicated system service that forces an immediate NTP update using official National Informatics Centre (NIC India) or standard NTP pools as soon as an active network connection is detected.\nStep 1: Crafting the Forced Time Sync Script Create a shell script at /usr/local/bin/force-time-sync.sh:\n#!/bin/bash # Force Time Sync Script for Systems with Hardware Clock Drift LOG_TAG=\"TimeSyncService\" logger -t \"$LOG_TAG\" \"Starting forced time synchronization...\" # Wait for active network interface MAX_RETRIES=15 RETRY_COUNT=0 while ! ping -c 1 1.1.1.1 \u003e /dev/null 2\u003e\u00261; do sleep 2 RETRY_COUNT=$((RETRY_COUNT + 1)) if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then logger -t \"$LOG_TAG\" \"Network unreachable after maximum retries. Skipping time sync.\" exit 1 fi done logger -t \"$LOG_TAG\" \"Network connectivity established. Querying NTP server...\" # Force time update using htpdate or sntp/ntpdate if command -v sntp \u003e /dev/null 2\u003e\u00261; then sntp -s time.google.com elif command -v ntpdate \u003e /dev/null 2\u003e\u00261; then ntpdate -u pool.ntp.org else # Fallback to restarting systemd-timesyncd systemctl restart systemd-timesyncd fi # Sync system time to hardware clock hwclock --systohc logger -t \"$LOG_TAG\" \"Time successfully synchronized and written to hardware clock.\" Make the script executable:\nsudo chmod +x /usr/local/bin/force-time-sync.sh Step 2: Creating the Systemd Service Unit Create a custom systemd unit file at /etc/systemd/system/force-time-sync.service:\n[Unit] Description=Force System Time Synchronization on Network Online After=network-online.target Wants=network-online.target [Service] Type=oneshot ExecStart=/usr/local/bin/force-time-sync.sh RemainAfterExit=yes [Install] WantedBy=multi-user.target Step 3: Enabling and Testing the Service Reload the systemd manager configuration and enable the service:\nsudo systemctl daemon-reload sudo systemctl enable force-time-sync.service sudo systemctl start force-time-sync.service Check the log output to verify operation:\njournalctl -u force-time-sync.service -b Conclusion By coupling a resilient fallback bash script with a systemd trigger dependency (After=network-online.target), you can bypass hardware CMOS clock failures entirely on lightweight Linux installations. This guarantees smooth system startup, stable SSL verification, and uninterrupted network connectivity.\ntitle: “Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems” date: 2026-04-05 categories: [“Linux Administration”, “Performance Tuning”] tags: [“Linux”, “RAM Optimization”, “Zram”, “XFCE”, “System Tuning”] Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems Introduction While modern desktop Linux environments are far lighter than their proprietary counterparts, running multiple modern browser tabs alongside document editing tools on a workstation with 4GB of RAM can still result in memory pressure, UI lag, and disk thrashing (swap death).\nWith targeted kernel tuning, compressed memory swap (zram), and lightweight application choices, a 4GB RAM system running Linux Mint XFCE or Manjaro XFCE can operate as smoothly as a modern system.\nKey Optimization Strategies 1. Enabling Compressed Memory Swap (zram) Rather than swapping inactive pages to a slow hard drive or SSD, zram creates a compressed block device in RAM. Pages are compressed on the fly (typically achieving a 2:1 or 3:1 compression ratio), effectively expanding your available memory space.\nOn Arch / Manjaro Linux: sudo pacman -S zram-generator Create /etc/systemd/zram-generator.conf:\n[zram0] zram-size = ram / 2 compression-algorithm = zstd On Ubuntu / Debian / Linux Mint: sudo apt update sudo apt install zram-config 2. Tuning Kernel Swappiness and Cache Management By default, Linux systems often have a swappiness value of 60, which moves memory pages to swap relatively early. For low-RAM machines, reducing swappiness forces the kernel to keep process memory in RAM longer.\nEdit /etc/sysctl.d/99-low-ram-optimizations.conf:\n# Reduce swappiness to prefer RAM over disk swap vm.swappiness = 10 # Improve file system cache pressure management vm.vfs_cache_pressure = 50 # Ensure smooth background writes to storage vm.dirty_background_ratio = 5 vm.dirty_ratio = 10 Apply the settings immediately:\nsudo sysctl --system 3. Desktop Environment \u0026 App Selection Task Resource-Intensive Default Optimized Lightweight Alternative RAM Savings Desktop Environment GNOME / KDE Plasma XFCE / LXQt ~300 MB - 600 MB Note-Taking \u0026 Docs Electron-based Apps Joplin (CLI/Lite) / Obsidian / FeatherPad ~200 MB - 400 MB Web Browsing Default Chrome / Firefox LibreWolf / Firefox + uBlock Origin ~300 MB Conclusion A few strategic adjustments—specifically implementing zram compression and tuning sysctl kernel parameters—can reclaim hundreds of megabytes of memory and eliminate micro-stutters on legacy or low-spec hardware.\ntitle: “Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows” date: 2026-04-20 categories: [“Productivity”, “Audit Workflows”] tags: [“Obsidian”, “Joplin”, “Note-Taking”, “Markdown”, “Documentation”, “Audit”] Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows Introduction For auditors, managing evidence, tracking multi-tier observation records, and compiling compliance reports across multiple organizations requires an organized, searchable, and privacy-compliant note-taking workflow.\nPlain text and Markdown-based document systems offer unmatched longevity and speed. Two top-tier tools—Joplin and Obsidian—stand out as ideal solutions for local governance and internal audit professionals.\nFeature Comparison Matrix Feature Joplin Obsidian Data Storage Format SQLite database with Markdown sync support Pure local Markdown (.md) vault folder Encryption \u0026 Security Built-in End-to-End Encryption (E2EE) Third-party or sync encryption Linking \u0026 Knowledge Graph Basic notebook/sub-notebook hierarchical linking Advanced bi-directional graph ([[Wikilinks]]) Export Options PDF, HTML, Markdown, JEX PDF, Markdown, HTML (via plugin) Best Use Case Structured observation logs, encrypted field notes Complex audit mapping, interconnected rule links Option 1: Joplin — Built for Structured Field Audits and Security Joplin excels in structured multi-level notebook hierarchies (e.g., Audit FY 2025-26 -\u003e Zilla Panchayats -\u003e Gram Panchayat A).\nKey Advantages for Auditors: Built-in End-to-End Encryption (E2EE): Crucial when carrying confidential financial notes on mobile or portable laptops across local offices. Resource Efficient: Light on system resources, making it suitable for low-RAM laptops used in field audits. Robust Clipper: Excellent browser extension for clipping government circulars, statutory notifications, and online compliance standards. Option 2: Obsidian — Built for Interconnected Audit Observation Mapping Obsidian operates directly on top of a local folder of plain Markdown files. Its killer feature is bi-directional linking ([[Link]]), allowing auditors to link specific audit findings back to statutory rules and Act clauses.\nPractical Obsidian Structure for Audits: Vault_Audit_2025-26/\r├── 01_Statutory_Rules/\r│ ├── Sikkim_Local_Fund_Audit_Act.md\r│ └── General_Financial_Rules.md\r├── 02_Audit_Observations/\r│ ├── Irregular_Procurement_Vehicles.md\r│ └── Delay_in_Utilization_Certificates.md\r└── 03_Entities/\r├── Gangtok_Municipal_Corporation.md\r└── Namchi_Zilla_Panchayat.md In Irregular_Procurement_Vehicles.md, linking directly to the rule:\nThe expenditure incurred on vehicle procurement violates [[Sikkim_Local_Fund_Audit_Act#Section-12]], as prior sanction was not obtained. Recommendation Choose Joplin if your priority is straightforward multi-tier notebook organization, robust web clipping, and encrypted sync across portable hardware. Choose Obsidian if you want to build a relational knowledge graph linking statutes, regulatory mandates, and repeated audit queries across different local bodies over multiple financial years. ",
+  "articleBody": "Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows Introduction Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like eGramSwaraj house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.\nTo solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.\nThe Audit Challenge: Portal Data Silos During local fund audit preparation, auditors must examine high volumes of transaction data to verify:\nScheme-wise allocation and fund utilization splits. Timely disbursement to vendor/beneficiary accounts. Voucher authenticity and complete documentation backing. Manually copying portal tables into Excel sheets takes hours and risks introducing transcription errors. By running a customized extraction script directly inside the browser’s developer console, auditors can instantly turn portal data tables into structured datasets.\nTechnical Solution: Client-Side Voucher \u0026 Plan Extractor The script iterates through table structures on the eGramSwaraj portal, normalizes field headers, and extracts row records into a clean array. Below is a simplified representation of the extraction logic:\n(function extracteGramSwarajData() { console.log(\"Starting eGramSwaraj Audit Data Extraction...\"); const table = document.querySelector(\"table.table-bordered\") || document.querySelector(\"table\"); if (!table) { console.error(\"No valid data table found on the current page.\"); return; } const rows = Array.from(table.querySelectorAll(\"tbody tr\")); const extractedData = []; rows.forEach((row, index) =\u003e { const cells = Array.from(row.querySelectorAll(\"td\")).map(c =\u003e c.innerText.trim()); if (cells.length \u003e 0) { extractedData.push({ slNo: cells[0] || index + 1, voucherNo: cells[1] || \"\", voucherDate: cells[2] || \"\", schemeHead: cells[3] || \"\", amount: cells[4] ? parseFloat(cells[4].replace(/,/g, '')) : 0, particulars: cells[5] || \"\" }); } }); // Convert extracted JSON to CSV const headers = [\"Sl No\", \"Voucher No\", \"Voucher Date\", \"Scheme Head\", \"Amount (INR)\", \"Particulars\"]; const csvRows = [headers.join(\",\")]; extractedData.forEach(row =\u003e { const values = [ `\"${row.slNo}\"`, `\"${row.voucherNo}\"`, `\"${row.voucherDate}\"`, `\"${row.schemeHead.replace(/\"/g, '\"\"')}\"`, row.amount, `\"${row.particulars.replace(/\"/g, '\"\"')}\"` ]; csvRows.push(values.join(\",\")); }); const csvContent = \"data:text/csv;charset=utf-8,\" + csvRows.join(\"\\n\"); const encodedUri = encodeURI(csvContent); const link = document.createElement(\"a\"); link.setAttribute(\"href\", encodedUri); link.setAttribute(\"download\", `eGramSwaraj_Audit_Export_${new Date().toISOString().slice(0,10)}.csv`); document.body.appendChild(link); link.click(); document.body.removeChild(link); console.log(`Successfully exported ${extractedData.length} records.`); })(); Key Benefits for Audit Verification Precision \u0026 Speed: Reduces data extraction time from hours to seconds. Zero Third-Party Security Risks: Operates entirely in-browser without sending sensitive government audit data to external servers or APIs. Seamless Integration: CSV exports feed directly into data analysis tools like Python (Pandas) or Microsoft Excel for audit sampling, trend analysis, and anomaly detection. Conclusion Automating repetitive administrative and auditing tasks doesn’t always require massive enterprise software updates. Simple, tailored browser scripts empower audit officers to focus on high-value tasks—such as evaluating compliance, investigating financial irregularities, and delivering robust audit reports—rather than manual data entry.\ntitle: “Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services” date: “2026-05-12T10:00:00+05:30” categories: [“Linux Administration”, “System Maintenance”] tags: [“Linux”, “Systemd”, “Network”, “NTP”, “Scripting”, “Troubleshooting”] Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services The Problem: Faulty CMOS Batteries and Network Failures When a desktop or laptop suffers from a faulty or dead CMOS battery, the motherboard resets its Real-Time Clock (RTC) to an epoch state (e.g., Jan 1, 1970) whenever powered off.\nOn Linux distributions (such as Linux Mint or Manjaro), this severe time skew breaks:\nSSL/TLS Certificate Verification: HTTPS web browsing fails due to “invalid certificate date” errors. Wi-Fi / WPA Supplicant Re-authentication: Wireless network connections frequently drop or fail to handshake. Package Manager Operations: apt, pacman, or system update tools reject repository signatures as expired or future-dated. Standard NTP clients (systemd-timesyncd, chrony) often fail to sync automatically on boot because the initial network handshake fails due to the invalid system timestamp itself!\nThe Solution: A Dedicated Boot-Time Network Sync Service To resolve this circular dependency, we constructed a dedicated system service that forces an immediate NTP update using official National Informatics Centre (NIC India) or standard NTP pools as soon as an active network connection is detected.\nStep 1: Crafting the Forced Time Sync Script Create a shell script at /usr/local/bin/force-time-sync.sh:\n#!/bin/bash # Force Time Sync Script for Systems with Hardware Clock Drift LOG_TAG=\"TimeSyncService\" logger -t \"$LOG_TAG\" \"Starting forced time synchronization...\" # Wait for active network interface MAX_RETRIES=15 RETRY_COUNT=0 while ! ping -c 1 1.1.1.1 \u003e /dev/null 2\u003e\u00261; do sleep 2 RETRY_COUNT=$((RETRY_COUNT + 1)) if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then logger -t \"$LOG_TAG\" \"Network unreachable after maximum retries. Skipping time sync.\" exit 1 fi done logger -t \"$LOG_TAG\" \"Network connectivity established. Querying NTP server...\" # Force time update using htpdate or sntp/ntpdate if command -v sntp \u003e /dev/null 2\u003e\u00261; then sntp -s time.google.com elif command -v ntpdate \u003e /dev/null 2\u003e\u00261; then ntpdate -u pool.ntp.org else # Fallback to restarting systemd-timesyncd systemctl restart systemd-timesyncd fi # Sync system time to hardware clock hwclock --systohc logger -t \"$LOG_TAG\" \"Time successfully synchronized and written to hardware clock.\" Make the script executable:\nsudo chmod +x /usr/local/bin/force-time-sync.sh Step 2: Creating the Systemd Service Unit Create a custom systemd unit file at /etc/systemd/system/force-time-sync.service:\n[Unit] Description=Force System Time Synchronization on Network Online After=network-online.target Wants=network-online.target [Service] Type=oneshot ExecStart=/usr/local/bin/force-time-sync.sh RemainAfterExit=yes [Install] WantedBy=multi-user.target Step 3: Enabling and Testing the Service Reload the systemd manager configuration and enable the service:\nsudo systemctl daemon-reload sudo systemctl enable force-time-sync.service sudo systemctl start force-time-sync.service Check the log output to verify operation:\njournalctl -u force-time-sync.service -b Conclusion By coupling a resilient fallback bash script with a systemd trigger dependency (After=network-online.target), you can bypass hardware CMOS clock failures entirely on lightweight Linux installations. This guarantees smooth system startup, stable SSL verification, and uninterrupted network connectivity.\ntitle: “Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems” date: “2026-04-05T10:00:00+05:30” categories: [“Linux Administration”, “Performance Tuning”] tags: [“Linux”, “RAM Optimization”, “Zram”, “XFCE”, “System Tuning”] Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems Introduction While modern desktop Linux environments are far lighter than their proprietary counterparts, running multiple modern browser tabs alongside document editing tools on a workstation with 4GB of RAM can still result in memory pressure, UI lag, and disk thrashing (swap death).\nWith targeted kernel tuning, compressed memory swap (zram), and lightweight application choices, a 4GB RAM system running Linux Mint XFCE or Manjaro XFCE can operate as smoothly as a modern system.\nKey Optimization Strategies 1. Enabling Compressed Memory Swap (zram) Rather than swapping inactive pages to a slow hard drive or SSD, zram creates a compressed block device in RAM. Pages are compressed on the fly (typically achieving a 2:1 or 3:1 compression ratio), effectively expanding your available memory space.\nOn Arch / Manjaro Linux: sudo pacman -S zram-generator Create /etc/systemd/zram-generator.conf:\n[zram0] zram-size = ram / 2 compression-algorithm = zstd On Ubuntu / Debian / Linux Mint: sudo apt update sudo apt install zram-config 2. Tuning Kernel Swappiness and Cache Management By default, Linux systems often have a swappiness value of 60, which moves memory pages to swap relatively early. For low-RAM machines, reducing swappiness forces the kernel to keep process memory in RAM longer.\nEdit /etc/sysctl.d/99-low-ram-optimizations.conf:\n# Reduce swappiness to prefer RAM over disk swap vm.swappiness = 10 # Improve file system cache pressure management vm.vfs_cache_pressure = 50 # Ensure smooth background writes to storage vm.dirty_background_ratio = 5 vm.dirty_ratio = 10 Apply the settings immediately:\nsudo sysctl --system 3. Desktop Environment \u0026 App Selection Task Resource-Intensive Default Optimized Lightweight Alternative RAM Savings Desktop Environment GNOME / KDE Plasma XFCE / LXQt ~300 MB - 600 MB Note-Taking \u0026 Docs Electron-based Apps Joplin (CLI/Lite) / Obsidian / FeatherPad ~200 MB - 400 MB Web Browsing Default Chrome / Firefox LibreWolf / Firefox + uBlock Origin ~300 MB Conclusion A few strategic adjustments—specifically implementing zram compression and tuning sysctl kernel parameters—can reclaim hundreds of megabytes of memory and eliminate micro-stutters on legacy or low-spec hardware.\ntitle: “Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows” date: “2026-04-20T10:00:00+05:30” categories: [“Productivity”, “Audit Workflows”] tags: [“Obsidian”, “Joplin”, “Note-Taking”, “Markdown”, “Documentation”, “Audit”] Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows Introduction For auditors, managing evidence, tracking multi-tier observation records, and compiling compliance reports across multiple organizations requires an organized, searchable, and privacy-compliant note-taking workflow.\nPlain text and Markdown-based document systems offer unmatched longevity and speed. Two top-tier tools—Joplin and Obsidian—stand out as ideal solutions for local governance and internal audit professionals.\nFeature Comparison Matrix Feature Joplin Obsidian Data Storage Format SQLite database with Markdown sync support Pure local Markdown (.md) vault folder Encryption \u0026 Security Built-in End-to-End Encryption (E2EE) Third-party or sync encryption Linking \u0026 Knowledge Graph Basic notebook/sub-notebook hierarchical linking Advanced bi-directional graph ([[Wikilinks]]) Export Options PDF, HTML, Markdown, JEX PDF, Markdown, HTML (via plugin) Best Use Case Structured observation logs, encrypted field notes Complex audit mapping, interconnected rule links Option 1: Joplin — Built for Structured Field Audits and Security Joplin excels in structured multi-level notebook hierarchies (e.g., Audit FY 2025-26 -\u003e Zilla Panchayats -\u003e Gram Panchayat A).\nKey Advantages for Auditors: Built-in End-to-End Encryption (E2EE): Crucial when carrying confidential financial notes on mobile or portable laptops across local offices. Resource Efficient: Light on system resources, making it suitable for low-RAM laptops used in field audits. Robust Clipper: Excellent browser extension for clipping government circulars, statutory notifications, and online compliance standards. Option 2: Obsidian — Built for Interconnected Audit Observation Mapping Obsidian operates directly on top of a local folder of plain Markdown files. Its killer feature is bi-directional linking ([[Link]]), allowing auditors to link specific audit findings back to statutory rules and Act clauses.\nPractical Obsidian Structure for Audits: Vault_Audit_2025-26/\r├── 01_Statutory_Rules/\r│ ├── Sikkim_Local_Fund_Audit_Act.md\r│ └── General_Financial_Rules.md\r├── 02_Audit_Observations/\r│ ├── Irregular_Procurement_Vehicles.md\r│ └── Delay_in_Utilization_Certificates.md\r└── 03_Entities/\r├── Gangtok_Municipal_Corporation.md\r└── Namchi_Zilla_Panchayat.md In Irregular_Procurement_Vehicles.md, linking directly to the rule:\nThe expenditure incurred on vehicle procurement violates [[Sikkim_Local_Fund_Audit_Act#Section-12]], as prior sanction was not obtained. Recommendation Choose Joplin if your priority is straightforward multi-tier notebook organization, robust web clipping, and encrypted sync across portable hardware. Choose Obsidian if you want to build a relational knowledge graph linking statutes, regulatory mandates, and repeated audit queries across different local bodies over multiple financial years. ",
   "wordCount" : "1691",
   "inLanguage": "en",
-  "datePublished": "2026-03-18T00:00:00Z",
-  "dateModified": "2026-03-18T00:00:00Z",
+  "datePublished": "2026-03-18T10:00:00+05:30",
+  "dateModified": "2026-03-18T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-blogs/"
+    "@id": "/posts/2026-08-04-blogs/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-03-18 00:00:00 +0000 UTC'>March 18, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows" aria-label="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows">Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</a><ul>
-                    
-            <li>
-                <a href="#introduction" aria-label="Introduction">Introduction</a></li>
-            <li>
-                <a href="#the-audit-challenge-portal-data-silos" aria-label="The Audit Challenge: Portal Data Silos">The Audit Challenge: Portal Data Silos</a></li>
-            <li>
-                <a href="#technical-solution-client-side-voucher--plan-extractor" aria-label="Technical Solution: Client-Side Voucher &amp; Plan Extractor">Technical Solution: Client-Side Voucher &amp; Plan Extractor</a></li>
-            <li>
-                <a href="#key-benefits-for-audit-verification" aria-label="Key Benefits for Audit Verification">Key Benefits for Audit Verification</a></li>
-            <li>
-                <a href="#conclusion" aria-label="Conclusion">Conclusion</a></li></ul>
-            </li>
-            <li>
-                <a href="#solving-hardware-clock-failures-on-linux-automated-system-time-sync-via-systemd-services" aria-label="Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services">Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services</a><ul>
-                    
-            <li>
-                <a href="#the-problem-faulty-cmos-batteries-and-network-failures" aria-label="The Problem: Faulty CMOS Batteries and Network Failures">The Problem: Faulty CMOS Batteries and Network Failures</a></li>
-            <li>
-                <a href="#the-solution-a-dedicated-boot-time-network-sync-service" aria-label="The Solution: A Dedicated Boot-Time Network Sync Service">The Solution: A Dedicated Boot-Time Network Sync Service</a><ul>
-                    
-            <li>
-                <a href="#step-1-crafting-the-forced-time-sync-script" aria-label="Step 1: Crafting the Forced Time Sync Script">Step 1: Crafting the Forced Time Sync Script</a></li>
-            <li>
-                <a href="#step-2-creating-the-systemd-service-unit" aria-label="Step 2: Creating the Systemd Service Unit">Step 2: Creating the Systemd Service Unit</a></li>
-            <li>
-                <a href="#step-3-enabling-and-testing-the-service" aria-label="Step 3: Enabling and Testing the Service">Step 3: Enabling and Testing the Service</a></li></ul>
-            </li>
-            <li>
-                <a href="#conclusion-1" aria-label="Conclusion">Conclusion</a></li></ul>
-            </li>
-            <li>
-                <a href="#optimizing-linux-workstations-with-limited-ram-performance-tuning-for-4gb-systems" aria-label="Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems">Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems</a><ul>
-                    
-            <li>
-                <a href="#introduction-1" aria-label="Introduction">Introduction</a></li>
-            <li>
-                <a href="#key-optimization-strategies" aria-label="Key Optimization Strategies">Key Optimization Strategies</a><ul>
-                    
-            <li>
-                <a href="#1-enabling-compressed-memory-swap-zram" aria-label="1. Enabling Compressed Memory Swap (zram)">1. Enabling Compressed Memory Swap (zram)</a><ul>
-                    
-            <li>
-                <a href="#on-arch--manjaro-linux" aria-label="On Arch / Manjaro Linux:">On Arch / Manjaro Linux:</a></li>
-            <li>
-                <a href="#on-ubuntu--debian--linux-mint" aria-label="On Ubuntu / Debian / Linux Mint:">On Ubuntu / Debian / Linux Mint:</a></li></ul>
-            </li>
-            <li>
-                <a href="#2-tuning-kernel-swappiness-and-cache-management" aria-label="2. Tuning Kernel Swappiness and Cache Management">2. Tuning Kernel Swappiness and Cache Management</a></li>
-            <li>
-                <a href="#3-desktop-environment--app-selection" aria-label="3. Desktop Environment &amp; App Selection">3. Desktop Environment &amp; App Selection</a></li></ul>
-            </li>
-            <li>
-                <a href="#conclusion-2" aria-label="Conclusion">Conclusion</a></li></ul>
-            </li>
-            <li>
-                <a href="#structured-note-taking-for-auditors-comparing-joplin-and-obsidian-for-audit-workflows" aria-label="Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows">Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows</a><ul>
-                    
-            <li>
-                <a href="#introduction-2" aria-label="Introduction">Introduction</a></li>
-            <li>
-                <a href="#feature-comparison-matrix" aria-label="Feature Comparison Matrix">Feature Comparison Matrix</a></li>
-            <li>
-                <a href="#option-1-joplin--built-for-structured-field-audits-and-security" aria-label="Option 1: Joplin — Built for Structured Field Audits and Security">Option 1: Joplin — Built for Structured Field Audits and Security</a><ul>
-                    
-            <li>
-                <a href="#key-advantages-for-auditors" aria-label="Key Advantages for Auditors:">Key Advantages for Auditors:</a></li></ul>
-            </li>
-            <li>
-                <a href="#option-2-obsidian--built-for-interconnected-audit-observation-mapping" aria-label="Option 2: Obsidian — Built for Interconnected Audit Observation Mapping">Option 2: Obsidian — Built for Interconnected Audit Observation Mapping</a><ul>
-                    
-            <li>
-                <a href="#practical-obsidian-structure-for-audits" aria-label="Practical Obsidian Structure for Audits:">Practical Obsidian Structure for Audits:</a></li></ul>
-            </li>
-            <li>
-                <a href="#recommendation" aria-label="Recommendation">Recommendation</a>
-            </li>
-        </ul>
-        </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows">Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows<a hidden class="anchor" aria-hidden="true" href="#building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows">#</a></h1>
-<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
-<p>Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like <strong>eGramSwaraj</strong> house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.</p>
-<p>To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.</p>
-<hr>
-<h2 id="the-audit-challenge-portal-data-silos">The Audit Challenge: Portal Data Silos<a hidden class="anchor" aria-hidden="true" href="#the-audit-challenge-portal-data-silos">#</a></h2>
-<p>During local fund audit preparation, auditors must examine high volumes of transaction data to verify:</p>
-<ol>
-<li>Scheme-wise allocation and fund utilization splits.</li>
-<li>Timely disbursement to vendor/beneficiary accounts.</li>
-<li>Voucher authenticity and complete documentation backing.</li>
-</ol>
-<p>Manually copying portal tables into Excel sheets takes hours and risks introducing transcription errors. By running a customized extraction script directly inside the browser&rsquo;s developer console, auditors can instantly turn portal data tables into structured datasets.</p>
-<hr>
-<h2 id="technical-solution-client-side-voucher--plan-extractor">Technical Solution: Client-Side Voucher &amp; Plan Extractor<a hidden class="anchor" aria-hidden="true" href="#technical-solution-client-side-voucher--plan-extractor">#</a></h2>
-<p>The script iterates through table structures on the eGramSwaraj portal, normalizes field headers, and extracts row records into a clean array. Below is a simplified representation of the extraction logic:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">extracteGramSwarajData</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Starting eGramSwaraj Audit Data Extraction...&#34;</span>);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">table</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;table.table-bordered&#34;</span>) <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;table&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">table</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;No valid data table found on the current page.&#34;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rows</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">table</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;tbody tr&#34;</span>));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">extractedData</span> <span style="color:#f92672">=</span> [];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">index</span>) =&gt; {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cells</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;td&#34;</span>)).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">c</span> =&gt; <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">innerText</span>.<span style="color:#a6e22e">trim</span>());
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cells</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">extractedData</span>.<span style="color:#a6e22e">push</span>({
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">slNo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">||</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">voucherNo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">voucherDate</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">schemeHead</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">amount</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">?</span> parseFloat(<span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">4</span>].<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/,/g</span>, <span style="color:#e6db74">&#39;&#39;</span>)) <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">particulars</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cells</span>[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>            });
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Convert extracted JSON to CSV
-</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Sl No&#34;</span>, <span style="color:#e6db74">&#34;Voucher No&#34;</span>, <span style="color:#e6db74">&#34;Voucher Date&#34;</span>, <span style="color:#e6db74">&#34;Scheme Head&#34;</span>, <span style="color:#e6db74">&#34;Amount (INR)&#34;</span>, <span style="color:#e6db74">&#34;Particulars&#34;</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">csvRows</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;,&#34;</span>)];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">extractedData</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">row</span> =&gt; {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">values</span> <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">slNo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">voucherNo</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">voucherDate</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">schemeHead</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&#34;/g</span>, <span style="color:#e6db74">&#39;&#34;&#34;&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">amount</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">`&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">particulars</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&#34;/g</span>, <span style="color:#e6db74">&#39;&#34;&#34;&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>
-</span></span><span style="display:flex;"><span>        ];
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">csvRows</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;,&#34;</span>));
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">csvContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;data:text/csv;charset=utf-8,&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">csvRows</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34;\n&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">encodedUri</span> <span style="color:#f92672">=</span> encodeURI(<span style="color:#a6e22e">csvContent</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">link</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;href&#34;</span>, <span style="color:#a6e22e">encodedUri</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;download&#34;</span>, <span style="color:#e6db74">`eGramSwaraj_Audit_Export_</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">new</span> Date().<span style="color:#a6e22e">toISOString</span>().<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv`</span>);
-</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">link</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">click</span>();
-</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">removeChild</span>(<span style="color:#a6e22e">link</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Successfully exported </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">extractedData</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> records.`</span>);
-</span></span><span style="display:flex;"><span>})();
-</span></span></code></pre></div><hr>
-<h2 id="key-benefits-for-audit-verification">Key Benefits for Audit Verification<a hidden class="anchor" aria-hidden="true" href="#key-benefits-for-audit-verification">#</a></h2>
-<ul>
-<li><strong>Precision &amp; Speed:</strong> Reduces data extraction time from hours to seconds.</li>
-<li><strong>Zero Third-Party Security Risks:</strong> Operates entirely in-browser without sending sensitive government audit data to external servers or APIs.</li>
-<li><strong>Seamless Integration:</strong> CSV exports feed directly into data analysis tools like Python (Pandas) or Microsoft Excel for audit sampling, trend analysis, and anomaly detection.</li>
-</ul>
-<hr>
-<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>Automating repetitive administrative and auditing tasks doesn&rsquo;t always require massive enterprise software updates. Simple, tailored browser scripts empower audit officers to focus on high-value tasks—such as evaluating compliance, investigating financial irregularities, and delivering robust audit reports—rather than manual data entry.</p>
-<hr>
-<hr>
-<h2 id="tags-linux-systemd-network-ntp-scripting-troubleshooting">title: &ldquo;Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services&rdquo;
-date: 2026-05-12
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</h1><div class=post-meta><span title='2026-03-18 10:00:00 +0530 IST'>March 18, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows aria-label="Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows">Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</a><ul><li><a href=#introduction aria-label=Introduction>Introduction</a></li><li><a href=#the-audit-challenge-portal-data-silos aria-label="The Audit Challenge: Portal Data Silos">The Audit Challenge: Portal Data Silos</a></li><li><a href=#technical-solution-client-side-voucher--plan-extractor aria-label="Technical Solution: Client-Side Voucher & Plan Extractor">Technical Solution: Client-Side Voucher & Plan Extractor</a></li><li><a href=#key-benefits-for-audit-verification aria-label="Key Benefits for Audit Verification">Key Benefits for Audit Verification</a></li><li><a href=#conclusion aria-label=Conclusion>Conclusion</a></li></ul></li><li><a href=#solving-hardware-clock-failures-on-linux-automated-system-time-sync-via-systemd-services aria-label="Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services">Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services</a><ul><li><a href=#the-problem-faulty-cmos-batteries-and-network-failures aria-label="The Problem: Faulty CMOS Batteries and Network Failures">The Problem: Faulty CMOS Batteries and Network Failures</a></li><li><a href=#the-solution-a-dedicated-boot-time-network-sync-service aria-label="The Solution: A Dedicated Boot-Time Network Sync Service">The Solution: A Dedicated Boot-Time Network Sync Service</a><ul><li><a href=#step-1-crafting-the-forced-time-sync-script aria-label="Step 1: Crafting the Forced Time Sync Script">Step 1: Crafting the Forced Time Sync Script</a></li><li><a href=#step-2-creating-the-systemd-service-unit aria-label="Step 2: Creating the Systemd Service Unit">Step 2: Creating the Systemd Service Unit</a></li><li><a href=#step-3-enabling-and-testing-the-service aria-label="Step 3: Enabling and Testing the Service">Step 3: Enabling and Testing the Service</a></li></ul></li><li><a href=#conclusion-1 aria-label=Conclusion>Conclusion</a></li></ul></li><li><a href=#optimizing-linux-workstations-with-limited-ram-performance-tuning-for-4gb-systems aria-label="Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems">Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems</a><ul><li><a href=#introduction-1 aria-label=Introduction>Introduction</a></li><li><a href=#key-optimization-strategies aria-label="Key Optimization Strategies">Key Optimization Strategies</a><ul><li><a href=#1-enabling-compressed-memory-swap-zram aria-label="1. Enabling Compressed Memory Swap (zram)">1. Enabling Compressed Memory Swap (zram)</a><ul><li><a href=#on-arch--manjaro-linux aria-label="On Arch / Manjaro Linux:">On Arch / Manjaro Linux:</a></li><li><a href=#on-ubuntu--debian--linux-mint aria-label="On Ubuntu / Debian / Linux Mint:">On Ubuntu / Debian / Linux Mint:</a></li></ul></li><li><a href=#2-tuning-kernel-swappiness-and-cache-management aria-label="2. Tuning Kernel Swappiness and Cache Management">2. Tuning Kernel Swappiness and Cache Management</a></li><li><a href=#3-desktop-environment--app-selection aria-label="3. Desktop Environment & App Selection">3. Desktop Environment & App Selection</a></li></ul></li><li><a href=#conclusion-2 aria-label=Conclusion>Conclusion</a></li></ul></li><li><a href=#structured-note-taking-for-auditors-comparing-joplin-and-obsidian-for-audit-workflows aria-label="Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows">Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows</a><ul><li><a href=#introduction-2 aria-label=Introduction>Introduction</a></li><li><a href=#feature-comparison-matrix aria-label="Feature Comparison Matrix">Feature Comparison Matrix</a></li><li><a href=#option-1-joplin--built-for-structured-field-audits-and-security aria-label="Option 1: Joplin — Built for Structured Field Audits and Security">Option 1: Joplin — Built for Structured Field Audits and Security</a><ul><li><a href=#key-advantages-for-auditors aria-label="Key Advantages for Auditors:">Key Advantages for Auditors:</a></li></ul></li><li><a href=#option-2-obsidian--built-for-interconnected-audit-observation-mapping aria-label="Option 2: Obsidian — Built for Interconnected Audit Observation Mapping">Option 2: Obsidian — Built for Interconnected Audit Observation Mapping</a><ul><li><a href=#practical-obsidian-structure-for-audits aria-label="Practical Obsidian Structure for Audits:">Practical Obsidian Structure for Audits:</a></li></ul></li><li><a href=#recommendation aria-label=Recommendation>Recommendation</a></li></ul></li></ul></div></details><div class="post-content md-content"><h1 id=building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows<a hidden class=anchor aria-hidden=true href=#building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows>#</a></h1><h2 id=introduction>Introduction<a hidden class=anchor aria-hidden=true href=#introduction>#</a></h2><p>Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like <strong>eGramSwaraj</strong> house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.</p><p>To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.</p><hr><h2 id=the-audit-challenge-portal-data-silos>The Audit Challenge: Portal Data Silos<a hidden class=anchor aria-hidden=true href=#the-audit-challenge-portal-data-silos>#</a></h2><p>During local fund audit preparation, auditors must examine high volumes of transaction data to verify:</p><ol><li>Scheme-wise allocation and fund utilization splits.</li><li>Timely disbursement to vendor/beneficiary accounts.</li><li>Voucher authenticity and complete documentation backing.</li></ol><p>Manually copying portal tables into Excel sheets takes hours and risks introducing transcription errors. By running a customized extraction script directly inside the browser&rsquo;s developer console, auditors can instantly turn portal data tables into structured datasets.</p><hr><h2 id=technical-solution-client-side-voucher--plan-extractor>Technical Solution: Client-Side Voucher & Plan Extractor<a hidden class=anchor aria-hidden=true href=#technical-solution-client-side-voucher--plan-extractor>#</a></h2><p>The script iterates through table structures on the eGramSwaraj portal, normalizes field headers, and extracts row records into a clean array. Below is a simplified representation of the extraction logic:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span>(<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>extracteGramSwarajData</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Starting eGramSwaraj Audit Data Extraction...&#34;</span>);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>table</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;table.table-bordered&#34;</span>) <span style=color:#f92672>||</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;table&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>table</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;No valid data table found on the current page.&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>rows</span> <span style=color:#f92672>=</span> Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>table</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#34;tbody tr&#34;</span>));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>extractedData</span> <span style=color:#f92672>=</span> [];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rows</span>.<span style=color:#a6e22e>forEach</span>((<span style=color:#a6e22e>row</span>, <span style=color:#a6e22e>index</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cells</span> <span style=color:#f92672>=</span> Array.<span style=color:#a6e22e>from</span>(<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#34;td&#34;</span>)).<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>c</span> =&gt; <span style=color:#a6e22e>c</span>.<span style=color:#a6e22e>innerText</span>.<span style=color:#a6e22e>trim</span>());
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>cells</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>extractedData</span>.<span style=color:#a6e22e>push</span>({
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>slNo</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>||</span> <span style=color:#a6e22e>index</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>voucherNo</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>voucherDate</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>schemeHead</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>amount</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>4</span>] <span style=color:#f92672>?</span> parseFloat(<span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>4</span>].<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/,/g</span>, <span style=color:#e6db74>&#39;&#39;</span>)) <span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>particulars</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>cells</span>[<span style=color:#ae81ff>5</span>] <span style=color:#f92672>||</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>            });
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Convert extracted JSON to CSV
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>headers</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Sl No&#34;</span>, <span style=color:#e6db74>&#34;Voucher No&#34;</span>, <span style=color:#e6db74>&#34;Voucher Date&#34;</span>, <span style=color:#e6db74>&#34;Scheme Head&#34;</span>, <span style=color:#e6db74>&#34;Amount (INR)&#34;</span>, <span style=color:#e6db74>&#34;Particulars&#34;</span>];
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>csvRows</span> <span style=color:#f92672>=</span> [<span style=color:#a6e22e>headers</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34;,&#34;</span>)];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>extractedData</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>row</span> =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>values</span> <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>slNo</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>voucherNo</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>voucherDate</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>schemeHead</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/&#34;/g</span>, <span style=color:#e6db74>&#39;&#34;&#34;&#39;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>,
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>amount</span>,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>`&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>particulars</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/&#34;/g</span>, <span style=color:#e6db74>&#39;&#34;&#34;&#39;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;`</span>
+</span></span><span style=display:flex><span>        ];
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>csvRows</span>.<span style=color:#a6e22e>push</span>(<span style=color:#a6e22e>values</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34;,&#34;</span>));
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>csvContent</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;data:text/csv;charset=utf-8,&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>csvRows</span>.<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#34;\n&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>encodedUri</span> <span style=color:#f92672>=</span> encodeURI(<span style=color:#a6e22e>csvContent</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>link</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;a&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>link</span>.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;href&#34;</span>, <span style=color:#a6e22e>encodedUri</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>link</span>.<span style=color:#a6e22e>setAttribute</span>(<span style=color:#e6db74>&#34;download&#34;</span>, <span style=color:#e6db74>`eGramSwaraj_Audit_Export_</span><span style=color:#e6db74>${</span><span style=color:#66d9ef>new</span> Date().<span style=color:#a6e22e>toISOString</span>().<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>10</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>.csv`</span>);
+</span></span><span style=display:flex><span>    document.<span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>link</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>link</span>.<span style=color:#a6e22e>click</span>();
+</span></span><span style=display:flex><span>    document.<span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>removeChild</span>(<span style=color:#a6e22e>link</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`Successfully exported </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>extractedData</span>.<span style=color:#a6e22e>length</span><span style=color:#e6db74>}</span><span style=color:#e6db74> records.`</span>);
+</span></span><span style=display:flex><span>})();
+</span></span></code></pre></div><hr><h2 id=key-benefits-for-audit-verification>Key Benefits for Audit Verification<a hidden class=anchor aria-hidden=true href=#key-benefits-for-audit-verification>#</a></h2><ul><li><strong>Precision & Speed:</strong> Reduces data extraction time from hours to seconds.</li><li><strong>Zero Third-Party Security Risks:</strong> Operates entirely in-browser without sending sensitive government audit data to external servers or APIs.</li><li><strong>Seamless Integration:</strong> CSV exports feed directly into data analysis tools like Python (Pandas) or Microsoft Excel for audit sampling, trend analysis, and anomaly detection.</li></ul><hr><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>Automating repetitive administrative and auditing tasks doesn&rsquo;t always require massive enterprise software updates. Simple, tailored browser scripts empower audit officers to focus on high-value tasks—such as evaluating compliance, investigating financial irregularities, and delivering robust audit reports—rather than manual data entry.</p><hr><hr><h2 id=tags-linux-systemd-network-ntp-scripting-troubleshooting>title: &ldquo;Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services&rdquo;
+date: &ldquo;2026-05-12T10:00:00+05:30&rdquo;
 categories: [&ldquo;Linux Administration&rdquo;, &ldquo;System Maintenance&rdquo;]
-tags: [&ldquo;Linux&rdquo;, &ldquo;Systemd&rdquo;, &ldquo;Network&rdquo;, &ldquo;NTP&rdquo;, &ldquo;Scripting&rdquo;, &ldquo;Troubleshooting&rdquo;]</h2>
-<h1 id="solving-hardware-clock-failures-on-linux-automated-system-time-sync-via-systemd-services">Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services<a hidden class="anchor" aria-hidden="true" href="#solving-hardware-clock-failures-on-linux-automated-system-time-sync-via-systemd-services">#</a></h1>
-<h2 id="the-problem-faulty-cmos-batteries-and-network-failures">The Problem: Faulty CMOS Batteries and Network Failures<a hidden class="anchor" aria-hidden="true" href="#the-problem-faulty-cmos-batteries-and-network-failures">#</a></h2>
-<p>When a desktop or laptop suffers from a faulty or dead CMOS battery, the motherboard resets its Real-Time Clock (RTC) to an epoch state (e.g., Jan 1, 1970) whenever powered off.</p>
-<p>On Linux distributions (such as Linux Mint or Manjaro), this severe time skew breaks:</p>
-<ol>
-<li><strong>SSL/TLS Certificate Verification:</strong> HTTPS web browsing fails due to &ldquo;invalid certificate date&rdquo; errors.</li>
-<li><strong>Wi-Fi / WPA Supplicant Re-authentication:</strong> Wireless network connections frequently drop or fail to handshake.</li>
-<li><strong>Package Manager Operations:</strong> <code>apt</code>, <code>pacman</code>, or system update tools reject repository signatures as expired or future-dated.</li>
-</ol>
-<p>Standard NTP clients (<code>systemd-timesyncd</code>, <code>chrony</code>) often fail to sync automatically on boot because the initial network handshake fails due to the invalid system timestamp itself!</p>
-<hr>
-<h2 id="the-solution-a-dedicated-boot-time-network-sync-service">The Solution: A Dedicated Boot-Time Network Sync Service<a hidden class="anchor" aria-hidden="true" href="#the-solution-a-dedicated-boot-time-network-sync-service">#</a></h2>
-<p>To resolve this circular dependency, we constructed a dedicated system service that forces an immediate NTP update using official National Informatics Centre (NIC India) or standard NTP pools as soon as an active network connection is detected.</p>
-<h3 id="step-1-crafting-the-forced-time-sync-script">Step 1: Crafting the Forced Time Sync Script<a hidden class="anchor" aria-hidden="true" href="#step-1-crafting-the-forced-time-sync-script">#</a></h3>
-<p>Create a shell script at <code>/usr/local/bin/force-time-sync.sh</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># Force Time Sync Script for Systems with Hardware Clock Drift</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>LOG_TAG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;TimeSyncService&#34;</span>
-</span></span><span style="display:flex;"><span>logger -t <span style="color:#e6db74">&#34;</span>$LOG_TAG<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;Starting forced time synchronization...&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wait for active network interface</span>
-</span></span><span style="display:flex;"><span>MAX_RETRIES<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>
-</span></span><span style="display:flex;"><span>RETRY_COUNT<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> ! ping -c <span style="color:#ae81ff">1</span> 1.1.1.1 &gt; /dev/null 2&gt;&amp;1; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>    RETRY_COUNT<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>RETRY_COUNT <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $RETRY_COUNT -ge $MAX_RETRIES <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        logger -t <span style="color:#e6db74">&#34;</span>$LOG_TAG<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;Network unreachable after maximum retries. Skipping time sync.&#34;</span>
-</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>logger -t <span style="color:#e6db74">&#34;</span>$LOG_TAG<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;Network connectivity established. Querying NTP server...&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force time update using htpdate or sntp/ntpdate</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> command -v sntp &gt; /dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    sntp -s time.google.com
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> command -v ntpdate &gt; /dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    ntpdate -u pool.ntp.org
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Fallback to restarting systemd-timesyncd</span>
-</span></span><span style="display:flex;"><span>    systemctl restart systemd-timesyncd
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sync system time to hardware clock</span>
-</span></span><span style="display:flex;"><span>hwclock --systohc
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>logger -t <span style="color:#e6db74">&#34;</span>$LOG_TAG<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;Time successfully synchronized and written to hardware clock.&#34;</span>
-</span></span></code></pre></div><p>Make the script executable:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/force-time-sync.sh
-</span></span></code></pre></div><hr>
-<h3 id="step-2-creating-the-systemd-service-unit">Step 2: Creating the Systemd Service Unit<a hidden class="anchor" aria-hidden="true" href="#step-2-creating-the-systemd-service-unit">#</a></h3>
-<p>Create a custom systemd unit file at <code>/etc/systemd/system/force-time-sync.service</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Force System Time Synchronization on Network Online</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network-online.target</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants</span><span style="color:#f92672">=</span><span style="color:#e6db74">network-online.target</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/bin/force-time-sync.sh</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RemainAfterExit</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
-</span></span></code></pre></div><h3 id="step-3-enabling-and-testing-the-service">Step 3: Enabling and Testing the Service<a hidden class="anchor" aria-hidden="true" href="#step-3-enabling-and-testing-the-service">#</a></h3>
-<p>Reload the systemd manager configuration and enable the service:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl daemon-reload
-</span></span><span style="display:flex;"><span>sudo systemctl enable force-time-sync.service
-</span></span><span style="display:flex;"><span>sudo systemctl start force-time-sync.service
-</span></span></code></pre></div><p>Check the log output to verify operation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>journalctl -u force-time-sync.service -b
-</span></span></code></pre></div><hr>
-<h2 id="conclusion-1">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-1">#</a></h2>
-<p>By coupling a resilient fallback bash script with a systemd trigger dependency (<code>After=network-online.target</code>), you can bypass hardware CMOS clock failures entirely on lightweight Linux installations. This guarantees smooth system startup, stable SSL verification, and uninterrupted network connectivity.</p>
-<hr>
-<hr>
-<h2 id="tags-linux-ram-optimization-zram-xfce-system-tuning">title: &ldquo;Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems&rdquo;
-date: 2026-04-05
+tags: [&ldquo;Linux&rdquo;, &ldquo;Systemd&rdquo;, &ldquo;Network&rdquo;, &ldquo;NTP&rdquo;, &ldquo;Scripting&rdquo;, &ldquo;Troubleshooting&rdquo;]</h2><h1 id=solving-hardware-clock-failures-on-linux-automated-system-time-sync-via-systemd-services>Solving Hardware Clock Failures on Linux: Automated System Time Sync via Systemd Services<a hidden class=anchor aria-hidden=true href=#solving-hardware-clock-failures-on-linux-automated-system-time-sync-via-systemd-services>#</a></h1><h2 id=the-problem-faulty-cmos-batteries-and-network-failures>The Problem: Faulty CMOS Batteries and Network Failures<a hidden class=anchor aria-hidden=true href=#the-problem-faulty-cmos-batteries-and-network-failures>#</a></h2><p>When a desktop or laptop suffers from a faulty or dead CMOS battery, the motherboard resets its Real-Time Clock (RTC) to an epoch state (e.g., Jan 1, 1970) whenever powered off.</p><p>On Linux distributions (such as Linux Mint or Manjaro), this severe time skew breaks:</p><ol><li><strong>SSL/TLS Certificate Verification:</strong> HTTPS web browsing fails due to &ldquo;invalid certificate date&rdquo; errors.</li><li><strong>Wi-Fi / WPA Supplicant Re-authentication:</strong> Wireless network connections frequently drop or fail to handshake.</li><li><strong>Package Manager Operations:</strong> <code>apt</code>, <code>pacman</code>, or system update tools reject repository signatures as expired or future-dated.</li></ol><p>Standard NTP clients (<code>systemd-timesyncd</code>, <code>chrony</code>) often fail to sync automatically on boot because the initial network handshake fails due to the invalid system timestamp itself!</p><hr><h2 id=the-solution-a-dedicated-boot-time-network-sync-service>The Solution: A Dedicated Boot-Time Network Sync Service<a hidden class=anchor aria-hidden=true href=#the-solution-a-dedicated-boot-time-network-sync-service>#</a></h2><p>To resolve this circular dependency, we constructed a dedicated system service that forces an immediate NTP update using official National Informatics Centre (NIC India) or standard NTP pools as soon as an active network connection is detected.</p><h3 id=step-1-crafting-the-forced-time-sync-script>Step 1: Crafting the Forced Time Sync Script<a hidden class=anchor aria-hidden=true href=#step-1-crafting-the-forced-time-sync-script>#</a></h3><p>Create a shell script at <code>/usr/local/bin/force-time-sync.sh</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Force Time Sync Script for Systems with Hardware Clock Drift</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>LOG_TAG<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;TimeSyncService&#34;</span>
+</span></span><span style=display:flex><span>logger -t <span style=color:#e6db74>&#34;</span>$LOG_TAG<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;Starting forced time synchronization...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Wait for active network interface</span>
+</span></span><span style=display:flex><span>MAX_RETRIES<span style=color:#f92672>=</span><span style=color:#ae81ff>15</span>
+</span></span><span style=display:flex><span>RETRY_COUNT<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> ! ping -c <span style=color:#ae81ff>1</span> 1.1.1.1 &gt; /dev/null 2&gt;&amp;1; <span style=color:#66d9ef>do</span>
+</span></span><span style=display:flex><span>    sleep <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>    RETRY_COUNT<span style=color:#f92672>=</span><span style=color:#66d9ef>$((</span>RETRY_COUNT <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>))</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> $RETRY_COUNT -ge $MAX_RETRIES <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>        logger -t <span style=color:#e6db74>&#34;</span>$LOG_TAG<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;Network unreachable after maximum retries. Skipping time sync.&#34;</span>
+</span></span><span style=display:flex><span>        exit <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>logger -t <span style=color:#e6db74>&#34;</span>$LOG_TAG<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;Network connectivity established. Querying NTP server...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Force time update using htpdate or sntp/ntpdate</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> command -v sntp &gt; /dev/null 2&gt;&amp;1; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    sntp -s time.google.com
+</span></span><span style=display:flex><span><span style=color:#66d9ef>elif</span> command -v ntpdate &gt; /dev/null 2&gt;&amp;1; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    ntpdate -u pool.ntp.org
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Fallback to restarting systemd-timesyncd</span>
+</span></span><span style=display:flex><span>    systemctl restart systemd-timesyncd
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sync system time to hardware clock</span>
+</span></span><span style=display:flex><span>hwclock --systohc
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>logger -t <span style=color:#e6db74>&#34;</span>$LOG_TAG<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;Time successfully synchronized and written to hardware clock.&#34;</span>
+</span></span></code></pre></div><p>Make the script executable:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo chmod +x /usr/local/bin/force-time-sync.sh
+</span></span></code></pre></div><hr><h3 id=step-2-creating-the-systemd-service-unit>Step 2: Creating the Systemd Service Unit<a hidden class=anchor aria-hidden=true href=#step-2-creating-the-systemd-service-unit>#</a></h3><p>Create a custom systemd unit file at <code>/etc/systemd/system/force-time-sync.service</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#66d9ef>[Unit]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Description</span><span style=color:#f92672>=</span><span style=color:#e6db74>Force System Time Synchronization on Network Online</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>After</span><span style=color:#f92672>=</span><span style=color:#e6db74>network-online.target</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Wants</span><span style=color:#f92672>=</span><span style=color:#e6db74>network-online.target</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>[Service]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Type</span><span style=color:#f92672>=</span><span style=color:#e6db74>oneshot</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ExecStart</span><span style=color:#f92672>=</span><span style=color:#e6db74>/usr/local/bin/force-time-sync.sh</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>RemainAfterExit</span><span style=color:#f92672>=</span><span style=color:#e6db74>yes</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>[Install]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>WantedBy</span><span style=color:#f92672>=</span><span style=color:#e6db74>multi-user.target</span>
+</span></span></code></pre></div><h3 id=step-3-enabling-and-testing-the-service>Step 3: Enabling and Testing the Service<a hidden class=anchor aria-hidden=true href=#step-3-enabling-and-testing-the-service>#</a></h3><p>Reload the systemd manager configuration and enable the service:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo systemctl daemon-reload
+</span></span><span style=display:flex><span>sudo systemctl enable force-time-sync.service
+</span></span><span style=display:flex><span>sudo systemctl start force-time-sync.service
+</span></span></code></pre></div><p>Check the log output to verify operation:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>journalctl -u force-time-sync.service -b
+</span></span></code></pre></div><hr><h2 id=conclusion-1>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion-1>#</a></h2><p>By coupling a resilient fallback bash script with a systemd trigger dependency (<code>After=network-online.target</code>), you can bypass hardware CMOS clock failures entirely on lightweight Linux installations. This guarantees smooth system startup, stable SSL verification, and uninterrupted network connectivity.</p><hr><hr><h2 id=tags-linux-ram-optimization-zram-xfce-system-tuning>title: &ldquo;Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems&rdquo;
+date: &ldquo;2026-04-05T10:00:00+05:30&rdquo;
 categories: [&ldquo;Linux Administration&rdquo;, &ldquo;Performance Tuning&rdquo;]
-tags: [&ldquo;Linux&rdquo;, &ldquo;RAM Optimization&rdquo;, &ldquo;Zram&rdquo;, &ldquo;XFCE&rdquo;, &ldquo;System Tuning&rdquo;]</h2>
-<h1 id="optimizing-linux-workstations-with-limited-ram-performance-tuning-for-4gb-systems">Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems<a hidden class="anchor" aria-hidden="true" href="#optimizing-linux-workstations-with-limited-ram-performance-tuning-for-4gb-systems">#</a></h1>
-<h2 id="introduction-1">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-1">#</a></h2>
-<p>While modern desktop Linux environments are far lighter than their proprietary counterparts, running multiple modern browser tabs alongside document editing tools on a workstation with <strong>4GB of RAM</strong> can still result in memory pressure, UI lag, and disk thrashing (swap death).</p>
-<p>With targeted kernel tuning, compressed memory swap (<code>zram</code>), and lightweight application choices, a 4GB RAM system running <strong>Linux Mint XFCE</strong> or <strong>Manjaro XFCE</strong> can operate as smoothly as a modern system.</p>
-<hr>
-<h2 id="key-optimization-strategies">Key Optimization Strategies<a hidden class="anchor" aria-hidden="true" href="#key-optimization-strategies">#</a></h2>
-<h3 id="1-enabling-compressed-memory-swap-zram">1. Enabling Compressed Memory Swap (<code>zram</code>)<a hidden class="anchor" aria-hidden="true" href="#1-enabling-compressed-memory-swap-zram">#</a></h3>
-<p>Rather than swapping inactive pages to a slow hard drive or SSD, <code>zram</code> creates a compressed block device in RAM. Pages are compressed on the fly (typically achieving a 2:1 or 3:1 compression ratio), effectively expanding your available memory space.</p>
-<h4 id="on-arch--manjaro-linux">On Arch / Manjaro Linux:<a hidden class="anchor" aria-hidden="true" href="#on-arch--manjaro-linux">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S zram-generator
-</span></span></code></pre></div><p>Create <code>/etc/systemd/zram-generator.conf</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[zram0]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">zram-size</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">ram / 2</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">compression-algorithm</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">zstd</span>
-</span></span></code></pre></div><h4 id="on-ubuntu--debian--linux-mint">On Ubuntu / Debian / Linux Mint:<a hidden class="anchor" aria-hidden="true" href="#on-ubuntu--debian--linux-mint">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt install zram-config
-</span></span></code></pre></div><hr>
-<h3 id="2-tuning-kernel-swappiness-and-cache-management">2. Tuning Kernel Swappiness and Cache Management<a hidden class="anchor" aria-hidden="true" href="#2-tuning-kernel-swappiness-and-cache-management">#</a></h3>
-<p>By default, Linux systems often have a <code>swappiness</code> value of <code>60</code>, which moves memory pages to swap relatively early. For low-RAM machines, reducing swappiness forces the kernel to keep process memory in RAM longer.</p>
-<p>Edit <code>/etc/sysctl.d/99-low-ram-optimizations.conf</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># Reduce swappiness to prefer RAM over disk swap</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vm.swappiness</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Improve file system cache pressure management</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vm.vfs_cache_pressure</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">50</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ensure smooth background writes to storage</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vm.dirty_background_ratio</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">5</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vm.dirty_ratio</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">10</span>
-</span></span></code></pre></div><p>Apply the settings immediately:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl --system
-</span></span></code></pre></div><hr>
-<h3 id="3-desktop-environment--app-selection">3. Desktop Environment &amp; App Selection<a hidden class="anchor" aria-hidden="true" href="#3-desktop-environment--app-selection">#</a></h3>
-<table>
-	<thead>
-			<tr>
-					<th style="text-align: left">Task</th>
-					<th style="text-align: left">Resource-Intensive Default</th>
-					<th style="text-align: left">Optimized Lightweight Alternative</th>
-					<th style="text-align: left">RAM Savings</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>Desktop Environment</strong></td>
-					<td style="text-align: left">GNOME / KDE Plasma</td>
-					<td style="text-align: left"><strong>XFCE / LXQt</strong></td>
-					<td style="text-align: left">~300 MB - 600 MB</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Note-Taking &amp; Docs</strong></td>
-					<td style="text-align: left">Electron-based Apps</td>
-					<td style="text-align: left"><strong>Joplin (CLI/Lite) / Obsidian / FeatherPad</strong></td>
-					<td style="text-align: left">~200 MB - 400 MB</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Web Browsing</strong></td>
-					<td style="text-align: left">Default Chrome / Firefox</td>
-					<td style="text-align: left"><strong>LibreWolf / Firefox + uBlock Origin</strong></td>
-					<td style="text-align: left">~300 MB</td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h2 id="conclusion-2">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-2">#</a></h2>
-<p>A few strategic adjustments—specifically implementing <code>zram</code> compression and tuning sysctl kernel parameters—can reclaim hundreds of megabytes of memory and eliminate micro-stutters on legacy or low-spec hardware.</p>
-<hr>
-<hr>
-<h2 id="tags-obsidian-joplin-note-taking-markdown-documentation-audit">title: &ldquo;Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows&rdquo;
-date: 2026-04-20
+tags: [&ldquo;Linux&rdquo;, &ldquo;RAM Optimization&rdquo;, &ldquo;Zram&rdquo;, &ldquo;XFCE&rdquo;, &ldquo;System Tuning&rdquo;]</h2><h1 id=optimizing-linux-workstations-with-limited-ram-performance-tuning-for-4gb-systems>Optimizing Linux Workstations with Limited RAM: Performance Tuning for 4GB Systems<a hidden class=anchor aria-hidden=true href=#optimizing-linux-workstations-with-limited-ram-performance-tuning-for-4gb-systems>#</a></h1><h2 id=introduction-1>Introduction<a hidden class=anchor aria-hidden=true href=#introduction-1>#</a></h2><p>While modern desktop Linux environments are far lighter than their proprietary counterparts, running multiple modern browser tabs alongside document editing tools on a workstation with <strong>4GB of RAM</strong> can still result in memory pressure, UI lag, and disk thrashing (swap death).</p><p>With targeted kernel tuning, compressed memory swap (<code>zram</code>), and lightweight application choices, a 4GB RAM system running <strong>Linux Mint XFCE</strong> or <strong>Manjaro XFCE</strong> can operate as smoothly as a modern system.</p><hr><h2 id=key-optimization-strategies>Key Optimization Strategies<a hidden class=anchor aria-hidden=true href=#key-optimization-strategies>#</a></h2><h3 id=1-enabling-compressed-memory-swap-zram>1. Enabling Compressed Memory Swap (<code>zram</code>)<a hidden class=anchor aria-hidden=true href=#1-enabling-compressed-memory-swap-zram>#</a></h3><p>Rather than swapping inactive pages to a slow hard drive or SSD, <code>zram</code> creates a compressed block device in RAM. Pages are compressed on the fly (typically achieving a 2:1 or 3:1 compression ratio), effectively expanding your available memory space.</p><h4 id=on-arch--manjaro-linux>On Arch / Manjaro Linux:<a hidden class=anchor aria-hidden=true href=#on-arch--manjaro-linux>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo pacman -S zram-generator
+</span></span></code></pre></div><p>Create <code>/etc/systemd/zram-generator.conf</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#66d9ef>[zram0]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>zram-size</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>ram / 2</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>compression-algorithm</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>zstd</span>
+</span></span></code></pre></div><h4 id=on-ubuntu--debian--linux-mint>On Ubuntu / Debian / Linux Mint:<a hidden class=anchor aria-hidden=true href=#on-ubuntu--debian--linux-mint>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt update
+</span></span><span style=display:flex><span>sudo apt install zram-config
+</span></span></code></pre></div><hr><h3 id=2-tuning-kernel-swappiness-and-cache-management>2. Tuning Kernel Swappiness and Cache Management<a hidden class=anchor aria-hidden=true href=#2-tuning-kernel-swappiness-and-cache-management>#</a></h3><p>By default, Linux systems often have a <code>swappiness</code> value of <code>60</code>, which moves memory pages to swap relatively early. For low-RAM machines, reducing swappiness forces the kernel to keep process memory in RAM longer.</p><p>Edit <code>/etc/sysctl.d/99-low-ram-optimizations.conf</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#75715e># Reduce swappiness to prefer RAM over disk swap</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>vm.swappiness</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>10</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Improve file system cache pressure management</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>vm.vfs_cache_pressure</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>50</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Ensure smooth background writes to storage</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>vm.dirty_background_ratio</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>5</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>vm.dirty_ratio</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>10</span>
+</span></span></code></pre></div><p>Apply the settings immediately:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo sysctl --system
+</span></span></code></pre></div><hr><h3 id=3-desktop-environment--app-selection>3. Desktop Environment & App Selection<a hidden class=anchor aria-hidden=true href=#3-desktop-environment--app-selection>#</a></h3><table><thead><tr><th style=text-align:left>Task</th><th style=text-align:left>Resource-Intensive Default</th><th style=text-align:left>Optimized Lightweight Alternative</th><th style=text-align:left>RAM Savings</th></tr></thead><tbody><tr><td style=text-align:left><strong>Desktop Environment</strong></td><td style=text-align:left>GNOME / KDE Plasma</td><td style=text-align:left><strong>XFCE / LXQt</strong></td><td style=text-align:left>~300 MB - 600 MB</td></tr><tr><td style=text-align:left><strong>Note-Taking & Docs</strong></td><td style=text-align:left>Electron-based Apps</td><td style=text-align:left><strong>Joplin (CLI/Lite) / Obsidian / FeatherPad</strong></td><td style=text-align:left>~200 MB - 400 MB</td></tr><tr><td style=text-align:left><strong>Web Browsing</strong></td><td style=text-align:left>Default Chrome / Firefox</td><td style=text-align:left><strong>LibreWolf / Firefox + uBlock Origin</strong></td><td style=text-align:left>~300 MB</td></tr></tbody></table><hr><h2 id=conclusion-2>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion-2>#</a></h2><p>A few strategic adjustments—specifically implementing <code>zram</code> compression and tuning sysctl kernel parameters—can reclaim hundreds of megabytes of memory and eliminate micro-stutters on legacy or low-spec hardware.</p><hr><hr><h2 id=tags-obsidian-joplin-note-taking-markdown-documentation-audit>title: &ldquo;Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows&rdquo;
+date: &ldquo;2026-04-20T10:00:00+05:30&rdquo;
 categories: [&ldquo;Productivity&rdquo;, &ldquo;Audit Workflows&rdquo;]
-tags: [&ldquo;Obsidian&rdquo;, &ldquo;Joplin&rdquo;, &ldquo;Note-Taking&rdquo;, &ldquo;Markdown&rdquo;, &ldquo;Documentation&rdquo;, &ldquo;Audit&rdquo;]</h2>
-<h1 id="structured-note-taking-for-auditors-comparing-joplin-and-obsidian-for-audit-workflows">Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows<a hidden class="anchor" aria-hidden="true" href="#structured-note-taking-for-auditors-comparing-joplin-and-obsidian-for-audit-workflows">#</a></h1>
-<h2 id="introduction-2">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-2">#</a></h2>
-<p>For auditors, managing evidence, tracking multi-tier observation records, and compiling compliance reports across multiple organizations requires an organized, searchable, and privacy-compliant note-taking workflow.</p>
-<p>Plain text and Markdown-based document systems offer unmatched longevity and speed. Two top-tier tools—<strong>Joplin</strong> and <strong>Obsidian</strong>—stand out as ideal solutions for local governance and internal audit professionals.</p>
-<hr>
-<h2 id="feature-comparison-matrix">Feature Comparison Matrix<a hidden class="anchor" aria-hidden="true" href="#feature-comparison-matrix">#</a></h2>
-<table>
-	<thead>
-			<tr>
-					<th style="text-align: left">Feature</th>
-					<th style="text-align: left">Joplin</th>
-					<th style="text-align: left">Obsidian</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>Data Storage Format</strong></td>
-					<td style="text-align: left">SQLite database with Markdown sync support</td>
-					<td style="text-align: left">Pure local Markdown (<code>.md</code>) vault folder</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Encryption &amp; Security</strong></td>
-					<td style="text-align: left">Built-in End-to-End Encryption (E2EE)</td>
-					<td style="text-align: left">Third-party or sync encryption</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Linking &amp; Knowledge Graph</strong></td>
-					<td style="text-align: left">Basic notebook/sub-notebook hierarchical linking</td>
-					<td style="text-align: left">Advanced bi-directional graph (<code>[[Wikilinks]]</code>)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Export Options</strong></td>
-					<td style="text-align: left">PDF, HTML, Markdown, JEX</td>
-					<td style="text-align: left">PDF, Markdown, HTML (via plugin)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Best Use Case</strong></td>
-					<td style="text-align: left">Structured observation logs, encrypted field notes</td>
-					<td style="text-align: left">Complex audit mapping, interconnected rule links</td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h2 id="option-1-joplin--built-for-structured-field-audits-and-security">Option 1: Joplin — Built for Structured Field Audits and Security<a hidden class="anchor" aria-hidden="true" href="#option-1-joplin--built-for-structured-field-audits-and-security">#</a></h2>
-<p><strong>Joplin</strong> excels in structured multi-level notebook hierarchies (e.g., <code>Audit FY 2025-26</code> -&gt; <code>Zilla Panchayats</code> -&gt; <code>Gram Panchayat A</code>).</p>
-<h3 id="key-advantages-for-auditors">Key Advantages for Auditors:<a hidden class="anchor" aria-hidden="true" href="#key-advantages-for-auditors">#</a></h3>
-<ul>
-<li><strong>Built-in End-to-End Encryption (E2EE):</strong> Crucial when carrying confidential financial notes on mobile or portable laptops across local offices.</li>
-<li><strong>Resource Efficient:</strong> Light on system resources, making it suitable for low-RAM laptops used in field audits.</li>
-<li><strong>Robust Clipper:</strong> Excellent browser extension for clipping government circulars, statutory notifications, and online compliance standards.</li>
-</ul>
-<hr>
-<h2 id="option-2-obsidian--built-for-interconnected-audit-observation-mapping">Option 2: Obsidian — Built for Interconnected Audit Observation Mapping<a hidden class="anchor" aria-hidden="true" href="#option-2-obsidian--built-for-interconnected-audit-observation-mapping">#</a></h2>
-<p><strong>Obsidian</strong> operates directly on top of a local folder of plain Markdown files. Its killer feature is <strong>bi-directional linking</strong> (<code>[[Link]]</code>), allowing auditors to link specific audit findings back to statutory rules and Act clauses.</p>
-<h3 id="practical-obsidian-structure-for-audits">Practical Obsidian Structure for Audits:<a hidden class="anchor" aria-hidden="true" href="#practical-obsidian-structure-for-audits">#</a></h3>
-<pre tabindex="0"><code>Vault_Audit_2025-26/
+tags: [&ldquo;Obsidian&rdquo;, &ldquo;Joplin&rdquo;, &ldquo;Note-Taking&rdquo;, &ldquo;Markdown&rdquo;, &ldquo;Documentation&rdquo;, &ldquo;Audit&rdquo;]</h2><h1 id=structured-note-taking-for-auditors-comparing-joplin-and-obsidian-for-audit-workflows>Structured Note-Taking for Auditors: Comparing Joplin and Obsidian for Audit Workflows<a hidden class=anchor aria-hidden=true href=#structured-note-taking-for-auditors-comparing-joplin-and-obsidian-for-audit-workflows>#</a></h1><h2 id=introduction-2>Introduction<a hidden class=anchor aria-hidden=true href=#introduction-2>#</a></h2><p>For auditors, managing evidence, tracking multi-tier observation records, and compiling compliance reports across multiple organizations requires an organized, searchable, and privacy-compliant note-taking workflow.</p><p>Plain text and Markdown-based document systems offer unmatched longevity and speed. Two top-tier tools—<strong>Joplin</strong> and <strong>Obsidian</strong>—stand out as ideal solutions for local governance and internal audit professionals.</p><hr><h2 id=feature-comparison-matrix>Feature Comparison Matrix<a hidden class=anchor aria-hidden=true href=#feature-comparison-matrix>#</a></h2><table><thead><tr><th style=text-align:left>Feature</th><th style=text-align:left>Joplin</th><th style=text-align:left>Obsidian</th></tr></thead><tbody><tr><td style=text-align:left><strong>Data Storage Format</strong></td><td style=text-align:left>SQLite database with Markdown sync support</td><td style=text-align:left>Pure local Markdown (<code>.md</code>) vault folder</td></tr><tr><td style=text-align:left><strong>Encryption & Security</strong></td><td style=text-align:left>Built-in End-to-End Encryption (E2EE)</td><td style=text-align:left>Third-party or sync encryption</td></tr><tr><td style=text-align:left><strong>Linking & Knowledge Graph</strong></td><td style=text-align:left>Basic notebook/sub-notebook hierarchical linking</td><td style=text-align:left>Advanced bi-directional graph (<code>[[Wikilinks]]</code>)</td></tr><tr><td style=text-align:left><strong>Export Options</strong></td><td style=text-align:left>PDF, HTML, Markdown, JEX</td><td style=text-align:left>PDF, Markdown, HTML (via plugin)</td></tr><tr><td style=text-align:left><strong>Best Use Case</strong></td><td style=text-align:left>Structured observation logs, encrypted field notes</td><td style=text-align:left>Complex audit mapping, interconnected rule links</td></tr></tbody></table><hr><h2 id=option-1-joplin--built-for-structured-field-audits-and-security>Option 1: Joplin — Built for Structured Field Audits and Security<a hidden class=anchor aria-hidden=true href=#option-1-joplin--built-for-structured-field-audits-and-security>#</a></h2><p><strong>Joplin</strong> excels in structured multi-level notebook hierarchies (e.g., <code>Audit FY 2025-26</code> -> <code>Zilla Panchayats</code> -> <code>Gram Panchayat A</code>).</p><h3 id=key-advantages-for-auditors>Key Advantages for Auditors:<a hidden class=anchor aria-hidden=true href=#key-advantages-for-auditors>#</a></h3><ul><li><strong>Built-in End-to-End Encryption (E2EE):</strong> Crucial when carrying confidential financial notes on mobile or portable laptops across local offices.</li><li><strong>Resource Efficient:</strong> Light on system resources, making it suitable for low-RAM laptops used in field audits.</li><li><strong>Robust Clipper:</strong> Excellent browser extension for clipping government circulars, statutory notifications, and online compliance standards.</li></ul><hr><h2 id=option-2-obsidian--built-for-interconnected-audit-observation-mapping>Option 2: Obsidian — Built for Interconnected Audit Observation Mapping<a hidden class=anchor aria-hidden=true href=#option-2-obsidian--built-for-interconnected-audit-observation-mapping>#</a></h2><p><strong>Obsidian</strong> operates directly on top of a local folder of plain Markdown files. Its killer feature is <strong>bi-directional linking</strong> (<code>[[Link]]</code>), allowing auditors to link specific audit findings back to statutory rules and Act clauses.</p><h3 id=practical-obsidian-structure-for-audits>Practical Obsidian Structure for Audits:<a hidden class=anchor aria-hidden=true href=#practical-obsidian-structure-for-audits>#</a></h3><pre tabindex=0><code>Vault_Audit_2025-26/
 ├── 01_Statutory_Rules/
 │   ├── Sikkim_Local_Fund_Audit_Act.md
 │   └── General_Financial_Rules.md
@@ -616,167 +199,12 @@ tags: [&ldquo;Obsidian&rdquo;, &ldquo;Joplin&rdquo;, &ldquo;Note-Taking&rdquo;, 
 └── 03_Entities/
     ├── Gangtok_Municipal_Corporation.md
     └── Namchi_Zilla_Panchayat.md
-</code></pre><p>In <code>Irregular_Procurement_Vehicles.md</code>, linking directly to the rule:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>The expenditure incurred on vehicle procurement violates [[Sikkim_Local_Fund_Audit_Act#Section-12]], as prior sanction was not obtained.
-</span></span></code></pre></div><hr>
-<h2 id="recommendation">Recommendation<a hidden class="anchor" aria-hidden="true" href="#recommendation">#</a></h2>
-<ul>
-<li>Choose <strong>Joplin</strong> if your priority is straightforward multi-tier notebook organization, robust web clipping, and encrypted sync across portable hardware.</li>
-<li>Choose <strong>Obsidian</strong> if you want to build a relational knowledge graph linking statutes, regulatory mandates, and repeated audit queries across different local bodies over multiple financial years.</li>
-</ul>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/javascript/">JavaScript</a></li>
-      <li><a href="//localhost:1313/tags/egramswaraj/">EGramSwaraj</a></li>
-      <li><a href="//localhost:1313/tags/web-scraping/">Web Scraping</a></li>
-      <li><a href="//localhost:1313/tags/data-extraction/">Data Extraction</a></li>
-      <li><a href="//localhost:1313/tags/audit/">Audit</a></li>
-      <li><a href="//localhost:1313/tags/financial-oversight/">Financial Oversight</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-yt-bookmarklet/">
-    <span class="title">« Prev</span>
-    <span>Understanding YouTube Bookmarklets: How They Work, Security Risks, and Modern Alternatives</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-linux-time/">
-    <span class="title">Next »</span>
-    <span>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><p>In <code>Irregular_Procurement_Vehicles.md</code>, linking directly to the rule:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span>The expenditure incurred on vehicle procurement violates [[Sikkim_Local_Fund_Audit_Act#Section-12]], as prior sanction was not obtained.
+</span></span></code></pre></div><hr><h2 id=recommendation>Recommendation<a hidden class=anchor aria-hidden=true href=#recommendation>#</a></h2><ul><li>Choose <strong>Joplin</strong> if your priority is straightforward multi-tier notebook organization, robust web clipping, and encrypted sync across portable hardware.</li><li>Choose <strong>Obsidian</strong> if you want to build a relational knowledge graph linking statutes, regulatory mandates, and repeated audit queries across different local bodies over multiple financial years.</li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/javascript/>JavaScript</a></li><li><a href=/tags/egramswaraj/>EGramSwaraj</a></li><li><a href=/tags/web-scraping/>Web Scraping</a></li><li><a href=/tags/data-extraction/>Data Extraction</a></li><li><a href=/tags/audit/>Audit</a></li><li><a href=/tags/financial-oversight/>Financial Oversight</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-yt-bookmarklet/><span class=title>« Prev</span>
+<span>Understanding YouTube Bookmarklets: How They Work, Security Risks, and Modern Alternatives</span>
+</a><a class=next href=/posts/2026-08-04-linux-time/><span class=title>Next »</span>
+<span>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

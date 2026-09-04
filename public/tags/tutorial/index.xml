@@ -1,50 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Tutorial on Technical Journal</title>
-    <link>//localhost:1313/tags/tutorial/</link>
-    <description>Recent content in Tutorial on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 08:25:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building Your AI Service Business with Free Tools: The Complete Setup Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-ai-service3/</link>
-      <pubDate>Wed, 05 Aug 2026 08:25:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ai-service3/</guid>
-      <description>&lt;h1 id=&#34;building-your-ai-service-business-with-free-tools&#34;&gt;Building Your AI Service Business with Free Tools&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tutorial on Technical Journal</title><link>/tags/tutorial/</link><description>Recent content in Tutorial on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 09:00:00 +0530</lastBuildDate><atom:link href="/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker: Complete Beginner to Production Guide</title><link>/posts/2026-08-04-docker4/</link><pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate><guid>/posts/2026-08-04-docker4/</guid><description>&lt;h1 id="docker-complete-beginner-to-production-guide"&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
+&lt;p&gt;Docker changed software development by making applications portable and predictable. Instead of saying, &amp;ldquo;It works on my machine,&amp;rdquo; developers can package an application with everything it needs—code, libraries, runtime, and dependencies—into a &lt;strong&gt;container&lt;/strong&gt; that runs consistently anywhere.&lt;/p&gt;
+&lt;p&gt;Docker has become a standard tool for developers, DevOps engineers, cloud engineers, and platform teams.&lt;/p&gt;
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description></item><item><title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title><link>/posts/2026-08-05-python3/</link><pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate><guid>/posts/2026-08-05-python3/</guid><description>&lt;h1 id="python-for-devops-and-automation-complete-beginner-to-advanced-guide"&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
+&lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
+&lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
+&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description></item><item><title>Building Your AI Service Business with Free Tools: The Complete Setup Guide</title><link>/posts/2026-08-05-ai-service3/</link><pubDate>Wed, 05 Aug 2026 08:25:00 +0530</pubDate><guid>/posts/2026-08-05-ai-service3/</guid><description>&lt;h1 id="building-your-ai-service-business-with-free-tools"&gt;Building Your AI Service Business with Free Tools&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Part 3 of the &lt;strong&gt;Zero to $100/Day AI Business&lt;/strong&gt; series.&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You don&amp;rsquo;t need an expensive laptop, premium AI subscriptions, or paid software to start an AI service business.&lt;/p&gt;
 &lt;p&gt;A smartphone, internet connection, and a handful of free tools are enough to deliver professional-quality work.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;h1 id="table-of-contents"&gt;Table of Contents&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#your-digital-workspace&#34;&gt;Your Digital Workspace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#essential-free-tools&#34;&gt;Essential Free Tools&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#organizing-your-business&#34;&gt;Organizing Your Business&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#creating-reusable-templates&#34;&gt;Creating Reusable Templates&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#writing-better-ai-prompts&#34;&gt;Writing Better AI Prompts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#building-a-delivery-workflow&#34;&gt;Building a Delivery Workflow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#quality-control-checklist&#34;&gt;Quality Control Checklist&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#managing-clients&#34;&gt;Managing Clients&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#file-organization&#34;&gt;File Organization&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#automation-ideas&#34;&gt;Automation Ideas&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#daily-operating-routine&#34;&gt;Daily Operating Routine&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#next-steps&#34;&gt;Next Steps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#your-digital-workspace"&gt;Your Digital Workspace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#essential-free-tools"&gt;Essential Free Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#organizing-your-business"&gt;Organizing Your Business&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#creating-reusable-templates"&gt;Creating Reusable Templates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#writing-better-ai-prompts"&gt;Writing Better AI Prompts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#building-a-delivery-workflow"&gt;Building a Delivery Workflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#quality-control-checklist"&gt;Quality Control Checklist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#managing-clients"&gt;Managing Clients&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#file-organization"&gt;File Organization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#automation-ideas"&gt;Automation Ideas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#daily-operating-routine"&gt;Daily Operating Routine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#next-steps"&gt;Next Steps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;your-digital-workspace&#34;&gt;Your Digital Workspace&lt;/h1&gt;
-&lt;p&gt;Think of your AI business like a small digital office.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to Build a $100/Day AI Income Machine in 48 Hours Using Only Your Phone</title>
-      <link>//localhost:1313/posts/2026-08-05-ai-income1/</link>
-      <pubDate>Wed, 05 Aug 2026 07:53:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ai-income1/</guid>
-      <description>&lt;h1 id=&#34;how-to-build-a-100day-ai-income-machine-in-48-hours-using-only-your-phone&#34;&gt;How to Build a $100/Day AI Income Machine in 48 Hours Using Only Your Phone&lt;/h1&gt;
+&lt;h1 id="your-digital-workspace"&gt;Your Digital Workspace&lt;/h1&gt;
+&lt;p&gt;Think of your AI business like a small digital office.&lt;/p&gt;</description></item><item><title>Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development</title><link>/posts/2026-08-05-git2/</link><pubDate>Wed, 05 Aug 2026 08:00:00 +0530</pubDate><guid>/posts/2026-08-05-git2/</guid><description>&lt;h1 id="git--github-complete-beginner-to-advanced-guide-for-modern-development"&gt;Git &amp;amp; GitHub: Complete Beginner to Advanced Guide for Modern Development&lt;/h1&gt;
+&lt;p&gt;Git is the most widely used version control system in the world. Whether you&amp;rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.&lt;/p&gt;
+&lt;p&gt;Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.&lt;/p&gt;
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Git from scratch and build habits used by professional software teams.&lt;/p&gt;</description></item><item><title>The Complete Beginner's Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve</title><link>/posts/2026-08-05-vneditor/</link><pubDate>Wed, 05 Aug 2026 07:55:00 +0530</pubDate><guid>/posts/2026-08-05-vneditor/</guid><description>&lt;h1 id="the-complete-beginners-guide-to-creating-cinematic-travel-videos"&gt;The Complete Beginner&amp;rsquo;s Guide to Creating Cinematic Travel Videos&lt;/h1&gt;
+&lt;p&gt;A beautiful travel film is more than a collection of photos and videos. It tells a story, creates emotion, and lets viewers experience the journey with you.&lt;/p&gt;
+&lt;p&gt;This guide combines planning, storytelling, editing, music selection, transitions, color grading, and export settings into one workflow suitable for beginners using &lt;strong&gt;VN Editor&lt;/strong&gt; or &lt;strong&gt;DaVinci Resolve&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="who-is-this-guide-for"&gt;Who Is This Guide For?&lt;/h1&gt;
+&lt;p&gt;This workflow is ideal for:&lt;/p&gt;</description></item><item><title>Mastering JSON Prompting for AI Video Generation</title><link>/posts/2026-08-05-json-prompt1/</link><pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate><guid>/posts/2026-08-05-json-prompt1/</guid><description>&lt;h1 id="mastering-json-prompting-for-ai-video-generation"&gt;Mastering JSON Prompting for AI Video Generation&lt;/h1&gt;
+&lt;p&gt;Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through &lt;strong&gt;structured JSON prompts&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.&lt;/p&gt;</description></item><item><title>How to Build a $100/Day AI Income Machine in 48 Hours Using Only Your Phone</title><link>/posts/2026-08-05-ai-income1/</link><pubDate>Wed, 05 Aug 2026 07:53:00 +0530</pubDate><guid>/posts/2026-08-05-ai-income1/</guid><description>&lt;h1 id="how-to-build-a-100day-ai-income-machine-in-48-hours-using-only-your-phone"&gt;How to Build a $100/Day AI Income Machine in 48 Hours Using Only Your Phone&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Budget:&lt;/strong&gt; $0&lt;/p&gt;
@@ -55,87 +49,12 @@
 &lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Earn your first &lt;strong&gt;$100 per day&lt;/strong&gt; using AI.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;Artificial Intelligence has dramatically reduced the amount of work required to create valuable digital services. Tasks that once took hours can now be completed in minutes.&lt;/p&gt;
-&lt;p&gt;This creates an opportunity for individuals with limited resources. Instead of spending months building a social media audience or investing money into advertising, you can use AI to solve problems for people who are already willing to pay.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker: Complete Beginner to Production Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-docker4/</link>
-      <pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-docker4/</guid>
-      <description>&lt;h1 id=&#34;docker-complete-beginner-to-production-guide&#34;&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
-&lt;p&gt;Docker changed software development by making applications portable and predictable. Instead of saying, &amp;ldquo;It works on my machine,&amp;rdquo; developers can package an application with everything it needs—code, libraries, runtime, and dependencies—into a &lt;strong&gt;container&lt;/strong&gt; that runs consistently anywhere.&lt;/p&gt;
-&lt;p&gt;Docker has become a standard tool for developers, DevOps engineers, cloud engineers, and platform teams.&lt;/p&gt;
-&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-python3/</link>
-      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-python3/</guid>
-      <description>&lt;h1 id=&#34;python-for-devops-and-automation-complete-beginner-to-advanced-guide&#34;&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
-&lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
-&lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
-&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Git &amp; GitHub: Complete Beginner to Advanced Guide for Modern Development</title>
-      <link>//localhost:1313/posts/2026-08-05-git2/</link>
-      <pubDate>Wed, 05 Aug 2026 08:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-git2/</guid>
-      <description>&lt;h1 id=&#34;git--github-complete-beginner-to-advanced-guide-for-modern-development&#34;&gt;Git &amp;amp; GitHub: Complete Beginner to Advanced Guide for Modern Development&lt;/h1&gt;
-&lt;p&gt;Git is the most widely used version control system in the world. Whether you&amp;rsquo;re building a personal website, contributing to open source, or deploying applications to the cloud, Git is an essential skill.&lt;/p&gt;
-&lt;p&gt;Git keeps track of every change you make, while GitHub provides a platform to store repositories, collaborate with others, automate workflows, and publish projects.&lt;/p&gt;
-&lt;p&gt;In this guide, you&amp;rsquo;ll learn Git from scratch and build habits used by professional software teams.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Complete Beginner&#39;s Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve</title>
-      <link>//localhost:1313/posts/2026-08-05-vneditor/</link>
-      <pubDate>Wed, 05 Aug 2026 07:55:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-vneditor/</guid>
-      <description>&lt;h1 id=&#34;the-complete-beginners-guide-to-creating-cinematic-travel-videos&#34;&gt;The Complete Beginner&amp;rsquo;s Guide to Creating Cinematic Travel Videos&lt;/h1&gt;
-&lt;p&gt;A beautiful travel film is more than a collection of photos and videos. It tells a story, creates emotion, and lets viewers experience the journey with you.&lt;/p&gt;
-&lt;p&gt;This guide combines planning, storytelling, editing, music selection, transitions, color grading, and export settings into one workflow suitable for beginners using &lt;strong&gt;VN Editor&lt;/strong&gt; or &lt;strong&gt;DaVinci Resolve&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;who-is-this-guide-for&#34;&gt;Who Is This Guide For?&lt;/h1&gt;
-&lt;p&gt;This workflow is ideal for:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering JSON Prompting for AI Video Generation</title>
-      <link>//localhost:1313/posts/2026-08-05-json-prompt1/</link>
-      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-json-prompt1/</guid>
-      <description>&lt;h1 id=&#34;mastering-json-prompting-for-ai-video-generation&#34;&gt;Mastering JSON Prompting for AI Video Generation&lt;/h1&gt;
-&lt;p&gt;Artificial intelligence video models are becoming increasingly capable, but achieving consistent, high-quality results still depends on how well you communicate your ideas. One of the most effective ways to do this is through &lt;strong&gt;structured JSON prompts&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Instead of writing one long paragraph describing a scene, JSON divides your prompt into logical sections. Each section controls a specific part of the final output, making prompts easier to understand, edit, reuse, and automate.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linux: The Foundation of Modern DevOps</title>
-      <link>//localhost:1313/posts/2026-08-05-1/</link>
-      <pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-1/</guid>
-      <description>&lt;h1 id=&#34;linux-the-foundation-of-modern-devops&#34;&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
+&lt;p&gt;This creates an opportunity for individuals with limited resources. Instead of spending months building a social media audience or investing money into advertising, you can use AI to solve problems for people who are already willing to pay.&lt;/p&gt;</description></item><item><title>Linux: The Foundation of Modern DevOps</title><link>/posts/2026-08-05-1/</link><pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate><guid>/posts/2026-08-05-1/</guid><description>&lt;h1 id="linux-the-foundation-of-modern-devops"&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
 &lt;p&gt;Linux powers nearly everything on the Internet.&lt;/p&gt;
 &lt;p&gt;Whether you browse a website, stream a movie, deploy an application, or use cloud services, chances are Linux is running somewhere in the background.&lt;/p&gt;
 &lt;p&gt;If you want to become a DevOps Engineer, Cloud Engineer, Site Reliability Engineer (SRE), Platform Engineer, or Backend Developer, Linux is the first skill you should master.&lt;/p&gt;
-&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-github-blog/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-github-blog/</guid>
-      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
-&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-github-pages/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-github-pages/</guid>
-      <description>&lt;h1 id=&#34;how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide&#34;&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
-&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description></item><item><title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title><link>/posts/2026-08-04-github-blog/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-github-blog/</guid><description>&lt;h1 id="how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide"&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description></item><item><title>How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide</title><link>/posts/2026-08-04-github-pages/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-github-pages/</guid><description>&lt;h1 id="how-to-create-a-blog-using-github-pages-and-jekyll-a-complete-guide"&gt;How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide&lt;/h1&gt;
+&lt;p&gt;Creating a blog using GitHub Pages with a Jekyll theme is a popular, secure, and cost-effective way to publish content online. Because GitHub Pages provides free hosting for static sites, it is a favorite among developers and writers alike. This guide walks you through the entire process, from choosing a theme to deploying your blog live. It also includes tips, troubleshooting advice, and resources to help you succeed.&lt;/p&gt;</description></item></channel></rss>

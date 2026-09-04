@@ -1,38 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Tibetan-Buddhism on Technical Journal</title>
-    <link>//localhost:1313/tags/tibetan-buddhism/</link>
-    <description>Recent content in Tibetan-Buddhism on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 02:57:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/tibetan-buddhism/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation</title>
-      <link>//localhost:1313/posts/2026-08-05-samatha-meditation/</link>
-      <pubDate>Wed, 05 Aug 2026 02:57:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-samatha-meditation/</guid>
-      <description>&lt;h1 id=&#34;the-tibetan-elephant-path-a-practical-guide-to-shamatha-meditation&#34;&gt;The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tibetan-Buddhism on Technical Journal</title><link>/tags/tibetan-buddhism/</link><description>Recent content in Tibetan-Buddhism on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 02:57:00 +0530</lastBuildDate><atom:link href="/tags/tibetan-buddhism/index.xml" rel="self" type="application/rss+xml"/><item><title>The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation</title><link>/posts/2026-08-05-samatha-meditation/</link><pubDate>Wed, 05 Aug 2026 02:57:00 +0530</pubDate><guid>/posts/2026-08-05-samatha-meditation/</guid><description>&lt;h1 id="the-tibetan-elephant-path-a-practical-guide-to-shamatha-meditation"&gt;The Tibetan Elephant Path: A Practical Guide to Shamatha Meditation&lt;/h1&gt;
 &lt;p&gt;Among the many visual teachings in Tibetan Buddhism, few are as memorable as the &lt;strong&gt;Elephant Path of Shamatha Meditation&lt;/strong&gt;. At first glance, it appears to be a simple drawing of a monk chasing an elephant. In reality, it is a complete roadmap for developing concentration, mindfulness, and mental stability.&lt;/p&gt;
-&lt;p&gt;This traditional illustration has been used for centuries to teach practitioners how the mind gradually transforms from restless and uncontrolled into peaceful, clear, and fully obedient.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mastering the Mind and Breath: From Prompt Engineering to Tibetan Energy Purification</title>
-      <link>//localhost:1313/posts/2026-08-04-meditation/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-meditation/</guid>
-      <description>&lt;h3 id=&#34;part-1-meta-prompt-engineering-for-multimodal-research&#34;&gt;Part 1: Meta-Prompt Engineering for Multimodal Research&lt;/h3&gt;
+&lt;p&gt;This traditional illustration has been used for centuries to teach practitioners how the mind gradually transforms from restless and uncontrolled into peaceful, clear, and fully obedient.&lt;/p&gt;</description></item><item><title>Mastering the Mind and Breath: From Prompt Engineering to Tibetan Energy Purification</title><link>/posts/2026-08-04-meditation/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-meditation/</guid><description>&lt;h3 id="part-1-meta-prompt-engineering-for-multimodal-research"&gt;Part 1: Meta-Prompt Engineering for Multimodal Research&lt;/h3&gt;
 &lt;p&gt;Designing an effective prompt requires clear structure: defining roles, specifying context, and setting strict output formats. To test this framework, we constructed a comprehensive research prompt on physical and contemplative mastery—focusing on walking, breathing, and meditation—complete with requests for visual aids, infographics, audio concepts, and step-by-step guides.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Prompt: Research expert techniques for walking, breathing, and meditation. 
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;For each practice, provide:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1. Detailed Step-by-Step Guides (movements, postures, mental focus).
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2. Visual Aids (Static images, Infographics, Animated GIF concepts, Short Video &amp;amp; Audio concepts).
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3. Emphasis on Accuracy (alignment with physiological and contemplative standards).
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;4. Expert Perspective (nuances, advanced cues, and framing).
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Prompt: Research expert techniques for walking, breathing, and meditation.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;For each practice, provide:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;1. Detailed Step-by-Step Guides (movements, postures, mental focus).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;2. Visual Aids (Static images, Infographics, Animated GIF concepts, Short Video &amp;amp; Audio concepts).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;3. Emphasis on Accuracy (alignment with physiological and contemplative standards).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;4. Expert Perspective (nuances, advanced cues, and framing).
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;part-2-the-nine-purification-breaths-རངརདགཕགས&#34;&gt;Part 2: The Nine Purification Breaths (རླུང་རོ་དགུ་ཕྲུགས)&lt;/h3&gt;
-&lt;p&gt;In Tibetan subtle-body traditions, the Nine Purification Breaths clear the energetic channels (&lt;em&gt;nadis&lt;/em&gt;) of stale wind (&lt;em&gt;prana&lt;/em&gt;) and mental obscurations before formal meditation or daily activities.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h3 id="part-2-the-nine-purification-breaths-རངརདགཕགས"&gt;Part 2: The Nine Purification Breaths (རླུང་རོ་དགུ་ཕྲུགས)&lt;/h3&gt;
+&lt;p&gt;In Tibetan subtle-body traditions, the Nine Purification Breaths clear the energetic channels (&lt;em&gt;nadis&lt;/em&gt;) of stale wind (&lt;em&gt;prana&lt;/em&gt;) and mental obscurations before formal meditation or daily activities.&lt;/p&gt;</description></item></channel></rss>

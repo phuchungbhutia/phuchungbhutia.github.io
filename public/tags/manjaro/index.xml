@@ -1,72 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Manjaro on Technical Journal</title>
-    <link>//localhost:1313/tags/manjaro/</link>
-    <description>Recent content in Manjaro on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm</title>
-      <link>//localhost:1313/posts/2026-08-04-pdf2md/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-pdf2md/</guid>
-      <description>&lt;p&gt;Converting scanned PDFs into structured formats like Markdown (&lt;code&gt;.md&lt;/code&gt;) and Rich Text Format (&lt;code&gt;.rtf&lt;/code&gt;) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Manjaro on Technical Journal</title><link>/tags/manjaro/</link><description>Recent content in Manjaro on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/manjaro/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a Production-Grade PDF-to-Markdown OCR Pipeline on Manjaro Linux: Lessons in Arch, PEP 668, and PyCharm</title><link>/posts/2026-08-04-pdf2md/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-pdf2md/</guid><description>&lt;p&gt;Converting scanned PDFs into structured formats like Markdown (&lt;code&gt;.md&lt;/code&gt;) and Rich Text Format (&lt;code&gt;.rtf&lt;/code&gt;) while preserving table structures, removing page headers/footers, and maintaining heading hierarchies is one of the most common document processing challenges.&lt;/p&gt;
 &lt;p&gt;However, implementing this on an Arch-based Linux distribution like &lt;strong&gt;Manjaro&lt;/strong&gt; presents unique challenges due to Python&amp;rsquo;s system protections (PEP 668), shell behavior across external drive mounts, and shifting package interfaces.&lt;/p&gt;
-&lt;p&gt;This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, &lt;code&gt;marker-pdf&lt;/code&gt;, &lt;code&gt;pandoc&lt;/code&gt;, and PyCharm on Manjaro Linux.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title>
-      <link>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-manjaro-time-sync/</guid>
-      <description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
-&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title>
-      <link>//localhost:1313/posts/2026-04-08-manjaro/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-04-08-manjaro/</guid>
-      <description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
+&lt;p&gt;This blog provides a complete step-by-step guide to building a robust document conversion pipeline using Python, &lt;code&gt;marker-pdf&lt;/code&gt;, &lt;code&gt;pandoc&lt;/code&gt;, and PyCharm on Manjaro Linux.&lt;/p&gt;</description></item><item><title>Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync</title><link>/posts/2026-08-04-manjaro-time-sync/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-manjaro-time-sync/</guid><description>&lt;p&gt;Dealing with a faulty or dead motherboard CMOS battery can be a frustrating experience on Linux systems. Every cold boot resets the system clock—often back to 2010 or 1970—causing broken SSL/TLS certificates, failing web browsers, broken package manager updates, and out-of-sync system logs.&lt;/p&gt;
+&lt;p&gt;While replacing the CR2032 battery is the hardware fix, you can completely automate the recovery process in software so your computer seamlessly adjusts to the correct local time within seconds of booting up.&lt;/p&gt;</description></item><item><title>Taming Manjaro XFCE on Limited Hardware: A Complete Admin Guide to NTFS, Backups, Firewalls, and Background Automation</title><link>/posts/2026-04-08-manjaro/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-04-08-manjaro/</guid><description>&lt;p&gt;Running a Linux distribution like Manjaro XFCE on hardware with 4GB of RAM requires a balance between system performance, reliability, and security—especially when handling critical document backups and dealing with restrictive office network firewalls.&lt;/p&gt;
 &lt;p&gt;This comprehensive guide consolidates troubleshooting steps and optimization workflows into an end-to-end administration manual for modern Linux environments.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-mastering-ntfs-partition-mounts-in-archmanjaro&#34;&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
-&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Ultimate Guide to Installing yt-dlp and Downloading Playlists as MP3s</title>
-      <link>//localhost:1313/posts/2026-08-04-yt-dlp/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-yt-dlp/</guid>
-      <description>&lt;p&gt;Command-line utilities often outperform bloated desktop applications when it comes to speed, flexibility, and reliability. For downloading online video and audio, &lt;strong&gt;yt-dlp&lt;/strong&gt; stands out as the community gold standard—a actively maintained fork of the classic &lt;code&gt;youtube-dl&lt;/code&gt; project.&lt;/p&gt;
+&lt;h2 id="1-mastering-ntfs-partition-mounts-in-archmanjaro"&gt;1. Mastering NTFS Partition Mounts in Arch/Manjaro&lt;/h2&gt;
+&lt;p&gt;When migrating or dual-booting with Windows, external or secondary drives formatted in &lt;strong&gt;NTFS&lt;/strong&gt; often cause mount failures or fail to auto-detect inside &lt;strong&gt;GNOME Disks&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>The Ultimate Guide to Installing yt-dlp and Downloading Playlists as MP3s</title><link>/posts/2026-08-04-yt-dlp/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-yt-dlp/</guid><description>&lt;p&gt;Command-line utilities often outperform bloated desktop applications when it comes to speed, flexibility, and reliability. For downloading online video and audio, &lt;strong&gt;yt-dlp&lt;/strong&gt; stands out as the community gold standard—a actively maintained fork of the classic &lt;code&gt;youtube-dl&lt;/code&gt; project.&lt;/p&gt;
 &lt;p&gt;Whether you are archiving full concert playlists, podcasts, or music collections, setting up &lt;code&gt;yt-dlp&lt;/code&gt; alongside &lt;code&gt;ffmpeg&lt;/code&gt; ensures seamless extraction into high-quality MP3s across Windows, Linux Mint, and Arch-based distributions like Manjaro.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-installation-guide-across-operating-systems&#34;&gt;1. Installation Guide Across Operating Systems&lt;/h2&gt;
-&lt;p&gt;Because streaming platforms continually update their backends, installing &lt;code&gt;yt-dlp&lt;/code&gt; from a source that allows easy updates is critical.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-de/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-de/</guid>
-      <description>&lt;p&gt;Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.&lt;/p&gt;
+&lt;h2 id="1-installation-guide-across-operating-systems"&gt;1. Installation Guide Across Operating Systems&lt;/h2&gt;
+&lt;p&gt;Because streaming platforms continually update their backends, installing &lt;code&gt;yt-dlp&lt;/code&gt; from a source that allows easy updates is critical.&lt;/p&gt;</description></item><item><title>The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift</title><link>/posts/2026-08-04-linux-de/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-de/</guid><description>&lt;p&gt;Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;1-understanding-desktop-resource-consumption-xfce-vs-the-competition&#34;&gt;1. Understanding Desktop Resource Consumption: XFCE vs. The Competition&lt;/h1&gt;
-&lt;p&gt;When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-arch-commands/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-arch-commands/</guid>
-      <description>&lt;p&gt;Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.&lt;/p&gt;
+&lt;h1 id="1-understanding-desktop-resource-consumption-xfce-vs-the-competition"&gt;1. Understanding Desktop Resource Consumption: XFCE vs. The Competition&lt;/h1&gt;
+&lt;p&gt;When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.&lt;/p&gt;</description></item><item><title>Troubleshooting Arch Linux, Manjaro, and Hardware Failures: A Complete Guide</title><link>/posts/2026-08-04-arch-commands/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-arch-commands/</guid><description>&lt;p&gt;Navigating Linux distributions based on Arch—such as Manjaro or CachyOS—offers extreme flexibility and access to cutting-edge software. However, dealing with sudden hardware failures, misconfigurations, and file system corruption can quickly turn a smooth experience into a head-scratcher.&lt;/p&gt;
 &lt;p&gt;Here is a comprehensive breakdown of everything covered in our recent technical sessions, from mastering package management to fixing corrupted NTFS drives on older hardware.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-pacman-essentials-on-arch-linux&#34;&gt;1. Pacman Essentials on Arch Linux&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;pacman&lt;/code&gt; is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-pacman-essentials-on-arch-linux"&gt;1. Pacman Essentials on Arch Linux&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;pacman&lt;/code&gt; is the core package manager for Arch Linux and its derivatives. Memorizing these essential commands helps keep your system updated and clean.&lt;/p&gt;</description></item></channel></rss>

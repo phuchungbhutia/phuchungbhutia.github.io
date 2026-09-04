@@ -1,6 +1,6 @@
 ---
 title: "Converting PDFs to Markdown or HTML: Comparison, Methods, and The Best Open-Source Tools"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Data Engineering", "Artificial Intelligence", "Document Processing"]
 tags: ["PDF Conversion", "Markdown", "HTML", "Docling", "Marker", "MinerU", "Nougat", "LLM", "RAG"]
 ---

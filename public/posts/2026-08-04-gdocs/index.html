@@ -1,92 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script | Technical Journal</title>
-<meta name="keywords" content="Google Docs, Regular Expressions, Google Apps Script, Document Formatting, Productivity Hacks, Automation">
-<meta name="description" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script
-When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-gdocs/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-gdocs/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-gdocs/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script">
-  <meta property="og:description" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:tag" content="Google Docs">
-    <meta property="article:tag" content="Regular Expressions">
-    <meta property="article:tag" content="Google Apps Script">
-    <meta property="article:tag" content="Document Formatting">
-    <meta property="article:tag" content="Productivity Hacks">
-    <meta property="article:tag" content="Automation">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script">
-  <meta name="twitter:description" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.">
-
-
-<script type="application/ld+json">
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script | Technical Journal</title><meta name=keywords content="Google Docs,Regular Expressions,Google Apps Script,Document Formatting,Productivity Hacks,Automation"><meta name=description content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script
+When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-gdocs/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-gdocs/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-gdocs/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script"><meta property="og:description" content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="Google Docs"><meta property="article:tag" content="Regular Expressions"><meta property="article:tag" content="Google Apps Script"><meta property="article:tag" content="Document Formatting"><meta property="article:tag" content="Productivity Hacks"><meta property="article:tag" content="Automation"><meta name=twitter:card content="summary"><meta name=twitter:title content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script"><meta name=twitter:description content="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -95,18 +8,17 @@ When working on professional reports, administrative documents, or collaborative
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script",
-      "item": "//localhost:1313/posts/2026-08-04-gdocs/"
+      "item": "/posts/2026-08-04-gdocs/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -119,504 +31,67 @@ When working on professional reports, administrative documents, or collaborative
   "articleBody": "Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.\nManually editing these errors line-by-line is extremely inefficient and prone to oversight. Fortunately, Google Docs provides powerful built-in tools like Regular Expressions (Regex), advanced layout options, and Google Apps Script automation to clean up entire documents in seconds.\nThis comprehensive guide covers everything you need to know to sanitize your Google Docs formatting, fix pagination errors, and build custom single-click automation tools.\n1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces Google Docs includes a robust Find and Replace feature equipped with Regular Expression support. Regex allows you to search for text patterns rather than fixed strings, making it the fastest way to scrub formatting errors across multi-page documents.\nTo open the Find and Replace dialog:\nWindows / Linux: Press Ctrl + H Mac: Press Cmd + H Menu Navigation: Go to Edit \u003e Find and replace Always ensure the “Match using regular expressions” box is checked before running pattern searches.\n1.1 Removing Blank Lines (Empty Paragraphs) Pasting text often results in extra line breaks between paragraphs, creating wide vertical gaps. You can collapse all empty lines across the document in a single step.\nFind: ^\rReplace with: (leave completely empty) Action: Click Replace all How It Works: ^ asserts the start of a line or paragraph. represents the newline character. Together, ^\rmatches any line that starts immediately with a newline—meaning a line with zero text content. Alternative Pattern: If you want to keep single spacing between paragraphs but collapse triple or quadruple breaks, search for `\n+in **Find** and replace it with `.\n1.2 Fixing Multiple Spaces Between Words Accidental double, triple, or irregular spacing between words looks unprofessional and can cause weird alignment behavior.\nFind: {2,} (type a single space followed by {2,}) Replace with: (type a single space) Action: Click Replace all How It Works: {2,} is a quantifier in Regex meaning “two or more occurrences of the preceding character.” The pattern {2,} locates any place where two or more consecutive spaces appear and reduces them to exactly one space. 1.3 Removing Trailing Spaces at the End of Sentences Trailing spaces—spaces that sit at the end of a line before a paragraph break—are invisible but can cause erratic text wrapping and alignment glitches.\nFind: +$ (type a single space followed by +$) Replace with: (leave completely empty) Action: Click Replace all How It Works: + matches one or more instances of the preceding character (the space). $ anchors the search to the end of a line/paragraph. This targets all trailing spaces right before line breaks and deletes them. 2. Eliminating Phantom Blank Pages One of the most frustrating Google Docs issues is a blank page at the end or middle of a document that won’t go away, even after pressing Backspace or Delete repeatedly. This usually happens due to hidden formatting elements or strict layout constraints.\n2.1 Uncovering Hidden Page and Section Breaks Unseen breaks are the leading cause of unwanted pages.\nEnable non-printing characters by selecting View \u003e Show non-printing characters (or Show layout). Look for visual markers such as Page Break, Section Break (Next Page), or Section Break (Continuous). Place your cursor right after the break marker and press Backspace, or place it right before the marker and press Delete. 2.2 Adjusting Paragraph and Line Spacing Sometimes a blank page is generated because the paragraph preceding it has large bottom margins or post-paragraph spacing.\nHighlight the text and empty line immediately preceding the blank page. Go to Format \u003e Line \u0026 paragraph spacing. Click Remove space after paragraph or set Custom spacing to 0. Check File \u003e Page setup to verify that bottom page margins aren’t set too wide for your document layout. 2.3 The “Table Overflow” Hack (Fixing Blank Pages After Tables) If your document ends with a table, Google Docs automatically forces an invisible paragraph break after the table. Because a table cannot exist at the absolute end of a document without a trailing paragraph, Docs pushes this mandatory break onto a new page, creating an un-deletable blank page.\nThe Step-by-Step Fix: Navigate to the blank page where the invisible cursor sits. Highlight the blank paragraph line (press Ctrl + A or double-click on that page if needed). Change the Font Size to 1 (manually type 1 into the font size box and press Enter). Go to Format \u003e Line \u0026 paragraph spacing and set line spacing to Single (1.0). Open Custom spacing and set both Before and After paragraph spacing to 0. By shrinking the mandatory trailing paragraph to 1 point in height with 0 spacing, it fits easily onto the bottom of the previous page under the table, eliminating the blank page instantly.\n3. Automating Document Cleanup with Google Apps Script If you regularly process raw text in Google Docs, running manual search-and-replace queries repeatedly is inefficient. You can automate all these operations with Google Apps Script and even add a custom menu button to your Google Docs toolbar.\n3.1 Writing the Apps Script In your Google Doc, go to Extensions \u003e Apps Script. Delete any existing code in the editor. Paste the following complete JavaScript code: /** * Custom function to automatically clean up extra spaces, empty lines, * and trailing spaces across the active Google Document. */ function cleanDocumentFormatting() { var doc = DocumentApp.getActiveDocument(); var body = doc.getBody(); // 1. Replace multiple consecutive spaces with a single space body.replaceText(\" {2,}\", \" \"); // 2. Strip trailing spaces at the end of lines body.replaceText(\" +$\", \"\"); // 3. Remove completely blank paragraph lines body.replaceText(\"^\\\\n\", \"\"); // Notify user upon completion DocumentApp.getUi().alert('Document Cleanup Complete!', 'All double spaces, trailing spaces, and blank lines have been successfully removed.', DocumentApp.getUi().ButtonSet.OK); } /** * Creates a custom menu in Google Docs toolbar when the document opens. */ function onOpen() { var ui = DocumentApp.getUi(); ui.createMenu('🚀 Admin Tools') .addItem('Clean Formatting \u0026 Extra Spaces', 'cleanDocumentFormatting') .addToUi(); } 3.2 How to Save and Run the Script Click the Save icon (floppy disk) or press Ctrl + S / Cmd + S. Name your project (e.g., DocFormatterTool). Refresh your Google Doc page. You will now see a new menu item called 🚀 Admin Tools on the main Google Docs menu bar! Click 🚀 Admin Tools \u003e Clean Formatting \u0026 Extra Spaces. The first time you run it, Google will ask for permission authorization. Click Continue, select your account, click Advanced, and click Go to DocFormatterTool (unsafe) to grant access. Once authorized, cleaning any document takes a single click!\n4. Quick Reference Cheat Sheet Task Find Regex Replace With Purpose Remove Empty Lines ^\\n (leave blank) Deletes all empty line breaks Fix Double/Multiple Spaces {2,} (single space) Reduces 2+ spaces to 1 space Remove Trailing Spaces +$ (leave blank) Strips hidden spaces at line ends Collapse Triple+ Breaks \\n\\n+ \\n Converts large gaps to single breaks Conclusion By combining Regular Expression patterns, non-printing layout visibility, and custom Google Apps Script automation, you can transform tedious document editing into a fast, error-free workflow. Save this guide or install the Apps Script snippet in your primary Google Docs templates to keep all your documents crisp, professional, and perfectly aligned!\n",
   "wordCount" : "1255",
   "inLanguage": "en",
-  "datePublished": "2026-08-04T00:00:00Z",
-  "dateModified": "2026-08-04T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-gdocs/"
+    "@id": "/posts/2026-08-04-gdocs/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script" aria-label="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script">Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</a><ul>
-                    
-            <li>
-                <a href="#1-using-regular-expressions-regex-to-eliminate-unwanted-spaces" aria-label="1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces">1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces</a><ul>
-                    
-            <li>
-                <a href="#11-removing-blank-lines-empty-paragraphs" aria-label="1.1 Removing Blank Lines (Empty Paragraphs)">1.1 Removing Blank Lines (Empty Paragraphs)</a><ul>
-                    
-            <li>
-                <a href="#how-it-works" aria-label="How It Works:">How It Works:</a></li></ul>
-            </li>
-            <li>
-                <a href="#12-fixing-multiple-spaces-between-words" aria-label="1.2 Fixing Multiple Spaces Between Words">1.2 Fixing Multiple Spaces Between Words</a><ul>
-                    
-            <li>
-                <a href="#how-it-works-1" aria-label="How It Works:">How It Works:</a></li></ul>
-            </li>
-            <li>
-                <a href="#13-removing-trailing-spaces-at-the-end-of-sentences" aria-label="1.3 Removing Trailing Spaces at the End of Sentences">1.3 Removing Trailing Spaces at the End of Sentences</a><ul>
-                    
-            <li>
-                <a href="#how-it-works-2" aria-label="How It Works:">How It Works:</a></li></ul>
-            </li></ul>
-            </li>
-            <li>
-                <a href="#2-eliminating-phantom-blank-pages" aria-label="2. Eliminating Phantom Blank Pages">2. Eliminating Phantom Blank Pages</a><ul>
-                    
-            <li>
-                <a href="#21-uncovering-hidden-page-and-section-breaks" aria-label="2.1 Uncovering Hidden Page and Section Breaks">2.1 Uncovering Hidden Page and Section Breaks</a></li>
-            <li>
-                <a href="#22-adjusting-paragraph-and-line-spacing" aria-label="2.2 Adjusting Paragraph and Line Spacing">2.2 Adjusting Paragraph and Line Spacing</a></li>
-            <li>
-                <a href="#23-the-table-overflow-hack-fixing-blank-pages-after-tables" aria-label="2.3 The &ldquo;Table Overflow&rdquo; Hack (Fixing Blank Pages After Tables)">2.3 The &ldquo;Table Overflow&rdquo; Hack (Fixing Blank Pages After Tables)</a><ul>
-                    
-            <li>
-                <a href="#the-step-by-step-fix" aria-label="The Step-by-Step Fix:">The Step-by-Step Fix:</a></li></ul>
-            </li></ul>
-            </li>
-            <li>
-                <a href="#3-automating-document-cleanup-with-google-apps-script" aria-label="3. Automating Document Cleanup with Google Apps Script">3. Automating Document Cleanup with Google Apps Script</a><ul>
-                    
-            <li>
-                <a href="#31-writing-the-apps-script" aria-label="3.1 Writing the Apps Script">3.1 Writing the Apps Script</a></li>
-            <li>
-                <a href="#32-how-to-save-and-run-the-script" aria-label="3.2 How to Save and Run the Script">3.2 How to Save and Run the Script</a></li></ul>
-            </li>
-            <li>
-                <a href="#4-quick-reference-cheat-sheet" aria-label="4. Quick Reference Cheat Sheet">4. Quick Reference Cheat Sheet</a></li>
-            <li>
-                <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
-            </li>
-        </ul>
-        </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script">Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script<a hidden class="anchor" aria-hidden="true" href="#mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script">#</a></h1>
-<p>When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.</p>
-<p>Manually editing these errors line-by-line is extremely inefficient and prone to oversight. Fortunately, Google Docs provides powerful built-in tools like <strong>Regular Expressions (Regex)</strong>, advanced layout options, and <strong>Google Apps Script</strong> automation to clean up entire documents in seconds.</p>
-<p>This comprehensive guide covers everything you need to know to sanitize your Google Docs formatting, fix pagination errors, and build custom single-click automation tools.</p>
-<hr>
-<h2 id="1-using-regular-expressions-regex-to-eliminate-unwanted-spaces">1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces<a hidden class="anchor" aria-hidden="true" href="#1-using-regular-expressions-regex-to-eliminate-unwanted-spaces">#</a></h2>
-<p>Google Docs includes a robust <strong>Find and Replace</strong> feature equipped with Regular Expression support. Regex allows you to search for text patterns rather than fixed strings, making it the fastest way to scrub formatting errors across multi-page documents.</p>
-<p>To open the Find and Replace dialog:</p>
-<ul>
-<li><strong>Windows / Linux:</strong> Press <code>Ctrl + H</code></li>
-<li><strong>Mac:</strong> Press <code>Cmd + H</code></li>
-<li><strong>Menu Navigation:</strong> Go to <strong>Edit &gt; Find and replace</strong></li>
-</ul>
-<p>Always ensure the <strong>&ldquo;Match using regular expressions&rdquo;</strong> box is checked before running pattern searches.</p>
-<hr>
-<h3 id="11-removing-blank-lines-empty-paragraphs">1.1 Removing Blank Lines (Empty Paragraphs)<a hidden class="anchor" aria-hidden="true" href="#11-removing-blank-lines-empty-paragraphs">#</a></h3>
-<p>Pasting text often results in extra line breaks between paragraphs, creating wide vertical gaps. You can collapse all empty lines across the document in a single step.</p>
-<ul>
-<li><strong>Find:</strong> <code>^ </code></li>
-<li><strong>Replace with:</strong> <em>(leave completely empty)</em></li>
-<li><strong>Action:</strong> Click <strong>Replace all</strong></li>
-</ul>
-<h4 id="how-it-works">How It Works:<a hidden class="anchor" aria-hidden="true" href="#how-it-works">#</a></h4>
-<ul>
-<li><code>^</code> asserts the start of a line or paragraph.</li>
-<li><code> </code> represents the newline character.</li>
-<li>Together, <code>^ </code> matches any line that starts immediately with a newline—meaning a line with zero text content.</li>
-</ul>
-<blockquote>
-<p><strong>Alternative Pattern:</strong> If you want to keep single spacing between paragraphs but collapse triple or quadruple breaks, search for `</p>
-</blockquote>
-<p>+<code>in **Find** and replace it with</code>
-`.</p>
-<hr>
-<h3 id="12-fixing-multiple-spaces-between-words">1.2 Fixing Multiple Spaces Between Words<a hidden class="anchor" aria-hidden="true" href="#12-fixing-multiple-spaces-between-words">#</a></h3>
-<p>Accidental double, triple, or irregular spacing between words looks unprofessional and can cause weird alignment behavior.</p>
-<ul>
-<li><strong>Find:</strong> <code> {2,}</code> <em>(type a single space followed by <code>{2,}</code>)</em></li>
-<li><strong>Replace with:</strong> <code> </code> <em>(type a single space)</em></li>
-<li><strong>Action:</strong> Click <strong>Replace all</strong></li>
-</ul>
-<h4 id="how-it-works-1">How It Works:<a hidden class="anchor" aria-hidden="true" href="#how-it-works-1">#</a></h4>
-<ul>
-<li><code>{2,}</code> is a quantifier in Regex meaning &ldquo;two or more occurrences of the preceding character.&rdquo;</li>
-<li>The pattern <code> {2,}</code> locates any place where two or more consecutive spaces appear and reduces them to exactly one space.</li>
-</ul>
-<hr>
-<h3 id="13-removing-trailing-spaces-at-the-end-of-sentences">1.3 Removing Trailing Spaces at the End of Sentences<a hidden class="anchor" aria-hidden="true" href="#13-removing-trailing-spaces-at-the-end-of-sentences">#</a></h3>
-<p>Trailing spaces—spaces that sit at the end of a line before a paragraph break—are invisible but can cause erratic text wrapping and alignment glitches.</p>
-<ul>
-<li><strong>Find:</strong> <code> +$</code> <em>(type a single space followed by <code>+$</code>)</em></li>
-<li><strong>Replace with:</strong> <em>(leave completely empty)</em></li>
-<li><strong>Action:</strong> Click <strong>Replace all</strong></li>
-</ul>
-<h4 id="how-it-works-2">How It Works:<a hidden class="anchor" aria-hidden="true" href="#how-it-works-2">#</a></h4>
-<ul>
-<li><code>+</code> matches one or more instances of the preceding character (the space).</li>
-<li><code>$</code> anchors the search to the end of a line/paragraph.</li>
-<li>This targets all trailing spaces right before line breaks and deletes them.</li>
-</ul>
-<hr>
-<h2 id="2-eliminating-phantom-blank-pages">2. Eliminating Phantom Blank Pages<a hidden class="anchor" aria-hidden="true" href="#2-eliminating-phantom-blank-pages">#</a></h2>
-<p>One of the most frustrating Google Docs issues is a blank page at the end or middle of a document that won&rsquo;t go away, even after pressing <code>Backspace</code> or <code>Delete</code> repeatedly. This usually happens due to hidden formatting elements or strict layout constraints.</p>
-<hr>
-<h3 id="21-uncovering-hidden-page-and-section-breaks">2.1 Uncovering Hidden Page and Section Breaks<a hidden class="anchor" aria-hidden="true" href="#21-uncovering-hidden-page-and-section-breaks">#</a></h3>
-<p>Unseen breaks are the leading cause of unwanted pages.</p>
-<ol>
-<li>Enable non-printing characters by selecting <strong>View &gt; Show non-printing characters</strong> (or <strong>Show layout</strong>).</li>
-<li>Look for visual markers such as <code>Page Break</code>, <code>Section Break (Next Page)</code>, or <code>Section Break (Continuous)</code>.</li>
-<li>Place your cursor right after the break marker and press <code>Backspace</code>, or place it right before the marker and press <code>Delete</code>.</li>
-</ol>
-<hr>
-<h3 id="22-adjusting-paragraph-and-line-spacing">2.2 Adjusting Paragraph and Line Spacing<a hidden class="anchor" aria-hidden="true" href="#22-adjusting-paragraph-and-line-spacing">#</a></h3>
-<p>Sometimes a blank page is generated because the paragraph preceding it has large bottom margins or post-paragraph spacing.</p>
-<ol>
-<li>Highlight the text and empty line immediately preceding the blank page.</li>
-<li>Go to <strong>Format &gt; Line &amp; paragraph spacing</strong>.</li>
-<li>Click <strong>Remove space after paragraph</strong> or set <strong>Custom spacing</strong> to <code>0</code>.</li>
-<li>Check <strong>File &gt; Page setup</strong> to verify that bottom page margins aren&rsquo;t set too wide for your document layout.</li>
-</ol>
-<hr>
-<h3 id="23-the-table-overflow-hack-fixing-blank-pages-after-tables">2.3 The &ldquo;Table Overflow&rdquo; Hack (Fixing Blank Pages After Tables)<a hidden class="anchor" aria-hidden="true" href="#23-the-table-overflow-hack-fixing-blank-pages-after-tables">#</a></h3>
-<p>If your document ends with a table, Google Docs automatically forces an invisible paragraph break <em>after</em> the table. Because a table cannot exist at the absolute end of a document without a trailing paragraph, Docs pushes this mandatory break onto a new page, creating an un-deletable blank page.</p>
-<h4 id="the-step-by-step-fix">The Step-by-Step Fix:<a hidden class="anchor" aria-hidden="true" href="#the-step-by-step-fix">#</a></h4>
-<ol>
-<li>Navigate to the blank page where the invisible cursor sits.</li>
-<li>Highlight the blank paragraph line (press <code>Ctrl + A</code> or double-click on that page if needed).</li>
-<li>Change the <strong>Font Size</strong> to <strong>1</strong> (manually type <code>1</code> into the font size box and press <code>Enter</code>).</li>
-<li>Go to <strong>Format &gt; Line &amp; paragraph spacing</strong> and set line spacing to <strong>Single</strong> (<code>1.0</code>).</li>
-<li>Open <strong>Custom spacing</strong> and set both <strong>Before</strong> and <strong>After</strong> paragraph spacing to <code>0</code>.</li>
-</ol>
-<p>By shrinking the mandatory trailing paragraph to 1 point in height with 0 spacing, it fits easily onto the bottom of the previous page under the table, eliminating the blank page instantly.</p>
-<hr>
-<h2 id="3-automating-document-cleanup-with-google-apps-script">3. Automating Document Cleanup with Google Apps Script<a hidden class="anchor" aria-hidden="true" href="#3-automating-document-cleanup-with-google-apps-script">#</a></h2>
-<p>If you regularly process raw text in Google Docs, running manual search-and-replace queries repeatedly is inefficient. You can automate all these operations with <strong>Google Apps Script</strong> and even add a custom menu button to your Google Docs toolbar.</p>
-<hr>
-<h3 id="31-writing-the-apps-script">3.1 Writing the Apps Script<a hidden class="anchor" aria-hidden="true" href="#31-writing-the-apps-script">#</a></h3>
-<ol>
-<li>In your Google Doc, go to <strong>Extensions &gt; Apps Script</strong>.</li>
-<li>Delete any existing code in the editor.</li>
-<li>Paste the following complete JavaScript code:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Custom function to automatically clean up extra spaces, empty lines,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * and trailing spaces across the active Google Document.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cleanDocumentFormatting</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DocumentApp</span>.<span style="color:#a6e22e">getActiveDocument</span>();
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">getBody</span>();
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 1. Replace multiple consecutive spaces with a single space
-</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">replaceText</span>(<span style="color:#e6db74">&#34; {2,}&#34;</span>, <span style="color:#e6db74">&#34; &#34;</span>);
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 2. Strip trailing spaces at the end of lines
-</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">replaceText</span>(<span style="color:#e6db74">&#34; +$&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 3. Remove completely blank paragraph lines
-</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">replaceText</span>(<span style="color:#e6db74">&#34;^\\n&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Notify user upon completion
-</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">DocumentApp</span>.<span style="color:#a6e22e">getUi</span>().<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Document Cleanup Complete!&#39;</span>, <span style="color:#e6db74">&#39;All double spaces, trailing spaces, and blank lines have been successfully removed.&#39;</span>, <span style="color:#a6e22e">DocumentApp</span>.<span style="color:#a6e22e">getUi</span>().<span style="color:#a6e22e">ButtonSet</span>.<span style="color:#a6e22e">OK</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Creates a custom menu in Google Docs toolbar when the document opens.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onOpen</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ui</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DocumentApp</span>.<span style="color:#a6e22e">getUi</span>();
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ui</span>.<span style="color:#a6e22e">createMenu</span>(<span style="color:#e6db74">&#39;🚀 Admin Tools&#39;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">addItem</span>(<span style="color:#e6db74">&#39;Clean Formatting &amp; Extra Spaces&#39;</span>, <span style="color:#e6db74">&#39;cleanDocumentFormatting&#39;</span>)
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">addToUi</span>();
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h3 id="32-how-to-save-and-run-the-script">3.2 How to Save and Run the Script<a hidden class="anchor" aria-hidden="true" href="#32-how-to-save-and-run-the-script">#</a></h3>
-<ol>
-<li>Click the <strong>Save</strong> icon (floppy disk) or press <code>Ctrl + S</code> / <code>Cmd + S</code>.</li>
-<li>Name your project (e.g., <code>DocFormatterTool</code>).</li>
-<li>Refresh your Google Doc page.</li>
-<li>You will now see a new menu item called <strong>🚀 Admin Tools</strong> on the main Google Docs menu bar!</li>
-<li>Click <strong>🚀 Admin Tools &gt; Clean Formatting &amp; Extra Spaces</strong>.</li>
-<li>The first time you run it, Google will ask for permission authorization. Click <strong>Continue</strong>, select your account, click <strong>Advanced</strong>, and click <strong>Go to DocFormatterTool (unsafe)</strong> to grant access.</li>
-</ol>
-<p>Once authorized, cleaning any document takes a single click!</p>
-<hr>
-<h2 id="4-quick-reference-cheat-sheet">4. Quick Reference Cheat Sheet<a hidden class="anchor" aria-hidden="true" href="#4-quick-reference-cheat-sheet">#</a></h2>
-<table>
-	<thead>
-			<tr>
-					<th style="text-align: left">Task</th>
-					<th style="text-align: left">Find Regex</th>
-					<th style="text-align: left">Replace With</th>
-					<th style="text-align: left">Purpose</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>Remove Empty Lines</strong></td>
-					<td style="text-align: left"><code>^\n</code></td>
-					<td style="text-align: left"><em>(leave blank)</em></td>
-					<td style="text-align: left">Deletes all empty line breaks</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Fix Double/Multiple Spaces</strong></td>
-					<td style="text-align: left"><code> {2,}</code></td>
-					<td style="text-align: left"><code> </code> <em>(single space)</em></td>
-					<td style="text-align: left">Reduces 2+ spaces to 1 space</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Remove Trailing Spaces</strong></td>
-					<td style="text-align: left"><code> +$</code></td>
-					<td style="text-align: left"><em>(leave blank)</em></td>
-					<td style="text-align: left">Strips hidden spaces at line ends</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Collapse Triple+ Breaks</strong></td>
-					<td style="text-align: left"><code>\n\n+</code></td>
-					<td style="text-align: left"><code>\n</code></td>
-					<td style="text-align: left">Converts large gaps to single breaks</td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>By combining Regular Expression patterns, non-printing layout visibility, and custom Google Apps Script automation, you can transform tedious document editing into a fast, error-free workflow. Save this guide or install the Apps Script snippet in your primary Google Docs templates to keep all your documents crisp, professional, and perfectly aligned!</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/google-docs/">Google Docs</a></li>
-      <li><a href="//localhost:1313/tags/regular-expressions/">Regular Expressions</a></li>
-      <li><a href="//localhost:1313/tags/google-apps-script/">Google Apps Script</a></li>
-      <li><a href="//localhost:1313/tags/document-formatting/">Document Formatting</a></li>
-      <li><a href="//localhost:1313/tags/productivity-hacks/">Productivity Hacks</a></li>
-      <li><a href="//localhost:1313/tags/automation/">Automation</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-rsync/">
-    <span class="title">« Prev</span>
-    <span>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-dns-rsync/">
-    <span class="title">Next »</span>
-    <span>Mastering Linux Administration: Secure DNS Setup &amp; Automated Rsync Backups</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script aria-label="Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script">Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script</a><ul><li><a href=#1-using-regular-expressions-regex-to-eliminate-unwanted-spaces aria-label="1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces">1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces</a><ul><li><a href=#11-removing-blank-lines-empty-paragraphs aria-label="1.1 Removing Blank Lines (Empty Paragraphs)">1.1 Removing Blank Lines (Empty Paragraphs)</a><ul><li><a href=#how-it-works aria-label="How It Works:">How It Works:</a></li></ul></li><li><a href=#12-fixing-multiple-spaces-between-words aria-label="1.2 Fixing Multiple Spaces Between Words">1.2 Fixing Multiple Spaces Between Words</a><ul><li><a href=#how-it-works-1 aria-label="How It Works:">How It Works:</a></li></ul></li><li><a href=#13-removing-trailing-spaces-at-the-end-of-sentences aria-label="1.3 Removing Trailing Spaces at the End of Sentences">1.3 Removing Trailing Spaces at the End of Sentences</a><ul><li><a href=#how-it-works-2 aria-label="How It Works:">How It Works:</a></li></ul></li></ul></li><li><a href=#2-eliminating-phantom-blank-pages aria-label="2. Eliminating Phantom Blank Pages">2. Eliminating Phantom Blank Pages</a><ul><li><a href=#21-uncovering-hidden-page-and-section-breaks aria-label="2.1 Uncovering Hidden Page and Section Breaks">2.1 Uncovering Hidden Page and Section Breaks</a></li><li><a href=#22-adjusting-paragraph-and-line-spacing aria-label="2.2 Adjusting Paragraph and Line Spacing">2.2 Adjusting Paragraph and Line Spacing</a></li><li><a href=#23-the-table-overflow-hack-fixing-blank-pages-after-tables aria-label="2.3 The &ldquo;Table Overflow&rdquo; Hack (Fixing Blank Pages After Tables)">2.3 The &ldquo;Table Overflow&rdquo; Hack (Fixing Blank Pages After Tables)</a><ul><li><a href=#the-step-by-step-fix aria-label="The Step-by-Step Fix:">The Step-by-Step Fix:</a></li></ul></li></ul></li><li><a href=#3-automating-document-cleanup-with-google-apps-script aria-label="3. Automating Document Cleanup with Google Apps Script">3. Automating Document Cleanup with Google Apps Script</a><ul><li><a href=#31-writing-the-apps-script aria-label="3.1 Writing the Apps Script">3.1 Writing the Apps Script</a></li><li><a href=#32-how-to-save-and-run-the-script aria-label="3.2 How to Save and Run the Script">3.2 How to Save and Run the Script</a></li></ul></li><li><a href=#4-quick-reference-cheat-sheet aria-label="4. Quick Reference Cheat Sheet">4. Quick Reference Cheat Sheet</a></li><li><a href=#conclusion aria-label=Conclusion>Conclusion</a></li></ul></li></ul></div></details><div class="post-content md-content"><h1 id=mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script>Mastering Google Docs Spacing: How to Remove Extra Spaces, Blank Lines, Phantom Pages, and Automate Workflow with Apps Script<a hidden class=anchor aria-hidden=true href=#mastering-google-docs-spacing-how-to-remove-extra-spaces-blank-lines-phantom-pages-and-automate-workflow-with-apps-script>#</a></h1><p>When working on professional reports, administrative documents, or collaborative projects in Google Docs, clean formatting is essential. However, copying content from external sources—such as PDFs, web pages, plain text files, or email threads—frequently introduces unwanted layout artifacts. These include runaway double spaces, endless strings of blank lines, erratic paragraph padding, and stubborn blank pages that refuse to delete.</p><p>Manually editing these errors line-by-line is extremely inefficient and prone to oversight. Fortunately, Google Docs provides powerful built-in tools like <strong>Regular Expressions (Regex)</strong>, advanced layout options, and <strong>Google Apps Script</strong> automation to clean up entire documents in seconds.</p><p>This comprehensive guide covers everything you need to know to sanitize your Google Docs formatting, fix pagination errors, and build custom single-click automation tools.</p><hr><h2 id=1-using-regular-expressions-regex-to-eliminate-unwanted-spaces>1. Using Regular Expressions (Regex) to Eliminate Unwanted Spaces<a hidden class=anchor aria-hidden=true href=#1-using-regular-expressions-regex-to-eliminate-unwanted-spaces>#</a></h2><p>Google Docs includes a robust <strong>Find and Replace</strong> feature equipped with Regular Expression support. Regex allows you to search for text patterns rather than fixed strings, making it the fastest way to scrub formatting errors across multi-page documents.</p><p>To open the Find and Replace dialog:</p><ul><li><strong>Windows / Linux:</strong> Press <code>Ctrl + H</code></li><li><strong>Mac:</strong> Press <code>Cmd + H</code></li><li><strong>Menu Navigation:</strong> Go to <strong>Edit > Find and replace</strong></li></ul><p>Always ensure the <strong>&ldquo;Match using regular expressions&rdquo;</strong> box is checked before running pattern searches.</p><hr><h3 id=11-removing-blank-lines-empty-paragraphs>1.1 Removing Blank Lines (Empty Paragraphs)<a hidden class=anchor aria-hidden=true href=#11-removing-blank-lines-empty-paragraphs>#</a></h3><p>Pasting text often results in extra line breaks between paragraphs, creating wide vertical gaps. You can collapse all empty lines across the document in a single step.</p><ul><li><strong>Find:</strong> <code>^</code></li><li><strong>Replace with:</strong> <em>(leave completely empty)</em></li><li><strong>Action:</strong> Click <strong>Replace all</strong></li></ul><h4 id=how-it-works>How It Works:<a hidden class=anchor aria-hidden=true href=#how-it-works>#</a></h4><ul><li><code>^</code> asserts the start of a line or paragraph.</li><li><code></code>represents the newline character.</li><li>Together, <code>^
+</code>matches any line that starts immediately with a newline—meaning a line with zero text content.</li></ul><blockquote><p><strong>Alternative Pattern:</strong> If you want to keep single spacing between paragraphs but collapse triple or quadruple breaks, search for `</p></blockquote><p>+<code>in **Find** and replace it with</code>
+`.</p><hr><h3 id=12-fixing-multiple-spaces-between-words>1.2 Fixing Multiple Spaces Between Words<a hidden class=anchor aria-hidden=true href=#12-fixing-multiple-spaces-between-words>#</a></h3><p>Accidental double, triple, or irregular spacing between words looks unprofessional and can cause weird alignment behavior.</p><ul><li><strong>Find:</strong> <code>{2,}</code> <em>(type a single space followed by <code>{2,}</code>)</em></li><li><strong>Replace with:</strong> <code></code><em>(type a single space)</em></li><li><strong>Action:</strong> Click <strong>Replace all</strong></li></ul><h4 id=how-it-works-1>How It Works:<a hidden class=anchor aria-hidden=true href=#how-it-works-1>#</a></h4><ul><li><code>{2,}</code> is a quantifier in Regex meaning &ldquo;two or more occurrences of the preceding character.&rdquo;</li><li>The pattern <code>{2,}</code> locates any place where two or more consecutive spaces appear and reduces them to exactly one space.</li></ul><hr><h3 id=13-removing-trailing-spaces-at-the-end-of-sentences>1.3 Removing Trailing Spaces at the End of Sentences<a hidden class=anchor aria-hidden=true href=#13-removing-trailing-spaces-at-the-end-of-sentences>#</a></h3><p>Trailing spaces—spaces that sit at the end of a line before a paragraph break—are invisible but can cause erratic text wrapping and alignment glitches.</p><ul><li><strong>Find:</strong> <code>+$</code> <em>(type a single space followed by <code>+$</code>)</em></li><li><strong>Replace with:</strong> <em>(leave completely empty)</em></li><li><strong>Action:</strong> Click <strong>Replace all</strong></li></ul><h4 id=how-it-works-2>How It Works:<a hidden class=anchor aria-hidden=true href=#how-it-works-2>#</a></h4><ul><li><code>+</code> matches one or more instances of the preceding character (the space).</li><li><code>$</code> anchors the search to the end of a line/paragraph.</li><li>This targets all trailing spaces right before line breaks and deletes them.</li></ul><hr><h2 id=2-eliminating-phantom-blank-pages>2. Eliminating Phantom Blank Pages<a hidden class=anchor aria-hidden=true href=#2-eliminating-phantom-blank-pages>#</a></h2><p>One of the most frustrating Google Docs issues is a blank page at the end or middle of a document that won&rsquo;t go away, even after pressing <code>Backspace</code> or <code>Delete</code> repeatedly. This usually happens due to hidden formatting elements or strict layout constraints.</p><hr><h3 id=21-uncovering-hidden-page-and-section-breaks>2.1 Uncovering Hidden Page and Section Breaks<a hidden class=anchor aria-hidden=true href=#21-uncovering-hidden-page-and-section-breaks>#</a></h3><p>Unseen breaks are the leading cause of unwanted pages.</p><ol><li>Enable non-printing characters by selecting <strong>View > Show non-printing characters</strong> (or <strong>Show layout</strong>).</li><li>Look for visual markers such as <code>Page Break</code>, <code>Section Break (Next Page)</code>, or <code>Section Break (Continuous)</code>.</li><li>Place your cursor right after the break marker and press <code>Backspace</code>, or place it right before the marker and press <code>Delete</code>.</li></ol><hr><h3 id=22-adjusting-paragraph-and-line-spacing>2.2 Adjusting Paragraph and Line Spacing<a hidden class=anchor aria-hidden=true href=#22-adjusting-paragraph-and-line-spacing>#</a></h3><p>Sometimes a blank page is generated because the paragraph preceding it has large bottom margins or post-paragraph spacing.</p><ol><li>Highlight the text and empty line immediately preceding the blank page.</li><li>Go to <strong>Format > Line & paragraph spacing</strong>.</li><li>Click <strong>Remove space after paragraph</strong> or set <strong>Custom spacing</strong> to <code>0</code>.</li><li>Check <strong>File > Page setup</strong> to verify that bottom page margins aren&rsquo;t set too wide for your document layout.</li></ol><hr><h3 id=23-the-table-overflow-hack-fixing-blank-pages-after-tables>2.3 The &ldquo;Table Overflow&rdquo; Hack (Fixing Blank Pages After Tables)<a hidden class=anchor aria-hidden=true href=#23-the-table-overflow-hack-fixing-blank-pages-after-tables>#</a></h3><p>If your document ends with a table, Google Docs automatically forces an invisible paragraph break <em>after</em> the table. Because a table cannot exist at the absolute end of a document without a trailing paragraph, Docs pushes this mandatory break onto a new page, creating an un-deletable blank page.</p><h4 id=the-step-by-step-fix>The Step-by-Step Fix:<a hidden class=anchor aria-hidden=true href=#the-step-by-step-fix>#</a></h4><ol><li>Navigate to the blank page where the invisible cursor sits.</li><li>Highlight the blank paragraph line (press <code>Ctrl + A</code> or double-click on that page if needed).</li><li>Change the <strong>Font Size</strong> to <strong>1</strong> (manually type <code>1</code> into the font size box and press <code>Enter</code>).</li><li>Go to <strong>Format > Line & paragraph spacing</strong> and set line spacing to <strong>Single</strong> (<code>1.0</code>).</li><li>Open <strong>Custom spacing</strong> and set both <strong>Before</strong> and <strong>After</strong> paragraph spacing to <code>0</code>.</li></ol><p>By shrinking the mandatory trailing paragraph to 1 point in height with 0 spacing, it fits easily onto the bottom of the previous page under the table, eliminating the blank page instantly.</p><hr><h2 id=3-automating-document-cleanup-with-google-apps-script>3. Automating Document Cleanup with Google Apps Script<a hidden class=anchor aria-hidden=true href=#3-automating-document-cleanup-with-google-apps-script>#</a></h2><p>If you regularly process raw text in Google Docs, running manual search-and-replace queries repeatedly is inefficient. You can automate all these operations with <strong>Google Apps Script</strong> and even add a custom menu button to your Google Docs toolbar.</p><hr><h3 id=31-writing-the-apps-script>3.1 Writing the Apps Script<a hidden class=anchor aria-hidden=true href=#31-writing-the-apps-script>#</a></h3><ol><li>In your Google Doc, go to <strong>Extensions > Apps Script</strong>.</li><li>Delete any existing code in the editor.</li><li>Paste the following complete JavaScript code:</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Custom function to automatically clean up extra spaces, empty lines,
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * and trailing spaces across the active Google Document.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>cleanDocumentFormatting</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>doc</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>DocumentApp</span>.<span style=color:#a6e22e>getActiveDocument</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>body</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>doc</span>.<span style=color:#a6e22e>getBody</span>();
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 1. Replace multiple consecutive spaces with a single space
+</span></span></span><span style=display:flex><span>  <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>replaceText</span>(<span style=color:#e6db74>&#34; {2,}&#34;</span>, <span style=color:#e6db74>&#34; &#34;</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 2. Strip trailing spaces at the end of lines
+</span></span></span><span style=display:flex><span>  <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>replaceText</span>(<span style=color:#e6db74>&#34; +$&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 3. Remove completely blank paragraph lines
+</span></span></span><span style=display:flex><span>  <span style=color:#a6e22e>body</span>.<span style=color:#a6e22e>replaceText</span>(<span style=color:#e6db74>&#34;^\\n&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// Notify user upon completion
+</span></span></span><span style=display:flex><span>  <span style=color:#a6e22e>DocumentApp</span>.<span style=color:#a6e22e>getUi</span>().<span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#39;Document Cleanup Complete!&#39;</span>, <span style=color:#e6db74>&#39;All double spaces, trailing spaces, and blank lines have been successfully removed.&#39;</span>, <span style=color:#a6e22e>DocumentApp</span>.<span style=color:#a6e22e>getUi</span>().<span style=color:#a6e22e>ButtonSet</span>.<span style=color:#a6e22e>OK</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Creates a custom menu in Google Docs toolbar when the document opens.
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>onOpen</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>ui</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>DocumentApp</span>.<span style=color:#a6e22e>getUi</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ui</span>.<span style=color:#a6e22e>createMenu</span>(<span style=color:#e6db74>&#39;🚀 Admin Tools&#39;</span>)
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>addItem</span>(<span style=color:#e6db74>&#39;Clean Formatting &amp; Extra Spaces&#39;</span>, <span style=color:#e6db74>&#39;cleanDocumentFormatting&#39;</span>)
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>addToUi</span>();
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><hr><h3 id=32-how-to-save-and-run-the-script>3.2 How to Save and Run the Script<a hidden class=anchor aria-hidden=true href=#32-how-to-save-and-run-the-script>#</a></h3><ol><li>Click the <strong>Save</strong> icon (floppy disk) or press <code>Ctrl + S</code> / <code>Cmd + S</code>.</li><li>Name your project (e.g., <code>DocFormatterTool</code>).</li><li>Refresh your Google Doc page.</li><li>You will now see a new menu item called <strong>🚀 Admin Tools</strong> on the main Google Docs menu bar!</li><li>Click <strong>🚀 Admin Tools > Clean Formatting & Extra Spaces</strong>.</li><li>The first time you run it, Google will ask for permission authorization. Click <strong>Continue</strong>, select your account, click <strong>Advanced</strong>, and click <strong>Go to DocFormatterTool (unsafe)</strong> to grant access.</li></ol><p>Once authorized, cleaning any document takes a single click!</p><hr><h2 id=4-quick-reference-cheat-sheet>4. Quick Reference Cheat Sheet<a hidden class=anchor aria-hidden=true href=#4-quick-reference-cheat-sheet>#</a></h2><table><thead><tr><th style=text-align:left>Task</th><th style=text-align:left>Find Regex</th><th style=text-align:left>Replace With</th><th style=text-align:left>Purpose</th></tr></thead><tbody><tr><td style=text-align:left><strong>Remove Empty Lines</strong></td><td style=text-align:left><code>^\n</code></td><td style=text-align:left><em>(leave blank)</em></td><td style=text-align:left>Deletes all empty line breaks</td></tr><tr><td style=text-align:left><strong>Fix Double/Multiple Spaces</strong></td><td style=text-align:left><code>{2,}</code></td><td style=text-align:left><code></code><em>(single space)</em></td><td style=text-align:left>Reduces 2+ spaces to 1 space</td></tr><tr><td style=text-align:left><strong>Remove Trailing Spaces</strong></td><td style=text-align:left><code>+$</code></td><td style=text-align:left><em>(leave blank)</em></td><td style=text-align:left>Strips hidden spaces at line ends</td></tr><tr><td style=text-align:left><strong>Collapse Triple+ Breaks</strong></td><td style=text-align:left><code>\n\n+</code></td><td style=text-align:left><code>\n</code></td><td style=text-align:left>Converts large gaps to single breaks</td></tr></tbody></table><hr><h2 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h2><p>By combining Regular Expression patterns, non-printing layout visibility, and custom Google Apps Script automation, you can transform tedious document editing into a fast, error-free workflow. Save this guide or install the Apps Script snippet in your primary Google Docs templates to keep all your documents crisp, professional, and perfectly aligned!</p></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/google-docs/>Google Docs</a></li><li><a href=/tags/regular-expressions/>Regular Expressions</a></li><li><a href=/tags/google-apps-script/>Google Apps Script</a></li><li><a href=/tags/document-formatting/>Document Formatting</a></li><li><a href=/tags/productivity-hacks/>Productivity Hacks</a></li><li><a href=/tags/automation/>Automation</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-rsync/><span class=title>« Prev</span>
+<span>Mastering Folder Synchronization in Linux Mint: A Complete Guide to rsync, Automation, and Two-Way Backups</span>
+</a><a class=next href=/posts/2026-08-04-dns-rsync/><span class=title>Next »</span>
+<span>Mastering Linux Administration: Secure DNS Setup & Automated Rsync Backups</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide to 2-Hour Hill Walks: Mastering the Up-and-Down Trek for Fat Loss and Heart Health"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Fitness", "Health & Wellness", "Outdoor Recreation"]
 tags: ["Walking", "Fat Loss", "Heart Health", "Hike Preparation", "Morning Routine", "Metabolism"]
 ---

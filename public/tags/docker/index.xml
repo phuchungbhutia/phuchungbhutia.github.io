@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Docker on Technical Journal</title>
-    <link>//localhost:1313/tags/docker/</link>
-    <description>Recent content in Docker on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 09:30:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title>
-      <link>//localhost:1313/posts/2026-08-05-github5/</link>
-      <pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-github5/</guid>
-      <description>&lt;h1 id=&#34;github-actions-complete-cicd-guide-from-beginner-to-production&#34;&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Docker on Technical Journal</title><link>/tags/docker/</link><description>Recent content in Docker on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 09:30:00 +0530</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Actions: Complete CI/CD Guide from Beginner to Production</title><link>/posts/2026-08-05-github5/</link><pubDate>Wed, 05 Aug 2026 09:30:00 +0530</pubDate><guid>/posts/2026-08-05-github5/</guid><description>&lt;h1 id="github-actions-complete-cicd-guide-from-beginner-to-production"&gt;GitHub Actions: Complete CI/CD Guide from Beginner to Production&lt;/h1&gt;
 &lt;p&gt;Writing code is only one part of software development.&lt;/p&gt;
 &lt;p&gt;Modern software teams automate everything:&lt;/p&gt;
 &lt;ul&gt;
@@ -26,38 +11,14 @@
 &lt;li&gt;Sending notifications&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;GitHub Actions makes all of this possible without leaving GitHub.&lt;/p&gt;
-&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Docker: Complete Beginner to Production Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-docker4/</link>
-      <pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-docker4/</guid>
-      <description>&lt;h1 id=&#34;docker-complete-beginner-to-production-guide&#34;&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
+&lt;p&gt;Whether you&amp;rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.&lt;/p&gt;</description></item><item><title>Docker: Complete Beginner to Production Guide</title><link>/posts/2026-08-04-docker4/</link><pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate><guid>/posts/2026-08-04-docker4/</guid><description>&lt;h1 id="docker-complete-beginner-to-production-guide"&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
 &lt;p&gt;Docker changed software development by making applications portable and predictable. Instead of saying, &amp;ldquo;It works on my machine,&amp;rdquo; developers can package an application with everything it needs—code, libraries, runtime, and dependencies—into a &lt;strong&gt;container&lt;/strong&gt; that runs consistently anywhere.&lt;/p&gt;
 &lt;p&gt;Docker has become a standard tool for developers, DevOps engineers, cloud engineers, and platform teams.&lt;/p&gt;
-&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-python3/</link>
-      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-python3/</guid>
-      <description>&lt;h1 id=&#34;python-for-devops-and-automation-complete-beginner-to-advanced-guide&#34;&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description></item><item><title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title><link>/posts/2026-08-05-python3/</link><pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate><guid>/posts/2026-08-05-python3/</guid><description>&lt;h1 id="python-for-devops-and-automation-complete-beginner-to-advanced-guide"&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
 &lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
 &lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
-&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linux: The Foundation of Modern DevOps</title>
-      <link>//localhost:1313/posts/2026-08-05-1/</link>
-      <pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-1/</guid>
-      <description>&lt;h1 id=&#34;linux-the-foundation-of-modern-devops&#34;&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
+&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description></item><item><title>Linux: The Foundation of Modern DevOps</title><link>/posts/2026-08-05-1/</link><pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate><guid>/posts/2026-08-05-1/</guid><description>&lt;h1 id="linux-the-foundation-of-modern-devops"&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
 &lt;p&gt;Linux powers nearly everything on the Internet.&lt;/p&gt;
 &lt;p&gt;Whether you browse a website, stream a movie, deploy an application, or use cloud services, chances are Linux is running somewhere in the background.&lt;/p&gt;
 &lt;p&gt;If you want to become a DevOps Engineer, Cloud Engineer, Site Reliability Engineer (SRE), Platform Engineer, or Backend Developer, Linux is the first skill you should master.&lt;/p&gt;
-&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description></item></channel></rss>

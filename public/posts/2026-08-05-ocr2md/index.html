@@ -1,98 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform | Technical Journal</title>
-<meta name="keywords" content="python, ocr, markdown, pdf, image-processing, opencv, tesseract, flask, github-actions, pypi, cli, automation, github-pages, document-ai, open-source">
-<meta name="description" content="Building OCR2MD: A Complete OCR-to-Markdown Platform
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform | Technical Journal</title><meta name=keywords content="python,ocr,markdown,pdf,image-processing,opencv,tesseract,flask,github-actions,pypi,cli,automation,github-pages,document-ai,open-source"><meta name=description content="Building OCR2MD: A Complete OCR-to-Markdown Platform
 Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.
 Extracting this information into a structured format is surprisingly difficult.
-Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-05-ocr2md/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-05-ocr2md/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-05-ocr2md/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform">
-  <meta property="og:description" content="Building OCR2MD: A Complete OCR-to-Markdown Platform Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.
+Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-05-ocr2md/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-05-ocr2md/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-05-ocr2md/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform"><meta property="og:description" content="Building OCR2MD: A Complete OCR-to-Markdown Platform Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.
 Extracting this information into a structured format is surprisingly difficult.
-Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-05T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-05T00:00:00+00:00">
-    <meta property="article:tag" content="Python">
-    <meta property="article:tag" content="OCR">
-    <meta property="article:tag" content="Markdown">
-    <meta property="article:tag" content="PDF">
-    <meta property="article:tag" content="Image-Processing">
-    <meta property="article:tag" content="Opencv">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform">
-  <meta name="twitter:description" content="Building OCR2MD: A Complete OCR-to-Markdown Platform Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.
+Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-05T00:00:00+00:00"><meta property="article:modified_time" content="2026-08-05T00:00:00+00:00"><meta property="article:tag" content="Python"><meta property="article:tag" content="Ocr"><meta property="article:tag" content="Markdown"><meta property="article:tag" content="Pdf"><meta property="article:tag" content="Image-Processing"><meta property="article:tag" content="Opencv"><meta name=twitter:card content="summary"><meta name=twitter:title content="Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform"><meta name=twitter:description content="Building OCR2MD: A Complete OCR-to-Markdown Platform Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.
 Extracting this information into a structured format is surprisingly difficult.
-Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.">
-
-
-<script type="application/ld+json">
+Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -101,18 +14,17 @@ Most OCR tools only recover plain text. Tables lose their structure, headings be
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform",
-      "item": "//localhost:1313/posts/2026-08-05-ocr2md/"
+      "item": "/posts/2026-08-05-ocr2md/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -133,219 +45,23 @@ Most OCR tools only recover plain text. Tables lose their structure, headings be
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-05-ocr2md/"
+    "@id": "/posts/2026-08-05-ocr2md/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-05 00:00:00 +0000 UTC'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#building-ocr2md-a-complete-ocr-to-markdown-platform" aria-label="Building OCR2MD: A Complete OCR-to-Markdown Platform">Building OCR2MD: A Complete OCR-to-Markdown Platform</a></li>
-            <li>
-                <a href="#project-goals" aria-label="Project Goals">Project Goals</a></li>
-            <li>
-                <a href="#why-markdown" aria-label="Why Markdown?">Why Markdown?</a></li>
-            <li>
-                <a href="#project-evolution" aria-label="Project Evolution">Project Evolution</a><ul>
-                    
-            <li>
-                <a href="#stage-1" aria-label="Stage 1">Stage 1</a></li>
-            <li>
-                <a href="#stage-2" aria-label="Stage 2">Stage 2</a></li>
-            <li>
-                <a href="#stage-3" aria-label="Stage 3">Stage 3</a></li>
-            <li>
-                <a href="#stage-4" aria-label="Stage 4">Stage 4</a></li>
-            <li>
-                <a href="#stage-5" aria-label="Stage 5">Stage 5</a></li></ul>
-            </li>
-            <li>
-                <a href="#project-structure" aria-label="Project Structure">Project Structure</a></li>
-            <li>
-                <a href="#folder-based-processing" aria-label="Folder-Based Processing">Folder-Based Processing</a></li>
-            <li>
-                <a href="#command-line-interface" aria-label="Command-Line Interface">Command-Line Interface</a></li>
-            <li>
-                <a href="#packaging-as-a-python-application" aria-label="Packaging as a Python Application">Packaging as a Python Application</a></li>
-            <li>
-                <a href="#web-interface" aria-label="Web Interface">Web Interface</a></li>
-            <li>
-                <a href="#side-by-side-preview" aria-label="Side-by-Side Preview">Side-by-Side Preview</a></li>
-            <li>
-                <a href="#rendered-markdown" aria-label="Rendered Markdown">Rendered Markdown</a></li>
-            <li>
-                <a href="#toggle-between-raw-and-rendered-markdown" aria-label="Toggle Between Raw and Rendered Markdown">Toggle Between Raw and Rendered Markdown</a></li>
-            <li>
-                <a href="#copy-to-clipboard-support" aria-label="Copy-to-Clipboard Support">Copy-to-Clipboard Support</a></li>
-            <li>
-                <a href="#progress-bar" aria-label="Progress Bar">Progress Bar</a></li>
-            <li>
-                <a href="#github-actions" aria-label="GitHub Actions">GitHub Actions</a></li>
-            <li>
-                <a href="#multi-platform-builds" aria-label="Multi-Platform Builds">Multi-Platform Builds</a></li>
-            <li>
-                <a href="#automatic-releases" aria-label="Automatic Releases">Automatic Releases</a></li>
-            <li>
-                <a href="#automated-version-management" aria-label="Automated Version Management">Automated Version Management</a></li>
-            <li>
-                <a href="#release-preview" aria-label="Release Preview">Release Preview</a></li>
-            <li>
-                <a href="#technology-stack" aria-label="Technology Stack">Technology Stack</a></li>
-            <li>
-                <a href="#future-roadmap" aria-label="Future Roadmap">Future Roadmap</a><ul>
-                    
-            <li>
-                <a href="#document-intelligence" aria-label="Document Intelligence">Document Intelligence</a></li>
-            <li>
-                <a href="#table-extraction" aria-label="Table Extraction">Table Extraction</a></li>
-            <li>
-                <a href="#ai-features" aria-label="AI Features">AI Features</a></li>
-            <li>
-                <a href="#export-formats" aria-label="Export Formats">Export Formats</a></li>
-            <li>
-                <a href="#user-experience" aria-label="User Experience">User Experience</a></li></ul>
-            </li>
-            <li>
-                <a href="#applications" aria-label="Applications">Applications</a></li>
-            <li>
-                <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="building-ocr2md-a-complete-ocr-to-markdown-platform">Building OCR2MD: A Complete OCR-to-Markdown Platform<a hidden class="anchor" aria-hidden="true" href="#building-ocr2md-a-complete-ocr-to-markdown-platform">#</a></h1>
-<p>Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.</p>
-<p>Extracting this information into a structured format is surprisingly difficult.</p>
-<p>Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.</p>
-<p>This project was designed to solve that problem.</p>
-<p>The goal was not merely to perform OCR, but to create a complete document-processing platform capable of converting scanned PDFs and images into well-structured Markdown suitable for documentation systems, GitHub repositories, knowledge bases, static websites, Retrieval-Augmented Generation (RAG) pipelines, and AI applications.</p>
-<hr>
-<h1 id="project-goals">Project Goals<a hidden class="anchor" aria-hidden="true" href="#project-goals">#</a></h1>
-<p>The objectives of OCR2MD are:</p>
-<ul>
-<li>Convert scanned PDFs into Markdown.</li>
-<li>Convert images into Markdown.</li>
-<li>Preserve document hierarchy.</li>
-<li>Detect and reconstruct tables.</li>
-<li>Support batch processing.</li>
-<li>Provide both a command-line interface and a web interface.</li>
-<li>Package the project as a reusable Python application.</li>
-<li>Automate builds, releases, and deployment using GitHub Actions.</li>
-</ul>
-<hr>
-<h1 id="why-markdown">Why Markdown?<a hidden class="anchor" aria-hidden="true" href="#why-markdown">#</a></h1>
-<p>Markdown has become the universal format for technical documentation.</p>
-<p>It is lightweight, human-readable, version-control friendly, and supported by:</p>
-<ul>
-<li>GitHub</li>
-<li>GitHub Pages</li>
-<li>MkDocs</li>
-<li>Docusaurus</li>
-<li>Hugo</li>
-<li>Obsidian</li>
-<li>Logseq</li>
-<li>Jupyter</li>
-<li>AI vector databases</li>
-</ul>
-<p>Instead of exporting documents to Word or plain text, OCR2MD produces documentation-ready Markdown.</p>
-<hr>
-<h1 id="project-evolution">Project Evolution<a hidden class="anchor" aria-hidden="true" href="#project-evolution">#</a></h1>
-<p>The project evolved through several stages.</p>
-<h2 id="stage-1">Stage 1<a hidden class="anchor" aria-hidden="true" href="#stage-1">#</a></h2>
-<p>Simple OCR</p>
-<p>The initial version simply performed OCR using Tesseract.</p>
-<p>Pipeline:</p>
-<pre tabindex="0"><code>Image
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</h1><div class=post-meta><span title='2026-08-05 00:00:00 +0000 UTC'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#building-ocr2md-a-complete-ocr-to-markdown-platform aria-label="Building OCR2MD: A Complete OCR-to-Markdown Platform">Building OCR2MD: A Complete OCR-to-Markdown Platform</a></li><li><a href=#project-goals aria-label="Project Goals">Project Goals</a></li><li><a href=#why-markdown aria-label="Why Markdown?">Why Markdown?</a></li><li><a href=#project-evolution aria-label="Project Evolution">Project Evolution</a><ul><li><a href=#stage-1 aria-label="Stage 1">Stage 1</a></li><li><a href=#stage-2 aria-label="Stage 2">Stage 2</a></li><li><a href=#stage-3 aria-label="Stage 3">Stage 3</a></li><li><a href=#stage-4 aria-label="Stage 4">Stage 4</a></li><li><a href=#stage-5 aria-label="Stage 5">Stage 5</a></li></ul></li><li><a href=#project-structure aria-label="Project Structure">Project Structure</a></li><li><a href=#folder-based-processing aria-label="Folder-Based Processing">Folder-Based Processing</a></li><li><a href=#command-line-interface aria-label="Command-Line Interface">Command-Line Interface</a></li><li><a href=#packaging-as-a-python-application aria-label="Packaging as a Python Application">Packaging as a Python Application</a></li><li><a href=#web-interface aria-label="Web Interface">Web Interface</a></li><li><a href=#side-by-side-preview aria-label="Side-by-Side Preview">Side-by-Side Preview</a></li><li><a href=#rendered-markdown aria-label="Rendered Markdown">Rendered Markdown</a></li><li><a href=#toggle-between-raw-and-rendered-markdown aria-label="Toggle Between Raw and Rendered Markdown">Toggle Between Raw and Rendered Markdown</a></li><li><a href=#copy-to-clipboard-support aria-label="Copy-to-Clipboard Support">Copy-to-Clipboard Support</a></li><li><a href=#progress-bar aria-label="Progress Bar">Progress Bar</a></li><li><a href=#github-actions aria-label="GitHub Actions">GitHub Actions</a></li><li><a href=#multi-platform-builds aria-label="Multi-Platform Builds">Multi-Platform Builds</a></li><li><a href=#automatic-releases aria-label="Automatic Releases">Automatic Releases</a></li><li><a href=#automated-version-management aria-label="Automated Version Management">Automated Version Management</a></li><li><a href=#release-preview aria-label="Release Preview">Release Preview</a></li><li><a href=#technology-stack aria-label="Technology Stack">Technology Stack</a></li><li><a href=#future-roadmap aria-label="Future Roadmap">Future Roadmap</a><ul><li><a href=#document-intelligence aria-label="Document Intelligence">Document Intelligence</a></li><li><a href=#table-extraction aria-label="Table Extraction">Table Extraction</a></li><li><a href=#ai-features aria-label="AI Features">AI Features</a></li><li><a href=#export-formats aria-label="Export Formats">Export Formats</a></li><li><a href=#user-experience aria-label="User Experience">User Experience</a></li></ul></li><li><a href=#applications aria-label=Applications>Applications</a></li><li><a href=#conclusion aria-label=Conclusion>Conclusion</a></li></ul></div></details><div class="post-content md-content"><h1 id=building-ocr2md-a-complete-ocr-to-markdown-platform>Building OCR2MD: A Complete OCR-to-Markdown Platform<a hidden class=anchor aria-hidden=true href=#building-ocr2md-a-complete-ocr-to-markdown-platform>#</a></h1><p>Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.</p><p>Extracting this information into a structured format is surprisingly difficult.</p><p>Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.</p><p>This project was designed to solve that problem.</p><p>The goal was not merely to perform OCR, but to create a complete document-processing platform capable of converting scanned PDFs and images into well-structured Markdown suitable for documentation systems, GitHub repositories, knowledge bases, static websites, Retrieval-Augmented Generation (RAG) pipelines, and AI applications.</p><hr><h1 id=project-goals>Project Goals<a hidden class=anchor aria-hidden=true href=#project-goals>#</a></h1><p>The objectives of OCR2MD are:</p><ul><li>Convert scanned PDFs into Markdown.</li><li>Convert images into Markdown.</li><li>Preserve document hierarchy.</li><li>Detect and reconstruct tables.</li><li>Support batch processing.</li><li>Provide both a command-line interface and a web interface.</li><li>Package the project as a reusable Python application.</li><li>Automate builds, releases, and deployment using GitHub Actions.</li></ul><hr><h1 id=why-markdown>Why Markdown?<a hidden class=anchor aria-hidden=true href=#why-markdown>#</a></h1><p>Markdown has become the universal format for technical documentation.</p><p>It is lightweight, human-readable, version-control friendly, and supported by:</p><ul><li>GitHub</li><li>GitHub Pages</li><li>MkDocs</li><li>Docusaurus</li><li>Hugo</li><li>Obsidian</li><li>Logseq</li><li>Jupyter</li><li>AI vector databases</li></ul><p>Instead of exporting documents to Word or plain text, OCR2MD produces documentation-ready Markdown.</p><hr><h1 id=project-evolution>Project Evolution<a hidden class=anchor aria-hidden=true href=#project-evolution>#</a></h1><p>The project evolved through several stages.</p><h2 id=stage-1>Stage 1<a hidden class=anchor aria-hidden=true href=#stage-1>#</a></h2><p>Simple OCR</p><p>The initial version simply performed OCR using Tesseract.</p><p>Pipeline:</p><pre tabindex=0><code>Image
 ↓
 
 OCR
@@ -355,12 +71,7 @@ Text
 ↓
 
 Markdown
-</code></pre><p>Although functional, it ignored document layout completely.</p>
-<hr>
-<h2 id="stage-2">Stage 2<a hidden class="anchor" aria-hidden="true" href="#stage-2">#</a></h2>
-<p>PDF Support</p>
-<p>Support for scanned PDFs was added using pdf2image.</p>
-<pre tabindex="0"><code>PDF
+</code></pre><p>Although functional, it ignored document layout completely.</p><hr><h2 id=stage-2>Stage 2<a hidden class=anchor aria-hidden=true href=#stage-2>#</a></h2><p>PDF Support</p><p>Support for scanned PDFs was added using pdf2image.</p><pre tabindex=0><code>PDF
 
 ↓
 
@@ -373,14 +84,7 @@ OCR
 ↓
 
 Markdown
-</code></pre><p>Each page became an image before OCR.</p>
-<hr>
-<h2 id="stage-3">Stage 3<a hidden class="anchor" aria-hidden="true" href="#stage-3">#</a></h2>
-<p>Table Extraction</p>
-<p>Tables are among the hardest parts of OCR.</p>
-<p>Instead of treating them as ordinary text, the project introduced OpenCV-based table detection.</p>
-<p>The workflow became:</p>
-<pre tabindex="0"><code>PDF
+</code></pre><p>Each page became an image before OCR.</p><hr><h2 id=stage-3>Stage 3<a hidden class=anchor aria-hidden=true href=#stage-3>#</a></h2><p>Table Extraction</p><p>Tables are among the hardest parts of OCR.</p><p>Instead of treating them as ordinary text, the project introduced OpenCV-based table detection.</p><p>The workflow became:</p><pre tabindex=0><code>PDF
 
 ↓
 
@@ -397,43 +101,7 @@ OCR
 ↓
 
 Markdown Tables
-</code></pre><p>This dramatically improved output quality for invoices, reports, and government documents.</p>
-<hr>
-<h2 id="stage-4">Stage 4<a hidden class="anchor" aria-hidden="true" href="#stage-4">#</a></h2>
-<p>OpenCV-Based Table Detection</p>
-<p>Traditional OCR often merges table rows into paragraphs.</p>
-<p>OpenCV detects:</p>
-<ul>
-<li>Horizontal lines</li>
-<li>Vertical lines</li>
-<li>Table boundaries</li>
-<li>Cell regions</li>
-</ul>
-<p>Morphological operations isolate table structures before OCR is applied.</p>
-<p>Advantages include:</p>
-<ul>
-<li>Better table reconstruction</li>
-<li>Higher OCR accuracy</li>
-<li>Cleaner Markdown tables</li>
-</ul>
-<hr>
-<h2 id="stage-5">Stage 5<a hidden class="anchor" aria-hidden="true" href="#stage-5">#</a></h2>
-<p>Layout Detection</p>
-<p>Documents contain more than paragraphs.</p>
-<p>Typical pages include:</p>
-<ul>
-<li>Titles</li>
-<li>Headings</li>
-<li>Paragraphs</li>
-<li>Lists</li>
-<li>Tables</li>
-<li>Figures</li>
-</ul>
-<p>Layout-aware processing identifies each element separately before extraction.</p>
-<p>This preserves document structure much more accurately.</p>
-<hr>
-<h1 id="project-structure">Project Structure<a hidden class="anchor" aria-hidden="true" href="#project-structure">#</a></h1>
-<pre tabindex="0"><code>ocr-to-markdown/
+</code></pre><p>This dramatically improved output quality for invoices, reports, and government documents.</p><hr><h2 id=stage-4>Stage 4<a hidden class=anchor aria-hidden=true href=#stage-4>#</a></h2><p>OpenCV-Based Table Detection</p><p>Traditional OCR often merges table rows into paragraphs.</p><p>OpenCV detects:</p><ul><li>Horizontal lines</li><li>Vertical lines</li><li>Table boundaries</li><li>Cell regions</li></ul><p>Morphological operations isolate table structures before OCR is applied.</p><p>Advantages include:</p><ul><li>Better table reconstruction</li><li>Higher OCR accuracy</li><li>Cleaner Markdown tables</li></ul><hr><h2 id=stage-5>Stage 5<a hidden class=anchor aria-hidden=true href=#stage-5>#</a></h2><p>Layout Detection</p><p>Documents contain more than paragraphs.</p><p>Typical pages include:</p><ul><li>Titles</li><li>Headings</li><li>Paragraphs</li><li>Lists</li><li>Tables</li><li>Figures</li></ul><p>Layout-aware processing identifies each element separately before extraction.</p><p>This preserves document structure much more accurately.</p><hr><h1 id=project-structure>Project Structure<a hidden class=anchor aria-hidden=true href=#project-structure>#</a></h1><pre tabindex=0><code>ocr-to-markdown/
 
 ├── input/
 ├── output/
@@ -453,11 +121,7 @@ Markdown Tables
 ├── pyproject.toml
 ├── requirements.txt
 └── README.md
-</code></pre><p>The modular architecture makes it easy to replace or upgrade individual components.</p>
-<hr>
-<h1 id="folder-based-processing">Folder-Based Processing<a hidden class="anchor" aria-hidden="true" href="#folder-based-processing">#</a></h1>
-<p>Instead of specifying files manually, OCR2MD processes every supported file inside an input directory.</p>
-<pre tabindex="0"><code>input/
+</code></pre><p>The modular architecture makes it easy to replace or upgrade individual components.</p><hr><h1 id=folder-based-processing>Folder-Based Processing<a hidden class=anchor aria-hidden=true href=#folder-based-processing>#</a></h1><p>Instead of specifying files manually, OCR2MD processes every supported file inside an input directory.</p><pre tabindex=0><code>input/
 
 invoice.pdf
 
@@ -466,10 +130,8 @@ report.pdf
 book.jpg
 
 map.png
-</code></pre><p>Running:</p>
-<pre tabindex="0"><code>python main.py
-</code></pre><p>creates:</p>
-<pre tabindex="0"><code>output/
+</code></pre><p>Running:</p><pre tabindex=0><code>python main.py
+</code></pre><p>creates:</p><pre tabindex=0><code>output/
 
 invoice.md
 
@@ -478,134 +140,12 @@ report.md
 book.md
 
 map.md
-</code></pre><p>Batch processing significantly improves productivity.</p>
-<hr>
-<h1 id="command-line-interface">Command-Line Interface<a hidden class="anchor" aria-hidden="true" href="#command-line-interface">#</a></h1>
-<p>A dedicated CLI was added for convenience.</p>
-<p>Examples:</p>
-<pre tabindex="0"><code>ocr2md invoice.pdf
-</code></pre><p>Process an entire directory:</p>
-<pre tabindex="0"><code>ocr2md input/
-</code></pre><p>Custom output folder:</p>
-<pre tabindex="0"><code>ocr2md input/ -o results/
-</code></pre><p>This makes the application suitable for automation scripts and CI pipelines.</p>
-<hr>
-<h1 id="packaging-as-a-python-application">Packaging as a Python Application<a hidden class="anchor" aria-hidden="true" href="#packaging-as-a-python-application">#</a></h1>
-<p>The project uses modern Python packaging with <code>pyproject.toml</code>.</p>
-<p>Installation:</p>
-<pre tabindex="0"><code>pip install -e .
-</code></pre><p>After installation:</p>
-<pre tabindex="0"><code>ocr2md input.pdf
-</code></pre><p>works from any directory.</p>
-<p>No aliases are required.</p>
-<hr>
-<h1 id="web-interface">Web Interface<a hidden class="anchor" aria-hidden="true" href="#web-interface">#</a></h1>
-<p>A browser-based interface was developed using Flask.</p>
-<p>Features include:</p>
-<ul>
-<li>File upload</li>
-<li>PDF support</li>
-<li>Image support</li>
-<li>Markdown generation</li>
-<li>Download button</li>
-</ul>
-<p>The interface makes the tool accessible to users who prefer not to use the command line.</p>
-<hr>
-<h1 id="side-by-side-preview">Side-by-Side Preview<a hidden class="anchor" aria-hidden="true" href="#side-by-side-preview">#</a></h1>
-<p>The interface was later upgraded to display:</p>
-<p>Left panel</p>
-<ul>
-<li>Original PDF or image</li>
-</ul>
-<p>Right panel</p>
-<ul>
-<li>Generated Markdown</li>
-</ul>
-<p>This immediate comparison simplifies verification.</p>
-<hr>
-<h1 id="rendered-markdown">Rendered Markdown<a hidden class="anchor" aria-hidden="true" href="#rendered-markdown">#</a></h1>
-<p>Viewing raw Markdown is useful, but many users prefer formatted output.</p>
-<p>The UI renders Markdown as HTML using a client-side Markdown renderer.</p>
-<p>Headings, tables, code blocks, and lists are displayed as they will appear in documentation.</p>
-<hr>
-<h1 id="toggle-between-raw-and-rendered-markdown">Toggle Between Raw and Rendered Markdown<a hidden class="anchor" aria-hidden="true" href="#toggle-between-raw-and-rendered-markdown">#</a></h1>
-<p>The interface includes two viewing modes.</p>
-<p>Rendered mode shows the final document.</p>
-<p>Raw mode displays the Markdown source.</p>
-<p>This is particularly useful when editing or debugging generated output.</p>
-<hr>
-<h1 id="copy-to-clipboard-support">Copy-to-Clipboard Support<a hidden class="anchor" aria-hidden="true" href="#copy-to-clipboard-support">#</a></h1>
-<p>A dedicated button copies the raw Markdown directly to the clipboard.</p>
-<p>This enables quick transfer into:</p>
-<ul>
-<li>GitHub</li>
-<li>Obsidian</li>
-<li>VS Code</li>
-<li>MkDocs</li>
-<li>Documentation portals</li>
-</ul>
-<hr>
-<h1 id="progress-bar">Progress Bar<a hidden class="anchor" aria-hidden="true" href="#progress-bar">#</a></h1>
-<p>Large scanned PDFs may take several minutes to process.</p>
-<p>The web interface now displays:</p>
-<ul>
-<li>Upload progress</li>
-<li>Processing indicator</li>
-</ul>
-<p>This improves user experience during long-running conversions.</p>
-<hr>
-<h1 id="github-actions">GitHub Actions<a hidden class="anchor" aria-hidden="true" href="#github-actions">#</a></h1>
-<p>The project includes a CI pipeline.</p>
-<p>Every push automatically:</p>
-<ul>
-<li>Installs dependencies</li>
-<li>Runs basic checks</li>
-<li>Builds the package</li>
-<li>Produces distributable artifacts</li>
-</ul>
-<p>This ensures the project remains buildable over time.</p>
-<hr>
-<h1 id="multi-platform-builds">Multi-Platform Builds<a hidden class="anchor" aria-hidden="true" href="#multi-platform-builds">#</a></h1>
-<p>The build pipeline supports:</p>
-<ul>
-<li>Ubuntu</li>
-<li>Windows</li>
-<li>macOS</li>
-</ul>
-<p>Python versions:</p>
-<ul>
-<li>3.9</li>
-<li>3.10</li>
-<li>3.11</li>
-</ul>
-<p>Cross-platform testing catches operating-system-specific issues early.</p>
-<hr>
-<h1 id="automatic-releases">Automatic Releases<a hidden class="anchor" aria-hidden="true" href="#automatic-releases">#</a></h1>
-<p>Pushing a version tag automatically:</p>
-<ul>
-<li>Builds the package</li>
-<li>Creates a GitHub Release</li>
-<li>Uploads wheel files</li>
-<li>Uploads source distributions</li>
-</ul>
-<p>Releases become repeatable and consistent.</p>
-<hr>
-<h1 id="automated-version-management">Automated Version Management<a hidden class="anchor" aria-hidden="true" href="#automated-version-management">#</a></h1>
-<p>A release script streamlines the publishing workflow.</p>
-<p>It:</p>
-<ul>
-<li>Reads the current version</li>
-<li>Calculates the next version</li>
-<li>Updates <code>pyproject.toml</code></li>
-<li>Creates a Git commit</li>
-<li>Creates a Git tag</li>
-<li>Pushes to GitHub</li>
-</ul>
-<p>The GitHub workflow then handles the rest.</p>
-<hr>
-<h1 id="release-preview">Release Preview<a hidden class="anchor" aria-hidden="true" href="#release-preview">#</a></h1>
-<p>Before publishing, the script displays:</p>
-<pre tabindex="0"><code>Current Version
+</code></pre><p>Batch processing significantly improves productivity.</p><hr><h1 id=command-line-interface>Command-Line Interface<a hidden class=anchor aria-hidden=true href=#command-line-interface>#</a></h1><p>A dedicated CLI was added for convenience.</p><p>Examples:</p><pre tabindex=0><code>ocr2md invoice.pdf
+</code></pre><p>Process an entire directory:</p><pre tabindex=0><code>ocr2md input/
+</code></pre><p>Custom output folder:</p><pre tabindex=0><code>ocr2md input/ -o results/
+</code></pre><p>This makes the application suitable for automation scripts and CI pipelines.</p><hr><h1 id=packaging-as-a-python-application>Packaging as a Python Application<a hidden class=anchor aria-hidden=true href=#packaging-as-a-python-application>#</a></h1><p>The project uses modern Python packaging with <code>pyproject.toml</code>.</p><p>Installation:</p><pre tabindex=0><code>pip install -e .
+</code></pre><p>After installation:</p><pre tabindex=0><code>ocr2md input.pdf
+</code></pre><p>works from any directory.</p><p>No aliases are required.</p><hr><h1 id=web-interface>Web Interface<a hidden class=anchor aria-hidden=true href=#web-interface>#</a></h1><p>A browser-based interface was developed using Flask.</p><p>Features include:</p><ul><li>File upload</li><li>PDF support</li><li>Image support</li><li>Markdown generation</li><li>Download button</li></ul><p>The interface makes the tool accessible to users who prefer not to use the command line.</p><hr><h1 id=side-by-side-preview>Side-by-Side Preview<a hidden class=anchor aria-hidden=true href=#side-by-side-preview>#</a></h1><p>The interface was later upgraded to display:</p><p>Left panel</p><ul><li>Original PDF or image</li></ul><p>Right panel</p><ul><li>Generated Markdown</li></ul><p>This immediate comparison simplifies verification.</p><hr><h1 id=rendered-markdown>Rendered Markdown<a hidden class=anchor aria-hidden=true href=#rendered-markdown>#</a></h1><p>Viewing raw Markdown is useful, but many users prefer formatted output.</p><p>The UI renders Markdown as HTML using a client-side Markdown renderer.</p><p>Headings, tables, code blocks, and lists are displayed as they will appear in documentation.</p><hr><h1 id=toggle-between-raw-and-rendered-markdown>Toggle Between Raw and Rendered Markdown<a hidden class=anchor aria-hidden=true href=#toggle-between-raw-and-rendered-markdown>#</a></h1><p>The interface includes two viewing modes.</p><p>Rendered mode shows the final document.</p><p>Raw mode displays the Markdown source.</p><p>This is particularly useful when editing or debugging generated output.</p><hr><h1 id=copy-to-clipboard-support>Copy-to-Clipboard Support<a hidden class=anchor aria-hidden=true href=#copy-to-clipboard-support>#</a></h1><p>A dedicated button copies the raw Markdown directly to the clipboard.</p><p>This enables quick transfer into:</p><ul><li>GitHub</li><li>Obsidian</li><li>VS Code</li><li>MkDocs</li><li>Documentation portals</li></ul><hr><h1 id=progress-bar>Progress Bar<a hidden class=anchor aria-hidden=true href=#progress-bar>#</a></h1><p>Large scanned PDFs may take several minutes to process.</p><p>The web interface now displays:</p><ul><li>Upload progress</li><li>Processing indicator</li></ul><p>This improves user experience during long-running conversions.</p><hr><h1 id=github-actions>GitHub Actions<a hidden class=anchor aria-hidden=true href=#github-actions>#</a></h1><p>The project includes a CI pipeline.</p><p>Every push automatically:</p><ul><li>Installs dependencies</li><li>Runs basic checks</li><li>Builds the package</li><li>Produces distributable artifacts</li></ul><p>This ensures the project remains buildable over time.</p><hr><h1 id=multi-platform-builds>Multi-Platform Builds<a hidden class=anchor aria-hidden=true href=#multi-platform-builds>#</a></h1><p>The build pipeline supports:</p><ul><li>Ubuntu</li><li>Windows</li><li>macOS</li></ul><p>Python versions:</p><ul><li>3.9</li><li>3.10</li><li>3.11</li></ul><p>Cross-platform testing catches operating-system-specific issues early.</p><hr><h1 id=automatic-releases>Automatic Releases<a hidden class=anchor aria-hidden=true href=#automatic-releases>#</a></h1><p>Pushing a version tag automatically:</p><ul><li>Builds the package</li><li>Creates a GitHub Release</li><li>Uploads wheel files</li><li>Uploads source distributions</li></ul><p>Releases become repeatable and consistent.</p><hr><h1 id=automated-version-management>Automated Version Management<a hidden class=anchor aria-hidden=true href=#automated-version-management>#</a></h1><p>A release script streamlines the publishing workflow.</p><p>It:</p><ul><li>Reads the current version</li><li>Calculates the next version</li><li>Updates <code>pyproject.toml</code></li><li>Creates a Git commit</li><li>Creates a Git tag</li><li>Pushes to GitHub</li></ul><p>The GitHub workflow then handles the rest.</p><hr><h1 id=release-preview>Release Preview<a hidden class=anchor aria-hidden=true href=#release-preview>#</a></h1><p>Before publishing, the script displays:</p><pre tabindex=0><code>Current Version
 
 ↓
 
@@ -618,259 +158,11 @@ Confirmation
 ↓
 
 Release
-</code></pre><p>This prevents accidental releases while keeping the workflow efficient.</p>
-<hr>
-<h1 id="technology-stack">Technology Stack<a hidden class="anchor" aria-hidden="true" href="#technology-stack">#</a></h1>
-<p>Core technologies include:</p>
-<ul>
-<li>Python</li>
-<li>Flask</li>
-<li>Tesseract OCR</li>
-<li>OpenCV</li>
-<li>Pillow</li>
-<li>pdf2image</li>
-<li>Camelot</li>
-<li>Pandas</li>
-<li>LayoutParser</li>
-<li>GitHub Actions</li>
-<li>Markdown</li>
-<li>GitHub Pages</li>
-</ul>
-<p>Together they provide a flexible and extensible document-processing pipeline.</p>
-<hr>
-<h1 id="future-roadmap">Future Roadmap<a hidden class="anchor" aria-hidden="true" href="#future-roadmap">#</a></h1>
-<p>Several enhancements can further improve OCR2MD.</p>
-<h2 id="document-intelligence">Document Intelligence<a hidden class="anchor" aria-hidden="true" href="#document-intelligence">#</a></h2>
-<ul>
-<li>LayoutLMv3</li>
-<li>Donut</li>
-<li>Nougat</li>
-<li>PaddleOCR</li>
-<li>DocTR</li>
-</ul>
-<hr>
-<h2 id="table-extraction">Table Extraction<a hidden class="anchor" aria-hidden="true" href="#table-extraction">#</a></h2>
-<ul>
-<li>Cell-level segmentation</li>
-<li>Merged-cell detection</li>
-<li>Multi-page table reconstruction</li>
-</ul>
-<hr>
-<h2 id="ai-features">AI Features<a hidden class="anchor" aria-hidden="true" href="#ai-features">#</a></h2>
-<ul>
-<li>Automatic summaries</li>
-<li>Keyword extraction</li>
-<li>Question answering</li>
-<li>Named entity recognition</li>
-<li>Semantic search</li>
-</ul>
-<hr>
-<h2 id="export-formats">Export Formats<a hidden class="anchor" aria-hidden="true" href="#export-formats">#</a></h2>
-<p>Additional outputs:</p>
-<ul>
-<li>HTML</li>
-<li>DOCX</li>
-<li>PDF</li>
-<li>JSON</li>
-<li>CSV</li>
-<li>XML</li>
-</ul>
-<hr>
-<h2 id="user-experience">User Experience<a hidden class="anchor" aria-hidden="true" href="#user-experience">#</a></h2>
-<p>Potential improvements include:</p>
-<ul>
-<li>Dark mode</li>
-<li>Drag-and-drop enhancements</li>
-<li>Batch upload</li>
-<li>Live OCR preview</li>
-<li>Background processing</li>
-<li>WebSocket progress updates</li>
-</ul>
-<hr>
-<h1 id="applications">Applications<a hidden class="anchor" aria-hidden="true" href="#applications">#</a></h1>
-<p>OCR2MD is useful for:</p>
-<ul>
-<li>Government records</li>
-<li>Audit documentation</li>
-<li>Historical archives</li>
-<li>Research papers</li>
-<li>Books</li>
-<li>Meeting minutes</li>
-<li>Invoices</li>
-<li>Engineering drawings</li>
-<li>Legal documents</li>
-<li>Knowledge management systems</li>
-</ul>
-<p>It also serves as a preprocessing engine for AI and RAG workflows.</p>
-<hr>
-<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
-<p>OCR2MD began as a simple OCR script but evolved into a comprehensive document-processing platform.</p>
-<p>By combining OCR, computer vision, document layout analysis, Markdown generation, modern packaging, a command-line interface, a web application, automated testing, cross-platform builds, and release automation, the project demonstrates how a focused utility can mature into a production-ready open-source tool.</p>
-<p>Whether you&rsquo;re digitizing archives, preparing documentation, building AI datasets, or publishing content to GitHub Pages, OCR2MD provides a strong foundation that can continue to grow with new models, richer document understanding, and broader export capabilities.</p>
-<hr>
-<p><em>Happy coding, and may your scanned documents become clean, searchable, version-controlled Markdown.</em></p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/python/">Python</a></li>
-      <li><a href="//localhost:1313/tags/ocr/">OCR</a></li>
-      <li><a href="//localhost:1313/tags/markdown/">Markdown</a></li>
-      <li><a href="//localhost:1313/tags/pdf/">PDF</a></li>
-      <li><a href="//localhost:1313/tags/image-processing/">Image-Processing</a></li>
-      <li><a href="//localhost:1313/tags/opencv/">Opencv</a></li>
-      <li><a href="//localhost:1313/tags/tesseract/">Tesseract</a></li>
-      <li><a href="//localhost:1313/tags/flask/">Flask</a></li>
-      <li><a href="//localhost:1313/tags/github-actions/">Github-Actions</a></li>
-      <li><a href="//localhost:1313/tags/pypi/">Pypi</a></li>
-      <li><a href="//localhost:1313/tags/cli/">Cli</a></li>
-      <li><a href="//localhost:1313/tags/automation/">Automation</a></li>
-      <li><a href="//localhost:1313/tags/github-pages/">Github-Pages</a></li>
-      <li><a href="//localhost:1313/tags/document-ai/">Document-Ai</a></li>
-      <li><a href="//localhost:1313/tags/open-source/">Open-Source</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-05-fitness-plan/">
-    <span class="title">« Prev</span>
-    <span>A Practical Home Fitness Plan for a 44-Year-Old Beginner: Diet, Exercise, Breathing, and Sustainable Weight Loss</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-openrouter/">
-    <span class="title">Next »</span>
-    <span>Accessing Hundreds of AI Models with One API Key: An OpenRouter Guide</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><p>This prevents accidental releases while keeping the workflow efficient.</p><hr><h1 id=technology-stack>Technology Stack<a hidden class=anchor aria-hidden=true href=#technology-stack>#</a></h1><p>Core technologies include:</p><ul><li>Python</li><li>Flask</li><li>Tesseract OCR</li><li>OpenCV</li><li>Pillow</li><li>pdf2image</li><li>Camelot</li><li>Pandas</li><li>LayoutParser</li><li>GitHub Actions</li><li>Markdown</li><li>GitHub Pages</li></ul><p>Together they provide a flexible and extensible document-processing pipeline.</p><hr><h1 id=future-roadmap>Future Roadmap<a hidden class=anchor aria-hidden=true href=#future-roadmap>#</a></h1><p>Several enhancements can further improve OCR2MD.</p><h2 id=document-intelligence>Document Intelligence<a hidden class=anchor aria-hidden=true href=#document-intelligence>#</a></h2><ul><li>LayoutLMv3</li><li>Donut</li><li>Nougat</li><li>PaddleOCR</li><li>DocTR</li></ul><hr><h2 id=table-extraction>Table Extraction<a hidden class=anchor aria-hidden=true href=#table-extraction>#</a></h2><ul><li>Cell-level segmentation</li><li>Merged-cell detection</li><li>Multi-page table reconstruction</li></ul><hr><h2 id=ai-features>AI Features<a hidden class=anchor aria-hidden=true href=#ai-features>#</a></h2><ul><li>Automatic summaries</li><li>Keyword extraction</li><li>Question answering</li><li>Named entity recognition</li><li>Semantic search</li></ul><hr><h2 id=export-formats>Export Formats<a hidden class=anchor aria-hidden=true href=#export-formats>#</a></h2><p>Additional outputs:</p><ul><li>HTML</li><li>DOCX</li><li>PDF</li><li>JSON</li><li>CSV</li><li>XML</li></ul><hr><h2 id=user-experience>User Experience<a hidden class=anchor aria-hidden=true href=#user-experience>#</a></h2><p>Potential improvements include:</p><ul><li>Dark mode</li><li>Drag-and-drop enhancements</li><li>Batch upload</li><li>Live OCR preview</li><li>Background processing</li><li>WebSocket progress updates</li></ul><hr><h1 id=applications>Applications<a hidden class=anchor aria-hidden=true href=#applications>#</a></h1><p>OCR2MD is useful for:</p><ul><li>Government records</li><li>Audit documentation</li><li>Historical archives</li><li>Research papers</li><li>Books</li><li>Meeting minutes</li><li>Invoices</li><li>Engineering drawings</li><li>Legal documents</li><li>Knowledge management systems</li></ul><p>It also serves as a preprocessing engine for AI and RAG workflows.</p><hr><h1 id=conclusion>Conclusion<a hidden class=anchor aria-hidden=true href=#conclusion>#</a></h1><p>OCR2MD began as a simple OCR script but evolved into a comprehensive document-processing platform.</p><p>By combining OCR, computer vision, document layout analysis, Markdown generation, modern packaging, a command-line interface, a web application, automated testing, cross-platform builds, and release automation, the project demonstrates how a focused utility can mature into a production-ready open-source tool.</p><p>Whether you&rsquo;re digitizing archives, preparing documentation, building AI datasets, or publishing content to GitHub Pages, OCR2MD provides a strong foundation that can continue to grow with new models, richer document understanding, and broader export capabilities.</p><hr><p><em>Happy coding, and may your scanned documents become clean, searchable, version-controlled Markdown.</em></p></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/python/>Python</a></li><li><a href=/tags/ocr/>Ocr</a></li><li><a href=/tags/markdown/>Markdown</a></li><li><a href=/tags/pdf/>Pdf</a></li><li><a href=/tags/image-processing/>Image-Processing</a></li><li><a href=/tags/opencv/>Opencv</a></li><li><a href=/tags/tesseract/>Tesseract</a></li><li><a href=/tags/flask/>Flask</a></li><li><a href=/tags/github-actions/>Github-Actions</a></li><li><a href=/tags/pypi/>Pypi</a></li><li><a href=/tags/cli/>Cli</a></li><li><a href=/tags/automation/>Automation</a></li><li><a href=/tags/github-pages/>Github-Pages</a></li><li><a href=/tags/document-ai/>Document-Ai</a></li><li><a href=/tags/open-source/>Open-Source</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-05-fitness-plan/><span class=title>« Prev</span>
+<span>A Practical Home Fitness Plan for a 44-Year-Old Beginner: Diet, Exercise, Breathing, and Sustainable Weight Loss</span>
+</a><a class=next href=/posts/2026-08-05-tao-meditation/><span class=title>Next »</span>
+<span>A Beginner's Guide to Taoist Energy Meditation: Understanding the Three Tan Tiens</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

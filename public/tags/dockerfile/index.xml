@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Dockerfile on Technical Journal</title>
-    <link>//localhost:1313/tags/dockerfile/</link>
-    <description>Recent content in Dockerfile on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 09:00:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker: Complete Beginner to Production Guide</title>
-      <link>//localhost:1313/posts/2026-08-04-docker4/</link>
-      <pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-docker4/</guid>
-      <description>&lt;h1 id=&#34;docker-complete-beginner-to-production-guide&#34;&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Dockerfile on Technical Journal</title><link>/tags/dockerfile/</link><description>Recent content in Dockerfile on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 09:00:00 +0530</lastBuildDate><atom:link href="/tags/dockerfile/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker: Complete Beginner to Production Guide</title><link>/posts/2026-08-04-docker4/</link><pubDate>Wed, 05 Aug 2026 09:00:00 +0530</pubDate><guid>/posts/2026-08-04-docker4/</guid><description>&lt;h1 id="docker-complete-beginner-to-production-guide"&gt;Docker: Complete Beginner to Production Guide&lt;/h1&gt;
 &lt;p&gt;Docker changed software development by making applications portable and predictable. Instead of saying, &amp;ldquo;It works on my machine,&amp;rdquo; developers can package an application with everything it needs—code, libraries, runtime, and dependencies—into a &lt;strong&gt;container&lt;/strong&gt; that runs consistently anywhere.&lt;/p&gt;
 &lt;p&gt;Docker has become a standard tool for developers, DevOps engineers, cloud engineers, and platform teams.&lt;/p&gt;
-&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;In this guide, you&amp;rsquo;ll learn Docker from the ground up and build production-ready containerized applications.&lt;/p&gt;</description></item></channel></rss>

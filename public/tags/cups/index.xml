@@ -1,34 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Cups on Technical Journal</title>
-    <link>//localhost:1313/tags/cups/</link>
-    <description>Recent content in Cups on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/cups/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</title>
-      <link>//localhost:1313/posts/2026-08-04-hplip/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-hplip/</guid>
-      <description>&lt;p&gt;Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Cups on Technical Journal</title><link>/tags/cups/</link><description>Recent content in Cups on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/cups/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</title><link>/posts/2026-08-04-hplip/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-hplip/</guid><description>&lt;p&gt;Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.&lt;/p&gt;
 &lt;p&gt;This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-managing-hp-hardware-via-hplip-and-cups&#34;&gt;1. Managing HP Hardware via HPLIP and CUPS&lt;/h2&gt;
-&lt;p&gt;Linux Mint uses the &lt;strong&gt;Common Unix Printing System (CUPS)&lt;/strong&gt; to handle print queues and job spools, alongside &lt;strong&gt;HPLIP (HP Linux Imaging and Printing)&lt;/strong&gt; for HP device communication, driver support, and status monitoring.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-mint/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-mint/</guid>
-      <description>&lt;p&gt;Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.&lt;/p&gt;
+&lt;h2 id="1-managing-hp-hardware-via-hplip-and-cups"&gt;1. Managing HP Hardware via HPLIP and CUPS&lt;/h2&gt;
+&lt;p&gt;Linux Mint uses the &lt;strong&gt;Common Unix Printing System (CUPS)&lt;/strong&gt; to handle print queues and job spools, alongside &lt;strong&gt;HPLIP (HP Linux Imaging and Printing)&lt;/strong&gt; for HP device communication, driver support, and status monitoring.&lt;/p&gt;</description></item><item><title>Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management</title><link>/posts/2026-08-04-linux-mint/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-mint/</guid><description>&lt;p&gt;Migrating to Linux Mint provides a fast, privacy-respecting, and highly customizable desktop environment. However, transitioning away from proprietary operating systems often introduces a learning curve—particularly when managing hardware drivers, fixing print services, dealing with document layout changes, and navigating package dependency issues.&lt;/p&gt;
 &lt;p&gt;This comprehensive reference guide aggregates essential Linux Mint administration workflows, command-line solutions, and troubleshooting techniques into a single, structured manual.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-managing-hp-hardware-via-hplip-and-cups&#34;&gt;1. Managing HP Hardware via HPLIP and CUPS&lt;/h2&gt;
-&lt;p&gt;Linux Mint uses the &lt;strong&gt;Common Unix Printing System (CUPS)&lt;/strong&gt; to handle print queues and job spools, alongside &lt;strong&gt;HPLIP (HP Linux Imaging and Printing)&lt;/strong&gt; for HP device communication, driver support, and status monitoring.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-managing-hp-hardware-via-hplip-and-cups"&gt;1. Managing HP Hardware via HPLIP and CUPS&lt;/h2&gt;
+&lt;p&gt;Linux Mint uses the &lt;strong&gt;Common Unix Printing System (CUPS)&lt;/strong&gt; to handle print queues and job spools, alongside &lt;strong&gt;HPLIP (HP Linux Imaging and Printing)&lt;/strong&gt; for HP device communication, driver support, and status monitoring.&lt;/p&gt;</description></item></channel></rss>

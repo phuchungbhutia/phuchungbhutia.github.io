@@ -1,6 +1,6 @@
 ---
 title: "Notion vs. Obsidian for Audit Reports: A Complete Hands-On Guide"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Productivity", "Workflow Automation"]
 tags: ["Notion", "Obsidian", "Audit Reports", "Documentation", "Markdown"]
 ---

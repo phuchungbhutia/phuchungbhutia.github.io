@@ -1,93 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows | Technical Journal</title>
-<meta name="keywords" content="mx-linux, ntfs, symlinks, fstab, xfce, storage-optimization">
-<meta name="description" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows | Technical Journal</title><meta name=keywords content="mx-linux,ntfs,symlinks,fstab,xfce,storage-optimization"><meta name=description content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows
 If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.
-The temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-mx-linux-1/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-mx-linux-1/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-mx-linux-1/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows">
-  <meta property="og:description" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.
-The temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:tag" content="Mx-Linux">
-    <meta property="article:tag" content="Ntfs">
-    <meta property="article:tag" content="Symlinks">
-    <meta property="article:tag" content="Fstab">
-    <meta property="article:tag" content="XFCE">
-    <meta property="article:tag" content="Storage-Optimization">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows">
-  <meta name="twitter:description" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.
-The temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors.">
-
-
-<script type="application/ld+json">
+The temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-mx-linux-1/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-mx-linux-1/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-mx-linux-1/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows"><meta property="og:description" content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.
+The temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="Mx-Linux"><meta property="article:tag" content="Ntfs"><meta property="article:tag" content="Symlinks"><meta property="article:tag" content="Fstab"><meta property="article:tag" content="Xfce"><meta property="article:tag" content="Storage-Optimization"><meta name=twitter:card content="summary"><meta name=twitter:title content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows"><meta name=twitter:description content="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.
+The temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -96,18 +11,17 @@ The temptation to pick up your entire /home directory and drop it straight onto 
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows",
-      "item": "//localhost:1313/posts/2026-08-04-mx-linux-1/"
+      "item": "/posts/2026-08-04-mx-linux-1/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -120,360 +34,59 @@ The temptation to pick up your entire /home directory and drop it straight onto 
   "articleBody": "Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.\nThe temptation to pick up your entire /home directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors.\nHere is why moving /home to NTFS breaks Linux, and how you can use a clever hybrid symlink setup to offload hundreds of gigabytes safely without touching your system’s stability.\nWhy Full /home Migration to NTFS Fails Linux relies heavily on POSIX file permissions (chmod, chown, file sockets, and execution bits). Every time you log in, your desktop manager reads hidden dotfiles in /home/username/ (like .config and .local) to understand who owns what file and what executable rights they hold.\nWindows’ NTFS filesystem operates on an entirely different permission model (ACLs). When Linux mounts an NTFS drive, it can only assign a single set of blanket permissions across every file on that partition.\nIf your entire /home folder sits on an NTFS partition:\nSecurity protocols fail: Apps like SSH or GPG will refuse to run because their configuration files are marked as “too open.” Desktop environments break: XFCE, GNOME, or KDE cannot set proper ownership flags on temporary desktop sockets, causing instant login loops. Executables stall: Software relying on local execution flags inside .local/bin loses its runnable status. The Hybrid Fix: Symlinking Heavy Data You don’t need to migrate your entire /home directory to reclaim space. The system files making up your desktop configurations take up a few gigabytes at most. The real space-hogs are your media and user directories: Downloads, Videos, Music, Documents, and Steam Library.\nBy keeping your essential dotfiles on your primary Linux drive (formatted in ext4 or Btrfs) and linking heavy data folders to your NTFS drive using symbolic links (symlinks), you get the best of both worlds: zero system instability and massive storage relief.\n/home/user/ \u003c-- Stays on primary fast Linux SSD (ext4)\r├── .config/ \u003c-- Permissions preserved!\r├── .local/ \u003c-- Native speed \u0026 stability!\r├── Downloads/ ---------\u003e [Symlink] ---\u003e /mnt/Data/Downloads (NTFS Drive)\r├── Videos/ ---------\u003e [Symlink] ---\u003e /mnt/Data/Videos (NTFS Drive)\r└── Documents/ ---------\u003e [Symlink] ---\u003e /mnt/Data/Documents (NTFS Drive) Step-by-Step Setup Guide 1. Ensure Your NTFS Drive Auto-Mounts at Boot For symbolic links to work seamlessly, your NTFS drive must mount to the exact same folder every time your PC boots up.\nOpen GNOME Disks (or MX Mounting Tools if you are on MX Linux). Select your secondary NTFS drive from the panel on the left. Click the Gear icon (Additional partition options) underneath the partition layout and select Edit Mount Options…. Toggle User Session Defaults to OFF. Ensure Mount at system startup is checked. Set a clean Mount Point path, such as /mnt/Data (or note down your current path, like /media/yourusername/Data). Click OK and enter your root password to save. # Verify your drive is mounted properly by checking its mount path df -h | grep /mnt/Data 2. Prepare the Target Folders on the NTFS Drive Open your terminal or file manager, navigate to your mounted NTFS drive, and create the directories you intend to offload.\nmkdir -p /mnt/Data/Downloads mkdir -p /mnt/Data/Videos mkdir -p /mnt/Data/Documents 3. Replace Your Local Folders with Symlinks Before creating a symlink in your Linux home directory, you must remove or rename the existing empty default folder.\nRemove the old, empty default folder: rm -rf ~/Downloads Create the symbolic link using ln -s: ln -s /mnt/Data/Downloads ~/Downloads Repeat the process for other heavy directories: # Offload Videos rm -rf ~/Videos ln -s /mnt/Data/Videos ~/Videos # Offload Documents rm -rf ~/Documents ln -s /mnt/Data/Documents ~/Documents Verifying the Setup Run an ls -la in your terminal to view your home directory list. You will notice your folders now display a clear arrow routing directly to your NTFS storage path:\nls -la ~ | grep \"-\u003e\" Output:\nlrwxrwxrwx 1 user user 19 Aug 4 17:30 Downloads -\u003e /mnt/Data/Downloads lrwxrwxrwx 1 user user 16 Aug 4 17:31 Videos -\u003e /mnt/Data/Videos lrwxrwxrwx 1 user user 19 Aug 4 17:31 Documents -\u003e /mnt/Data/Documents Whenever a web browser saves a file to ~/Downloads or a video editor outputs to ~/Videos, the data streams directly onto your secondary NTFS drive. Meanwhile, your Linux system files stay safe, fast, and fully compliant on your primary drive.\nNo broken permissions, no /etc/fstab panic, and zero OS login issues.\n",
   "wordCount" : "785",
   "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-mx-linux-1/"
+    "@id": "/posts/2026-08-04-mx-linux-1/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows
-    </h1>
-    <div class="post-meta">
-
-<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#dual-booting-done-right-how-to-seamlessly-share-storage-between-linux-and-windows" aria-label="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows">Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows</a><ul>
-                    
-            <li>
-                <a href="#why-full-home-migration-to-ntfs-fails" aria-label="Why Full /home Migration to NTFS Fails">Why Full /home Migration to NTFS Fails</a></li>
-            <li>
-                <a href="#the-hybrid-fix-symlinking-heavy-data" aria-label="The Hybrid Fix: Symlinking Heavy Data">The Hybrid Fix: Symlinking Heavy Data</a></li>
-            <li>
-                <a href="#step-by-step-setup-guide" aria-label="Step-by-Step Setup Guide">Step-by-Step Setup Guide</a><ul>
-                    
-            <li>
-                <a href="#1-ensure-your-ntfs-drive-auto-mounts-at-boot" aria-label="1. Ensure Your NTFS Drive Auto-Mounts at Boot">1. Ensure Your NTFS Drive Auto-Mounts at Boot</a></li>
-            <li>
-                <a href="#2-prepare-the-target-folders-on-the-ntfs-drive" aria-label="2. Prepare the Target Folders on the NTFS Drive">2. Prepare the Target Folders on the NTFS Drive</a></li>
-            <li>
-                <a href="#3-replace-your-local-folders-with-symlinks" aria-label="3. Replace Your Local Folders with Symlinks">3. Replace Your Local Folders with Symlinks</a></li></ul>
-            </li>
-            <li>
-                <a href="#verifying-the-setup" aria-label="Verifying the Setup">Verifying the Setup</a>
-            </li>
-        </ul>
-        </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="dual-booting-done-right-how-to-seamlessly-share-storage-between-linux-and-windows">Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows<a hidden class="anchor" aria-hidden="true" href="#dual-booting-done-right-how-to-seamlessly-share-storage-between-linux-and-windows">#</a></h1>
-<p>If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.</p>
-<p>The temptation to pick up your entire <code>/home</code> directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors.</p>
-<p>Here is why moving <code>/home</code> to NTFS breaks Linux, and how you can use a clever hybrid symlink setup to offload hundreds of gigabytes safely without touching your system&rsquo;s stability.</p>
-<hr>
-<h2 id="why-full-home-migration-to-ntfs-fails">Why Full <code>/home</code> Migration to NTFS Fails<a hidden class="anchor" aria-hidden="true" href="#why-full-home-migration-to-ntfs-fails">#</a></h2>
-<p>Linux relies heavily on POSIX file permissions (<code>chmod</code>, <code>chown</code>, file sockets, and execution bits). Every time you log in, your desktop manager reads hidden dotfiles in <code>/home/username/</code> (like <code>.config</code> and <code>.local</code>) to understand who owns what file and what executable rights they hold.</p>
-<p>Windows&rsquo; NTFS filesystem operates on an entirely different permission model (ACLs). When Linux mounts an NTFS drive, it can only assign a single set of blanket permissions across every file on that partition.</p>
-<p>If your entire <code>/home</code> folder sits on an NTFS partition:</p>
-<ul>
-<li><strong>Security protocols fail:</strong> Apps like SSH or GPG will refuse to run because their configuration files are marked as &ldquo;too open.&rdquo;</li>
-<li><strong>Desktop environments break:</strong> XFCE, GNOME, or KDE cannot set proper ownership flags on temporary desktop sockets, causing instant login loops.</li>
-<li><strong>Executables stall:</strong> Software relying on local execution flags inside <code>.local/bin</code> loses its runnable status.</li>
-</ul>
-<hr>
-<h2 id="the-hybrid-fix-symlinking-heavy-data">The Hybrid Fix: Symlinking Heavy Data<a hidden class="anchor" aria-hidden="true" href="#the-hybrid-fix-symlinking-heavy-data">#</a></h2>
-<p>You don&rsquo;t need to migrate your entire <code>/home</code> directory to reclaim space. The system files making up your desktop configurations take up a few gigabytes at most. The real space-hogs are your media and user directories: <code>Downloads</code>, <code>Videos</code>, <code>Music</code>, <code>Documents</code>, and <code>Steam Library</code>.</p>
-<p>By keeping your essential dotfiles on your primary Linux drive (formatted in <code>ext4</code> or <code>Btrfs</code>) and linking heavy data folders to your NTFS drive using symbolic links (<strong>symlinks</strong>), you get the best of both worlds: zero system instability and massive storage relief.</p>
-<pre tabindex="0"><code>/home/user/               &lt;-- Stays on primary fast Linux SSD (ext4)
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#dual-booting-done-right-how-to-seamlessly-share-storage-between-linux-and-windows aria-label="Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows">Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows</a><ul><li><a href=#why-full-home-migration-to-ntfs-fails aria-label="Why Full /home Migration to NTFS Fails">Why Full /home Migration to NTFS Fails</a></li><li><a href=#the-hybrid-fix-symlinking-heavy-data aria-label="The Hybrid Fix: Symlinking Heavy Data">The Hybrid Fix: Symlinking Heavy Data</a></li><li><a href=#step-by-step-setup-guide aria-label="Step-by-Step Setup Guide">Step-by-Step Setup Guide</a><ul><li><a href=#1-ensure-your-ntfs-drive-auto-mounts-at-boot aria-label="1. Ensure Your NTFS Drive Auto-Mounts at Boot">1. Ensure Your NTFS Drive Auto-Mounts at Boot</a></li><li><a href=#2-prepare-the-target-folders-on-the-ntfs-drive aria-label="2. Prepare the Target Folders on the NTFS Drive">2. Prepare the Target Folders on the NTFS Drive</a></li><li><a href=#3-replace-your-local-folders-with-symlinks aria-label="3. Replace Your Local Folders with Symlinks">3. Replace Your Local Folders with Symlinks</a></li></ul></li><li><a href=#verifying-the-setup aria-label="Verifying the Setup">Verifying the Setup</a></li></ul></li></ul></div></details><div class="post-content md-content"><h1 id=dual-booting-done-right-how-to-seamlessly-share-storage-between-linux-and-windows>Dual-Booting Done Right: How to Seamlessly Share Storage Between Linux and Windows<a hidden class=anchor aria-hidden=true href=#dual-booting-done-right-how-to-seamlessly-share-storage-between-linux-and-windows>#</a></h1><p>If you run a dual-boot system or keep a massive secondary hard drive formatted in NTFS for legacy reasons, you have likely run into the storage dilemma. Linux thrives on fast SSD space, but games, video archives, and heavy download folders quickly eat up your primary partition.</p><p>The temptation to pick up your entire <code>/home</code> directory and drop it straight onto an NTFS drive is strong. It seems like the cleanest, fastest fix. But if you have ever tried it, you probably met a wall of login loops, broken desktop themes, or weird permission errors.</p><p>Here is why moving <code>/home</code> to NTFS breaks Linux, and how you can use a clever hybrid symlink setup to offload hundreds of gigabytes safely without touching your system&rsquo;s stability.</p><hr><h2 id=why-full-home-migration-to-ntfs-fails>Why Full <code>/home</code> Migration to NTFS Fails<a hidden class=anchor aria-hidden=true href=#why-full-home-migration-to-ntfs-fails>#</a></h2><p>Linux relies heavily on POSIX file permissions (<code>chmod</code>, <code>chown</code>, file sockets, and execution bits). Every time you log in, your desktop manager reads hidden dotfiles in <code>/home/username/</code> (like <code>.config</code> and <code>.local</code>) to understand who owns what file and what executable rights they hold.</p><p>Windows&rsquo; NTFS filesystem operates on an entirely different permission model (ACLs). When Linux mounts an NTFS drive, it can only assign a single set of blanket permissions across every file on that partition.</p><p>If your entire <code>/home</code> folder sits on an NTFS partition:</p><ul><li><strong>Security protocols fail:</strong> Apps like SSH or GPG will refuse to run because their configuration files are marked as &ldquo;too open.&rdquo;</li><li><strong>Desktop environments break:</strong> XFCE, GNOME, or KDE cannot set proper ownership flags on temporary desktop sockets, causing instant login loops.</li><li><strong>Executables stall:</strong> Software relying on local execution flags inside <code>.local/bin</code> loses its runnable status.</li></ul><hr><h2 id=the-hybrid-fix-symlinking-heavy-data>The Hybrid Fix: Symlinking Heavy Data<a hidden class=anchor aria-hidden=true href=#the-hybrid-fix-symlinking-heavy-data>#</a></h2><p>You don&rsquo;t need to migrate your entire <code>/home</code> directory to reclaim space. The system files making up your desktop configurations take up a few gigabytes at most. The real space-hogs are your media and user directories: <code>Downloads</code>, <code>Videos</code>, <code>Music</code>, <code>Documents</code>, and <code>Steam Library</code>.</p><p>By keeping your essential dotfiles on your primary Linux drive (formatted in <code>ext4</code> or <code>Btrfs</code>) and linking heavy data folders to your NTFS drive using symbolic links (<strong>symlinks</strong>), you get the best of both worlds: zero system instability and massive storage relief.</p><pre tabindex=0><code>/home/user/               &lt;-- Stays on primary fast Linux SSD (ext4)
 ├── .config/              &lt;-- Permissions preserved!
 ├── .local/               &lt;-- Native speed &amp; stability!
 ├── Downloads/  ---------&gt; [Symlink] ---&gt; /mnt/Data/Downloads (NTFS Drive)
 ├── Videos/     ---------&gt; [Symlink] ---&gt; /mnt/Data/Videos    (NTFS Drive)
 └── Documents/  ---------&gt; [Symlink] ---&gt; /mnt/Data/Documents (NTFS Drive)
-</code></pre><hr>
-<h2 id="step-by-step-setup-guide">Step-by-Step Setup Guide<a hidden class="anchor" aria-hidden="true" href="#step-by-step-setup-guide">#</a></h2>
-<h3 id="1-ensure-your-ntfs-drive-auto-mounts-at-boot">1. Ensure Your NTFS Drive Auto-Mounts at Boot<a hidden class="anchor" aria-hidden="true" href="#1-ensure-your-ntfs-drive-auto-mounts-at-boot">#</a></h3>
-<p>For symbolic links to work seamlessly, your NTFS drive must mount to the exact same folder every time your PC boots up.</p>
-<ol>
-<li>Open <strong>GNOME Disks</strong> (or <strong>MX Mounting Tools</strong> if you are on MX Linux).</li>
-<li>Select your secondary NTFS drive from the panel on the left.</li>
-<li>Click the <strong>Gear icon (Additional partition options)</strong> underneath the partition layout and select <strong>Edit Mount Options&hellip;</strong>.</li>
-<li>Toggle <strong>User Session Defaults</strong> to <strong>OFF</strong>.</li>
-<li>Ensure <strong>Mount at system startup</strong> is checked.</li>
-<li>Set a clean <strong>Mount Point</strong> path, such as <code>/mnt/Data</code> (or note down your current path, like <code>/media/yourusername/Data</code>).</li>
-<li>Click <strong>OK</strong> and enter your root password to save.</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Verify your drive is mounted properly by checking its mount path</span>
-</span></span><span style="display:flex;"><span>df -h | grep /mnt/Data
-</span></span></code></pre></div><hr>
-<h3 id="2-prepare-the-target-folders-on-the-ntfs-drive">2. Prepare the Target Folders on the NTFS Drive<a hidden class="anchor" aria-hidden="true" href="#2-prepare-the-target-folders-on-the-ntfs-drive">#</a></h3>
-<p>Open your terminal or file manager, navigate to your mounted NTFS drive, and create the directories you intend to offload.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /mnt/Data/Downloads
-</span></span><span style="display:flex;"><span>mkdir -p /mnt/Data/Videos
-</span></span><span style="display:flex;"><span>mkdir -p /mnt/Data/Documents
-</span></span></code></pre></div><hr>
-<h3 id="3-replace-your-local-folders-with-symlinks">3. Replace Your Local Folders with Symlinks<a hidden class="anchor" aria-hidden="true" href="#3-replace-your-local-folders-with-symlinks">#</a></h3>
-<p>Before creating a symlink in your Linux home directory, you must remove or rename the existing empty default folder.</p>
-<ol>
-<li><strong>Remove the old, empty default folder:</strong></li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf ~/Downloads
-</span></span></code></pre></div><ol start="2">
-<li><strong>Create the symbolic link using <code>ln -s</code>:</strong></li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln -s /mnt/Data/Downloads ~/Downloads
-</span></span></code></pre></div><ol start="3">
-<li><strong>Repeat the process for other heavy directories:</strong></li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Offload Videos</span>
-</span></span><span style="display:flex;"><span>rm -rf ~/Videos
-</span></span><span style="display:flex;"><span>ln -s /mnt/Data/Videos ~/Videos
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Offload Documents</span>
-</span></span><span style="display:flex;"><span>rm -rf ~/Documents
-</span></span><span style="display:flex;"><span>ln -s /mnt/Data/Documents ~/Documents
-</span></span></code></pre></div><hr>
-<h2 id="verifying-the-setup">Verifying the Setup<a hidden class="anchor" aria-hidden="true" href="#verifying-the-setup">#</a></h2>
-<p>Run an <code>ls -la</code> in your terminal to view your home directory list. You will notice your folders now display a clear arrow routing directly to your NTFS storage path:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -la ~ | grep <span style="color:#e6db74">&#34;-&gt;&#34;</span>
-</span></span></code></pre></div><p><strong>Output:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>lrwxrwxrwx  1 user user   19 Aug  4 17:30 Downloads -&gt; /mnt/Data/Downloads
-</span></span><span style="display:flex;"><span>lrwxrwxrwx  1 user user   16 Aug  4 17:31 Videos -&gt; /mnt/Data/Videos
-</span></span><span style="display:flex;"><span>lrwxrwxrwx  1 user user   19 Aug  4 17:31 Documents -&gt; /mnt/Data/Documents
-</span></span></code></pre></div><p>Whenever a web browser saves a file to <code>~/Downloads</code> or a video editor outputs to <code>~/Videos</code>, the data streams directly onto your secondary NTFS drive. Meanwhile, your Linux system files stay safe, fast, and fully compliant on your primary drive.</p>
-<p>No broken permissions, no <code>/etc/fstab</code> panic, and zero OS login issues.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/mx-linux/">Mx-Linux</a></li>
-      <li><a href="//localhost:1313/tags/ntfs/">Ntfs</a></li>
-      <li><a href="//localhost:1313/tags/symlinks/">Symlinks</a></li>
-      <li><a href="//localhost:1313/tags/fstab/">Fstab</a></li>
-      <li><a href="//localhost:1313/tags/xfce/">XFCE</a></li>
-      <li><a href="//localhost:1313/tags/storage-optimization/">Storage-Optimization</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-ai/">
-    <span class="title">« Prev</span>
-    <span></span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><hr><h2 id=step-by-step-setup-guide>Step-by-Step Setup Guide<a hidden class=anchor aria-hidden=true href=#step-by-step-setup-guide>#</a></h2><h3 id=1-ensure-your-ntfs-drive-auto-mounts-at-boot>1. Ensure Your NTFS Drive Auto-Mounts at Boot<a hidden class=anchor aria-hidden=true href=#1-ensure-your-ntfs-drive-auto-mounts-at-boot>#</a></h3><p>For symbolic links to work seamlessly, your NTFS drive must mount to the exact same folder every time your PC boots up.</p><ol><li>Open <strong>GNOME Disks</strong> (or <strong>MX Mounting Tools</strong> if you are on MX Linux).</li><li>Select your secondary NTFS drive from the panel on the left.</li><li>Click the <strong>Gear icon (Additional partition options)</strong> underneath the partition layout and select <strong>Edit Mount Options&mldr;</strong>.</li><li>Toggle <strong>User Session Defaults</strong> to <strong>OFF</strong>.</li><li>Ensure <strong>Mount at system startup</strong> is checked.</li><li>Set a clean <strong>Mount Point</strong> path, such as <code>/mnt/Data</code> (or note down your current path, like <code>/media/yourusername/Data</code>).</li><li>Click <strong>OK</strong> and enter your root password to save.</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Verify your drive is mounted properly by checking its mount path</span>
+</span></span><span style=display:flex><span>df -h | grep /mnt/Data
+</span></span></code></pre></div><hr><h3 id=2-prepare-the-target-folders-on-the-ntfs-drive>2. Prepare the Target Folders on the NTFS Drive<a hidden class=anchor aria-hidden=true href=#2-prepare-the-target-folders-on-the-ntfs-drive>#</a></h3><p>Open your terminal or file manager, navigate to your mounted NTFS drive, and create the directories you intend to offload.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>mkdir -p /mnt/Data/Downloads
+</span></span><span style=display:flex><span>mkdir -p /mnt/Data/Videos
+</span></span><span style=display:flex><span>mkdir -p /mnt/Data/Documents
+</span></span></code></pre></div><hr><h3 id=3-replace-your-local-folders-with-symlinks>3. Replace Your Local Folders with Symlinks<a hidden class=anchor aria-hidden=true href=#3-replace-your-local-folders-with-symlinks>#</a></h3><p>Before creating a symlink in your Linux home directory, you must remove or rename the existing empty default folder.</p><ol><li><strong>Remove the old, empty default folder:</strong></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>rm -rf ~/Downloads
+</span></span></code></pre></div><ol start=2><li><strong>Create the symbolic link using <code>ln -s</code>:</strong></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>ln -s /mnt/Data/Downloads ~/Downloads
+</span></span></code></pre></div><ol start=3><li><strong>Repeat the process for other heavy directories:</strong></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Offload Videos</span>
+</span></span><span style=display:flex><span>rm -rf ~/Videos
+</span></span><span style=display:flex><span>ln -s /mnt/Data/Videos ~/Videos
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Offload Documents</span>
+</span></span><span style=display:flex><span>rm -rf ~/Documents
+</span></span><span style=display:flex><span>ln -s /mnt/Data/Documents ~/Documents
+</span></span></code></pre></div><hr><h2 id=verifying-the-setup>Verifying the Setup<a hidden class=anchor aria-hidden=true href=#verifying-the-setup>#</a></h2><p>Run an <code>ls -la</code> in your terminal to view your home directory list. You will notice your folders now display a clear arrow routing directly to your NTFS storage path:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>ls -la ~ | grep <span style=color:#e6db74>&#34;-&gt;&#34;</span>
+</span></span></code></pre></div><p><strong>Output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>lrwxrwxrwx  1 user user   19 Aug  4 17:30 Downloads -&gt; /mnt/Data/Downloads
+</span></span><span style=display:flex><span>lrwxrwxrwx  1 user user   16 Aug  4 17:31 Videos -&gt; /mnt/Data/Videos
+</span></span><span style=display:flex><span>lrwxrwxrwx  1 user user   19 Aug  4 17:31 Documents -&gt; /mnt/Data/Documents
+</span></span></code></pre></div><p>Whenever a web browser saves a file to <code>~/Downloads</code> or a video editor outputs to <code>~/Videos</code>, the data streams directly onto your secondary NTFS drive. Meanwhile, your Linux system files stay safe, fast, and fully compliant on your primary drive.</p><p>No broken permissions, no <code>/etc/fstab</code> panic, and zero OS login issues.</p></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/mx-linux/>Mx-Linux</a></li><li><a href=/tags/ntfs/>Ntfs</a></li><li><a href=/tags/symlinks/>Symlinks</a></li><li><a href=/tags/fstab/>Fstab</a></li><li><a href=/tags/xfce/>Xfce</a></li><li><a href=/tags/storage-optimization/>Storage-Optimization</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-books/><span class=title>« Prev</span>
+<span>Cross-Browser Bookmark Sync: A Deep-Dive Comparison of Floccus, BookmarkHub, MarkSyncr, and EverSync</span>
+</a><a class=next href=/posts/2026-08-04-ssd-mint/><span class=title>Next »</span>
+<span>Essential Linux Mint Guides: Unlocking Encrypted Drives & Enabling Edge Copilot</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

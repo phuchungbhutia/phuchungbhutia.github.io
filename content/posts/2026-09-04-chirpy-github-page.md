@@ -1,6 +1,6 @@
 ---
 title: "Deploying Jekyll Chirpy on GitHub Pages: The Complete Setup, CI/CD Pipeline, and Bug-Fix Playbook"
-date: "2026-09-04 13:30:00 +0530"
+date: "2026-09-04T13:30:00+05:30"
 categories: ["Web Development", "GitHub Pages"]
 tags: ["jekyll", "chirpy", "github-actions", "htmlproofer", "python", "devops", "troubleshooting"]
 ---
@@ -514,7 +514,7 @@ When adding new content, follow this standardized template structure:
 ```markdown
 ---
 title: "Standard Operating Procedures for Local Fund Audits in Sikkim"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Public Finance", "Audit and Governance"]
 tags: ["local-fund-audit", "panchayat", "sikkim", "dcb-statement"]
 description: "Comprehensive guidance on audit requisition procedures, cashbook reconciliation, and statutory compliance."

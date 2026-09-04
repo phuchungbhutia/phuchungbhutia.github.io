@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Image-Processing on Technical Journal</title>
-    <link>//localhost:1313/tags/image-processing/</link>
-    <description>Recent content in Image-Processing on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title>
-      <link>//localhost:1313/posts/2026-08-05-ocr2md/</link>
-      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-ocr2md/</guid>
-      <description>&lt;h1 id=&#34;building-ocr2md-a-complete-ocr-to-markdown-platform&#34;&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Image-Processing on Technical Journal</title><link>/tags/image-processing/</link><description>Recent content in Image-Processing on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="/tags/image-processing/index.xml" rel="self" type="application/rss+xml"/><item><title>Building OCR2MD: From a Simple OCR Script to a Production-Ready OCR-to-Markdown Platform</title><link>/posts/2026-08-05-ocr2md/</link><pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate><guid>/posts/2026-08-05-ocr2md/</guid><description>&lt;h1 id="building-ocr2md-a-complete-ocr-to-markdown-platform"&gt;Building OCR2MD: A Complete OCR-to-Markdown Platform&lt;/h1&gt;
 &lt;p&gt;Modern organizations deal with thousands of scanned documents every year. Reports, invoices, audit records, government files, historical archives, handwritten forms, meeting notes, and books often exist only as scanned PDFs or images.&lt;/p&gt;
 &lt;p&gt;Extracting this information into a structured format is surprisingly difficult.&lt;/p&gt;
-&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;Most OCR tools only recover plain text. Tables lose their structure, headings become paragraphs, images disappear, and manually cleaning the results consumes far more time than the OCR itself.&lt;/p&gt;</description></item></channel></rss>

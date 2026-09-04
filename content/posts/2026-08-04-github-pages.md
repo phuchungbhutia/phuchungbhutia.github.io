@@ -1,6 +1,6 @@
 ---
 title: "How to Create a Blog Using GitHub Pages and Jekyll: A Complete Guide"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["blogging", "github", "jekyll", "web development"]
 tags: ["GitHub Pages", "Jekyll", "blog setup", "static site", "tutorial"]
 ---
@@ -91,7 +91,7 @@ Every post needs **Front Matter** at the very top:
 ```yaml
 ---
 title: "My First Blog Post"
-date: 2026-08-04 10:00:00 +0000
+date: "2026-08-04T10:00:00+05:30"
 categories: [tech]
 tags: [tutorial, jekyll]
 ---

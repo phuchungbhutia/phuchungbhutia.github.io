@@ -1,6 +1,6 @@
 ---
 title: "Automating Financial Report Generation Using Python and Markdown"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Automation", "Data Processing"]
 tags: ["python", "markdown", "reporting", "2026"]
 description: "Build a reproducible pipeline to transform raw financial datasets into polished Markdown and PDF audit reports using Python."

@@ -1,6 +1,6 @@
 ---
 title: "Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Web Scraping", "JavaScript"]
 tags: ["eGramSwaraj", "Sikkim LFA", "Bookmarklet", "Async JS", "DOM Mining", "2026"]
 description: "A comprehensive guide on engineering a high-speed, parallel JavaScript bookmarklet scraper to extract financial records from eGramSwaraj and Sikkim LFA portals accurately."

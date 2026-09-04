@@ -1,6 +1,6 @@
 ---
 title: "Linux Mint Power-User Manual: HP Printers, Dependencies, Fonts, and Package Management"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "System Administration", "Open Source"]
 tags: ["linux-mint", "hplip", "cups", "apt", "dpkg", "libreoffice", "fonts"]
 ---

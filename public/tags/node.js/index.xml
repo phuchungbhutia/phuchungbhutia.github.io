@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Node.js on Technical Journal</title>
-    <link>//localhost:1313/tags/node.js/</link>
-    <description>Recent content in Node.js on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The 90-Day Blueprint to Becoming a Full-Stack Developer: From Zero to AI-Powered Apps</title>
-      <link>//localhost:1313/posts/2026-08-04-90days-fullstack/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-90days-fullstack/</guid>
-      <description>&lt;p&gt;Ninety days sounds tight. If you ask ten senior engineers how long it takes to become job-ready, most will say a year or two. They aren&amp;rsquo;t lying, but they are assuming traditional computer science degree timelines or casual self-study. If you cut out the noise, focus on production-grade tools, and ship real projects every single week, three months is plenty of time to build a formidable foundation.&lt;/p&gt;
-&lt;p&gt;This blueprint breaks down the exact 90-day trajectory. We start with raw web fundamentals, move into modern frontend architectures, build scalable backends, automate infrastructure with DevOps, and wrap up by wiring AI intelligence directly into full-stack applications.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Node.js on Technical Journal</title><link>/tags/node.js/</link><description>Recent content in Node.js on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/node.js/index.xml" rel="self" type="application/rss+xml"/><item><title>The 90-Day Blueprint to Becoming a Full-Stack Developer: From Zero to AI-Powered Apps</title><link>/posts/2026-08-04-90days-fullstack/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-90days-fullstack/</guid><description>&lt;p&gt;Ninety days sounds tight. If you ask ten senior engineers how long it takes to become job-ready, most will say a year or two. They aren&amp;rsquo;t lying, but they are assuming traditional computer science degree timelines or casual self-study. If you cut out the noise, focus on production-grade tools, and ship real projects every single week, three months is plenty of time to build a formidable foundation.&lt;/p&gt;
+&lt;p&gt;This blueprint breaks down the exact 90-day trajectory. We start with raw web fundamentals, move into modern frontend architectures, build scalable backends, automate infrastructure with DevOps, and wrap up by wiring AI intelligence directly into full-stack applications.&lt;/p&gt;</description></item></channel></rss>

@@ -1,6 +1,6 @@
 ---
 title: "Bypassing Faulty CMOS Batteries in Linux Mint and Manjaro with Automated Network Time Sync"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Linux", "System Administration"]
 tags: ["linux-mint", "manjaro", "systemd", "ntp", "cmos", "bash-scripting", "troubleshooting"]
 ---

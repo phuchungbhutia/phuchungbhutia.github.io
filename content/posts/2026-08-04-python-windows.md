@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Python, Pip, and Path Issues on Windows: A Step-by-Step Recovery Guide"
-date: 2026-08-04
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Programming", "Python", "DevOps"]
 tags: ["Python", "Windows", "PowerShell", "Pip", "Troubleshooting", "Environment Variables"]
 ---

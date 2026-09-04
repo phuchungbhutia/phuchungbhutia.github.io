@@ -1,24 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Cooking on Technical Journal</title>
-    <link>//localhost:1313/categories/cooking/</link>
-    <description>Recent content in Cooking on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 07:54:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/cooking/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Easy One-Pot Cooking: From Cupcakes to Pulao, Biryani &amp; Palak Recipes</title>
-      <link>//localhost:1313/posts/2026-08-05-onepot-recipe/</link>
-      <pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-onepot-recipe/</guid>
-      <description>&lt;h1 id=&#34;easy-one-pot-cooking-from-cupcakes-to-pulao-biryani--palak-recipes&#34;&gt;Easy One-Pot Cooking: From Cupcakes to Pulao, Biryani &amp;amp; Palak Recipes&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Cooking on Technical Journal</title><link>/categories/cooking/</link><description>Recent content in Cooking on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 07:54:00 +0530</lastBuildDate><atom:link href="/categories/cooking/index.xml" rel="self" type="application/rss+xml"/><item><title>Easy One-Pot Cooking: From Cupcakes to Pulao, Biryani &amp; Palak Recipes</title><link>/posts/2026-08-05-onepot-recipe/</link><pubDate>Wed, 05 Aug 2026 07:54:00 +0530</pubDate><guid>/posts/2026-08-05-onepot-recipe/</guid><description>&lt;h1 id="easy-one-pot-cooking-from-cupcakes-to-pulao-biryani--palak-recipes"&gt;Easy One-Pot Cooking: From Cupcakes to Pulao, Biryani &amp;amp; Palak Recipes&lt;/h1&gt;
 &lt;p&gt;Cooking doesn&amp;rsquo;t have to be complicated. With a few pantry staples, fresh vegetables, and a pressure cooker, you can prepare delicious meals with minimal effort.&lt;/p&gt;
 &lt;p&gt;This guide combines easy baking, rice dishes, one-pot meals, and spinach recipes into one practical collection.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;easy-fruit-cupcakes&#34;&gt;Easy Fruit Cupcakes&lt;/h1&gt;
-&lt;h2 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h2&gt;
+&lt;h1 id="easy-fruit-cupcakes"&gt;Easy Fruit Cupcakes&lt;/h1&gt;
+&lt;h2 id="ingredients"&gt;Ingredients&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;1½ cups all-purpose flour&lt;/li&gt;
 &lt;li&gt;1 tsp baking powder&lt;/li&gt;
@@ -29,7 +14,4 @@
 &lt;li&gt;½ cup soyabean oil&lt;/li&gt;
 &lt;li&gt;1 tsp vanilla essence&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Choose one:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;Choose one:&lt;/p&gt;</description></item></channel></rss>

@@ -1,98 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Building an Ultra-Realistic AI Photo Restoration Prompt | Technical Journal</title>
-<meta name="keywords" content="photo-restoration, image-enhancement, prompt-engineering, archival, ai">
-<meta name="description" content="Building an Ultra-Realistic AI Photo Restoration Prompt
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Building an Ultra-Realistic AI Photo Restoration Prompt | Technical Journal</title><meta name=keywords content="photo-restoration,image-enhancement,prompt-engineering,archival,ai"><meta name=description content="Building an Ultra-Realistic AI Photo Restoration Prompt
 Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.
 The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.
 Design Goals
-The restoration prompt focuses on five principles:">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-05-ai-photo-prompt/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-05-ai-photo-prompt/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-05-ai-photo-prompt/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="Building an Ultra-Realistic AI Photo Restoration Prompt">
-  <meta property="og:description" content="Building an Ultra-Realistic AI Photo Restoration Prompt Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.
+The restoration prompt focuses on five principles:"><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-05-ai-photo-prompt/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-05-ai-photo-prompt/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-05-ai-photo-prompt/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="Building an Ultra-Realistic AI Photo Restoration Prompt"><meta property="og:description" content="Building an Ultra-Realistic AI Photo Restoration Prompt Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.
 The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.
-Design Goals The restoration prompt focuses on five principles:">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-05T07:55:00+05:30">
-    <meta property="article:modified_time" content="2026-08-05T07:55:00+05:30">
-    <meta property="article:tag" content="Photo Restoration">
-    <meta property="article:tag" content="Image-Enhancement">
-    <meta property="article:tag" content="Prompt Engineering">
-    <meta property="article:tag" content="Archival">
-    <meta property="article:tag" content="AI">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Building an Ultra-Realistic AI Photo Restoration Prompt">
-  <meta name="twitter:description" content="Building an Ultra-Realistic AI Photo Restoration Prompt Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.
+Design Goals The restoration prompt focuses on five principles:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-05T07:55:00+05:30"><meta property="article:modified_time" content="2026-08-05T07:55:00+05:30"><meta property="article:tag" content="Photo-Restoration"><meta property="article:tag" content="Image-Enhancement"><meta property="article:tag" content="Prompt Engineering"><meta property="article:tag" content="Archival"><meta property="article:tag" content="Ai"><meta name=twitter:card content="summary"><meta name=twitter:title content="Building an Ultra-Realistic AI Photo Restoration Prompt"><meta name=twitter:description content="Building an Ultra-Realistic AI Photo Restoration Prompt Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.
 The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.
-Design Goals The restoration prompt focuses on five principles:">
-
-
-<script type="application/ld+json">
+Design Goals The restoration prompt focuses on five principles:"><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -101,18 +15,17 @@ Design Goals The restoration prompt focuses on five principles:">
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Building an Ultra-Realistic AI Photo Restoration Prompt",
-      "item": "//localhost:1313/posts/2026-08-05-ai-photo-prompt/"
+      "item": "/posts/2026-08-05-ai-photo-prompt/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -133,380 +46,27 @@ Design Goals The restoration prompt focuses on five principles:">
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-05-ai-photo-prompt/"
+    "@id": "/posts/2026-08-05-ai-photo-prompt/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      Building an Ultra-Realistic AI Photo Restoration Prompt
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-05 07:55:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#building-an-ultra-realistic-ai-photo-restoration-prompt" aria-label="Building an Ultra-Realistic AI Photo Restoration Prompt">Building an Ultra-Realistic AI Photo Restoration Prompt</a><ul>
-                    
-            <li>
-                <a href="#design-goals" aria-label="Design Goals">Design Goals</a></li></ul>
-            </li>
-            <li>
-                <a href="#restoration-workflow" aria-label="Restoration Workflow">Restoration Workflow</a><ul>
-                    
-            <li>
-                <a href="#phase-1--damage-analysis" aria-label="Phase 1 — Damage Analysis">Phase 1 — Damage Analysis</a></li>
-            <li>
-                <a href="#phase-2--intelligent-reconstruction" aria-label="Phase 2 — Intelligent Reconstruction">Phase 2 — Intelligent Reconstruction</a></li>
-            <li>
-                <a href="#phase-3--background-repair" aria-label="Phase 3 — Background Repair">Phase 3 — Background Repair</a></li>
-            <li>
-                <a href="#phase-4--texture-preservation" aria-label="Phase 4 — Texture Preservation">Phase 4 — Texture Preservation</a></li>
-            <li>
-                <a href="#phase-5--colorization" aria-label="Phase 5 — Colorization">Phase 5 — Colorization</a></li></ul>
-            </li>
-            <li>
-                <a href="#composition-improvements" aria-label="Composition Improvements">Composition Improvements</a></li>
-            <li>
-                <a href="#final-output" aria-label="Final Output">Final Output</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="building-an-ultra-realistic-ai-photo-restoration-prompt">Building an Ultra-Realistic AI Photo Restoration Prompt<a hidden class="anchor" aria-hidden="true" href="#building-an-ultra-realistic-ai-photo-restoration-prompt">#</a></h1>
-<p>Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.</p>
-<p>The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.</p>
-<h2 id="design-goals">Design Goals<a hidden class="anchor" aria-hidden="true" href="#design-goals">#</a></h2>
-<p>The restoration prompt focuses on five principles:</p>
-<ul>
-<li>Preserve identity</li>
-<li>Preserve composition</li>
-<li>Restore damaged details</li>
-<li>Avoid artificial AI artifacts</li>
-<li>Produce archival-quality output</li>
-</ul>
-<p>Instead of asking AI to generate a &ldquo;better&rdquo; image, the prompt instructs it to repair the existing one.</p>
-<hr>
-<h1 id="restoration-workflow">Restoration Workflow<a hidden class="anchor" aria-hidden="true" href="#restoration-workflow">#</a></h1>
-<h2 id="phase-1--damage-analysis">Phase 1 — Damage Analysis<a hidden class="anchor" aria-hidden="true" href="#phase-1--damage-analysis">#</a></h2>
-<p>The first step identifies image defects including:</p>
-<ul>
-<li>Scratches</li>
-<li>Tears</li>
-<li>Dust</li>
-<li>Film grain</li>
-<li>Compression artifacts</li>
-<li>Blur</li>
-<li>Missing regions</li>
-</ul>
-<p>Rather than immediately sharpening everything, the workflow first determines which areas require reconstruction.</p>
-<hr>
-<h2 id="phase-2--intelligent-reconstruction">Phase 2 — Intelligent Reconstruction<a hidden class="anchor" aria-hidden="true" href="#phase-2--intelligent-reconstruction">#</a></h2>
-<p>Damaged faces receive the highest priority.</p>
-<p>The AI restores:</p>
-<ul>
-<li>Eyes</li>
-<li>Nose</li>
-<li>Lips</li>
-<li>Ears</li>
-<li>Hairline</li>
-<li>Facial contours</li>
-</ul>
-<p>Body parts, clothing, medals, ornaments, and accessories are reconstructed using surrounding information while preserving the original pose.</p>
-<hr>
-<h2 id="phase-3--background-repair">Phase 3 — Background Repair<a hidden class="anchor" aria-hidden="true" href="#phase-3--background-repair">#</a></h2>
-<p>Many historical photos contain damaged backgrounds.</p>
-<p>Instead of inventing entirely new scenery, the AI fills missing areas using contextual inference.</p>
-<p>Examples include:</p>
-<ul>
-<li>Walls</li>
-<li>Windows</li>
-<li>Trees</li>
-<li>Architecture</li>
-<li>Furniture</li>
-<li>Curtains</li>
-</ul>
-<p>The objective is seamless restoration without altering the original scene.</p>
-<hr>
-<h2 id="phase-4--texture-preservation">Phase 4 — Texture Preservation<a hidden class="anchor" aria-hidden="true" href="#phase-4--texture-preservation">#</a></h2>
-<p>One of the biggest problems in AI restoration is over-smoothing.</p>
-<p>Instead of plastic-looking skin, the workflow preserves:</p>
-<ul>
-<li>Skin texture</li>
-<li>Fabric weave</li>
-<li>Wood grain</li>
-<li>Stone texture</li>
-<li>Film characteristics</li>
-</ul>
-<p>Natural detail is always preferred over artificial perfection.</p>
-<hr>
-<h2 id="phase-5--colorization">Phase 5 — Colorization<a hidden class="anchor" aria-hidden="true" href="#phase-5--colorization">#</a></h2>
-<p>When colorization is requested, the AI should use historically plausible colors.</p>
-<p>Examples include:</p>
-<ul>
-<li>Natural skin tones</li>
-<li>Period-accurate clothing</li>
-<li>Correct metallic colors for medals</li>
-<li>Authentic environmental lighting</li>
-</ul>
-<p>Color should complement the original image rather than modernize it.</p>
-<hr>
-<h1 id="composition-improvements">Composition Improvements<a hidden class="anchor" aria-hidden="true" href="#composition-improvements">#</a></h1>
-<p>The workflow also improves presentation.</p>
-<p>Optional enhancements include:</p>
-<ul>
-<li>Straightening tilted photos</li>
-<li>Cropping while preserving composition</li>
-<li>White archival border</li>
-<li>Print-ready resolution</li>
-</ul>
-<hr>
-<h1 id="final-output">Final Output<a hidden class="anchor" aria-hidden="true" href="#final-output">#</a></h1>
-<p>The completed restoration should be:</p>
-<ul>
-<li>High resolution</li>
-<li>Print ready</li>
-<li>Historically faithful</li>
-<li>Emotionally authentic</li>
-<li>Suitable for museums, family archives, and exhibitions</li>
-</ul>
-<p>The objective is restoration—not reinterpretation.</p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/photo-restoration/">Photo Restoration</a></li>
-      <li><a href="//localhost:1313/tags/image-enhancement/">Image-Enhancement</a></li>
-      <li><a href="//localhost:1313/tags/prompt-engineering/">Prompt Engineering</a></li>
-      <li><a href="//localhost:1313/tags/archival/">Archival</a></li>
-      <li><a href="//localhost:1313/tags/ai/">AI</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-05-ai-chatting/">
-    <span class="title">« Prev</span>
-    <span>AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-05-vneditor/">
-    <span class="title">Next »</span>
-    <span>The Complete Beginner&#39;s Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Building an Ultra-Realistic AI Photo Restoration Prompt</h1><div class=post-meta><span title='2026-08-05 07:55:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#building-an-ultra-realistic-ai-photo-restoration-prompt aria-label="Building an Ultra-Realistic AI Photo Restoration Prompt">Building an Ultra-Realistic AI Photo Restoration Prompt</a><ul><li><a href=#design-goals aria-label="Design Goals">Design Goals</a></li></ul></li><li><a href=#restoration-workflow aria-label="Restoration Workflow">Restoration Workflow</a><ul><li><a href=#phase-1--damage-analysis aria-label="Phase 1 — Damage Analysis">Phase 1 — Damage Analysis</a></li><li><a href=#phase-2--intelligent-reconstruction aria-label="Phase 2 — Intelligent Reconstruction">Phase 2 — Intelligent Reconstruction</a></li><li><a href=#phase-3--background-repair aria-label="Phase 3 — Background Repair">Phase 3 — Background Repair</a></li><li><a href=#phase-4--texture-preservation aria-label="Phase 4 — Texture Preservation">Phase 4 — Texture Preservation</a></li><li><a href=#phase-5--colorization aria-label="Phase 5 — Colorization">Phase 5 — Colorization</a></li></ul></li><li><a href=#composition-improvements aria-label="Composition Improvements">Composition Improvements</a></li><li><a href=#final-output aria-label="Final Output">Final Output</a></li></ul></div></details><div class="post-content md-content"><h1 id=building-an-ultra-realistic-ai-photo-restoration-prompt>Building an Ultra-Realistic AI Photo Restoration Prompt<a hidden class=anchor aria-hidden=true href=#building-an-ultra-realistic-ai-photo-restoration-prompt>#</a></h1><p>Old photographs are more than images. They preserve family history, cultural heritage, and moments that can never be recreated. Unfortunately, many historical photographs suffer from scratches, fading, blur, dust, torn edges, and low resolution.</p><p>The goal of this project was to create a reusable prompt capable of producing museum-quality restorations while remaining faithful to the original photograph.</p><h2 id=design-goals>Design Goals<a hidden class=anchor aria-hidden=true href=#design-goals>#</a></h2><p>The restoration prompt focuses on five principles:</p><ul><li>Preserve identity</li><li>Preserve composition</li><li>Restore damaged details</li><li>Avoid artificial AI artifacts</li><li>Produce archival-quality output</li></ul><p>Instead of asking AI to generate a &ldquo;better&rdquo; image, the prompt instructs it to repair the existing one.</p><hr><h1 id=restoration-workflow>Restoration Workflow<a hidden class=anchor aria-hidden=true href=#restoration-workflow>#</a></h1><h2 id=phase-1--damage-analysis>Phase 1 — Damage Analysis<a hidden class=anchor aria-hidden=true href=#phase-1--damage-analysis>#</a></h2><p>The first step identifies image defects including:</p><ul><li>Scratches</li><li>Tears</li><li>Dust</li><li>Film grain</li><li>Compression artifacts</li><li>Blur</li><li>Missing regions</li></ul><p>Rather than immediately sharpening everything, the workflow first determines which areas require reconstruction.</p><hr><h2 id=phase-2--intelligent-reconstruction>Phase 2 — Intelligent Reconstruction<a hidden class=anchor aria-hidden=true href=#phase-2--intelligent-reconstruction>#</a></h2><p>Damaged faces receive the highest priority.</p><p>The AI restores:</p><ul><li>Eyes</li><li>Nose</li><li>Lips</li><li>Ears</li><li>Hairline</li><li>Facial contours</li></ul><p>Body parts, clothing, medals, ornaments, and accessories are reconstructed using surrounding information while preserving the original pose.</p><hr><h2 id=phase-3--background-repair>Phase 3 — Background Repair<a hidden class=anchor aria-hidden=true href=#phase-3--background-repair>#</a></h2><p>Many historical photos contain damaged backgrounds.</p><p>Instead of inventing entirely new scenery, the AI fills missing areas using contextual inference.</p><p>Examples include:</p><ul><li>Walls</li><li>Windows</li><li>Trees</li><li>Architecture</li><li>Furniture</li><li>Curtains</li></ul><p>The objective is seamless restoration without altering the original scene.</p><hr><h2 id=phase-4--texture-preservation>Phase 4 — Texture Preservation<a hidden class=anchor aria-hidden=true href=#phase-4--texture-preservation>#</a></h2><p>One of the biggest problems in AI restoration is over-smoothing.</p><p>Instead of plastic-looking skin, the workflow preserves:</p><ul><li>Skin texture</li><li>Fabric weave</li><li>Wood grain</li><li>Stone texture</li><li>Film characteristics</li></ul><p>Natural detail is always preferred over artificial perfection.</p><hr><h2 id=phase-5--colorization>Phase 5 — Colorization<a hidden class=anchor aria-hidden=true href=#phase-5--colorization>#</a></h2><p>When colorization is requested, the AI should use historically plausible colors.</p><p>Examples include:</p><ul><li>Natural skin tones</li><li>Period-accurate clothing</li><li>Correct metallic colors for medals</li><li>Authentic environmental lighting</li></ul><p>Color should complement the original image rather than modernize it.</p><hr><h1 id=composition-improvements>Composition Improvements<a hidden class=anchor aria-hidden=true href=#composition-improvements>#</a></h1><p>The workflow also improves presentation.</p><p>Optional enhancements include:</p><ul><li>Straightening tilted photos</li><li>Cropping while preserving composition</li><li>White archival border</li><li>Print-ready resolution</li></ul><hr><h1 id=final-output>Final Output<a hidden class=anchor aria-hidden=true href=#final-output>#</a></h1><p>The completed restoration should be:</p><ul><li>High resolution</li><li>Print ready</li><li>Historically faithful</li><li>Emotionally authentic</li><li>Suitable for museums, family archives, and exhibitions</li></ul><p>The objective is restoration—not reinterpretation.</p></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/photo-restoration/>Photo-Restoration</a></li><li><a href=/tags/image-enhancement/>Image-Enhancement</a></li><li><a href=/tags/prompt-engineering/>Prompt Engineering</a></li><li><a href=/tags/archival/>Archival</a></li><li><a href=/tags/ai/>Ai</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-05-ai-chatting/><span class=title>« Prev</span>
+<span>AI on WhatsApp and Telegram: Complete Guide to Chatting with ChatGPT, Perplexity, Meta AI, and More</span>
+</a><a class=next href=/posts/2026-08-05-vneditor/><span class=title>Next »</span>
+<span>The Complete Beginner's Guide to Creating Cinematic Travel Videos with VN Editor and DaVinci Resolve</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

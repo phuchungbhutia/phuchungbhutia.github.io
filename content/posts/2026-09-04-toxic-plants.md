@@ -1,6 +1,6 @@
 ---
 title: "Deadly Flora and Wild Fungi: A Trekker's Field Guide to Himalayan Hazards"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Outdoor Safety", "Botanical Guide"]
 tags: ["himalayas", "foraging", "trekking", "mushroom-safety", "toxic-plants", "2026"]
 description: "An essential field identification guide to the most toxic plants and lethal wild mushrooms encountered on high-altitude Himalayan trails."

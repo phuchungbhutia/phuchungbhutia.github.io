@@ -1,96 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift | Technical Journal</title>
-<meta name="keywords" content="xfce, manjaro, linux-mint, aur, yay, timeshift, ntfs, backup, performance">
-<meta name="description" content="Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift | Technical Journal</title><meta name=keywords content="xfce,manjaro,linux-mint,aur,yay,timeshift,ntfs,backup,performance"><meta name=description content="Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.
 
 1. Understanding Desktop Resource Consumption: XFCE vs. The Competition
-When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-04-linux-de/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-04-linux-de/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-04-linux-de/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift">
-  <meta property="og:description" content="Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.
-1. Understanding Desktop Resource Consumption: XFCE vs. The Competition When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-08-04T00:00:00+00:00">
-    <meta property="article:tag" content="XFCE">
-    <meta property="article:tag" content="Manjaro">
-    <meta property="article:tag" content="Linux Mint">
-    <meta property="article:tag" content="Aur">
-    <meta property="article:tag" content="Yay">
-    <meta property="article:tag" content="Timeshift">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift">
-  <meta name="twitter:description" content="Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.
-1. Understanding Desktop Resource Consumption: XFCE vs. The Competition When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.">
-
-
-<script type="application/ld+json">
+When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-04-linux-de/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-04-linux-de/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-04-linux-de/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift"><meta property="og:description" content="Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.
+1. Understanding Desktop Resource Consumption: XFCE vs. The Competition When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-04T10:00:00+05:30"><meta property="article:modified_time" content="2026-08-04T10:00:00+05:30"><meta property="article:tag" content="Xfce"><meta property="article:tag" content="Manjaro"><meta property="article:tag" content="Linux-Mint"><meta property="article:tag" content="Aur"><meta property="article:tag" content="Yay"><meta property="article:tag" content="Timeshift"><meta name=twitter:card content="summary"><meta name=twitter:title content="The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift"><meta name=twitter:description content="Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.
+1. Understanding Desktop Resource Consumption: XFCE vs. The Competition When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -99,18 +12,17 @@ When selecting a Linux desktop environment (DE), resource allocation—specifica
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift",
-      "item": "//localhost:1313/posts/2026-08-04-linux-de/"
+      "item": "/posts/2026-08-04-linux-de/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -123,225 +35,31 @@ When selecting a Linux desktop environment (DE), resource allocation—specifica
   "articleBody": "Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.\n1. Understanding Desktop Resource Consumption: XFCE vs. The Competition When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.\n+-----------------------------------------------------------------------+\r| IDLE RAM CONSUMPTION COMPARISON (EST.) |\r+-------------------+---------------------------------------------------+\r| LXQt | [██████████] 200 - 300 MB |\r| XFCE | [███████████████] 250 - 500 MB |\r| KDE Plasma | [█████████████████████] 400 - 700 MB |\r| GNOME | [████████████████████████████████████████] 1.0GB+ |\r+-------------------+---------------------------------------------------+ Desktop Environment Resource Metrics Desktop Environment Idle RAM Usage CPU Load (Idle) Target Hardware / Use Case LXQt 200 – 300 MB 2 – 3% Legacy hardware (2010+) / Ultra-lightweight XFCE 250 – 500 MB 3 – 4% Budget / Mid-range / High-efficiency Workstations KDE Plasma 400 – 700 MB 5 – 6% Modern systems / Highly customizable UI GNOME 1.0 – 1.2 GB 10 – 15% High-end hardware / Modern touch-friendly workflow Why XFCE Excels in Efficiency Minimal Compositing Overhead: XFCE uses Xfwm4, a lightweight window manager with simple 2D window compositing options. It skips heavy GPU-accelerated 3D transforms, keeping idle CPU usage near zero. Lean Process Tree: Unlike GNOME’s gnome-shell or KDE’s plasmashell, which execute complex JavaScript scripts or background indexing daemons (tracker-miner), XFCE launches compact C-compiled binaries. Memory Headroom: Saving 500 MB to 700 MB of RAM at idle directly translates to extra capacity for memory-intensive applications like Chromium-based browsers, virtual machines, or IDEs. Pro Tip for Ultra-Low Resources: If your hardware cannot comfortably handle 300 MB of idle RAM usage, consider ditching full desktop environments altogether in favor of standalone Tiling Window Managers (like i3wm or bspwm) or stacking WMs (like Openbox), which can idle under 100 MB RAM.\n2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE Choosing between Linux Mint XFCE and Manjaro XFCE is fundamental: do you prioritize absolute long-term stability or access to cutting-edge software?\n+-------------------+\r| CHOOSING OS |\r+---------+---------+\r|\r+------------------+------------------+\r| |\rv v\r+-------------------+ +-------------------+\r| Linux Mint XFCE | | Manjaro XFCE |\r+-------------------+ +-------------------+\r| • Ubuntu LTS Base | | • Arch Linux Base |\r| • Point Release | | • Rolling Release |\r| • APT + Flatpak | | • Pacman + AUR |\r| • Maximum Stability | • Newest Drivers |\r+-------------------+ +-------------------+ Feature Comparison Matrix Feature Linux Mint XFCE Manjaro XFCE Base Architecture Debian / Ubuntu LTS Arch Linux Release Model Fixed Point Release (Every 2 Years) Continuous Rolling Release Idle RAM Footprint ~550 MB ~650 MB Default Package Manager apt / dpkg pacman / pamac Community Repository PPA / Flatpak Arch User Repository (AUR) Kernel Strategy Stable / Long-Term Support (LTS) Bleeding-Edge / Multi-Kernel Manager Target Audience Beginners / Enterprise / Stability Focus Enthusiasts / Gamers / Latest Hardware Which One Should You Pick? Select Linux Mint XFCE if: You want a rock-solid workstation that rarely changes its underlying libraries. It is perfect for users migrating from Windows 10/11 who prefer an intuitive “set-it-and-forget-it” system. Select Manjaro XFCE if: You have newer computer hardware (such as GPUs or Wi-Fi 7 chips released within the last year) that require fresh drivers and recent Linux kernels. It is also ideal if you want access to virtually all Linux software via the AUR. 3. Mastering the Arch User Repository (AUR) \u0026 Yay The Arch User Repository (AUR) is a massive, community-maintained collection of build scripts (PKGBUILD files) for Arch Linux and its derivatives (such as Manjaro). Instead of downloading pre-compiled binaries, the AUR downloads source code, compiles it on your machine, and installs it cleanly via pacman.\nMethod A: Enabling AUR in Manjaro GUI (Pamac) Open Add/Remove Software (pamac-manager). Open the top-right hamburger menu (≡) and select Preferences. Authenticate with your administrative password. Navigate to the Third-Party tab. Toggle Enable AUR support to ON. (Optional) Enable Check for updates to keep AUR packages automatically updated alongside system software. +-------------------------------------------------------------+\r| Pamac Preferences - Third-Party |\r+-------------------------------------------------------------+\r| Enable AUR support ................................ [ ON ] |\r| Check for updates from AUR .----------------------- [ ON ] |\r| Build directory ............................ /var/tmp/pamac |\r+-------------------------------------------------------------+ Method B: Installing and Using yay (Yet Another Yogurt) pamac works great in the GUI, but power users usually prefer terminal-based helpers like yay. yay is written in Go, operates extremely fast, and shares its syntax directly with pacman.\n1. Installing Essential Build Tools \u0026 Yay Before building from the AUR, you must install the compilation toolchain (gcc, make, autoconf):\n# Install compilation headers and tools sudo pacman -S --needed base-devel git # Install Yay directly from Manjaro repositories sudo pacman -S yay (If installing on plain Arch Linux where yay isn’t in official repos, manually clone it):\ngit clone https://aur.archlinux.org/yay.git cd yay makepkg -si 2. Essential yay Cheat Sheet # Perform a full system upgrade (Official Repositories + AUR simultaneously) yay # Search and install a package interactively yay package_name # Force install a specific package without prompts yay -S package_name # Remove a package along with its unneeded dependencies yay -Rns package_name # Query installed AUR packages and clean cache yay -Ps Security Check for AUR: Because anyone can upload scripts to the AUR, always inspect PKGBUILD files during compilation. Ensure source URLs point to official vendor source repositories and don’t contain suspicious download steps.\n4. Storage Setup: Automounting an NTFS “D Drive” on Manjaro If you dual-boot Windows and Manjaro or have an secondary hard drive formatted with NTFS, Linux will not automatically mount it at boot with full read/write permissions by default.\nMethod 1: Using GNOME Disks (GUI) Install GNOME Disks: pamac install gnome-disk-utility Open Disks from the app menu. Select your target physical hard disk on the left panel. Click the NTFS partition in the graphical volume map. Click the Gears icon (Additional Partition Options) -\u003e Edit Mount Options… Turn off User Session Defaults. Check Mount at system startup. Set Mount Point (e.g., /mnt/data). Click OK and apply. +---------------------------------------------------------+\r| Edit Mount Options |\r+---------------------------------------------------------+\r| User Session Defaults .................------- [ OFF ] |\r| Mount at system startup .................------ [ CHECK]|\r| Mount Point: /mnt/data |\r+---------------------------------------------------------+ Method 2: Editing /etc/fstab (Terminal - Recommended) Editing /etc/fstab directly ensures consistent mounting behavior across system boots.\nStep 1: Identify partition UUID and file system type lsblk -no NAME,UUID,FSTYPE,MOUNTPOINTS | grep ntfs Output example:\nsda2 4C8A21098A20F0DC ntfs Step 2: Create mount destination directory sudo mkdir -p /mnt/data Step 3: Configure /etc/fstab Open the mount table file in your preferred terminal editor:\nsudo nano /etc/fstab Append the following configuration line to the bottom of the file (replace 4C8A21098A20F0DC with your real UUID):\nUUID=4C8A21098A20F0DC /mnt/data ntfs-3g defaults,noatime,uid=1000,gid=1000,dmask=022,fmask=133 0 0 ntfs-3g: Uses the reliable Fuse NTFS driver. uid=1000,gid=1000: Assigns total ownership of all files on the drive to your primary user account. dmask=022,fmask=133: Sets directory permissions (755) and file permissions (644) so files aren’t unnecessarily marked as executable. Step 4: Test mount configuration Execute the following to verify there are no syntax errors (errors here can cause system boot failure):\nsudo mount -a If no output or errors are returned, check /mnt/data—your drive is successfully mounted!\nCRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup If Windows hibernation or “Fast Startup” is enabled, Windows locks the NTFS drive structure into a dirty state during power down. Linux will force the drive into Read-Only mode to prevent corruption.\nBoot into Windows 10/11. Open Control Panel -\u003e Hardware and Sound -\u003e Power Options. Click Choose what the power buttons do in the left sidebar. Click Change settings that are currently unavailable. Uncheck Turn on fast startup (recommended). Click Save changes and perform a complete system shutdown. +-----------------------------------------------------------+\r| Power Options -\u003e Shutdown Settings |\r+-----------------------------------------------------------+\r| [ ] Turn on fast startup (recommended) \u003c-- UNCHECK THIS |\r| [x] Sleep |\r| [x] Hibernate |\r+-----------------------------------------------------------+ 5. Automated Home Directory \u0026 System Backups Protecting personal data across storage drives requires selecting the right workflow. Below are three methods tailored to different balance points of control and simplicity.\nMethod Comparison +-----------------------+-----------------------+-----------------------+\r| TIMESHIFT | BACK IN TIME | CUSTOM RSYNC |\r+-----------------------+-----------------------+-----------------------+\r| • System Restoration | • File-level Backup | • Lightest Footprint |\r| • OS + User Files | • GUI (Qt-based) | • Runs silently |\r| • Snapshot / Rollback | • Incremental history | • Cron / Startup task |\r+-----------------------+-----------------------+-----------------------+ Method 1: Custom Zero-RAM Background Shell Script If you want absolute efficiency with zero background RAM footprint, use an rsync script scheduled on system login.\n1. Create the backup script file nano ~/auto_backup.sh 2. Add shell logic #!/usr/bin/env bash # Define Source and Target Directories SOURCE=\"/home/$USER/\" TARGET=\"/mnt/data/home_backup/\" # Log File Setup LOGFILE=\"/tmp/home_backup.log\" echo \"=== Backup started at $(date) ===\" \u003e \"$LOGFILE\" # Run rsync sync engine rsync -avh --delete --exclude='.cache/' --exclude='Downloads/' --exclude='.local/share/Trash/' --exclude=' VirtualBox\\ VMs/' \"$SOURCE\" \"$TARGET\" \u003e\u003e \"$LOGFILE\" 2\u003e\u00261 echo \"=== Backup finished at $(date) ===\" \u003e\u003e \"$LOGFILE\" 3. Make script executable chmod +x ~/auto_backup.sh 4. Configure XFCE Autostart Open Settings Manager -\u003e Session and Startup. Click the Application Autostart tab. Click Add (+). Name: Home Directory Incremental Sync Command: /home/YOUR_USERNAME/auto_backup.sh Click OK. 6. Deep-Dive: Comprehensive Timeshift Guide \u0026 Troubleshooting Timeshift works similarly to Windows System Restore or macOS Time Machine. It creates incremental system states using rsync and hard links.\n+-------------------------------------------------------------------+\r| TIMESHIFT SNAPSHOT ARCHITECTURE |\r| |\r| [ Snapshot 1 ] ---\u003e Real File Copies (Full System Payload) |\r| [ Snapshot 2 ] ---\u003e Hard Links to Unchanged Files + New Data |\r| [ Snapshot 3 ] ---\u003e Hard Links to Unchanged Files + Modified Data |\r+-------------------------------------------------------------------+ Step-by-Step Configuration Strategy Open Timeshift from the application menu. Select RSYNC as your snapshot type. (BTRFS mode should only be chosen if root is explicitly formatted as BTRFS). Select Destination Drive: Choose your mounted NTFS volume (/mnt/data). Set Backup Schedule: Monthly: Keep 1 Weekly: Keep 2 Daily: Keep 5 Boot: Keep 2 Config user home directory inclusions under Users: Set Root Home (/root): Include All Set User Home (/home/username): Choose Include All to back up personal configurations, or Exclude All if you handle personal files with a dedicated tool. Emergency System Restoration Workflow Case 1: System Boots and GUI is Accessible Open Timeshift -\u003e Select desired snapshot from list -\u003e Click Restore -\u003e Confirm partition targets -\u003e Reboot.\nCase 2: System Fails to Boot (Broken Update / Kernel Panic) [ Unbootable PC ] ──\u003e Boot Live USB ──\u003e Launch Timeshift ──\u003e Select Drive ──\u003e Restore Insert your Manjaro Live USB and boot into the live environment. Open Timeshift (pre-installed on the Manjaro installer ISO). Select RSYNC mode. Timeshift will scan attached storage for existing snapshot folders. Pick your backup drive (/mnt/data). Select the last working snapshot (e.g., Pre-AUR-tinker). Click Restore. Timeshift will auto-assign target system mount points (/, /boot). Confirm operation and wait for completion. Reboot your machine without the USB drive. Your OS will boot cleanly. Troubleshooting Common Timeshift Errors Problem 1: “RSYNC Error: Some files/attrs were not transferred” Root Cause: Timeshift attempted to sync dynamic lockfiles or active socket buffers located inside temporary system paths or lock files in .cache. Solution: Navigate to Settings -\u003e Filters in Timeshift. Add explicit exclude rules for: **/.cache/** **/tmp/** **/.local/share/Trash/** Problem 2: Target NTFS Drive Appears as “Read-Only” Root Cause: Windows left a dirty bit on the NTFS filesystem, or ntfs-3g detected unrecoverable journal flags. Solution: Run a filesystem repair check in Linux terminal: # Unmount target drive first sudo umount /mnt/data # Clear dirty bit flag from NTFS partition (e.g., sdb1) sudo ntfsfix /dev/sdb1 # Remount drive sudo mount -a Problem 3: “No space left on device” During Snapshot Root Cause: Retention policy thresholds are set too high, or massive uncompressed files (like .iso files or virtual machine disk images) are continually changing, invalidating hard links. Solution: Manually open Timeshift and delete older snapshots using the GUI delete tool. Go to Settings -\u003e Filters and add large file extensions to the ignore list: **.iso **.qcow2 **.vmdk Summary Cheat Sheet Desktop Choice: XFCE provides maximum CPU and memory headroom while maintaining a flexible, full-featured desktop environment. Package Management: Use yay -S to query both standard Arch repos and the AUR simultaneously via terminal. Storage Automount: Add an entry for your NTFS partition into /etc/fstab with ntfs-3g options, and ensure Windows Fast Startup is disabled. System Safeguard: Schedule Timeshift RSYNC snapshots before installing untrusted AUR code or performing major kernel upgrades. ",
   "wordCount" : "2135",
   "inLanguage": "en",
-  "datePublished": "2026-08-04T00:00:00Z",
-  "dateModified": "2026-08-04T00:00:00Z",
+  "datePublished": "2026-08-04T10:00:00+05:30",
+  "dateModified": "2026-08-04T10:00:00+05:30",
   "author":{
     "@type": "Person",
     "name": "Phuchung Bhutia"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-04-linux-de/"
+    "@id": "/posts/2026-08-04-linux-de/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-04 00:00:00 +0000 UTC'>August 4, 2026</span>&nbsp;·&nbsp;<span>11 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#1-understanding-desktop-resource-consumption-xfce-vs-the-competition" aria-label="1. Understanding Desktop Resource Consumption: XFCE vs. The Competition">1. Understanding Desktop Resource Consumption: XFCE vs. The Competition</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#desktop-environment-resource-metrics" aria-label="Desktop Environment Resource Metrics">Desktop Environment Resource Metrics</a></li>
-            <li>
-                <a href="#why-xfce-excels-in-efficiency" aria-label="Why XFCE Excels in Efficiency">Why XFCE Excels in Efficiency</a></li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#2-distribution-face-off-linux-mint-xfce-vs-manjaro-xfce" aria-label="2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE">2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#feature-comparison-matrix" aria-label="Feature Comparison Matrix">Feature Comparison Matrix</a></li>
-            <li>
-                <a href="#which-one-should-you-pick" aria-label="Which One Should You Pick?">Which One Should You Pick?</a></li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#3-mastering-the-arch-user-repository-aur--yay" aria-label="3. Mastering the Arch User Repository (AUR) &amp; Yay">3. Mastering the Arch User Repository (AUR) &amp; Yay</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#method-a-enabling-aur-in-manjaro-gui-pamac" aria-label="Method A: Enabling AUR in Manjaro GUI (Pamac)">Method A: Enabling AUR in Manjaro GUI (Pamac)</a></li>
-            <li>
-                <a href="#method-b-installing-and-using-yay-yet-another-yogurt" aria-label="Method B: Installing and Using yay (Yet Another Yogurt)">Method B: Installing and Using yay (Yet Another Yogurt)</a><ul>
-                    
-            <li>
-                <a href="#1-installing-essential-build-tools--yay" aria-label="1. Installing Essential Build Tools &amp; Yay">1. Installing Essential Build Tools &amp; Yay</a></li>
-            <li>
-                <a href="#2-essential-yay-cheat-sheet" aria-label="2. Essential yay Cheat Sheet">2. Essential yay Cheat Sheet</a></li></ul>
-            </li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#4-storage-setup-automounting-an-ntfs-d-drive-on-manjaro" aria-label="4. Storage Setup: Automounting an NTFS &ldquo;D Drive&rdquo; on Manjaro">4. Storage Setup: Automounting an NTFS &ldquo;D Drive&rdquo; on Manjaro</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#method-1-using-gnome-disks-gui" aria-label="Method 1: Using GNOME Disks (GUI)">Method 1: Using GNOME Disks (GUI)</a></li>
-            <li>
-                <a href="#method-2-editing-etcfstab-terminal---recommended" aria-label="Method 2: Editing /etc/fstab (Terminal - Recommended)">Method 2: Editing /etc/fstab (Terminal - Recommended)</a><ul>
-                    
-            <li>
-                <a href="#step-1-identify-partition-uuid-and-file-system-type" aria-label="Step 1: Identify partition UUID and file system type">Step 1: Identify partition UUID and file system type</a></li>
-            <li>
-                <a href="#step-2-create-mount-destination-directory" aria-label="Step 2: Create mount destination directory">Step 2: Create mount destination directory</a></li>
-            <li>
-                <a href="#step-3-configure-etcfstab" aria-label="Step 3: Configure /etc/fstab">Step 3: Configure /etc/fstab</a></li>
-            <li>
-                <a href="#step-4-test-mount-configuration" aria-label="Step 4: Test mount configuration">Step 4: Test mount configuration</a></li></ul>
-            </li>
-            <li>
-                <a href="#critical-preventative-step-disable-windows-fast-startup" aria-label="CRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup">CRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup</a></li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#5-automated-home-directory--system-backups" aria-label="5. Automated Home Directory &amp; System Backups">5. Automated Home Directory &amp; System Backups</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#method-comparison" aria-label="Method Comparison">Method Comparison</a></li>
-            <li>
-                <a href="#method-1-custom-zero-ram-background-shell-script" aria-label="Method 1: Custom Zero-RAM Background Shell Script">Method 1: Custom Zero-RAM Background Shell Script</a><ul>
-                    
-            <li>
-                <a href="#1-create-the-backup-script-file" aria-label="1. Create the backup script file">1. Create the backup script file</a></li>
-            <li>
-                <a href="#2-add-shell-logic" aria-label="2. Add shell logic">2. Add shell logic</a></li>
-            <li>
-                <a href="#3-make-script-executable" aria-label="3. Make script executable">3. Make script executable</a></li>
-            <li>
-                <a href="#4-configure-xfce-autostart" aria-label="4. Configure XFCE Autostart">4. Configure XFCE Autostart</a></li></ul>
-            </li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#6-deep-dive-comprehensive-timeshift-guide--troubleshooting" aria-label="6. Deep-Dive: Comprehensive Timeshift Guide &amp; Troubleshooting">6. Deep-Dive: Comprehensive Timeshift Guide &amp; Troubleshooting</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#step-by-step-configuration-strategy" aria-label="Step-by-Step Configuration Strategy">Step-by-Step Configuration Strategy</a></li>
-            <li>
-                <a href="#emergency-system-restoration-workflow" aria-label="Emergency System Restoration Workflow">Emergency System Restoration Workflow</a><ul>
-                    
-            <li>
-                <a href="#case-1-system-boots-and-gui-is-accessible" aria-label="Case 1: System Boots and GUI is Accessible">Case 1: System Boots and GUI is Accessible</a></li>
-            <li>
-                <a href="#case-2-system-fails-to-boot-broken-update--kernel-panic" aria-label="Case 2: System Fails to Boot (Broken Update / Kernel Panic)">Case 2: System Fails to Boot (Broken Update / Kernel Panic)</a></li></ul>
-            </li>
-            <li>
-                <a href="#troubleshooting-common-timeshift-errors" aria-label="Troubleshooting Common Timeshift Errors">Troubleshooting Common Timeshift Errors</a><ul>
-                    
-            <li>
-                <a href="#problem-1-rsync-error-some-filesattrs-were-not-transferred" aria-label="Problem 1: &ldquo;RSYNC Error: Some files/attrs were not transferred&rdquo;">Problem 1: &ldquo;RSYNC Error: Some files/attrs were not transferred&rdquo;</a></li>
-            <li>
-                <a href="#problem-2-target-ntfs-drive-appears-as-read-only" aria-label="Problem 2: Target NTFS Drive Appears as &ldquo;Read-Only&rdquo;">Problem 2: Target NTFS Drive Appears as &ldquo;Read-Only&rdquo;</a></li>
-            <li>
-                <a href="#problem-3-no-space-left-on-device-during-snapshot" aria-label="Problem 3: &ldquo;No space left on device&rdquo; During Snapshot">Problem 3: &ldquo;No space left on device&rdquo; During Snapshot</a></li></ul>
-            </li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#summary-cheat-sheet" aria-label="Summary Cheat Sheet">Summary Cheat Sheet</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><p>Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.</p>
-<hr>
-<h1 id="1-understanding-desktop-resource-consumption-xfce-vs-the-competition">1. Understanding Desktop Resource Consumption: XFCE vs. The Competition<a hidden class="anchor" aria-hidden="true" href="#1-understanding-desktop-resource-consumption-xfce-vs-the-competition">#</a></h1>
-<p>When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.</p>
-<pre tabindex="0"><code>+-----------------------------------------------------------------------+
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">The Ultimate Guide to XFCE, Manjaro, the AUR, and Complete System Backups with Timeshift</h1><div class=post-meta><span title='2026-08-04 10:00:00 +0530 IST'>August 4, 2026</span>&nbsp;·&nbsp;<span>11 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#1-understanding-desktop-resource-consumption-xfce-vs-the-competition aria-label="1. Understanding Desktop Resource Consumption: XFCE vs. The Competition">1. Understanding Desktop Resource Consumption: XFCE vs. The Competition</a><ul><ul><li><a href=#desktop-environment-resource-metrics aria-label="Desktop Environment Resource Metrics">Desktop Environment Resource Metrics</a></li><li><a href=#why-xfce-excels-in-efficiency aria-label="Why XFCE Excels in Efficiency">Why XFCE Excels in Efficiency</a></li></ul></ul></li><li><a href=#2-distribution-face-off-linux-mint-xfce-vs-manjaro-xfce aria-label="2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE">2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE</a><ul><ul><li><a href=#feature-comparison-matrix aria-label="Feature Comparison Matrix">Feature Comparison Matrix</a></li><li><a href=#which-one-should-you-pick aria-label="Which One Should You Pick?">Which One Should You Pick?</a></li></ul></ul></li><li><a href=#3-mastering-the-arch-user-repository-aur--yay aria-label="3. Mastering the Arch User Repository (AUR) & Yay">3. Mastering the Arch User Repository (AUR) & Yay</a><ul><ul><li><a href=#method-a-enabling-aur-in-manjaro-gui-pamac aria-label="Method A: Enabling AUR in Manjaro GUI (Pamac)">Method A: Enabling AUR in Manjaro GUI (Pamac)</a></li><li><a href=#method-b-installing-and-using-yay-yet-another-yogurt aria-label="Method B: Installing and Using yay (Yet Another Yogurt)">Method B: Installing and Using yay (Yet Another Yogurt)</a><ul><li><a href=#1-installing-essential-build-tools--yay aria-label="1. Installing Essential Build Tools & Yay">1. Installing Essential Build Tools & Yay</a></li><li><a href=#2-essential-yay-cheat-sheet aria-label="2. Essential yay Cheat Sheet">2. Essential yay Cheat Sheet</a></li></ul></li></ul></ul></li><li><a href=#4-storage-setup-automounting-an-ntfs-d-drive-on-manjaro aria-label="4. Storage Setup: Automounting an NTFS &ldquo;D Drive&rdquo; on Manjaro">4. Storage Setup: Automounting an NTFS &ldquo;D Drive&rdquo; on Manjaro</a><ul><ul><li><a href=#method-1-using-gnome-disks-gui aria-label="Method 1: Using GNOME Disks (GUI)">Method 1: Using GNOME Disks (GUI)</a></li><li><a href=#method-2-editing-etcfstab-terminal---recommended aria-label="Method 2: Editing /etc/fstab (Terminal - Recommended)">Method 2: Editing /etc/fstab (Terminal - Recommended)</a><ul><li><a href=#step-1-identify-partition-uuid-and-file-system-type aria-label="Step 1: Identify partition UUID and file system type">Step 1: Identify partition UUID and file system type</a></li><li><a href=#step-2-create-mount-destination-directory aria-label="Step 2: Create mount destination directory">Step 2: Create mount destination directory</a></li><li><a href=#step-3-configure-etcfstab aria-label="Step 3: Configure /etc/fstab">Step 3: Configure /etc/fstab</a></li><li><a href=#step-4-test-mount-configuration aria-label="Step 4: Test mount configuration">Step 4: Test mount configuration</a></li></ul></li><li><a href=#critical-preventative-step-disable-windows-fast-startup aria-label="CRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup">CRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup</a></li></ul></ul></li><li><a href=#5-automated-home-directory--system-backups aria-label="5. Automated Home Directory & System Backups">5. Automated Home Directory & System Backups</a><ul><ul><li><a href=#method-comparison aria-label="Method Comparison">Method Comparison</a></li><li><a href=#method-1-custom-zero-ram-background-shell-script aria-label="Method 1: Custom Zero-RAM Background Shell Script">Method 1: Custom Zero-RAM Background Shell Script</a><ul><li><a href=#1-create-the-backup-script-file aria-label="1. Create the backup script file">1. Create the backup script file</a></li><li><a href=#2-add-shell-logic aria-label="2. Add shell logic">2. Add shell logic</a></li><li><a href=#3-make-script-executable aria-label="3. Make script executable">3. Make script executable</a></li><li><a href=#4-configure-xfce-autostart aria-label="4. Configure XFCE Autostart">4. Configure XFCE Autostart</a></li></ul></li></ul></ul></li><li><a href=#6-deep-dive-comprehensive-timeshift-guide--troubleshooting aria-label="6. Deep-Dive: Comprehensive Timeshift Guide & Troubleshooting">6. Deep-Dive: Comprehensive Timeshift Guide & Troubleshooting</a><ul><ul><li><a href=#step-by-step-configuration-strategy aria-label="Step-by-Step Configuration Strategy">Step-by-Step Configuration Strategy</a></li><li><a href=#emergency-system-restoration-workflow aria-label="Emergency System Restoration Workflow">Emergency System Restoration Workflow</a><ul><li><a href=#case-1-system-boots-and-gui-is-accessible aria-label="Case 1: System Boots and GUI is Accessible">Case 1: System Boots and GUI is Accessible</a></li><li><a href=#case-2-system-fails-to-boot-broken-update--kernel-panic aria-label="Case 2: System Fails to Boot (Broken Update / Kernel Panic)">Case 2: System Fails to Boot (Broken Update / Kernel Panic)</a></li></ul></li><li><a href=#troubleshooting-common-timeshift-errors aria-label="Troubleshooting Common Timeshift Errors">Troubleshooting Common Timeshift Errors</a><ul><li><a href=#problem-1-rsync-error-some-filesattrs-were-not-transferred aria-label="Problem 1: &ldquo;RSYNC Error: Some files/attrs were not transferred&rdquo;">Problem 1: &ldquo;RSYNC Error: Some files/attrs were not transferred&rdquo;</a></li><li><a href=#problem-2-target-ntfs-drive-appears-as-read-only aria-label="Problem 2: Target NTFS Drive Appears as &ldquo;Read-Only&rdquo;">Problem 2: Target NTFS Drive Appears as &ldquo;Read-Only&rdquo;</a></li><li><a href=#problem-3-no-space-left-on-device-during-snapshot aria-label="Problem 3: &ldquo;No space left on device&rdquo; During Snapshot">Problem 3: &ldquo;No space left on device&rdquo; During Snapshot</a></li></ul></li></ul></ul></li><li><a href=#summary-cheat-sheet aria-label="Summary Cheat Sheet">Summary Cheat Sheet</a></li></ul></div></details><div class="post-content md-content"><p>Welcome to this comprehensive technical guide covering lightweight Linux desktop optimization, distribution selection, advanced package management with the AUR, storage integration with NTFS partitions, and robust backup strategies. Whether you are running an aging laptop or attempting to maximize system performance on a modern workstation, this guide will walk you through everything you need to build a blazing-fast, rock-solid Linux environment.</p><hr><h1 id=1-understanding-desktop-resource-consumption-xfce-vs-the-competition>1. Understanding Desktop Resource Consumption: XFCE vs. The Competition<a hidden class=anchor aria-hidden=true href=#1-understanding-desktop-resource-consumption-xfce-vs-the-competition>#</a></h1><p>When selecting a Linux desktop environment (DE), resource allocation—specifically RAM footprint and idle CPU overhead—directly impacts multitasking headroom and battery efficiency. While modern heavyweights like GNOME and KDE Plasma offer rich animations and feature-dense shells, lightweight DEs like XFCE prioritize raw speed and simplicity.</p><pre tabindex=0><code>+-----------------------------------------------------------------------+
 |                 IDLE RAM CONSUMPTION COMPARISON (EST.)               |
 +-------------------+---------------------------------------------------+
 | LXQt              | [██████████] 200 - 300 MB                         |
@@ -349,56 +67,7 @@ When selecting a Linux desktop environment (DE), resource allocation—specifica
 | KDE Plasma        | [█████████████████████] 400 - 700 MB              |
 | GNOME             | [████████████████████████████████████████] 1.0GB+ |
 +-------------------+---------------------------------------------------+
-</code></pre><h3 id="desktop-environment-resource-metrics">Desktop Environment Resource Metrics<a hidden class="anchor" aria-hidden="true" href="#desktop-environment-resource-metrics">#</a></h3>
-<table>
-	<thead>
-			<tr>
-					<th style="text-align: left">Desktop Environment</th>
-					<th style="text-align: left">Idle RAM Usage</th>
-					<th style="text-align: left">CPU Load (Idle)</th>
-					<th style="text-align: left">Target Hardware / Use Case</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>LXQt</strong></td>
-					<td style="text-align: left">200 – 300 MB</td>
-					<td style="text-align: left">2 – 3%</td>
-					<td style="text-align: left">Legacy hardware (2010+) / Ultra-lightweight</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>XFCE</strong></td>
-					<td style="text-align: left"><strong>250 – 500 MB</strong></td>
-					<td style="text-align: left"><strong>3 – 4%</strong></td>
-					<td style="text-align: left"><strong>Budget / Mid-range / High-efficiency Workstations</strong></td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>KDE Plasma</strong></td>
-					<td style="text-align: left">400 – 700 MB</td>
-					<td style="text-align: left">5 – 6%</td>
-					<td style="text-align: left">Modern systems / Highly customizable UI</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>GNOME</strong></td>
-					<td style="text-align: left">1.0 – 1.2 GB</td>
-					<td style="text-align: left">10 – 15%</td>
-					<td style="text-align: left">High-end hardware / Modern touch-friendly workflow</td>
-			</tr>
-	</tbody>
-</table>
-<h3 id="why-xfce-excels-in-efficiency">Why XFCE Excels in Efficiency<a hidden class="anchor" aria-hidden="true" href="#why-xfce-excels-in-efficiency">#</a></h3>
-<ol>
-<li><strong>Minimal Compositing Overhead:</strong> XFCE uses Xfwm4, a lightweight window manager with simple 2D window compositing options. It skips heavy GPU-accelerated 3D transforms, keeping idle CPU usage near zero.</li>
-<li><strong>Lean Process Tree:</strong> Unlike GNOME&rsquo;s <code>gnome-shell</code> or KDE&rsquo;s <code>plasmashell</code>, which execute complex JavaScript scripts or background indexing daemons (<code>tracker-miner</code>), XFCE launches compact C-compiled binaries.</li>
-<li><strong>Memory Headroom:</strong> Saving 500 MB to 700 MB of RAM at idle directly translates to extra capacity for memory-intensive applications like Chromium-based browsers, virtual machines, or IDEs.</li>
-</ol>
-<blockquote>
-<p><strong>Pro Tip for Ultra-Low Resources:</strong> If your hardware cannot comfortably handle 300 MB of idle RAM usage, consider ditching full desktop environments altogether in favor of standalone Tiling Window Managers (like <code>i3wm</code> or <code>bspwm</code>) or stacking WMs (like <code>Openbox</code>), which can idle under <strong>100 MB RAM</strong>.</p>
-</blockquote>
-<hr>
-<h1 id="2-distribution-face-off-linux-mint-xfce-vs-manjaro-xfce">2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE<a hidden class="anchor" aria-hidden="true" href="#2-distribution-face-off-linux-mint-xfce-vs-manjaro-xfce">#</a></h1>
-<p>Choosing between <strong>Linux Mint XFCE</strong> and <strong>Manjaro XFCE</strong> is fundamental: do you prioritize absolute long-term stability or access to cutting-edge software?</p>
-<pre tabindex="0"><code>                      +-------------------+
+</code></pre><h3 id=desktop-environment-resource-metrics>Desktop Environment Resource Metrics<a hidden class=anchor aria-hidden=true href=#desktop-environment-resource-metrics>#</a></h3><table><thead><tr><th style=text-align:left>Desktop Environment</th><th style=text-align:left>Idle RAM Usage</th><th style=text-align:left>CPU Load (Idle)</th><th style=text-align:left>Target Hardware / Use Case</th></tr></thead><tbody><tr><td style=text-align:left><strong>LXQt</strong></td><td style=text-align:left>200 – 300 MB</td><td style=text-align:left>2 – 3%</td><td style=text-align:left>Legacy hardware (2010+) / Ultra-lightweight</td></tr><tr><td style=text-align:left><strong>XFCE</strong></td><td style=text-align:left><strong>250 – 500 MB</strong></td><td style=text-align:left><strong>3 – 4%</strong></td><td style=text-align:left><strong>Budget / Mid-range / High-efficiency Workstations</strong></td></tr><tr><td style=text-align:left><strong>KDE Plasma</strong></td><td style=text-align:left>400 – 700 MB</td><td style=text-align:left>5 – 6%</td><td style=text-align:left>Modern systems / Highly customizable UI</td></tr><tr><td style=text-align:left><strong>GNOME</strong></td><td style=text-align:left>1.0 – 1.2 GB</td><td style=text-align:left>10 – 15%</td><td style=text-align:left>High-end hardware / Modern touch-friendly workflow</td></tr></tbody></table><h3 id=why-xfce-excels-in-efficiency>Why XFCE Excels in Efficiency<a hidden class=anchor aria-hidden=true href=#why-xfce-excels-in-efficiency>#</a></h3><ol><li><strong>Minimal Compositing Overhead:</strong> XFCE uses Xfwm4, a lightweight window manager with simple 2D window compositing options. It skips heavy GPU-accelerated 3D transforms, keeping idle CPU usage near zero.</li><li><strong>Lean Process Tree:</strong> Unlike GNOME&rsquo;s <code>gnome-shell</code> or KDE&rsquo;s <code>plasmashell</code>, which execute complex JavaScript scripts or background indexing daemons (<code>tracker-miner</code>), XFCE launches compact C-compiled binaries.</li><li><strong>Memory Headroom:</strong> Saving 500 MB to 700 MB of RAM at idle directly translates to extra capacity for memory-intensive applications like Chromium-based browsers, virtual machines, or IDEs.</li></ol><blockquote><p><strong>Pro Tip for Ultra-Low Resources:</strong> If your hardware cannot comfortably handle 300 MB of idle RAM usage, consider ditching full desktop environments altogether in favor of standalone Tiling Window Managers (like <code>i3wm</code> or <code>bspwm</code>) or stacking WMs (like <code>Openbox</code>), which can idle under <strong>100 MB RAM</strong>.</p></blockquote><hr><h1 id=2-distribution-face-off-linux-mint-xfce-vs-manjaro-xfce>2. Distribution Face-Off: Linux Mint XFCE vs. Manjaro XFCE<a hidden class=anchor aria-hidden=true href=#2-distribution-face-off-linux-mint-xfce-vs-manjaro-xfce>#</a></h1><p>Choosing between <strong>Linux Mint XFCE</strong> and <strong>Manjaro XFCE</strong> is fundamental: do you prioritize absolute long-term stability or access to cutting-edge software?</p><pre tabindex=0><code>                      +-------------------+
                       |   CHOOSING OS     |
                       +---------+---------+
                                 |
@@ -413,462 +82,107 @@ When selecting a Linux desktop environment (DE), resource allocation—specifica
    | • APT + Flatpak   |                 | • Pacman + AUR    |
    | • Maximum Stability                 | • Newest Drivers  |
    +-------------------+                 +-------------------+
-</code></pre><h3 id="feature-comparison-matrix">Feature Comparison Matrix<a hidden class="anchor" aria-hidden="true" href="#feature-comparison-matrix">#</a></h3>
-<table>
-	<thead>
-			<tr>
-					<th style="text-align: left">Feature</th>
-					<th style="text-align: left">Linux Mint XFCE</th>
-					<th style="text-align: left">Manjaro XFCE</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>Base Architecture</strong></td>
-					<td style="text-align: left">Debian / Ubuntu LTS</td>
-					<td style="text-align: left">Arch Linux</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Release Model</strong></td>
-					<td style="text-align: left">Fixed Point Release (Every 2 Years)</td>
-					<td style="text-align: left">Continuous Rolling Release</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Idle RAM Footprint</strong></td>
-					<td style="text-align: left">~550 MB</td>
-					<td style="text-align: left">~650 MB</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Default Package Manager</strong></td>
-					<td style="text-align: left"><code>apt</code> / <code>dpkg</code></td>
-					<td style="text-align: left"><code>pacman</code> / <code>pamac</code></td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Community Repository</strong></td>
-					<td style="text-align: left">PPA / Flatpak</td>
-					<td style="text-align: left">Arch User Repository (AUR)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Kernel Strategy</strong></td>
-					<td style="text-align: left">Stable / Long-Term Support (LTS)</td>
-					<td style="text-align: left">Bleeding-Edge / Multi-Kernel Manager</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>Target Audience</strong></td>
-					<td style="text-align: left">Beginners / Enterprise / Stability Focus</td>
-					<td style="text-align: left">Enthusiasts / Gamers / Latest Hardware</td>
-			</tr>
-	</tbody>
-</table>
-<h3 id="which-one-should-you-pick">Which One Should You Pick?<a hidden class="anchor" aria-hidden="true" href="#which-one-should-you-pick">#</a></h3>
-<ul>
-<li><strong>Select Linux Mint XFCE if:</strong> You want a rock-solid workstation that rarely changes its underlying libraries. It is perfect for users migrating from Windows 10/11 who prefer an intuitive &ldquo;set-it-and-forget-it&rdquo; system.</li>
-<li><strong>Select Manjaro XFCE if:</strong> You have newer computer hardware (such as GPUs or Wi-Fi 7 chips released within the last year) that require fresh drivers and recent Linux kernels. It is also ideal if you want access to virtually all Linux software via the AUR.</li>
-</ul>
-<hr>
-<h1 id="3-mastering-the-arch-user-repository-aur--yay">3. Mastering the Arch User Repository (AUR) &amp; Yay<a hidden class="anchor" aria-hidden="true" href="#3-mastering-the-arch-user-repository-aur--yay">#</a></h1>
-<p>The <strong>Arch User Repository (AUR)</strong> is a massive, community-maintained collection of build scripts (<code>PKGBUILD</code> files) for Arch Linux and its derivatives (such as Manjaro). Instead of downloading pre-compiled binaries, the AUR downloads source code, compiles it on your machine, and installs it cleanly via <code>pacman</code>.</p>
-<h3 id="method-a-enabling-aur-in-manjaro-gui-pamac">Method A: Enabling AUR in Manjaro GUI (Pamac)<a hidden class="anchor" aria-hidden="true" href="#method-a-enabling-aur-in-manjaro-gui-pamac">#</a></h3>
-<ol>
-<li>Open <strong>Add/Remove Software</strong> (<code>pamac-manager</code>).</li>
-<li>Open the top-right hamburger menu (<code>≡</code>) and select <strong>Preferences</strong>.</li>
-<li>Authenticate with your administrative password.</li>
-<li>Navigate to the <strong>Third-Party</strong> tab.</li>
-<li>Toggle <strong>Enable AUR support</strong> to ON.</li>
-<li><em>(Optional)</em> Enable <strong>Check for updates</strong> to keep AUR packages automatically updated alongside system software.</li>
-</ol>
-<pre tabindex="0"><code>+-------------------------------------------------------------+
+</code></pre><h3 id=feature-comparison-matrix>Feature Comparison Matrix<a hidden class=anchor aria-hidden=true href=#feature-comparison-matrix>#</a></h3><table><thead><tr><th style=text-align:left>Feature</th><th style=text-align:left>Linux Mint XFCE</th><th style=text-align:left>Manjaro XFCE</th></tr></thead><tbody><tr><td style=text-align:left><strong>Base Architecture</strong></td><td style=text-align:left>Debian / Ubuntu LTS</td><td style=text-align:left>Arch Linux</td></tr><tr><td style=text-align:left><strong>Release Model</strong></td><td style=text-align:left>Fixed Point Release (Every 2 Years)</td><td style=text-align:left>Continuous Rolling Release</td></tr><tr><td style=text-align:left><strong>Idle RAM Footprint</strong></td><td style=text-align:left>~550 MB</td><td style=text-align:left>~650 MB</td></tr><tr><td style=text-align:left><strong>Default Package Manager</strong></td><td style=text-align:left><code>apt</code> / <code>dpkg</code></td><td style=text-align:left><code>pacman</code> / <code>pamac</code></td></tr><tr><td style=text-align:left><strong>Community Repository</strong></td><td style=text-align:left>PPA / Flatpak</td><td style=text-align:left>Arch User Repository (AUR)</td></tr><tr><td style=text-align:left><strong>Kernel Strategy</strong></td><td style=text-align:left>Stable / Long-Term Support (LTS)</td><td style=text-align:left>Bleeding-Edge / Multi-Kernel Manager</td></tr><tr><td style=text-align:left><strong>Target Audience</strong></td><td style=text-align:left>Beginners / Enterprise / Stability Focus</td><td style=text-align:left>Enthusiasts / Gamers / Latest Hardware</td></tr></tbody></table><h3 id=which-one-should-you-pick>Which One Should You Pick?<a hidden class=anchor aria-hidden=true href=#which-one-should-you-pick>#</a></h3><ul><li><strong>Select Linux Mint XFCE if:</strong> You want a rock-solid workstation that rarely changes its underlying libraries. It is perfect for users migrating from Windows 10/11 who prefer an intuitive &ldquo;set-it-and-forget-it&rdquo; system.</li><li><strong>Select Manjaro XFCE if:</strong> You have newer computer hardware (such as GPUs or Wi-Fi 7 chips released within the last year) that require fresh drivers and recent Linux kernels. It is also ideal if you want access to virtually all Linux software via the AUR.</li></ul><hr><h1 id=3-mastering-the-arch-user-repository-aur--yay>3. Mastering the Arch User Repository (AUR) & Yay<a hidden class=anchor aria-hidden=true href=#3-mastering-the-arch-user-repository-aur--yay>#</a></h1><p>The <strong>Arch User Repository (AUR)</strong> is a massive, community-maintained collection of build scripts (<code>PKGBUILD</code> files) for Arch Linux and its derivatives (such as Manjaro). Instead of downloading pre-compiled binaries, the AUR downloads source code, compiles it on your machine, and installs it cleanly via <code>pacman</code>.</p><h3 id=method-a-enabling-aur-in-manjaro-gui-pamac>Method A: Enabling AUR in Manjaro GUI (Pamac)<a hidden class=anchor aria-hidden=true href=#method-a-enabling-aur-in-manjaro-gui-pamac>#</a></h3><ol><li>Open <strong>Add/Remove Software</strong> (<code>pamac-manager</code>).</li><li>Open the top-right hamburger menu (<code>≡</code>) and select <strong>Preferences</strong>.</li><li>Authenticate with your administrative password.</li><li>Navigate to the <strong>Third-Party</strong> tab.</li><li>Toggle <strong>Enable AUR support</strong> to ON.</li><li><em>(Optional)</em> Enable <strong>Check for updates</strong> to keep AUR packages automatically updated alongside system software.</li></ol><pre tabindex=0><code>+-------------------------------------------------------------+
 | Pamac Preferences - Third-Party                             |
 +-------------------------------------------------------------+
 | Enable AUR support ................................ [ ON  ] |
 | Check for updates from AUR .----------------------- [ ON  ] |
 | Build directory ............................ /var/tmp/pamac |
 +-------------------------------------------------------------+
-</code></pre><h3 id="method-b-installing-and-using-yay-yet-another-yogurt">Method B: Installing and Using <code>yay</code> (Yet Another Yogurt)<a hidden class="anchor" aria-hidden="true" href="#method-b-installing-and-using-yay-yet-another-yogurt">#</a></h3>
-<p><code>pamac</code> works great in the GUI, but power users usually prefer terminal-based helpers like <code>yay</code>. <code>yay</code> is written in Go, operates extremely fast, and shares its syntax directly with <code>pacman</code>.</p>
-<h4 id="1-installing-essential-build-tools--yay">1. Installing Essential Build Tools &amp; Yay<a hidden class="anchor" aria-hidden="true" href="#1-installing-essential-build-tools--yay">#</a></h4>
-<p>Before building from the AUR, you must install the compilation toolchain (<code>gcc</code>, <code>make</code>, <code>autoconf</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install compilation headers and tools</span>
-</span></span><span style="display:flex;"><span>sudo pacman -S --needed base-devel git
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install Yay directly from Manjaro repositories</span>
-</span></span><span style="display:flex;"><span>sudo pacman -S yay
-</span></span></code></pre></div><p><em>(If installing on plain Arch Linux where <code>yay</code> isn&rsquo;t in official repos, manually clone it)</em>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://aur.archlinux.org/yay.git
-</span></span><span style="display:flex;"><span>cd yay
-</span></span><span style="display:flex;"><span>makepkg -si
-</span></span></code></pre></div><h4 id="2-essential-yay-cheat-sheet">2. Essential <code>yay</code> Cheat Sheet<a hidden class="anchor" aria-hidden="true" href="#2-essential-yay-cheat-sheet">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Perform a full system upgrade (Official Repositories + AUR simultaneously)</span>
-</span></span><span style="display:flex;"><span>yay
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search and install a package interactively</span>
-</span></span><span style="display:flex;"><span>yay package_name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Force install a specific package without prompts</span>
-</span></span><span style="display:flex;"><span>yay -S package_name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove a package along with its unneeded dependencies</span>
-</span></span><span style="display:flex;"><span>yay -Rns package_name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Query installed AUR packages and clean cache</span>
-</span></span><span style="display:flex;"><span>yay -Ps
-</span></span></code></pre></div><blockquote>
-<p><strong>Security Check for AUR:</strong> Because anyone can upload scripts to the AUR, always inspect <code>PKGBUILD</code> files during compilation. Ensure source URLs point to official vendor source repositories and don&rsquo;t contain suspicious download steps.</p>
-</blockquote>
-<hr>
-<h1 id="4-storage-setup-automounting-an-ntfs-d-drive-on-manjaro">4. Storage Setup: Automounting an NTFS &ldquo;D Drive&rdquo; on Manjaro<a hidden class="anchor" aria-hidden="true" href="#4-storage-setup-automounting-an-ntfs-d-drive-on-manjaro">#</a></h1>
-<p>If you dual-boot Windows and Manjaro or have an secondary hard drive formatted with NTFS, Linux will not automatically mount it at boot with full read/write permissions by default.</p>
-<h3 id="method-1-using-gnome-disks-gui">Method 1: Using GNOME Disks (GUI)<a hidden class="anchor" aria-hidden="true" href="#method-1-using-gnome-disks-gui">#</a></h3>
-<ol>
-<li>Install GNOME Disks:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pamac install gnome-disk-utility
-</span></span></code></pre></div></li>
-<li>Open <strong>Disks</strong> from the app menu.</li>
-<li>Select your target physical hard disk on the left panel.</li>
-<li>Click the NTFS partition in the graphical volume map.</li>
-<li>Click the <strong>Gears icon (Additional Partition Options)</strong> -&gt; <strong>Edit Mount Options&hellip;</strong></li>
-<li>Turn off <strong>User Session Defaults</strong>.</li>
-<li>Check <strong>Mount at system startup</strong>.</li>
-<li>Set Mount Point (e.g., <code>/mnt/data</code>).</li>
-<li>Click <strong>OK</strong> and apply.</li>
-</ol>
-<pre tabindex="0"><code>+---------------------------------------------------------+
+</code></pre><h3 id=method-b-installing-and-using-yay-yet-another-yogurt>Method B: Installing and Using <code>yay</code> (Yet Another Yogurt)<a hidden class=anchor aria-hidden=true href=#method-b-installing-and-using-yay-yet-another-yogurt>#</a></h3><p><code>pamac</code> works great in the GUI, but power users usually prefer terminal-based helpers like <code>yay</code>. <code>yay</code> is written in Go, operates extremely fast, and shares its syntax directly with <code>pacman</code>.</p><h4 id=1-installing-essential-build-tools--yay>1. Installing Essential Build Tools & Yay<a hidden class=anchor aria-hidden=true href=#1-installing-essential-build-tools--yay>#</a></h4><p>Before building from the AUR, you must install the compilation toolchain (<code>gcc</code>, <code>make</code>, <code>autoconf</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Install compilation headers and tools</span>
+</span></span><span style=display:flex><span>sudo pacman -S --needed base-devel git
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Install Yay directly from Manjaro repositories</span>
+</span></span><span style=display:flex><span>sudo pacman -S yay
+</span></span></code></pre></div><p><em>(If installing on plain Arch Linux where <code>yay</code> isn&rsquo;t in official repos, manually clone it)</em>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>git clone https://aur.archlinux.org/yay.git
+</span></span><span style=display:flex><span>cd yay
+</span></span><span style=display:flex><span>makepkg -si
+</span></span></code></pre></div><h4 id=2-essential-yay-cheat-sheet>2. Essential <code>yay</code> Cheat Sheet<a hidden class=anchor aria-hidden=true href=#2-essential-yay-cheat-sheet>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Perform a full system upgrade (Official Repositories + AUR simultaneously)</span>
+</span></span><span style=display:flex><span>yay
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Search and install a package interactively</span>
+</span></span><span style=display:flex><span>yay package_name
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Force install a specific package without prompts</span>
+</span></span><span style=display:flex><span>yay -S package_name
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Remove a package along with its unneeded dependencies</span>
+</span></span><span style=display:flex><span>yay -Rns package_name
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Query installed AUR packages and clean cache</span>
+</span></span><span style=display:flex><span>yay -Ps
+</span></span></code></pre></div><blockquote><p><strong>Security Check for AUR:</strong> Because anyone can upload scripts to the AUR, always inspect <code>PKGBUILD</code> files during compilation. Ensure source URLs point to official vendor source repositories and don&rsquo;t contain suspicious download steps.</p></blockquote><hr><h1 id=4-storage-setup-automounting-an-ntfs-d-drive-on-manjaro>4. Storage Setup: Automounting an NTFS &ldquo;D Drive&rdquo; on Manjaro<a hidden class=anchor aria-hidden=true href=#4-storage-setup-automounting-an-ntfs-d-drive-on-manjaro>#</a></h1><p>If you dual-boot Windows and Manjaro or have an secondary hard drive formatted with NTFS, Linux will not automatically mount it at boot with full read/write permissions by default.</p><h3 id=method-1-using-gnome-disks-gui>Method 1: Using GNOME Disks (GUI)<a hidden class=anchor aria-hidden=true href=#method-1-using-gnome-disks-gui>#</a></h3><ol><li>Install GNOME Disks:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>pamac install gnome-disk-utility
+</span></span></code></pre></div></li><li>Open <strong>Disks</strong> from the app menu.</li><li>Select your target physical hard disk on the left panel.</li><li>Click the NTFS partition in the graphical volume map.</li><li>Click the <strong>Gears icon (Additional Partition Options)</strong> -> <strong>Edit Mount Options&mldr;</strong></li><li>Turn off <strong>User Session Defaults</strong>.</li><li>Check <strong>Mount at system startup</strong>.</li><li>Set Mount Point (e.g., <code>/mnt/data</code>).</li><li>Click <strong>OK</strong> and apply.</li></ol><pre tabindex=0><code>+---------------------------------------------------------+
 | Edit Mount Options                                      |
 +---------------------------------------------------------+
 | User Session Defaults .................------- [ OFF ]  |
 | Mount at system startup .................------ [ CHECK]|
 | Mount Point: /mnt/data                                  |
 +---------------------------------------------------------+
-</code></pre><h3 id="method-2-editing-etcfstab-terminal---recommended">Method 2: Editing <code>/etc/fstab</code> (Terminal - Recommended)<a hidden class="anchor" aria-hidden="true" href="#method-2-editing-etcfstab-terminal---recommended">#</a></h3>
-<p>Editing <code>/etc/fstab</code> directly ensures consistent mounting behavior across system boots.</p>
-<h4 id="step-1-identify-partition-uuid-and-file-system-type">Step 1: Identify partition UUID and file system type<a hidden class="anchor" aria-hidden="true" href="#step-1-identify-partition-uuid-and-file-system-type">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk -no NAME,UUID,FSTYPE,MOUNTPOINTS | grep ntfs
-</span></span></code></pre></div><p><em>Output example:</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sda2  4C8A21098A20F0DC  ntfs  
-</span></span></code></pre></div><h4 id="step-2-create-mount-destination-directory">Step 2: Create mount destination directory<a hidden class="anchor" aria-hidden="true" href="#step-2-create-mount-destination-directory">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /mnt/data
-</span></span></code></pre></div><h4 id="step-3-configure-etcfstab">Step 3: Configure <code>/etc/fstab</code><a hidden class="anchor" aria-hidden="true" href="#step-3-configure-etcfstab">#</a></h4>
-<p>Open the mount table file in your preferred terminal editor:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/fstab
-</span></span></code></pre></div><p>Append the following configuration line to the bottom of the file (replace <code>4C8A21098A20F0DC</code> with your real UUID):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>UUID=4C8A21098A20F0DC /mnt/data ntfs-3g defaults,noatime,uid=1000,gid=1000,dmask=022,fmask=133 0 0
-</span></span></code></pre></div><ul>
-<li><strong><code>ntfs-3g</code></strong>: Uses the reliable Fuse NTFS driver.</li>
-<li><strong><code>uid=1000,gid=1000</code></strong>: Assigns total ownership of all files on the drive to your primary user account.</li>
-<li><strong><code>dmask=022,fmask=133</code></strong>: Sets directory permissions (<code>755</code>) and file permissions (<code>644</code>) so files aren&rsquo;t unnecessarily marked as executable.</li>
-</ul>
-<h4 id="step-4-test-mount-configuration">Step 4: Test mount configuration<a hidden class="anchor" aria-hidden="true" href="#step-4-test-mount-configuration">#</a></h4>
-<p>Execute the following to verify there are no syntax errors (errors here can cause system boot failure):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount -a
-</span></span></code></pre></div><p>If no output or errors are returned, check <code>/mnt/data</code>—your drive is successfully mounted!</p>
-<h3 id="critical-preventative-step-disable-windows-fast-startup">CRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup<a hidden class="anchor" aria-hidden="true" href="#critical-preventative-step-disable-windows-fast-startup">#</a></h3>
-<p>If Windows hibernation or &ldquo;Fast Startup&rdquo; is enabled, Windows locks the NTFS drive structure into a dirty state during power down. Linux will force the drive into <strong>Read-Only</strong> mode to prevent corruption.</p>
-<ol>
-<li>Boot into Windows 10/11.</li>
-<li>Open <strong>Control Panel</strong> -&gt; <strong>Hardware and Sound</strong> -&gt; <strong>Power Options</strong>.</li>
-<li>Click <strong>Choose what the power buttons do</strong> in the left sidebar.</li>
-<li>Click <strong>Change settings that are currently unavailable</strong>.</li>
-<li>Uncheck <strong>Turn on fast startup (recommended)</strong>.</li>
-<li>Click <strong>Save changes</strong> and perform a complete system shutdown.</li>
-</ol>
-<pre tabindex="0"><code>+-----------------------------------------------------------+
+</code></pre><h3 id=method-2-editing-etcfstab-terminal---recommended>Method 2: Editing <code>/etc/fstab</code> (Terminal - Recommended)<a hidden class=anchor aria-hidden=true href=#method-2-editing-etcfstab-terminal---recommended>#</a></h3><p>Editing <code>/etc/fstab</code> directly ensures consistent mounting behavior across system boots.</p><h4 id=step-1-identify-partition-uuid-and-file-system-type>Step 1: Identify partition UUID and file system type<a hidden class=anchor aria-hidden=true href=#step-1-identify-partition-uuid-and-file-system-type>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>lsblk -no NAME,UUID,FSTYPE,MOUNTPOINTS | grep ntfs
+</span></span></code></pre></div><p><em>Output example:</em></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>sda2  4C8A21098A20F0DC  ntfs  
+</span></span></code></pre></div><h4 id=step-2-create-mount-destination-directory>Step 2: Create mount destination directory<a hidden class=anchor aria-hidden=true href=#step-2-create-mount-destination-directory>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo mkdir -p /mnt/data
+</span></span></code></pre></div><h4 id=step-3-configure-etcfstab>Step 3: Configure <code>/etc/fstab</code><a hidden class=anchor aria-hidden=true href=#step-3-configure-etcfstab>#</a></h4><p>Open the mount table file in your preferred terminal editor:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo nano /etc/fstab
+</span></span></code></pre></div><p>Append the following configuration line to the bottom of the file (replace <code>4C8A21098A20F0DC</code> with your real UUID):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>UUID=4C8A21098A20F0DC /mnt/data ntfs-3g defaults,noatime,uid=1000,gid=1000,dmask=022,fmask=133 0 0
+</span></span></code></pre></div><ul><li><strong><code>ntfs-3g</code></strong>: Uses the reliable Fuse NTFS driver.</li><li><strong><code>uid=1000,gid=1000</code></strong>: Assigns total ownership of all files on the drive to your primary user account.</li><li><strong><code>dmask=022,fmask=133</code></strong>: Sets directory permissions (<code>755</code>) and file permissions (<code>644</code>) so files aren&rsquo;t unnecessarily marked as executable.</li></ul><h4 id=step-4-test-mount-configuration>Step 4: Test mount configuration<a hidden class=anchor aria-hidden=true href=#step-4-test-mount-configuration>#</a></h4><p>Execute the following to verify there are no syntax errors (errors here can cause system boot failure):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>sudo mount -a
+</span></span></code></pre></div><p>If no output or errors are returned, check <code>/mnt/data</code>—your drive is successfully mounted!</p><h3 id=critical-preventative-step-disable-windows-fast-startup>CRITICAL PREVENTATIVE STEP: Disable Windows Fast Startup<a hidden class=anchor aria-hidden=true href=#critical-preventative-step-disable-windows-fast-startup>#</a></h3><p>If Windows hibernation or &ldquo;Fast Startup&rdquo; is enabled, Windows locks the NTFS drive structure into a dirty state during power down. Linux will force the drive into <strong>Read-Only</strong> mode to prevent corruption.</p><ol><li>Boot into Windows 10/11.</li><li>Open <strong>Control Panel</strong> -> <strong>Hardware and Sound</strong> -> <strong>Power Options</strong>.</li><li>Click <strong>Choose what the power buttons do</strong> in the left sidebar.</li><li>Click <strong>Change settings that are currently unavailable</strong>.</li><li>Uncheck <strong>Turn on fast startup (recommended)</strong>.</li><li>Click <strong>Save changes</strong> and perform a complete system shutdown.</li></ol><pre tabindex=0><code>+-----------------------------------------------------------+
 | Power Options -&gt; Shutdown Settings                        |
 +-----------------------------------------------------------+
 | [ ] Turn on fast startup (recommended)   &lt;-- UNCHECK THIS |
 | [x] Sleep                                                 |
 | [x] Hibernate                                             |
 +-----------------------------------------------------------+
-</code></pre><hr>
-<h1 id="5-automated-home-directory--system-backups">5. Automated Home Directory &amp; System Backups<a hidden class="anchor" aria-hidden="true" href="#5-automated-home-directory--system-backups">#</a></h1>
-<p>Protecting personal data across storage drives requires selecting the right workflow. Below are three methods tailored to different balance points of control and simplicity.</p>
-<h3 id="method-comparison">Method Comparison<a hidden class="anchor" aria-hidden="true" href="#method-comparison">#</a></h3>
-<pre tabindex="0"><code>+-----------------------+-----------------------+-----------------------+
+</code></pre><hr><h1 id=5-automated-home-directory--system-backups>5. Automated Home Directory & System Backups<a hidden class=anchor aria-hidden=true href=#5-automated-home-directory--system-backups>#</a></h1><p>Protecting personal data across storage drives requires selecting the right workflow. Below are three methods tailored to different balance points of control and simplicity.</p><h3 id=method-comparison>Method Comparison<a hidden class=anchor aria-hidden=true href=#method-comparison>#</a></h3><pre tabindex=0><code>+-----------------------+-----------------------+-----------------------+
 |      TIMESHIFT        |     BACK IN TIME      |     CUSTOM RSYNC      |
 +-----------------------+-----------------------+-----------------------+
 | • System Restoration  | • File-level Backup   | • Lightest Footprint  |
 | • OS + User Files     | • GUI (Qt-based)      | • Runs silently       |
 | • Snapshot / Rollback | • Incremental history | • Cron / Startup task |
 +-----------------------+-----------------------+-----------------------+
-</code></pre><h3 id="method-1-custom-zero-ram-background-shell-script">Method 1: Custom Zero-RAM Background Shell Script<a hidden class="anchor" aria-hidden="true" href="#method-1-custom-zero-ram-background-shell-script">#</a></h3>
-<p>If you want absolute efficiency with zero background RAM footprint, use an <code>rsync</code> script scheduled on system login.</p>
-<h4 id="1-create-the-backup-script-file">1. Create the backup script file<a hidden class="anchor" aria-hidden="true" href="#1-create-the-backup-script-file">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano ~/auto_backup.sh
-</span></span></code></pre></div><h4 id="2-add-shell-logic">2. Add shell logic<a hidden class="anchor" aria-hidden="true" href="#2-add-shell-logic">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define Source and Target Directories</span>
-</span></span><span style="display:flex;"><span>SOURCE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/</span>$USER<span style="color:#e6db74">/&#34;</span>
-</span></span><span style="display:flex;"><span>TARGET<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/mnt/data/home_backup/&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log File Setup</span>
-</span></span><span style="display:flex;"><span>LOGFILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/tmp/home_backup.log&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Backup started at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74"> ===&#34;</span> &gt; <span style="color:#e6db74">&#34;</span>$LOGFILE<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run rsync sync engine</span>
-</span></span><span style="display:flex;"><span>rsync -avh --delete   --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.cache/&#39;</span>   --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Downloads/&#39;</span>   --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.local/share/Trash/&#39;</span>   --exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; VirtualBox\ VMs/&#39;</span>   <span style="color:#e6db74">&#34;</span>$SOURCE<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$TARGET<span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOGFILE<span style="color:#e6db74">&#34;</span> 2&gt;&amp;<span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;=== Backup finished at </span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span><span style="color:#e6db74"> ===&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span>$LOGFILE<span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><h4 id="3-make-script-executable">3. Make script executable<a hidden class="anchor" aria-hidden="true" href="#3-make-script-executable">#</a></h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/auto_backup.sh
-</span></span></code></pre></div><h4 id="4-configure-xfce-autostart">4. Configure XFCE Autostart<a hidden class="anchor" aria-hidden="true" href="#4-configure-xfce-autostart">#</a></h4>
-<ol>
-<li>Open <strong>Settings Manager</strong> -&gt; <strong>Session and Startup</strong>.</li>
-<li>Click the <strong>Application Autostart</strong> tab.</li>
-<li>Click <strong>Add</strong> (<code>+</code>).</li>
-<li><strong>Name</strong>: <code>Home Directory Incremental Sync</code></li>
-<li><strong>Command</strong>: <code>/home/YOUR_USERNAME/auto_backup.sh</code></li>
-<li>Click <strong>OK</strong>.</li>
-</ol>
-<hr>
-<h1 id="6-deep-dive-comprehensive-timeshift-guide--troubleshooting">6. Deep-Dive: Comprehensive Timeshift Guide &amp; Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#6-deep-dive-comprehensive-timeshift-guide--troubleshooting">#</a></h1>
-<p>Timeshift works similarly to Windows System Restore or macOS Time Machine. It creates incremental system states using <code>rsync</code> and hard links.</p>
-<pre tabindex="0"><code>+-------------------------------------------------------------------+
+</code></pre><h3 id=method-1-custom-zero-ram-background-shell-script>Method 1: Custom Zero-RAM Background Shell Script<a hidden class=anchor aria-hidden=true href=#method-1-custom-zero-ram-background-shell-script>#</a></h3><p>If you want absolute efficiency with zero background RAM footprint, use an <code>rsync</code> script scheduled on system login.</p><h4 id=1-create-the-backup-script-file>1. Create the backup script file<a hidden class=anchor aria-hidden=true href=#1-create-the-backup-script-file>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>nano ~/auto_backup.sh
+</span></span></code></pre></div><h4 id=2-add-shell-logic>2. Add shell logic<a hidden class=anchor aria-hidden=true href=#2-add-shell-logic>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/usr/bin/env bash
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define Source and Target Directories</span>
+</span></span><span style=display:flex><span>SOURCE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/home/</span>$USER<span style=color:#e6db74>/&#34;</span>
+</span></span><span style=display:flex><span>TARGET<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/mnt/data/home_backup/&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Log File Setup</span>
+</span></span><span style=display:flex><span>LOGFILE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/tmp/home_backup.log&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;=== Backup started at </span><span style=color:#66d9ef>$(</span>date<span style=color:#66d9ef>)</span><span style=color:#e6db74> ===&#34;</span> &gt; <span style=color:#e6db74>&#34;</span>$LOGFILE<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Run rsync sync engine</span>
+</span></span><span style=display:flex><span>rsync -avh --delete   --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;.cache/&#39;</span>   --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;Downloads/&#39;</span>   --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;.local/share/Trash/&#39;</span>   --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#39; VirtualBox\ VMs/&#39;</span>   <span style=color:#e6db74>&#34;</span>$SOURCE<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;</span>$TARGET<span style=color:#e6db74>&#34;</span> &gt;&gt; <span style=color:#e6db74>&#34;</span>$LOGFILE<span style=color:#e6db74>&#34;</span> 2&gt;&amp;<span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;=== Backup finished at </span><span style=color:#66d9ef>$(</span>date<span style=color:#66d9ef>)</span><span style=color:#e6db74> ===&#34;</span> &gt;&gt; <span style=color:#e6db74>&#34;</span>$LOGFILE<span style=color:#e6db74>&#34;</span>
+</span></span></code></pre></div><h4 id=3-make-script-executable>3. Make script executable<a hidden class=anchor aria-hidden=true href=#3-make-script-executable>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>chmod +x ~/auto_backup.sh
+</span></span></code></pre></div><h4 id=4-configure-xfce-autostart>4. Configure XFCE Autostart<a hidden class=anchor aria-hidden=true href=#4-configure-xfce-autostart>#</a></h4><ol><li>Open <strong>Settings Manager</strong> -> <strong>Session and Startup</strong>.</li><li>Click the <strong>Application Autostart</strong> tab.</li><li>Click <strong>Add</strong> (<code>+</code>).</li><li><strong>Name</strong>: <code>Home Directory Incremental Sync</code></li><li><strong>Command</strong>: <code>/home/YOUR_USERNAME/auto_backup.sh</code></li><li>Click <strong>OK</strong>.</li></ol><hr><h1 id=6-deep-dive-comprehensive-timeshift-guide--troubleshooting>6. Deep-Dive: Comprehensive Timeshift Guide & Troubleshooting<a hidden class=anchor aria-hidden=true href=#6-deep-dive-comprehensive-timeshift-guide--troubleshooting>#</a></h1><p>Timeshift works similarly to Windows System Restore or macOS Time Machine. It creates incremental system states using <code>rsync</code> and hard links.</p><pre tabindex=0><code>+-------------------------------------------------------------------+
 |                        TIMESHIFT SNAPSHOT ARCHITECTURE            |
 |                                                                   |
 | [ Snapshot 1 ] ---&gt; Real File Copies (Full System Payload)        |
 | [ Snapshot 2 ] ---&gt; Hard Links to Unchanged Files + New Data      |
 | [ Snapshot 3 ] ---&gt; Hard Links to Unchanged Files + Modified Data |
 +-------------------------------------------------------------------+
-</code></pre><h3 id="step-by-step-configuration-strategy">Step-by-Step Configuration Strategy<a hidden class="anchor" aria-hidden="true" href="#step-by-step-configuration-strategy">#</a></h3>
-<ol>
-<li>Open <strong>Timeshift</strong> from the application menu.</li>
-<li>Select <strong>RSYNC</strong> as your snapshot type. <em>(BTRFS mode should only be chosen if root is explicitly formatted as BTRFS)</em>.</li>
-<li>Select Destination Drive: Choose your mounted NTFS volume (<code>/mnt/data</code>).</li>
-<li>Set Backup Schedule:
-<ul>
-<li><strong>Monthly</strong>: Keep 1</li>
-<li><strong>Weekly</strong>: Keep 2</li>
-<li><strong>Daily</strong>: Keep 5</li>
-<li><strong>Boot</strong>: Keep 2</li>
-</ul>
-</li>
-<li>Config user home directory inclusions under <strong>Users</strong>:
-<ul>
-<li>Set Root Home (<code>/root</code>): <strong>Include All</strong></li>
-<li>Set User Home (<code>/home/username</code>): Choose <strong>Include All</strong> to back up personal configurations, or <strong>Exclude All</strong> if you handle personal files with a dedicated tool.</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="emergency-system-restoration-workflow">Emergency System Restoration Workflow<a hidden class="anchor" aria-hidden="true" href="#emergency-system-restoration-workflow">#</a></h3>
-<h4 id="case-1-system-boots-and-gui-is-accessible">Case 1: System Boots and GUI is Accessible<a hidden class="anchor" aria-hidden="true" href="#case-1-system-boots-and-gui-is-accessible">#</a></h4>
-<p>Open Timeshift -&gt; Select desired snapshot from list -&gt; Click <strong>Restore</strong> -&gt; Confirm partition targets -&gt; Reboot.</p>
-<h4 id="case-2-system-fails-to-boot-broken-update--kernel-panic">Case 2: System Fails to Boot (Broken Update / Kernel Panic)<a hidden class="anchor" aria-hidden="true" href="#case-2-system-fails-to-boot-broken-update--kernel-panic">#</a></h4>
-<pre tabindex="0"><code>[ Unbootable PC ] ──&gt; Boot Live USB ──&gt; Launch Timeshift ──&gt; Select Drive ──&gt; Restore
-</code></pre><ol>
-<li>Insert your <strong>Manjaro Live USB</strong> and boot into the live environment.</li>
-<li>Open Timeshift (pre-installed on the Manjaro installer ISO).</li>
-<li>Select <strong>RSYNC</strong> mode. Timeshift will scan attached storage for existing snapshot folders.</li>
-<li>Pick your backup drive (<code>/mnt/data</code>).</li>
-<li>Select the last working snapshot (e.g., <code>Pre-AUR-tinker</code>).</li>
-<li>Click <strong>Restore</strong>. Timeshift will auto-assign target system mount points (<code>/</code>, <code>/boot</code>).</li>
-<li>Confirm operation and wait for completion.</li>
-<li>Reboot your machine without the USB drive. Your OS will boot cleanly.</li>
-</ol>
-<hr>
-<h3 id="troubleshooting-common-timeshift-errors">Troubleshooting Common Timeshift Errors<a hidden class="anchor" aria-hidden="true" href="#troubleshooting-common-timeshift-errors">#</a></h3>
-<h4 id="problem-1-rsync-error-some-filesattrs-were-not-transferred">Problem 1: &ldquo;RSYNC Error: Some files/attrs were not transferred&rdquo;<a hidden class="anchor" aria-hidden="true" href="#problem-1-rsync-error-some-filesattrs-were-not-transferred">#</a></h4>
-<ul>
-<li><strong>Root Cause:</strong> Timeshift attempted to sync dynamic lockfiles or active socket buffers located inside temporary system paths or lock files in <code>.cache</code>.</li>
-<li><strong>Solution:</strong> Navigate to <strong>Settings</strong> -&gt; <strong>Filters</strong> in Timeshift. Add explicit exclude rules for:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>**/.cache/**
-</span></span><span style="display:flex;"><span>**/tmp/**
-</span></span><span style="display:flex;"><span>**/.local/share/Trash/**
-</span></span></code></pre></div></li>
-</ul>
-<h4 id="problem-2-target-ntfs-drive-appears-as-read-only">Problem 2: Target NTFS Drive Appears as &ldquo;Read-Only&rdquo;<a hidden class="anchor" aria-hidden="true" href="#problem-2-target-ntfs-drive-appears-as-read-only">#</a></h4>
-<ul>
-<li><strong>Root Cause:</strong> Windows left a dirty bit on the NTFS filesystem, or <code>ntfs-3g</code> detected unrecoverable journal flags.</li>
-<li><strong>Solution:</strong> Run a filesystem repair check in Linux terminal:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unmount target drive first</span>
-</span></span><span style="display:flex;"><span>sudo umount /mnt/data
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Clear dirty bit flag from NTFS partition (e.g., sdb1)</span>
-</span></span><span style="display:flex;"><span>sudo ntfsfix /dev/sdb1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remount drive</span>
-</span></span><span style="display:flex;"><span>sudo mount -a
-</span></span></code></pre></div></li>
-</ul>
-<h4 id="problem-3-no-space-left-on-device-during-snapshot">Problem 3: &ldquo;No space left on device&rdquo; During Snapshot<a hidden class="anchor" aria-hidden="true" href="#problem-3-no-space-left-on-device-during-snapshot">#</a></h4>
-<ul>
-<li><strong>Root Cause:</strong> Retention policy thresholds are set too high, or massive uncompressed files (like <code>.iso</code> files or virtual machine disk images) are continually changing, invalidating hard links.</li>
-<li><strong>Solution:</strong>
-<ol>
-<li>Manually open Timeshift and delete older snapshots using the GUI delete tool.</li>
-<li>Go to <strong>Settings</strong> -&gt; <strong>Filters</strong> and add large file extensions to the ignore list:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>**.iso
-</span></span><span style="display:flex;"><span>**.qcow2
-</span></span><span style="display:flex;"><span>**.vmdk
-</span></span></code></pre></div></li>
-</ol>
-</li>
-</ul>
-<hr>
-<h1 id="summary-cheat-sheet">Summary Cheat Sheet<a hidden class="anchor" aria-hidden="true" href="#summary-cheat-sheet">#</a></h1>
-<ul>
-<li><strong>Desktop Choice:</strong> XFCE provides maximum CPU and memory headroom while maintaining a flexible, full-featured desktop environment.</li>
-<li><strong>Package Management:</strong> Use <code>yay -S &lt;pkg&gt;</code> to query both standard Arch repos and the AUR simultaneously via terminal.</li>
-<li><strong>Storage Automount:</strong> Add an entry for your NTFS partition into <code>/etc/fstab</code> with <code>ntfs-3g</code> options, and ensure Windows Fast Startup is disabled.</li>
-<li><strong>System Safeguard:</strong> Schedule <strong>Timeshift RSYNC</strong> snapshots before installing untrusted AUR code or performing major kernel upgrades.</li>
-</ul>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/xfce/">XFCE</a></li>
-      <li><a href="//localhost:1313/tags/manjaro/">Manjaro</a></li>
-      <li><a href="//localhost:1313/tags/linux-mint/">Linux Mint</a></li>
-      <li><a href="//localhost:1313/tags/aur/">Aur</a></li>
-      <li><a href="//localhost:1313/tags/yay/">Yay</a></li>
-      <li><a href="//localhost:1313/tags/timeshift/">Timeshift</a></li>
-      <li><a href="//localhost:1313/tags/ntfs/">Ntfs</a></li>
-      <li><a href="//localhost:1313/tags/backup/">Backup</a></li>
-      <li><a href="//localhost:1313/tags/performance/">Performance</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-04-obtainium/">
-    <span class="title">« Prev</span>
-    <span>The Ultimate Guide to Obtainium: Managing Android App Repositories, JSON Imports, and Open-Source Ecosystems</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-remote-desktop/">
-    <span class="title">Next »</span>
-    <span>The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><h3 id=step-by-step-configuration-strategy>Step-by-Step Configuration Strategy<a hidden class=anchor aria-hidden=true href=#step-by-step-configuration-strategy>#</a></h3><ol><li>Open <strong>Timeshift</strong> from the application menu.</li><li>Select <strong>RSYNC</strong> as your snapshot type. <em>(BTRFS mode should only be chosen if root is explicitly formatted as BTRFS)</em>.</li><li>Select Destination Drive: Choose your mounted NTFS volume (<code>/mnt/data</code>).</li><li>Set Backup Schedule:<ul><li><strong>Monthly</strong>: Keep 1</li><li><strong>Weekly</strong>: Keep 2</li><li><strong>Daily</strong>: Keep 5</li><li><strong>Boot</strong>: Keep 2</li></ul></li><li>Config user home directory inclusions under <strong>Users</strong>:<ul><li>Set Root Home (<code>/root</code>): <strong>Include All</strong></li><li>Set User Home (<code>/home/username</code>): Choose <strong>Include All</strong> to back up personal configurations, or <strong>Exclude All</strong> if you handle personal files with a dedicated tool.</li></ul></li></ol><hr><h3 id=emergency-system-restoration-workflow>Emergency System Restoration Workflow<a hidden class=anchor aria-hidden=true href=#emergency-system-restoration-workflow>#</a></h3><h4 id=case-1-system-boots-and-gui-is-accessible>Case 1: System Boots and GUI is Accessible<a hidden class=anchor aria-hidden=true href=#case-1-system-boots-and-gui-is-accessible>#</a></h4><p>Open Timeshift -> Select desired snapshot from list -> Click <strong>Restore</strong> -> Confirm partition targets -> Reboot.</p><h4 id=case-2-system-fails-to-boot-broken-update--kernel-panic>Case 2: System Fails to Boot (Broken Update / Kernel Panic)<a hidden class=anchor aria-hidden=true href=#case-2-system-fails-to-boot-broken-update--kernel-panic>#</a></h4><pre tabindex=0><code>[ Unbootable PC ] ──&gt; Boot Live USB ──&gt; Launch Timeshift ──&gt; Select Drive ──&gt; Restore
+</code></pre><ol><li>Insert your <strong>Manjaro Live USB</strong> and boot into the live environment.</li><li>Open Timeshift (pre-installed on the Manjaro installer ISO).</li><li>Select <strong>RSYNC</strong> mode. Timeshift will scan attached storage for existing snapshot folders.</li><li>Pick your backup drive (<code>/mnt/data</code>).</li><li>Select the last working snapshot (e.g., <code>Pre-AUR-tinker</code>).</li><li>Click <strong>Restore</strong>. Timeshift will auto-assign target system mount points (<code>/</code>, <code>/boot</code>).</li><li>Confirm operation and wait for completion.</li><li>Reboot your machine without the USB drive. Your OS will boot cleanly.</li></ol><hr><h3 id=troubleshooting-common-timeshift-errors>Troubleshooting Common Timeshift Errors<a hidden class=anchor aria-hidden=true href=#troubleshooting-common-timeshift-errors>#</a></h3><h4 id=problem-1-rsync-error-some-filesattrs-were-not-transferred>Problem 1: &ldquo;RSYNC Error: Some files/attrs were not transferred&rdquo;<a hidden class=anchor aria-hidden=true href=#problem-1-rsync-error-some-filesattrs-were-not-transferred>#</a></h4><ul><li><strong>Root Cause:</strong> Timeshift attempted to sync dynamic lockfiles or active socket buffers located inside temporary system paths or lock files in <code>.cache</code>.</li><li><strong>Solution:</strong> Navigate to <strong>Settings</strong> -> <strong>Filters</strong> in Timeshift. Add explicit exclude rules for:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>**/.cache/**
+</span></span><span style=display:flex><span>**/tmp/**
+</span></span><span style=display:flex><span>**/.local/share/Trash/**
+</span></span></code></pre></div></li></ul><h4 id=problem-2-target-ntfs-drive-appears-as-read-only>Problem 2: Target NTFS Drive Appears as &ldquo;Read-Only&rdquo;<a hidden class=anchor aria-hidden=true href=#problem-2-target-ntfs-drive-appears-as-read-only>#</a></h4><ul><li><strong>Root Cause:</strong> Windows left a dirty bit on the NTFS filesystem, or <code>ntfs-3g</code> detected unrecoverable journal flags.</li><li><strong>Solution:</strong> Run a filesystem repair check in Linux terminal:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Unmount target drive first</span>
+</span></span><span style=display:flex><span>sudo umount /mnt/data
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Clear dirty bit flag from NTFS partition (e.g., sdb1)</span>
+</span></span><span style=display:flex><span>sudo ntfsfix /dev/sdb1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Remount drive</span>
+</span></span><span style=display:flex><span>sudo mount -a
+</span></span></code></pre></div></li></ul><h4 id=problem-3-no-space-left-on-device-during-snapshot>Problem 3: &ldquo;No space left on device&rdquo; During Snapshot<a hidden class=anchor aria-hidden=true href=#problem-3-no-space-left-on-device-during-snapshot>#</a></h4><ul><li><strong>Root Cause:</strong> Retention policy thresholds are set too high, or massive uncompressed files (like <code>.iso</code> files or virtual machine disk images) are continually changing, invalidating hard links.</li><li><strong>Solution:</strong><ol><li>Manually open Timeshift and delete older snapshots using the GUI delete tool.</li><li>Go to <strong>Settings</strong> -> <strong>Filters</strong> and add large file extensions to the ignore list:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>**.iso
+</span></span><span style=display:flex><span>**.qcow2
+</span></span><span style=display:flex><span>**.vmdk
+</span></span></code></pre></div></li></ol></li></ul><hr><h1 id=summary-cheat-sheet>Summary Cheat Sheet<a hidden class=anchor aria-hidden=true href=#summary-cheat-sheet>#</a></h1><ul><li><strong>Desktop Choice:</strong> XFCE provides maximum CPU and memory headroom while maintaining a flexible, full-featured desktop environment.</li><li><strong>Package Management:</strong> Use <code>yay -S &lt;pkg></code> to query both standard Arch repos and the AUR simultaneously via terminal.</li><li><strong>Storage Automount:</strong> Add an entry for your NTFS partition into <code>/etc/fstab</code> with <code>ntfs-3g</code> options, and ensure Windows Fast Startup is disabled.</li><li><strong>System Safeguard:</strong> Schedule <strong>Timeshift RSYNC</strong> snapshots before installing untrusted AUR code or performing major kernel upgrades.</li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/xfce/>Xfce</a></li><li><a href=/tags/manjaro/>Manjaro</a></li><li><a href=/tags/linux-mint/>Linux-Mint</a></li><li><a href=/tags/aur/>Aur</a></li><li><a href=/tags/yay/>Yay</a></li><li><a href=/tags/timeshift/>Timeshift</a></li><li><a href=/tags/ntfs/>Ntfs</a></li><li><a href=/tags/backup/>Backup</a></li><li><a href=/tags/performance/>Performance</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-04-obtainium/><span class=title>« Prev</span>
+<span>The Ultimate Guide to Obtainium: Managing Android App Repositories, JSON Imports, and Open-Source Ecosystems</span>
+</a><a class=next href=/posts/2026-08-04-remote-desktop/><span class=title>Next »</span>
+<span>The Ultimate Guide: How to Set Up Free Remote Desktop for Windows 11 and Android</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

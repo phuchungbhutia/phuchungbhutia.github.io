@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Mobile Development on Technical Journal</title>
-    <link>//localhost:1313/categories/mobile-development/</link>
-    <description>Recent content in Mobile Development on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/mobile-development/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title>
-      <link>//localhost:1313/posts/2026-08-04-adb/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-adb/</guid>
-      <description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
-&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Mobile Development on Technical Journal</title><link>/categories/mobile-development/</link><description>Recent content in Mobile Development on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/categories/mobile-development/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to Android Debug Bridge (ADB): Commands, Setup, and Environment Variables</title><link>/posts/2026-08-04-adb/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-adb/</guid><description>&lt;p&gt;Android Debug Bridge (ADB) is a versatile, command-line utility that enables communication between a development machine and a connected Android device or emulator. Whether you are installing custom ROMs, debugging application packages, pulling logs, or automating build pipelines, ADB is the foundational bridge that connects your workstation to the Android OS inner workings.&lt;/p&gt;
+&lt;p&gt;This comprehensive guide covers everything from fundamental ADB commands to configuring system-wide environment variables (&lt;code&gt;PATH&lt;/code&gt;) across Windows, macOS, and Linux.&lt;/p&gt;</description></item></channel></rss>

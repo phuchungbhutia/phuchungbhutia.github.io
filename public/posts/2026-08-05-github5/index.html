@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>GitHub Actions: Complete CI/CD Guide from Beginner to Production | Technical Journal</title>
-<meta name="keywords" content="github-actions, ci, cd, automation, docker, yaml, devops, github, workflow">
-<meta name="description" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>GitHub Actions: Complete CI/CD Guide from Beginner to Production | Technical Journal</title><meta name=keywords content="github-actions,ci,cd,automation,docker,yaml,devops,github,workflow"><meta name=description content="GitHub Actions: Complete CI/CD Guide from Beginner to Production
 Writing code is only one part of software development.
 Modern software teams automate everything:
 
@@ -20,91 +11,13 @@ Deploying applications
 Sending notifications
 
 GitHub Actions makes all of this possible without leaving GitHub.
-Whether you&rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.">
-<meta name="author" content="Phuchung Bhutia">
-<link rel="canonical" href="//localhost:1313/posts/2026-08-05-github5/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="//localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="//localhost:1313/posts/2026-08-05-github5/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="//localhost:1313/posts/2026-08-05-github5/">
-  <meta property="og:site_name" content="Technical Journal">
-  <meta property="og:title" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production">
-  <meta property="og:description" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production Writing code is only one part of software development.
+Whether you&rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes."><meta name=author content="Phuchung Bhutia"><link rel=canonical href=/posts/2026-08-05-github5/><link crossorigin=anonymous href=/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as=style><link rel=icon href=/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=/posts/2026-08-05-github5/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="/posts/2026-08-05-github5/"><meta property="og:site_name" content="Technical Journal"><meta property="og:title" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production"><meta property="og:description" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production Writing code is only one part of software development.
 Modern software teams automate everything:
 Building applications Running tests Checking code quality Creating Docker images Publishing releases Deploying applications Sending notifications GitHub Actions makes all of this possible without leaving GitHub.
-Whether you’re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-08-05T09:30:00+05:30">
-    <meta property="article:modified_time" content="2026-08-05T09:30:00+05:30">
-    <meta property="article:tag" content="Github-Actions">
-    <meta property="article:tag" content="Ci">
-    <meta property="article:tag" content="Cd">
-    <meta property="article:tag" content="Automation">
-    <meta property="article:tag" content="Docker">
-    <meta property="article:tag" content="Yaml">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production">
-  <meta name="twitter:description" content="GitHub Actions: Complete CI/CD Guide from Beginner to Production Writing code is only one part of software development.
+Whether you’re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-08-05T09:30:00+05:30"><meta property="article:modified_time" content="2026-08-05T09:30:00+05:30"><meta property="article:tag" content="Github-Actions"><meta property="article:tag" content="Ci"><meta property="article:tag" content="Cd"><meta property="article:tag" content="Automation"><meta property="article:tag" content="Docker"><meta property="article:tag" content="Yaml"><meta name=twitter:card content="summary"><meta name=twitter:title content="GitHub Actions: Complete CI/CD Guide from Beginner to Production"><meta name=twitter:description content="GitHub Actions: Complete CI/CD Guide from Beginner to Production Writing code is only one part of software development.
 Modern software teams automate everything:
 Building applications Running tests Checking code quality Creating Docker images Publishing releases Deploying applications Sending notifications GitHub Actions makes all of this possible without leaving GitHub.
-Whether you’re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.">
-
-
-<script type="application/ld+json">
+Whether you’re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes."><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -113,18 +26,17 @@ Whether you’re building a personal portfolio or managing enterprise software, 
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "//localhost:1313/posts/"
-    }, 
+      "item": "/posts/"
+    }
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "GitHub Actions: Complete CI/CD Guide from Beginner to Production",
-      "item": "//localhost:1313/posts/2026-08-05-github5/"
+      "item": "/posts/2026-08-05-github5/"
     }
   ]
 }
-</script>
-<script type="application/ld+json">
+</script><script type=application/ld+json>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -145,315 +57,23 @@ Whether you’re building a personal portfolio or managing enterprise software, 
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "//localhost:1313/posts/2026-08-05-github5/"
+    "@id": "/posts/2026-08-05-github5/"
   },
   "publisher": {
-    "@type": "Organization",
+    "@type": "Person",
     "name": "Technical Journal",
     "logo": {
       "@type": "ImageObject",
-      "url": "//localhost:1313/favicon.ico"
+      "url": "/favicon.ico"
     }
   }
 }
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="//localhost:1313/" accesskey="h" title="Technical Journal (Alt + H)">Technical Journal</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="//localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="//localhost:1313/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/posts/">Posts</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      GitHub Actions: Complete CI/CD Guide from Beginner to Production
-    </h1>
-    <div class="post-meta">
-
-<span title='2026-08-05 09:30:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span>
-
-</div>
-  </header> <details class="toc" >
-    <summary accesskey="c" title="(Alt + C)">
-        <span class="title">Table of Contents</span>
-    </summary>
-
-    <div class="inner"><ul>
-            <li>
-                <a href="#github-actions-complete-cicd-guide-from-beginner-to-production" aria-label="GitHub Actions: Complete CI/CD Guide from Beginner to Production">GitHub Actions: Complete CI/CD Guide from Beginner to Production</a></li>
-            <li>
-                <a href="#table-of-contents" aria-label="Table of Contents">Table of Contents</a></li>
-            <li>
-                <a href="#what-is-cicd" aria-label="What is CI/CD?">What is CI/CD?</a></li>
-            <li>
-                <a href="#traditional-workflow" aria-label="Traditional Workflow">Traditional Workflow</a></li>
-            <li>
-                <a href="#modern-workflow" aria-label="Modern Workflow">Modern Workflow</a></li>
-            <li>
-                <a href="#what-is-github-actions" aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li>
-            <li>
-                <a href="#workflow-structure" aria-label="Workflow Structure">Workflow Structure</a></li>
-            <li>
-                <a href="#your-first-workflow" aria-label="Your First Workflow">Your First Workflow</a></li>
-            <li>
-                <a href="#workflow-anatomy" aria-label="Workflow Anatomy">Workflow Anatomy</a></li>
-            <li>
-                <a href="#understanding-yaml" aria-label="Understanding YAML">Understanding YAML</a></li>
-            <li>
-                <a href="#events-triggers" aria-label="Events (Triggers)">Events (Triggers)</a></li>
-            <li>
-                <a href="#cron-examples" aria-label="Cron Examples">Cron Examples</a></li>
-            <li>
-                <a href="#jobs" aria-label="Jobs">Jobs</a></li>
-            <li>
-                <a href="#steps" aria-label="Steps">Steps</a></li>
-            <li>
-                <a href="#runners" aria-label="Runners">Runners</a></li>
-            <li>
-                <a href="#checking-out-code" aria-label="Checking Out Code">Checking Out Code</a></li>
-            <li>
-                <a href="#setting-up-python" aria-label="Setting Up Python">Setting Up Python</a></li>
-            <li>
-                <a href="#installing-dependencies" aria-label="Installing Dependencies">Installing Dependencies</a></li>
-            <li>
-                <a href="#running-tests" aria-label="Running Tests">Running Tests</a></li>
-            <li>
-                <a href="#environment-variables" aria-label="Environment Variables">Environment Variables</a></li>
-            <li>
-                <a href="#secrets" aria-label="Secrets">Secrets</a></li>
-            <li>
-                <a href="#artifacts" aria-label="Artifacts">Artifacts</a></li>
-            <li>
-                <a href="#caching-dependencies" aria-label="Caching Dependencies">Caching Dependencies</a></li>
-            <li>
-                <a href="#matrix-builds" aria-label="Matrix Builds">Matrix Builds</a></li>
-            <li>
-                <a href="#docker-integration" aria-label="Docker Integration">Docker Integration</a></li>
-            <li>
-                <a href="#building-a-python-project" aria-label="Building a Python Project">Building a Python Project</a></li>
-            <li>
-                <a href="#deploying-static-websites" aria-label="Deploying Static Websites">Deploying Static Websites</a></li>
-            <li>
-                <a href="#scheduled-automation" aria-label="Scheduled Automation">Scheduled Automation</a></li>
-            <li>
-                <a href="#reusable-workflows" aria-label="Reusable Workflows">Reusable Workflows</a></li>
-            <li>
-                <a href="#self-hosted-runners" aria-label="Self-hosted Runners">Self-hosted Runners</a></li>
-            <li>
-                <a href="#deployment-pipeline" aria-label="Deployment Pipeline">Deployment Pipeline</a></li>
-            <li>
-                <a href="#notifications" aria-label="Notifications">Notifications</a></li>
-            <li>
-                <a href="#release-automation" aria-label="Release Automation">Release Automation</a></li>
-            <li>
-                <a href="#code-quality" aria-label="Code Quality">Code Quality</a></li>
-            <li>
-                <a href="#security-scanning" aria-label="Security Scanning">Security Scanning</a></li>
-            <li>
-                <a href="#multi-job-workflow" aria-label="Multi-job Workflow">Multi-job Workflow</a></li>
-            <li>
-                <a href="#real-world-workflow" aria-label="Real-world Workflow">Real-world Workflow</a></li>
-            <li>
-                <a href="#common-mistakes" aria-label="Common Mistakes">Common Mistakes</a></li>
-            <li>
-                <a href="#best-practices" aria-label="Best Practices">Best Practices</a></li>
-            <li>
-                <a href="#project-1" aria-label="Project 1">Project 1</a></li>
-            <li>
-                <a href="#project-2" aria-label="Project 2">Project 2</a></li>
-            <li>
-                <a href="#project-3" aria-label="Project 3">Project 3</a></li>
-            <li>
-                <a href="#project-4" aria-label="Project 4">Project 4</a></li>
-            <li>
-                <a href="#project-5" aria-label="Project 5">Project 5</a></li>
-            <li>
-                <a href="#portfolio-ideas" aria-label="Portfolio Ideas">Portfolio Ideas</a></li>
-            <li>
-                <a href="#github-actions-cheat-sheet" aria-label="GitHub Actions Cheat Sheet">GitHub Actions Cheat Sheet</a></li>
-            <li>
-                <a href="#interview-questions" aria-label="Interview Questions">Interview Questions</a><ul>
-                    <ul>
-                    
-            <li>
-                <a href="#what-is-ci" aria-label="What is CI?">What is CI?</a></li>
-            <li>
-                <a href="#what-is-cd" aria-label="What is CD?">What is CD?</a></li>
-            <li>
-                <a href="#difference-between-continuous-delivery-and-continuous-deployment" aria-label="Difference between Continuous Delivery and Continuous Deployment?">Difference between Continuous Delivery and Continuous Deployment?</a></li>
-            <li>
-                <a href="#what-is-github-actions-1" aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li>
-            <li>
-                <a href="#what-is-a-runner" aria-label="What is a runner?">What is a runner?</a></li>
-            <li>
-                <a href="#what-is-a-workflow" aria-label="What is a workflow?">What is a workflow?</a></li>
-            <li>
-                <a href="#what-is-a-job" aria-label="What is a job?">What is a job?</a></li>
-            <li>
-                <a href="#what-is-a-step" aria-label="What is a step?">What is a step?</a></li>
-            <li>
-                <a href="#what-are-github-secrets" aria-label="What are GitHub Secrets?">What are GitHub Secrets?</a></li>
-            <li>
-                <a href="#explain-matrix-builds" aria-label="Explain matrix builds.">Explain matrix builds.</a></li>
-            <li>
-                <a href="#what-are-artifacts" aria-label="What are artifacts?">What are artifacts?</a></li>
-            <li>
-                <a href="#why-use-caching" aria-label="Why use caching?">Why use caching?</a></li>
-            <li>
-                <a href="#difference-between-self-hosted-and-github-hosted-runners" aria-label="Difference between self-hosted and GitHub-hosted runners?">Difference between self-hosted and GitHub-hosted runners?</a></li></ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#learning-roadmap" aria-label="Learning Roadmap">Learning Roadmap</a><ul>
-                    
-            <li>
-                <a href="#week-1" aria-label="Week 1">Week 1</a></li>
-            <li>
-                <a href="#week-2" aria-label="Week 2">Week 2</a></li>
-            <li>
-                <a href="#week-3" aria-label="Week 3">Week 3</a></li>
-            <li>
-                <a href="#week-4" aria-label="Week 4">Week 4</a></li></ul>
-            </li>
-            <li>
-                <a href="#capstone-project" aria-label="Capstone Project">Capstone Project</a><ul>
-                    
-            <li>
-                <a href="#complete-cicd-pipeline" aria-label="Complete CI/CD Pipeline">Complete CI/CD Pipeline</a><ul>
-                    
-            <li>
-                <a href="#features" aria-label="Features">Features</a></li></ul>
-            </li></ul>
-            </li>
-            <li>
-                <a href="#next-article" aria-label="Next Article">Next Article</a>
-            </li>
-        </ul>
-    </div>
-</details>
-
-  <div class="post-content md-content"><h1 id="github-actions-complete-cicd-guide-from-beginner-to-production">GitHub Actions: Complete CI/CD Guide from Beginner to Production<a hidden class="anchor" aria-hidden="true" href="#github-actions-complete-cicd-guide-from-beginner-to-production">#</a></h1>
-<p>Writing code is only one part of software development.</p>
-<p>Modern software teams automate everything:</p>
-<ul>
-<li>Building applications</li>
-<li>Running tests</li>
-<li>Checking code quality</li>
-<li>Creating Docker images</li>
-<li>Publishing releases</li>
-<li>Deploying applications</li>
-<li>Sending notifications</li>
-</ul>
-<p>GitHub Actions makes all of this possible without leaving GitHub.</p>
-<p>Whether you&rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.</p>
-<p>This guide covers GitHub Actions from the basics to production-ready CI/CD pipelines.</p>
-<hr>
-<h1 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h1>
-<ol>
-<li>What is CI/CD?</li>
-<li>What is GitHub Actions?</li>
-<li>How GitHub Actions Works</li>
-<li>Workflow Basics</li>
-<li>YAML Fundamentals</li>
-<li>Events (Triggers)</li>
-<li>Jobs</li>
-<li>Steps</li>
-<li>Runners</li>
-<li>Environment Variables</li>
-<li>Secrets</li>
-<li>Artifacts</li>
-<li>Cache</li>
-<li>Matrix Builds</li>
-<li>Docker Integration</li>
-<li>Testing Applications</li>
-<li>Deploying Applications</li>
-<li>Scheduled Workflows</li>
-<li>Reusable Workflows</li>
-<li>Self-hosted Runners</li>
-<li>Best Practices</li>
-<li>Real-world Examples</li>
-<li>Common Mistakes</li>
-<li>Portfolio Projects</li>
-<li>Interview Questions</li>
-<li>Learning Roadmap</li>
-</ol>
-<hr>
-<h1 id="what-is-cicd">What is CI/CD?<a hidden class="anchor" aria-hidden="true" href="#what-is-cicd">#</a></h1>
-<p>CI means <strong>Continuous Integration</strong>.</p>
-<p>Developers merge code frequently.</p>
-<p>Every change is automatically:</p>
-<ul>
-<li>Built</li>
-<li>Tested</li>
-<li>Verified</li>
-</ul>
-<p>CD means:</p>
-<p>Continuous Delivery or Continuous Deployment.</p>
-<p>Applications are automatically delivered or deployed after successful testing.</p>
-<hr>
-<h1 id="traditional-workflow">Traditional Workflow<a hidden class="anchor" aria-hidden="true" href="#traditional-workflow">#</a></h1>
-<pre tabindex="0"><code>Developer
+</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=/ accesskey=h title="Technical Journal (Alt + H)">Technical Journal</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=/categories/ title=Categories><span>Categories</span></a></li><li><a href=/tags/ title=Tags><span>Tags</span></a></li><li><a href=/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/posts/>Posts</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">GitHub Actions: Complete CI/CD Guide from Beginner to Production</h1><div class=post-meta><span title='2026-08-05 09:30:00 +0530 IST'>August 5, 2026</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>Phuchung Bhutia</span></div></header><details class=toc><summary accesskey=c title="(Alt + C)"><span class=title>Table of Contents</span></summary><div class=inner><ul><li><a href=#github-actions-complete-cicd-guide-from-beginner-to-production aria-label="GitHub Actions: Complete CI/CD Guide from Beginner to Production">GitHub Actions: Complete CI/CD Guide from Beginner to Production</a></li><li><a href=#table-of-contents aria-label="Table of Contents">Table of Contents</a></li><li><a href=#what-is-cicd aria-label="What is CI/CD?">What is CI/CD?</a></li><li><a href=#traditional-workflow aria-label="Traditional Workflow">Traditional Workflow</a></li><li><a href=#modern-workflow aria-label="Modern Workflow">Modern Workflow</a></li><li><a href=#what-is-github-actions aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li><li><a href=#workflow-structure aria-label="Workflow Structure">Workflow Structure</a></li><li><a href=#your-first-workflow aria-label="Your First Workflow">Your First Workflow</a></li><li><a href=#workflow-anatomy aria-label="Workflow Anatomy">Workflow Anatomy</a></li><li><a href=#understanding-yaml aria-label="Understanding YAML">Understanding YAML</a></li><li><a href=#events-triggers aria-label="Events (Triggers)">Events (Triggers)</a></li><li><a href=#cron-examples aria-label="Cron Examples">Cron Examples</a></li><li><a href=#jobs aria-label=Jobs>Jobs</a></li><li><a href=#steps aria-label=Steps>Steps</a></li><li><a href=#runners aria-label=Runners>Runners</a></li><li><a href=#checking-out-code aria-label="Checking Out Code">Checking Out Code</a></li><li><a href=#setting-up-python aria-label="Setting Up Python">Setting Up Python</a></li><li><a href=#installing-dependencies aria-label="Installing Dependencies">Installing Dependencies</a></li><li><a href=#running-tests aria-label="Running Tests">Running Tests</a></li><li><a href=#environment-variables aria-label="Environment Variables">Environment Variables</a></li><li><a href=#secrets aria-label=Secrets>Secrets</a></li><li><a href=#artifacts aria-label=Artifacts>Artifacts</a></li><li><a href=#caching-dependencies aria-label="Caching Dependencies">Caching Dependencies</a></li><li><a href=#matrix-builds aria-label="Matrix Builds">Matrix Builds</a></li><li><a href=#docker-integration aria-label="Docker Integration">Docker Integration</a></li><li><a href=#building-a-python-project aria-label="Building a Python Project">Building a Python Project</a></li><li><a href=#deploying-static-websites aria-label="Deploying Static Websites">Deploying Static Websites</a></li><li><a href=#scheduled-automation aria-label="Scheduled Automation">Scheduled Automation</a></li><li><a href=#reusable-workflows aria-label="Reusable Workflows">Reusable Workflows</a></li><li><a href=#self-hosted-runners aria-label="Self-hosted Runners">Self-hosted Runners</a></li><li><a href=#deployment-pipeline aria-label="Deployment Pipeline">Deployment Pipeline</a></li><li><a href=#notifications aria-label=Notifications>Notifications</a></li><li><a href=#release-automation aria-label="Release Automation">Release Automation</a></li><li><a href=#code-quality aria-label="Code Quality">Code Quality</a></li><li><a href=#security-scanning aria-label="Security Scanning">Security Scanning</a></li><li><a href=#multi-job-workflow aria-label="Multi-job Workflow">Multi-job Workflow</a></li><li><a href=#real-world-workflow aria-label="Real-world Workflow">Real-world Workflow</a></li><li><a href=#common-mistakes aria-label="Common Mistakes">Common Mistakes</a></li><li><a href=#best-practices aria-label="Best Practices">Best Practices</a></li><li><a href=#project-1 aria-label="Project 1">Project 1</a></li><li><a href=#project-2 aria-label="Project 2">Project 2</a></li><li><a href=#project-3 aria-label="Project 3">Project 3</a></li><li><a href=#project-4 aria-label="Project 4">Project 4</a></li><li><a href=#project-5 aria-label="Project 5">Project 5</a></li><li><a href=#portfolio-ideas aria-label="Portfolio Ideas">Portfolio Ideas</a></li><li><a href=#github-actions-cheat-sheet aria-label="GitHub Actions Cheat Sheet">GitHub Actions Cheat Sheet</a></li><li><a href=#interview-questions aria-label="Interview Questions">Interview Questions</a><ul><ul><li><a href=#what-is-ci aria-label="What is CI?">What is CI?</a></li><li><a href=#what-is-cd aria-label="What is CD?">What is CD?</a></li><li><a href=#difference-between-continuous-delivery-and-continuous-deployment aria-label="Difference between Continuous Delivery and Continuous Deployment?">Difference between Continuous Delivery and Continuous Deployment?</a></li><li><a href=#what-is-github-actions-1 aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li><li><a href=#what-is-a-runner aria-label="What is a runner?">What is a runner?</a></li><li><a href=#what-is-a-workflow aria-label="What is a workflow?">What is a workflow?</a></li><li><a href=#what-is-a-job aria-label="What is a job?">What is a job?</a></li><li><a href=#what-is-a-step aria-label="What is a step?">What is a step?</a></li><li><a href=#what-are-github-secrets aria-label="What are GitHub Secrets?">What are GitHub Secrets?</a></li><li><a href=#explain-matrix-builds aria-label="Explain matrix builds.">Explain matrix builds.</a></li><li><a href=#what-are-artifacts aria-label="What are artifacts?">What are artifacts?</a></li><li><a href=#why-use-caching aria-label="Why use caching?">Why use caching?</a></li><li><a href=#difference-between-self-hosted-and-github-hosted-runners aria-label="Difference between self-hosted and GitHub-hosted runners?">Difference between self-hosted and GitHub-hosted runners?</a></li></ul></ul></li><li><a href=#learning-roadmap aria-label="Learning Roadmap">Learning Roadmap</a><ul><li><a href=#week-1 aria-label="Week 1">Week 1</a></li><li><a href=#week-2 aria-label="Week 2">Week 2</a></li><li><a href=#week-3 aria-label="Week 3">Week 3</a></li><li><a href=#week-4 aria-label="Week 4">Week 4</a></li></ul></li><li><a href=#capstone-project aria-label="Capstone Project">Capstone Project</a><ul><li><a href=#complete-cicd-pipeline aria-label="Complete CI/CD Pipeline">Complete CI/CD Pipeline</a><ul><li><a href=#features aria-label=Features>Features</a></li></ul></li></ul></li><li><a href=#next-article aria-label="Next Article">Next Article</a></li></ul></div></details><div class="post-content md-content"><h1 id=github-actions-complete-cicd-guide-from-beginner-to-production>GitHub Actions: Complete CI/CD Guide from Beginner to Production<a hidden class=anchor aria-hidden=true href=#github-actions-complete-cicd-guide-from-beginner-to-production>#</a></h1><p>Writing code is only one part of software development.</p><p>Modern software teams automate everything:</p><ul><li>Building applications</li><li>Running tests</li><li>Checking code quality</li><li>Creating Docker images</li><li>Publishing releases</li><li>Deploying applications</li><li>Sending notifications</li></ul><p>GitHub Actions makes all of this possible without leaving GitHub.</p><p>Whether you&rsquo;re building a personal portfolio or managing enterprise software, GitHub Actions helps you deliver software faster, more reliably, and with fewer mistakes.</p><p>This guide covers GitHub Actions from the basics to production-ready CI/CD pipelines.</p><hr><h1 id=table-of-contents>Table of Contents<a hidden class=anchor aria-hidden=true href=#table-of-contents>#</a></h1><ol><li>What is CI/CD?</li><li>What is GitHub Actions?</li><li>How GitHub Actions Works</li><li>Workflow Basics</li><li>YAML Fundamentals</li><li>Events (Triggers)</li><li>Jobs</li><li>Steps</li><li>Runners</li><li>Environment Variables</li><li>Secrets</li><li>Artifacts</li><li>Cache</li><li>Matrix Builds</li><li>Docker Integration</li><li>Testing Applications</li><li>Deploying Applications</li><li>Scheduled Workflows</li><li>Reusable Workflows</li><li>Self-hosted Runners</li><li>Best Practices</li><li>Real-world Examples</li><li>Common Mistakes</li><li>Portfolio Projects</li><li>Interview Questions</li><li>Learning Roadmap</li></ol><hr><h1 id=what-is-cicd>What is CI/CD?<a hidden class=anchor aria-hidden=true href=#what-is-cicd>#</a></h1><p>CI means <strong>Continuous Integration</strong>.</p><p>Developers merge code frequently.</p><p>Every change is automatically:</p><ul><li>Built</li><li>Tested</li><li>Verified</li></ul><p>CD means:</p><p>Continuous Delivery or Continuous Deployment.</p><p>Applications are automatically delivered or deployed after successful testing.</p><hr><h1 id=traditional-workflow>Traditional Workflow<a hidden class=anchor aria-hidden=true href=#traditional-workflow>#</a></h1><pre tabindex=0><code>Developer
 
 ↓
 
@@ -474,16 +94,7 @@ Manual Deployment
 ↓
 
 Production
-</code></pre><p>Problems</p>
-<ul>
-<li>Slow</li>
-<li>Error-prone</li>
-<li>Difficult to reproduce</li>
-<li>Manual work</li>
-</ul>
-<hr>
-<h1 id="modern-workflow">Modern Workflow<a hidden class="anchor" aria-hidden="true" href="#modern-workflow">#</a></h1>
-<pre tabindex="0"><code>Developer
+</code></pre><p>Problems</p><ul><li>Slow</li><li>Error-prone</li><li>Difficult to reproduce</li><li>Manual work</li></ul><hr><h1 id=modern-workflow>Modern Workflow<a hidden class=anchor aria-hidden=true href=#modern-workflow>#</a></h1><pre tabindex=0><code>Developer
 
 ↓
 
@@ -512,54 +123,30 @@ Deploy
 ↓
 
 Production
-</code></pre><p>Everything happens automatically.</p>
-<hr>
-<h1 id="what-is-github-actions">What is GitHub Actions?<a hidden class="anchor" aria-hidden="true" href="#what-is-github-actions">#</a></h1>
-<p>GitHub Actions is GitHub&rsquo;s automation platform.</p>
-<p>It executes workflows when specific events occur.</p>
-<p>Examples</p>
-<ul>
-<li>Push code</li>
-<li>Create Pull Request</li>
-<li>Open Issue</li>
-<li>Create Release</li>
-<li>Schedule task</li>
-<li>Manual execution</li>
-</ul>
-<hr>
-<h1 id="workflow-structure">Workflow Structure<a hidden class="anchor" aria-hidden="true" href="#workflow-structure">#</a></h1>
-<pre tabindex="0"><code>.github/
+</code></pre><p>Everything happens automatically.</p><hr><h1 id=what-is-github-actions>What is GitHub Actions?<a hidden class=anchor aria-hidden=true href=#what-is-github-actions>#</a></h1><p>GitHub Actions is GitHub&rsquo;s automation platform.</p><p>It executes workflows when specific events occur.</p><p>Examples</p><ul><li>Push code</li><li>Create Pull Request</li><li>Open Issue</li><li>Create Release</li><li>Schedule task</li><li>Manual execution</li></ul><hr><h1 id=workflow-structure>Workflow Structure<a hidden class=anchor aria-hidden=true href=#workflow-structure>#</a></h1><pre tabindex=0><code>.github/
 
 └── workflows/
 
     └── build.yml
-</code></pre><p>Every workflow lives inside:</p>
-<pre tabindex="0"><code>.github/workflows/
-</code></pre><hr>
-<h1 id="your-first-workflow">Your First Workflow<a hidden class="anchor" aria-hidden="true" href="#your-first-workflow">#</a></h1>
-<p>Create</p>
-<pre tabindex="0"><code>.github/workflows/hello.yml
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Hello World</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hello</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Print Message</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;Hello GitHub Actions&#34;</span>
-</span></span></code></pre></div><p>Push the file.</p>
-<p>GitHub automatically runs it.</p>
-<hr>
-<h1 id="workflow-anatomy">Workflow Anatomy<a hidden class="anchor" aria-hidden="true" href="#workflow-anatomy">#</a></h1>
-<pre tabindex="0"><code>Workflow
+</code></pre><p>Every workflow lives inside:</p><pre tabindex=0><code>.github/workflows/
+</code></pre><hr><h1 id=your-first-workflow>Your First Workflow<a hidden class=anchor aria-hidden=true href=#your-first-workflow>#</a></h1><p>Create</p><pre tabindex=0><code>.github/workflows/hello.yml
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Hello World</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>hello</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Print Message</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>echo &#34;Hello GitHub Actions&#34;</span>
+</span></span></code></pre></div><p>Push the file.</p><p>GitHub automatically runs it.</p><hr><h1 id=workflow-anatomy>Workflow Anatomy<a hidden class=anchor aria-hidden=true href=#workflow-anatomy>#</a></h1><pre tabindex=0><code>Workflow
 
 ↓
 
@@ -576,68 +163,45 @@ Step
 ↓
 
 Command
-</code></pre><p>Example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">test</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo Hello</span>
-</span></span></code></pre></div><hr>
-<h1 id="understanding-yaml">Understanding YAML<a hidden class="anchor" aria-hidden="true" href="#understanding-yaml">#</a></h1>
-<p>Indentation matters.</p>
-<p>Correct</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span></code></pre></div><p>Incorrect</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>:
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">Build</span>
-</span></span></code></pre></div><p>Use spaces.</p>
-<p>Do not use tabs.</p>
-<hr>
-<h1 id="events-triggers">Events (Triggers)<a hidden class="anchor" aria-hidden="true" href="#events-triggers">#</a></h1>
-<p>Run on push</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span></code></pre></div><p>Run on Pull Request</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pull_request</span>:
-</span></span></code></pre></div><p>Run manually</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workflow_dispatch</span>:
-</span></span></code></pre></div><p>Run every night</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">schedule</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#34;0 2 * * *&#34;</span>
-</span></span></code></pre></div><hr>
-<h1 id="cron-examples">Cron Examples<a hidden class="anchor" aria-hidden="true" href="#cron-examples">#</a></h1>
-<p>Every day</p>
-<pre tabindex="0"><code>0 0 * * *
-</code></pre><p>Every hour</p>
-<pre tabindex="0"><code>0 * * * *
-</code></pre><p>Every Monday</p>
-<pre tabindex="0"><code>0 8 * * 1
-</code></pre><hr>
-<h1 id="jobs">Jobs<a hidden class="anchor" aria-hidden="true" href="#jobs">#</a></h1>
-<p>A workflow may contain multiple jobs.</p>
-<p>Example</p>
-<pre tabindex="0"><code>Build
+</code></pre><p>Example</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>test</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>echo Hello</span>
+</span></span></code></pre></div><hr><h1 id=understanding-yaml>Understanding YAML<a hidden class=anchor aria-hidden=true href=#understanding-yaml>#</a></h1><p>Indentation matters.</p><p>Correct</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span></code></pre></div><p>Incorrect</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>:
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>Build</span>
+</span></span></code></pre></div><p>Use spaces.</p><p>Do not use tabs.</p><hr><h1 id=events-triggers>Events (Triggers)<a hidden class=anchor aria-hidden=true href=#events-triggers>#</a></h1><p>Run on push</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span></code></pre></div><p>Run on Pull Request</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>pull_request</span>:
+</span></span></code></pre></div><p>Run manually</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>workflow_dispatch</span>:
+</span></span></code></pre></div><p>Run every night</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>schedule</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>cron</span>: <span style=color:#e6db74>&#34;0 2 * * *&#34;</span>
+</span></span></code></pre></div><hr><h1 id=cron-examples>Cron Examples<a hidden class=anchor aria-hidden=true href=#cron-examples>#</a></h1><p>Every day</p><pre tabindex=0><code>0 0 * * *
+</code></pre><p>Every hour</p><pre tabindex=0><code>0 * * * *
+</code></pre><p>Every Monday</p><pre tabindex=0><code>0 8 * * 1
+</code></pre><hr><h1 id=jobs>Jobs<a hidden class=anchor aria-hidden=true href=#jobs>#</a></h1><p>A workflow may contain multiple jobs.</p><p>Example</p><pre tabindex=0><code>Build
 
 ↓
 
@@ -646,69 +210,38 @@ Test
 ↓
 
 Deploy
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">test</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
-</span></span></code></pre></div><hr>
-<h1 id="steps">Steps<a hidden class="anchor" aria-hidden="true" href="#steps">#</a></h1>
-<p>Each job contains steps.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo Build</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo Test</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo Deploy</span>
-</span></span></code></pre></div><hr>
-<h1 id="runners">Runners<a hidden class="anchor" aria-hidden="true" href="#runners">#</a></h1>
-<p>GitHub executes workflows on runners.</p>
-<p>Common runner</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span></code></pre></div><p>Other options</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">windows-latest</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">macos-latest</span>
-</span></span></code></pre></div><hr>
-<h1 id="checking-out-code">Checking Out Code<a hidden class="anchor" aria-hidden="true" href="#checking-out-code">#</a></h1>
-<p>Before using project files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
-</span></span></code></pre></div><p>This downloads repository contents.</p>
-<hr>
-<h1 id="setting-up-python">Setting Up Python<a hidden class="anchor" aria-hidden="true" href="#setting-up-python">#</a></h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-python@v5</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">python-version</span>: <span style="color:#e6db74">&#34;3.12&#34;</span>
-</span></span></code></pre></div><hr>
-<h1 id="installing-dependencies">Installing Dependencies<a hidden class="anchor" aria-hidden="true" href="#installing-dependencies">#</a></h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">run</span>: <span style="color:#ae81ff">pip install -r requirements.txt</span>
-</span></span></code></pre></div><hr>
-<h1 id="running-tests">Running Tests<a hidden class="anchor" aria-hidden="true" href="#running-tests">#</a></h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">run</span>: <span style="color:#ae81ff">pytest</span>
-</span></span></code></pre></div><hr>
-<h1 id="environment-variables">Environment Variables<a hidden class="anchor" aria-hidden="true" href="#environment-variables">#</a></h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">env</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">APP_ENV</span>: <span style="color:#ae81ff">production</span>
-</span></span></code></pre></div><p>Use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo $APP_ENV
-</span></span></code></pre></div><hr>
-<h1 id="secrets">Secrets<a hidden class="anchor" aria-hidden="true" href="#secrets">#</a></h1>
-<p>Store:</p>
-<ul>
-<li>API Keys</li>
-<li>Tokens</li>
-<li>Passwords</li>
-</ul>
-<p>Never commit secrets.</p>
-<p>Use</p>
-<pre tabindex="0"><code>Settings
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>test</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>deploy</span>:
+</span></span></code></pre></div><hr><h1 id=steps>Steps<a hidden class=anchor aria-hidden=true href=#steps>#</a></h1><p>Each job contains steps.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>echo Build</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>echo Test</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>echo Deploy</span>
+</span></span></code></pre></div><hr><h1 id=runners>Runners<a hidden class=anchor aria-hidden=true href=#runners>#</a></h1><p>GitHub executes workflows on runners.</p><p>Common runner</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span></code></pre></div><p>Other options</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>windows-latest</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>macos-latest</span>
+</span></span></code></pre></div><hr><h1 id=checking-out-code>Checking Out Code<a hidden class=anchor aria-hidden=true href=#checking-out-code>#</a></h1><p>Before using project files</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v4</span>
+</span></span></code></pre></div><p>This downloads repository contents.</p><hr><h1 id=setting-up-python>Setting Up Python<a hidden class=anchor aria-hidden=true href=#setting-up-python>#</a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-python@v5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>python-version</span>: <span style=color:#e6db74>&#34;3.12&#34;</span>
+</span></span></code></pre></div><hr><h1 id=installing-dependencies>Installing Dependencies<a hidden class=anchor aria-hidden=true href=#installing-dependencies>#</a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>run</span>: <span style=color:#ae81ff>pip install -r requirements.txt</span>
+</span></span></code></pre></div><hr><h1 id=running-tests>Running Tests<a hidden class=anchor aria-hidden=true href=#running-tests>#</a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>run</span>: <span style=color:#ae81ff>pytest</span>
+</span></span></code></pre></div><hr><h1 id=environment-variables>Environment Variables<a hidden class=anchor aria-hidden=true href=#environment-variables>#</a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>APP_ENV</span>: <span style=color:#ae81ff>production</span>
+</span></span></code></pre></div><p>Use</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>echo $APP_ENV
+</span></span></code></pre></div><hr><h1 id=secrets>Secrets<a hidden class=anchor aria-hidden=true href=#secrets>#</a></h1><p>Store:</p><ul><li>API Keys</li><li>Tokens</li><li>Passwords</li></ul><p>Never commit secrets.</p><p>Use</p><pre tabindex=0><code>Settings
 
 ↓
 
@@ -717,92 +250,64 @@ Secrets
 ↓
 
 Actions
-</code></pre><p>Example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">env</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TOKEN</span>: <span style="color:#ae81ff">${{ secrets.API_TOKEN }}</span>
-</span></span></code></pre></div><hr>
-<h1 id="artifacts">Artifacts<a hidden class="anchor" aria-hidden="true" href="#artifacts">#</a></h1>
-<p>Upload build output</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-artifact@v4</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">reports</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">reports/</span>
-</span></span></code></pre></div><p>Download later</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">actions/download-artifact</span>
-</span></span></code></pre></div><hr>
-<h1 id="caching-dependencies">Caching Dependencies<a hidden class="anchor" aria-hidden="true" href="#caching-dependencies">#</a></h1>
-<p>Python example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/cache@v4</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">~/.cache/pip</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">key</span>: <span style="color:#ae81ff">pip-cache</span>
-</span></span></code></pre></div><p>Benefits</p>
-<ul>
-<li>Faster builds</li>
-<li>Lower network usage</li>
-</ul>
-<hr>
-<h1 id="matrix-builds">Matrix Builds<a hidden class="anchor" aria-hidden="true" href="#matrix-builds">#</a></h1>
-<p>Test multiple versions</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">strategy</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">matrix</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">python-version</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3.10&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3.11&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3.12&#34;</span>
-</span></span></code></pre></div><p>Workflow runs once for each version.</p>
-<hr>
-<h1 id="docker-integration">Docker Integration<a hidden class="anchor" aria-hidden="true" href="#docker-integration">#</a></h1>
-<p>Build image</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">run</span>: <span style="color:#ae81ff">docker build -t app .</span>
-</span></span></code></pre></div><p>Run container</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">run</span>: <span style="color:#ae81ff">docker run app</span>
-</span></span></code></pre></div><p>Push image</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">run</span>: <span style="color:#ae81ff">docker push username/app</span>
-</span></span></code></pre></div><hr>
-<h1 id="building-a-python-project">Building a Python Project<a hidden class="anchor" aria-hidden="true" href="#building-a-python-project">#</a></h1>
-<p>Example workflow</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Python CI</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-python@v5</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">with</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">python-version</span>: <span style="color:#e6db74">&#34;3.12&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">pip install -r requirements.txt</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">pytest</span>
-</span></span></code></pre></div><hr>
-<h1 id="deploying-static-websites">Deploying Static Websites<a hidden class="anchor" aria-hidden="true" href="#deploying-static-websites">#</a></h1>
-<p>Deploy GitHub Pages automatically</p>
-<pre tabindex="0"><code>Git Push
+</code></pre><p>Example</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>TOKEN</span>: <span style=color:#ae81ff>${{ secrets.API_TOKEN }}</span>
+</span></span></code></pre></div><hr><h1 id=artifacts>Artifacts<a hidden class=anchor aria-hidden=true href=#artifacts>#</a></h1><p>Upload build output</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/upload-artifact@v4</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>reports</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>path</span>: <span style=color:#ae81ff>reports/</span>
+</span></span></code></pre></div><p>Download later</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>actions/download-artifact</span>
+</span></span></code></pre></div><hr><h1 id=caching-dependencies>Caching Dependencies<a hidden class=anchor aria-hidden=true href=#caching-dependencies>#</a></h1><p>Python example</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/cache@v4</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>path</span>: <span style=color:#ae81ff>~/.cache/pip</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>key</span>: <span style=color:#ae81ff>pip-cache</span>
+</span></span></code></pre></div><p>Benefits</p><ul><li>Faster builds</li><li>Lower network usage</li></ul><hr><h1 id=matrix-builds>Matrix Builds<a hidden class=anchor aria-hidden=true href=#matrix-builds>#</a></h1><p>Test multiple versions</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>strategy</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>matrix</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>python-version</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;3.10&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;3.11&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;3.12&#34;</span>
+</span></span></code></pre></div><p>Workflow runs once for each version.</p><hr><h1 id=docker-integration>Docker Integration<a hidden class=anchor aria-hidden=true href=#docker-integration>#</a></h1><p>Build image</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>run</span>: <span style=color:#ae81ff>docker build -t app .</span>
+</span></span></code></pre></div><p>Run container</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>run</span>: <span style=color:#ae81ff>docker run app</span>
+</span></span></code></pre></div><p>Push image</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>run</span>: <span style=color:#ae81ff>docker push username/app</span>
+</span></span></code></pre></div><hr><h1 id=building-a-python-project>Building a Python Project<a hidden class=anchor aria-hidden=true href=#building-a-python-project>#</a></h1><p>Example workflow</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Python CI</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>push</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v4</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/setup-python@v5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>python-version</span>: <span style=color:#e6db74>&#34;3.12&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>pip install -r requirements.txt</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>run</span>: <span style=color:#ae81ff>pytest</span>
+</span></span></code></pre></div><hr><h1 id=deploying-static-websites>Deploying Static Websites<a hidden class=anchor aria-hidden=true href=#deploying-static-websites>#</a></h1><p>Deploy GitHub Pages automatically</p><pre tabindex=0><code>Git Push
 
 ↓
 
@@ -815,23 +320,10 @@ Build Site
 ↓
 
 Deploy Pages
-</code></pre><hr>
-<h1 id="scheduled-automation">Scheduled Automation<a hidden class="anchor" aria-hidden="true" href="#scheduled-automation">#</a></h1>
-<p>Backup database nightly.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">schedule</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#34;0 1 * * *&#34;</span>
-</span></span></code></pre></div><p>Examples</p>
-<ul>
-<li>Cleanup logs</li>
-<li>Generate reports</li>
-<li>Backup databases</li>
-<li>Refresh cache</li>
-</ul>
-<hr>
-<h1 id="reusable-workflows">Reusable Workflows<a hidden class="anchor" aria-hidden="true" href="#reusable-workflows">#</a></h1>
-<p>Avoid duplication.</p>
-<pre tabindex="0"><code>Workflow A
+</code></pre><hr><h1 id=scheduled-automation>Scheduled Automation<a hidden class=anchor aria-hidden=true href=#scheduled-automation>#</a></h1><p>Backup database nightly.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>schedule</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>- <span style=color:#f92672>cron</span>: <span style=color:#e6db74>&#34;0 1 * * *&#34;</span>
+</span></span></code></pre></div><p>Examples</p><ul><li>Cleanup logs</li><li>Generate reports</li><li>Backup databases</li><li>Refresh cache</li></ul><hr><h1 id=reusable-workflows>Reusable Workflows<a hidden class=anchor aria-hidden=true href=#reusable-workflows>#</a></h1><p>Avoid duplication.</p><pre tabindex=0><code>Workflow A
 
 ↓
 
@@ -840,11 +332,7 @@ Shared Workflow
 ↓
 
 Workflow B
-</code></pre><p>Perfect for organizations.</p>
-<hr>
-<h1 id="self-hosted-runners">Self-hosted Runners<a hidden class="anchor" aria-hidden="true" href="#self-hosted-runners">#</a></h1>
-<p>Instead of GitHub&rsquo;s servers</p>
-<pre tabindex="0"><code>Your Server
+</code></pre><p>Perfect for organizations.</p><hr><h1 id=self-hosted-runners>Self-hosted Runners<a hidden class=anchor aria-hidden=true href=#self-hosted-runners>#</a></h1><p>Instead of GitHub&rsquo;s servers</p><pre tabindex=0><code>Your Server
 
 ↓
 
@@ -853,16 +341,7 @@ GitHub Runner
 ↓
 
 Workflow
-</code></pre><p>Advantages</p>
-<ul>
-<li>More CPU</li>
-<li>More RAM</li>
-<li>Internal network access</li>
-<li>Specialized hardware</li>
-</ul>
-<hr>
-<h1 id="deployment-pipeline">Deployment Pipeline<a hidden class="anchor" aria-hidden="true" href="#deployment-pipeline">#</a></h1>
-<pre tabindex="0"><code>Git Push
+</code></pre><p>Advantages</p><ul><li>More CPU</li><li>More RAM</li><li>Internal network access</li><li>Specialized hardware</li></ul><hr><h1 id=deployment-pipeline>Deployment Pipeline<a hidden class=anchor aria-hidden=true href=#deployment-pipeline>#</a></h1><pre tabindex=0><code>Git Push
 
 ↓
 
@@ -895,50 +374,8 @@ Health Check
 ↓
 
 Success Notification
-</code></pre><hr>
-<h1 id="notifications">Notifications<a hidden class="anchor" aria-hidden="true" href="#notifications">#</a></h1>
-<p>Send alerts to</p>
-<ul>
-<li>Slack</li>
-<li>Microsoft Teams</li>
-<li>Discord</li>
-<li>Email</li>
-</ul>
-<p>Example</p>
-<pre tabindex="0"><code>Deployment Successful
-</code></pre><hr>
-<h1 id="release-automation">Release Automation<a hidden class="anchor" aria-hidden="true" href="#release-automation">#</a></h1>
-<p>Automatically</p>
-<ul>
-<li>Create Release</li>
-<li>Generate changelog</li>
-<li>Upload binaries</li>
-<li>Publish Docker image</li>
-</ul>
-<hr>
-<h1 id="code-quality">Code Quality<a hidden class="anchor" aria-hidden="true" href="#code-quality">#</a></h1>
-<p>Run automatically</p>
-<ul>
-<li>Black</li>
-<li>Ruff</li>
-<li>Flake8</li>
-<li>ESLint</li>
-<li>Prettier</li>
-</ul>
-<p>Reject Pull Requests that fail quality checks.</p>
-<hr>
-<h1 id="security-scanning">Security Scanning<a hidden class="anchor" aria-hidden="true" href="#security-scanning">#</a></h1>
-<p>Integrate</p>
-<ul>
-<li>Dependabot</li>
-<li>CodeQL</li>
-<li>Trivy</li>
-<li>Snyk</li>
-</ul>
-<p>Automatically detect vulnerabilities.</p>
-<hr>
-<h1 id="multi-job-workflow">Multi-job Workflow<a hidden class="anchor" aria-hidden="true" href="#multi-job-workflow">#</a></h1>
-<pre tabindex="0"><code>Lint
+</code></pre><hr><h1 id=notifications>Notifications<a hidden class=anchor aria-hidden=true href=#notifications>#</a></h1><p>Send alerts to</p><ul><li>Slack</li><li>Microsoft Teams</li><li>Discord</li><li>Email</li></ul><p>Example</p><pre tabindex=0><code>Deployment Successful
+</code></pre><hr><h1 id=release-automation>Release Automation<a hidden class=anchor aria-hidden=true href=#release-automation>#</a></h1><p>Automatically</p><ul><li>Create Release</li><li>Generate changelog</li><li>Upload binaries</li><li>Publish Docker image</li></ul><hr><h1 id=code-quality>Code Quality<a hidden class=anchor aria-hidden=true href=#code-quality>#</a></h1><p>Run automatically</p><ul><li>Black</li><li>Ruff</li><li>Flake8</li><li>ESLint</li><li>Prettier</li></ul><p>Reject Pull Requests that fail quality checks.</p><hr><h1 id=security-scanning>Security Scanning<a hidden class=anchor aria-hidden=true href=#security-scanning>#</a></h1><p>Integrate</p><ul><li>Dependabot</li><li>CodeQL</li><li>Trivy</li><li>Snyk</li></ul><p>Automatically detect vulnerabilities.</p><hr><h1 id=multi-job-workflow>Multi-job Workflow<a hidden class=anchor aria-hidden=true href=#multi-job-workflow>#</a></h1><pre tabindex=0><code>Lint
 
 ↓
 
@@ -959,10 +396,7 @@ Docker Build
 ↓
 
 Deployment
-</code></pre><p>Jobs may run in parallel.</p>
-<hr>
-<h1 id="real-world-workflow">Real-world Workflow<a hidden class="anchor" aria-hidden="true" href="#real-world-workflow">#</a></h1>
-<pre tabindex="0"><code>Developer
+</code></pre><p>Jobs may run in parallel.</p><hr><h1 id=real-world-workflow>Real-world Workflow<a hidden class=anchor aria-hidden=true href=#real-world-workflow>#</a></h1><pre tabindex=0><code>Developer
 
 ↓
 
@@ -999,34 +433,7 @@ Kubernetes
 ↓
 
 Production
-</code></pre><hr>
-<h1 id="common-mistakes">Common Mistakes<a hidden class="anchor" aria-hidden="true" href="#common-mistakes">#</a></h1>
-<ul>
-<li>Committing secrets</li>
-<li>Forgetting checkout step</li>
-<li>Incorrect YAML indentation</li>
-<li>Hardcoding credentials</li>
-<li>Running unnecessary jobs</li>
-<li>Ignoring failed workflows</li>
-<li>Not caching dependencies</li>
-</ul>
-<hr>
-<h1 id="best-practices">Best Practices<a hidden class="anchor" aria-hidden="true" href="#best-practices">#</a></h1>
-<ul>
-<li>Keep workflows small</li>
-<li>Cache dependencies</li>
-<li>Use reusable workflows</li>
-<li>Store secrets securely</li>
-<li>Pin action versions</li>
-<li>Use descriptive job names</li>
-<li>Test workflows on feature branches</li>
-<li>Separate build and deploy</li>
-</ul>
-<hr>
-<h1 id="project-1">Project 1<a hidden class="anchor" aria-hidden="true" href="#project-1">#</a></h1>
-<p>Python Calculator</p>
-<p>Pipeline</p>
-<pre tabindex="0"><code>Push
+</code></pre><hr><h1 id=common-mistakes>Common Mistakes<a hidden class=anchor aria-hidden=true href=#common-mistakes>#</a></h1><ul><li>Committing secrets</li><li>Forgetting checkout step</li><li>Incorrect YAML indentation</li><li>Hardcoding credentials</li><li>Running unnecessary jobs</li><li>Ignoring failed workflows</li><li>Not caching dependencies</li></ul><hr><h1 id=best-practices>Best Practices<a hidden class=anchor aria-hidden=true href=#best-practices>#</a></h1><ul><li>Keep workflows small</li><li>Cache dependencies</li><li>Use reusable workflows</li><li>Store secrets securely</li><li>Pin action versions</li><li>Use descriptive job names</li><li>Test workflows on feature branches</li><li>Separate build and deploy</li></ul><hr><h1 id=project-1>Project 1<a hidden class=anchor aria-hidden=true href=#project-1>#</a></h1><p>Python Calculator</p><p>Pipeline</p><pre tabindex=0><code>Push
 
 ↓
 
@@ -1039,11 +446,7 @@ Build
 ↓
 
 Upload Artifact
-</code></pre><hr>
-<h1 id="project-2">Project 2<a hidden class="anchor" aria-hidden="true" href="#project-2">#</a></h1>
-<p>Dockerized Flask API</p>
-<p>Pipeline</p>
-<pre tabindex="0"><code>Push
+</code></pre><hr><h1 id=project-2>Project 2<a hidden class=anchor aria-hidden=true href=#project-2>#</a></h1><p>Dockerized Flask API</p><p>Pipeline</p><pre tabindex=0><code>Push
 
 ↓
 
@@ -1056,11 +459,7 @@ Docker Hub
 ↓
 
 Deploy
-</code></pre><hr>
-<h1 id="project-3">Project 3<a hidden class="anchor" aria-hidden="true" href="#project-3">#</a></h1>
-<p>Static Documentation Website</p>
-<p>Pipeline</p>
-<pre tabindex="0"><code>Markdown
+</code></pre><hr><h1 id=project-3>Project 3<a hidden class=anchor aria-hidden=true href=#project-3>#</a></h1><p>Static Documentation Website</p><p>Pipeline</p><pre tabindex=0><code>Markdown
 
 ↓
 
@@ -1069,11 +468,7 @@ GitHub Actions
 ↓
 
 GitHub Pages
-</code></pre><hr>
-<h1 id="project-4">Project 4<a hidden class="anchor" aria-hidden="true" href="#project-4">#</a></h1>
-<p>Node.js Application</p>
-<p>Pipeline</p>
-<pre tabindex="0"><code>Push
+</code></pre><hr><h1 id=project-4>Project 4<a hidden class=anchor aria-hidden=true href=#project-4>#</a></h1><p>Node.js Application</p><p>Pipeline</p><pre tabindex=0><code>Push
 
 ↓
 
@@ -1090,11 +485,7 @@ Lint
 ↓
 
 Deploy
-</code></pre><hr>
-<h1 id="project-5">Project 5<a hidden class="anchor" aria-hidden="true" href="#project-5">#</a></h1>
-<p>Kubernetes Deployment</p>
-<p>Pipeline</p>
-<pre tabindex="0"><code>Push
+</code></pre><hr><h1 id=project-5>Project 5<a hidden class=anchor aria-hidden=true href=#project-5>#</a></h1><p>Kubernetes Deployment</p><p>Pipeline</p><pre tabindex=0><code>Push
 
 ↓
 
@@ -1111,23 +502,7 @@ Argo CD
 ↓
 
 Kubernetes
-</code></pre><hr>
-<h1 id="portfolio-ideas">Portfolio Ideas<a hidden class="anchor" aria-hidden="true" href="#portfolio-ideas">#</a></h1>
-<ul>
-<li>CI for Python Projects</li>
-<li>Automated Documentation</li>
-<li>Docker Image Builder</li>
-<li>GitHub Pages Blog</li>
-<li>Release Automation</li>
-<li>Backup Scheduler</li>
-<li>Kubernetes Deployment Pipeline</li>
-<li>Infrastructure Validation</li>
-<li>Security Scan Workflow</li>
-<li>Multi-platform Builds</li>
-</ul>
-<hr>
-<h1 id="github-actions-cheat-sheet">GitHub Actions Cheat Sheet<a hidden class="anchor" aria-hidden="true" href="#github-actions-cheat-sheet">#</a></h1>
-<pre tabindex="0"><code>actions/checkout
+</code></pre><hr><h1 id=portfolio-ideas>Portfolio Ideas<a hidden class=anchor aria-hidden=true href=#portfolio-ideas>#</a></h1><ul><li>CI for Python Projects</li><li>Automated Documentation</li><li>Docker Image Builder</li><li>GitHub Pages Blog</li><li>Release Automation</li><li>Backup Scheduler</li><li>Kubernetes Deployment Pipeline</li><li>Infrastructure Validation</li><li>Security Scan Workflow</li><li>Multi-platform Builds</li></ul><hr><h1 id=github-actions-cheat-sheet>GitHub Actions Cheat Sheet<a hidden class=anchor aria-hidden=true href=#github-actions-cheat-sheet>#</a></h1><pre tabindex=0><code>actions/checkout
 
 actions/setup-python
 
@@ -1156,57 +531,7 @@ if
 uses
 
 run
-</code></pre><hr>
-<h1 id="interview-questions">Interview Questions<a hidden class="anchor" aria-hidden="true" href="#interview-questions">#</a></h1>
-<h3 id="what-is-ci">What is CI?<a hidden class="anchor" aria-hidden="true" href="#what-is-ci">#</a></h3>
-<h3 id="what-is-cd">What is CD?<a hidden class="anchor" aria-hidden="true" href="#what-is-cd">#</a></h3>
-<h3 id="difference-between-continuous-delivery-and-continuous-deployment">Difference between Continuous Delivery and Continuous Deployment?<a hidden class="anchor" aria-hidden="true" href="#difference-between-continuous-delivery-and-continuous-deployment">#</a></h3>
-<h3 id="what-is-github-actions-1">What is GitHub Actions?<a hidden class="anchor" aria-hidden="true" href="#what-is-github-actions-1">#</a></h3>
-<h3 id="what-is-a-runner">What is a runner?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-runner">#</a></h3>
-<h3 id="what-is-a-workflow">What is a workflow?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-workflow">#</a></h3>
-<h3 id="what-is-a-job">What is a job?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-job">#</a></h3>
-<h3 id="what-is-a-step">What is a step?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-step">#</a></h3>
-<h3 id="what-are-github-secrets">What are GitHub Secrets?<a hidden class="anchor" aria-hidden="true" href="#what-are-github-secrets">#</a></h3>
-<h3 id="explain-matrix-builds">Explain matrix builds.<a hidden class="anchor" aria-hidden="true" href="#explain-matrix-builds">#</a></h3>
-<h3 id="what-are-artifacts">What are artifacts?<a hidden class="anchor" aria-hidden="true" href="#what-are-artifacts">#</a></h3>
-<h3 id="why-use-caching">Why use caching?<a hidden class="anchor" aria-hidden="true" href="#why-use-caching">#</a></h3>
-<h3 id="difference-between-self-hosted-and-github-hosted-runners">Difference between self-hosted and GitHub-hosted runners?<a hidden class="anchor" aria-hidden="true" href="#difference-between-self-hosted-and-github-hosted-runners">#</a></h3>
-<hr>
-<h1 id="learning-roadmap">Learning Roadmap<a hidden class="anchor" aria-hidden="true" href="#learning-roadmap">#</a></h1>
-<h2 id="week-1">Week 1<a hidden class="anchor" aria-hidden="true" href="#week-1">#</a></h2>
-<ul>
-<li>YAML basics</li>
-<li>Workflow syntax</li>
-<li>Events</li>
-<li>Jobs</li>
-<li>Steps</li>
-</ul>
-<h2 id="week-2">Week 2<a hidden class="anchor" aria-hidden="true" href="#week-2">#</a></h2>
-<ul>
-<li>Python builds</li>
-<li>Testing</li>
-<li>Artifacts</li>
-<li>Cache</li>
-</ul>
-<h2 id="week-3">Week 3<a hidden class="anchor" aria-hidden="true" href="#week-3">#</a></h2>
-<ul>
-<li>Docker integration</li>
-<li>Secrets</li>
-<li>Matrix builds</li>
-<li>Scheduled jobs</li>
-</ul>
-<h2 id="week-4">Week 4<a hidden class="anchor" aria-hidden="true" href="#week-4">#</a></h2>
-<ul>
-<li>Deploy applications</li>
-<li>GitHub Pages</li>
-<li>Docker Hub</li>
-<li>Kubernetes</li>
-<li>Production pipelines</li>
-</ul>
-<hr>
-<h1 id="capstone-project">Capstone Project<a hidden class="anchor" aria-hidden="true" href="#capstone-project">#</a></h1>
-<h2 id="complete-cicd-pipeline">Complete CI/CD Pipeline<a hidden class="anchor" aria-hidden="true" href="#complete-cicd-pipeline">#</a></h2>
-<pre tabindex="0"><code>Developer
+</code></pre><hr><h1 id=interview-questions>Interview Questions<a hidden class=anchor aria-hidden=true href=#interview-questions>#</a></h1><h3 id=what-is-ci>What is CI?<a hidden class=anchor aria-hidden=true href=#what-is-ci>#</a></h3><h3 id=what-is-cd>What is CD?<a hidden class=anchor aria-hidden=true href=#what-is-cd>#</a></h3><h3 id=difference-between-continuous-delivery-and-continuous-deployment>Difference between Continuous Delivery and Continuous Deployment?<a hidden class=anchor aria-hidden=true href=#difference-between-continuous-delivery-and-continuous-deployment>#</a></h3><h3 id=what-is-github-actions-1>What is GitHub Actions?<a hidden class=anchor aria-hidden=true href=#what-is-github-actions-1>#</a></h3><h3 id=what-is-a-runner>What is a runner?<a hidden class=anchor aria-hidden=true href=#what-is-a-runner>#</a></h3><h3 id=what-is-a-workflow>What is a workflow?<a hidden class=anchor aria-hidden=true href=#what-is-a-workflow>#</a></h3><h3 id=what-is-a-job>What is a job?<a hidden class=anchor aria-hidden=true href=#what-is-a-job>#</a></h3><h3 id=what-is-a-step>What is a step?<a hidden class=anchor aria-hidden=true href=#what-is-a-step>#</a></h3><h3 id=what-are-github-secrets>What are GitHub Secrets?<a hidden class=anchor aria-hidden=true href=#what-are-github-secrets>#</a></h3><h3 id=explain-matrix-builds>Explain matrix builds.<a hidden class=anchor aria-hidden=true href=#explain-matrix-builds>#</a></h3><h3 id=what-are-artifacts>What are artifacts?<a hidden class=anchor aria-hidden=true href=#what-are-artifacts>#</a></h3><h3 id=why-use-caching>Why use caching?<a hidden class=anchor aria-hidden=true href=#why-use-caching>#</a></h3><h3 id=difference-between-self-hosted-and-github-hosted-runners>Difference between self-hosted and GitHub-hosted runners?<a hidden class=anchor aria-hidden=true href=#difference-between-self-hosted-and-github-hosted-runners>#</a></h3><hr><h1 id=learning-roadmap>Learning Roadmap<a hidden class=anchor aria-hidden=true href=#learning-roadmap>#</a></h1><h2 id=week-1>Week 1<a hidden class=anchor aria-hidden=true href=#week-1>#</a></h2><ul><li>YAML basics</li><li>Workflow syntax</li><li>Events</li><li>Jobs</li><li>Steps</li></ul><h2 id=week-2>Week 2<a hidden class=anchor aria-hidden=true href=#week-2>#</a></h2><ul><li>Python builds</li><li>Testing</li><li>Artifacts</li><li>Cache</li></ul><h2 id=week-3>Week 3<a hidden class=anchor aria-hidden=true href=#week-3>#</a></h2><ul><li>Docker integration</li><li>Secrets</li><li>Matrix builds</li><li>Scheduled jobs</li></ul><h2 id=week-4>Week 4<a hidden class=anchor aria-hidden=true href=#week-4>#</a></h2><ul><li>Deploy applications</li><li>GitHub Pages</li><li>Docker Hub</li><li>Kubernetes</li><li>Production pipelines</li></ul><hr><h1 id=capstone-project>Capstone Project<a hidden class=anchor aria-hidden=true href=#capstone-project>#</a></h1><h2 id=complete-cicd-pipeline>Complete CI/CD Pipeline<a hidden class=anchor aria-hidden=true href=#complete-cicd-pipeline>#</a></h2><pre tabindex=0><code>Developer
 
 ↓
 
@@ -1251,197 +576,11 @@ Prometheus
 ↓
 
 Grafana
-</code></pre><h3 id="features">Features<a hidden class="anchor" aria-hidden="true" href="#features">#</a></h3>
-<ul>
-<li>Automatic testing</li>
-<li>Code quality checks</li>
-<li>Docker image creation</li>
-<li>Version tagging</li>
-<li>Release automation</li>
-<li>Kubernetes deployment</li>
-<li>Rollback support</li>
-<li>Slack notifications</li>
-<li>Health checks</li>
-<li>Security scanning</li>
-</ul>
-<p>This project demonstrates a production-grade CI/CD pipeline suitable for a professional DevOps portfolio.</p>
-<hr>
-<h1 id="next-article">Next Article<a hidden class="anchor" aria-hidden="true" href="#next-article">#</a></h1>
-<p>The next guide is <strong>Kubernetes: Complete Beginner to Production</strong>.</p>
-<p>You&rsquo;ll learn:</p>
-<ul>
-<li>Kubernetes architecture</li>
-<li>Pods</li>
-<li>Deployments</li>
-<li>ReplicaSets</li>
-<li>Services</li>
-<li>ConfigMaps</li>
-<li>Secrets</li>
-<li>Ingress</li>
-<li>Persistent Volumes</li>
-<li>StatefulSets</li>
-<li>Helm</li>
-<li>Autoscaling</li>
-<li>Rolling updates</li>
-<li>Production cluster design</li>
-<li>Real-world deployment projects</li>
-</ul>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="//localhost:1313/tags/github-actions/">Github-Actions</a></li>
-      <li><a href="//localhost:1313/tags/ci/">Ci</a></li>
-      <li><a href="//localhost:1313/tags/cd/">Cd</a></li>
-      <li><a href="//localhost:1313/tags/automation/">Automation</a></li>
-      <li><a href="//localhost:1313/tags/docker/">Docker</a></li>
-      <li><a href="//localhost:1313/tags/yaml/">Yaml</a></li>
-      <li><a href="//localhost:1313/tags/devops/">Devops</a></li>
-      <li><a href="//localhost:1313/tags/github/">Github</a></li>
-      <li><a href="//localhost:1313/tags/workflow/">Workflow</a></li>
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="//localhost:1313/posts/2026-08-05-ai-income1/">
-    <span class="title">« Prev</span>
-    <span>How to Build a $100/Day AI Income Machine in 48 Hours Using Only Your Phone</span>
-  </a>
-  <a class="next" href="//localhost:1313/posts/2026-08-04-docker4/">
-    <span class="title">Next »</span>
-    <span>Docker: Complete Beginner to Production Guide</span>
-  </a>
-</nav>
-
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="//localhost:1313/">Technical Journal</a></span> · 
-
-    
-    
-    <span>
-        Powered by
-        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+</code></pre><h3 id=features>Features<a hidden class=anchor aria-hidden=true href=#features>#</a></h3><ul><li>Automatic testing</li><li>Code quality checks</li><li>Docker image creation</li><li>Version tagging</li><li>Release automation</li><li>Kubernetes deployment</li><li>Rollback support</li><li>Slack notifications</li><li>Health checks</li><li>Security scanning</li></ul><p>This project demonstrates a production-grade CI/CD pipeline suitable for a professional DevOps portfolio.</p><hr><h1 id=next-article>Next Article<a hidden class=anchor aria-hidden=true href=#next-article>#</a></h1><p>The next guide is <strong>Kubernetes: Complete Beginner to Production</strong>.</p><p>You&rsquo;ll learn:</p><ul><li>Kubernetes architecture</li><li>Pods</li><li>Deployments</li><li>ReplicaSets</li><li>Services</li><li>ConfigMaps</li><li>Secrets</li><li>Ingress</li><li>Persistent Volumes</li><li>StatefulSets</li><li>Helm</li><li>Autoscaling</li><li>Rolling updates</li><li>Production cluster design</li><li>Real-world deployment projects</li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=/tags/github-actions/>Github-Actions</a></li><li><a href=/tags/ci/>Ci</a></li><li><a href=/tags/cd/>Cd</a></li><li><a href=/tags/automation/>Automation</a></li><li><a href=/tags/docker/>Docker</a></li><li><a href=/tags/yaml/>Yaml</a></li><li><a href=/tags/devops/>DevOps</a></li><li><a href=/tags/github/>GitHub</a></li><li><a href=/tags/workflow/>Workflow</a></li></ul><nav class=paginav><a class=prev href=/posts/2026-08-05-ai-playbook7/><span class=title>« Prev</span>
+<span>The AI Solopreneur Playbook: 100 AI Business Ideas You Can Start With Zero Dollars</span>
+</a><a class=next href=/posts/2026-08-05-ai-automation6/><span class=title>Next »</span>
+<span>From $100/Day to $10,000/Month: Building an AI Agency That Runs Without You</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2026 <a href=/>Technical Journal</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

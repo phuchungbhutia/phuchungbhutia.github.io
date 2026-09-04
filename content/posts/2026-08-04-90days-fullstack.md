@@ -1,6 +1,6 @@
 ---
 title: "The 90-Day Blueprint to Becoming a Full-Stack Developer: From Zero to AI-Powered Apps"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["Web Development", "Software Engineering"]
 tags: ["Full Stack", "JavaScript", "React", "Node.js", "DevOps", "AI", "Career Roadmap"]
 ---

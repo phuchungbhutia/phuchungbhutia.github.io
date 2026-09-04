@@ -1,6 +1,6 @@
 ---
 title: "Debloat Your Android Without Root Using Shizuku and Canta"
-date: 2026-08-05 08:27:00 +0530
+date: "2026-08-05T08:27:00+05:30"
 categories: [android, tutorials]
 tags: [android, shizuku, canta, adb, debloat, developer-options, wireless-debugging, privacy, performance]
 ---

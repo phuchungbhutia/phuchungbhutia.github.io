@@ -1,58 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Linux on Technical Journal</title>
-    <link>//localhost:1313/tags/linux/</link>
-    <description>Recent content in Linux on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Modern Linux System Administration: Automated Maintenance and Hardware Optimization</title>
-      <link>//localhost:1313/posts/2026-09-04-force-time/</link>
-      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-force-time/</guid>
-      <description>A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance.</description>
-    </item>
-    <item>
-      <title>Seamless Windows on Linux: WinApps vs WinBoat vs Winpodx</title>
-      <link>//localhost:1313/posts/2026-09-04-windows-linux/</link>
-      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-windows-linux/</guid>
-      <description>A comprehensive technical comparison of WinApps, WinBoat, and Winpodx for seamlessly integrating Windows software into Linux desktops.</description>
-    </item>
-    <item>
-      <title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-python3/</link>
-      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-python3/</guid>
-      <description>&lt;h1 id=&#34;python-for-devops-and-automation-complete-beginner-to-advanced-guide&#34;&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Linux on Technical Journal</title><link>/tags/linux/</link><description>Recent content in Linux on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Modern Linux System Administration: Automated Maintenance and Hardware Optimization</title><link>/posts/2026-09-04-force-time/</link><pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate><guid>/posts/2026-09-04-force-time/</guid><description>A comprehensive guide to optimizing low-spec hardware, resolving network clock drift, and automating routine Linux maintenance.</description></item><item><title>Seamless Windows on Linux: WinApps vs WinBoat vs Winpodx</title><link>/posts/2026-09-04-windows-linux/</link><pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate><guid>/posts/2026-09-04-windows-linux/</guid><description>A comprehensive technical comparison of WinApps, WinBoat, and Winpodx for seamlessly integrating Windows software into Linux desktops.</description></item><item><title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title><link>/posts/2026-08-05-python3/</link><pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate><guid>/posts/2026-08-05-python3/</guid><description>&lt;h1 id="python-for-devops-and-automation-complete-beginner-to-advanced-guide"&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
 &lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
 &lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
-&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linux: The Foundation of Modern DevOps</title>
-      <link>//localhost:1313/posts/2026-08-05-1/</link>
-      <pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-1/</guid>
-      <description>&lt;h1 id=&#34;linux-the-foundation-of-modern-devops&#34;&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
+&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description></item><item><title>Linux: The Foundation of Modern DevOps</title><link>/posts/2026-08-05-1/</link><pubDate>Wed, 05 Aug 2026 07:50:00 +0530</pubDate><guid>/posts/2026-08-05-1/</guid><description>&lt;h1 id="linux-the-foundation-of-modern-devops"&gt;Linux: The Foundation of Modern DevOps&lt;/h1&gt;
 &lt;p&gt;Linux powers nearly everything on the Internet.&lt;/p&gt;
 &lt;p&gt;Whether you browse a website, stream a movie, deploy an application, or use cloud services, chances are Linux is running somewhere in the background.&lt;/p&gt;
 &lt;p&gt;If you want to become a DevOps Engineer, Cloud Engineer, Site Reliability Engineer (SRE), Platform Engineer, or Backend Developer, Linux is the first skill you should master.&lt;/p&gt;
-&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title>
-      <link>//localhost:1313/posts/2026-08-04-linux-time/</link>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-linux-time/</guid>
-      <description>&lt;p&gt;Accurate system time is critical for modern Linux operating systems[cite: 1]. When your system clock drifts out of sync, security protocols fail: SSL/TLS certificates become invalid, SSH connections reject handshakes, and package managers refuse to update[cite: 1].&lt;/p&gt;
+&lt;p&gt;This guide explains Linux from the ground up with practical examples and projects.&lt;/p&gt;</description></item><item><title>Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons</title><link>/posts/2026-08-04-linux-time/</link><pubDate>Mon, 16 Feb 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-linux-time/</guid><description>&lt;p&gt;Accurate system time is critical for modern Linux operating systems[cite: 1]. When your system clock drifts out of sync, security protocols fail: SSL/TLS certificates become invalid, SSH connections reject handshakes, and package managers refuse to update[cite: 1].&lt;/p&gt;
 &lt;p&gt;This guide breaks down a complex real-world troubleshooting session where standard Systemd time synchronization failed on a minimal Linux setup, and how to systematically diagnose and resolve the issue[cite: 1].&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-the-root-cause-systemd-aliases-and-missing-packages&#34;&gt;1. The Root Cause: Systemd Aliases and Missing Packages&lt;/h2&gt;
-&lt;p&gt;When attempting to run standard Systemd commands like &lt;code&gt;sudo systemctl enable ntp&lt;/code&gt;, you may encounter errors such as[cite: 1]:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="1-the-root-cause-systemd-aliases-and-missing-packages"&gt;1. The Root Cause: Systemd Aliases and Missing Packages&lt;/h2&gt;
+&lt;p&gt;When attempting to run standard Systemd commands like &lt;code&gt;sudo systemctl enable ntp&lt;/code&gt;, you may encounter errors such as[cite: 1]:&lt;/p&gt;</description></item></channel></rss>

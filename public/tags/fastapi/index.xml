@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Fastapi on Technical Journal</title>
-    <link>//localhost:1313/tags/fastapi/</link>
-    <description>Recent content in Fastapi on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 08:30:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/fastapi/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title>
-      <link>//localhost:1313/posts/2026-08-05-python3/</link>
-      <pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-08-05-python3/</guid>
-      <description>&lt;h1 id=&#34;python-for-devops-and-automation-complete-beginner-to-advanced-guide&#34;&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Fastapi on Technical Journal</title><link>/tags/fastapi/</link><description>Recent content in Fastapi on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 05 Aug 2026 08:30:00 +0530</lastBuildDate><atom:link href="/tags/fastapi/index.xml" rel="self" type="application/rss+xml"/><item><title>Python for DevOps and Automation: Complete Beginner to Advanced Guide</title><link>/posts/2026-08-05-python3/</link><pubDate>Wed, 05 Aug 2026 08:30:00 +0530</pubDate><guid>/posts/2026-08-05-python3/</guid><description>&lt;h1 id="python-for-devops-and-automation-complete-beginner-to-advanced-guide"&gt;Python for DevOps and Automation: Complete Beginner to Advanced Guide&lt;/h1&gt;
 &lt;p&gt;Python has become the language of choice for automation, cloud engineering, DevOps, data processing, cybersecurity, artificial intelligence, and backend development.&lt;/p&gt;
 &lt;p&gt;Its clean syntax, extensive standard library, and rich ecosystem make it one of the most productive programming languages available.&lt;/p&gt;
-&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;Whether you want to automate repetitive tasks, build APIs, manage cloud infrastructure, analyze logs, or deploy applications, Python is an essential skill.&lt;/p&gt;</description></item></channel></rss>

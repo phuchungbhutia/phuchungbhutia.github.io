@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Zero-Cost AI Side-Hustle Playbook (India Edition)"
-date: "2026-08-04"
+date: "2026-08-04T10:00:00+05:30"
 categories: ["AI & Technology", "Business & Finance"]
 tags: ["AI Side Hustle", "Content Creation", "Social Media Management", "India Trends", "Free AI Tools"]
 ---

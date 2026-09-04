@@ -1,47 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>EGramSwaraj on Technical Journal</title>
-    <link>//localhost:1313/tags/egramswaraj/</link>
-    <description>Recent content in EGramSwaraj on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/egramswaraj/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title>
-      <link>//localhost:1313/posts/2026-09-04-webscraping/</link>
-      <pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate>
-      <guid>//localhost:1313/posts/2026-09-04-webscraping/</guid>
-      <description>A comprehensive guide on engineering a high-speed, parallel JavaScript bookmarklet scraper to extract financial records from eGramSwaraj and Sikkim LFA portals accurately.</description>
-    </item>
-    <item>
-      <title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title>
-      <link>//localhost:1313/posts/2026-08-04-bookmarklet-scraper/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-bookmarklet-scraper/</guid>
-      <description>&lt;h1 id=&#34;deep-dive-engineering-scraping-government-accounting-portals-at-scale&#34;&gt;Deep-Dive Engineering: Scraping Government Accounting Portals at Scale&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EGramSwaraj on Technical Journal</title><link>/tags/egramswaraj/</link><description>Recent content in EGramSwaraj on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 04 Sep 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/egramswaraj/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title><link>/posts/2026-09-04-webscraping/</link><pubDate>Fri, 04 Sep 2026 10:00:00 +0530</pubDate><guid>/posts/2026-09-04-webscraping/</guid><description>A comprehensive guide on engineering a high-speed, parallel JavaScript bookmarklet scraper to extract financial records from eGramSwaraj and Sikkim LFA portals accurately.</description></item><item><title>Building a High-Speed Parallel Bookmarklet Scraper for eGramSwaraj and Sikkim LFA Portals</title><link>/posts/2026-08-04-bookmarklet-scraper/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-bookmarklet-scraper/</guid><description>&lt;h1 id="deep-dive-engineering-scraping-government-accounting-portals-at-scale"&gt;Deep-Dive Engineering: Scraping Government Accounting Portals at Scale&lt;/h1&gt;
 &lt;p&gt;Extracting local governance financial data from Indian public portals—such as &lt;strong&gt;eGramSwaraj&lt;/strong&gt; and the &lt;strong&gt;Sikkim Local Fund Audit (LFA)&lt;/strong&gt;—presents a unique set of technical hurdles. Web developers working with these portals frequently run into multi-layer redirects (&lt;code&gt;FileRedirect.jsp&lt;/code&gt;), inconsistent page structures, deeply nested HTML tables, dynamic query string parameters, and server-side rate constraints.&lt;/p&gt;
-&lt;p&gt;When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports</title>
-      <link>//localhost:1313/posts/2026-08-04-egs-scraping/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-egs-scraping/</guid>
-      <description>&lt;h1 id=&#34;building-the-egramswaraj-audit-toolkit-from-scraping-messy-public-financial-data-to-standardized-audit-reports&#34;&gt;Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports&lt;/h1&gt;
+&lt;p&gt;When scraping thousands of voucher reports across dynamic financial years, standard browser extensions or sequential script implementations often fall short. They either take several hours to complete, crash due to syntax edge cases, or output mislabeled files due to poor metadata extraction logic.&lt;/p&gt;</description></item><item><title>Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports</title><link>/posts/2026-08-04-egs-scraping/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-egs-scraping/</guid><description>&lt;h1 id="building-the-egramswaraj-audit-toolkit-from-scraping-messy-public-financial-data-to-standardized-audit-reports"&gt;Building the eGramSwaraj Audit Toolkit: From Scraping Messy Public Financial Data to Standardized Audit Reports&lt;/h1&gt;
 &lt;p&gt;Local Fund Audit (LFA) departments and government auditors often face a steep technical challenge when reviewing public financial data from portals like India&amp;rsquo;s &lt;strong&gt;eGramSwaraj&lt;/strong&gt;. While the web portal hosts critical details regarding Gram Panchayat Development Plan (GPDP) expenditure, receipts, profiles, and vouchers, the data presentation on-screen is fragmented, vertical, and unstructured.&lt;/p&gt;
-&lt;p&gt;In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</title>
-      <link>//localhost:1313/posts/2026-08-04-blogs/</link>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-blogs/</guid>
-      <description>&lt;h1 id=&#34;building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows&#34;&gt;Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this deep dive, we will walk through the step-by-step engineering process of capturing raw web data via browser bookmarklets, handling messy multi-line CSVs with custom Python regex parsers, and mapping vertical data into a horizontal, audit-ready 18-column master sheet.&lt;/p&gt;</description></item><item><title>Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows</title><link>/posts/2026-08-04-blogs/</link><pubDate>Wed, 18 Mar 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-blogs/</guid><description>&lt;h1 id="building-an-automated-egramswaraj-data-extractor-streamlining-municipal-audit-workflows"&gt;Building an Automated eGramSwaraj Data Extractor: Streamlining Municipal Audit Workflows&lt;/h1&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Conducting financial audits across local governance bodies—such as Gram Panchayats and Urban Local Bodies—often presents a classic data management bottleneck: portals like &lt;strong&gt;eGramSwaraj&lt;/strong&gt; house thousands of crucial expenditure vouchers, payment records, and development scheme allocations, but extracting this data into structured formats for audit sampling can be tedious and prone to manual error.&lt;/p&gt;
-&lt;p&gt;To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;To solve this, we developed a lightweight, client-side JavaScript extraction script that hooks directly into the browser DOM while inspecting eGramSwaraj data views. This tool automates the aggregation of voucher numbers, dates, beneficiary details, payment amounts, and scheme heads, exporting everything into clean, standardized CSV files ready for audit analysis.&lt;/p&gt;</description></item></channel></rss>

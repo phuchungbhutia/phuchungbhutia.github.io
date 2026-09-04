@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Linux Time Synchronization: Fixing Systemd NTP, ISP Blocks, and Missing Daemons"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-04T10:00:00+05:30"
 categories: ["Linux", "Networking"]
 tags: ["ntp", "systemd", "chrony", "bash", "2026"]
 description: "A complete step-by-step diagnostic guide to resolving broken Linux time synchronization caused by Systemd alias conflicts, ISP port drops, DNS failures, and minimal system environments."

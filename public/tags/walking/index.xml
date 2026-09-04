@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Walking on Technical Journal</title>
-    <link>//localhost:1313/tags/walking/</link>
-    <description>Recent content in Walking on Technical Journal</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/walking/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Ultimate Guide to 2-Hour Hill Walks: Mastering the Up-and-Down Trek for Fat Loss and Heart Health</title>
-      <link>//localhost:1313/posts/2026-08-04-weight-loss/</link>
-      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2026-08-04-weight-loss/</guid>
-      <description>&lt;p&gt;Walking is one of the most underrated, highly effective forms of exercise available. While a casual stroll on flat terrain does wonders for your mental health, tackling a 2-hour hill walk—spending an hour climbing uphill followed by an hour descending—elevates your daily workout into a functional, fat-burning, heart-strengthening powerhouse.&lt;/p&gt;
-&lt;p&gt;However, a steep, sustained incline presents a unique metabolic and cardiovascular challenge. If you jump into a two-hour trek without proper preparation, you risk sudden energy crashes, excessive joint strain, or spiking your stress hormones.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Walking on Technical Journal</title><link>/tags/walking/</link><description>Recent content in Walking on Technical Journal</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 04 Aug 2026 10:00:00 +0530</lastBuildDate><atom:link href="/tags/walking/index.xml" rel="self" type="application/rss+xml"/><item><title>The Ultimate Guide to 2-Hour Hill Walks: Mastering the Up-and-Down Trek for Fat Loss and Heart Health</title><link>/posts/2026-08-04-weight-loss/</link><pubDate>Tue, 04 Aug 2026 10:00:00 +0530</pubDate><guid>/posts/2026-08-04-weight-loss/</guid><description>&lt;p&gt;Walking is one of the most underrated, highly effective forms of exercise available. While a casual stroll on flat terrain does wonders for your mental health, tackling a 2-hour hill walk—spending an hour climbing uphill followed by an hour descending—elevates your daily workout into a functional, fat-burning, heart-strengthening powerhouse.&lt;/p&gt;
+&lt;p&gt;However, a steep, sustained incline presents a unique metabolic and cardiovascular challenge. If you jump into a two-hour trek without proper preparation, you risk sudden energy crashes, excessive joint strain, or spiking your stress hormones.&lt;/p&gt;</description></item></channel></rss>
