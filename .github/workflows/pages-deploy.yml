@@ -52,7 +52,7 @@ jobs:
         run: |
           bundle exec htmlproofer _site \
             --disable-external \
-            --check-internal-hash=false \
+            --no-check-internal-hash \
             --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/,/^\/tags\//,/^\/categories\//"
 
       - name: Upload site artifact
