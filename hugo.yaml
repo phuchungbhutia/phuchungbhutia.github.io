@@ -1,5 +1,5 @@
 ﻿baseURL: "https://phuchungbhutia.github.io/"
-title: "Technical Journal"
+title: "Phuchung Bhutia"
 theme: "PaperMod"
 locale: "en"
 defaultContentLanguage: "en"
@@ -11,27 +11,25 @@ taxonomies:
   category: categories
   tag: tags
 
-# Allow raw HTML blocks in Markdown
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-
-# Keep minification from choking on JSON-LD
-minify:
-  disableJSON: true
-  minifyOutput: true
-
 outputs:
   home:
     - HTML
     - RSS
     - JSON
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+minify:
+  disableJSON: true
+  minifyOutput: true
+
 menu:
   main:
-    - name: Search
-      url: search/
+    - name: Blogs
+      url: posts/
       weight: 10
     - name: Categories
       url: categories/
@@ -57,21 +55,8 @@ params:
   ShowToc: true
   TocOpen: false
 
-  # Disable PaperMod schema to prevent template JSON-LD crashes
   schema:
     publisherType: "Person"
-
-  profileMode:
-    enabled: true
-    title: "Phuchung Bhutia"
-    subtitle: "Web Development"
-    buttons:
-      - name: Posts
-        url: posts/
-      - name: Categories
-        url: categories/
-      - name: Tags
-        url: tags/
 
   fuseOpts:
     isCaseSensitive: false

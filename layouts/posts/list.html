@@ -1,0 +1,123 @@
+﻿{{- define "main" }}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+
+<div id="search-container" style="margin-bottom: 2rem;">
+  <input 
+    id="inline-search-input" 
+    type="search" 
+    placeholder="Type to search articles dynamically..." 
+    aria-label="search"
+    style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none; box-sizing: border-box;"
+  />
+</div>
+
+<div id="search-results" style="display: none; margin-bottom: 2rem;"></div>
+
+<div id="default-posts-feed">
+  <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Recent Articles</h2>
+
+  {{- $posts := where .Site.RegularPages "Section" "posts" }}
+  {{- range first 5 $posts }}
+  <article class="post-entry" style="margin-bottom: 1.2rem;">
+    <header class="entry-header">
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    </header>
+    <div class="entry-content">
+      <p>{{ .Summary | plainify | htmlUnescape | truncate 150 }}</p>
+    </div>
+    <footer class="entry-footer">
+      <span>{{ .Date.Format "January 2, 2006" }}</span>
+      {{- if .Params.categories }}
+      <span> &middot; {{ delimit .Params.categories ", " }}</span>
+      {{- end }}
+    </footer>
+  </article>
+  {{- end }}
+
+  {{- if gt (len $posts) 5 }}
+  <details style="margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 8px; padding: 1rem;">
+    <summary style="cursor: pointer; font-weight: 600; color: var(--primary);">
+      View More Posts ({{ sub (len $posts) 5 }} older articles)
+    </summary>
+    <div style="margin-top: 1rem;">
+      {{- range after 5 $posts }}
+      <article class="post-entry" style="margin-bottom: 1.2rem; border-bottom: 1px dashed var(--border); padding-bottom: 0.8rem;">
+        <header class="entry-header">
+          <h3 style="font-size: 1.15rem;"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        </header>
+        <footer class="entry-footer" style="font-size: 0.85rem; color: var(--secondary);">
+          <span>{{ .Date.Format "Jan 02, 2006" }}</span>
+        </footer>
+      </article>
+      {{- end }}
+    </div>
+  </details>
+  {{- end }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+  let fuse = null;
+  const input = document.getElementById('inline-search-input');
+  const resultsContainer = document.getElementById('search-results');
+  const defaultFeed = document.getElementById('default-posts-feed');
+
+  fetch('/index.json')
+    .then(res => res.json())
+    .then(data => {
+      fuse = new Fuse(data, {
+        isCaseSensitive: false,
+        shouldSort: true,
+        location: 0,
+        distance: 100,
+        threshold: 0.4,
+        minMatchCharLength: 2,
+        keys: ["title", "permalink", "summary", "content"]
+      });
+    })
+    .catch(err => console.error("Index load error:", err));
+
+  input.addEventListener('input', function() {
+    const query = this.value.trim();
+
+    if (!query || !fuse) {
+      resultsContainer.style.display = 'none';
+      resultsContainer.innerHTML = '';
+      defaultFeed.style.display = 'block';
+      return;
+    }
+
+    const results = fuse.search(query);
+    defaultFeed.style.display = 'none';
+    resultsContainer.style.display = 'block';
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = `
+        <div style="padding: 1.5rem; text-align: center; color: var(--secondary); background: var(--entry); border-radius: 8px;">
+          No articles matched "<strong>${query}</strong>".
+        </div>
+      `;
+      return;
+    }
+
+    let html = `<h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Search Results (${results.length})</h2>`;
+    results.forEach(res => {
+      const item = res.item;
+      html += `
+        <article class="post-entry" style="margin-bottom: 1.2rem; background: var(--entry); padding: 1.2rem; border-radius: 8px; border: 1px solid var(--border);">
+          <header class="entry-header">
+            <h2><a href="${item.permalink}">${item.title}</a></h2>
+          </header>
+          <div class="entry-content" style="margin-top: 0.4rem; color: var(--secondary); font-size: 0.95rem;">
+            ${item.summary ? item.summary.substring(0, 160) + '...' : ''}
+          </div>
+        </article>
+      `;
+    });
+    resultsContainer.innerHTML = html;
+  });
+</script>
+{{- end }}
