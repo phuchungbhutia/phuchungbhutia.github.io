@@ -1,6 +1,6 @@
 ---
 title: "The S-Class Equipment Synergy Matrix: Mapping Mechanics to Items in MLBB"
-date: "2026-09-04 10:00:00 +0530"
+date: "2026-09-06 10:00:00 +0530"
 categories: ["Game Architecture", "Data Modeling"]
 tags: ["mlbb", "game-design", "equipment-matrix", "database-schema", "2026"]
 description: "A mechanics-first S-Class equipment taxonomy decoding how hero passives and skill rotations dictate optimal Physical, Magic, and Defense paths in Patch 2.1.95a."
