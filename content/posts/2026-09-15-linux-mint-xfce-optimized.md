@@ -1,5 +1,9 @@
 --- 
-title: "The Definitive Low-RAM Optimization Guide for Linux Mint: Tweaks, Scripts, and Browser Hardening" date: "2026-09-15 09:17:38 +0530" categories: ["Linux", "Performance"] tags: ["linux-mint", "xfce", "cinnamon", "zram", "sysctl", "firefox", "chromium", "2026"] description: "A complete, production-ready guide to transforming low-memory Linux Mint systems (4GB RAM) into fast, fluid workstations using ZRAM compression, kernel tuning, desktop optimizations, and automated shell scripts." 
+title: "The Definitive Low-RAM Optimization Guide for Linux Mint - Tweaks, Scripts, and Browser Hardening" 
+date: "2026-09-15 09:17:38 +0530" 
+categories: ["Linux", "Performance"] 
+tags: ["linux-mint", "xfce", "cinnamon", "zram", "sysctl", "firefox", "chromium", "2026"] 
+description: "A complete, production-ready guide to transforming low-memory Linux Mint systems (4GB RAM) into fast, fluid workstations using ZRAM compression, kernel tuning, desktop optimizations, and automated shell scripts." 
 
 --- 
 
