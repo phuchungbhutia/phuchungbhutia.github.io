@@ -1,21 +1,37 @@
-﻿{{- define "main" }}
+{{- define "main" }}
 
 <header class="page-header">
   <h1>{{ .Title }}</h1>
 </header>
 
+<!-- Search Controls -->
 <div id="search-container" style="margin-bottom: 2rem;">
-  <input 
-    id="inline-search-input" 
-    type="search" 
-    placeholder="Type to search articles dynamically..." 
-    aria-label="search"
-    style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none; box-sizing: border-box;"
-  />
+  <div style="display: flex; gap: 0.6rem; align-items: center;">
+    <div style="position: relative; flex: 1;">
+      <input 
+        id="inline-search-input" 
+        type="search" 
+        placeholder="Type to search articles dynamically..." 
+        aria-label="Search articles"
+        autocomplete="off"
+        style="width: 100%; padding: 12px 16px; font-size: 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none; box-sizing: border-box;"
+      />
+    </div>
+    <button 
+      id="clear-search-btn" 
+      type="button" 
+      aria-label="Clear search"
+      style="display: none; padding: 12px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--tertiary, #e2e8f0); color: var(--primary); font-size: 0.95rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: opacity 0.15s ease;">
+      Clear
+    </button>
+  </div>
+  <div id="search-status" aria-live="polite" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;"></div>
 </div>
 
+<!-- Search Results Feed -->
 <div id="search-results" style="display: none; margin-bottom: 2rem;"></div>
 
+<!-- Default Post Feed -->
 <div id="default-posts-feed">
   <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Recent Articles</h2>
 
@@ -58,15 +74,21 @@
   {{- end }}
 </div>
 
+<!-- Fuse.js Dynamic Engine -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 <script>
   let fuse = null;
   const input = document.getElementById('inline-search-input');
+  const clearBtn = document.getElementById('clear-search-btn');
   const resultsContainer = document.getElementById('search-results');
   const defaultFeed = document.getElementById('default-posts-feed');
+  const statusAnnouncer = document.getElementById('search-status');
 
   fetch('/index.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Network response was not ok');
+      return res.json();
+    })
     .then(data => {
       fuse = new Fuse(data, {
         isCaseSensitive: false,
@@ -77,16 +99,47 @@
         minMatchCharLength: 2,
         keys: ["title", "permalink", "summary", "content"]
       });
+      if (input.value.trim().length > 0) {
+        performSearch();
+      }
     })
-    .catch(err => console.error("Index load error:", err));
+    .catch(err => console.error("Search index load error:", err));
 
-  input.addEventListener('input', function() {
-    const query = this.value.trim();
+  function escapeHTML(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 
-    if (!query || !fuse) {
+  function resetSearch() {
+    input.value = '';
+    clearBtn.style.display = 'none';
+    resultsContainer.style.display = 'none';
+    resultsContainer.innerHTML = '';
+    defaultFeed.style.display = 'block';
+    statusAnnouncer.textContent = 'Search cleared. Showing recent articles.';
+    input.focus();
+  }
+
+  function performSearch() {
+    const query = input.value.trim();
+
+    if (!query) {
+      clearBtn.style.display = 'none';
       resultsContainer.style.display = 'none';
       resultsContainer.innerHTML = '';
       defaultFeed.style.display = 'block';
+      statusAnnouncer.textContent = '';
+      return;
+    }
+
+    clearBtn.style.display = 'inline-block';
+
+    if (!fuse) {
       return;
     }
 
@@ -95,29 +148,46 @@
     resultsContainer.style.display = 'block';
 
     if (results.length === 0) {
+      statusAnnouncer.textContent = `No articles found for ${query}`;
       resultsContainer.innerHTML = `
-        <div style="padding: 1.5rem; text-align: center; color: var(--secondary); background: var(--entry); border-radius: 8px;">
-          No articles matched "<strong>${query}</strong>".
+        <div style="padding: 1.5rem; text-align: center; color: var(--secondary); background: var(--entry); border-radius: 8px; border: 1px solid var(--border);">
+          No articles matched "<strong>${escapeHTML(query)}</strong>".
         </div>
       `;
       return;
     }
 
+    statusAnnouncer.textContent = `${results.length} article${results.length === 1 ? '' : 's'} found.`;
+
     let html = `<h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Search Results (${results.length})</h2>`;
     results.forEach(res => {
       const item = res.item;
+      const snippet = item.summary ? escapeHTML(item.summary).substring(0, 160) + '...' : '';
+      const safeTitle = escapeHTML(item.title);
+      const safeLink = encodeURI(item.permalink);
+
       html += `
         <article class="post-entry" style="margin-bottom: 1.2rem; background: var(--entry); padding: 1.2rem; border-radius: 8px; border: 1px solid var(--border);">
           <header class="entry-header">
-            <h2><a href="${item.permalink}">${item.title}</a></h2>
+            <h2><a href="${safeLink}">${safeTitle}</a></h2>
           </header>
           <div class="entry-content" style="margin-top: 0.4rem; color: var(--secondary); font-size: 0.95rem;">
-            ${item.summary ? item.summary.substring(0, 160) + '...' : ''}
+            ${snippet}
           </div>
         </article>
       `;
     });
+
     resultsContainer.innerHTML = html;
+  }
+
+  input.addEventListener('input', performSearch);
+  clearBtn.addEventListener('click', resetSearch);
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      resetSearch();
+    }
   });
 </script>
 {{- end }}
