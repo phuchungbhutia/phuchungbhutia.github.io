@@ -35,7 +35,7 @@
 <div id="default-posts-feed">
   <h2 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--secondary);">Recent Articles</h2>
 
-  {{- $posts := where .Site.RegularPages "Section" "posts" }}
+  {{- $posts := .Pages }}
   {{- range first 5 $posts }}
   <article class="post-entry" style="margin-bottom: 1.2rem;">
     <header class="entry-header">
