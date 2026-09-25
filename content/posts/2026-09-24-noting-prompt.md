@@ -1,6 +1,6 @@
 ---
 title: "Drafting Indian Government File Notings with LLMs: Long versus Short Prompts"
-date: "2026-09-25"
+date: "2026-09-24"
 categories: ["Prompt Engineering", "Public Administration"]
 tags: ["csmop", "central-secretariat", "file-noting", "llm-prompts", "governance"]
 description: "A technical evaluation of long and short prompt architectures for generating Central Secretariat Manual of Office Procedure compliant file notings."
