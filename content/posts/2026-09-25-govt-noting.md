@@ -257,4 +257,4 @@ General Financial Rules 2017, Department of Expenditure, Ministry of Finance
 
 Handbook for Personnel Officers, Department of Personnel and Training
 
-[https://dopt.gov.in](https://dopt.gov.in?utm_source=gemini)
+[https://dopt.gov.in](https://dopt.gov.in)
