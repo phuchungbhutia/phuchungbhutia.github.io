@@ -168,7 +168,7 @@ Automating public audit documentation comes with hard administrative boundaries 
 
 Office of the Comptroller and Auditor General of India
 
-[https://cag.gov.in](https://cag.gov.in?utm_source=gemini)
+[https://cag.gov.in](https://cag.gov.in)
 
 CAG Model Accounting System for Panchayati Raj Institutions
 
@@ -176,4 +176,4 @@ CAG Model Accounting System for Panchayati Raj Institutions
 
 Ministry of Panchayati Raj – Accounting Regulations
 
-[https://panchayat.gov.in](https://panchayat.gov.in?utm_source=gemini)
+[https://panchayat.gov.in](https://panchayat.gov.in)
