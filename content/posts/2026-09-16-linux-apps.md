@@ -473,30 +473,30 @@ Selecting reliable tools over transient trends turns the modern Linux desktop in
 ## References
 
 1. Flatpak Application Repository (Flathub):
-[https://flathub.org](https://flathub.org?utm_source=gemini)
+[https://flathub.org](https://flathub.org)
 2. LocalSend Official Project Repository and Documentation:
-[https://localsend.org](https://localsend.org?utm_source=gemini)
+[https://localsend.org](https://localsend.org)
 3. Parabolic (Tube Converter) Repository:
-[https://github.com/NickvisionApps/Parabolic](https://github.com/NickvisionApps/Parabolic?utm_source=gemini)
+[https://github.com/NickvisionApps/Parabolic](https://github.com/NickvisionApps/Parabolic)
 4. Shutter Encoder Professional Transcoding Portal:
-[https://www.shutterencoder.com](https://www.shutterencoder.com?utm_source=gemini)
+[https://www.shutterencoder.com](https://www.shutterencoder.com)
 5. Curtail Image Compressor Documentation:
-[https://github.com/Huluti/Curtail](https://github.com/Huluti/Curtail?utm_source=gemini)
+[https://github.com/Huluti/Curtail](https://github.com/Huluti/Curtail)
 6. Constrict Video Compressor for GNOME:
 [https://apps.gnome.org/Constrict](https://www.google.com/search?q=https://apps.gnome.org/Constrict&utm_source=gemini)
 7. Gradia Screenshot Annotation Utility:
-[https://apps.gnome.org/Gradia](https://apps.gnome.org/Gradia?utm_source=gemini)
+[https://apps.gnome.org/Gradia](https://apps.gnome.org/Gradia)
 8. Obsidian Knowledge Base and API Documentation:
-[https://obsidian.md](https://obsidian.md?utm_source=gemini)
+[https://obsidian.md](https://obsidian.md)
 9. Upscayl AI Image Upscaler Project:
-[https://github.com/upscayl/upscayl](https://github.com/upscayl/upscayl?utm_source=gemini)
+[https://github.com/upscayl/upscayl](https://github.com/upscayl/upscayl)
 10. PDF Arranger Documentation:
-[https://github.com/pdfarranger/pdfarranger](https://github.com/pdfarranger/pdfarranger?utm_source=gemini)
+[https://github.com/pdfarranger/pdfarranger](https://github.com/pdfarranger/pdfarranger)
 11. LibreOffice Documentation Project:
 [https://www.libreoffice.org/discover/draw](https://www.google.com/search?q=https://www.libreoffice.org/discover/draw&utm_source=gemini)
 12. ZapZap WhatsApp Client Repository:
-[https://github.com/rafatosta/zapzap](https://github.com/rafatosta/zapzap?utm_source=gemini)
+[https://github.com/rafatosta/zapzap](https://github.com/rafatosta/zapzap)
 13. Teams for Linux Community Application:
 [https://github.com/IsmaelMartinez/teams_for_linux](https://www.google.com/search?q=https://github.com/IsmaelMartinez/teams_for_linux&utm_source=gemini)
 14. WoWUp Multi-Provider Addon Manager:
-[https://wowup.io](https://wowup.io?utm_source=gemini)
+[https://wowup.io](https://wowup.io)
