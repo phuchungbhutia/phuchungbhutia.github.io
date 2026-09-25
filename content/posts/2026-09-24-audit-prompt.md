@@ -1,6 +1,6 @@
 ---
 title: "Drafting CAG-Style Audit Paras with LLMs: Long and Short Prompts for Local Body Audits"
-date: "2026-09-25"
+date: "2026-09-24"
 categories: ["Public Audit", "Prompt Engineering"]
 tags: ["cag-india", "local-bodies", "audit-observations", "5c-framework", "llm-prompts"]
 description: "Master prompt engineering to generate defensible, 5C-compliant audit paragraphs for Indian local bodies using CAG and State AG reporting standards."
