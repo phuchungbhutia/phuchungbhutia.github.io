@@ -185,4 +185,4 @@ Manual of Instructions for Audit of Local Bodies
 
 General Financial Rules 2017, Ministry of Finance, Government of India
 
-[https://doe.gov.in/general-financial-rules](https://doe.gov.in/general-financial-rules?utm_source=gemini)
+[https://doe.gov.in/general-financial-rules](https://doe.gov.in/general-financial-rules)
