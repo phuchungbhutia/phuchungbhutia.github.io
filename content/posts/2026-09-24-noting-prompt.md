@@ -187,8 +187,8 @@ Central Secretariat Manual of Office Procedure (CSMOP), Department of Administra
 
 General Financial Rules (GFR), Department of Expenditure, Ministry of Finance
 
-[https://doe.gov.in/general-financial-rules](https://doe.gov.in/general-financial-rules?utm_source=gemini)
+[https://doe.gov.in/general-financial-rules](https://doe.gov.in/general-financial-rules)
 
 Department of Personnel and Training (DoPT) Compendiums
 
-[https://dopt.gov.in](https://dopt.gov.in?utm_source=gemini)
+[https://dopt.gov.in](https://dopt.gov.in)
