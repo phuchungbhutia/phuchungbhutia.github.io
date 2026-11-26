@@ -1,4 +1,3 @@
-File: 2026-11-26-fixing-pdf-extracted-markdown-tables-indentation-a5-saddle-stitch-booklets-python.md
 ---
 title: "Fixing PDF-Extracted Markdown Tables, Indentation, and A5 Saddle-Stitch Booklets in Python"
 description: "A complete Python pipeline to clean PDF-extracted Markdown, format justified paragraphs, repair broken tables, and impose A5 pages onto A4 saddle-stitch booklets."
